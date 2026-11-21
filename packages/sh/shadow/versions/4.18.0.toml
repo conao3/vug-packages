@@ -9,7 +9,7 @@ kind = "autotools"
 configure-flags = [
   "--disable-nls",
   "--without-libbsd",
-  "--without-libpam",
+  "--with-libpam",
   "--without-selinux",
   "--without-audit",
   "--without-acl",
@@ -29,6 +29,7 @@ build = [
   "pkgconf",
 ]
 run = [
+  "linux-pam",
   "musl",
 ]
 

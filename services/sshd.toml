@@ -11,6 +11,7 @@ path = "/etc/ssh/sshd_config"
 content = """
 PermitRootLogin no
 PasswordAuthentication {param:password-authentication}
+UsePAM yes
 KbdInteractiveAuthentication no
 Subsystem sftp {pkg:openssh}/libexec/sftp-server
 """

@@ -8,4 +8,4 @@ default = "UTC"
 
 [[file]]
 path = "/etc/localtime"
-target = "{pkg:tzdata}/share/zoneinfo/{param:zone}"
+target = "/usr/share/zoneinfo/{param:zone}"

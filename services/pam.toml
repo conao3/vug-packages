@@ -1,0 +1,88 @@
+name = "pam"
+packages = [
+  "linux-pam",
+]
+
+[[file]]
+path = "/etc/pam.d/chpasswd"
+content = """
+auth required pam_unix.so nullok
+account required pam_unix.so
+password required pam_unix.so nullok sha512
+session required pam_unix.so
+"""
+
+[[file]]
+path = "/etc/pam.d/chsh"
+content = """
+auth sufficient pam_rootok.so
+auth required pam_unix.so nullok
+account required pam_unix.so
+password required pam_unix.so nullok sha512
+session required pam_unix.so
+"""
+
+[[file]]
+path = "/etc/pam.d/login"
+content = """
+auth required pam_unix.so nullok
+account required pam_unix.so
+password required pam_unix.so nullok sha512
+session required pam_unix.so
+session optional {pkg:systemd}/lib/security/pam_systemd.so
+"""
+
+[[file]]
+path = "/etc/pam.d/other"
+content = """
+auth required pam_deny.so
+account required pam_deny.so
+password required pam_deny.so
+session required pam_deny.so
+"""
+
+[[file]]
+path = "/etc/pam.d/passwd"
+content = """
+auth required pam_unix.so nullok
+account required pam_unix.so
+password required pam_unix.so nullok sha512
+session required pam_unix.so
+"""
+
+[[file]]
+path = "/etc/pam.d/sshd"
+content = """
+auth required pam_unix.so nullok
+account required pam_unix.so
+password required pam_unix.so nullok sha512
+session required pam_unix.so
+session optional {pkg:systemd}/lib/security/pam_systemd.so
+"""
+
+[[file]]
+path = "/etc/pam.d/su"
+content = """
+auth sufficient pam_rootok.so
+auth required pam_unix.so nullok
+account required pam_unix.so
+password required pam_unix.so nullok sha512
+session required pam_unix.so
+"""
+
+[[file]]
+path = "/etc/pam.d/sudo"
+content = """
+auth required pam_unix.so nullok
+account required pam_unix.so
+password required pam_unix.so nullok sha512
+session required pam_unix.so
+"""
+
+[[file]]
+path = "/etc/pam.d/systemd-user"
+content = """
+account required pam_unix.so
+session required pam_unix.so
+session optional {pkg:systemd}/lib/security/pam_systemd.so
+"""

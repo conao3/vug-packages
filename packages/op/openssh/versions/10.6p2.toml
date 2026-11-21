@@ -11,7 +11,7 @@ configure-flags = [
   "--with-privsep-path=/var/empty",
   "--with-privsep-user=sshd",
   "--with-pid-dir=/run",
-  "--without-pam",
+  "--with-pam",
   "--disable-strip",
 ]
 install-flags = [
@@ -31,6 +31,7 @@ build = [
 ]
 run = [
   "libressl",
+  "linux-pam",
   "musl",
   "zlib",
 ]

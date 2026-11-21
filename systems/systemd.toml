@@ -26,6 +26,8 @@ packages = [
 
 [service.dhcpcd]
 
+[service.pam]
+
 [service.serial-autologin]
 user = "conao"
 

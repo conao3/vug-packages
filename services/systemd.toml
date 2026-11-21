@@ -79,6 +79,32 @@ gid = 65533
 name = "nobody"
 gid = 65534
 
+[[file]]
+path = "/etc/systemd/system/sysinit.target.d/timesyncd.conf"
+content = """
+[Unit]
+Wants=systemd-timesyncd.service
+"""
+
+[[group]]
+name = "clock"
+gid = 155
+
+[[group]]
+name = "systemd-journal"
+gid = 156
+
+[[group]]
+name = "systemd-timesync"
+gid = 154
+
+[[user]]
+name = "systemd-timesync"
+uid = 154
+group = "systemd-timesync"
+home = "/"
+shell = "/bin/false"
+
 [[user]]
 name = "nobody"
 uid = 65534

@@ -8,7 +8,7 @@ sha256 = "4a38a1ab3adb1199257edc2a7c4a2bd714665eb605b04368843b06dada2cfcfb"
 kind = "autotools"
 configure-flags = [
   "--disable-nls",
-  "--without-pam",
+  "--with-pam",
   "--without-sendmail",
   "--with-env-editor",
   "--with-passprompt=[sudo] password for %p: ",
@@ -32,6 +32,7 @@ build = [
   "make",
 ]
 run = [
+  "linux-pam",
   "musl",
 ]
 
