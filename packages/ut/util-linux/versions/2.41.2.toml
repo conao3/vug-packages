@@ -1,0 +1,42 @@
+version = "2.41.2"
+
+[source]
+url = "https://cdn.kernel.org/pub/linux/utils/util-linux/v2.41/util-linux-2.41.2.tar.xz"
+sha256 = "6062a1d89b571a61932e6fc0211f36060c4183568b81ee866cf363bce9f6583e"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--disable-nls",
+  "--without-python",
+  "--without-systemd",
+  "--without-udev",
+  "--disable-makeinstall-chown",
+  "--disable-makeinstall-setuid",
+  "--disable-liblastlog2",
+  "--disable-pam-lastlog2",
+  "--without-btrfs",
+  "--without-cap-ng",
+  "--without-readline",
+  "--disable-su",
+  "--disable-login",
+  "--disable-runuser",
+  "--disable-chfn-chsh",
+]
+
+[dependencies]
+build = [
+  "bash",
+  "binutils",
+  "bison",
+  "make",
+  "pkgconf",
+]
+run = [
+  "musl",
+  "ncurses",
+]
+
+[check]
+enabled = false
+skip = []

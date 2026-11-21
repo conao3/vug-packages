@@ -1,0 +1,8 @@
+name = "util-linux"
+license = "GPL-2.0-or-later AND LGPL-2.1-or-later AND BSD-3-Clause"
+
+[upstream]
+homepage = "https://www.kernel.org/pub/linux/utils/util-linux/"
+sources = [
+  "https://cdn.kernel.org/pub/linux/utils/util-linux/",
+]
