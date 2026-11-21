@@ -1,0 +1,8 @@
+name = "jq"
+license = "MIT AND BSD-2-Clause AND CC-BY-3.0 AND ICU"
+
+[upstream]
+homepage = "https://jqlang.org/"
+sources = [
+  "https://github.com/jqlang/jq/releases/download/",
+]
