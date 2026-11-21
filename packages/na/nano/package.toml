@@ -1,0 +1,8 @@
+name = "nano"
+license = "GPL-3.0-or-later"
+
+[upstream]
+homepage = "https://www.nano-editor.org/"
+sources = [
+  "https://www.nano-editor.org/dist/",
+]
