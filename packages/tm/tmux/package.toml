@@ -1,0 +1,8 @@
+name = "tmux"
+license = "ISC"
+
+[upstream]
+homepage = "https://tmux.github.io/"
+sources = [
+  "https://github.com/tmux/tmux/releases/download/",
+]
