@@ -1,0 +1,8 @@
+name = "sudo"
+license = "ISC"
+
+[upstream]
+homepage = "https://www.sudo.ws/"
+sources = [
+  "https://www.sudo.ws/dist/",
+]
