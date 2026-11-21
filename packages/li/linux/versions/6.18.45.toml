@@ -1,0 +1,47 @@
+version = "6.18.45"
+
+[source]
+url = "https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.18.45.tar.xz"
+sha256 = "30fa4a56579ca614ac125a12614f7f6466f87ab1278aef7b951dd74156deab33"
+
+[build]
+kind = "linux"
+defconfig = "tinyconfig"
+config = [
+  "64BIT=y",
+  "TTY=y",
+  "SERIAL_8250=y",
+  "SERIAL_8250_CONSOLE=y",
+  "PRINTK=y",
+  "EARLY_PRINTK=y",
+  "BLK_DEV_INITRD=y",
+  "RD_GZIP=y",
+  "BINFMT_ELF=y",
+  "BINFMT_SCRIPT=y",
+  "DEVTMPFS=y",
+  "DEVTMPFS_MOUNT=y",
+  "PROC_FS=y",
+  "SYSFS=y",
+  "KERNEL_XZ=n",
+  "KERNEL_GZIP=y",
+]
+
+[dependencies]
+build = [
+  "bash",
+  "binutils",
+  "bison",
+  "coreutils",
+  "elfutils",
+  "flex",
+  "m4",
+  "make",
+  "musl",
+  "sed",
+  "zlib",
+]
+run = []
+
+[check]
+enabled = false
+skip = []

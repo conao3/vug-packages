@@ -11,6 +11,7 @@ configure-flags = [
   "--without-debug",
   "--without-ada",
   "--enable-widec",
+  "--enable-overwrite",
   "--enable-pc-files",
   "--with-pkg-config-libdir={out}/lib/pkgconfig",
   "--with-termlib",
