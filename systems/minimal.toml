@@ -1,5 +1,6 @@
 name = "minimal"
 kernel = "linux"
+init = "{pkg:bash}/bin/bash /etc/vug-init"
 packages = [
   "bash",
   "coreutils",
@@ -11,14 +12,12 @@ packages = [
 ]
 
 [[file]]
-path = "/init"
+path = "/etc/vug-init"
 mode = "755"
 content = """
 #!/bin/bash
 export PATH=/bin
-mount -t proc proc /proc
 mount -t sysfs sys /sys
-mount -t devtmpfs dev /dev
 echo "vug system: $(cat /etc/hostname)"
 bash --version | head -n 1
 ls --version | head -n 1
@@ -33,10 +32,13 @@ exec bash
 path = "/etc/hostname"
 content = "vug-minimal\n"
 
-[[file]]
-path = "/etc/passwd"
-content = "root:x:0:0:root:/root:/bin/bash\n"
+[[group]]
+name = "root"
+gid = 0
 
-[[file]]
-path = "/etc/group"
-content = "root:x:0:\n"
+[[user]]
+name = "root"
+uid = 0
+group = "root"
+home = "/root"
+shell = "/bin/bash"

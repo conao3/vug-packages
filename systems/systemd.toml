@@ -1,5 +1,6 @@
 name = "systemd"
 kernel = "linux"
+init = "{pkg:systemd}/lib/systemd/systemd"
 packages = [
   "bash",
   "coreutils",
@@ -15,14 +16,6 @@ packages = [
 ]
 
 [[file]]
-path = "/init"
-mode = "755"
-content = """
-#!/bin/bash
-exec {pkg:systemd}/lib/systemd/systemd
-"""
-
-[[file]]
 path = "/etc/os-release"
 content = """
 NAME="vug"
@@ -32,64 +25,25 @@ PRETTY_NAME="vug minimal"
 
 [[file]]
 path = "/etc/machine-id"
+kind = "seed"
+mode = "444"
 content = ""
 
 [[file]]
 path = "/etc/hostname"
+kind = "seed"
 content = "vug-minimal\n"
-
-[[file]]
-path = "/etc/passwd"
-content = """
-root:x:0:0:root:/root:/bin/bash
-conao:x:1000:1000:conao:/home/conao:/bin/bash
-nobody:x:65534:65534:nobody:/:/bin/false
-"""
-
-[[file]]
-path = "/etc/shadow"
-mode = "600"
-content = """
-root:!:1::::::
-conao::1::::::
-nobody:!:1::::::
-"""
-
-[[file]]
-path = "/etc/group"
-content = """
-root:x:0:
-wheel:x:1:conao
-tty:x:5:
-disk:x:6:
-lp:x:7:
-kmem:x:9:
-utmp:x:22:
-audio:x:25:
-cdrom:x:24:
-dialout:x:27:
-video:x:26:
-input:x:174:
-kvm:x:302:
-render:x:303:
-sgx:x:304:
-tape:x:305:
-users:x:100:
-conao:x:1000:
-nogroup:x:65533:
-nobody:x:65534:
-"""
 
 [[file]]
 path = "/etc/login.defs"
 content = """
 ENCRYPT_METHOD SHA512
-ENV_PATH PATH=/bin
-ENV_SUPATH PATH=/bin
+ENV_PATH PATH=/run/wrappers/bin:/bin
+ENV_SUPATH PATH=/run/wrappers/bin:/bin
 """
 
 [[file]]
-path = "/home/conao/.bash_profile"
+path = "/etc/profile"
 content = """
 echo VUG-LOGIN-OK "$(id -un)" "$(tty)"
 sudo true && echo VUG-SUDO-OK "$(sudo id -u)"
@@ -105,11 +59,113 @@ ExecStart=-/bin/agetty --autologin conao --noclear --keep-baud 115200,57600,3840
 
 [[file]]
 path = "/etc/sudoers"
-mode = "440"
 content = """
 root ALL=(ALL:ALL) ALL
 %wheel ALL=(ALL:ALL) NOPASSWD: ALL
 """
+
+[[group]]
+name = "root"
+gid = 0
+
+[[group]]
+name = "wheel"
+gid = 1
+
+[[group]]
+name = "tty"
+gid = 5
+
+[[group]]
+name = "disk"
+gid = 6
+
+[[group]]
+name = "lp"
+gid = 7
+
+[[group]]
+name = "kmem"
+gid = 9
+
+[[group]]
+name = "utmp"
+gid = 22
+
+[[group]]
+name = "cdrom"
+gid = 24
+
+[[group]]
+name = "audio"
+gid = 25
+
+[[group]]
+name = "video"
+gid = 26
+
+[[group]]
+name = "dialout"
+gid = 27
+
+[[group]]
+name = "users"
+gid = 100
+
+[[group]]
+name = "input"
+gid = 174
+
+[[group]]
+name = "kvm"
+gid = 302
+
+[[group]]
+name = "render"
+gid = 303
+
+[[group]]
+name = "sgx"
+gid = 304
+
+[[group]]
+name = "tape"
+gid = 305
+
+[[group]]
+name = "conao"
+gid = 1000
+
+[[group]]
+name = "nogroup"
+gid = 65533
+
+[[group]]
+name = "nobody"
+gid = 65534
+
+[[user]]
+name = "root"
+uid = 0
+group = "root"
+home = "/root"
+shell = "/bin/bash"
+
+[[user]]
+name = "conao"
+uid = 1000
+group = "conao"
+groups = ["wheel"]
+home = "/home/conao"
+shell = "/bin/bash"
+password = ""
+
+[[user]]
+name = "nobody"
+uid = 65534
+group = "nobody"
+home = "/"
+shell = "/bin/false"
 
 [[setuid]]
 package = "sudo"
