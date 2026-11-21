@@ -1,0 +1,22 @@
+name = "sudo"
+packages = [
+  "sudo",
+]
+
+[parameter.wheel]
+default = "ALL"
+
+[[file]]
+path = "/etc/sudoers"
+content = """
+root ALL=(ALL:ALL) ALL
+%wheel ALL=(ALL:ALL) {param:wheel}
+"""
+
+[[group]]
+name = "wheel"
+gid = 1
+
+[[setuid]]
+package = "sudo"
+program = "bin/sudo"

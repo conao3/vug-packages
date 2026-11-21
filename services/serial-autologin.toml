@@ -1,0 +1,17 @@
+name = "serial-autologin"
+packages = [
+  "util-linux",
+]
+
+[parameter.user]
+
+[parameter.tty]
+default = "ttyS0"
+
+[[file]]
+path = "/etc/systemd/system/serial-getty@{param:tty}.service.d/autologin.conf"
+content = """
+[Service]
+ExecStart=
+ExecStart=-/bin/agetty --autologin {param:user} --noclear --keep-baud 115200,57600,38400,9600 - vt220
+"""

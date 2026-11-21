@@ -5,17 +5,22 @@ sh = "{pkg:bash}/bin/bash"
 packages = [
   "bash",
   "coreutils",
-  "dhcpcd",
   "findutils",
   "grep",
-  "kmod",
   "procps",
   "sed",
   "shadow",
-  "sudo",
-  "util-linux",
-  "systemd",
 ]
+
+[service.dhcpcd]
+
+[service.serial-autologin]
+user = "conao"
+
+[service.sudo]
+wheel = "NOPASSWD: ALL"
+
+[service.systemd]
 
 [[file]]
 path = "/etc/os-release"
@@ -24,12 +29,6 @@ NAME="vug"
 ID=vug
 PRETTY_NAME="vug minimal"
 """
-
-[[file]]
-path = "/etc/machine-id"
-kind = "seed"
-mode = "444"
-content = ""
 
 [[file]]
 path = "/etc/hostname"
@@ -51,130 +50,13 @@ echo VUG-LOGIN-OK "$(id -un)" "$(tty)"
 sudo true && echo VUG-SUDO-OK "$(sudo id -u)"
 """
 
-[[file]]
-path = "/etc/systemd/system/serial-getty@ttyS0.service.d/autologin.conf"
-content = """
-[Service]
-ExecStart=
-ExecStart=-/bin/agetty --autologin conao --noclear --keep-baud 115200,57600,38400,9600 - vt220
-"""
-
-[[file]]
-path = "/etc/dhcpcd.conf"
-content = """
-duid
-persistent
-option domain_name_servers, domain_name, domain_search
-option classless_static_routes
-option interface_mtu
-require dhcp_server_identifier
-slaac private
-"""
-
-[[file]]
-path = "/etc/systemd/system/dhcpcd.service"
-content = """
-[Unit]
-Description=DHCP client
-
-[Service]
-ExecStart={pkg:dhcpcd}/sbin/dhcpcd --nobackground --quiet
-Restart=on-failure
-"""
-
-[[file]]
-path = "/etc/systemd/system/multi-user.target.d/network.conf"
-content = """
-[Unit]
-Wants=dhcpcd.service
-"""
-
-[[file]]
-path = "/etc/sudoers"
-content = """
-root ALL=(ALL:ALL) ALL
-%wheel ALL=(ALL:ALL) NOPASSWD: ALL
-"""
-
 [[group]]
 name = "root"
 gid = 0
 
 [[group]]
-name = "wheel"
-gid = 1
-
-[[group]]
-name = "tty"
-gid = 5
-
-[[group]]
-name = "disk"
-gid = 6
-
-[[group]]
-name = "lp"
-gid = 7
-
-[[group]]
-name = "kmem"
-gid = 9
-
-[[group]]
-name = "utmp"
-gid = 22
-
-[[group]]
-name = "cdrom"
-gid = 24
-
-[[group]]
-name = "audio"
-gid = 25
-
-[[group]]
-name = "video"
-gid = 26
-
-[[group]]
-name = "dialout"
-gid = 27
-
-[[group]]
-name = "users"
-gid = 100
-
-[[group]]
-name = "input"
-gid = 174
-
-[[group]]
-name = "kvm"
-gid = 302
-
-[[group]]
-name = "render"
-gid = 303
-
-[[group]]
-name = "sgx"
-gid = 304
-
-[[group]]
-name = "tape"
-gid = 305
-
-[[group]]
 name = "conao"
 gid = 1000
-
-[[group]]
-name = "nogroup"
-gid = 65533
-
-[[group]]
-name = "nobody"
-gid = 65534
 
 [[user]]
 name = "root"
@@ -191,14 +73,3 @@ groups = ["wheel"]
 home = "/home/conao"
 shell = "/bin/bash"
 password = ""
-
-[[user]]
-name = "nobody"
-uid = 65534
-group = "nobody"
-home = "/"
-shell = "/bin/false"
-
-[[setuid]]
-package = "sudo"
-program = "bin/sudo"

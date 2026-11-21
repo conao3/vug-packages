@@ -1,0 +1,87 @@
+name = "systemd"
+packages = [
+  "kmod",
+  "util-linux",
+  "systemd",
+]
+
+[[file]]
+path = "/etc/machine-id"
+kind = "seed"
+mode = "444"
+content = ""
+
+[[group]]
+name = "tty"
+gid = 5
+
+[[group]]
+name = "disk"
+gid = 6
+
+[[group]]
+name = "lp"
+gid = 7
+
+[[group]]
+name = "kmem"
+gid = 9
+
+[[group]]
+name = "utmp"
+gid = 22
+
+[[group]]
+name = "cdrom"
+gid = 24
+
+[[group]]
+name = "audio"
+gid = 25
+
+[[group]]
+name = "video"
+gid = 26
+
+[[group]]
+name = "dialout"
+gid = 27
+
+[[group]]
+name = "users"
+gid = 100
+
+[[group]]
+name = "input"
+gid = 174
+
+[[group]]
+name = "kvm"
+gid = 302
+
+[[group]]
+name = "render"
+gid = 303
+
+[[group]]
+name = "sgx"
+gid = 304
+
+[[group]]
+name = "tape"
+gid = 305
+
+[[group]]
+name = "nogroup"
+gid = 65533
+
+[[group]]
+name = "nobody"
+gid = 65534
+
+[[user]]
+name = "nobody"
+uid = 65534
+group = "nobody"
+home = "/"
+shell = "/bin/false"

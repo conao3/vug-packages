@@ -1,0 +1,34 @@
+name = "dhcpcd"
+packages = [
+  "dhcpcd",
+]
+
+[[file]]
+path = "/etc/dhcpcd.conf"
+content = """
+duid
+persistent
+option domain_name_servers, domain_name, domain_search
+option classless_static_routes
+option interface_mtu
+require dhcp_server_identifier
+slaac private
+"""
+
+[[file]]
+path = "/etc/systemd/system/dhcpcd.service"
+content = """
+[Unit]
+Description=DHCP client
+
+[Service]
+ExecStart={pkg:dhcpcd}/sbin/dhcpcd --nobackground --quiet
+Restart=on-failure
+"""
+
+[[file]]
+path = "/etc/systemd/system/multi-user.target.d/dhcpcd.conf"
+content = """
+[Unit]
+Wants=dhcpcd.service
+"""
