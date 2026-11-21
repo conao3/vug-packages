@@ -1,0 +1,38 @@
+version = "6.18.45"
+
+[source]
+url = "https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.18.45.tar.xz"
+sha256 = "30fa4a56579ca614ac125a12614f7f6466f87ab1278aef7b951dd74156deab33"
+
+[build]
+kind = "make"
+make-flags = [
+  "ARCH=x86_64",
+  "LLVM_IAS=1",
+  "CC=cc",
+  "HOSTCC=cc",
+  "LD=/bin/ld",
+  "HOSTLD=/bin/ld",
+  "INSTALL_HDR_PATH={out}",
+]
+build-targets = [
+  "headers",
+]
+install-targets = [
+  "headers_install",
+]
+
+[dependencies]
+build = [
+  "bash",
+  "binutils",
+  "coreutils",
+  "make",
+  "rsync",
+  "sed",
+]
+run = []
+
+[check]
+enabled = false
+skip = []
