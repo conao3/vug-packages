@@ -1,0 +1,28 @@
+version = "1.47.3"
+
+[source]
+url = "https://cdn.kernel.org/pub/linux/kernel/people/tytso/e2fsprogs/v1.47.3/e2fsprogs-1.47.3.tar.xz"
+sha256 = "857e6ef800feaa2bb4578fbc810214be5d3c88b072ea53c5384733a965737329"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--disable-nls",
+  "--enable-elf-shlibs",
+  "--disable-fuse2fs",
+  "--disable-uuidd",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "pkgconf",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

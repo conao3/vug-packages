@@ -1,0 +1,8 @@
+name = "e2fsprogs"
+license = "GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT"
+
+[upstream]
+homepage = "https://e2fsprogs.sourceforge.net/"
+sources = [
+  "https://cdn.kernel.org/pub/linux/kernel/people/tytso/e2fsprogs/",
+]
