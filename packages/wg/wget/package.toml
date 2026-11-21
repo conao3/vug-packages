@@ -1,0 +1,8 @@
+name = "wget"
+license = "GPL-3.0-or-later"
+
+[upstream]
+homepage = "https://www.gnu.org/software/wget/"
+sources = [
+  "https://ftp.gnu.org/gnu/wget/",
+]
