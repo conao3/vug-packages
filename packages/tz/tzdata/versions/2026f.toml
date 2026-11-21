@@ -1,0 +1,32 @@
+version = "2026f"
+
+[source]
+url = "https://github.com/eggert/tz/archive/refs/tags/2026f.tar.gz"
+sha256 = "2fe4b4f27f75beea17970dfdd242ffb7f099fad9447950a39d0fe8eae522d8e2"
+
+[build]
+kind = "make"
+make-flags = [
+  "TOPDIR={out}",
+  "USRDIR=",
+  "ZFLAGS=-b fat",
+  "CC=cc",
+  "VERSION=2026f",
+]
+
+[dependencies]
+build = [
+  "bash",
+  "binutils",
+  "coreutils",
+  "gawk",
+  "make",
+  "sed",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

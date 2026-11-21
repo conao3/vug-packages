@@ -1,0 +1,40 @@
+version = "10.6p2"
+
+[source]
+url = "https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-10.6p2.tar.gz"
+sha256 = "9ae44872090cf2f06b3cf9ff147e7f16f309671340763ed2f99248398ae29d5b"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--sysconfdir=/etc/ssh",
+  "--with-privsep-path=/var/empty",
+  "--with-privsep-user=sshd",
+  "--with-pid-dir=/run",
+  "--without-pam",
+  "--disable-strip",
+]
+install-flags = [
+  "sysconfdir={out}/etc/ssh",
+  "PRIVSEP_PATH={out}/var/empty",
+]
+install-targets = [
+  "install-nokeys",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "linux-headers",
+  "make",
+  "pkgconf",
+]
+run = [
+  "libressl",
+  "musl",
+  "zlib",
+]
+
+[check]
+enabled = false
+skip = []

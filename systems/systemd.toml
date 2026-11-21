@@ -18,6 +18,8 @@ packages = [
 [service.serial-autologin]
 user = "conao"
 
+[service.sshd]
+
 [service.sudo]
 wheel = "NOPASSWD: ALL"
 

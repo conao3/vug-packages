@@ -1,0 +1,8 @@
+name = "openssh"
+license = "BSD-2-Clause AND BSD-3-Clause AND ISC AND MIT"
+
+[upstream]
+homepage = "https://www.openssh.com/portable.html"
+sources = [
+  "https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/",
+]

@@ -18,7 +18,7 @@ configure-flags = [
 
 [dependencies]
 build = [
-  "make",
+  "make-bootstrap",
 ]
 run = []
 

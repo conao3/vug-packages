@@ -1,0 +1,8 @@
+name = "tzdata"
+license = "BSD-3-Clause AND LicenseRef-Public-Domain"
+
+[upstream]
+homepage = "https://www.iana.org/time-zones"
+sources = [
+  "https://github.com/eggert/tz/archive/refs/tags/",
+]

@@ -1,0 +1,53 @@
+name = "sshd"
+packages = [
+  "openssh",
+]
+
+[parameter.password-authentication]
+default = "no"
+
+[[file]]
+path = "/etc/ssh/sshd_config"
+content = """
+PermitRootLogin no
+PasswordAuthentication {param:password-authentication}
+KbdInteractiveAuthentication no
+Subsystem sftp {pkg:openssh}/libexec/sftp-server
+"""
+
+[[file]]
+path = "/etc/tmpfiles.d/sshd.conf"
+content = """
+d /var/empty 0755 root root -
+"""
+
+[[file]]
+path = "/etc/systemd/system/sshd.service"
+content = """
+[Unit]
+Description=OpenSSH server
+After=network.target
+
+[Service]
+ExecStartPre={pkg:openssh}/bin/ssh-keygen -A
+ExecStart={pkg:openssh}/sbin/sshd -D -e
+Restart=on-failure
+"""
+
+[[file]]
+path = "/etc/systemd/system/multi-user.target.d/sshd.conf"
+content = """
+[Unit]
+Wants=sshd.service
+"""
+
+[[group]]
+name = "sshd"
+gid = 74
+
+[[user]]
+name = "sshd"
+uid = 74
+group = "sshd"
+home = "/var/empty"
+shell = "/bin/false"
