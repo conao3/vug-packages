@@ -1,9 +1,11 @@
 name = "systemd"
 kernel = "linux"
 init = "{pkg:systemd}/lib/systemd/systemd"
+sh = "{pkg:bash}/bin/bash"
 packages = [
   "bash",
   "coreutils",
+  "dhcpcd",
   "findutils",
   "grep",
   "kmod",
@@ -55,6 +57,36 @@ content = """
 [Service]
 ExecStart=
 ExecStart=-/bin/agetty --autologin conao --noclear --keep-baud 115200,57600,38400,9600 - vt220
+"""
+
+[[file]]
+path = "/etc/dhcpcd.conf"
+content = """
+duid
+persistent
+option domain_name_servers, domain_name, domain_search
+option classless_static_routes
+option interface_mtu
+require dhcp_server_identifier
+slaac private
+"""
+
+[[file]]
+path = "/etc/systemd/system/dhcpcd.service"
+content = """
+[Unit]
+Description=DHCP client
+
+[Service]
+ExecStart={pkg:dhcpcd}/sbin/dhcpcd --nobackground --quiet
+Restart=on-failure
+"""
+
+[[file]]
+path = "/etc/systemd/system/multi-user.target.d/network.conf"
+content = """
+[Unit]
+Wants=dhcpcd.service
 """
 
 [[file]]

@@ -1,6 +1,7 @@
 name = "minimal"
 kernel = "linux"
 init = "{pkg:bash}/bin/bash /etc/vug-init"
+sh = "{pkg:bash}/bin/bash"
 packages = [
   "bash",
   "coreutils",
