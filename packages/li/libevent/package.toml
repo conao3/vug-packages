@@ -1,0 +1,8 @@
+name = "libevent"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://libevent.org/"
+sources = [
+  "https://github.com/libevent/libevent/releases/download/",
+]
