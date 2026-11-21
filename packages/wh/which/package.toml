@@ -1,0 +1,8 @@
+name = "which"
+license = "GPL-3.0-or-later"
+
+[upstream]
+homepage = "https://savannah.gnu.org/projects/which/"
+sources = [
+  "https://ftp.gnu.org/gnu/which/",
+]
