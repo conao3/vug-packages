@@ -1,0 +1,8 @@
+name = "lz4"
+license = "BSD-2-Clause AND GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://lz4.org/"
+sources = [
+  "https://github.com/lz4/lz4/releases/download/",
+]
