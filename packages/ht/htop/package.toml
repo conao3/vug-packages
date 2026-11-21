@@ -1,0 +1,8 @@
+name = "htop"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://htop.dev/"
+sources = [
+  "https://github.com/htop-dev/htop/releases/download/",
+]
