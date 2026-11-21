@@ -7,6 +7,9 @@ sha256 = "0ba2a1a4b16afe7bceb2c07e9ce99a8c2c3508e5dec290dbb643384bd6beb7e2"
 [build]
 kind = "meson"
 setup-flags = [
+  "--sysconfdir=/etc",
+  "--localstatedir=/var",
+  "-Druntime_dir=/run",
   "-Dapparmor=disabled",
   "-Ddoxygen_docs=disabled",
   "-Dducktype_docs=disabled",
@@ -16,7 +19,9 @@ setup-flags = [
   "-Dmodular_tests=disabled",
   "-Dqt_help=disabled",
   "-Dselinux=disabled",
-  "-Dsystemd=disabled",
+  "-Dsystemd=enabled",
+  "-Dsystemd_system_unitdir={out}/lib/systemd/system",
+  "-Dsystemd_user_unitdir={out}/lib/systemd/user",
   "-Dx11_autolaunch=disabled",
   "-Dxml_docs=disabled",
 ]
@@ -33,6 +38,7 @@ build = [
 run = [
   "expat",
   "musl",
+  "systemd",
 ]
 
 [check]

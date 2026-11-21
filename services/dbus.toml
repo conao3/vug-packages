@@ -1,0 +1,32 @@
+name = "dbus"
+packages = [
+  "dbus",
+]
+
+[[file]]
+path = "/etc/dbus-1/system-local.conf"
+content = """
+<!DOCTYPE busconfig PUBLIC "-//freedesktop//DTD D-Bus Bus Configuration 1.0//EN"
+ "http://www.freedesktop.org/standards/dbus/1.0/busconfig.dtd">
+<busconfig>
+  <includedir>/usr/share/dbus-1/system.d</includedir>
+</busconfig>
+"""
+
+[[file]]
+path = "/etc/systemd/system/sockets.target.d/dbus.conf"
+content = """
+[Unit]
+Wants=dbus.socket
+"""
+
+[[group]]
+name = "messagebus"
+gid = 81
+
+[[user]]
+name = "messagebus"
+uid = 81
+group = "messagebus"
+home = "/"
+shell = "/bin/false"

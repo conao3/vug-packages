@@ -22,6 +22,8 @@ packages = [
   "vug",
 ]
 
+[service.dbus]
+
 [service.dhcpcd]
 
 [service.serial-autologin]
