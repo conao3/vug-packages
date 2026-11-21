@@ -1,0 +1,8 @@
+name = "sbc"
+license = "GPL-2.0-or-later AND LGPL-2.1-or-later"
+
+[upstream]
+homepage = "http://www.bluez.org/"
+sources = [
+  "https://www.kernel.org/pub/linux/bluetooth/",
+]
