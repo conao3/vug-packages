@@ -1,4 +1,7 @@
 version = "5.4.1"
+patches = [
+  "5.4.1-node-struct-without-mpfr.patch",
+]
 
 [source]
 url = "https://ftp.gnu.org/gnu/gawk/gawk-5.4.1.tar.xz"
