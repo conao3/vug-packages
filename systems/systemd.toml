@@ -92,6 +92,7 @@ ENV_SUPATH PATH=/bin
 path = "/home/conao/.bash_profile"
 content = """
 echo VUG-LOGIN-OK "$(id -un)" "$(tty)"
+sudo true && echo VUG-SUDO-OK "$(sudo id -u)"
 """
 
 [[file]]
@@ -101,3 +102,15 @@ content = """
 ExecStart=
 ExecStart=-/bin/agetty --autologin conao --noclear --keep-baud 115200,57600,38400,9600 - vt220
 """
+
+[[file]]
+path = "/etc/sudoers"
+mode = "440"
+content = """
+root ALL=(ALL:ALL) ALL
+%wheel ALL=(ALL:ALL) NOPASSWD: ALL
+"""
+
+[[setuid]]
+package = "sudo"
+program = "bin/sudo"
