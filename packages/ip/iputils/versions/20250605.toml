@@ -1,0 +1,33 @@
+version = "20250605"
+
+[source]
+url = "https://github.com/iputils/iputils/releases/download/20250605/iputils-20250605.tar.xz"
+sha256 = "6f213700dbf96b5cc4499ca70cb15ecd69c09f405b06785bb4a1a10b572b6276"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-DUSE_IDN=false",
+  "-DUSE_GETTEXT=false",
+  "-DBUILD_MANS=false",
+  "-DBUILD_HTML_MANS=false",
+  "-DSKIP_TESTS=true",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "linux-headers",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "libcap",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
