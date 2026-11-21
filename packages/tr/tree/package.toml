@@ -1,0 +1,8 @@
+name = "tree"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://oldmanprogrammer.net/source.php?dir=projects/tree"
+sources = [
+  "https://gitlab.com/OldManProgrammer/unix-tree/-/archive/",
+]
