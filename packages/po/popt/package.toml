@@ -1,0 +1,8 @@
+name = "popt"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/rpm-software-management/popt"
+sources = [
+  "https://ftp.osuosl.org/pub/rpm/popt/releases/popt-1.x/",
+]
