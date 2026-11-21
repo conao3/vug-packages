@@ -1,0 +1,8 @@
+name = "ethtool"
+license = "GPL-2.0-only"
+
+[upstream]
+homepage = "https://www.kernel.org/pub/software/network/ethtool/"
+sources = [
+  "https://cdn.kernel.org/pub/software/network/ethtool/",
+]
