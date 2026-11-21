@@ -1,0 +1,35 @@
+version = "3.13.9"
+
+[source]
+url = "https://www.python.org/ftp/python/3.13.9/Python-3.13.9.tar.xz"
+sha256 = "ed5ef34cda36cfa2f3a340f07cac7e7814f91c7f3c411f6d3562323a866c5c66"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--enable-shared",
+  "--without-ensurepip",
+  "--with-system-expat",
+  "--disable-test-modules",
+]
+
+[dependencies]
+build = [
+  "bash",
+  "binutils",
+  "make",
+  "pkgconf",
+]
+run = [
+  "bzip2",
+  "expat",
+  "libffi",
+  "musl",
+  "ncurses",
+  "xz",
+  "zlib",
+]
+
+[check]
+enabled = false
+skip = []
