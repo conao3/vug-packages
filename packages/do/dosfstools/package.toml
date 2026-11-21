@@ -1,0 +1,8 @@
+name = "dosfstools"
+license = "GPL-3.0-or-later"
+
+[upstream]
+homepage = "https://github.com/dosfstools/dosfstools"
+sources = [
+  "https://github.com/dosfstools/dosfstools/releases/download/",
+]
