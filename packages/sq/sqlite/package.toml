@@ -1,0 +1,8 @@
+name = "sqlite"
+license = "blessing"
+
+[upstream]
+homepage = "https://www.sqlite.org/"
+sources = [
+  "https://www.sqlite.org/2026/",
+]
