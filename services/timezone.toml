@@ -1,0 +1,11 @@
+name = "timezone"
+packages = [
+  "tzdata",
+]
+
+[parameter.zone]
+default = "UTC"
+
+[[file]]
+path = "/etc/localtime"
+target = "{pkg:tzdata}/share/zoneinfo/{param:zone}"

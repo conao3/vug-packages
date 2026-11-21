@@ -5,11 +5,20 @@ sh = "{pkg:bash}/bin/bash"
 packages = [
   "bash",
   "coreutils",
+  "curl",
+  "file",
   "findutils",
+  "git",
   "grep",
+  "htop",
+  "iproute2",
+  "iputils",
+  "less",
   "procps",
   "sed",
   "shadow",
+  "tmux",
+  "vim",
   "vug",
 ]
 
@@ -24,6 +33,9 @@ user = "conao"
 wheel = "NOPASSWD: ALL"
 
 [service.systemd]
+
+[service.timezone]
+zone = "America/Toronto"
 
 [[file]]
 path = "/etc/os-release"
