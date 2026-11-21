@@ -1,0 +1,25 @@
+version = "4.9"
+
+[source]
+url = "https://ftp.gnu.org/gnu/sed/sed-4.9.tar.xz"
+sha256 = "6e226b732e1cd739464ad6862bd1a1aba42d7982922da7a53519631d24975181"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--disable-nls",
+  "--without-selinux",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

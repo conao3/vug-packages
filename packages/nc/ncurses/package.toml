@@ -1,0 +1,8 @@
+name = "ncurses"
+license = "MIT"
+
+[upstream]
+homepage = "https://invisible-island.net/ncurses/"
+sources = [
+  "https://ftp.gnu.org/gnu/ncurses/",
+]
