@@ -1,0 +1,8 @@
+name = "iproute2"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://wiki.linuxfoundation.org/networking/iproute2"
+sources = [
+  "https://cdn.kernel.org/pub/linux/utils/net/iproute2/",
+]
