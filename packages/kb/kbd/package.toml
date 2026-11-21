@@ -1,0 +1,8 @@
+name = "kbd"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://kbd-project.org/"
+sources = [
+  "https://cdn.kernel.org/pub/linux/utils/kbd/",
+]
