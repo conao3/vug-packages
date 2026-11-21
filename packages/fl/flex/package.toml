@@ -1,0 +1,8 @@
+name = "flex"
+license = "BSD-2-Clause"
+
+[upstream]
+homepage = "https://github.com/westes/flex"
+sources = [
+  "https://github.com/westes/flex/releases/download/",
+]
