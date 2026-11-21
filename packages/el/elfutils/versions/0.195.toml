@@ -1,0 +1,40 @@
+version = "0.195"
+
+[source]
+url = "https://sourceware.org/elfutils/ftp/0.195/elfutils-0.195.tar.bz2"
+sha256 = "37629fdf7f1f3dc2818e138fca2b8094177d6c2d0f701d3bb650a561218dc026"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--disable-nls",
+  "--disable-debuginfod",
+  "--disable-libdebuginfod",
+  "--disable-demangler",
+  "--without-bzlib",
+  "--without-lzma",
+  "--without-zstd",
+  "ac_cv_search_argp_parse=none required",
+  "ac_cv_search_fts_close=none required",
+  "ac_cv_search__obstack_free=none required",
+]
+make-flags = [
+  "SUBDIRS=lib libelf",
+  "am_libeu_a_OBJECTS=xasprintf.o xstrdup.o xstrndup.o xmalloc.o next_prime.o crc32.o crc32_file.o eu-search.o error.o",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "m4",
+  "make",
+  "pkgconf",
+]
+run = [
+  "musl",
+  "zlib",
+]
+
+[check]
+enabled = false
+skip = []

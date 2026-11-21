@@ -1,0 +1,8 @@
+name = "xz"
+license = "0BSD AND GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://tukaani.org/xz/"
+sources = [
+  "https://github.com/tukaani-project/xz/releases/download/",
+]
