@@ -1,0 +1,8 @@
+name = "dhcpcd"
+license = "BSD-2-Clause"
+
+[upstream]
+homepage = "https://roy.marples.name/projects/dhcpcd"
+sources = [
+  "https://github.com/NetworkConfiguration/dhcpcd/releases/download/",
+]

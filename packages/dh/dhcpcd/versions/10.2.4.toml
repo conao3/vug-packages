@@ -1,0 +1,34 @@
+version = "10.2.4"
+
+[source]
+url = "https://github.com/NetworkConfiguration/dhcpcd/releases/download/v10.2.4/dhcpcd-10.2.4.tar.xz"
+sha256 = "6721e606609226dbf4d864a78802a9e96beec0ee034a1bd84138b3e037bba7d9"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--sysconfdir=/etc",
+  "--dbdir=/var/lib/dhcpcd",
+  "--rundir=/run/dhcpcd",
+  "--without-udev",
+  "--disable-privsep",
+]
+install-flags = [
+  "DBDIR={out}/var/lib/dhcpcd",
+  "SYSCONFDIR={out}/etc",
+]
+
+[dependencies]
+build = [
+  "bash",
+  "binutils",
+  "linux-headers",
+  "make",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
