@@ -1,0 +1,8 @@
+name = "systemd"
+license = "LGPL-2.1-or-later AND GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://systemd.io/"
+sources = [
+  "https://github.com/systemd/systemd/archive/refs/tags/",
+]
