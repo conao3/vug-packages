@@ -1,0 +1,8 @@
+name = "json-c"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/json-c/json-c"
+sources = [
+  "https://s3.amazonaws.com/json-c_releases/releases/",
+]
