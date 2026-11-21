@@ -1,0 +1,24 @@
+version = "4.0.50"
+
+[source]
+url = "https://ftp.gnu.org/gnu/mtools/mtools-4.0.50.tar.gz"
+sha256 = "7f078accae7551c6b3a316ccd8296357329f7bbbc09583dcd1a2bbaeb081a7a4"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--without-x",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
