@@ -1,0 +1,42 @@
+name = "minimal"
+kernel = "linux"
+packages = [
+  "bash",
+  "coreutils",
+  "findutils",
+  "grep",
+  "procps",
+  "sed",
+  "util-linux",
+]
+
+[[file]]
+path = "/init"
+mode = "755"
+content = """
+#!/bin/bash
+export PATH=/bin
+mount -t proc proc /proc
+mount -t sysfs sys /sys
+mount -t devtmpfs dev /dev
+echo "vug system: $(cat /etc/hostname)"
+bash --version | head -n 1
+ls --version | head -n 1
+mount --version
+uname -srm
+echo "processes: $(ps -e | wc -l)"
+echo VUG-SYSTEM-OK
+exec bash
+"""
+
+[[file]]
+path = "/etc/hostname"
+content = "vug-minimal\n"
+
+[[file]]
+path = "/etc/passwd"
+content = "root:x:0:0:root:/root:/bin/bash\n"
+
+[[file]]
+path = "/etc/group"
+content = "root:x:0:\n"
