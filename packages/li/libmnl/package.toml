@@ -1,0 +1,8 @@
+name = "libmnl"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://www.netfilter.org/projects/libmnl/"
+sources = [
+  "https://www.netfilter.org/projects/libmnl/files/",
+]
