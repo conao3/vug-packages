@@ -1,0 +1,29 @@
+version = "1.25.0"
+
+[source]
+url = "https://ftp.gnu.org/gnu/wget/wget-1.25.0.tar.gz"
+sha256 = "766e48423e79359ea31e41db9e5c289675947a7fcf2efdcedb726ac9d0da3784"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--with-ssl=openssl",
+  "--disable-nls",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "pkgconf",
+]
+run = [
+  "libressl",
+  "musl",
+  "pcre2",
+  "zlib",
+]
+
+[check]
+enabled = false
+skip = []
