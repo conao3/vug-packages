@@ -1,0 +1,22 @@
+version = "685"
+
+[source]
+url = "https://www.greenwoodsoftware.com/less/less-685.tar.gz"
+sha256 = "2701041e767e697ee420ce0825641cedc8f20b51576abe99d92c1666d332e9dc"
+
+[build]
+kind = "autotools"
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+]
+run = [
+  "musl",
+  "ncurses",
+]
+
+[check]
+enabled = false
+skip = []

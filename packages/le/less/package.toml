@@ -1,0 +1,8 @@
+name = "less"
+license = "GPL-3.0-or-later OR BSD-2-Clause"
+
+[upstream]
+homepage = "https://www.greenwoodsoftware.com/less/"
+sources = [
+  "https://www.greenwoodsoftware.com/less/",
+]
