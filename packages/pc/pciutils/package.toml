@@ -1,0 +1,8 @@
+name = "pciutils"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://mj.ucw.cz/sw/pciutils/"
+sources = [
+  "https://cdn.kernel.org/pub/software/utils/pciutils/",
+]
