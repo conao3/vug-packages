@@ -1,0 +1,20 @@
+version = "12.11.1"
+
+[source]
+url = "https://github.com/limine-bootloader/limine/releases/download/v12.11.1/limine-binary.tar.xz"
+sha256 = "493312624a0a7a3afadcf8e9993f5418a87258d6b54f9d7ebb914037fe089220"
+
+[build]
+kind = "prebuilt"
+install = [
+  { from = "BOOTX64.EFI", to = "share/limine/BOOTX64.EFI" },
+  { from = "LICENSE", to = "share/limine/LICENSE" },
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []

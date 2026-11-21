@@ -1,0 +1,24 @@
+name = "esp"
+packages = [
+  "dosfstools",
+]
+
+[[file]]
+path = "/etc/systemd/system/boot.mount"
+content = """
+[Unit]
+Description=EFI system partition
+
+[Mount]
+What=/dev/disk/by-partlabel/vug-esp
+Where=/boot
+Type=vfat
+Options=umask=0077
+"""
+
+[[file]]
+path = "/etc/systemd/system/local-fs.target.d/esp.conf"
+content = """
+[Unit]
+Wants=boot.mount
+"""

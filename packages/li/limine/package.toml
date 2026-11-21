@@ -1,0 +1,8 @@
+name = "limine"
+license = "BSD-2-Clause"
+
+[upstream]
+homepage = "https://limine-bootloader.org/"
+sources = [
+  "https://github.com/limine-bootloader/limine/releases/download/",
+]
