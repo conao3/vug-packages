@@ -1,0 +1,25 @@
+version = "4.4.1"
+
+[source]
+url = "https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-4.4.1.tar.gz"
+sha256 = "290cdf1b53c086255dc302f118b98602a444e9ae6d11e9bfdd8c9b1b60aa3a22"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--enable-shared",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "linux-headers",
+  "make",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []

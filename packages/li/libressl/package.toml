@@ -1,0 +1,8 @@
+name = "libressl"
+license = "ISC AND OpenSSL AND SSLeay"
+
+[upstream]
+homepage = "https://www.libressl.org/"
+sources = [
+  "https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/",
+]
