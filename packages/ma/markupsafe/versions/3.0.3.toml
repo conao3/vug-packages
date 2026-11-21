@@ -1,0 +1,21 @@
+version = "3.0.3"
+
+[source]
+url = "https://files.pythonhosted.org/packages/source/m/markupsafe/markupsafe-3.0.3.tar.gz"
+sha256 = "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
+
+[build]
+kind = "prebuilt"
+install = [
+  { from = "src/markupsafe", to = "lib/python3.13/site-packages/markupsafe" },
+]
+
+[dependencies]
+build = []
+run = [
+  "python",
+]
+
+[check]
+enabled = false
+skip = []
