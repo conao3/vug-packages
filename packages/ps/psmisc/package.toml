@@ -1,0 +1,8 @@
+name = "psmisc"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://gitlab.com/psmisc/psmisc"
+sources = [
+  "https://downloads.sourceforge.net/project/psmisc/psmisc/",
+]
