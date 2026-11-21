@@ -1,0 +1,8 @@
+name = "findutils"
+license = "GPL-3.0-or-later"
+
+[upstream]
+homepage = "https://www.gnu.org/software/findutils/"
+sources = [
+  "https://ftp.gnu.org/gnu/findutils/",
+]
