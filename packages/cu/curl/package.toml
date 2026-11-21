@@ -1,0 +1,8 @@
+name = "curl"
+license = "curl"
+
+[upstream]
+homepage = "https://curl.se/"
+sources = [
+  "https://github.com/curl/curl/releases/download/",
+]
