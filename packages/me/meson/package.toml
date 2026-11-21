@@ -1,0 +1,8 @@
+name = "meson"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://mesonbuild.com/"
+sources = [
+  "https://github.com/mesonbuild/meson/releases/download/",
+]

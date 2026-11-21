@@ -1,0 +1,8 @@
+name = "samurai"
+license = "ISC AND Apache-2.0"
+
+[upstream]
+homepage = "https://github.com/michaelforney/samurai"
+sources = [
+  "https://github.com/michaelforney/samurai/releases/download/",
+]

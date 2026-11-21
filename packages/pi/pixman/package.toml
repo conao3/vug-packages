@@ -1,0 +1,8 @@
+name = "pixman"
+license = "MIT"
+
+[upstream]
+homepage = "https://pixman.org/"
+sources = [
+  "https://www.cairographics.org/releases/",
+]
