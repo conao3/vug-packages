@@ -87,6 +87,9 @@ config = [
   "CRYPTO_HMAC=y",
   "CRYPTO_USER_API_HASH=y",
   "DMIID=y",
+  "RTC_CLASS=y",
+  "RTC_HCTOSYS=y",
+  "RTC_DRV_CMOS=y",
   "KERNEL_XZ=n",
   "KERNEL_GZIP=y",
 ]

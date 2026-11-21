@@ -9,6 +9,7 @@ kind = "meson"
 setup-flags = [
   "-Dlibc=musl",
   "-Dmode=release",
+  "-Dtime-epoch=1764547200",
   "-Dtests=false",
   "-Dman=disabled",
   "-Dhtml=disabled",

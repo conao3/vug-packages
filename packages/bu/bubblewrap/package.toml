@@ -1,0 +1,8 @@
+name = "bubblewrap"
+license = "LGPL-2.0-or-later"
+
+[upstream]
+homepage = "https://github.com/containers/bubblewrap"
+sources = [
+  "https://github.com/containers/bubblewrap/releases/download/",
+]
