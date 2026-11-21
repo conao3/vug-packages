@@ -1,0 +1,31 @@
+version = "2.76"
+
+[source]
+url = "https://cdn.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.76.tar.xz"
+sha256 = "629da4ab29900d0f7fcc36227073743119925fd711c99a1689bbf5c9b40c8e6f"
+
+[build]
+kind = "make"
+make-flags = [
+  "CC=cc",
+  "BUILD_CC=cc",
+  "prefix={out}",
+  "lib=lib",
+  "GOLANG=no",
+  "PAM_CAP=no",
+  "RAISE_SETFCAP=no",
+]
+
+[dependencies]
+build = [
+  "bash",
+  "binutils",
+  "make",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

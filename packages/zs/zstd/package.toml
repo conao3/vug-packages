@@ -1,0 +1,8 @@
+name = "zstd"
+license = "BSD-3-Clause OR GPL-2.0-only"
+
+[upstream]
+homepage = "https://facebook.github.io/zstd/"
+sources = [
+  "https://github.com/facebook/zstd/releases/download/",
+]

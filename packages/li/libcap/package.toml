@@ -1,0 +1,8 @@
+name = "libcap"
+license = "BSD-3-Clause OR GPL-2.0-only"
+
+[upstream]
+homepage = "https://sites.google.com/site/fullycapable/"
+sources = [
+  "https://cdn.kernel.org/pub/linux/libs/security/linux-privs/libcap2/",
+]
