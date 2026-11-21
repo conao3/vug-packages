@@ -1,0 +1,8 @@
+name = "file"
+license = "BSD-2-Clause"
+
+[upstream]
+homepage = "https://www.darwinsys.com/file/"
+sources = [
+  "https://astron.com/pub/file/",
+]
