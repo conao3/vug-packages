@@ -1,0 +1,8 @@
+name = "vim"
+license = "Vim"
+
+[upstream]
+homepage = "https://www.vim.org/"
+sources = [
+  "https://github.com/vim/vim/archive/refs/tags/",
+]

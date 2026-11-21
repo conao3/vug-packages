@@ -1,0 +1,38 @@
+version = "9.2.1382"
+
+[source]
+url = "https://github.com/vim/vim/archive/refs/tags/v9.2.1382.tar.gz"
+sha256 = "6f016eb867bf23a7a8c083ebeeed2cbcfaa865814cafba5a48af8de5977d1777"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--with-features=normal",
+  "--disable-gui",
+  "--without-x",
+  "--disable-nls",
+  "--with-tlib=tinfow",
+  "--disable-canberra",
+  "--disable-libsodium",
+  "--disable-gpm",
+]
+
+[dependencies]
+build = [
+  "bash",
+  "binutils",
+  "coreutils",
+  "diffutils",
+  "gawk",
+  "grep",
+  "make",
+  "sed",
+]
+run = [
+  "musl",
+  "ncurses",
+]
+
+[check]
+enabled = false
+skip = []
