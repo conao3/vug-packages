@@ -1,0 +1,8 @@
+name = "rsync"
+license = "GPL-3.0-or-later"
+
+[upstream]
+homepage = "https://rsync.samba.org/"
+sources = [
+  "https://download.samba.org/pub/rsync/src/",
+]
