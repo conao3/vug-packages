@@ -1,0 +1,8 @@
+name = "chrony"
+license = "GPL-2.0-only"
+
+[upstream]
+homepage = "https://chrony-project.org/"
+sources = [
+  "https://chrony-project.org/releases/",
+]
