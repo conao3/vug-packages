@@ -1,0 +1,8 @@
+name = "cmake"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://cmake.org/"
+sources = [
+  "https://github.com/Kitware/CMake/releases/download/",
+]

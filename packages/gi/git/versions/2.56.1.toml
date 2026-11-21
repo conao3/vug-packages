@@ -1,0 +1,46 @@
+version = "2.56.1"
+
+[source]
+url = "https://cdn.kernel.org/pub/software/scm/git/git-2.56.1.tar.xz"
+sha256 = "f0b0bf89264b9bd2e1c640363e7529643989da76281600473c50745cd34a607f"
+
+[build]
+kind = "make"
+make-flags = [
+  "prefix={out}",
+  "CC=cc",
+  "AR=ar",
+  "NO_EXPAT=1",
+  "NO_GETTEXT=1",
+  "NO_INSTALL_HARDLINKS=1",
+  "NO_PERL=1",
+  "NO_PYTHON=1",
+  "NO_REGEX=NeedsStartEnd",
+  "NO_RUST=1",
+  "NO_TCLTK=1",
+  "LINK_FUZZ_PROGRAMS=",
+]
+
+[dependencies]
+build = [
+  "bash",
+  "binutils",
+  "coreutils",
+  "diffutils",
+  "findutils",
+  "gawk",
+  "grep",
+  "linux-headers",
+  "make",
+  "sed",
+]
+run = [
+  "curl",
+  "libressl",
+  "musl",
+  "zlib",
+]
+
+[check]
+enabled = false
+skip = []

@@ -1,0 +1,8 @@
+name = "git"
+license = "GPL-2.0-only"
+
+[upstream]
+homepage = "https://git-scm.com/"
+sources = [
+  "https://cdn.kernel.org/pub/software/scm/git/",
+]
