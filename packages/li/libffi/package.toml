@@ -1,0 +1,8 @@
+name = "libffi"
+license = "MIT"
+
+[upstream]
+homepage = "https://sourceware.org/libffi/"
+sources = [
+  "https://github.com/libffi/libffi/releases/download/",
+]

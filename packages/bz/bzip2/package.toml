@@ -1,0 +1,8 @@
+name = "bzip2"
+license = "bzip2-1.0.6"
+
+[upstream]
+homepage = "https://sourceware.org/bzip2/"
+sources = [
+  "https://sourceware.org/pub/bzip2/",
+]

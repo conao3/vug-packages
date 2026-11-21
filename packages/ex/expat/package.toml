@@ -1,0 +1,8 @@
+name = "expat"
+license = "MIT"
+
+[upstream]
+homepage = "https://libexpat.github.io/"
+sources = [
+  "https://github.com/libexpat/libexpat/releases/download/",
+]
