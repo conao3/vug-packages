@@ -1,0 +1,103 @@
+name = "systemd"
+kernel = "linux"
+packages = [
+  "bash",
+  "coreutils",
+  "findutils",
+  "grep",
+  "kmod",
+  "procps",
+  "sed",
+  "shadow",
+  "sudo",
+  "util-linux",
+  "systemd",
+]
+
+[[file]]
+path = "/init"
+mode = "755"
+content = """
+#!/bin/bash
+exec {pkg:systemd}/lib/systemd/systemd
+"""
+
+[[file]]
+path = "/etc/os-release"
+content = """
+NAME="vug"
+ID=vug
+PRETTY_NAME="vug minimal"
+"""
+
+[[file]]
+path = "/etc/machine-id"
+content = ""
+
+[[file]]
+path = "/etc/hostname"
+content = "vug-minimal\n"
+
+[[file]]
+path = "/etc/passwd"
+content = """
+root:x:0:0:root:/root:/bin/bash
+conao:x:1000:1000:conao:/home/conao:/bin/bash
+nobody:x:65534:65534:nobody:/:/bin/false
+"""
+
+[[file]]
+path = "/etc/shadow"
+mode = "600"
+content = """
+root:!:1::::::
+conao::1::::::
+nobody:!:1::::::
+"""
+
+[[file]]
+path = "/etc/group"
+content = """
+root:x:0:
+wheel:x:1:conao
+tty:x:5:
+disk:x:6:
+lp:x:7:
+kmem:x:9:
+utmp:x:22:
+audio:x:25:
+cdrom:x:24:
+dialout:x:27:
+video:x:26:
+input:x:174:
+kvm:x:302:
+render:x:303:
+sgx:x:304:
+tape:x:305:
+users:x:100:
+conao:x:1000:
+nogroup:x:65533:
+nobody:x:65534:
+"""
+
+[[file]]
+path = "/etc/login.defs"
+content = """
+ENCRYPT_METHOD SHA512
+ENV_PATH PATH=/bin
+ENV_SUPATH PATH=/bin
+"""
+
+[[file]]
+path = "/home/conao/.bash_profile"
+content = """
+echo VUG-LOGIN-OK "$(id -un)" "$(tty)"
+"""
+
+[[file]]
+path = "/etc/systemd/system/serial-getty@ttyS0.service.d/autologin.conf"
+content = """
+[Service]
+ExecStart=
+ExecStart=-/bin/agetty --autologin conao --noclear --keep-baud 115200,57600,38400,9600 - vt220
+"""
