@@ -1,0 +1,8 @@
+name = "zlib"
+license = "Zlib"
+
+[upstream]
+homepage = "https://zlib.net/"
+sources = [
+  "https://github.com/madler/zlib/releases/download/",
+]

@@ -1,0 +1,8 @@
+name = "pkgconf"
+license = "ISC"
+
+[upstream]
+homepage = "http://pkgconf.org/"
+sources = [
+  "https://distfiles.ariadne.space/pkgconf/",
+]
