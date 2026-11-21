@@ -1,0 +1,8 @@
+name = "linux-pam"
+license = "BSD-3-Clause OR GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://github.com/linux-pam/linux-pam"
+sources = [
+  "https://github.com/linux-pam/linux-pam/releases/download/",
+]
