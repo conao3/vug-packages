@@ -1,0 +1,37 @@
+version = "4.18.0"
+
+[source]
+url = "https://github.com/shadow-maint/shadow/releases/download/4.18.0/shadow-4.18.0.tar.xz"
+sha256 = "add4604d3bc410344433122a819ee4154b79dd8316a56298c60417e637c07608"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--disable-nls",
+  "--without-libbsd",
+  "--without-libpam",
+  "--without-selinux",
+  "--without-audit",
+  "--without-acl",
+  "--without-attr",
+  "--without-tcb",
+  "--without-nscd",
+  "--without-sssd",
+  "--disable-man",
+  "--with-fcaps=no",
+  "--exec-prefix={out}",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "pkgconf",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
