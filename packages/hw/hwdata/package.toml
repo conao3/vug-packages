@@ -1,0 +1,8 @@
+name = "hwdata"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://github.com/vcrhonek/hwdata"
+sources = [
+  "https://github.com/vcrhonek/hwdata/archive/refs/tags/",
+]

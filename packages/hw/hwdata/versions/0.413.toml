@@ -1,0 +1,22 @@
+version = "0.413"
+
+[source]
+url = "https://github.com/vcrhonek/hwdata/archive/refs/tags/v0.413.tar.gz"
+sha256 = "5a71ab7a48c668ef912fcfdbec046949087019f8dd7fb967445d36fbeb778350"
+
+[build]
+kind = "autotools"
+
+[dependencies]
+build = [
+  "bash",
+  "binutils",
+  "coreutils",
+  "make",
+  "sed",
+]
+run = []
+
+[check]
+enabled = false
+skip = []
