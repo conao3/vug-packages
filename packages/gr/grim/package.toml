@@ -1,0 +1,8 @@
+name = "grim"
+license = "MIT"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/emersion/grim"
+sources = [
+  "https://gitlab.freedesktop.org/emersion/grim/-/releases/",
+]

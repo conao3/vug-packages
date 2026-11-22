@@ -1,0 +1,35 @@
+version = "1.5.0"
+
+[source]
+url = "https://gitlab.freedesktop.org/emersion/grim/-/releases/v1.5.0/downloads/grim-1.5.0.tar.gz"
+sha256 = "99708950205d5bfd2e769519fcb6423a9f545175a29c46c7c1cf7965afc4b8eb"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dman-pages=disabled",
+  "-Djpeg=disabled",
+  "-Dbash-completions=false",
+  "-Dfish-completions=false",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+  "wayland-protocols",
+  "xorgproto",
+]
+run = [
+  "libpng",
+  "musl",
+  "pixman",
+  "wayland",
+]
+
+[check]
+enabled = true
+skip = []
