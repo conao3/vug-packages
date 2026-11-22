@@ -23,6 +23,7 @@ run = [
   "libxau",
   "libxdmcp",
   "musl",
+  "xorgproto",
 ]
 
 [check]

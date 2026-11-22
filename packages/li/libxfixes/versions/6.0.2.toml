@@ -17,6 +17,7 @@ build = [
 run = [
   "libx11",
   "musl",
+  "xorgproto",
 ]
 
 [check]

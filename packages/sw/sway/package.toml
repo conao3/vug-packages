@@ -1,0 +1,8 @@
+name = "sway"
+license = "MIT"
+
+[upstream]
+homepage = "https://swaywm.org/"
+sources = [
+  "https://github.com/swaywm/sway/releases/download/",
+]

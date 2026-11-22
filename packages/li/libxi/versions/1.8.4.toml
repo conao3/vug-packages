@@ -26,6 +26,7 @@ run = [
   "libxext",
   "libxfixes",
   "musl",
+  "xorgproto",
 ]
 
 [check]

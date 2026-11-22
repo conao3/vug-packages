@@ -1,0 +1,46 @@
+version = "1.12"
+
+[source]
+url = "https://github.com/swaywm/sway/releases/download/1.12/sway-1.12.tar.gz"
+sha256 = "a7b1becc217433c11c6284d36bcea0687b87b77b0ed26a384565292ec321f2b1"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dman-pages=disabled",
+  "-Dgdk-pixbuf=disabled",
+  "-Dtray=disabled",
+  "-Dbash-completions=false",
+  "-Dfish-completions=false",
+  "-Dzsh-completions=false",
+  "-Dwerror=false",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "linux-headers",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+  "wayland-protocols",
+]
+run = [
+  "cairo",
+  "json-c",
+  "libdrm",
+  "libevdev",
+  "libinput",
+  "libxkbcommon",
+  "musl",
+  "pango",
+  "pcre2",
+  "pixman",
+  "wayland",
+  "wlroots",
+]
+
+[check]
+enabled = false
+skip = []

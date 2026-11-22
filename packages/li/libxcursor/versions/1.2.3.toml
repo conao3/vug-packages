@@ -19,6 +19,7 @@ run = [
   "libxfixes",
   "libxrender",
   "musl",
+  "xorgproto",
 ]
 
 [check]

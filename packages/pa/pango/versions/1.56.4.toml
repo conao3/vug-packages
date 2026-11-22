@@ -1,0 +1,39 @@
+version = "1.56.4"
+
+[source]
+url = "https://download.gnome.org/sources/pango/1.56/pango-1.56.4.tar.xz"
+sha256 = "17065e2fcc5f5a5bdbffc884c956bfc7c451a96e8c4fb2f8ad837c6413cb5a01"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dintrospection=disabled",
+  "-Dbuild-testsuite=false",
+  "-Dbuild-examples=false",
+  "-Ddocumentation=false",
+  "-Dxft=disabled",
+  "-Dlibthai=disabled",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+  "xorgproto",
+]
+run = [
+  "cairo",
+  "fontconfig",
+  "freetype",
+  "fribidi",
+  "glib",
+  "harfbuzz",
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

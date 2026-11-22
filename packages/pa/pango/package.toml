@@ -1,0 +1,8 @@
+name = "pango"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://www.gtk.org/docs/architecture/pango"
+sources = [
+  "https://download.gnome.org/sources/pango/1.56/",
+]

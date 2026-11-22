@@ -16,6 +16,7 @@ build = [
 ]
 run = [
   "musl",
+  "xorgproto",
 ]
 
 [check]

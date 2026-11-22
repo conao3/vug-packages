@@ -1,0 +1,68 @@
+name = "sway"
+packages = [
+  "dejavu-fonts",
+  "fontconfig",
+  "foot",
+  "sway",
+  "xkeyboard-config",
+]
+
+[parameter.user]
+
+[parameter.tty]
+default = "tty1"
+
+[[file]]
+path = "/etc/fonts/fonts.conf"
+target = "{pkg:fontconfig}/etc/fonts/fonts.conf"
+
+[[file]]
+path = "/etc/sway/config"
+content = """
+set $mod Mod4
+bindsym $mod+Return exec foot
+bindsym $mod+Shift+q kill
+bindsym $mod+Shift+e exit
+exec foot
+"""
+
+[[file]]
+path = "/etc/xdg/foot/foot.ini"
+content = """
+[main]
+term=xterm-256color
+font=DejaVu Sans Mono:size=12
+"""
+
+[[file]]
+path = "/etc/systemd/system/sway.service"
+content = """
+[Unit]
+Description=Sway on {param:tty}
+After=systemd-user-sessions.service dbus.socket systemd-logind.service
+Conflicts=getty@{param:tty}.service
+
+[Service]
+User={param:user}
+PAMName=login
+TTYPath=/dev/{param:tty}
+TTYReset=yes
+TTYVHangup=yes
+StandardInput=tty-fail
+StandardOutput=journal
+StandardError=journal
+UtmpIdentifier={param:tty}
+UtmpMode=user
+Environment=XDG_SESSION_TYPE=wayland
+Environment=WLR_RENDERER=pixman
+Environment=XDG_CONFIG_DIRS=/etc/xdg
+ExecStart=/bin/sway -c /etc/sway/config
+Restart=no
+"""
+
+[[file]]
+path = "/etc/systemd/system/multi-user.target.d/sway.conf"
+content = """
+[Unit]
+Wants=sway.service
+"""
