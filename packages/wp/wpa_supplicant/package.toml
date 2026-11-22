@@ -1,0 +1,8 @@
+name = "wpa_supplicant"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://w1.fi/wpa_supplicant/"
+sources = [
+  "https://w1.fi/releases/",
+]

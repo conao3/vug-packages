@@ -1,0 +1,38 @@
+version = "2.12"
+
+[source]
+url = "https://w1.fi/releases/wpa_supplicant-2.12.tar.gz"
+sha256 = "08e23937e16d0155e55cab2b51f51fbe10d80a1aa91c4e15442645059b737ef6"
+
+[build]
+kind = "make"
+make-flags = [
+  "-C",
+  "wpa_supplicant",
+  "CONFIG_DRIVER_NL80211=y",
+  "CONFIG_LIBNL32=y",
+  "CONFIG_TLS=openssl",
+  "CONFIG_CTRL_IFACE=unix",
+  "CONFIG_WPA_CLI_EDIT=y",
+  "BINDIR={out}/sbin",
+  "LIBDIR={out}/lib",
+  "CC=cc",
+  "CONFIG_FILE=",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "linux-headers",
+  "make",
+  "pkgconf",
+]
+run = [
+  "libnl",
+  "libressl",
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
