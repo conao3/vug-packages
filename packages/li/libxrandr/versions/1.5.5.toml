@@ -1,0 +1,26 @@
+version = "1.5.5"
+
+[source]
+url = "https://www.x.org/releases/individual/lib/libXrandr-1.5.5.tar.xz"
+sha256 = "72b922c2e765434e9e9f0960148070bd4504b288263e2868a4ccce1b7cf2767a"
+
+[build]
+kind = "autotools"
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "pkgconf",
+  "xorgproto",
+]
+run = [
+  "libx11",
+  "libxext",
+  "libxrender",
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

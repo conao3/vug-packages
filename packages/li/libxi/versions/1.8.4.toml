@@ -1,0 +1,33 @@
+version = "1.8.4"
+
+[source]
+url = "https://www.x.org/releases/individual/lib/libXi-1.8.4.tar.xz"
+sha256 = "ddd6057b89a91903bc2f884d55c8467440906945e482c36547260dff28661afc"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--disable-docs",
+  "--disable-specs",
+  "--without-xmlto",
+  "--without-fop",
+  "--without-asciidoc",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "pkgconf",
+  "xorgproto",
+]
+run = [
+  "libx11",
+  "libxext",
+  "libxfixes",
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

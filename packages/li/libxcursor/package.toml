@@ -1,0 +1,8 @@
+name = "libxcursor"
+license = "MIT"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/xorg/lib/libxcursor"
+sources = [
+  "https://www.x.org/releases/individual/lib/",
+]

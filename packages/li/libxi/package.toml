@@ -1,0 +1,8 @@
+name = "libxi"
+license = "MIT"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/xorg/lib/libxi"
+sources = [
+  "https://www.x.org/releases/individual/lib/",
+]
