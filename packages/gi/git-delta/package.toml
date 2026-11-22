@@ -1,0 +1,8 @@
+name = "git-delta"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/dandavison/delta"
+sources = [
+  "https://github.com/dandavison/delta/archive/refs/tags/",
+]
