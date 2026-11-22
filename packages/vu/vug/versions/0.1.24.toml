@@ -1,8 +1,8 @@
-version = "0.1.23"
+version = "0.1.24"
 
 [source]
-url = "https://github.com/conao3/rust-vug/archive/refs/tags/v0.1.23.tar.gz"
-sha256 = "9ccb24ce9fcf2f60786fc10dd6f91727724f303efc6a496a3997dbae3771b509"
+url = "https://github.com/conao3/rust-vug/archive/refs/tags/v0.1.24.tar.gz"
+sha256 = "70ce2c83f743f8ff4a92b799477efebe409ef87a30720137e1f6c6978a08b049"
 
 [build]
 kind = "cargo"
