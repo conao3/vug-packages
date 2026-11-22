@@ -1,0 +1,8 @@
+name = "hyperfine"
+license = "MIT OR Apache-2.0"
+
+[upstream]
+homepage = "https://github.com/sharkdp/hyperfine"
+sources = [
+  "https://github.com/sharkdp/hyperfine/archive/refs/tags/",
+]
