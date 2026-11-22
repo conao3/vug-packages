@@ -1,0 +1,31 @@
+version = "2.6.2"
+
+[source]
+url = "https://ftp.gnu.org/gnu/libtool/libtool-2.6.2.tar.xz"
+sha256 = "2ef1067c16c97db930fd740cc9bc3d3ba9a583804ae5ac42cc3e8719e49e191e"
+
+[build]
+kind = "autotools"
+
+[dependencies]
+build = [
+  "bash",
+  "binutils",
+  "coreutils",
+  "diffutils",
+  "file",
+  "findutils",
+  "gawk",
+  "grep",
+  "m4",
+  "make",
+  "sed",
+]
+run = [
+  "bash",
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

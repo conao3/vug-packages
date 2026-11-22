@@ -1,0 +1,8 @@
+name = "autoconf"
+license = "GPL-3.0-or-later"
+
+[upstream]
+homepage = "https://www.gnu.org/software/autoconf/"
+sources = [
+  "https://ftp.gnu.org/gnu/autoconf/",
+]

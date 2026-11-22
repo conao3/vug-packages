@@ -1,0 +1,8 @@
+name = "mpfr"
+license = "LGPL-3.0-or-later"
+
+[upstream]
+homepage = "https://www.mpfr.org/"
+sources = [
+  "https://ftp.gnu.org/gnu/mpfr/",
+]
