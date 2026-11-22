@@ -3,8 +3,15 @@ packages = [
   "dejavu-fonts",
   "fontconfig",
   "foot",
+  "gawk",
+  "grim",
+  "i3blocks",
+  "slurp",
   "sway",
   "swaybg",
+  "swayidle",
+  "swaylock",
+  "wl-clipboard",
   "wmenu",
   "xkeyboard-config",
 ]
@@ -27,7 +34,37 @@ bindsym $mod+d exec wmenu-run
 bindsym $mod+Return exec foot
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+e exit
+bindsym $mod+l exec swaylock -f -c 101820
+bindsym Print exec grim
+bindsym $mod+Print exec sh -c 'grim -g "$(slurp)"'
+bar {
+  position top
+  status_command i3blocks -c /etc/i3blocks.conf
+}
+exec swayidle -w timeout 600 'swaylock -f -c 101820' before-sleep 'swaylock -f -c 101820'
 exec foot
+"""
+
+[[file]]
+path = "/etc/i3blocks.conf"
+content = """
+[load]
+command=cut -d' ' -f1-3 /proc/loadavg
+interval=10
+
+[memory]
+command=awk '/MemAvailable/ {printf "%d MiB free", $2/1024}' /proc/meminfo
+interval=10
+
+[time]
+command=date '+%F %H:%M'
+interval=30
+"""
+
+[[file]]
+path = "/etc/pam.d/swaylock"
+content = """
+auth required pam_unix.so nullok
 """
 
 [[file]]
