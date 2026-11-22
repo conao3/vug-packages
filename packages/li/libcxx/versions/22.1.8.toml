@@ -1,0 +1,37 @@
+version = "22.1.8"
+
+[source]
+url = "https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.8/llvm-project-22.1.8.src.tar.xz"
+sha256 = "922f1817a0df7b1489272d18134ee0087a8b068828f87ac63b9861b1a9965888"
+
+[build]
+kind = "cmake"
+path = "runtimes"
+setup-flags = [
+  "-DLLVM_ENABLE_RUNTIMES=libcxx;libcxxabi;libunwind",
+  "-DLLVM_INCLUDE_TESTS=OFF",
+  "-DLIBCXX_HAS_MUSL_LIBC=ON",
+  "-DLIBCXX_USE_COMPILER_RT=ON",
+  "-DLIBCXXABI_USE_COMPILER_RT=ON",
+  "-DLIBCXXABI_USE_LLVM_UNWINDER=ON",
+  "-DLIBUNWIND_USE_COMPILER_RT=ON",
+  "-DLIBCXX_INCLUDE_BENCHMARKS=OFF",
+  "-DLIBCXX_HARDENING_MODE=none",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "linux-headers",
+  "make",
+  "python",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
+private-cxx-runtime = true

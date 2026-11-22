@@ -1,0 +1,8 @@
+name = "libcxx"
+license = "Apache-2.0 WITH LLVM-exception"
+
+[upstream]
+homepage = "https://libcxx.llvm.org/"
+sources = [
+  "https://github.com/llvm/llvm-project/releases/download/",
+]
