@@ -1,0 +1,8 @@
+name = "icu4c"
+license = "Unicode-3.0"
+
+[upstream]
+homepage = "https://icu.unicode.org/"
+sources = [
+  "https://github.com/unicode-org/icu/releases/download/",
+]

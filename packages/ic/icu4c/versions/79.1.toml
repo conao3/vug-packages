@@ -1,0 +1,33 @@
+version = "79.1"
+
+[source]
+url = "https://github.com/unicode-org/icu/releases/download/release-79.1/icu4c-79.1-sources.tgz"
+sha256 = "06fa63ecb521048f8082f12ad988f6b678d90cbd88aafce24cbc94902b191d99"
+
+[build]
+kind = "autotools"
+configure-command = [
+  "source/configure",
+  "--prefix={out}",
+]
+configure-flags = [
+  "--disable-samples",
+  "--disable-tests",
+  "--disable-static",
+]
+
+[dependencies]
+build = [
+  "bash",
+  "binutils",
+  "coreutils",
+  "make",
+  "sed",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
