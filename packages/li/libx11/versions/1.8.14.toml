@@ -27,6 +27,8 @@ build = [
 run = [
   "libxcb",
   "musl",
+]
+expose = [
   "xorgproto",
 ]
 

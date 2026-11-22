@@ -26,6 +26,8 @@ run = [
   "libxext",
   "libxfixes",
   "musl",
+]
+expose = [
   "xorgproto",
 ]
 

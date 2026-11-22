@@ -17,6 +17,8 @@ build = [
 run = [
   "libx11",
   "musl",
+]
+expose = [
   "xorgproto",
 ]
 

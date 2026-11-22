@@ -23,6 +23,8 @@ run = [
   "libxau",
   "libxdmcp",
   "musl",
+]
+expose = [
   "xorgproto",
 ]
 

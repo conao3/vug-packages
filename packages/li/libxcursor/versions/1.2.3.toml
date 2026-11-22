@@ -19,6 +19,8 @@ run = [
   "libxfixes",
   "libxrender",
   "musl",
+]
+expose = [
   "xorgproto",
 ]
 

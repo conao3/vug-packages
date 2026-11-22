@@ -16,6 +16,8 @@ build = [
 ]
 run = [
   "musl",
+]
+expose = [
   "xorgproto",
 ]
 
