@@ -1,0 +1,8 @@
+name = "libseccomp"
+license = "LGPL-2.1-only"
+
+[upstream]
+homepage = "https://github.com/seccomp/libseccomp"
+sources = [
+  "https://github.com/seccomp/libseccomp/releases/download/",
+]

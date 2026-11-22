@@ -1,0 +1,8 @@
+name = "libuv"
+license = "MIT"
+
+[upstream]
+homepage = "https://libuv.org/"
+sources = [
+  "https://dist.libuv.org/dist/v1.52.0/",
+]

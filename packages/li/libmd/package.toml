@@ -1,0 +1,8 @@
+name = "libmd"
+license = "BSD-3-Clause AND BSD-2-Clause AND ISC AND Beerware AND LicenseRef-Public-Domain"
+
+[upstream]
+homepage = "https://www.hadrons.org/software/libmd/"
+sources = [
+  "https://libbsd.freedesktop.org/releases/",
+]

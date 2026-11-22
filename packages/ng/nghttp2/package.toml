@@ -1,0 +1,8 @@
+name = "nghttp2"
+license = "MIT"
+
+[upstream]
+homepage = "https://nghttp2.org/"
+sources = [
+  "https://github.com/nghttp2/nghttp2/releases/download/",
+]

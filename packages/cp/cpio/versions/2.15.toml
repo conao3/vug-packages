@@ -1,0 +1,24 @@
+version = "2.15"
+
+[source]
+url = "https://ftp.gnu.org/gnu/cpio/cpio-2.15.tar.gz"
+sha256 = "efa50ef983137eefc0a02fdb51509d624b5e3295c980aa127ceee4183455499e"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--disable-nls",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

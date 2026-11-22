@@ -1,0 +1,25 @@
+version = "1.71.0"
+
+[source]
+url = "https://github.com/nghttp2/nghttp2/releases/download/v1.71.0/nghttp2-1.71.0.tar.xz"
+sha256 = "c0f55121d88650e4b9227aec28cebaf664d2417ca60fe70be0f8d38829f52116"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--enable-lib-only",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "pkgconf",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

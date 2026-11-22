@@ -1,0 +1,8 @@
+name = "oniguruma"
+license = "BSD-2-Clause"
+
+[upstream]
+homepage = "https://github.com/kkos/oniguruma"
+sources = [
+  "https://github.com/kkos/oniguruma/releases/download/",
+]

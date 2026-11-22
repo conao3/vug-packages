@@ -1,0 +1,8 @@
+name = "libbsd"
+license = "BSD-3-Clause AND BSD-2-Clause AND ISC AND MIT"
+
+[upstream]
+homepage = "https://libbsd.freedesktop.org/"
+sources = [
+  "https://libbsd.freedesktop.org/releases/",
+]

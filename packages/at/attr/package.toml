@@ -1,0 +1,8 @@
+name = "attr"
+license = "GPL-2.0-or-later AND LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://savannah.nongnu.org/projects/attr"
+sources = [
+  "https://download.savannah.nongnu.org/releases/attr/",
+]

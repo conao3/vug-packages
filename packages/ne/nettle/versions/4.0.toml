@@ -1,0 +1,26 @@
+version = "4.0"
+
+[source]
+url = "https://ftp.gnu.org/gnu/nettle/nettle-4.0.tar.gz"
+sha256 = "3addbc00da01846b232fb3bc453538ea5468da43033f21bb345cb1e9073f5094"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--disable-documentation",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "m4",
+  "make",
+]
+run = [
+  "gmp",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []

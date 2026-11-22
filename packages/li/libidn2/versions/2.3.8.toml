@@ -1,0 +1,26 @@
+version = "2.3.8"
+
+[source]
+url = "https://ftp.gnu.org/gnu/libidn/libidn2-2.3.8.tar.gz"
+sha256 = "f557911bf6171621e1f72ff35f5b1825bb35b52ed45325dcdee931e5d3c0787a"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--disable-nls",
+  "--disable-doc",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+]
+run = [
+  "libunistring",
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

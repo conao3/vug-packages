@@ -1,0 +1,8 @@
+name = "lzo"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://www.oberhumer.com/opensource/lzo/"
+sources = [
+  "https://www.oberhumer.com/opensource/lzo/download/",
+]

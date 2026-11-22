@@ -1,0 +1,8 @@
+name = "libpipeline"
+license = "GPL-3.0-or-later"
+
+[upstream]
+homepage = "https://libpipeline.gitlab.io/libpipeline/"
+sources = [
+  "https://download.savannah.nongnu.org/releases/libpipeline/",
+]

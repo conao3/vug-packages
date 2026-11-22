@@ -1,0 +1,8 @@
+name = "libsodium"
+license = "ISC"
+
+[upstream]
+homepage = "https://libsodium.org/"
+sources = [
+  "https://download.libsodium.org/libsodium/releases/",
+]

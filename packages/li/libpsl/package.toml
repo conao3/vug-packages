@@ -1,0 +1,8 @@
+name = "libpsl"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/rockdaboot/libpsl"
+sources = [
+  "https://github.com/rockdaboot/libpsl/releases/download/",
+]

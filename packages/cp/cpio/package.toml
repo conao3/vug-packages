@@ -1,0 +1,8 @@
+name = "cpio"
+license = "GPL-3.0-or-later"
+
+[upstream]
+homepage = "https://www.gnu.org/software/cpio/"
+sources = [
+  "https://ftp.gnu.org/gnu/cpio/",
+]

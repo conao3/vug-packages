@@ -1,0 +1,21 @@
+version = "1.5"
+
+[source]
+url = "https://ftp.gnu.org/gnu/libunistring/libunistring-1.5.tar.xz"
+sha256 = "fe89007a8a414ae4790b816b86859e877d3ab135db3c37f06541ff7e85ac344b"
+
+[build]
+kind = "autotools"
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

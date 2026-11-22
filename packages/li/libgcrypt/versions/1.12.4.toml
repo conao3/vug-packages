@@ -1,0 +1,26 @@
+version = "1.12.4"
+
+[source]
+url = "https://gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.12.4.tar.bz2"
+sha256 = "d77f68f48879510e79a2f65977ccc68981781ea0923e5bdffac2a193ea3d660e"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--disable-doc",
+  "--with-libgpg-error-prefix={dep:libgpg-error}",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+]
+run = [
+  "libgpg-error",
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

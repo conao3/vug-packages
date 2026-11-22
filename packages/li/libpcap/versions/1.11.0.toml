@@ -1,0 +1,29 @@
+version = "1.11.0"
+
+[source]
+url = "https://www.tcpdump.org/release/libpcap-1.11.0.tar.xz"
+sha256 = "9237f5bae9dcf3a91823d9963ec43b7c0e2e3374ef2ad57d92c8cd39530f4723"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--without-libnl",
+  "--disable-dbus",
+  "--disable-rdma",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "bison",
+  "flex",
+  "linux-headers",
+  "make",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
