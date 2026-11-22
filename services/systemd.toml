@@ -80,6 +80,13 @@ name = "nobody"
 gid = 65534
 
 [[file]]
+path = "/etc/systemd/system/getty.target.d/tty1.conf"
+content = """
+[Unit]
+Wants=getty@tty1.service
+"""
+
+[[file]]
 path = "/etc/systemd/system/sysinit.target.d/timesyncd.conf"
 content = """
 [Unit]

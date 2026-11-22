@@ -1,0 +1,8 @@
+name = "pinentry"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://www.gnupg.org/software/pinentry/"
+sources = [
+  "https://gnupg.org/ftp/gcrypt/pinentry/",
+]

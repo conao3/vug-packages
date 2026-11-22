@@ -1,0 +1,49 @@
+version = "2.03.44"
+
+[source]
+url = "https://sourceware.org/pub/lvm2/releases/LVM2.2.03.44.tgz"
+sha256 = "42f829927d2d459f5733fcdb38a5bf2455a8b84072193092450a9c69d6596eca"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--disable-selinux",
+  "--disable-nls",
+  "--disable-readline",
+  "--with-thin=none",
+  "--with-cache=none",
+  "--with-vdo=none",
+  "--with-writecache=none",
+  "--with-integrity=none",
+  "--disable-udev_sync",
+  "--disable-udev_rules",
+  "--enable-pkgconfig",
+]
+make-flags = [
+  "device-mapper",
+]
+install-targets = [
+  "install_device-mapper",
+]
+
+[dependencies]
+build = [
+  "bash",
+  "binutils",
+  "coreutils",
+  "gawk",
+  "grep",
+  "linux-headers",
+  "make",
+  "pkgconf",
+  "sed",
+]
+run = [
+  "libaio",
+  "musl",
+  "util-linux",
+]
+
+[check]
+enabled = false
+skip = []

@@ -1,0 +1,8 @@
+name = "cracklib"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://github.com/cracklib/cracklib"
+sources = [
+  "https://github.com/cracklib/cracklib/releases/download/",
+]

@@ -1,0 +1,27 @@
+version = "0.3.113"
+
+[source]
+url = "https://deb.debian.org/debian/pool/main/liba/libaio/libaio_0.3.113.orig.tar.gz"
+sha256 = "2c44d1c5fd0d43752287c9ae1eb9c023f04ef848ea8d4aafa46e9aedb678200b"
+
+[build]
+kind = "make"
+make-flags = [
+  "prefix={out}",
+  "CC=cc",
+  "AR=ar",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "linux-headers",
+  "make",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

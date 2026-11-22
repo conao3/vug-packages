@@ -1,0 +1,48 @@
+version = "2.5.24"
+
+[source]
+url = "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.5.24.tar.bz2"
+sha256 = "bf149d01a2b9fcc0e4589b8ae8697d3d5c557ea48ed95a3fa55dd3b1187e6039"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--disable-nls",
+  "--disable-doc",
+  "--disable-ldap",
+  "--disable-sqlite",
+  "--disable-tofu",
+  "--disable-keyboxd",
+  "--disable-ccid-driver",
+  "--disable-scdaemon",
+  "--disable-gnutls",
+  "--disable-ntbtls",
+  "--disable-photo-viewers",
+  "--with-libgpg-error-prefix={dep:libgpg-error}",
+  "--with-libgcrypt-prefix={dep:libgcrypt}",
+  "--with-libassuan-prefix={dep:libassuan}",
+  "--with-libksba-prefix={dep:libksba}",
+  "--with-npth-prefix={dep:npth}",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "pkgconf",
+]
+run = [
+  "bzip2",
+  "libassuan",
+  "libgcrypt",
+  "libgpg-error",
+  "libksba",
+  "musl",
+  "npth",
+  "readline",
+  "zlib",
+]
+
+[check]
+enabled = false
+skip = []

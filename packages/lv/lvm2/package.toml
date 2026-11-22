@@ -1,0 +1,8 @@
+name = "lvm2"
+license = "GPL-2.0-only AND LGPL-2.1-only"
+
+[upstream]
+homepage = "https://sourceware.org/lvm2/"
+sources = [
+  "https://sourceware.org/pub/lvm2/releases/",
+]

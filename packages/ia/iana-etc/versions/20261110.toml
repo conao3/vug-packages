@@ -1,0 +1,20 @@
+version = "20261110"
+
+[source]
+url = "https://github.com/Mic92/iana-etc/releases/download/20261110/iana-etc-20261110.tar.gz"
+sha256 = "37c35ea7b0d2831e6d5c222ddba61af25cd7edb07a980a35581e04d359ebbb9f"
+
+[build]
+kind = "prebuilt"
+install = [
+  { from = "services", to = "etc/services" },
+  { from = "protocols", to = "etc/protocols" },
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []

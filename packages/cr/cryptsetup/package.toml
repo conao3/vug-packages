@@ -1,0 +1,8 @@
+name = "cryptsetup"
+license = "GPL-2.0-or-later AND LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://gitlab.com/cryptsetup/cryptsetup"
+sources = [
+  "https://cdn.kernel.org/pub/linux/utils/cryptsetup/v2.8/",
+]

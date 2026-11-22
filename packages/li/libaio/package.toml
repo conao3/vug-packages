@@ -1,0 +1,8 @@
+name = "libaio"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://pagure.io/libaio"
+sources = [
+  "https://deb.debian.org/debian/pool/main/liba/libaio/",
+]

@@ -1,0 +1,36 @@
+version = "2.8.8"
+
+[source]
+url = "https://cdn.kernel.org/pub/linux/utils/cryptsetup/v2.8/cryptsetup-2.8.8.tar.xz"
+sha256 = "3acfa685f2dd7fcc832e0b77bc7093aa7da554a51ce8dafbb4138eaa854eee35"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--with-crypto_backend=kernel",
+  "--disable-ssh-token",
+  "--disable-asciidoc",
+  "--disable-nls",
+  "--with-tmpfilesdir={out}/lib/tmpfiles.d",
+  "--disable-external-tokens",
+]
+
+[dependencies]
+build = [
+  "bash",
+  "binutils",
+  "linux-headers",
+  "make",
+  "pkgconf",
+]
+run = [
+  "json-c",
+  "lvm2",
+  "musl",
+  "popt",
+  "util-linux",
+]
+
+[check]
+enabled = false
+skip = []

@@ -1,0 +1,8 @@
+name = "libnfnetlink"
+license = "GPL-2.0-only"
+
+[upstream]
+homepage = "https://www.netfilter.org/projects/libnfnetlink/"
+sources = [
+  "https://www.netfilter.org/pub/libnfnetlink/",
+]

@@ -1,0 +1,8 @@
+name = "npth"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://www.gnupg.org/software/npth/"
+sources = [
+  "https://gnupg.org/ftp/gcrypt/npth/",
+]

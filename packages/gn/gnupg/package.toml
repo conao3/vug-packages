@@ -1,0 +1,8 @@
+name = "gnupg"
+license = "GPL-3.0-or-later"
+
+[upstream]
+homepage = "https://www.gnupg.org/"
+sources = [
+  "https://gnupg.org/ftp/gcrypt/gnupg/",
+]

@@ -1,0 +1,8 @@
+name = "kexec-tools"
+license = "GPL-2.0-only"
+
+[upstream]
+homepage = "https://kernel.org/pub/linux/utils/kernel/kexec/"
+sources = [
+  "https://cdn.kernel.org/pub/linux/utils/kernel/kexec/",
+]

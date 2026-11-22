@@ -1,0 +1,37 @@
+version = "1.1.7"
+
+[source]
+url = "https://www.netfilter.org/pub/nftables/nftables-1.1.7.tar.xz"
+sha256 = "a6fbf060d8d4fff001517a2b94f356bb4366bfbf0ba366366f9d27cc38caa58f"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--disable-man-doc",
+  "--with-cli=readline",
+  "--disable-python",
+  "--without-json",
+  "--without-xtables",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "bison",
+  "flex",
+  "linux-headers",
+  "make",
+  "pkgconf",
+]
+run = [
+  "gmp",
+  "libmnl",
+  "libnftnl",
+  "musl",
+  "ncurses",
+  "readline",
+]
+
+[check]
+enabled = false
+skip = []

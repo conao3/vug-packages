@@ -1,0 +1,16 @@
+name = "vug"
+packages = [
+  "bubblewrap",
+  "vug",
+]
+
+[parameter.binary-cache]
+
+[parameter.trusted-key]
+
+[[file]]
+path = "/etc/vug.toml"
+content = """
+binary-cache = "{param:binary-cache}"
+trusted-key = "{param:trusted-key}"
+"""
