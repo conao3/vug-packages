@@ -1,0 +1,8 @@
+name = "libxrender"
+license = "MIT"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/xorg/lib/libxrender"
+sources = [
+  "https://www.x.org/releases/individual/lib/",
+]

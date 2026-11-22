@@ -1,0 +1,8 @@
+name = "seatd"
+license = "MIT"
+
+[upstream]
+homepage = "https://sr.ht/~kennylevinsen/seatd/"
+sources = [
+  "https://git.sr.ht/~kennylevinsen/seatd/archive/",
+]

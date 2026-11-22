@@ -1,0 +1,34 @@
+version = "0.9.1"
+
+[source]
+url = "https://git.sr.ht/~kennylevinsen/seatd/archive/0.9.1.tar.gz"
+sha256 = "819979c922a0be258aed133d93920bce6a3d3565a60588d6d372ce9db2712cd3"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dlibseat-logind=systemd",
+  "-Dlibseat-seatd=enabled",
+  "-Dlibseat-builtin=enabled",
+  "-Dserver=enabled",
+  "-Dman-pages=disabled",
+  "-Dwerror=false",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "linux-headers",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "musl",
+  "systemd",
+]
+
+[check]
+enabled = false
+skip = []

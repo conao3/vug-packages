@@ -1,0 +1,35 @@
+version = "1.29.1"
+
+[source]
+url = "https://gitlab.freedesktop.org/libinput/libinput/-/archive/1.29.1/libinput-1.29.1.tar.gz"
+sha256 = "98bb615d98ddc4607bddb13a7b7550d129eb8cd16f86cd5ca090207bc46b488b"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dlibwacom=false",
+  "-Ddebug-gui=false",
+  "-Dtests=false",
+  "-Ddocumentation=false",
+  "-Dzshcompletiondir=no",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "linux-headers",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "libevdev",
+  "mtdev",
+  "musl",
+  "systemd",
+]
+
+[check]
+enabled = false
+skip = []

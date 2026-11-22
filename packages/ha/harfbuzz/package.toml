@@ -1,0 +1,8 @@
+name = "harfbuzz"
+license = "MIT"
+
+[upstream]
+homepage = "https://harfbuzz.github.io/"
+sources = [
+  "https://github.com/harfbuzz/harfbuzz/releases/download/",
+]

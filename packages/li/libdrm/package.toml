@@ -1,0 +1,8 @@
+name = "libdrm"
+license = "MIT"
+
+[upstream]
+homepage = "https://dri.freedesktop.org/wiki/DRM/"
+sources = [
+  "https://dri.freedesktop.org/libdrm/",
+]

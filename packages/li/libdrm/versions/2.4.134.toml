@@ -1,0 +1,33 @@
+version = "2.4.134"
+
+[source]
+url = "https://dri.freedesktop.org/libdrm/libdrm-2.4.134.tar.xz"
+sha256 = "ac5e74d157830eb8bee44c6a6bf3ad49774ef0dd2a72bdad74a8f20308b52a95"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dtests=false",
+  "-Dman-pages=disabled",
+  "-Dvalgrind=disabled",
+  "-Dcairo-tests=disabled",
+  "-Dintel=disabled",
+  "-Dudev=false",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "linux-headers",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

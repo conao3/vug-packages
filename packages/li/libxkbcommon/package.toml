@@ -1,0 +1,8 @@
+name = "libxkbcommon"
+license = "MIT"
+
+[upstream]
+homepage = "https://xkbcommon.org/"
+sources = [
+  "https://github.com/xkbcommon/libxkbcommon/archive/refs/tags/",
+]

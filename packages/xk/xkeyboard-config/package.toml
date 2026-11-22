@@ -1,0 +1,8 @@
+name = "xkeyboard-config"
+license = "MIT"
+
+[upstream]
+homepage = "https://www.freedesktop.org/wiki/Software/XKeyboardConfig/"
+sources = [
+  "https://www.x.org/releases/individual/data/xkeyboard-config/",
+]

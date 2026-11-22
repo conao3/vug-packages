@@ -1,0 +1,8 @@
+name = "libx11"
+license = "MIT"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/xorg/lib/libx11"
+sources = [
+  "https://www.x.org/releases/individual/lib/",
+]

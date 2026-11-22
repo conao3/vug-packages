@@ -1,0 +1,8 @@
+name = "wayland-protocols"
+license = "MIT"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/wayland/wayland-protocols"
+sources = [
+  "https://gitlab.freedesktop.org/wayland/wayland-protocols/-/releases/",
+]

@@ -1,0 +1,26 @@
+version = "1.45"
+
+[source]
+url = "https://gitlab.freedesktop.org/wayland/wayland-protocols/-/releases/1.45/downloads/wayland-protocols-1.45.tar.xz"
+sha256 = "4d2b2a9e3e099d017dc8107bf1c334d27bb87d9e4aff19a0c8d856d17cd41ef0"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dtests=false",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+  "wayland",
+]
+run = []
+
+[check]
+enabled = false
+skip = []
