@@ -1,0 +1,8 @@
+name = "libedit"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://thrysoee.dk/editline/"
+sources = [
+  "https://thrysoee.dk/editline/",
+]

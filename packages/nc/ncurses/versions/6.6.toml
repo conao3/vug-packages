@@ -30,3 +30,17 @@ run = [
 [check]
 enabled = false
 skip = []
+
+[links]
+"lib/libcurses.so" = "libncursesw.so"
+"lib/libform.so" = "libformw.so"
+"lib/libmenu.so" = "libmenuw.so"
+"lib/libncurses.so" = "libncursesw.so"
+"lib/libpanel.so" = "libpanelw.so"
+"lib/libtermcap.so" = "libtinfow.so"
+"lib/libtinfo.so" = "libtinfow.so"
+"lib/pkgconfig/form.pc" = "formw.pc"
+"lib/pkgconfig/menu.pc" = "menuw.pc"
+"lib/pkgconfig/ncurses.pc" = "ncursesw.pc"
+"lib/pkgconfig/panel.pc" = "panelw.pc"
+"lib/pkgconfig/tinfo.pc" = "tinfow.pc"
