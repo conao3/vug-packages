@@ -1,0 +1,8 @@
+name = "i3blocks"
+license = "GPL-3.0-or-later"
+
+[upstream]
+homepage = "https://github.com/vivien/i3blocks"
+sources = [
+  "https://github.com/vivien/i3blocks/archive/refs/tags/",
+]
