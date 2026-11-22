@@ -1,0 +1,41 @@
+version = "1.25.0"
+
+[source]
+url = "https://codeberg.org/dnkl/foot/archive/1.25.0.tar.gz"
+sha256 = "ee9d0e51295945157ecb33119cb2c79b276093d0fd342d959d78d772d505571c"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Ddocs=disabled",
+  "-Dthemes=false",
+  "-Dterminfo=disabled",
+  "-Dgrapheme-clustering=enabled",
+  "-Dwerror=false",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "linux-headers",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+  "tllist",
+  "wayland-protocols",
+]
+run = [
+  "fcft",
+  "fontconfig",
+  "freetype",
+  "libxkbcommon",
+  "musl",
+  "pixman",
+  "utf8proc",
+  "wayland",
+]
+
+[check]
+enabled = false
+skip = []

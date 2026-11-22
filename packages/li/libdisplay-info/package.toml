@@ -1,0 +1,8 @@
+name = "libdisplay-info"
+license = "MIT"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/emersion/libdisplay-info"
+sources = [
+  "https://gitlab.freedesktop.org/emersion/libdisplay-info/-/releases/",
+]

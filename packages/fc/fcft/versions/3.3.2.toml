@@ -1,0 +1,36 @@
+version = "3.3.2"
+
+[source]
+url = "https://codeberg.org/dnkl/fcft/archive/3.3.2.tar.gz"
+sha256 = "22bcf73f51480ad48110a52cb26f93180d125929ac6b29bef67545fc36967479"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Ddocs=disabled",
+  "-Dtest-text-shaping=false",
+  "-Dgrapheme-shaping=enabled",
+  "-Drun-shaping=enabled",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+  "tllist",
+]
+run = [
+  "fontconfig",
+  "freetype",
+  "harfbuzz",
+  "musl",
+  "pixman",
+  "utf8proc",
+]
+
+[check]
+enabled = false
+skip = []

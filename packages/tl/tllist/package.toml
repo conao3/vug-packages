@@ -1,0 +1,8 @@
+name = "tllist"
+license = "MIT"
+
+[upstream]
+homepage = "https://codeberg.org/dnkl/tllist"
+sources = [
+  "https://codeberg.org/dnkl/tllist/archive/",
+]

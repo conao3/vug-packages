@@ -1,0 +1,8 @@
+name = "wlroots"
+license = "MIT"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/wlroots/wlroots"
+sources = [
+  "https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/",
+]

@@ -1,0 +1,8 @@
+name = "dejavu-fonts"
+license = "Bitstream-Vera AND LicenseRef-Public-Domain"
+
+[upstream]
+homepage = "https://dejavu-fonts.github.io/"
+sources = [
+  "https://github.com/dejavu-fonts/dejavu-fonts/releases/download/",
+]

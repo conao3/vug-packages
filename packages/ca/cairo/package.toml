@@ -1,0 +1,8 @@
+name = "cairo"
+license = "LGPL-2.1-only OR MPL-1.1"
+
+[upstream]
+homepage = "https://cairographics.org/"
+sources = [
+  "https://cairographics.org/releases/",
+]

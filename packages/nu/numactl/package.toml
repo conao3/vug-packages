@@ -1,0 +1,8 @@
+name = "numactl"
+license = "GPL-2.0-only AND LGPL-2.1-only"
+
+[upstream]
+homepage = "https://github.com/numactl/numactl"
+sources = [
+  "https://github.com/numactl/numactl/releases/download/",
+]

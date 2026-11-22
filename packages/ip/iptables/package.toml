@@ -1,0 +1,8 @@
+name = "iptables"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://www.netfilter.org/projects/iptables/"
+sources = [
+  "https://www.netfilter.org/pub/iptables/",
+]

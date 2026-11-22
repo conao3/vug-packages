@@ -1,0 +1,8 @@
+name = "fcft"
+license = "MIT"
+
+[upstream]
+homepage = "https://codeberg.org/dnkl/fcft"
+sources = [
+  "https://codeberg.org/dnkl/fcft/archive/",
+]

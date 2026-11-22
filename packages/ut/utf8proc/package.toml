@@ -1,0 +1,8 @@
+name = "utf8proc"
+license = "MIT"
+
+[upstream]
+homepage = "https://juliastrings.github.io/utf8proc/"
+sources = [
+  "https://github.com/JuliaStrings/utf8proc/archive/refs/tags/",
+]

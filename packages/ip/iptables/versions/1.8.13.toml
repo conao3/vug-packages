@@ -1,0 +1,30 @@
+version = "1.8.13"
+
+[source]
+url = "https://www.netfilter.org/pub/iptables/iptables-1.8.13.tar.xz"
+sha256 = "1afcd33da9e8f913ace6a2126788162e207e26f5d5e29c6573c0e581ffc58b99"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--disable-nftables",
+  "--without-kernel",
+  "--enable-libipq=no",
+  "--disable-bpf-compiler",
+  "--disable-nfsynproxy",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "linux-headers",
+  "make",
+  "pkgconf",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

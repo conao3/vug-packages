@@ -1,0 +1,8 @@
+name = "foot"
+license = "MIT"
+
+[upstream]
+homepage = "https://codeberg.org/dnkl/foot"
+sources = [
+  "https://codeberg.org/dnkl/foot/archive/",
+]
