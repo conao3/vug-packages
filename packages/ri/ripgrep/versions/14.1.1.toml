@@ -1,0 +1,23 @@
+version = "14.1.1"
+
+[source]
+url = "https://github.com/BurntSushi/ripgrep/archive/refs/tags/14.1.1.tar.gz"
+sha256 = "4dad02a2f9c8c3c8d89434e47337aa654cb0e2aa50e806589132f186bf5c2b66"
+
+[build]
+kind = "cargo"
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "rust",
+]
+run = [
+  "musl",
+  "rust-libunwind",
+]
+
+[check]
+enabled = false
+skip = []

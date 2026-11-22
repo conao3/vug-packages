@@ -1,0 +1,8 @@
+name = "ripgrep"
+license = "Unlicense OR MIT"
+
+[upstream]
+homepage = "https://github.com/BurntSushi/ripgrep"
+sources = [
+  "https://github.com/BurntSushi/ripgrep/archive/refs/tags/",
+]

@@ -4,5 +4,5 @@ license = "Apache-2.0"
 [upstream]
 homepage = "https://github.com/conao3/rust-vug"
 sources = [
-  "https://github.com/conao3/rust-vug/releases/download/",
+  "https://github.com/conao3/rust-vug/archive/refs/tags/",
 ]

@@ -1,0 +1,32 @@
+version = "1.100.0"
+
+[source]
+url = "https://static.rust-lang.org/dist/2026-11-12/rust-1.100.0-x86_64-unknown-linux-musl.tar.xz"
+sha256 = "fda6aa497a5c40df71274f92463b8cf0a1d36040dc9d22ef62236fc40e62b648"
+
+[build]
+kind = "commands"
+commands = [
+  ["mkdir", "-p", "{out}/lib", "{out}/libexec"],
+  ["cp", "-r", "rustc/lib/.", "{out}/lib/"],
+  ["cp", "-r", "rust-std-x86_64-unknown-linux-musl/lib/rustlib/x86_64-unknown-linux-musl/.", "{out}/lib/rustlib/x86_64-unknown-linux-musl/"],
+  ["cp", "rustc/bin/rustc", "cargo/bin/cargo", "{out}/libexec/"],
+]
+
+[dependencies]
+build = [
+  "tar",
+  "xz",
+]
+run = [
+  "musl",
+  "rust-libunwind",
+]
+
+[check]
+enabled = false
+skip = []
+
+[wrappers]
+"bin/cargo" = ["{dep:musl}/lib/ld-musl-x86_64.so.1", "--library-path", "{out}/lib:{dep:rust-libunwind}/lib:{dep:musl}/lib", "--argv0", "cargo", "{out}/libexec/cargo"]
+"bin/rustc" = ["{dep:musl}/lib/ld-musl-x86_64.so.1", "--library-path", "{out}/lib:{dep:rust-libunwind}/lib:{dep:musl}/lib", "--argv0", "rustc", "{out}/libexec/rustc", "--sysroot", "{out}"]
