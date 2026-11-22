@@ -34,11 +34,49 @@ systems/
 $ vug package build-package --root . --name hello
 ```
 
-A system builds into a disk image that boots in QEMU:
+The first build fetches the seed (busybox and zig) and builds the tool chain
+from it; every later build takes what is already in the store.
+
+## Try a system
+
+`systems/systemd.toml` is a system with systemd, logins through PAM, sshd, a
+DHCP client, time synchronization, and everyday tools. Build a disk image and
+start it in QEMU with the kernel of the system:
 
 ```console
-$ vug system build-image --root . --name systemd --image systemd.img
+$ vug system build-image --root . --name systemd --image systemd.img --size 4g
+$ qemu-system-x86_64 -enable-kvm -m 2048 -nographic \
+    -kernel <Kernel of the output above> \
+    -drive file=systemd.img,if=virtio,format=raw \
+    -nic user,model=virtio-net-pci,hostfwd=tcp:127.0.0.1:2222-:22 \
+    -append "console=ttyS0 root=/dev/vda rw init=/vug/profiles/system/init"
 ```
+
+The console logs in as the user of the record. The records are on the
+machine at `/vug/tree`; after an edit,
+
+```console
+# vug system switch-system --root /vug/tree --name systemd --binary-cache <URL>
+```
+
+builds the new system and switches to it, and
+`/vug/profiles/system-<N>/bin/switch-to-system` goes back to generation `N`.
+A binary cache is a directory written by `vug store export-cache` on the
+machine that built the packages, served over HTTP.
+
+`systems/generic.toml` is the same system with a kernel for real hardware
+and a boot loader. Its image is a GPT disk that EFI firmware boots, in QEMU
+with OVMF or written to a disk:
+
+```console
+$ vug system build-image --root . --name generic --image generic.img --size 8g
+$ qemu-system-x86_64 -enable-kvm -m 2048 \
+    -drive if=pflash,format=raw,readonly=on,file=OVMF_CODE.fd \
+    -drive if=pflash,format=raw,file=OVMF_VARS.fd \
+    -drive file=generic.img,if=virtio,format=raw
+```
+
+The boot menu lists the generations of the machine.
 
 ## Check
 
