@@ -1,0 +1,29 @@
+version = "1.27.4"
+
+[source]
+url = "https://go.dev/dl/go1.27.4.linux-amd64.tar.gz"
+sha256 = "7226736c2339719cda28fbf3a54d71aa63bcefe376e98cef00034268dab24840"
+
+[build]
+kind = "prebuilt"
+install = [
+  { from = "VERSION", to = "lib/go/VERSION" },
+  { from = "go.env", to = "lib/go/go.env" },
+  { from = "bin", to = "lib/go/bin" },
+  { from = "lib", to = "lib/go/lib" },
+  { from = "misc", to = "lib/go/misc" },
+  { from = "pkg", to = "lib/go/pkg" },
+  { from = "src", to = "lib/go/src" },
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
+
+[links]
+"bin/go" = "../lib/go/bin/go"
+"bin/gofmt" = "../lib/go/bin/gofmt"
