@@ -1,0 +1,35 @@
+version = "3.12"
+
+[source]
+url = "https://mirrors.edge.kernel.org/pub/linux/network/wireless/iwd-3.12.tar.xz"
+sha256 = "d89a5e45c7180170e19be828f9e944a768c593758094fc57a358d0e7c4cb1a49"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--disable-manual-pages",
+  "--disable-systemd-service",
+  "--with-dbus-datadir={out}/share",
+  "--localstatedir=/var",
+  "--sysconfdir=/etc",
+]
+install-flags = [
+  "daemon_storagedir={out}/var/lib/iwd",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "linux-headers",
+  "make",
+  "pkgconf",
+]
+run = [
+  "dbus",
+  "musl",
+  "readline",
+]
+
+[check]
+enabled = false
+skip = []
