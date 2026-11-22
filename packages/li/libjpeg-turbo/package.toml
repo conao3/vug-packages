@@ -1,0 +1,8 @@
+name = "libjpeg-turbo"
+license = "IJG AND BSD-3-Clause AND Zlib"
+
+[upstream]
+homepage = "https://libjpeg-turbo.org/"
+sources = [
+  "https://github.com/libjpeg-turbo/libjpeg-turbo/releases/download/",
+]
