@@ -1,0 +1,8 @@
+name = "fd"
+license = "MIT OR Apache-2.0"
+
+[upstream]
+homepage = "https://github.com/sharkdp/fd"
+sources = [
+  "https://github.com/sharkdp/fd/archive/refs/tags/",
+]
