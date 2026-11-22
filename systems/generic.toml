@@ -1,0 +1,101 @@
+name = "generic"
+kernel = "linux-generic"
+init = "{pkg:systemd}/lib/systemd/systemd"
+sh = "{pkg:bash}/bin/bash"
+packages = [
+  "bash",
+  "coreutils",
+  "curl",
+  "file",
+  "findutils",
+  "git",
+  "grep",
+  "htop",
+  "iproute2",
+  "iputils",
+  "less",
+  "limine",
+  "procps",
+  "sed",
+  "shadow",
+  "tmux",
+  "vim",
+  "vug",
+]
+
+[boot]
+loader = "{pkg:limine}/share/limine/BOOTX64.EFI"
+arguments = ["console=tty0", "console=ttyS0"]
+
+[service.dbus]
+
+[service.esp]
+
+[service.dhcpcd]
+
+[service.pam]
+
+[service.serial-autologin]
+user = "conao"
+
+[service.sshd]
+
+[service.sudo]
+wheel = "NOPASSWD: ALL"
+
+[service.systemd]
+
+[service.timezone]
+zone = "America/Toronto"
+
+[[file]]
+path = "/etc/os-release"
+content = """
+NAME="vug"
+ID=vug
+PRETTY_NAME="vug"
+"""
+
+[[file]]
+path = "/etc/hostname"
+kind = "seed"
+content = "vug\n"
+
+[[file]]
+path = "/etc/login.defs"
+content = """
+ENCRYPT_METHOD SHA512
+ENV_PATH PATH=/run/wrappers/bin:/bin
+ENV_SUPATH PATH=/run/wrappers/bin:/bin
+"""
+
+[[file]]
+path = "/etc/profile"
+content = """
+echo VUG-LOGIN-OK "$(id -un)" "$(tty)"
+sudo true && echo VUG-SUDO-OK "$(sudo id -u)"
+"""
+
+[[group]]
+name = "root"
+gid = 0
+
+[[group]]
+name = "conao"
+gid = 1000
+
+[[user]]
+name = "root"
+uid = 0
+group = "root"
+home = "/root"
+shell = "/bin/bash"
+
+[[user]]
+name = "conao"
+uid = 1000
+group = "conao"
+groups = ["wheel"]
+home = "/home/conao"
+shell = "/bin/bash"
+password = ""
