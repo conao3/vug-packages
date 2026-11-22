@@ -18,7 +18,6 @@ make-flags = [
   "NO_REGEX=NeedsStartEnd",
   "NO_RUST=1",
   "NO_TCLTK=1",
-  "LINK_FUZZ_PROGRAMS=",
 ]
 
 [dependencies]

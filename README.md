@@ -52,7 +52,10 @@ $ qemu-system-x86_64 -enable-kvm -m 2048 -nographic \
     -append "console=ttyS0 root=/dev/vda rw init=/vug/profiles/system/init"
 ```
 
-The console logs in as the user of the record. The records are on the
+Both systems here are test configurations: the console logs in as the user
+of the record without a password, and that user may run `sudo` without one.
+Change the users, the `serial-autologin` service, and the `sudo` parameter
+before using one on a machine others can reach. The records are on the
 machine at `/vug/tree`; after an edit,
 
 ```console

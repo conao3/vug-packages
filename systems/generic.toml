@@ -48,7 +48,6 @@ wheel = "NOPASSWD: ALL"
 [service.systemd]
 
 [service.timezone]
-zone = "America/Toronto"
 
 [[file]]
 path = "/etc/os-release"
