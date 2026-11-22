@@ -1,0 +1,8 @@
+name = "just"
+license = "CC0-1.0"
+
+[upstream]
+homepage = "https://github.com/casey/just"
+sources = [
+  "https://github.com/casey/just/archive/refs/tags/",
+]

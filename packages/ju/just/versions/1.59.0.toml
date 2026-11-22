@@ -1,0 +1,23 @@
+version = "1.59.0"
+
+[source]
+url = "https://github.com/casey/just/archive/refs/tags/1.59.0.tar.gz"
+sha256 = "20f876880851f1cc67fc7eb7589c7f7ccaa7612d827feac75797cf4a6ed729aa"
+
+[build]
+kind = "cargo"
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "rust",
+]
+run = [
+  "musl",
+  "rust-libunwind",
+]
+
+[check]
+enabled = false
+skip = []
