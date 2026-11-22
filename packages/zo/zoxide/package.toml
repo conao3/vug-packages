@@ -1,0 +1,8 @@
+name = "zoxide"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/ajeetdsouza/zoxide"
+sources = [
+  "https://github.com/ajeetdsouza/zoxide/archive/refs/tags/",
+]
