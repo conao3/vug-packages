@@ -1,0 +1,52 @@
+version = "26.3.1"
+
+[source]
+url = "https://archive.mesa3d.org/mesa-26.3.1.tar.xz"
+sha256 = "4e4e438eac7b840a9383988cbb7c08dad8041da544b9319fc26d319fa7348961"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dsysconfdir=/etc",
+  "-Dgallium-drivers=softpipe",
+  "-Dvulkan-drivers=",
+  "-Dllvm=disabled",
+  "-Dplatforms=wayland",
+  "-Dglx=disabled",
+  "-Degl=enabled",
+  "-Dgbm=enabled",
+  "-Dgles2=enabled",
+  "-Dopengl=true",
+  "-Dvalgrind=disabled",
+  "-Dlibunwind=disabled",
+  "-Dzstd=enabled",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "bison",
+  "flex",
+  "linux-headers",
+  "mako",
+  "markupsafe",
+  "meson",
+  "packaging",
+  "pkgconf",
+  "python",
+  "pyyaml",
+  "samurai",
+  "wayland-protocols",
+]
+run = [
+  "expat",
+  "libdrm",
+  "musl",
+  "wayland",
+  "zlib",
+  "zstd",
+]
+
+[check]
+enabled = false
+skip = []

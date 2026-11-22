@@ -1,0 +1,8 @@
+name = "mesa"
+license = "MIT"
+
+[upstream]
+homepage = "https://www.mesa3d.org/"
+sources = [
+  "https://archive.mesa3d.org/",
+]
