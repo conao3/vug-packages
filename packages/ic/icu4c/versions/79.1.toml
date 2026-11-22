@@ -25,6 +25,7 @@ build = [
   "sed",
 ]
 run = [
+  "libcxx",
   "musl",
 ]
 

@@ -27,6 +27,7 @@ build = [
   "texinfo",
 ]
 run = [
+  "libcxx",
   "musl",
   "perl",
 ]

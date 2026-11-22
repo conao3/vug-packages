@@ -8,7 +8,7 @@ sha256 = "d3b86ab29cfb4445a6652e5c2642ccc75e04e38084dde3701d323320f35a31da"
 kind = "cmake"
 path = "llvm"
 setup-flags = [
-  "-DLLVM_TARGETS_TO_BUILD=X86",
+  "-DLLVM_TARGETS_TO_BUILD=X86;AMDGPU",
   "-DLLVM_ENABLE_PROJECTS=",
   "-DLLVM_BUILD_LLVM_DYLIB=ON",
   "-DLLVM_LINK_LLVM_DYLIB=ON",
@@ -30,6 +30,7 @@ build = [
   "python",
 ]
 run = [
+  "libcxx",
   "musl",
   "zlib",
 ]
