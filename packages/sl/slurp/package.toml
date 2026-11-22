@@ -1,0 +1,8 @@
+name = "slurp"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/emersion/slurp"
+sources = [
+  "https://github.com/emersion/slurp/releases/download/",
+]
