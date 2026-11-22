@@ -8,9 +8,10 @@ sha256 = "4e4e438eac7b840a9383988cbb7c08dad8041da544b9319fc26d319fa7348961"
 kind = "meson"
 setup-flags = [
   "-Dsysconfdir=/etc",
-  "-Dgallium-drivers=softpipe",
+  "-Dgallium-drivers=llvmpipe,virgl,zink,radeonsi",
   "-Dvulkan-drivers=",
-  "-Dllvm=disabled",
+  "-Dllvm=enabled",
+  "-Dcpp_rtti=false",
   "-Dplatforms=wayland",
   "-Dglx=disabled",
   "-Degl=enabled",
@@ -39,8 +40,11 @@ build = [
   "wayland-protocols",
 ]
 run = [
+  "elfutils",
   "expat",
+  "libcxx",
   "libdrm",
+  "llvm",
   "musl",
   "wayland",
   "zlib",
