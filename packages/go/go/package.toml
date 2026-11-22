@@ -1,0 +1,8 @@
+name = "go"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://go.dev/"
+sources = [
+  "https://go.dev/dl/",
+]
