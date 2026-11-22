@@ -1,0 +1,35 @@
+version = "1.9.1"
+
+[source]
+url = "https://github.com/swaywm/swayidle/archive/refs/tags/v1.9.1.tar.gz"
+sha256 = "846372a151e9f65bbc50e86d600fc7d7f9e494c3e2fcbc23b4d1ead9a13bcd1e"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dlogind=enabled",
+  "-Dlogind-provider=systemd",
+  "-Dman-pages=disabled",
+  "-Dbash-completions=false",
+  "-Dfish-completions=false",
+  "-Dzsh-completions=false",
+  "-Dsysconfdir=/etc",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "meson",
+  "pkgconf",
+  "samurai",
+  "wayland-protocols",
+]
+run = [
+  "musl",
+  "systemd",
+  "wayland",
+]
+
+[check]
+enabled = false
+skip = []
