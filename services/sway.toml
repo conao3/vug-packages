@@ -94,7 +94,6 @@ StandardError=journal
 UtmpIdentifier={param:tty}
 UtmpMode=user
 Environment=XDG_SESSION_TYPE=wayland
-Environment=WLR_RENDERER=pixman
 Environment=XDG_CONFIG_DIRS=/etc/xdg
 ExecStart=/bin/sway -c /etc/sway/config
 Restart=no
