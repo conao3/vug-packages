@@ -1,0 +1,8 @@
+name = "bat"
+license = "MIT OR Apache-2.0"
+
+[upstream]
+homepage = "https://github.com/sharkdp/bat"
+sources = [
+  "https://github.com/sharkdp/bat/archive/refs/tags/",
+]
