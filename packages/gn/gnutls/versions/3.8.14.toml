@@ -1,0 +1,38 @@
+version = "3.8.14"
+
+[source]
+url = "https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.14.tar.xz"
+sha256 = "7e2d258071f5db9620aa7ff34259331d004f7beafa3eb18560cfaf60acfbf02a"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--disable-nls",
+  "--disable-doc",
+  "--disable-tests",
+  "--without-p11-kit",
+  "--disable-guile",
+  "--with-default-trust-store-file=/etc/ssl/certs/ca-certificates.crt",
+  "--without-brotli",
+  "--without-zstd",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "pkgconf",
+]
+run = [
+  "gmp",
+  "libidn2",
+  "libtasn1",
+  "libunistring",
+  "musl",
+  "nettle",
+  "zlib",
+]
+
+[check]
+enabled = false
+skip = []

@@ -1,0 +1,12 @@
+name = "ca-certificates"
+packages = [
+  "ca-certificates",
+]
+
+[[file]]
+path = "/etc/ssl/certs/ca-certificates.crt"
+target = "{pkg:ca-certificates}/etc/ssl/certs/ca-certificates.crt"
+
+[[file]]
+path = "/etc/ssl/cert.pem"
+target = "/etc/ssl/certs/ca-certificates.crt"

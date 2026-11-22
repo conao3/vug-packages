@@ -1,0 +1,35 @@
+version = "7.3"
+
+[source]
+url = "https://cdn.kernel.org/pub/linux/kernel/people/kdave/btrfs-progs/btrfs-progs-v7.3.tar.xz"
+sha256 = "d37b63403d25fe025704c758e6a3da0979ae50c30c5f02aa78e4410e7b346e3a"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--disable-documentation",
+  "--disable-python",
+  "--disable-libudev",
+  "--disable-backtrace",
+]
+
+[dependencies]
+build = [
+  "bash",
+  "binutils",
+  "linux-headers",
+  "make",
+  "pkgconf",
+]
+run = [
+  "e2fsprogs",
+  "lzo",
+  "musl",
+  "util-linux",
+  "zlib",
+  "zstd",
+]
+
+[check]
+enabled = false
+skip = []

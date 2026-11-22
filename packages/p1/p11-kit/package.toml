@@ -1,0 +1,8 @@
+name = "p11-kit"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://p11-glue.github.io/p11-glue/p11-kit.html"
+sources = [
+  "https://github.com/p11-glue/p11-kit/releases/download/",
+]

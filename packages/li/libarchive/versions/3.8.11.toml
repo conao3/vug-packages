@@ -1,0 +1,35 @@
+version = "3.8.11"
+
+[source]
+url = "https://github.com/libarchive/libarchive/releases/download/v3.8.11/libarchive-3.8.11.tar.xz"
+sha256 = "a3dc0872b1b39da34dc18ef1b944f0f11ffd37425d70ae04be679279f1cf43d2"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--without-openssl",
+  "--without-expat",
+  "--without-nettle",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "pkgconf",
+]
+run = [
+  "acl",
+  "attr",
+  "bzip2",
+  "libxml2",
+  "lz4",
+  "musl",
+  "xz",
+  "zlib",
+  "zstd",
+]
+
+[check]
+enabled = false
+skip = []

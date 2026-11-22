@@ -11,6 +11,8 @@ configure-flags = [
   "--enable-elf-shlibs",
   "--disable-fuse2fs",
   "--disable-uuidd",
+  "--disable-libuuid",
+  "--disable-libblkid",
 ]
 
 [dependencies]
@@ -21,6 +23,7 @@ build = [
 ]
 run = [
   "musl",
+  "util-linux",
 ]
 
 [check]

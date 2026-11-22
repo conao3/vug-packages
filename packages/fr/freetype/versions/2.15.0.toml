@@ -1,0 +1,30 @@
+version = "2.15.0"
+
+[source]
+url = "https://download.savannah.gnu.org/releases/freetype/freetype-2.15.0.tar.xz"
+sha256 = "93cd47eb719c325107f2d3cf087d06299e944c3b48a40b55537302304dea1dd5"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--without-harfbuzz",
+  "--without-png",
+  "--without-brotli",
+  "--enable-freetype-config",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "pkgconf",
+]
+run = [
+  "bzip2",
+  "musl",
+  "zlib",
+]
+
+[check]
+enabled = false
+skip = []

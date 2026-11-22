@@ -1,0 +1,41 @@
+version = "2.88.4"
+
+[source]
+url = "https://download.gnome.org/sources/glib/2.88/glib-2.88.4.tar.xz"
+sha256 = "25fd169f3b2f91fe2391ad297883ce0fcf30c69fc789ffd1c9672d1332b1c5a8"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dtests=false",
+  "-Dnls=disabled",
+  "-Dselinux=disabled",
+  "-Dlibmount=disabled",
+  "-Dman-pages=disabled",
+  "-Ddocumentation=false",
+  "-Dintrospection=disabled",
+  "-Dxattr=false",
+  "-Dlibelf=disabled",
+  "-Dsysprof=disabled",
+]
+
+[dependencies]
+build = [
+  "bash",
+  "binutils",
+  "linux-headers",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "libffi",
+  "musl",
+  "pcre2",
+  "zlib",
+]
+
+[check]
+enabled = false
+skip = []

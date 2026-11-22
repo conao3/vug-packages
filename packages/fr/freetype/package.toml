@@ -1,0 +1,8 @@
+name = "freetype"
+license = "FTL OR GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://freetype.org/"
+sources = [
+  "https://download.savannah.gnu.org/releases/freetype/",
+]

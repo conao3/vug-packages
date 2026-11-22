@@ -1,0 +1,8 @@
+name = "mdadm"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://docs.kernel.org/admin-guide/md.html"
+sources = [
+  "https://cdn.kernel.org/pub/linux/utils/raid/mdadm/",
+]

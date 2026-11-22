@@ -1,0 +1,8 @@
+name = "glib"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://gitlab.gnome.org/GNOME/glib"
+sources = [
+  "https://download.gnome.org/sources/glib/2.88/",
+]

@@ -1,0 +1,8 @@
+name = "btrfs-progs"
+license = "GPL-2.0-only"
+
+[upstream]
+homepage = "https://btrfs.readthedocs.io/"
+sources = [
+  "https://cdn.kernel.org/pub/linux/kernel/people/kdave/btrfs-progs/",
+]

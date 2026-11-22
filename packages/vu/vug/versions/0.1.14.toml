@@ -1,0 +1,19 @@
+version = "0.1.14"
+
+[source]
+url = "https://github.com/conao3/rust-vug/releases/download/v0.1.14/vug-0.1.14-x86_64-linux-musl.tar.gz"
+sha256 = "cbede93cf13f14afd377cc7ed5ae98fed873d484e02c98e61727ab43d4e5bc0b"
+
+[build]
+kind = "prebuilt"
+install = [
+  { from = "bin/vug", to = "bin/vug" },
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []

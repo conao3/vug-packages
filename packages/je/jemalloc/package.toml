@@ -1,0 +1,8 @@
+name = "jemalloc"
+license = "BSD-2-Clause"
+
+[upstream]
+homepage = "https://jemalloc.net/"
+sources = [
+  "https://github.com/jemalloc/jemalloc/releases/download/",
+]

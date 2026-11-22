@@ -1,0 +1,38 @@
+version = "2.13.3"
+
+[source]
+url = "https://download.savannah.nongnu.org/releases/man-db/man-db-2.13.3.tar.xz"
+sha256 = "7c10ac705433c740af91264fc29eee471090ead63a408541ab9736284a8c9deb"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--disable-nls",
+  "--disable-setuid",
+  "--without-systemdtmpfilesdir",
+  "--without-systemdsystemunitdir",
+  "--with-pager=less",
+  "--sysconfdir=/etc",
+]
+install-flags = [
+  "sysconfdir={out}/etc",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "pkgconf",
+]
+run = [
+  "gdbm",
+  "groff",
+  "less",
+  "libpipeline",
+  "musl",
+  "zlib",
+]
+
+[check]
+enabled = false
+skip = []

@@ -15,7 +15,7 @@ configure-flags = [
   "--without-nghttp2",
   "--without-libidn2",
   "--disable-ldap",
-  "--without-ca-bundle",
+  "--with-ca-bundle=/etc/ssl/certs/ca-certificates.crt",
   "--without-ca-path",
 ]
 

@@ -1,0 +1,8 @@
+name = "brotli"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/google/brotli"
+sources = [
+  "https://github.com/google/brotli/archive/refs/tags/",
+]

@@ -1,0 +1,34 @@
+version = "0.26.6"
+
+[source]
+url = "https://github.com/p11-glue/p11-kit/releases/download/0.26.6/p11-kit-0.26.6.tar.xz"
+sha256 = "5fda95dc89964af32dbd8e01b139c166717cf96c4fee3d601bcd60bdb23d23c6"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dsystemd=disabled",
+  "-Dbash_completion=disabled",
+  "-Dnls=false",
+  "-Dtest=false",
+  "-Dtrust_paths=/etc/ssl/certs/ca-certificates.crt",
+]
+
+[dependencies]
+build = [
+  "bash",
+  "binutils",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "libffi",
+  "libtasn1",
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

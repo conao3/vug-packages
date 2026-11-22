@@ -1,0 +1,8 @@
+name = "ca-certificates"
+license = "MPL-2.0"
+
+[upstream]
+homepage = "https://curl.se/docs/caextract.html"
+sources = [
+  "https://curl.se/ca/",
+]

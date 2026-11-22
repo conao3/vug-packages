@@ -1,0 +1,8 @@
+name = "man-db"
+license = "GPL-3.0-or-later"
+
+[upstream]
+homepage = "https://man-db.gitlab.io/man-db/"
+sources = [
+  "https://download.savannah.nongnu.org/releases/man-db/",
+]
