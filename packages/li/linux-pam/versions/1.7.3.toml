@@ -1,4 +1,7 @@
 version = "1.7.3"
+patches = [
+  "1.7.3-chkpwd-helper-in-run-wrappers.patch",
+]
 
 [source]
 url = "https://github.com/linux-pam/linux-pam/releases/download/v1.7.3/Linux-PAM-1.7.3.tar.xz"
