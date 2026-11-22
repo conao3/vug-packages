@@ -1,0 +1,8 @@
+name = "zsh"
+license = "MIT-Modern-Variant AND GPL-2.0-only AND GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://www.zsh.org/"
+sources = [
+  "https://www.zsh.org/pub/",
+]

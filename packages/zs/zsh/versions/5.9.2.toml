@@ -1,0 +1,39 @@
+version = "5.9.2"
+
+[source]
+url = "https://www.zsh.org/pub/zsh-5.9.2.tar.xz"
+sha256 = "36fa734374b44783582cec09bcd67822e2f992c779ec1624ab5596df078d2f81"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--enable-multibyte",
+  "--enable-pcre",
+  "--with-term-lib=tinfow ncursesw",
+]
+install-targets = [
+  "install.bin",
+  "install.modules",
+  "install.fns",
+]
+
+[dependencies]
+build = [
+  "bash",
+  "binutils",
+  "coreutils",
+  "diffutils",
+  "gawk",
+  "grep",
+  "make",
+  "sed",
+]
+run = [
+  "musl",
+  "ncurses",
+  "pcre2",
+]
+
+[check]
+enabled = false
+skip = []

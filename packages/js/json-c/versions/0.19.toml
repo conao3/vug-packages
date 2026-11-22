@@ -18,5 +18,5 @@ run = [
 ]
 
 [check]
-enabled = false
+enabled = true
 skip = []
