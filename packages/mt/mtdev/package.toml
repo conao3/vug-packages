@@ -1,0 +1,8 @@
+name = "mtdev"
+license = "MIT"
+
+[upstream]
+homepage = "https://bitmath.org/code/mtdev/"
+sources = [
+  "https://bitmath.org/code/mtdev/",
+]

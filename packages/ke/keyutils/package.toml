@@ -1,0 +1,8 @@
+name = "keyutils"
+license = "GPL-2.0-or-later AND LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://people.redhat.com/~dhowells/keyutils/"
+sources = [
+  "https://git.kernel.org/pub/scm/linux/kernel/git/dhowells/keyutils.git/snapshot/",
+]

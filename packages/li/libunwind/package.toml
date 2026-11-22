@@ -1,0 +1,8 @@
+name = "libunwind"
+license = "MIT"
+
+[upstream]
+homepage = "https://www.nongnu.org/libunwind/"
+sources = [
+  "https://github.com/libunwind/libunwind/releases/download/",
+]

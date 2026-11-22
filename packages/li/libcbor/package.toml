@@ -1,0 +1,8 @@
+name = "libcbor"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/PJK/libcbor"
+sources = [
+  "https://github.com/PJK/libcbor/archive/refs/tags/",
+]

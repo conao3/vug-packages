@@ -1,0 +1,22 @@
+version = "1.6.50"
+
+[source]
+url = "https://downloads.sourceforge.net/libpng/libpng-1.6.50.tar.xz"
+sha256 = "4df396518620a7aa3651443e87d1b2862e4e88cad135a8b93423e01706232307"
+
+[build]
+kind = "autotools"
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+]
+run = [
+  "musl",
+  "zlib",
+]
+
+[check]
+enabled = false
+skip = []

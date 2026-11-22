@@ -1,0 +1,8 @@
+name = "mimalloc"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/microsoft/mimalloc"
+sources = [
+  "https://github.com/microsoft/mimalloc/archive/refs/tags/",
+]

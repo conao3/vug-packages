@@ -1,0 +1,26 @@
+version = "3.7.0"
+
+[source]
+url = "https://github.com/microsoft/mimalloc/archive/refs/tags/v3.7.0.tar.gz"
+sha256 = "1b8653b9ff9b841a97f2c50fd996e89e1a0cb712c3c5b0980ef16a027eb7acf8"
+
+[build]
+kind = "cmake"
+setup-flags = [
+  "-DMI_BUILD_TESTS=OFF",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "linux-headers",
+  "make",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

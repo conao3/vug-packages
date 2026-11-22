@@ -1,0 +1,8 @@
+name = "libssh2"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://libssh2.org/"
+sources = [
+  "https://libssh2.org/download/",
+]

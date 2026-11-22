@@ -1,0 +1,8 @@
+name = "liburing"
+license = "MIT OR LGPL-2.1-only"
+
+[upstream]
+homepage = "https://github.com/axboe/liburing"
+sources = [
+  "https://github.com/axboe/liburing/archive/refs/tags/",
+]

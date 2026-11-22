@@ -1,0 +1,8 @@
+name = "liburcu"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://liburcu.org/"
+sources = [
+  "https://lttng.org/files/urcu/",
+]

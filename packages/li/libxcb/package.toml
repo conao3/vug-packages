@@ -1,0 +1,8 @@
+name = "libxcb"
+license = "MIT"
+
+[upstream]
+homepage = "https://xcb.freedesktop.org/"
+sources = [
+  "https://xorg.freedesktop.org/archive/individual/lib/",
+]

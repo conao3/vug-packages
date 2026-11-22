@@ -1,0 +1,8 @@
+name = "libpng"
+license = "libpng-2.0"
+
+[upstream]
+homepage = "http://www.libpng.org/pub/png/libpng.html"
+sources = [
+  "https://downloads.sourceforge.net/libpng/",
+]

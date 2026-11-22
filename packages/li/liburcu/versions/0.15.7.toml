@@ -1,0 +1,24 @@
+version = "0.15.7"
+
+[source]
+url = "https://lttng.org/files/urcu/userspace-rcu-0.15.7.tar.bz2"
+sha256 = "2556b83adc0f9b3ac8024e613e17d014d04c4c49110604ce55fcb14eae32edd3"
+
+[build]
+kind = "autotools"
+make-flags = [
+  "SUBDIRS=include src extras",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

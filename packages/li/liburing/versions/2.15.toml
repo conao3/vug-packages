@@ -1,0 +1,29 @@
+version = "2.15"
+
+[source]
+url = "https://github.com/axboe/liburing/archive/refs/tags/liburing-2.15.tar.gz"
+sha256 = "8d052f2622dcb3678cbaee5ff582a87572672a6c0a56533cdda5b65cb636120a"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--cc=cc",
+  "--cxx=c++",
+  "--use-libc",
+]
+
+[dependencies]
+build = [
+  "bash",
+  "binutils",
+  "coreutils",
+  "linux-headers",
+  "make",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

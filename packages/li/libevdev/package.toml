@@ -1,0 +1,8 @@
+name = "libevdev"
+license = "MIT"
+
+[upstream]
+homepage = "https://www.freedesktop.org/wiki/Software/libevdev/"
+sources = [
+  "https://www.freedesktop.org/software/libevdev/",
+]

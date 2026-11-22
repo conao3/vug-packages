@@ -1,0 +1,38 @@
+version = "0.9.6"
+
+[source]
+url = "https://github.com/stevegrubb/libcap-ng/archive/refs/tags/v0.9.6.tar.gz"
+sha256 = "399040138e0ca62fa2bcabd63da9af4431a246ef7a654561a0ca3cb00010a539"
+
+[build]
+kind = "autotools"
+configure-command = [
+  "sh",
+  "-c",
+  "export ACLOCAL_PATH='{dep:libtool}/share/aclocal:{dep:pkgconf}/share/aclocal' && ./autogen.sh && ./configure --prefix={out} --without-python3",
+]
+
+[dependencies]
+build = [
+  "autoconf",
+  "automake",
+  "bash",
+  "binutils",
+  "coreutils",
+  "gawk",
+  "grep",
+  "libtool",
+  "linux-headers",
+  "m4",
+  "make",
+  "perl",
+  "pkgconf",
+  "sed",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
