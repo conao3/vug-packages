@@ -1,0 +1,8 @@
+name = "wmenu"
+license = "MIT"
+
+[upstream]
+homepage = "https://codeberg.org/adnano/wmenu"
+sources = [
+  "https://codeberg.org/adnano/wmenu/archive/",
+]
