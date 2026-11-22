@@ -3,7 +3,6 @@ packages = [
   "dejavu-fonts",
   "fontconfig",
   "foot",
-  "gawk",
   "grim",
   "i3blocks",
   "slurp",
@@ -53,7 +52,7 @@ command=cut -d' ' -f1-3 /proc/loadavg
 interval=10
 
 [memory]
-command=awk '/MemAvailable/ {printf "%d MiB free", $2/1024}' /proc/meminfo
+command=sed -n 's/^MemAvailable: *\\([0-9]*\\)[0-9][0-9][0-9] kB/\\1 MB free/p' /proc/meminfo
 interval=10
 
 [time]
