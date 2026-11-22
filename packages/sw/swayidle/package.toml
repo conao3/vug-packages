@@ -1,0 +1,8 @@
+name = "swayidle"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/swaywm/swayidle"
+sources = [
+  "https://github.com/swaywm/swayidle/archive/refs/tags/",
+]
