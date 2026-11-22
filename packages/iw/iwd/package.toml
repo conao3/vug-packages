@@ -1,0 +1,8 @@
+name = "iwd"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://iwd.wiki.kernel.org/"
+sources = [
+  "https://mirrors.edge.kernel.org/pub/linux/network/wireless/",
+]
