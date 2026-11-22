@@ -4,6 +4,8 @@ packages = [
   "fontconfig",
   "foot",
   "sway",
+  "swaybg",
+  "wmenu",
   "xkeyboard-config",
 ]
 
@@ -20,6 +22,8 @@ target = "{pkg:fontconfig}/etc/fonts/fonts.conf"
 path = "/etc/sway/config"
 content = """
 set $mod Mod4
+output * bg #20304a solid_color
+bindsym $mod+d exec wmenu-run
 bindsym $mod+Return exec foot
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+e exit
