@@ -1,0 +1,37 @@
+version = "1.8.6"
+
+[source]
+url = "https://github.com/swaywm/swaylock/archive/refs/tags/v1.8.6.tar.gz"
+sha256 = "904376fd012bfff888d042606539c677d90e11f8beeeccc50a9fe387fc41a686"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dpam=enabled",
+  "-Dgdk-pixbuf=disabled",
+  "-Dman-pages=disabled",
+  "-Dbash-completions=false",
+  "-Dfish-completions=false",
+  "-Dzsh-completions=false",
+  "-Dsysconfdir={out}/etc",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "meson",
+  "pkgconf",
+  "samurai",
+  "wayland-protocols",
+]
+run = [
+  "cairo",
+  "libxkbcommon",
+  "linux-pam",
+  "musl",
+  "wayland",
+]
+
+[check]
+enabled = false
+skip = []
