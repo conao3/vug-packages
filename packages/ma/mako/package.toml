@@ -1,0 +1,8 @@
+name = "mako"
+license = "MIT"
+
+[upstream]
+homepage = "https://pypi.org/project/mako/"
+sources = [
+  "https://files.pythonhosted.org/packages/",
+]

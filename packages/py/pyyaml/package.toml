@@ -1,0 +1,8 @@
+name = "pyyaml"
+license = "MIT"
+
+[upstream]
+homepage = "https://pypi.org/project/pyyaml/"
+sources = [
+  "https://files.pythonhosted.org/packages/",
+]

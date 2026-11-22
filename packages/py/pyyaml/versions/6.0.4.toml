@@ -1,0 +1,21 @@
+version = "6.0.4"
+
+[source]
+url = "https://files.pythonhosted.org/packages/76/b8/c0b780928e2fb1c87e9e375818c6f121da2398b071012d1747be300b83f4/pyyaml-6.0.4.tar.gz"
+sha256 = "e24bf71af8a432d7808fabff134d38dfe16d3cbb41f2873bb4b1e42422de0a1a"
+
+[build]
+kind = "prebuilt"
+install = [
+  { from = "lib/yaml", to = "lib/python3.13/site-packages/yaml" },
+]
+
+[dependencies]
+build = []
+run = [
+  "python",
+]
+
+[check]
+enabled = false
+skip = []

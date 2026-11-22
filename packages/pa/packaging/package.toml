@@ -1,0 +1,8 @@
+name = "packaging"
+license = "Apache-2.0 OR BSD-2-Clause"
+
+[upstream]
+homepage = "https://pypi.org/project/packaging/"
+sources = [
+  "https://files.pythonhosted.org/packages/",
+]
