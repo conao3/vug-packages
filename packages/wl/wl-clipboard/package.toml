@@ -1,0 +1,8 @@
+name = "wl-clipboard"
+license = "GPL-3.0-or-later"
+
+[upstream]
+homepage = "https://github.com/bugaevc/wl-clipboard"
+sources = [
+  "https://github.com/bugaevc/wl-clipboard/archive/refs/tags/",
+]
