@@ -263,12 +263,8 @@ def compare():
 
 def probe():
     address = socket.getaddrinfo("github.com", 80, socket.AF_INET, socket.SOCK_STREAM)[0][4][0]
-    request = "GET / HTTP/1.0\\r\\nHost: github.com\\r\\n\\r\\n"
     with socket.create_connection((address, 80), timeout=8) as connection:
-        connection.sendall(request.encode().decode("unicode_escape").encode())
-        with connection.makefile("rb") as response:
-            if not response.readline().startswith(b"HTTP/"):
-                raise ValueError("Network probe control did not receive an HTTP response")
+        summary(f"Runner TCP control connected to {connection.getpeername()[0]}:80.")
 
     package = CANDIDATE / "packages/ci/ci-network-probe"
     (package / "versions").mkdir(parents=True)
@@ -288,7 +284,7 @@ sha256 = "{source["sha256"]}"
 
 [build]
 kind = "make"
-make-flags = ["OUT={{out}}"]
+make-flags = ["-f", "ci-network-probe.mk", "OUT={{out}}"]
 
 [dependencies]
 build = ["make"]
@@ -299,17 +295,14 @@ enabled = false
 skip = []
 ''')
     makefile = f"""all:
-\t@busybox --list | grep -qx nc
-\t@printf '{request}' > request
-\t@busybox timeout 10 busybox nc -w 8 {address} 80 < request > response 2> connection-error || true
-\t@if grep -q '^HTTP/' response; then echo reachable > result; \\
+\t@if busybox nc -n -z -w 8 {address} 80 2> connection-error; then echo reachable > result; \\
 \telif grep -qi 'Network is unreachable' connection-error; then echo blocked > result; \\
 \telse cat connection-error >&2; exit 1; fi
 install:
 \t@cp result "$(OUT)/result"
 """
     (package / "patches/1-network.patch").write_text(
-        "--- /dev/null\n+++ b/GNUmakefile\n"
+        "--- /dev/null\n+++ b/ci-network-probe.mk\n"
         f"@@ -0,0 +1,{len(makefile.splitlines())} @@\n"
         + "".join(f"+{line}\n" for line in makefile.splitlines())
     )
@@ -321,7 +314,7 @@ install:
         if log.is_file():
             log_tail(log)
     status = (data / "store" / result["out"] / "result").read_text().strip()
-    summary(f"Runner HTTP control passed. Sandbox public IPv4 connection: **{status}**.")
+    summary(f"Sandbox public IPv4 connection: **{status}**.")
     return int(status != "blocked")
 
 
