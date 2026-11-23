@@ -1,0 +1,25 @@
+version = "1.201"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Algorithm-Diff-1.201.tar.gz"
+sha256 = "0022da5982645d9ef0207f3eb9ef63e70e9713ed2340ed7b3850779b0d842a7d"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Algorithm::Diff",
+  "Algorithm::DiffOld",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+]
+
+[check]
+enabled = true
+skip = []
