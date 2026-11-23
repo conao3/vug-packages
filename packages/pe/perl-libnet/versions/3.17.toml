@@ -1,0 +1,32 @@
+version = "3.17"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/S/SH/SHAY/libnet-3.17.tar.gz"
+sha256 = "6f48e0f37174251eced89b975cb4dc6b9c7e4a82fd1c0337b545308e8d87e7df"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Net::Cmd",
+  "Net::Config",
+  "Net::Domain",
+  "Net::FTP",
+  "Net::NNTP",
+  "Net::Netrc",
+  "Net::POP3",
+  "Net::SMTP",
+  "Net::Time",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+]
+
+[check]
+enabled = true
+skip = []
