@@ -1,0 +1,26 @@
+version = "2023.2.0"
+
+[source]
+url = "https://github.com/uxlfoundation/oneTBB/archive/refs/tags/v2023.2.0.tar.gz"
+sha256 = "80cb62e62defeee67ea1885a6f72d97ac81404f8fde9cded62fb51524808a30c"
+
+[build]
+kind = "cmake"
+setup-flags = [
+  "-DTBB_TEST=OFF",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+]
+run = [
+  "libcxx",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
