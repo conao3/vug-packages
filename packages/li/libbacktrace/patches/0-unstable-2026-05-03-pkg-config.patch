@@ -1,0 +1,24 @@
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -2604,6 +2604,8 @@
+ info-am:
+ 
+ install-data-am: install-includeHEADERS
++	$(MKDIR_P) "$(DESTDIR)$(libdir)/pkgconfig"
++	$(INSTALL_DATA) $(srcdir)/libbacktrace.pc "$(DESTDIR)$(libdir)/pkgconfig/libbacktrace.pc"
+ 
+ install-dvi: install-dvi-am
+ 
+--- /dev/null
++++ b/libbacktrace.pc
+@@ -0,0 +1,10 @@
++prefix=${pcfiledir}/../..
++libdir=${prefix}/lib
++includedir=${prefix}/include
++
++Name: libbacktrace
++Description: Stack backtrace library
++Version: 0-unstable-2026-05-03
++Libs: -L${libdir} -lbacktrace
++Libs.private: -lunwind
++Cflags: -I${includedir}
