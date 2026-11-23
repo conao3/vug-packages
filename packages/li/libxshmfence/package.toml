@@ -1,0 +1,8 @@
+name = "libxshmfence"
+license = "HPND-sell-variant"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/xorg/lib/libxshmfence"
+sources = [
+  "https://www.x.org/releases/individual/lib/",
+]
