@@ -1,0 +1,29 @@
+version = "4.41"
+
+[source]
+url = "https://ftp.mozilla.org/pub/nspr/releases/v4.41/src/nspr-4.41.tar.gz"
+sha256 = "c562b8ddfe93704b7dc077be013f01448fdc6c124b1821c0f10471a71cb2e9e6"
+
+[build]
+kind = "autotools"
+configure-command = [
+  "nspr/configure",
+  "--prefix={out}",
+]
+configure-flags = [
+  "--enable-64bit",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "perl",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
