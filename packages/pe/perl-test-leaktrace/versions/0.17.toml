@@ -1,0 +1,25 @@
+version = "0.17"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/L/LE/LEEJO/Test-LeakTrace-0.17.tar.gz"
+sha256 = "777d64d2938f5ea586300eef97ef03eacb43d4c1853c9c3b1091eb3311467970"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Test::LeakTrace",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "musl",
+  "perl",
+]
+
+[check]
+enabled = true
+skip = []
