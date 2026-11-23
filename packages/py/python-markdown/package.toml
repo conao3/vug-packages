@@ -1,0 +1,8 @@
+name = "python-markdown"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://Python-Markdown.github.io/"
+sources = [
+  "https://files.pythonhosted.org/packages/source/m/markdown/",
+]

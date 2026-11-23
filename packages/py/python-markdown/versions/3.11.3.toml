@@ -1,0 +1,25 @@
+version = "3.11.3"
+
+[source]
+url = "https://files.pythonhosted.org/packages/source/m/markdown/markdown-3.11.3.tar.gz"
+sha256 = "81eb91631dc97ad1efbc76019ef0f80fe90ca49ddf81546752d79989c3bfff3e"
+
+[build]
+kind = "python"
+imports = [
+  "markdown",
+]
+
+[dependencies]
+build = [
+  "python-build",
+  "python-installer",
+  "python-setuptools",
+]
+run = [
+  "python",
+]
+
+[check]
+enabled = true
+skip = []
