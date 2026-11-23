@@ -1,0 +1,28 @@
+version = "4.3.1"
+
+[source]
+url = "https://files.pythonhosted.org/packages/source/f/filelock/filelock-4.3.1.tar.gz"
+sha256 = "4c5ee627c401f1863ac6a0de9a14a28d3bb5f8c730b45e2fd6e5dbc79cf34b9e"
+
+[build]
+kind = "python"
+imports = [
+  "filelock",
+]
+
+[dependencies]
+build = [
+  "python-build",
+  "python-hatch-fancy-pypi-readme",
+  "python-hatch-vcs",
+  "python-hatchling",
+  "python-installer",
+  "python-python-sbom",
+]
+run = [
+  "python",
+]
+
+[check]
+enabled = true
+skip = []
