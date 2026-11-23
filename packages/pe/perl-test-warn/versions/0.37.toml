@@ -1,0 +1,25 @@
+version = "0.37"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/B/BI/BIGJ/Test-Warn-0.37.tar.gz"
+sha256 = "98ca32e7f2f5ea89b8bfb9a0609977f3d153e242e2e51705126cb954f1a06b57"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Test::Warn",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+  "perl-sub-uplevel",
+]
+
+[check]
+enabled = true
+skip = []
