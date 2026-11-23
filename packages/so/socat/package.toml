@@ -1,0 +1,9 @@
+name = "socat"
+license = "GPL-2.0-only"
+
+[upstream]
+homepage = "http://www.dest-unreach.org/socat/"
+sources = [
+  "https://distfiles.macports.org/socat/",
+  "https://www.dest-unreach.org/socat/download/",
+]
