@@ -1,0 +1,34 @@
+version = "1.3.2"
+patches = [
+  "1.3.2-socklen.patch",
+]
+
+[source]
+url = "https://downloads.sourceforge.net/libcddb/libcddb-1.3.2.tar.bz2"
+sha256 = "35ce0ee1741ea38def304ddfe84a958901413aa829698357f0bee5bb8f0a223b"
+
+[build]
+kind = "autotools"
+configure-command = [
+  "sh",
+  "-c",
+  "cp {dep:automake}/share/automake-1.20/config.sub config.sub && cp {dep:automake}/share/automake-1.20/config.guess config.guess && ./configure --prefix={out} --without-cdio",
+]
+
+[dependencies]
+build = [
+  "automake",
+  "binutils",
+  "make",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = true
+skip = [
+  "check_cache.sh",
+  "check_charset.sh",
+  "check_server.sh",
+]
