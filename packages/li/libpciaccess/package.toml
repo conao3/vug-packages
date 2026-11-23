@@ -1,0 +1,8 @@
+name = "libpciaccess"
+license = "MIT AND ISC AND X11"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/xorg/lib/libpciaccess"
+sources = [
+  "https://www.x.org/releases/individual/lib/",
+]
