@@ -1,0 +1,8 @@
+name = "python-tomli"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/hukkin/tomli"
+sources = [
+  "https://files.pythonhosted.org/packages/source/t/tomli/",
+]
