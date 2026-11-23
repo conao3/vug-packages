@@ -1,0 +1,8 @@
+name = "python-trove-classifiers"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://pypi.org/project/trove-classifiers/"
+sources = [
+  "https://files.pythonhosted.org/packages/bf/93/af436dfaa845cab5d96f0adbc1e4f3730532d37fa249e4eb796fb1d7fc82/",
+]
