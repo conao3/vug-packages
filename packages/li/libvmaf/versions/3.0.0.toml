@@ -1,0 +1,33 @@
+version = "3.0.0"
+
+[source]
+url = "https://github.com/Netflix/vmaf/archive/v3.0.0.tar.gz"
+sha256 = "7178c4833639e6b989ecae73131d02f70735fdb3fc2c7d84bc36c9c3461d93b1"
+
+[build]
+kind = "commands"
+commands = [
+  ["meson", "setup", "build", "libvmaf", "--prefix={out}", "--libdir=lib", "--buildtype=release", "-Denable_docs=false"],
+  ["meson", "compile", "-C", "build"],
+  ["meson", "test", "-C", "build", "--no-rebuild"],
+  ["meson", "install", "-C", "build", "--no-rebuild"],
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "meson",
+  "nasm",
+  "pkgconf",
+  "python",
+  "samurai",
+  "vim",
+]
+run = [
+  "libcxx",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []

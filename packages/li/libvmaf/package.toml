@@ -1,0 +1,8 @@
+name = "libvmaf"
+license = "BSD-2-Clause-Patent"
+
+[upstream]
+homepage = "https://github.com/Netflix/vmaf"
+sources = [
+  "https://github.com/Netflix/vmaf/archive/",
+]
