@@ -1,0 +1,33 @@
+version = "0-unstable-2024-03-02"
+
+[source]
+url = "https://github.com/svanderburg/libiff/archive/b5f542a83c824f26e0816770c9a17c22bd388606.tar.gz"
+sha256 = "3dfacd01e88f5fe528281396b2d171e2b5d80897fda3576a8fcdc0d17331891e"
+
+[build]
+kind = "autotools"
+autoreconf = true
+make-flags = [
+  "-j1",
+  "man1_MANS=",
+]
+
+[dependencies]
+build = [
+  "autoconf",
+  "automake",
+  "binutils",
+  "grep",
+  "libtool",
+  "m4",
+  "make",
+  "perl",
+  "sed",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
