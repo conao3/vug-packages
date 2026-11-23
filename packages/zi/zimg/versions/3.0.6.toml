@@ -1,0 +1,38 @@
+version = "3.0.6"
+patches = [
+  "3.0.6-system-gtest.patch",
+]
+
+[source]
+url = "https://github.com/sekrit-twc/zimg/archive/release-3.0.6.tar.gz"
+sha256 = "be89390f13a5c9b2388ce0f44a5e89364a20c1c57ce46d382b1fcc3967057577"
+
+[build]
+kind = "autotools"
+autoreconf = true
+configure-flags = [
+  "--enable-unit-test",
+  "CXXSTD=c++17",
+  "STL_LIBS=-lc++",
+]
+make-flags = [
+  "LD_LIBRARY_PATH={dep:gtest}/lib",
+]
+
+[dependencies]
+build = [
+  "autoconf",
+  "automake",
+  "binutils",
+  "gtest",
+  "libtool",
+  "make",
+]
+run = [
+  "libcxx",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []

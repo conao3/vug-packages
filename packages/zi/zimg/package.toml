@@ -1,0 +1,8 @@
+name = "zimg"
+license = "WTFPL"
+
+[upstream]
+homepage = "https://github.com/sekrit-twc/zimg"
+sources = [
+  "https://github.com/sekrit-twc/zimg/archive/",
+]
