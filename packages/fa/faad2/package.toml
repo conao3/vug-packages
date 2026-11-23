@@ -1,0 +1,8 @@
+name = "faad2"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://github.com/knik0/faad2"
+sources = [
+  "https://github.com/knik0/faad2/archive/refs/tags/",
+]
