@@ -1,0 +1,8 @@
+name = "hicolor-icon-theme"
+license = "GPL-2.0-only"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/xdg/default-icon-theme"
+sources = [
+  "https://icon-theme.freedesktop.org/releases/",
+]
