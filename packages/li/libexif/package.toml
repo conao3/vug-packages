@@ -1,0 +1,8 @@
+name = "libexif"
+license = "LGPL-2.0-or-later"
+
+[upstream]
+homepage = "https://libexif.github.io/"
+sources = [
+  "https://github.com/libexif/libexif/releases/download/",
+]
