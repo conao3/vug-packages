@@ -1,0 +1,8 @@
+name = "a52dec"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://git.adelielinux.org/community/a52dec"
+sources = [
+  "https://git.adelielinux.org/api/v4/projects/community%2Fa52dec/",
+]

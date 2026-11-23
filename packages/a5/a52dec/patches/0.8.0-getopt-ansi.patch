@@ -1,0 +1,63 @@
+diff --git a/src/getopt.c b/src/getopt.c
+--- a/src/getopt.c
++++ b/src/getopt.c
+@@ -212,9 +212,7 @@
+ #endif
+ 
+ static char *
+-my_index (str, chr)
+-     const char *str;
+-     int chr;
++my_index (const char *str, int chr)
+ {
+   while (*str)
+     {
+@@ -302,8 +300,7 @@
+ #endif
+ 
+ static void
+-exchange (argv)
+-     char **argv;
++exchange (char **argv)
+ {
+   int bottom = first_nonopt;
+   int middle = last_nonopt;
+@@ -387,10 +384,7 @@
+ static const char *_getopt_initialize (int, char *const *, const char *);
+ #endif
+ static const char *
+-_getopt_initialize (argc, argv, optstring)
+-     int argc;
+-     char *const *argv;
+-     const char *optstring;
++_getopt_initialize (int argc, char *const *argv, const char *optstring)
+ {
+   /* Start processing options with ARGV-element 1 (since ARGV-element 0
+      is the program name); the sequence of previously skipped
+@@ -509,13 +503,7 @@
+    long-named options.  */
+ 
+ int
+-_getopt_internal (argc, argv, optstring, longopts, longind, long_only)
+-     int argc;
+-     char *const *argv;
+-     const char *optstring;
+-     const struct option *longopts;
+-     int *longind;
+-     int long_only;
++_getopt_internal (int argc, char *const *argv, const char *optstring, const struct option *longopts, int *longind, int long_only)
+ {
+   int print_errors = opterr;
+   if (optstring[0] == ':')
+@@ -969,10 +957,7 @@
+ }
+ 
+ int
+-getopt (argc, argv, optstring)
+-     int argc;
+-     char *const *argv;
+-     const char *optstring;
++getopt (int argc, char *const *argv, const char *optstring)
+ {
+   return _getopt_internal (argc, argv, optstring,
+ 			   (const struct option *) 0,

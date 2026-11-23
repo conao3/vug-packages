@@ -1,0 +1,32 @@
+version = "0.8.0"
+patches = [
+  "0.8.0-gcc-15.patch",
+  "0.8.0-getopt-ansi.patch",
+]
+
+[source]
+url = "https://git.adelielinux.org/api/v4/projects/community%2Fa52dec/repository/archive.tar.gz?sha=refs%2Ftags%2Fv0.8.0"
+sha256 = "53744935ddc921dad17c7a98f70f918f88643ce1d72864efbd9b11d37f36a046"
+
+[build]
+kind = "autotools"
+autoreconf = true
+configure-flags = [
+  "--enable-shared",
+]
+
+[dependencies]
+build = [
+  "autoconf",
+  "automake",
+  "binutils",
+  "libtool",
+  "make",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
