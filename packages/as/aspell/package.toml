@@ -1,0 +1,8 @@
+name = "aspell"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://ftp.gnu.org/gnu/aspell"
+sources = [
+  "https://ftp.gnu.org/gnu/aspell/",
+]
