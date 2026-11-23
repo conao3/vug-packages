@@ -1,0 +1,8 @@
+name = "giflib"
+license = "MIT"
+
+[upstream]
+homepage = "https://giflib.sourceforge.net/"
+sources = [
+  "https://downloads.sourceforge.net/project/giflib/",
+]

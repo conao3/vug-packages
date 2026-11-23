@@ -1,0 +1,25 @@
+version = "6.1.3"
+
+[source]
+url = "https://downloads.sourceforge.net/project/giflib/giflib-6.x/giflib-6.1.3.tar.gz"
+sha256 = "b65b66b99f0424b93525f987386f22fc5efb9da2bfc92ad4a532249aaffbab0e"
+
+[build]
+kind = "make"
+make-flags = [
+  "PREFIX={out}",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "coreutils",
+  "make",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
