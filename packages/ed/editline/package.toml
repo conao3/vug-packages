@@ -1,0 +1,8 @@
+name = "editline"
+license = "Spencer-94"
+
+[upstream]
+homepage = "https://troglobit.com/projects/editline/"
+sources = [
+  "https://github.com/troglobit/editline/releases/download/",
+]
