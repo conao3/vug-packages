@@ -1,0 +1,8 @@
+name = "isl"
+license = "MIT"
+
+[upstream]
+homepage = "https://libisl.sourceforge.io/"
+sources = [
+  "https://libisl.sourceforge.io/",
+]
