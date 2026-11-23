@@ -13,13 +13,11 @@ build = [
   "autoconf",
   "automake",
   "binutils",
-  "grep",
   "libtool",
   "m4",
   "make",
   "perl",
   "pkgconf",
-  "sed",
 ]
 run = [
   "libpng",
