@@ -1,0 +1,8 @@
+name = "python-msgpack"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://msgpack.org/"
+sources = [
+  "https://files.pythonhosted.org/packages/source/m/msgpack/",
+]
