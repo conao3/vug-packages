@@ -1,0 +1,8 @@
+name = "nbytes"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/nodejs/nbytes"
+sources = [
+  "https://github.com/nodejs/nbytes/archive/refs/tags/",
+]
