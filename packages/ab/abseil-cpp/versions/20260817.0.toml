@@ -1,0 +1,33 @@
+version = "20260817.0"
+
+[source]
+url = "https://github.com/abseil/abseil-cpp/archive/refs/tags/20260817.0.tar.gz"
+sha256 = "f7e05179df39c45434cad433f5783840bb3788ef322976f9138bc6b72b3a107d"
+
+[build]
+kind = "cmake"
+setup-flags = [
+  "-DBUILD_SHARED_LIBS=ON",
+  "-DABSL_BUILD_TESTING=ON",
+  "-DABSL_USE_EXTERNAL_GOOGLETEST=ON",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+]
+run = [
+  "gtest",
+  "libcxx",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = [
+  "absl_cpu_detect_test",
+  "absl_hash_test",
+  "absl_time_test",
+]
