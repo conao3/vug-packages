@@ -23,7 +23,9 @@ build = [
 ]
 run = [
   "bash",
+  "grep",
   "musl",
+  "sed",
 ]
 
 [check]
