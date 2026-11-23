@@ -1,0 +1,8 @@
+name = "liblc3"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://github.com/google/liblc3"
+sources = [
+  "https://github.com/google/liblc3/archive/refs/tags/",
+]
