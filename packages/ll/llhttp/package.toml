@@ -1,0 +1,8 @@
+name = "llhttp"
+license = "MIT"
+
+[upstream]
+homepage = "https://llhttp.org/"
+sources = [
+  "https://github.com/nodejs/llhttp/archive/refs/tags/",
+]

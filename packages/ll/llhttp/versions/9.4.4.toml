@@ -1,0 +1,25 @@
+version = "9.4.4"
+
+[source]
+url = "https://github.com/nodejs/llhttp/archive/refs/tags/release/v9.4.4.tar.gz"
+sha256 = "5600adb1498f82a9c719b8eb19310021737388e0d92362a6d47be532710d3c96"
+
+[build]
+kind = "cmake"
+setup-flags = [
+  "-DBUILD_SHARED_LIBS=ON",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
