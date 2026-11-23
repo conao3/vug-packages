@@ -68,7 +68,7 @@ of each changed package.
 The build summary shows each package's result, elapsed time, output IDs,
 installed files, and the tail of the log for failures. The
 `package-results-*` artifacts contain the full file lists and logs. The plan
-reports **Incomplete** and fails when the change affects more than eight
+reports **Incomplete** and fails when the change affects more than twelve
 packages. Changes outside `packages/` finish after planning.
 
 ## When the build fails

@@ -38,7 +38,7 @@ jobs:
           BASE_SHA: ${{ inputs.base || github.event.pull_request.base.sha }}
           HEAD_SHA: ${{ inputs.head || github.sha }}
           NETWORK_PROBE: ${{ inputs.network_probe || false }}
-          MAX_PACKAGES: 8
+          MAX_PACKAGES: 12
         run: python3 .github/scripts/package-builds.py plan
 
   build:

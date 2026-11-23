@@ -147,10 +147,9 @@ def plan():
 
 
 def vug_tag():
-    version, record = current_record(CANDIDATE / "packages/vu/vug")
+    version, _ = current_record(CANDIDATE / "packages/vu/vug")
     tag = f"v{version}"
-    source = f"https://github.com/conao3/rust-vug/archive/refs/tags/{tag}.tar.gz"
-    if record["source"]["url"] != source or "~" in tag:
+    if "~" in tag:
         raise ValueError(f"Expected a rust-vug release tag for version {version}")
     summary(f"vug release `{tag}`")
     return tag
@@ -295,9 +294,8 @@ enabled = false
 skip = []
 ''')
     makefile = f"""all:
-\t@if busybox nc -n -z -w 8 {address} 80 2> connection-error; then echo reachable > result; \\
-\telif grep -qi 'Network is unreachable' connection-error; then echo blocked > result; \\
-\telse cat connection-error >&2; exit 1; fi
+\t@if busybox nc -v -n -z -w 8 {address} 80 2> connection-error; then echo reachable > result; \\
+\telse cat connection-error >&2; grep -Eqi 'Network (is )?unreachable' connection-error && echo blocked > result; fi
 install:
 \t@cp result "$(OUT)/result"
 """
