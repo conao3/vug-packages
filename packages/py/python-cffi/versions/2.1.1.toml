@@ -1,0 +1,29 @@
+version = "2.1.1"
+
+[source]
+url = "https://files.pythonhosted.org/packages/source/c/cffi/cffi-2.1.1.tar.gz"
+sha256 = "dd31f52ea1086513bb9df30f8fcee9b8918323ae067a3d5b78bc826a000712be"
+
+[build]
+kind = "python"
+native-imports = [
+  "_cffi_backend",
+]
+
+[dependencies]
+build = [
+  "pkgconf",
+  "python-build",
+  "python-installer",
+  "python-setuptools",
+]
+run = [
+  "libffi",
+  "musl",
+  "python",
+  "python-pycparser",
+]
+
+[check]
+enabled = true
+skip = []

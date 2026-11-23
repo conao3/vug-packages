@@ -1,0 +1,8 @@
+name = "python-cffi"
+license = "MIT-0"
+
+[upstream]
+homepage = "https://cffi.readthedocs.io/"
+sources = [
+  "https://files.pythonhosted.org/packages/source/c/cffi/",
+]
