@@ -58,16 +58,25 @@ build whose output holds such a copy fails.
 
 ## When the build fails
 
-Change only the version record:
+Get past the problem by the first of these that applies:
 
-- add entries to `build.configure-flags` (a `--disable-<feature>` or
-  `--without-<feature>` flag for a library that is not packaged, for
-  example);
-- set `check.enabled = false` when only the test suite fails.
-
-Do not add a flag that works around the build environment itself (a linker
-option that is rejected, a missing standard tool). Report that instead: it is
-fixed in `vug`, and then every package benefits.
+1. An optional feature needs a library or tool that is not packaged: switch
+   the feature off with its flag (`--disable-<feature>`,
+   `--without-<feature>`, `-D<OPTION>=OFF`).
+2. An already packaged tool or library is missing from the dependencies: add
+   it.
+3. A few tests fail for a reason outside the package: list them in
+   `check.skip`. The suite cannot run at all: set `check.enabled = false`.
+4. The build environment itself misbehaves (the compiler wrapper rejects an
+   option, a standard tool is missing, an install step writes outside the
+   output): reproduce it with the smallest command you can, then work around
+   it in the record by the least invasive means.
+5. The source does not build as released: add a patch under `patches/` and
+   list it in `patches` of the version record. Take the upstream commit that
+   fixes it, or else the patch another distribution carries, or else a
+   minimal patch of your own.
+6. A required dependency is not packaged: add it first, as its own pull
+   request.
 
 ## What to write in the pull request
 
@@ -76,3 +85,8 @@ fixed in `vug`, and then every package benefits.
   saying what failed without it, with the error line.
 - What the record leaves out compared to the same package elsewhere:
   optional features that are switched off, and tests that do not run.
+- A section `## Workarounds` with one line for every use of ways 4 to 6
+  above: the error line, the smallest command that reproduces a problem of
+  the build environment, where a patch comes from, and what the record does
+  instead. `None` when there is nothing. The build environment is fixed in
+  `vug` from this list, and the workaround is then removed.
