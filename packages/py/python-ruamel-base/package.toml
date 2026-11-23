@@ -1,0 +1,8 @@
+name = "python-ruamel-base"
+license = "MIT"
+
+[upstream]
+homepage = "https://bitbucket.org/ruamel/base"
+sources = [
+  "https://files.pythonhosted.org/packages/source/r/ruamel.base/",
+]

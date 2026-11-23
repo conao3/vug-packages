@@ -1,0 +1,25 @@
+version = "1.0.0"
+
+[source]
+url = "https://files.pythonhosted.org/packages/source/r/ruamel.base/ruamel.base-1.0.0.tar.gz"
+sha256 = "c041333a0f0f00cd6593eb36aa83abb1a9e7544e83ba7a42aa7ac7476cee5cf3"
+
+[build]
+kind = "python"
+imports = [
+  "ruamel.base",
+]
+
+[dependencies]
+build = [
+  "python-build",
+  "python-installer",
+  "python-setuptools",
+]
+run = [
+  "python",
+]
+
+[check]
+enabled = true
+skip = []
