@@ -1,0 +1,8 @@
+name = "libilbm"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/svanderburg/libilbm"
+sources = [
+  "https://github.com/svanderburg/libilbm/archive/",
+]

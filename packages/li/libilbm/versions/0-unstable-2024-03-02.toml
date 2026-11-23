@@ -1,0 +1,31 @@
+version = "0-unstable-2024-03-02"
+patches = [
+  "0-unstable-2024-03-02-no-manpages.patch",
+  "0-unstable-2024-03-02-serial-tests.patch",
+]
+
+[source]
+url = "https://github.com/svanderburg/libilbm/archive/586f5822275ef5780509a851cb90c7407b2633d9.tar.gz"
+sha256 = "881c6efdb4de462b5383e3c4b554064cf63ee7208cc1ee00a3ff5fd133c0c3eb"
+
+[build]
+kind = "autotools"
+autoreconf = true
+
+[dependencies]
+build = [
+  "autoconf",
+  "automake",
+  "binutils",
+  "libtool",
+  "make",
+  "pkgconf",
+]
+run = [
+  "libiff",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
