@@ -1,0 +1,25 @@
+version = "8.5.1"
+
+[source]
+url = "https://files.pythonhosted.org/packages/source/c/click/click-8.5.1.tar.gz"
+sha256 = "9bbfada76703fd1d784b83eea012e3e8c6a001a876543ef104fa56aaaeb072b4"
+
+[build]
+kind = "python"
+imports = [
+  "click",
+]
+
+[dependencies]
+build = [
+  "python-build",
+  "python-flit-core",
+  "python-installer",
+]
+run = [
+  "python",
+]
+
+[check]
+enabled = true
+skip = []
