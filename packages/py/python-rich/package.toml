@@ -1,0 +1,8 @@
+name = "python-rich"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/Textualize/rich"
+sources = [
+  "https://files.pythonhosted.org/packages/source/r/rich/",
+]

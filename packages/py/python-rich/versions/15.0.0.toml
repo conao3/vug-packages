@@ -1,0 +1,27 @@
+version = "15.0.0"
+
+[source]
+url = "https://files.pythonhosted.org/packages/source/r/rich/rich-15.0.0.tar.gz"
+sha256 = "edd07a4824c6b40189fb7ac9bc4c52536e9780fbbfbddf6f1e2502c31b068c36"
+
+[build]
+kind = "python"
+imports = [
+  "rich",
+]
+
+[dependencies]
+build = [
+  "python-build",
+  "python-installer",
+  "python-poetry-core",
+]
+run = [
+  "python",
+  "python-markdown-it-py",
+  "python-pygments",
+]
+
+[check]
+enabled = true
+skip = []
