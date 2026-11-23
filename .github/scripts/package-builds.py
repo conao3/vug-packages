@@ -103,8 +103,11 @@ def reverse_dependencies(tree, changed):
 
 def plan():
     base, head = (os.environ[key] for key in ("BASE_SHA", "HEAD_SHA"))
-    ensure_commit(base)
     ensure_commit(head)
+    if not base:
+        git("fetch", "--no-tags", "--depth=2", "origin", head)
+        base = git("rev-parse", f"{head}^1", capture_output=True, text=True).stdout.strip()
+    ensure_commit(base)
     summary(f"Base `{base}` · candidate `{head}`")
     if os.environ["NETWORK_PROBE"] == "true":
         checkout(head, CANDIDATE)

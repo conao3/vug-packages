@@ -35,7 +35,7 @@ jobs:
       - name: Select packages and vug release
         id: plan
         env:
-          BASE_SHA: ${{ inputs.base || github.event.pull_request.base.sha }}
+          BASE_SHA: ${{ inputs.base }}
           HEAD_SHA: ${{ inputs.head || github.sha }}
           NETWORK_PROBE: ${{ inputs.network_probe || false }}
           MAX_PACKAGES: 12
