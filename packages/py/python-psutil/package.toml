@@ -1,0 +1,8 @@
+name = "python-psutil"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://github.com/giampaolo/psutil"
+sources = [
+  "https://files.pythonhosted.org/packages/source/p/psutil/",
+]
