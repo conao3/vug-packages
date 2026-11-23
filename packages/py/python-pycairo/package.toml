@@ -1,0 +1,8 @@
+name = "python-pycairo"
+license = "LGPL-2.1-only OR MPL-1.1"
+
+[upstream]
+homepage = "https://pycairo.readthedocs.io"
+sources = [
+  "https://files.pythonhosted.org/packages/source/p/pycairo/",
+]
