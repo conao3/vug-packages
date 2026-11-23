@@ -1,0 +1,23 @@
+version = "1.1.6"
+
+[source]
+url = "https://www.x.org/releases/individual/app/xlsclients-1.1.6.tar.xz"
+sha256 = "909810a3fdbd01d84747907f2c0cc32ee732e77afc88cb310abb9d155b2a0807"
+
+[build]
+kind = "autotools"
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "pkgconf",
+]
+run = [
+  "libxcb",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
