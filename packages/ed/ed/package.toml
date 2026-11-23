@@ -1,0 +1,8 @@
+name = "ed"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://www.gnu.org/software/ed/"
+sources = [
+  "https://ftp.gnu.org/gnu/ed/",
+]
