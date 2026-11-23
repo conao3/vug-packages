@@ -1,0 +1,8 @@
+name = "codex-acp"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://github.com/agentclientprotocol/codex-acp"
+sources = [
+  "https://github.com/agentclientprotocol/codex-acp/archive/",
+]

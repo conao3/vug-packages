@@ -1,0 +1,22 @@
+version = "2.6.0"
+
+[source]
+url = "https://github.com/agentclientprotocol/codex-acp/archive/refs/tags/v2.6.0.tar.gz"
+sha256 = "ed3e419814f02b814a743e28cd61990738e733b966057094dcca21275959dd7f"
+
+[build]
+kind = "node"
+build-script = true
+
+[dependencies]
+build = [
+  "npm",
+]
+run = [
+  "nodejs",
+]
+
+[check]
+enabled = false
+skip = []
+private-cxx-runtime = true
