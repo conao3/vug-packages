@@ -1,0 +1,28 @@
+version = "3.4"
+
+[source]
+url = "https://github.com/libconfuse/libconfuse/archive/v3.4.tar.gz"
+sha256 = "be97bf64ab8052ef874e6c2cfabd2dacf7ad76575bb12c7c42df3fd23675d151"
+
+[build]
+kind = "autotools"
+autoreconf = true
+
+[dependencies]
+build = [
+  "autoconf",
+  "automake",
+  "binutils",
+  "flex",
+  "gettext",
+  "libtool",
+  "make",
+]
+run = [
+  "gettext",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
