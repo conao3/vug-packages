@@ -1,0 +1,8 @@
+name = "jansson"
+license = "MIT AND dtoa"
+
+[upstream]
+homepage = "https://digip.org/jansson/"
+sources = [
+  "https://github.com/akheron/jansson/releases/",
+]
