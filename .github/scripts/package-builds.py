@@ -73,7 +73,8 @@ def is_package(shard, name):
     return bool(NAME.fullmatch(name)) and not name.endswith(".toml") and shard == expected_shard
 
 
-def reverse_dependencies(tree, reverse):
+def reverse_dependencies(tree, changed):
+    reverse = defaultdict(set)
     for package_file in (tree / "packages").glob("*/*/package.toml"):
         package = package_file.parent
         if not is_package(package.parent.name, package.name):
@@ -90,6 +91,14 @@ def reverse_dependencies(tree, reverse):
             name = selector.partition(":")[0]
             if name:
                 reverse[name].add(package.name)
+
+    affected = set(changed)
+    pending = list(changed)
+    while pending:
+        for dependent in reverse[pending.pop()] - affected:
+            affected.add(dependent)
+            pending.append(dependent)
+    return affected - changed
 
 
 def plan():
@@ -121,17 +130,11 @@ def plan():
 
     checkout(head, CANDIDATE)
     checkout(base, TEMP / "base")
-    reverse = defaultdict(set)
-    reverse_dependencies(TEMP / "base", reverse)
-    reverse_dependencies(CANDIDATE, reverse)
-    targets = set(changed)
-    pending = list(changed)
-    while pending:
-        for dependent in reverse[pending.pop()] - targets:
-            targets.add(dependent)
-            pending.append(dependent)
-
-    dependents = sorted(targets - changed)
+    dependents = sorted(
+        reverse_dependencies(TEMP / "base", changed)
+        | reverse_dependencies(CANDIDATE, changed)
+    )
+    targets = sorted(changed) + dependents
     limit = int(os.environ["MAX_PACKAGES"])
     summary(f"Changed ({len(changed)}): {', '.join(sorted(changed))}")
     summary(f"Reverse dependencies ({len(dependents)}): {', '.join(dependents) or 'none'}")
@@ -142,7 +145,7 @@ def plan():
     step_output("mode", "build")
     step_output("lanes", '["primary","repeat"]')
     step_output("changed", json.dumps(sorted(changed)))
-    step_output("targets", json.dumps(sorted(changed) + dependents))
+    step_output("targets", json.dumps(targets))
     return 0
 
 
