@@ -1,0 +1,8 @@
+name = "python-pygments"
+license = "BSD-2-Clause"
+
+[upstream]
+homepage = "https://pygments.org"
+sources = [
+  "https://files.pythonhosted.org/packages/source/p/pygments/",
+]
