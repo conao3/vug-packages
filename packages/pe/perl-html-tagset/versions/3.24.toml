@@ -1,0 +1,24 @@
+version = "3.24"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/P/PE/PETDANCE/HTML-Tagset-3.24.tar.gz"
+sha256 = "eb89e145a608ed1f8f141a57472ee5f69e67592a432dcd2e8b1dbb445f2b230b"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "HTML::Tagset",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+]
+
+[check]
+enabled = true
+skip = []

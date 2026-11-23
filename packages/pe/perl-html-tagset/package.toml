@@ -1,0 +1,8 @@
+name = "perl-html-tagset"
+license = "Artistic-2.0"
+
+[upstream]
+homepage = "https://metacpan.org/dist/HTML-Tagset"
+sources = [
+  "https://cpan.metacpan.org/authors/id/P/PE/PETDANCE/",
+]
