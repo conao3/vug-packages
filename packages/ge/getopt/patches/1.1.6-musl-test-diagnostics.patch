@@ -1,0 +1,54 @@
+--- a/tests/invalid_getopt_option.stderr
++++ b/tests/invalid_getopt_option.stderr
+@@ -1,2 +1,2 @@
+-$0: invalid option -- 'b'
++$0: unrecognized option: b
+ Try `getopt --help' for more information.
+--- a/tests/long_option_ambiguous_1.stderr
++++ b/tests/long_option_ambiguous_1.stderr
+@@ -1 +1 @@
+-$0: option '--long' is ambiguous
++$0: option is ambiguous: long
+--- a/tests/name_option_long.stderr
++++ b/tests/name_option_long.stderr
+@@ -1,2 +1,2 @@
+-THIS_PROGRAM: invalid option -- 'b'
+-THIS_PROGRAM: unrecognized option '--whatever'
++THIS_PROGRAM: unrecognized option: b
++THIS_PROGRAM: unrecognized option: whatever
+--- a/tests/name_option_short.stderr
++++ b/tests/name_option_short.stderr
+@@ -1,2 +1,2 @@
+-THIS_PROGRAM: invalid option -- 'b'
+-THIS_PROGRAM: unrecognized option '--whatever'
++THIS_PROGRAM: unrecognized option: b
++THIS_PROGRAM: unrecognized option: whatever
+--- a/tests/quiet_output_option_long.stderr
++++ b/tests/quiet_output_option_long.stderr
+@@ -1,4 +1,4 @@
+-$0: invalid option -- 'c'
+-$0: unrecognized option '--unknown'
+-$0: option '--long' is ambiguous
+-$0: option requires an argument -- 'b'
++$0: unrecognized option: c
++$0: unrecognized option: unknown
++$0: option is ambiguous: long
++$0: option requires an argument: b
+--- a/tests/quiet_output_option_short.stderr
++++ b/tests/quiet_output_option_short.stderr
+@@ -1,4 +1,4 @@
+-$0: invalid option -- 'c'
+-$0: unrecognized option '--unknown'
+-$0: option '--long' is ambiguous
+-$0: option requires an argument -- 'b'
++$0: unrecognized option: c
++$0: unrecognized option: unknown
++$0: option is ambiguous: long
++$0: option requires an argument: b
+--- a/tests/unknown_options.stderr
++++ b/tests/unknown_options.stderr
+@@ -1,2 +1,2 @@
+-$0: invalid option -- 'b'
+-$0: unrecognized option '--whatever'
++$0: unrecognized option: b
++$0: unrecognized option: whatever
