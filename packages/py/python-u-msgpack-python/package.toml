@@ -1,0 +1,8 @@
+name = "python-u-msgpack-python"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/vsergeev/u-msgpack-python"
+sources = [
+  "https://files.pythonhosted.org/packages/source/u/u-msgpack-python/",
+]
