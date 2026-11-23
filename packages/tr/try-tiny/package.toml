@@ -1,0 +1,8 @@
+name = "try-tiny"
+license = "MIT"
+
+[upstream]
+homepage = "https://metacpan.org/dist/Try-Tiny"
+sources = [
+  "https://cpan.metacpan.org/authors/id/E/ET/ETHER/",
+]
