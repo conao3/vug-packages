@@ -1,0 +1,8 @@
+name = "libxcomposite"
+license = "HPND-sell-variant AND MIT"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/xorg/lib/libxcomposite"
+sources = [
+  "https://www.x.org/releases/individual/lib/",
+]
