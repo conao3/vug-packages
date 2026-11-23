@@ -1,0 +1,25 @@
+version = "2.38"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/J/JS/JSTOWE/TermReadKey-2.38.tar.gz"
+sha256 = "5a645878dc570ac33661581fbb090ff24ebce17d43ea53fd22e105a856a47290"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Term::ReadKey",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "musl",
+  "perl",
+]
+
+[check]
+enabled = true
+skip = []
