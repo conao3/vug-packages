@@ -1,0 +1,8 @@
+name = "fstrm"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/farsightsec/fstrm"
+sources = [
+  "https://dl.farsightsecurity.com/dist/fstrm/",
+]
