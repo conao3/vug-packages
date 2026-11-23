@@ -58,6 +58,10 @@ build whose output holds such a copy fails.
 
 ## Python modules
 
+Name Python modules and build backends `python-<normalized PyPI name>`.
+Lowercase the PyPI name and replace underscores and dots with hyphens.
+Use the upstream command name for standalone programs such as `meson` and `yt-dlp`.
+
 Use the upstream sdist URL and SHA-256. For a small Flit package:
 
 ```toml
@@ -198,6 +202,9 @@ uses TypeScript and the Claude SDK's Linux x64 musl optional package.
 with esbuild and keeps the Linux x64 Codex native distribution.
 
 ## Perl modules
+
+Name Perl modules `perl-<lowercase CPAN distribution name>`, for example
+`perl-try-tiny` for Try-Tiny.
 
 Start with the pinned CPAN archive's URL and SHA-256 in `[source]`.
 For a distribution with `Makefile.PL`, use these fields:
