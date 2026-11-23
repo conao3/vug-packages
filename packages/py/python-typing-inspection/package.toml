@@ -1,0 +1,8 @@
+name = "python-typing-inspection"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/pydantic/typing-inspection"
+sources = [
+  "https://files.pythonhosted.org/packages/source/t/typing_inspection/",
+]

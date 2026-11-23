@@ -1,0 +1,26 @@
+version = "0.4.5"
+
+[source]
+url = "https://files.pythonhosted.org/packages/source/t/typing_inspection/typing_inspection-0.4.5.tar.gz"
+sha256 = "7f16c411e7930dc79596d42ab44672a3fe5f60eb34b781a1647e7872363120c7"
+
+[build]
+kind = "python"
+imports = [
+  "typing_inspection",
+]
+
+[dependencies]
+build = [
+  "python-build",
+  "python-hatchling",
+  "python-installer",
+]
+run = [
+  "python",
+  "python-typing-extensions",
+]
+
+[check]
+enabled = true
+skip = []
