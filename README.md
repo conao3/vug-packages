@@ -102,7 +102,8 @@ user = "<a user of the record>"
 
 The session draws on the CPU. `renderer = "gles2"` uses the GPU through
 Mesa, which needs a display the Mesa drivers support (in QEMU,
-`-device virtio-vga-gl -display egl-headless` or a display with OpenGL).
+`-device virtio-vga-gl -display egl-headless`; a virtio display without 3D
+leaves sway unable to start).
 
 ## Check
 
