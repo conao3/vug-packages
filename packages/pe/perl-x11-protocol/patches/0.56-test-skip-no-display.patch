@@ -1,0 +1,18 @@
+--- a/test.pl	2026-11-24 08:21:53.957059980 +0900
++++ b/test.pl	2026-11-24 08:21:52.158739669 +0900
+@@ -29,7 +29,14 @@
+ 
+ $display = $args{'-d'} || $args{'-display'} || $ENV{DISPLAY};
+ 
+-$x = X11::Protocol->new($display);
++$x = eval { X11::Protocol->new($display) };
++if (not $x) {
++    # The remaining tests need a live X display, which a build
++    # sandbox does not have.
++    print "ok 2 # skip cannot connect to display\n";
++    print "ok 3 # skip cannot connect to display\n";
++    exit;
++}
+ 
+ while (my $id = int rand(2**24)) {
+     # Check that we can continue after an error without crashing or
