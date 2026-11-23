@@ -1,0 +1,25 @@
+version = "1.036"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/B/BR/BRIANDFOY/Test-Output-1.036.tar.gz"
+sha256 = "a3a95cb8c4d387fe079add4490757e69927ef0488bbb18b4d55e7fc6d25f1a63"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Test::Output",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+  "perl-capture-tiny",
+]
+
+[check]
+enabled = true
+skip = []

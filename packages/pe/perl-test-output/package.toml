@@ -1,0 +1,8 @@
+name = "perl-test-output"
+license = "Artistic-2.0"
+
+[upstream]
+homepage = "https://metacpan.org/dist/Test-Output"
+sources = [
+  "https://cpan.metacpan.org/authors/id/B/BR/BRIANDFOY/",
+]
