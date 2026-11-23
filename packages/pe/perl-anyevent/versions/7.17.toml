@@ -1,0 +1,26 @@
+version = "7.17"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/M/ML/MLEHMANN/AnyEvent-7.17.tar.gz"
+sha256 = "50beea689c098fe4aaeb83806c40b9fe7f946d5769acf99f849f099091a4b985"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "AE",
+  "AnyEvent",
+]
+
+[dependencies]
+build = [
+  "make",
+  "perl-canary-stability",
+]
+run = [
+  "perl",
+]
+
+[check]
+enabled = true
+skip = []
