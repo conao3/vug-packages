@@ -1,0 +1,8 @@
+name = "openresolv"
+license = "BSD-2-Clause"
+
+[upstream]
+homepage = "https://roy.marples.name/projects/openresolv"
+sources = [
+  "https://github.com/NetworkConfiguration/openresolv/releases/download/",
+]
