@@ -1,0 +1,8 @@
+name = "onetbb"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://uxlfoundation.github.io/oneTBB/"
+sources = [
+  "https://github.com/uxlfoundation/oneTBB/",
+]
