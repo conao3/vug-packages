@@ -1,0 +1,8 @@
+name = "libyaml"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/yaml/libyaml"
+sources = [
+  "https://github.com/yaml/libyaml/releases/download/",
+]
