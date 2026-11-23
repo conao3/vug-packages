@@ -56,6 +56,21 @@ A package with C++ code lists `libcxx` in `dependencies.run`: the compiler
 then links the shared C++ runtime in place of a private static copy, and a
 build whose output holds such a copy fails.
 
+## Package builds on GitHub
+
+Open the **Package builds** run from your pull request. The plan lists the
+changed packages and their transitive reverse dependencies. The primary job
+builds those packages and runs any tests enabled in their records. A second
+runner starts with an empty store and rebuilds the changed packages. **Compare
+output IDs** checks that both runners produced the same ID for every output
+of each changed package.
+
+The build summary shows each package's result, elapsed time, output IDs,
+installed files, and the tail of the log for failures. The
+`package-results-*` artifacts contain the full file lists and logs. The plan
+reports **Incomplete** and fails when the change affects more than eight
+packages. Changes outside `packages/` finish after planning.
+
 ## When the build fails
 
 Get past the problem by the first of these that applies:
