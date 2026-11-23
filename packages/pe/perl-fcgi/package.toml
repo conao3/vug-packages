@@ -1,0 +1,8 @@
+name = "perl-fcgi"
+license = "OML"
+
+[upstream]
+homepage = "https://metacpan.org/dist/FCGI"
+sources = [
+  "https://cpan.metacpan.org/authors/id/E/ET/ETHER/",
+]
