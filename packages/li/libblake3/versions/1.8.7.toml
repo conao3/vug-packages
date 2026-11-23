@@ -1,0 +1,27 @@
+version = "1.8.7"
+
+[source]
+url = "https://github.com/BLAKE3-team/BLAKE3/archive/refs/tags/1.8.7.tar.gz"
+sha256 = "c6782a28842b1c0478524ac06a4f2ede784038ee298d6e2162c0b089c4306a3c"
+
+[build]
+kind = "cmake"
+path = "c"
+setup-flags = [
+  "-DBUILD_SHARED_LIBS=ON",
+  "-DBLAKE3_USE_TBB=OFF",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
