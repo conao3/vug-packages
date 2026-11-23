@@ -1,0 +1,8 @@
+name = "python-defcon"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/robotools/defcon"
+sources = [
+  "https://files.pythonhosted.org/packages/source/d/defcon/",
+]

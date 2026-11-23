@@ -1,0 +1,29 @@
+version = "0.12.2"
+
+[source]
+url = "https://files.pythonhosted.org/packages/source/d/defcon/defcon-0.12.2.tar.gz"
+sha256 = "25dfe7fd0152ccf292cb190d1928a47d588899c20b046854293e039e1c93e5e0"
+
+[build]
+kind = "python"
+imports = [
+  "defcon",
+]
+
+[dependencies]
+build = [
+  "python-build",
+  "python-installer",
+  "python-setuptools",
+  "python-setuptools-scm",
+  "python-wheel",
+]
+run = [
+  "python",
+  "python-fonttools",
+  "python-unicodedata2",
+]
+
+[check]
+enabled = true
+skip = []
