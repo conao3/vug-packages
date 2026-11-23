@@ -1,0 +1,8 @@
+name = "libmpeg2"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://libmpeg2.sourceforge.io/"
+sources = [
+  "https://deb.debian.org/debian/pool/main/m/mpeg2dec/",
+]
