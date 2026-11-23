@@ -1,0 +1,8 @@
+name = "shaderc"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://github.com/google/shaderc"
+sources = [
+  "https://github.com/google/shaderc/archive/refs/tags/",
+]

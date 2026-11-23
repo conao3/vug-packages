@@ -1,0 +1,44 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -135,7 +135,10 @@
+ 
+ # Configure subdirectories.
+ # We depend on these for later projects, so they should come first.
+-add_subdirectory(third_party)
++find_package(glslang REQUIRED CONFIG)
++find_package(SPIRV-Tools REQUIRED CONFIG)
++get_target_property(glslang_includes glslang::glslang INTERFACE_INCLUDE_DIRECTORIES)
++set(glslang_SOURCE_DIR "${glslang_includes}/glslang")
+ 
+ add_subdirectory(libshaderc_util)
+ add_subdirectory(libshaderc)
+@@ -147,7 +150,7 @@
+ add_custom_target(build-version
+   ${Python_EXECUTABLE}
+   ${CMAKE_CURRENT_SOURCE_DIR}/utils/update_build_version.py
+-  ${shaderc_SOURCE_DIR} ${spirv-tools_SOURCE_DIR} ${glslang_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR}/build-version.inc
++  dummy dummy dummy ${CMAKE_CURRENT_BINARY_DIR}/build-version.inc
+   COMMENT "Update build-version.inc in the Shaderc build directory (if necessary).")
+ 
+ function(define_pkg_config_file NAME LIBS)
+--- a/utils/update_build_version.py
++++ b/utils/update_build_version.py
+@@ -122,11 +122,13 @@
+     """Returns a detailed version string for a given project with its
+     directory, which consists of software version string and git description
+     string."""
+-    detailed_version_string_lst = [project]
+-    if project != 'glslang':
+-        detailed_version_string_lst.append(deduce_software_version(directory))
+-    detailed_version_string_lst.append(describe(directory).replace('"', '\\"'))
+-    return ' '.join(detailed_version_string_lst)
++    if project == 'shaderc':
++        return 'shaderc v2026.4'
++    if project == 'spirv-tools':
++        return 'spirv-tools v1.4.363.0'
++    if project == 'glslang':
++        return 'glslang v16.6.0'
++    sys.exit(1)
+ 
+ 
+ def main():
