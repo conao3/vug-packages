@@ -1,0 +1,8 @@
+name = "python-tomlkit"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/python-poetry/tomlkit"
+sources = [
+  "https://files.pythonhosted.org/packages/source/t/tomlkit/",
+]
