@@ -1,0 +1,25 @@
+version = "4.16.0"
+
+[source]
+url = "https://files.pythonhosted.org/packages/source/t/typing_extensions/typing_extensions-4.16.0.tar.gz"
+sha256 = "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
+
+[build]
+kind = "python"
+imports = [
+  "typing_extensions",
+]
+
+[dependencies]
+build = [
+  "python-build",
+  "python-flit-core",
+  "python-installer",
+]
+run = [
+  "python",
+]
+
+[check]
+enabled = true
+skip = []
