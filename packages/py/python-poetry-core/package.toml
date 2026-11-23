@@ -1,0 +1,8 @@
+name = "python-poetry-core"
+license = "MIT"
+
+[upstream]
+homepage = "https://pypi.org/project/poetry-core/"
+sources = [
+  "https://files.pythonhosted.org/packages/42/b5/50f1fda26c4fe5b1d6ce5cdf0391bdfa1ca12fdcb8ad68344d5cf678fc90/",
+]
