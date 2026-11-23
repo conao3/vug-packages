@@ -1,0 +1,8 @@
+name = "rnnoise"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://gitlab.xiph.org/xiph/rnnoise"
+sources = [
+  "https://gitlab.xiph.org/xiph/rnnoise/-/archive/",
+]
