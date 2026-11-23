@@ -1,0 +1,24 @@
+version = "5.0"
+
+[source]
+url = "https://github.com/vapier/ncompress/archive/refs/tags/v5.0.tar.gz"
+sha256 = "96ec931d06ab827fccad377839bfb91955274568392ddecf809e443443aead46"
+
+[build]
+kind = "make"
+make-flags = [
+  "PREFIX={out}",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
