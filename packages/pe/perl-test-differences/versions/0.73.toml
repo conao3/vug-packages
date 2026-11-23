@@ -1,0 +1,26 @@
+version = "0.73"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/D/DC/DCANTRELL/Test-Differences-0.73.tar.gz"
+sha256 = "3c113f4e25c38323a3fe5992d30c337264d00ef872aecfd2d9431ca8ea0083e2"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Test::Differences",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+  "perl-capture-tiny",
+  "perl-text-diff",
+]
+
+[check]
+enabled = true
+skip = []
