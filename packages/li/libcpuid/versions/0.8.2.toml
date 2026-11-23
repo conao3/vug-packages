@@ -1,0 +1,21 @@
+version = "0.8.2"
+
+[source]
+url = "https://github.com/anrieff/libcpuid/releases/download/v0.8.2/libcpuid-0.8.2.tar.gz"
+sha256 = "be05cbafa086850a15b7d6f6cee3e72ae73a2b2ac75c0b2c6fc77611dede73b8"
+
+[build]
+kind = "autotools"
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
