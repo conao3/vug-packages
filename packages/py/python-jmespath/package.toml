@@ -1,0 +1,8 @@
+name = "python-jmespath"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/jmespath/jmespath.py"
+sources = [
+  "https://files.pythonhosted.org/packages/source/j/jmespath/",
+]
