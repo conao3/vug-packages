@@ -1,0 +1,8 @@
+name = "zix"
+license = "0BSD OR ISC"
+
+[upstream]
+homepage = "https://gitlab.com/drobilla/zix"
+sources = [
+  "https://gitlab.com/api/v4/projects/drobilla%2Fzix/",
+]

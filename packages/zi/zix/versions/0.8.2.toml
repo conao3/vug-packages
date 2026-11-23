@@ -1,0 +1,33 @@
+version = "0.8.2"
+
+[source]
+url = "https://gitlab.com/api/v4/projects/drobilla%2Fzix/repository/archive.tar.gz?sha=refs%2Ftags%2Fv0.8.2"
+sha256 = "396f97d59e79584a729a00a292e2731399d10b1443e85677f37d2c50e97623ce"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dbenchmarks=disabled",
+  "-Ddocs=disabled",
+  "-Dhtml=disabled",
+  "-Dsinglehtml=disabled",
+  "-Dtests=enabled",
+  "-Dtests_cpp=enabled",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "libcxx",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
