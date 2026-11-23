@@ -52,6 +52,10 @@ The build has no network and sees only busybox, the C and C++ compiler
 of the dependencies are found by the compiler automatically. `{out}` and
 `{dep:NAME}` in a flag are replaced by store paths.
 
+A package with C++ code lists `libcxx` in `dependencies.run`: the compiler
+then links the shared C++ runtime in place of a private static copy, and a
+build whose output holds such a copy fails.
+
 ## When the build fails
 
 Change only the version record:

@@ -37,6 +37,10 @@ $ vug package build-package --root . --name hello
 The first build fetches the seed (busybox and zig) and builds the tool chain
 from it; every later build takes what is already in the store.
 
+The tree holds the base system (musl, the GNU tools, systemd, PAM, OpenSSH),
+the tools to build it (perl, python, cmake, meson, LLVM with clang, Rust),
+`vug` itself built from source, and a Wayland desktop (Mesa, wlroots, sway).
+
 ## Try a system
 
 `systems/systemd.toml` is a system with systemd, logins through PAM, sshd, a
@@ -52,7 +56,7 @@ $ qemu-system-x86_64 -enable-kvm -m 2048 -nographic \
     -append "console=ttyS0 root=/dev/vda rw init=/vug/profiles/system/init"
 ```
 
-Both systems here are test configurations: the console logs in as the user
+The systems here are test configurations: the console logs in as the user
 of the record without a password, and that user may run `sudo` without one.
 Change the users, the `serial-autologin` service, and the `sudo` parameter
 before using one on a machine others can reach. The records are on the
@@ -80,6 +84,25 @@ $ qemu-system-x86_64 -enable-kvm -m 2048 \
 ```
 
 The boot menu lists the generations of the machine.
+
+`systems/minimal.toml` is the smallest system that boots: a kernel, a shell
+script as init, and the basic tools.
+
+## Desktop
+
+`services/sway.toml` adds a Wayland session to a system: the sway compositor
+with a status bar, the foot terminal, a launcher, a screen lock that also
+locks after ten idle minutes, screenshots, and the clipboard tools. Enable
+it in a system record:
+
+```toml
+[service.sway]
+user = "<a user of the record>"
+```
+
+The session draws on the CPU. `renderer = "gles2"` uses the GPU through
+Mesa, which needs a display the Mesa drivers support (in QEMU,
+`-device virtio-vga-gl -display egl-headless` or a display with OpenGL).
 
 ## Check
 
