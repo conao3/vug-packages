@@ -1,0 +1,38 @@
+version = "5.9.5.2"
+
+[source]
+url = "https://downloads.sourceforge.net/project/net-snmp/net-snmp/5.9.5.2/net-snmp-5.9.5.2.tar.gz"
+sha256 = "16707719f833184a4b72835dac359ae188123b06b5e42817c00790d7dc1384bf"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--with-defaults",
+  "--with-openssl={dep:openssl}",
+  "--with-perl-modules=INSTALL_BASE={out}",
+  "--without-libwrap",
+  "--without-mysql",
+  "--without-pkcs",
+]
+make-flags = [
+  "TESTOPTS=fulltests/default/T000configure_simple",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "file",
+  "make",
+  "pkgconf",
+]
+run = [
+  "libnl",
+  "musl",
+  "openssl",
+  "perl",
+]
+
+[check]
+enabled = true
+skip = []
+target = "testsimple"
