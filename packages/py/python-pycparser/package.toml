@@ -1,0 +1,8 @@
+name = "python-pycparser"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://github.com/eliben/pycparser"
+sources = [
+  "https://files.pythonhosted.org/packages/source/p/pycparser/",
+]

@@ -1,0 +1,25 @@
+version = "3.12"
+
+[source]
+url = "https://files.pythonhosted.org/packages/source/p/pycparser/pycparser-3.12.tar.gz"
+sha256 = "f03387877eab82ce01bbdfd0ba7252ee55a90b1c708d5129e2ce915475cf1db6"
+
+[build]
+kind = "python"
+imports = [
+  "pycparser",
+]
+
+[dependencies]
+build = [
+  "python-build",
+  "python-installer",
+  "python-setuptools",
+]
+run = [
+  "python",
+]
+
+[check]
+enabled = true
+skip = []
