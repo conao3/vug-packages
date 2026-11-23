@@ -1,0 +1,8 @@
+name = "python-wheel"
+license = "MIT"
+
+[upstream]
+homepage = "https://pypi.org/project/wheel/"
+sources = [
+  "https://files.pythonhosted.org/packages/d0/20/50ed6bdf27dec98b568a8ae25dc599f35baa3d9709f9e83fd1edb56b9a90/",
+]
