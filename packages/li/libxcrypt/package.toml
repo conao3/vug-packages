@@ -1,0 +1,8 @@
+name = "libxcrypt"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://github.com/besser82/libxcrypt"
+sources = [
+  "https://github.com/besser82/libxcrypt/releases/download/",
+]
