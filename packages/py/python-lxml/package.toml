@@ -1,0 +1,8 @@
+name = "python-lxml"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://lxml.de/"
+sources = [
+  "https://files.pythonhosted.org/packages/source/l/lxml/",
+]
