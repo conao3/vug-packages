@@ -1,0 +1,26 @@
+version = "0.27"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/E/ET/ETHER/Any-Moose-0.27.tar.gz"
+sha256 = "a8a63e37fa802e8258be99983916cde4512581dc8062de50e73d66af6e2d8535"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Any::Moose",
+]
+
+[dependencies]
+build = [
+  "make",
+  "perl-mouse",
+]
+run = [
+  "perl",
+  "perl-mouse",
+]
+
+[check]
+enabled = true
+skip = []
