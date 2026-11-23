@@ -1,0 +1,28 @@
+version = "4.0.0"
+
+[source]
+url = "https://files.pythonhosted.org/packages/source/p/python_dateutil/python_dateutil-4.0.0.tar.gz"
+sha256 = "d7295ff14fdc0f92f662100bfb6c551d160ca090f2939f1ec5b9794265c03f06"
+
+[build]
+kind = "python"
+imports = [
+  "dateutil",
+]
+
+[dependencies]
+build = [
+  "python-build",
+  "python-hatch-fancy-pypi-readme",
+  "python-hatch-vcs",
+  "python-hatchling",
+  "python-installer",
+]
+run = [
+  "python",
+  "python-tzdata",
+]
+
+[check]
+enabled = true
+skip = []
