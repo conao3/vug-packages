@@ -65,17 +65,21 @@ Get past the problem by the first of these that applies:
    `--without-<feature>`, `-D<OPTION>=OFF`).
 2. An already packaged tool or library is missing from the dependencies: add
    it.
-3. A few tests fail for a reason outside the package: list them in
-   `check.skip`. The suite cannot run at all: set `check.enabled = false`.
-4. The build environment itself misbehaves (the compiler wrapper rejects an
+3. For `autotools` and `make`, set `check.target` when upstream runs its
+   tests with a different Make target, such as `test` or `check_local`. List
+   individual test exclusions in `check.skip`. Set `check.enabled = false`
+   when the suite cannot run.
+4. For `autotools` and `meson`, set `build.path` to the source subdirectory
+   containing `configure` or `meson.build`.
+5. The build environment itself misbehaves (the compiler wrapper rejects an
    option, a standard tool is missing, an install step writes outside the
    output): reproduce it with the smallest command you can, then work around
    it in the record by the least invasive means.
-5. The source does not build as released: add a patch under `patches/` and
+6. The source does not build as released: add a patch under `patches/` and
    list it in `patches` of the version record. Take the upstream commit that
    fixes it, or else the patch another distribution carries, or else a
    minimal patch of your own.
-6. A required dependency is not packaged: add it first, as its own pull
+7. A required dependency is not packaged: add it first, as its own pull
    request.
 
 ## What to write in the pull request
@@ -85,7 +89,7 @@ Get past the problem by the first of these that applies:
   saying what failed without it, with the error line.
 - What the record leaves out compared to the same package elsewhere:
   optional features that are switched off, and tests that do not run.
-- A section `## Workarounds` with one line for every use of ways 4 to 6
+- A section `## Workarounds` with one line for every use of ways 5 to 7
   above: the error line, the smallest command that reproduces a problem of
   the build environment, where a patch comes from, and what the record does
   instead. `None` when there is nothing. The build environment is fixed in
