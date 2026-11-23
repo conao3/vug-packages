@@ -20,6 +20,9 @@ packages = [
 [parameter.tty]
 default = "tty1"
 
+[parameter.renderer]
+default = "pixman"
+
 [[file]]
 path = "/etc/fonts/fonts.conf"
 target = "{pkg:fontconfig}/etc/fonts/fonts.conf"
@@ -94,6 +97,7 @@ StandardError=journal
 UtmpIdentifier={param:tty}
 UtmpMode=user
 Environment=XDG_SESSION_TYPE=wayland
+Environment=WLR_RENDERER={param:renderer}
 Environment=XDG_CONFIG_DIRS=/etc/xdg
 ExecStart=/bin/sway -c /etc/sway/config
 Restart=no
