@@ -1,0 +1,8 @@
+name = "dotconf"
+license = "LGPL-2.1-only"
+
+[upstream]
+homepage = "https://github.com/williamh/dotconf"
+sources = [
+  "https://github.com/williamh/dotconf/archive/",
+]
