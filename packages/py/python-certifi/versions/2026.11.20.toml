@@ -1,0 +1,25 @@
+version = "2026.11.20"
+
+[source]
+url = "https://files.pythonhosted.org/packages/source/c/certifi/certifi-2026.11.20.tar.gz"
+sha256 = "af1cb240a8133f105aa52684a3a3258339d7f2fd0bd4e2812698ff5cf5588c4e"
+
+[build]
+kind = "python"
+imports = [
+  "certifi",
+]
+
+[dependencies]
+build = [
+  "python-build",
+  "python-installer",
+  "python-setuptools",
+]
+run = [
+  "python",
+]
+
+[check]
+enabled = true
+skip = []
