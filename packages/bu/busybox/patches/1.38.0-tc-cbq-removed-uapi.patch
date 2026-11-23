@@ -1,0 +1,42 @@
+--- a/networking/tc.c
++++ b/networking/tc.c
+@@ -231,6 +231,7 @@
+ 	return 0;
+ }
+ #endif
++#ifdef TCA_CBQ_MAX /* CBQ qdisc uapi removed from kernel headers */
+ static int cbq_print_opt(struct rtattr *opt)
+ {
+ 	struct rtattr *tb[TCA_CBQ_MAX+1];
+@@ -322,6 +323,7 @@
+  done:
+ 	return 0;
+ }
++#endif /* TCA_CBQ_MAX */
+ 
+ static FAST_FUNC int print_qdisc(
+ 		const struct sockaddr_nl *who UNUSED_PARAM,
+@@ -373,7 +375,11 @@
+ 		if (qqq == 0) { /* pfifo_fast aka prio */
+ 			prio_print_opt(tb[TCA_OPTIONS]);
+ 		} else if (qqq == 1) { /* class based queuing */
++#ifdef TCA_CBQ_MAX
+ 			cbq_print_opt(tb[TCA_OPTIONS]);
++#else
++			printf("(options for %s)", name);
++#endif
+ 		} else {
+ 			/* don't know how to print options for this qdisc */
+ 			printf("(options for %s)", name);
+@@ -444,7 +450,11 @@
+ 			/* nothing. */ /*prio_print_opt(tb[TCA_OPTIONS]);*/
+ 		} else if (qqq == 1) { /* class based queuing */
+ 			/* cbq_print_copt() is identical to cbq_print_opt(). */
++#ifdef TCA_CBQ_MAX
+ 			cbq_print_opt(tb[TCA_OPTIONS]);
++#else
++			printf("(options for %s)", name);
++#endif
+ 		} else {
+ 			/* don't know how to print options for this class */
+ 			printf("(options for %s)", name);

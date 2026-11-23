@@ -1,0 +1,8 @@
+name = "busybox"
+license = "GPL-2.0-only"
+
+[upstream]
+homepage = "https://busybox.net/"
+sources = [
+  "https://busybox.net/downloads/",
+]

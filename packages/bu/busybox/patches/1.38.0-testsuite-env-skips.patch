@@ -1,0 +1,58 @@
+diff -ruN a/testsuite/runtest b/testsuite/runtest
+--- a/testsuite/runtest	2026-11-24 06:15:19.632278671 +0900
++++ b/testsuite/runtest	2026-11-24 06:17:39.756609270 +0900
+@@ -4,6 +4,10 @@
+ 
+ . ./testing.sh
+ 
++# vug: upstream marks tests for known bugs with SKIP_KNOWN_BUGS; they
++# document bugs in busybox itself and are not this package's failures.
++export SKIP_KNOWN_BUGS=1
++
+ total_failed=0
+ 
+ # Run one old-style test.
+@@ -20,6 +24,18 @@
+ 	testname="$testcase"
+ 
+ 	testname="${testname##*/}" # take basename
++	# vug: tests that cannot pass inside the package build sandbox
++	# (no resolver domain/FQDN or network access; musl POSIX-TZ
++	# semantics differ from the glibc hosts this suite is
++	# validated on).
++	case "$testname" in
++		date-timezone|hostname-d-works|\
++		wget--O-overrides--P|wget-handles-empty-path|\
++		wget-retrieves-google-index|wget-supports--P)
++			echo "SKIPPED: $testname"
++			return 0
++			;;
++	esac
+ 	if grep "^# CONFIG_$uc_applet is not set$" "$bindir/.config" >/dev/null; then
+ 		echo "UNTESTED: $testname"
+ 		return 0
+diff -ruN a/testsuite/testing.sh b/testsuite/testing.sh
+--- a/testsuite/testing.sh	2026-11-24 06:15:19.632313687 +0900
++++ b/testsuite/testing.sh	2026-11-24 06:17:39.756710090 +0900
+@@ -87,6 +87,21 @@
+     exit 1
+   fi
+ 
++  # vug: tests that cannot run inside the package build sandbox:
++  # taskset needs CAP_SYS_NICE,
++  # awk's REG_STARTEND test needs a libc with REG_STARTEND
++  # (musl < 1.4 lacks it), and the start-stop-daemon test
++  # requires /bin/false to be a real binary (it is a busybox
++  # symlink in this environment).
++  case "$NAME" in
++    "awk gsub erroneous word start match"|\
++    "start-stop-daemon with both -x and -a"|\
++    "taskset (set_aff, needs CAP_SYS_NICE)")
++      echo "SKIPPED: $NAME"
++      return 0
++      ;;
++  esac
++
+   [ -z "$DEBUG" ] || set -x
+ 
+   if [ -n "$SKIP" ]
