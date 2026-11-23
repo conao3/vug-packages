@@ -1,0 +1,8 @@
+name = "python-wcwidth"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/jquast/wcwidth"
+sources = [
+  "https://files.pythonhosted.org/packages/source/w/wcwidth/",
+]
