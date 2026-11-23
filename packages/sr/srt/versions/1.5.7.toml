@@ -1,0 +1,28 @@
+version = "1.5.7"
+
+[source]
+url = "https://github.com/Haivision/srt/archive/refs/tags/v1.5.7.tar.gz"
+sha256 = "017cd1e437ef2073a4dd10ddf7b55e86bc3d6ebac0393d13bd22f6a57055d32b"
+
+[build]
+kind = "cmake"
+setup-flags = [
+  "-DENABLE_STATIC=OFF",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+  "pkgconf",
+]
+run = [
+  "libcxx",
+  "musl",
+  "openssl",
+]
+
+[check]
+enabled = true
+skip = []

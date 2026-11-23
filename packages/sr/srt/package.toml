@@ -1,0 +1,8 @@
+name = "srt"
+license = "MPL-2.0"
+
+[upstream]
+homepage = "https://github.com/Haivision/srt"
+sources = [
+  "https://github.com/Haivision/srt/archive/refs/tags/",
+]
