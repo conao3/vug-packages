@@ -1,0 +1,8 @@
+name = "mujs"
+license = "ISC"
+
+[upstream]
+homepage = "https://mujs.com/"
+sources = [
+  "https://mujs.com/downloads/",
+]
