@@ -14,9 +14,6 @@ configure-flags = [
   "--with-pager=less",
   "--sysconfdir=/etc",
 ]
-install-flags = [
-  "sysconfdir={out}/etc",
-]
 
 [dependencies]
 build = [

@@ -1,0 +1,8 @@
+name = "libconfuse"
+license = "ISC"
+
+[upstream]
+homepage = "https://github.com/libconfuse/libconfuse"
+sources = [
+  "https://github.com/libconfuse/libconfuse/",
+]

@@ -1,0 +1,21 @@
+version = "0.7.0"
+
+[source]
+url = "https://files.pythonhosted.org/packages/05/18/ceeb4e3ab3aa54495775775b38ae42b10a92f42ce42dfa44da684289b8c8/installer-0.7.0.tar.gz"
+sha256 = "a26d3e3116289bb08216e0d0f7d925fcef0b0194eedfa0c944bcaaa106c4b631"
+
+[build]
+kind = "prebuilt"
+install = [
+  { from = "src/installer", to = "lib/python3.13/site-packages/installer" },
+]
+
+[dependencies]
+build = []
+run = [
+  "python",
+]
+
+[check]
+enabled = false
+skip = []

@@ -1,0 +1,8 @@
+name = "ncompress"
+license = "Unlicense"
+
+[upstream]
+homepage = "https://github.com/vapier/ncompress"
+sources = [
+  "https://github.com/vapier/ncompress/archive/refs/tags/",
+]

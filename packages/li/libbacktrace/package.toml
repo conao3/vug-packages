@@ -1,0 +1,8 @@
+name = "libbacktrace"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://github.com/ianlancetaylor/libbacktrace"
+sources = [
+  "https://github.com/ianlancetaylor/libbacktrace/archive/",
+]

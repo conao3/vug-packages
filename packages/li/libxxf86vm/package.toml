@@ -1,0 +1,8 @@
+name = "libxxf86vm"
+license = "X11"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/xorg/lib/libxxf86vm"
+sources = [
+  "https://www.x.org/releases/individual/lib/",
+]

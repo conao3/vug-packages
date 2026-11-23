@@ -1,0 +1,8 @@
+name = "ldacbt"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://github.com/open-vela/external_libldac"
+sources = [
+  "https://github.com/open-vela/external_libldac/archive/refs/tags/",
+]

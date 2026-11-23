@@ -1,0 +1,8 @@
+name = "libvterm-neovim"
+license = "MIT"
+
+[upstream]
+homepage = "https://launchpad.net/libvterm"
+sources = [
+  "https://launchpad.net/libvterm/",
+]

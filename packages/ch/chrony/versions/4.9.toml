@@ -16,10 +16,6 @@ configure-flags = [
   "--without-editline",
   "--without-seccomp",
 ]
-install-flags = [
-  "SYSCONFDIR={out}/etc",
-  "CHRONYVARDIR={out}/var/lib/chrony",
-]
 
 [dependencies]
 build = [

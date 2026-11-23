@@ -1,0 +1,19 @@
+version = "3.17.4"
+
+[source]
+url = "https://github.com/NetworkConfiguration/openresolv/releases/download/v3.17.4/openresolv-3.17.4.tar.xz"
+sha256 = "901d83a15520b80e117aeca8cb6f5b70ceb205ba050a638d45cebcf304df729b"
+
+[build]
+kind = "autotools"
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+]
+run = []
+
+[check]
+enabled = false
+skip = []

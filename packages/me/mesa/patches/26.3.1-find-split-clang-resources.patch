@@ -1,0 +1,21 @@
+--- a/src/compiler/clc/meson.build
++++ b/src/compiler/clc/meson.build
+@@ -12,15 +12,9 @@
+ 
+ if not _shared_llvm or \
+     get_option('mesa-clc-bundle-headers') == 'enabled'
+-  # LLVM 16 moved clang header path from using full version to only major version
+-  if dep_llvm.version().version_compare('< 16')
+-    # Prior to LLVM 16, this path used a full version
+-    clang_version_dir = dep_llvm.version()
+-  else
+-    # LLVM 16 changed to only using a major version
+-    clang_version_dir = dep_llvm.version().split('.')[0]
+-  endif
+-  clang_resource_dir = join_paths(llvm_libdir, 'clang', clang_version_dir, 'include')
++  clang = find_program('clang', native : true, required : true)
++  resource_dir = run_command(clang, '-print-resource-dir', check : true).stdout().strip()
++  clang_resource_dir = join_paths(resource_dir, 'include')
+ 
+   opencl_c_base_h = custom_target(
+     'opencl-c-base.h',

@@ -1,0 +1,29 @@
+version = "1.2.2"
+
+[source]
+url = "https://github.com/nodejs/merve/archive/refs/tags/v1.2.2.tar.gz"
+sha256 = "8f19c2132447b9113545ffd399cb2bc1e61c6166743921b04883f8e1d778d69e"
+
+[build]
+kind = "cmake"
+setup-flags = [
+  "-DBUILD_SHARED_LIBS=ON",
+  "-DMERVE_USE_SIMDUTF=ON",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "gtest",
+  "make",
+]
+run = [
+  "libcxx",
+  "musl",
+  "simdutf",
+]
+
+[check]
+enabled = false
+skip = []

@@ -1,0 +1,26 @@
+version = "24.22.2"
+
+[source]
+url = "https://unofficial-builds.nodejs.org/download/release/v24.22.2/node-v24.22.2-linux-x64-musl.tar.xz"
+sha256 = "dfee3453f0557e77dfbd8f8b1c981cd7320dd6bf4e799abe007c12e8c1ab3b54"
+
+[build]
+kind = "commands"
+commands = [
+  ["patchelf", "--set-interpreter", "{dep:musl}/lib/ld-musl-x86_64.so.1", "--set-rpath", "{dep:libstdcxx}/lib:{dep:libgcc}/lib:{dep:musl}/lib", "bin/node"],
+  ["install", "-D", "-m", "755", "bin/node", "{out}/bin/node"],
+]
+
+[dependencies]
+build = [
+  "patchelf",
+]
+run = [
+  "libgcc",
+  "libstdcxx",
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

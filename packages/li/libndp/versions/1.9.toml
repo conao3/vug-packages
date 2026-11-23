@@ -1,0 +1,28 @@
+version = "1.9"
+patches = [
+  "1.9-sendto-sockaddr-cast.patch",
+]
+
+[source]
+url = "https://github.com/jpirko/libndp/archive/v1.9.tar.gz"
+sha256 = "e564f5914a6b1b799c3afa64c258824a801c1b79a29e2fe6525b682249c65261"
+
+[build]
+kind = "autotools"
+autoreconf = true
+
+[dependencies]
+build = [
+  "autoconf",
+  "automake",
+  "binutils",
+  "libtool",
+  "make",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []

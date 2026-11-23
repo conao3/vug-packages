@@ -1,0 +1,8 @@
+name = "libavc1394"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://sourceforge.net/projects/libavc1394/"
+sources = [
+  "https://downloads.sourceforge.net/project/libavc1394/",
+]

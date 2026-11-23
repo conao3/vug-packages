@@ -1,0 +1,27 @@
+version = "1.3.8"
+
+[source]
+url = "https://downloads.sourceforge.net/project/libtirpc/libtirpc/1.3.8/libtirpc-1.3.8.tar.bz2"
+sha256 = "8839959bfcc7a0f4c609d8e4f53f1c67ae33de23775ec35beb39ff15adf11920"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "CPPFLAGS=-isystem {dep:libbsd}/include/bsd -DLIBBSD_OVERLAY",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "libbsd",
+  "make",
+  "pkgconf",
+]
+run = [
+  "krb5",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []

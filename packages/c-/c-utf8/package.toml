@@ -1,0 +1,8 @@
+name = "c-utf8"
+license = "Apache-2.0 OR LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://c-util.github.io/c-utf8"
+sources = [
+  "https://github.com/c-util/c-utf8/archive/refs/tags/",
+]

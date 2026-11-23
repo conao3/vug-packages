@@ -1,0 +1,8 @@
+name = "openh264"
+license = "BSD-2-Clause"
+
+[upstream]
+homepage = "https://www.openh264.org/"
+sources = [
+  "https://github.com/cisco/openh264/archive/refs/tags/",
+]

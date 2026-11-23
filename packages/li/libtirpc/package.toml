@@ -1,0 +1,8 @@
+name = "libtirpc"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://sourceforge.net/projects/libtirpc/"
+sources = [
+  "https://downloads.sourceforge.net/project/libtirpc/",
+]

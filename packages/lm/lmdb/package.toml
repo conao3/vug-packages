@@ -1,0 +1,8 @@
+name = "lmdb"
+license = "OLDAP-2.8"
+
+[upstream]
+homepage = "https://www.symas.com/lmdb"
+sources = [
+  "https://git.openldap.org/openldap/openldap/-/archive/",
+]

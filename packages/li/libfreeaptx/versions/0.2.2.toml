@@ -1,0 +1,25 @@
+version = "0.2.2"
+
+[source]
+url = "https://github.com/regularhunter/libfreeaptx/archive/refs/tags/0.2.2.tar.gz"
+sha256 = "5ab5ebddf3f2eb7ce47a505b87460b00fc1ede99c70010796d3575ab31ea80bf"
+
+[build]
+kind = "make"
+make-flags = [
+  "CC=cc",
+  "PREFIX={out}",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

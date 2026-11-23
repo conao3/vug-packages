@@ -1,0 +1,24 @@
+--- a/Makefile
++++ b/Makefile
+@@ -282,13 +282,19 @@
+ OBJS      += $(SRCS_X:%.c=%-8.o) $(SRCS_8:%.c=%-8.o)
+ OBJCLI    += $(SRCCLI_X:%.c=%-8.o)
+ OBJCHK_8  += $(SRCCHK_X:%.c=%-8.o)
+-checkasm: checkasm8$(EXE)
++checkasm: checkasm-run-8
++.PHONY: checkasm-run-8
++checkasm-run-8: checkasm8$(EXE)
++	./checkasm8$(EXE)
+ endif
+ ifneq ($(findstring HAVE_BITDEPTH10 1, $(CONFIG)),)
+ OBJS      += $(SRCS_X:%.c=%-10.o)
+ OBJCLI    += $(SRCCLI_X:%.c=%-10.o)
+ OBJCHK_10 += $(SRCCHK_X:%.c=%-10.o)
+-checkasm: checkasm10$(EXE)
++checkasm: checkasm-run-10
++.PHONY: checkasm-run-10
++checkasm-run-10: checkasm10$(EXE)
++	./checkasm10$(EXE)
+ endif
+ 
+ .PHONY: all default fprofiled clean distclean install install-* uninstall cli lib-* checkasm etags

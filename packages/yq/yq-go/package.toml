@@ -1,0 +1,8 @@
+name = "yq-go"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/mikefarah/yq"
+sources = [
+  "https://github.com/mikefarah/yq/archive/",
+]

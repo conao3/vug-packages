@@ -1,0 +1,25 @@
+version = "3.2.0"
+
+[source]
+url = "https://github.com/c-util/c-rbtree/archive/refs/tags/v3.2.0.tar.gz"
+sha256 = "5440bdce011e37c63e5b8b56c1ecbefc26b08d3e83c9fa2cb94762e7a6fc8749"
+
+[build]
+kind = "meson"
+
+[dependencies]
+build = [
+  "binutils",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "c-stdaux",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []

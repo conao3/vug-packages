@@ -1,0 +1,11 @@
+--- a/ltconfig	2001-04-26 23:37:31.000000000 +0900
++++ b/ltconfig	2026-11-24 00:48:53.392815946 +0900
+@@ -1242,7 +1242,7 @@
+ 
+   if test "$ld_shlibs" = yes; then
+     runpath_var=LD_RUN_PATH
+-    hardcode_libdir_flag_spec='${wl}--rpath ${wl}$libdir'
++    hardcode_libdir_flag_spec='${wl}-rpath ${wl}$libdir'
+     export_dynamic_flag_spec='${wl}--export-dynamic'
+     case $host_os in
+     cygwin* | mingw*)

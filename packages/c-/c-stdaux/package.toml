@@ -1,0 +1,8 @@
+name = "c-stdaux"
+license = "Apache-2.0 OR LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://github.com/c-util/c-stdaux"
+sources = [
+  "https://github.com/c-util/c-stdaux/archive/refs/tags/",
+]

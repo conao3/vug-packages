@@ -1,0 +1,32 @@
+version = "4.14.1"
+patches = [
+  "4.14.1-pkg-config.patch",
+]
+
+[source]
+url = "https://downloads.sourceforge.net/project/perfmon2/libpfm4/libpfm-4.14.1.tar.gz"
+sha256 = "af518eab2114b0e11dfeacf8dd618b0a1ea04f28cd0b38acad2ec99abff2fd04"
+
+[build]
+kind = "make"
+make-flags = [
+  "CC=cc",
+  "DIRS=lib include docs",
+]
+install-flags = [
+  "DIRS=lib include docs",
+  "PREFIX={out}",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

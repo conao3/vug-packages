@@ -1,0 +1,27 @@
+version = "2.7.0"
+
+[source]
+url = "https://github.com/cisco/openh264/archive/refs/tags/v2.7.0.tar.gz"
+sha256 = "5178775c8b440073e70920e97d195efff721c0e56d0a78cc82c919e95d54924d"
+
+[build]
+kind = "make"
+make-flags = [
+  "BUILDTYPE=Release",
+  "PREFIX={out}",
+  "USE_ASM=No",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+]
+run = [
+  "libcxx",
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

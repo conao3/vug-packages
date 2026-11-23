@@ -1,0 +1,10 @@
+--- a/utils.h	2008-08-22 18:39:06.000000000 +0900
++++ b/utils.h	2026-11-24 00:54:31.174166146 +0900
+@@ -1,5 +1,7 @@
+ #include <stdlib.h>
+ #include <endian.h>
++#include <stdint.h>
++#include <sys/types.h>
+ #include <stdio.h>
+ #include <errno.h>
+ #include <string.h>

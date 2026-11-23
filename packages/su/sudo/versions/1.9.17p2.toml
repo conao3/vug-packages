@@ -20,9 +20,6 @@ configure-flags = [
 ]
 install-flags = [
   "INSTALL_OWNER=",
-  "sysconfdir={out}/etc",
-  "rundir={out}/run/sudo",
-  "vardir={out}/var/db/sudo",
 ]
 
 [dependencies]

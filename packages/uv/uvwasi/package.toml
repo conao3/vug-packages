@@ -1,0 +1,8 @@
+name = "uvwasi"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/nodejs/uvwasi"
+sources = [
+  "https://github.com/nodejs/uvwasi/archive/refs/tags/",
+]

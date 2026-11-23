@@ -1,0 +1,8 @@
+name = "merve"
+license = "Apache-2.0 OR MIT"
+
+[upstream]
+homepage = "https://github.com/nodejs/merve"
+sources = [
+  "https://github.com/nodejs/merve/archive/refs/tags/",
+]

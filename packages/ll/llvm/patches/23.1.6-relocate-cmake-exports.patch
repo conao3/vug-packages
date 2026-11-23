@@ -1,0 +1,19 @@
+--- a/llvm/CMakeLists.txt
++++ b/llvm/CMakeLists.txt
+@@ -1633,3 +1633,16 @@
+     set_target_properties(${target} PROPERTIES XCODE_GENERATE_SCHEME ON)
+   endforeach()
+ endif()
++
++# Vug installs CMake metadata separately from the shared LLVM and Clang tools.
++# Give the store splitter concrete paths to relocate before it publishes them.
++install(CODE [[
++  set(prefix "${CMAKE_INSTALL_PREFIX}")
++  file(GLOB exports "$ENV{DESTDIR}${prefix}/lib/cmake/llvm/LLVMExports-*.cmake"
++                    "$ENV{DESTDIR}${prefix}/lib/cmake/clang/ClangTargets-*.cmake")
++  foreach(export IN LISTS exports)
++    file(READ "${export}" content)
++    string(REPLACE "\${_IMPORT_PREFIX}/" "${prefix}/" content "${content}")
++    file(WRITE "${export}" "${content}")
++  endforeach()
++]])

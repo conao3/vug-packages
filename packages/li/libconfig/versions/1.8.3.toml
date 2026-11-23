@@ -6,9 +6,6 @@ sha256 = "0ed3e37db12e38b6fd7ca85775283412043069da2edcdb0c0ddcf9160a5dcc71"
 
 [build]
 kind = "autotools"
-configure-flags = [
-  "--disable-cxx",
-]
 
 [dependencies]
 build = [
@@ -17,6 +14,7 @@ build = [
   "pkgconf",
 ]
 run = [
+  "libcxx",
   "musl",
 ]
 

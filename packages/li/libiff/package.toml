@@ -1,0 +1,8 @@
+name = "libiff"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/svanderburg/libiff"
+sources = [
+  "https://github.com/svanderburg/libiff/archive/",
+]

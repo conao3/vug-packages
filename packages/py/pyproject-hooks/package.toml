@@ -1,0 +1,8 @@
+name = "pyproject-hooks"
+license = "MIT"
+
+[upstream]
+homepage = "https://pypi.org/project/pyproject_hooks/"
+sources = [
+  "https://files.pythonhosted.org/packages/",
+]

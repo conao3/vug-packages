@@ -1,4 +1,7 @@
 version = "26.3.1"
+patches = [
+  "26.3.1-find-split-clang-resources.patch",
+]
 
 [source]
 url = "https://archive.mesa3d.org/mesa-26.3.1.tar.xz"
@@ -11,6 +14,8 @@ setup-flags = [
   "-Dgallium-drivers=llvmpipe,virgl,zink,radeonsi,iris,crocus",
   "-Dvulkan-drivers=",
   "-Dllvm=enabled",
+  "-Dmesa-clc-bundle-headers=enabled",
+  "-Dstrip=true",
   "-Dcpp_rtti=false",
   "-Dplatforms=wayland",
   "-Dglx=disabled",
@@ -29,6 +34,8 @@ build = [
   "bison",
   "flex",
   "linux-headers",
+  "llvm:dev",
+  "llvm:tools",
   "mako",
   "markupsafe",
   "meson",
@@ -39,12 +46,28 @@ build = [
   "samurai",
   "wayland-protocols",
 ]
+run = []
+
+[outputs.dev]
+paths = [
+  "include",
+  "lib/libEGL.so",
+  "lib/libGLESv1_CM.so",
+  "lib/libGLESv2.so",
+  "lib/libgbm.so",
+  "lib/pkgconfig",
+]
+run = [
+  ":out",
+]
+
+[outputs.out]
 run = [
   "elfutils",
   "expat",
   "libcxx",
   "libdrm",
-  "llvm",
+  "llvm:lib",
   "musl",
   "spirv-llvm-translator",
   "spirv-tools",

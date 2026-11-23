@@ -1,0 +1,8 @@
+name = "openapv"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://github.com/AcademySoftwareFoundation/openapv"
+sources = [
+  "https://github.com/AcademySoftwareFoundation/openapv/archive/refs/tags/",
+]

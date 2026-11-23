@@ -1,0 +1,8 @@
+name = "fcgi"
+license = "OML"
+
+[upstream]
+homepage = "https://github.com/FastCGI-Archives/fcgi2"
+sources = [
+  "https://github.com/FastCGI-Archives/fcgi2/archive/",
+]

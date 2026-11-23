@@ -1,0 +1,8 @@
+name = "ngtcp2"
+license = "MIT"
+
+[upstream]
+homepage = "https://nghttp2.org/ngtcp2/"
+sources = [
+  "https://github.com/ngtcp2/ngtcp2/releases/download/",
+]

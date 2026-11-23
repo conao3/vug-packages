@@ -1,0 +1,8 @@
+name = "nkf"
+license = "Zlib"
+
+[upstream]
+homepage = "https://github.com/nurse/nkf"
+sources = [
+  "https://ftp.jaist.ac.jp/pub/sourceforge.jp/nkf/",
+]

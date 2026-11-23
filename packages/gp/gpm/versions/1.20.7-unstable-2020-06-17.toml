@@ -1,0 +1,34 @@
+version = "1.20.7-unstable-2020-06-17"
+
+[source]
+url = "https://github.com/telmich/gpm/archive/e82d1a653ca94aa4ed12441424da6ce780b1e530.tar.gz"
+sha256 = "570e6fcf0d9312f76aad7edfa8fc8bf90ae714ebe5ee444faece7ed7bf270939"
+
+[build]
+kind = "autotools"
+configure-command = [
+  "sh",
+  "-c",
+  "sh autogen.sh && ./configure --prefix={out} CFLAGS='-g -O2 -std=gnu17'",
+]
+
+[dependencies]
+build = [
+  "autoconf",
+  "automake",
+  "binutils",
+  "bison",
+  "libtool",
+  "m4",
+  "make",
+  "perl",
+  "texinfo",
+]
+run = [
+  "musl",
+  "ncurses",
+]
+
+[check]
+enabled = true
+skip = []

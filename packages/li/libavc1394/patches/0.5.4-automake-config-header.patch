@@ -1,0 +1,10 @@
+--- a/configure.in
++++ b/configure.in
+@@ -1,6 +1,6 @@
+ AC_INIT(Makefile.am)
+ AM_INIT_AUTOMAKE(libavc1394, 0.5.4)
+-AM_CONFIG_HEADER(config.h)
++AC_CONFIG_HEADER(config.h)
+ AM_MAINTAINER_MODE
+ 
+ AC_PROG_CC

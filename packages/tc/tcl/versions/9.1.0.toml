@@ -1,0 +1,30 @@
+version = "9.1.0"
+
+[source]
+url = "https://downloads.sourceforge.net/project/tcl/Tcl/9.1.0/tcl9.1.0-src.tar.gz"
+sha256 = "536c45543f64d6eb11832d97ba3494aacff046fbc5040273bd55258d0e448ff1"
+
+[build]
+kind = "autotools"
+configure-command = [
+  "unix/configure",
+  "--prefix={out}",
+]
+configure-flags = [
+  "ac_cv_header_sys_epoll_h=no",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "pkgconf",
+]
+run = [
+  "musl",
+  "zlib",
+]
+
+[check]
+enabled = false
+skip = []

@@ -1,0 +1,8 @@
+name = "mypaint-brushes"
+license = "CC0-1.0 AND GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://github.com/mypaint/mypaint-brushes"
+sources = [
+  "https://github.com/mypaint/mypaint-brushes/archive/",
+]

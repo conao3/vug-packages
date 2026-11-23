@@ -1,0 +1,8 @@
+name = "mcpp"
+license = "BSD-2-Clause"
+
+[upstream]
+homepage = "https://github.com/museoa/mcpp"
+sources = [
+  "https://github.com/museoa/mcpp/archive/",
+]

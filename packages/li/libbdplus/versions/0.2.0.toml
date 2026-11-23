@@ -1,0 +1,30 @@
+version = "0.2.0"
+
+[source]
+url = "https://get.videolan.org/libbdplus/0.2.0/libbdplus-0.2.0.tar.bz2"
+sha256 = "b93eea3eaef33d6e9155d2c34b068c505493aa5a4936e63274f4342ab0f40a58"
+
+[build]
+kind = "autotools"
+configure-command = [
+  "sh",
+  "-c",
+  "GPG_ERROR_CONFIG={dep:libgpg-error}/bin/gpgrt-config ./configure --prefix={out}",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "libaacs",
+  "make",
+  "pkgconf",
+]
+run = [
+  "libgcrypt",
+  "libgpg-error",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []

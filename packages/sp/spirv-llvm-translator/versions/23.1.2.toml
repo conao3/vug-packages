@@ -7,7 +7,7 @@ sha256 = "b657254b5e0a2dda7914a8cb1eace467f22847d75d877b83829026c1452f827a"
 [build]
 kind = "cmake"
 setup-flags = [
-  "-DLLVM_DIR={dep:llvm}/lib/cmake/llvm",
+  "-DLLVM_DIR={dep:llvm:dev}/lib/cmake/llvm",
   "-DBUILD_SHARED_LIBS=ON",
   "-DLLVM_SPIRV_INCLUDE_TESTS=OFF",
   "-DLLVM_EXTERNAL_SPIRV_HEADERS_SOURCE_DIR={dep:spirv-headers}",
@@ -18,13 +18,14 @@ setup-flags = [
 build = [
   "binutils",
   "cmake",
+  "llvm:dev",
   "make",
   "python",
   "spirv-headers",
 ]
 run = [
   "libcxx",
-  "llvm",
+  "llvm:lib",
   "musl",
   "zlib",
 ]

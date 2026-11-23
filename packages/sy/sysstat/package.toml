@@ -1,0 +1,8 @@
+name = "sysstat"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://sysstat.github.io/"
+sources = [
+  "https://github.com/sysstat/sysstat/archive/refs/tags/",
+]

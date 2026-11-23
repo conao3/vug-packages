@@ -1,0 +1,32 @@
+version = "12.8.1"
+
+[source]
+url = "https://github.com/sysstat/sysstat/archive/refs/tags/v12.8.1.tar.gz"
+sha256 = "d118a925f53633dbb7cbbefa1ea6a0cdcb1d961ee45617fa2179aa4119c33a40"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--disable-automated-sar-reporting",
+  "--disable-file-attr",
+  "--disable-pcp",
+  "--disable-sensors",
+  "ZIP=bzip2",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "bzip2",
+  "gettext",
+  "make",
+]
+run = [
+  "bzip2",
+  "gettext",
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

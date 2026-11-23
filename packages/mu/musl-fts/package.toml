@@ -1,0 +1,8 @@
+name = "musl-fts"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://github.com/void-linux/musl-fts"
+sources = [
+  "https://github.com/void-linux/musl-fts/archive/refs/tags/",
+]

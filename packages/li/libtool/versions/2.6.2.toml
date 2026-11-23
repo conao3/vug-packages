@@ -23,7 +23,10 @@ build = [
 ]
 run = [
   "bash",
+  "coreutils",
+  "grep",
   "musl",
+  "sed",
 ]
 
 [check]

@@ -1,0 +1,8 @@
+name = "getopt"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://frodo.looijaard.name/project/getopt"
+sources = [
+  "https://frodo.looijaard.name/system/files/software/getopt/",
+]

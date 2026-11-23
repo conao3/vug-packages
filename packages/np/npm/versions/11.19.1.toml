@@ -1,0 +1,27 @@
+version = "11.19.1"
+
+[source]
+url = "https://registry.npmjs.org/npm/-/npm-11.19.1.tgz"
+sha256 = "9f58bff01604cb1b14008fef14dceb14d836a49225e45c6c2e37de3be3e707f0"
+
+[build]
+kind = "prebuilt"
+install = [
+  { from = "bin", to = "lib/npm/bin" },
+  { from = "lib", to = "lib/npm/lib" },
+  { from = "node_modules", to = "lib/npm/node_modules" },
+  { from = "package.json", to = "lib/npm/package.json" },
+]
+
+[dependencies]
+build = []
+run = [
+  "nodejs",
+]
+
+[check]
+enabled = false
+skip = []
+
+[wrappers]
+"bin/npm" = ["{dep:nodejs}/bin/node", "{out}/lib/npm/bin/npm-cli.js"]

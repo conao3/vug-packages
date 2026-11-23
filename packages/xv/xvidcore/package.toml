@@ -1,0 +1,8 @@
+name = "xvidcore"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://www.xvid.com/"
+sources = [
+  "https://downloads.xvid.com/downloads/",
+]

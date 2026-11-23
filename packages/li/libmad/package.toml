@@ -1,0 +1,8 @@
+name = "libmad"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://codeberg.org/tenacityteam/libmad"
+sources = [
+  "https://codeberg.org/tenacityteam/libmad/releases/download/",
+]

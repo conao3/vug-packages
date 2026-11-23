@@ -1,0 +1,20 @@
+version = "0.18.0"
+
+[source]
+url = "https://github.com/NixOS/patchelf/releases/download/0.18.0/patchelf-0.18.0-x86_64.tar.gz"
+sha256 = "ce84f2447fb7a8679e58bc54a20dc2b01b37b5802e12c57eece772a6f14bf3f0"
+strip-components = 0
+
+[build]
+kind = "prebuilt"
+install = [
+  { from = "bin/patchelf", to = "bin/patchelf" },
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []

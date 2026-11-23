@@ -1,0 +1,8 @@
+name = "hfst-ospell"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://github.com/hfst/hfst-ospell"
+sources = [
+  "https://github.com/hfst/hfst-ospell/releases/download/",
+]

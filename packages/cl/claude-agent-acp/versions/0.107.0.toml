@@ -1,0 +1,26 @@
+version = "0.107.0"
+
+[source]
+url = "https://github.com/agentclientprotocol/claude-agent-acp/archive/refs/tags/v0.107.0.tar.gz"
+sha256 = "d58e3f9100e62904ee2a2ab63ddfd3eb97565ca2c646e028ff9899f72f956544"
+
+[build]
+kind = "node"
+build-script = true
+musl-executables = [
+  "node_modules/@anthropic-ai/claude-agent-sdk-linux-x64-musl/claude",
+]
+
+[dependencies]
+build = [
+  "npm",
+  "patchelf",
+]
+run = [
+  "musl",
+  "nodejs",
+]
+
+[check]
+enabled = false
+skip = []

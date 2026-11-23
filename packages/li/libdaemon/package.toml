@@ -1,0 +1,8 @@
+name = "libdaemon"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://0pointer.de/lennart/projects/libdaemon/"
+sources = [
+  "https://0pointer.de/lennart/projects/libdaemon/",
+]

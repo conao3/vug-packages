@@ -1,0 +1,31 @@
+version = "0.10.2-unstable-2026-05-06"
+
+[source]
+url = "https://github.com/stefanberger/libtpms/archive/521c51073fe6f7c56023db78e56961fcaf7906e8.tar.gz"
+sha256 = "db34a1b541e6fe3ca4192d87da10d7c0f91a00606161df8e2bae9ae463914f78"
+
+[build]
+kind = "autotools"
+autoreconf = true
+configure-flags = [
+  "--with-openssl",
+]
+
+[dependencies]
+build = [
+  "autoconf",
+  "automake",
+  "binutils",
+  "libtool",
+  "make",
+  "perl",
+  "pkgconf",
+]
+run = [
+  "musl",
+  "openssl",
+]
+
+[check]
+enabled = true
+skip = []

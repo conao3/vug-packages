@@ -1,0 +1,32 @@
+version = "0-unstable-2026-05-03"
+patches = [
+  "0-unstable-2026-05-03-pkg-config.patch",
+]
+
+[source]
+url = "https://github.com/ianlancetaylor/libbacktrace/archive/96664e69b1ecdb76e824be1d9e8f475b76dd08cf.tar.gz"
+sha256 = "16bdb21d6d5d7035fb36e937213d649961ca70b4a95c4f5ff5591be6fcd43483"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "LIBS=-lunwind",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "libunwind",
+  "make",
+  "xz",
+]
+run = [
+  "libunwind",
+  "musl",
+  "xz",
+  "zlib",
+]
+
+[check]
+enabled = true
+skip = []

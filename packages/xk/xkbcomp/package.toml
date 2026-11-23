@@ -1,0 +1,8 @@
+name = "xkbcomp"
+license = "HPND AND HPND-DEC AND MIT-open-group"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/xorg/app/xkbcomp"
+sources = [
+  "https://www.x.org/releases/individual/app/",
+]

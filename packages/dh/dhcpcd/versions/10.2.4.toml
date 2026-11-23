@@ -13,10 +13,6 @@ configure-flags = [
   "--without-udev",
   "--disable-privsep",
 ]
-install-flags = [
-  "DBDIR={out}/var/lib/dhcpcd",
-  "SYSCONFDIR={out}/etc",
-]
 
 [dependencies]
 build = [

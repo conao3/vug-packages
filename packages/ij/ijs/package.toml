@@ -1,0 +1,8 @@
+name = "ijs"
+license = "MIT"
+
+[upstream]
+homepage = "https://www.ghostscript.com/"
+sources = [
+  "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/",
+]

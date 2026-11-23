@@ -1,0 +1,25 @@
+version = "1.4.2.12"
+patches = [
+  "1.4.2.12-valid-test-seed.patch",
+]
+
+[source]
+url = "https://github.com/roc-streaming/openfec/archive/refs/tags/v1.4.2.12.tar.gz"
+sha256 = "3397f58c8fff945ece8ea19e7859040c98a5c6497e5d791397794094e15e5873"
+
+[build]
+kind = "cmake"
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []

@@ -1,0 +1,8 @@
+name = "python-build"
+license = "MIT"
+
+[upstream]
+homepage = "https://pypi.org/project/build/"
+sources = [
+  "https://files.pythonhosted.org/packages/",
+]

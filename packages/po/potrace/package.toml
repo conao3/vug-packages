@@ -1,0 +1,8 @@
+name = "potrace"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://potrace.sourceforge.net/"
+sources = [
+  "https://potrace.sourceforge.net/download/",
+]

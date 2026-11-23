@@ -1,0 +1,30 @@
+version = "1.0.3"
+
+[source]
+url = "https://git.openldap.org/openldap/openldap/-/archive/LMDB_1.0.3/openldap-LMDB_1.0.3.tar.gz"
+sha256 = "e2d6d9985a16d7ce6bbf5e97c7099c50e38950ee98a7dd8e30c82b74eb9ee382"
+strip-components = 3
+
+[build]
+kind = "make"
+make-flags = [
+  "prefix={out}",
+]
+build-targets = [
+  "all",
+  "test",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "pkgconf",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

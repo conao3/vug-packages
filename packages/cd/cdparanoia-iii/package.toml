@@ -1,0 +1,8 @@
+name = "cdparanoia-iii"
+license = "GPL-2.0-or-later AND LGPL-2.1-only"
+
+[upstream]
+homepage = "https://www.xiph.org/paranoia/"
+sources = [
+  "https://downloads.xiph.org/releases/cdparanoia/",
+]

@@ -1,0 +1,28 @@
+version = "0.3.3"
+
+[source]
+url = "https://launchpad.net/libvterm/trunk/v0.3/+download/libvterm-0.3.3.tar.gz"
+sha256 = "09156f43dd2128bd347cbeebe50d9a571d32c64e0cf18d211197946aff7226e0"
+
+[build]
+kind = "make"
+make-flags = [
+  "CC=cc",
+  "PREFIX={out}",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "libtool",
+  "make",
+  "perl",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
+target = "test"

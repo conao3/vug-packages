@@ -1,0 +1,104 @@
+name: Package builds
+run-name: Package builds (${{ inputs.network_probe && 'sandbox probe' || inputs.head || github.event.pull_request.number }})
+on:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      base:
+        description: Base commit SHA
+        required: true
+        type: string
+      head:
+        description: Head commit SHA
+        required: true
+        type: string
+      network_probe:
+        description: Run the sandbox network probe against the head tree
+        type: boolean
+        default: false
+permissions:
+  contents: read
+jobs:
+  plan:
+    runs-on: ubuntu-26.04
+    timeout-minutes: 10
+    outputs:
+      mode: ${{ steps.plan.outputs.mode }}
+      lanes: ${{ steps.plan.outputs.lanes }}
+      changed: ${{ steps.plan.outputs.changed }}
+      targets: ${{ steps.plan.outputs.targets }}
+      tag: ${{ steps.plan.outputs.tag }}
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - name: Select packages and vug release
+        id: plan
+        env:
+          BASE_SHA: ${{ inputs.base }}
+          HEAD_SHA: ${{ inputs.head || github.sha }}
+          NETWORK_PROBE: ${{ inputs.network_probe || false }}
+          MAX_PACKAGES: 12
+        run: python3 .github/scripts/package-builds.py plan
+
+  build:
+    name: Build (${{ matrix.lane }})
+    needs: plan
+    if: needs.plan.outputs.mode == 'build' || needs.plan.outputs.mode == 'probe'
+    runs-on: ubuntu-26.04
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      matrix:
+        lane: ${{ fromJSON(needs.plan.outputs.lanes) }}
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - name: Check out candidate records
+        env:
+          HEAD_SHA: ${{ inputs.head || github.sha }}
+        run: python3 .github/scripts/package-builds.py checkout
+      - uses: cachix/install-nix-action@v32.0.0
+      - name: Set up vug sandbox
+        env:
+          VUG_TAG: ${{ needs.plan.outputs.tag }}
+        run: |
+          sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+          nix build "github:conao3/rust-vug/$VUG_TAG" -o "$RUNNER_TEMP/vug"
+          "$RUNNER_TEMP/vug/bin/vug" --version
+      - name: Build and test packages
+        if: matrix.lane != 'probe'
+        env:
+          PACKAGES: ${{ matrix.lane == 'primary' && needs.plan.outputs.targets || needs.plan.outputs.changed }}
+        run: python3 .github/scripts/package-builds.py build
+      - name: Save output IDs and file lists
+        if: ${{ !cancelled() && matrix.lane != 'probe' }}
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: package-results-${{ matrix.lane }}
+          path: ${{ runner.temp }}/package-results/
+          if-no-files-found: ignore
+          retention-days: 7
+      - name: Measure sandbox network access
+        if: matrix.lane == 'probe'
+        run: python3 .github/scripts/package-builds.py probe
+
+  compare:
+    name: Compare output IDs
+    needs: [plan, build]
+    if: ${{ !cancelled() && needs.plan.outputs.mode == 'build' }}
+    runs-on: ubuntu-26.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@v8.0.1
+        with:
+          pattern: package-results-*
+          path: ${{ runner.temp }}/comparison
+      - name: Compare independent builds
+        env:
+          PACKAGES: ${{ needs.plan.outputs.changed }}
+        run: python3 .github/scripts/package-builds.py compare

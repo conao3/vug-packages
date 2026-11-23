@@ -21,5 +21,9 @@ run = [
 ]
 
 [check]
-enabled = false
-skip = []
+enabled = true
+skip = [
+  "test-c32ispunct.sh",
+  "tests/find/exec-plus-last-file.sh",
+  "tests/xargs/test-sigusr",
+]

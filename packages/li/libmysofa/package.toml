@@ -1,0 +1,8 @@
+name = "libmysofa"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://github.com/hoene/libmysofa"
+sources = [
+  "https://github.com/hoene/libmysofa/archive/refs/tags/",
+]

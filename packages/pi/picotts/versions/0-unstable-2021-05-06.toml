@@ -1,0 +1,34 @@
+version = "0-unstable-2021-05-06"
+
+[source]
+url = "https://github.com/ihuguet/picotts/archive/21089d223e177ba3cb7e385db8613a093dff74b5.tar.gz"
+sha256 = "f9556495fd56b96160cdae873ca2dbb0f0a578259c74f4ca939effa3fa1cb101"
+
+[build]
+kind = "autotools"
+configure-command = [
+  "sh",
+  "-c",
+  "cd pico && autoreconf -fi && ./configure --prefix={out}",
+]
+make-flags = [
+  "-C",
+  "pico",
+]
+
+[dependencies]
+build = [
+  "autoconf",
+  "automake",
+  "binutils",
+  "libtool",
+  "make",
+]
+run = [
+  "musl",
+  "popt",
+]
+
+[check]
+enabled = true
+skip = []

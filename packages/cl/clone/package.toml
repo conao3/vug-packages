@@ -1,0 +1,8 @@
+name = "clone"
+license = "Artistic-1.0-Perl OR GPL-1.0-or-later"
+
+[upstream]
+homepage = "https://metacpan.org/dist/Clone"
+sources = [
+  "https://cpan.metacpan.org/authors/id/A/AT/ATOOMIC/",
+]

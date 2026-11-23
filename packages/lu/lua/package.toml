@@ -1,0 +1,8 @@
+name = "lua"
+license = "MIT"
+
+[upstream]
+homepage = "https://www.lua.org/"
+sources = [
+  "https://www.lua.org/ftp/",
+]

@@ -1,0 +1,8 @@
+name = "soundtouch"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://www.surina.net/soundtouch/"
+sources = [
+  "https://www.surina.net/soundtouch/",
+]

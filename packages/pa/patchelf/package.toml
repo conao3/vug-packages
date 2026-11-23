@@ -1,0 +1,8 @@
+name = "patchelf"
+license = "GPL-3.0-or-later"
+
+[upstream]
+homepage = "https://github.com/NixOS/patchelf"
+sources = [
+  "https://github.com/NixOS/patchelf/releases/download/",
+]

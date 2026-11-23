@@ -1,0 +1,8 @@
+name = "claude-agent-acp"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://github.com/agentclientprotocol/claude-agent-acp"
+sources = [
+  "https://github.com/agentclientprotocol/claude-agent-acp/archive/",
+]

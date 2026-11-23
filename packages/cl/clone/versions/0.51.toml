@@ -1,0 +1,26 @@
+version = "0.51"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/A/AT/ATOOMIC/Clone-0.51.tar.gz"
+sha256 = "f17f66fec97dacca67ac9585701d2d079cfc80539fe6e8160c201c4e55f67507"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Clone",
+]
+
+[dependencies]
+build = [
+  "b-cow",
+  "make",
+]
+run = [
+  "musl",
+  "perl",
+]
+
+[check]
+enabled = true
+skip = []

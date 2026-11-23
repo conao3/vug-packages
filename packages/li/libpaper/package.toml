@@ -1,0 +1,8 @@
+name = "libpaper"
+license = "MIT AND GPL-3.0-or-later AND GPL-2.0-only"
+
+[upstream]
+homepage = "https://github.com/rrthomas/libpaper"
+sources = [
+  "https://github.com/rrthomas/libpaper/releases/download/",
+]

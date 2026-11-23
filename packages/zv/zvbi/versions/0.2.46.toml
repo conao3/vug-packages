@@ -1,0 +1,36 @@
+version = "0.2.46"
+
+[source]
+url = "https://github.com/zapping-vbi/zvbi/archive/refs/tags/v0.2.46.tar.gz"
+sha256 = "817a26118e2654155ee761cd39414885986a4315fdb6617af5314090ddfffd10"
+
+[build]
+kind = "autotools"
+autoreconf = true
+configure-flags = [
+  "--without-doxygen",
+  "--x-includes={dep:libx11}/include",
+  "--x-libraries={dep:libx11}/lib",
+]
+
+[dependencies]
+build = [
+  "autoconf",
+  "automake",
+  "binutils",
+  "gettext",
+  "libtool",
+  "make",
+]
+run = [
+  "gettext",
+  "libx11",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = [
+  "pdc2-test1.sh",
+  "test-pdc",
+]

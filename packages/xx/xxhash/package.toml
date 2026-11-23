@@ -1,0 +1,8 @@
+name = "xxhash"
+license = "BSD-2-Clause AND GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://xxhash.com/"
+sources = [
+  "https://github.com/Cyan4973/xxHash/archive/",
+]

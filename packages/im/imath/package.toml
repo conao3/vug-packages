@@ -1,0 +1,8 @@
+name = "imath"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://imath.readthedocs.io/"
+sources = [
+  "https://github.com/AcademySoftwareFoundation/Imath/releases/download/",
+]

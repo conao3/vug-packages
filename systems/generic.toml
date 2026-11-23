@@ -13,6 +13,7 @@ packages = [
   "htop",
   "iproute2",
   "iputils",
+  "kmod",
   "less",
   "limine",
   "procps",
@@ -27,11 +28,37 @@ packages = [
 loader = "{pkg:limine}/share/limine/BOOTX64.EFI"
 arguments = ["console=tty0", "console=ttyS0"]
 
+[boot.initrd]
+available-modules = ["virtio_blk", "ext4"]
+force-modules = ["ext4"]
+
+[disk]
+table = "gpt"
+
+[[disk.partition]]
+name = "esp"
+type = "esp"
+size-mib = 1024
+
+[[disk.partition]]
+name = "root"
+type = "linux-filesystem"
+grow = true
+
+[[filesystem]]
+partition = "root"
+mount = "/"
+type = "ext4"
+
+[[filesystem]]
+partition = "esp"
+mount = "/boot"
+type = "vfat"
+options = ["umask=0077"]
+
 [service.ca-certificates]
 
 [service.dbus]
-
-[service.esp]
 
 [service.dhcpcd]
 

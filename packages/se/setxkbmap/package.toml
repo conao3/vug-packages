@@ -1,0 +1,8 @@
+name = "setxkbmap"
+license = "MIT"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/xorg/app/setxkbmap"
+sources = [
+  "https://www.x.org/releases/individual/app/",
+]

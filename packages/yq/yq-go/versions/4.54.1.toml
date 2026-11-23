@@ -1,0 +1,22 @@
+version = "4.54.1"
+
+[source]
+url = "https://github.com/mikefarah/yq/archive/refs/tags/v4.54.1.tar.gz"
+sha256 = "0cec36e7035dd56c508bda56245cbd71e4495d2317bc2528165c4162bce79335"
+
+[build]
+kind = "go"
+targets = [
+  { path = ".", bin = "yq" },
+]
+vendor = { url = "https://github.com/conao3/rust-vug/releases/download/v0.2.11/yq-4.54.1-vendor.tar.gz", sha256 = "7ea64725eb74d7ae7b7bdad93c5535694ac43d6e755adf2c663d525cc2266243" }
+
+[dependencies]
+build = [
+  "go",
+]
+run = []
+
+[check]
+enabled = true
+skip = []

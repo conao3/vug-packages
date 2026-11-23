@@ -1,0 +1,8 @@
+name = "dtc"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://git.kernel.org/pub/scm/utils/dtc/dtc.git/"
+sources = [
+  "https://git.kernel.org/pub/scm/utils/dtc/dtc.git/snapshot/",
+]

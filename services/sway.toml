@@ -25,7 +25,7 @@ default = "pixman"
 
 [[file]]
 path = "/etc/fonts/fonts.conf"
-target = "{pkg:fontconfig}/etc/fonts/fonts.conf"
+target = "{pkg:fontconfig}/.vug/root/etc/fonts/fonts.conf"
 
 [[file]]
 path = "/etc/sway/config"

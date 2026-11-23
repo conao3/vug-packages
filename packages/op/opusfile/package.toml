@@ -1,0 +1,8 @@
+name = "opusfile"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://opus-codec.org/"
+sources = [
+  "https://downloads.xiph.org/releases/opus/",
+]

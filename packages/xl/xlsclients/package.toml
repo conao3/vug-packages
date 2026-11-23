@@ -1,0 +1,8 @@
+name = "xlsclients"
+license = "MIT"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/xorg/app/xlsclients"
+sources = [
+  "https://www.x.org/releases/individual/app/",
+]

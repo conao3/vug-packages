@@ -1,0 +1,33 @@
+version = "0.5.1"
+patches = [
+  "0.5.1-libtool-rpath-flag.patch",
+]
+
+[source]
+url = "https://deb.debian.org/debian/pool/main/m/mpeg2dec/mpeg2dec_0.5.1.orig.tar.gz"
+sha256 = "dee22e893cb5fc2b2b6ebd60b88478ab8556cb3b93f9a0d7ce8f3b61851871d4"
+
+[build]
+kind = "autotools"
+configure-command = [
+  "sh",
+  "-c",
+  "cp {dep:automake}/share/automake-1.20/config.sub .auto/config.sub && cp {dep:automake}/share/automake-1.20/config.guess .auto/config.guess && ./configure --prefix={out} --disable-sdl",
+]
+
+[dependencies]
+build = [
+  "automake",
+  "binutils",
+  "make",
+]
+run = [
+  "libx11",
+  "libxext",
+  "libxv",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []

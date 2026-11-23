@@ -1,0 +1,8 @@
+name = "libselinux"
+license = "LicenseRef-Public-Domain"
+
+[upstream]
+homepage = "https://github.com/SELinuxProject/selinux"
+sources = [
+  "https://github.com/SELinuxProject/selinux/releases/download/",
+]

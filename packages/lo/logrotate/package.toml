@@ -1,0 +1,8 @@
+name = "logrotate"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://github.com/logrotate/logrotate"
+sources = [
+  "https://github.com/logrotate/logrotate/",
+]

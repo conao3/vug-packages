@@ -1,0 +1,8 @@
+name = "libfyaml"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/pantoniou/libfyaml"
+sources = [
+  "https://github.com/pantoniou/libfyaml/",
+]

@@ -1,0 +1,29 @@
+version = "20251125"
+
+[source]
+url = "https://cdn.kernel.org/pub/linux/kernel/firmware/linux-firmware-20251125.tar.xz"
+sha256 = "eb807a01c52882ac97ef5b678d4a246b209e6165ac1287d62a5f93a09ee93cd2"
+
+[build]
+kind = "prebuilt"
+install = [
+  { from = "cxgb4", to = "lib/firmware/cxgb4" },
+  { from = "WHENCE", to = "share/licenses/linux-firmware-chelsio/WHENCE" },
+  { from = "LICENCE.chelsio_firmware", to = "share/licenses/linux-firmware-chelsio/LICENCE.chelsio_firmware" },
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
+
+[links]
+"lib/firmware/cxgb4/t4-config.txt" = "configs/t4-config-default.txt"
+"lib/firmware/cxgb4/t4fw.bin" = "t4fw-1.27.5.0.bin"
+"lib/firmware/cxgb4/t5-config.txt" = "configs/t5-config-default.txt"
+"lib/firmware/cxgb4/t5fw.bin" = "t5fw-1.27.5.0.bin"
+"lib/firmware/cxgb4/t6-config.txt" = "configs/t6-config-default.txt"
+"lib/firmware/cxgb4/t6fw.bin" = "t6fw-1.27.5.0.bin"

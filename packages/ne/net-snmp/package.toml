@@ -1,0 +1,8 @@
+name = "net-snmp"
+license = "Net-SNMP"
+
+[upstream]
+homepage = "http://www.net-snmp.org/"
+sources = [
+  "https://downloads.sourceforge.net/project/net-snmp/",
+]

@@ -1,0 +1,23 @@
+--- a/lib/Makefile
++++ b/lib/Makefile
+@@ -483,6 +483,8 @@
+ 	@echo building: $(TARGETS)
+ 	-mkdir -p $(DESTDIR)$(LIBDIR)
+ 	$(INSTALL) -m 644 $(ALIBPFM) $(DESTDIR)$(LIBDIR)
++	mkdir -p "$(DESTDIR)$(LIBDIR)/pkgconfig"
++	$(INSTALL) -m 644 libpfm.pc "$(DESTDIR)$(LIBDIR)/pkgconfig/libpfm.pc"
+ ifeq ($(CONFIG_PFMLIB_SHARED),y)
+ 	$(INSTALL) $(SLIBPFM) $(DESTDIR)$(LIBDIR)
+ 	cd $(DESTDIR)$(LIBDIR); $(LN) $(SLIBPFM) $(VLIBPFM)
+--- /dev/null
++++ b/lib/libpfm.pc
+@@ -0,0 +1,9 @@
++prefix=${pcfiledir}/../..
++libdir=${prefix}/lib
++includedir=${prefix}/include
++
++Name: libpfm
++Description: Performance monitoring event encoding library
++Version: 4.14.1
++Libs: -L${libdir} -lpfm
++Cflags: -I${includedir}

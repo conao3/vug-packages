@@ -1,0 +1,28 @@
+version = "2.1.4"
+
+[source]
+url = "https://github.com/neovim/unibilium/archive/v2.1.4.tar.gz"
+sha256 = "7360907bcf79ba49f6fc4a504767ff86e93ab9018477026fcc70d5ab77e1f2c1"
+
+[build]
+kind = "autotools"
+autoreconf = true
+
+[dependencies]
+build = [
+  "autoconf",
+  "automake",
+  "binutils",
+  "libtool",
+  "make",
+  "ncurses",
+  "perl",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
+target = "test"

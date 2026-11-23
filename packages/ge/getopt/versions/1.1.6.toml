@@ -1,0 +1,30 @@
+version = "1.1.6"
+patches = [
+  "1.1.6-musl-test-diagnostics.patch",
+]
+
+[source]
+url = "https://frodo.looijaard.name/system/files/software/getopt/getopt-1.1.6.tar.gz"
+sha256 = "d0bf1dc642a993e7388a1cddfb9409bed375c21d5278056ccca3a0acd09dc5fe"
+
+[build]
+kind = "make"
+make-flags = [
+  "CC=cc",
+  "WITHOUT_GETTEXT=1",
+  "prefix={out}",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
+target = "test"

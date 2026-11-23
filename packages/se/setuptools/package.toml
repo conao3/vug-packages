@@ -1,0 +1,8 @@
+name = "setuptools"
+license = "MIT"
+
+[upstream]
+homepage = "https://pypi.org/project/setuptools/"
+sources = [
+  "https://files.pythonhosted.org/packages/",
+]

@@ -13,10 +13,6 @@ configure-flags = [
   "--localstatedir=/var",
   "--with-default-fonts=/usr/share/fonts",
 ]
-install-flags = [
-  "sysconfdir={out}/etc",
-  "localstatedir={out}/var",
-]
 
 [dependencies]
 build = [

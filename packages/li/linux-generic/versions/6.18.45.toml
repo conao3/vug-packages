@@ -7,6 +7,7 @@ sha256 = "30fa4a56579ca614ac125a12614f7f6466f87ab1278aef7b951dd74156deab33"
 [build]
 kind = "linux"
 defconfig = "defconfig"
+modules = true
 config = [
   "64BIT=y",
   "SMP=y",
@@ -70,9 +71,9 @@ config = [
   "BLOCK=y",
   "VIRTIO_MENU=y",
   "VIRTIO_PCI=y",
-  "VIRTIO_BLK=y",
+  "VIRTIO_BLK=m",
   "VIRTIO_NET=y",
-  "EXT4_FS=y",
+  "EXT4_FS=m",
   "AUTOFS_FS=y",
   "SECCOMP=y",
   "KALLSYMS=y",
@@ -86,11 +87,18 @@ config = [
   "CRYPTO_SHA256=y",
   "CRYPTO_HMAC=y",
   "CRYPTO_USER_API_HASH=y",
+  "CRYPTO_USER_API_SKCIPHER=y",
+  "CRYPTO_AES=y",
+  "CRYPTO_XTS=y",
+  "BLK_DEV_LOOP=y",
+  "BLK_DEV_DM=m",
+  "DM_CRYPT=m",
   "DMIID=y",
   "RTC_CLASS=y",
   "RTC_HCTOSYS=y",
   "RTC_DRV_CMOS=y",
-  "MODULES=n",
+  "MODULES=y",
+  "DUMMY=m",
   "WERROR=n",
   "IA32_EMULATION=n",
   "COMPAT_32=n",
@@ -151,6 +159,7 @@ build = [
   "coreutils",
   "elfutils",
   "flex",
+  "kmod",
   "libressl",
   "m4",
   "make",

@@ -1,0 +1,27 @@
+version = "0.1.3"
+
+[source]
+url = "https://downloads.sourceforge.net/project/opencore-amr/vo-aacenc/vo-aacenc-0.1.3.tar.gz"
+sha256 = "e51a7477a359f18df7c4f82d195dab4e14e7414cbd48cf79cc195fc446850f36"
+
+[build]
+kind = "autotools"
+configure-command = [
+  "sh",
+  "-c",
+  "cp {dep:automake}/share/automake-1.20/config.sub config.sub && cp {dep:automake}/share/automake-1.20/config.guess config.guess && ./configure --prefix={out}",
+]
+
+[dependencies]
+build = [
+  "automake",
+  "binutils",
+  "make",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
