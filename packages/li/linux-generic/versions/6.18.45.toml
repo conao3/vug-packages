@@ -7,6 +7,7 @@ sha256 = "30fa4a56579ca614ac125a12614f7f6466f87ab1278aef7b951dd74156deab33"
 [build]
 kind = "linux"
 defconfig = "defconfig"
+modules = true
 config = [
   "64BIT=y",
   "SMP=y",
@@ -90,7 +91,8 @@ config = [
   "RTC_CLASS=y",
   "RTC_HCTOSYS=y",
   "RTC_DRV_CMOS=y",
-  "MODULES=n",
+  "MODULES=y",
+  "DUMMY=m",
   "WERROR=n",
   "IA32_EMULATION=n",
   "COMPAT_32=n",
@@ -151,6 +153,7 @@ build = [
   "coreutils",
   "elfutils",
   "flex",
+  "kmod",
   "libressl",
   "m4",
   "make",

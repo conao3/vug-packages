@@ -13,6 +13,7 @@ packages = [
   "htop",
   "iproute2",
   "iputils",
+  "kmod",
   "less",
   "limine",
   "procps",
