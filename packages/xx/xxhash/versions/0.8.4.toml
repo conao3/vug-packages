@@ -1,0 +1,24 @@
+version = "0.8.4"
+
+[source]
+url = "https://github.com/Cyan4973/xxHash/archive/v0.8.4.tar.gz"
+sha256 = "5738270935e7c3d38a79b3adf7c9692566ce7895a25f67de43ad52ab504acd32"
+
+[build]
+kind = "cmake"
+path = "build/cmake"
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+  "pkgconf",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
