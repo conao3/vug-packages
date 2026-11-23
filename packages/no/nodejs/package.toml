@@ -1,0 +1,8 @@
+name = "nodejs"
+license = "MIT"
+
+[upstream]
+homepage = "https://nodejs.org/"
+sources = [
+  "https://unofficial-builds.nodejs.org/download/release/v24.22.2/",
+]
