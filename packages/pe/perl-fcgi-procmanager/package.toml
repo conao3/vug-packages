@@ -1,0 +1,8 @@
+name = "perl-fcgi-procmanager"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://metacpan.org/dist/FCGI-ProcManager"
+sources = [
+  "https://cpan.metacpan.org/authors/id/A/AR/ARODLAND/",
+]

@@ -1,0 +1,24 @@
+version = "0.28"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/A/AR/ARODLAND/FCGI-ProcManager-0.28.tar.gz"
+sha256 = "e1c958c042427a175e051e0008f2025e8ec80613d3c7750597bf8e529b04420e"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "FCGI::ProcManager",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+]
+
+[check]
+enabled = true
+skip = []
