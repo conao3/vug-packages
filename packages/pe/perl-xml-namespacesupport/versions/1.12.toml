@@ -1,0 +1,24 @@
+version = "1.12"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/P/PE/PERIGRIN/XML-NamespaceSupport-1.12.tar.gz"
+sha256 = "47e995859f8dd0413aa3f22d350c4a62da652e854267aa0586ae544ae2bae5ef"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "XML::NamespaceSupport",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+]
+
+[check]
+enabled = true
+skip = []
