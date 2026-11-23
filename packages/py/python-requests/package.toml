@@ -1,0 +1,8 @@
+name = "python-requests"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://requests.readthedocs.io"
+sources = [
+  "https://files.pythonhosted.org/packages/source/r/requests/",
+]
