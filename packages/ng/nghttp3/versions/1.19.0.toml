@@ -1,0 +1,26 @@
+version = "1.19.0"
+
+[source]
+url = "https://github.com/ngtcp2/nghttp3/releases/download/v1.19.0/nghttp3-1.19.0.tar.xz"
+sha256 = "228e17f5cc3d4de7bfced9912bd09de30e7f45741cc47503cf88d3fa9209e155"
+
+[build]
+kind = "cmake"
+setup-flags = [
+  "-DENABLE_LIB_ONLY=ON",
+  "-DENABLE_STATIC_LIB=OFF",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
