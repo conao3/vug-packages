@@ -1,0 +1,25 @@
+version = "0.010"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/L/LE/LEONT/ExtUtils-Config-0.010.tar.gz"
+sha256 = "82e7e4e90cbe380e152f5de6e3e403746982d502dd30197a123652e46610c66d"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "ExtUtils::Config",
+  "ExtUtils::Config::MakeMaker",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+]
+
+[check]
+enabled = true
+skip = []
