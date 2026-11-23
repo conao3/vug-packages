@@ -1,0 +1,8 @@
+name = "python-ufoprocessor"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/LettError/ufoProcessor"
+sources = [
+  "https://files.pythonhosted.org/packages/source/u/ufoprocessor/",
+]

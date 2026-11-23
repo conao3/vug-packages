@@ -1,0 +1,31 @@
+version = "1.14.2"
+
+[source]
+url = "https://files.pythonhosted.org/packages/source/u/ufoprocessor/ufoprocessor-1.14.2.tar.gz"
+sha256 = "b0c4f42b0903b0771e499064895d066121a482ac060f46b78dc00c5f2c3228e5"
+
+[build]
+kind = "python"
+imports = [
+  "ufoProcessor",
+]
+
+[dependencies]
+build = [
+  "python-build",
+  "python-installer",
+  "python-setuptools",
+  "python-setuptools-scm",
+]
+run = [
+  "python",
+  "python-defcon",
+  "python-fontmath",
+  "python-fontparts",
+  "python-fonttools",
+  "python-mutatormath",
+]
+
+[check]
+enabled = true
+skip = []
