@@ -1,0 +1,29 @@
+version = "0.10.0"
+
+[source]
+url = "https://files.pythonhosted.org/packages/source/b/booleanoperations/booleanoperations-0.10.0.tar.gz"
+sha256 = "6d719f560d2a1dd676c812b844ecceb693c96791c76579089ab7d0f5db5cedbe"
+
+[build]
+kind = "python"
+imports = [
+  "booleanOperations",
+]
+
+[dependencies]
+build = [
+  "python-build",
+  "python-installer",
+  "python-setuptools",
+  "python-setuptools-scm",
+  "python-wheel",
+]
+run = [
+  "python",
+  "python-fonttools",
+  "python-pyclipper",
+]
+
+[check]
+enabled = true
+skip = []

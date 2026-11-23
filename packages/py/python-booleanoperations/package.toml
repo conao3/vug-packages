@@ -1,0 +1,8 @@
+name = "python-booleanoperations"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/typemytype/booleanOperations"
+sources = [
+  "https://files.pythonhosted.org/packages/source/b/booleanoperations/",
+]
