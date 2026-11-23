@@ -1,0 +1,37 @@
+version = "1.17.0"
+
+[source]
+url = "https://github.com/webmproject/libvpx/archive/v1.17.0.tar.gz"
+sha256 = "1020f184046187baa2985dbde38e0691f49c44088bca7a1842b0236c6081dc0a"
+
+[build]
+kind = "autotools"
+configure-command = [
+  "env",
+  "CXX=c++",
+  "./configure",
+  "--prefix={out}",
+]
+configure-flags = [
+  "--enable-shared",
+  "--disable-static",
+  "--disable-unit-tests",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "diffutils",
+  "make",
+  "nasm",
+  "perl",
+  "pkgconf",
+]
+run = [
+  "libcxx",
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
