@@ -1,0 +1,8 @@
+name = "perl-canary-stability"
+license = "Artistic-1.0-Perl OR GPL-1.0-or-later"
+
+[upstream]
+homepage = "https://metacpan.org/dist/Canary-Stability"
+sources = [
+  "https://cpan.metacpan.org/authors/id/M/ML/MLEHMANN/",
+]
