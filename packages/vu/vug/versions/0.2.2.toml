@@ -1,0 +1,27 @@
+version = "0.2.2"
+
+[source]
+url = "https://github.com/conao3/rust-vug/archive/refs/tags/v0.2.2.tar.gz"
+sha256 = "7fef580844af9400a3b076b87aff55bf08030cbe88963a6d90a389a0d5c96686"
+
+[build]
+kind = "cargo"
+flags = [
+  "--config",
+  "env.LEANFRAN_OFFLINE=\"1\"",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "rust",
+]
+run = [
+  "musl",
+  "rust-libunwind",
+]
+
+[check]
+enabled = false
+skip = []
