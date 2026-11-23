@@ -1,0 +1,27 @@
+version = "2.0.72"
+patches = [
+  "2.0.72-add-meson-build.patch",
+]
+
+[source]
+url = "https://github.com/open-vela/external_libldac/archive/refs/tags/trunk-5.5.tar.gz"
+sha256 = "abfd945678a90136523b66d1e1e54bd7461588605d21415e301205720d00bfc2"
+
+[build]
+kind = "meson"
+
+[dependencies]
+build = [
+  "binutils",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []

@@ -1,0 +1,53 @@
+--- /dev/null
++++ b/meson.build
+@@ -0,0 +1,50 @@
++project(
++  'ldacbt',
++  'c',
++  version: '2.0.72',
++)
++
++pkg = import('pkgconfig')
++
++dep_m = meson.get_compiler('c').find_library('m')
++
++lib = library(
++  'ldacBT',
++  'abr/src/ldacBT_abr.c',
++  'src/ldacBT.c',
++  'src/ldaclib.c',
++  include_directories: [
++    'abr/inc',
++    'inc',
++  ],
++  dependencies: [dep_m],
++  version: meson.project_version(),
++  install: true,
++)
++
++install_headers(
++  'abr/inc/ldacBT_abr.h',
++  'inc/ldacBT.h',
++  subdir: 'ldac',
++)
++
++pkg.generate(
++  lib,
++  name: 'ldacBT-enc',
++  description: 'LDAC Bluetooth encoder',
++  subdirs: 'ldac',
++)
++
++pkg.generate(
++  lib,
++  name: 'ldacBT-abr',
++  description: 'LDAC Bluetooth ABR library',
++  subdirs: 'ldac',
++)
++
++pkg.generate(
++  lib,
++  name: 'ldacBT-dec',
++  description: 'LDAC Bluetooth decoder',
++  subdirs: 'ldac',
++)
