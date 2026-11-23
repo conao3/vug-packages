@@ -1,0 +1,8 @@
+name = "libtheora"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://www.theora.org/"
+sources = [
+  "https://downloads.xiph.org/releases/theora/",
+]
