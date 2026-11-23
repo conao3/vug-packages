@@ -1,0 +1,24 @@
+version = "1.1.10"
+
+[source]
+url = "https://www.x.org/releases/individual/lib/libfontenc-1.1.10.tar.xz"
+sha256 = "daa186a49e3cc2b6fc585ca09971351e6f010f618abc6a164eda82e42e4aa4d6"
+
+[build]
+kind = "autotools"
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "pkgconf",
+  "xorgproto",
+]
+run = [
+  "musl",
+  "zlib",
+]
+
+[check]
+enabled = true
+skip = []
