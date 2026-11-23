@@ -1,0 +1,25 @@
+version = "0.38"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/R/RO/ROBERTSD/HTML-TagCloud-0.38.tar.gz"
+sha256 = "498099472def866b448bf62f4182dfadf59472e13f24cb8664a671ca79b67015"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "HTML::TagCloud",
+]
+
+[dependencies]
+build = [
+  "make",
+  "perl-module-build",
+]
+run = [
+  "perl",
+]
+
+[check]
+enabled = true
+skip = []
