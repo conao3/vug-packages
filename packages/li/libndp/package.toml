@@ -1,0 +1,8 @@
+name = "libndp"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "http://libndp.org/"
+sources = [
+  "https://github.com/jpirko/libndp/",
+]
