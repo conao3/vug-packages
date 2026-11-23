@@ -1,0 +1,8 @@
+name = "libxdamage"
+license = "HPND-sell-variant"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/xorg/lib/libxdamage"
+sources = [
+  "https://www.x.org/releases/individual/lib/",
+]
