@@ -1,0 +1,8 @@
+name = "libiscsi"
+license = "LGPL-2.1-or-later AND GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://github.com/sahlberg/libiscsi"
+sources = [
+  "https://github.com/sahlberg/libiscsi/",
+]

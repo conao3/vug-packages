@@ -1,0 +1,30 @@
+version = "1.20.3"
+
+[source]
+url = "https://github.com/sahlberg/libiscsi/archive/1.20.3.tar.gz"
+sha256 = "212f6e1fd8e7ddb4b02208aafc6de600f6f330f40359babeefdd83b0c79d47a1"
+
+[build]
+kind = "autotools"
+autoreconf = true
+configure-flags = [
+  "--disable-werror",
+]
+
+[dependencies]
+build = [
+  "autoconf",
+  "automake",
+  "binutils",
+  "libtool",
+  "make",
+  "pkgconf",
+]
+run = [
+  "gnutls",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
