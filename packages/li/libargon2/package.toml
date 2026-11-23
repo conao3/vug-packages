@@ -1,0 +1,8 @@
+name = "libargon2"
+license = "CC0-1.0 OR Apache-2.0"
+
+[upstream]
+homepage = "https://github.com/P-H-C/phc-winner-argon2"
+sources = [
+  "https://github.com/P-H-C/phc-winner-argon2/archive/",
+]
