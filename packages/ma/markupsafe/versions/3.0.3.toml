@@ -14,7 +14,7 @@ native-imports = [
 build = [
   "python-build",
   "python-installer",
-  "setuptools",
+  "python-setuptools",
 ]
 run = [
   "musl",
