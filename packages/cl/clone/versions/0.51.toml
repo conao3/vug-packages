@@ -13,8 +13,8 @@ modules = [
 
 [dependencies]
 build = [
-  "b-cow",
   "make",
+  "perl-b-cow",
 ]
 run = [
   "musl",

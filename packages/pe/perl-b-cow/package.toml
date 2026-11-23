@@ -1,4 +1,4 @@
-name = "b-cow"
+name = "perl-b-cow"
 license = "Artistic-1.0-Perl OR GPL-1.0-or-later"
 
 [upstream]
