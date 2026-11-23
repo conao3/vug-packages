@@ -1,0 +1,8 @@
+name = "db"
+license = "Sleepycat"
+
+[upstream]
+homepage = "https://www.oracle.com/database/technologies/related/berkeleydb.html"
+sources = [
+  "https://download.oracle.com/berkeley-db/",
+]
