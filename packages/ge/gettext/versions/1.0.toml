@@ -13,7 +13,6 @@ configure-flags = [
   "--without-included-libunistring",
   "--without-included-libxml",
   "--with-included-libintl",
-  "--disable-libasprintf",
 ]
 
 [dependencies]
