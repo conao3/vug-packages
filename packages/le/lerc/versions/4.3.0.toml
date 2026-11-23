@@ -1,0 +1,27 @@
+version = "4.3.0"
+
+[source]
+url = "https://github.com/Esri/lerc/archive/refs/tags/v4.3.0.tar.gz"
+sha256 = "28d74992e0bc0f13ecdda1dd9ca3b40b1a87009369b9ec5a599853f6f311fee7"
+
+[build]
+kind = "cmake"
+setup-flags = [
+  "-DBUILD_SHARED_LIBS=ON",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+  "pkgconf",
+]
+run = [
+  "libcxx",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []

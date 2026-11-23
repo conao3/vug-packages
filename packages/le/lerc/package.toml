@@ -1,0 +1,8 @@
+name = "lerc"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://github.com/Esri/lerc"
+sources = [
+  "https://github.com/Esri/lerc/archive/refs/tags/",
+]
