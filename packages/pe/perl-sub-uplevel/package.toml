@@ -1,0 +1,8 @@
+name = "perl-sub-uplevel"
+license = "Artistic-1.0-Perl OR GPL-1.0-or-later"
+
+[upstream]
+homepage = "https://metacpan.org/dist/Sub-Uplevel"
+sources = [
+  "https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/",
+]

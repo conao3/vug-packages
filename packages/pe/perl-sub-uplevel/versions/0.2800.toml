@@ -1,0 +1,24 @@
+version = "0.2800"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Sub-Uplevel-0.2800.tar.gz"
+sha256 = "b4f3f63b80f680a421332d8851ddbe5a8e72fcaa74d5d1d98f3c8cc4a3ece293"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Sub::Uplevel",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+]
+
+[check]
+enabled = true
+skip = []
