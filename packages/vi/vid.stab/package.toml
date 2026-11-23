@@ -1,0 +1,8 @@
+name = "vid.stab"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://github.com/georgmartius/vid.stab"
+sources = [
+  "https://github.com/georgmartius/vid.stab/archive/refs/tags/",
+]
