@@ -1,0 +1,8 @@
+name = "python-hatchling"
+license = "MIT"
+
+[upstream]
+homepage = "https://pypi.org/project/hatchling/"
+sources = [
+  "https://files.pythonhosted.org/packages/7a/f1/e47b937226ae3b093bbd0132eb0b7ee5bfad12c2b5324afd10ae49946b05/",
+]

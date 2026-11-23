@@ -1,0 +1,34 @@
+version = "1.33.0"
+
+[source]
+url = "https://files.pythonhosted.org/packages/7a/f1/e47b937226ae3b093bbd0132eb0b7ee5bfad12c2b5324afd10ae49946b05/hatchling-1.33.0.tar.gz"
+sha256 = "4c422bd4d554fcff5de5b73e9596f85e41e9f97f7e553d8f7595ecb31a627bef"
+
+[build]
+kind = "python"
+imports = [
+  "hatchling",
+]
+
+[dependencies]
+build = [
+  "packaging",
+  "python-build",
+  "python-installer",
+  "python-pathspec",
+  "python-pluggy",
+  "python-tomlkit",
+  "python-trove-classifiers",
+]
+run = [
+  "packaging",
+  "python",
+  "python-pathspec",
+  "python-pluggy",
+  "python-tomlkit",
+  "python-trove-classifiers",
+]
+
+[check]
+enabled = true
+skip = []
