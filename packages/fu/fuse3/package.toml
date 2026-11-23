@@ -1,0 +1,8 @@
+name = "fuse3"
+license = "LGPL-2.1-only AND GPL-2.0-only"
+
+[upstream]
+homepage = "https://github.com/libfuse/libfuse"
+sources = [
+  "https://github.com/libfuse/libfuse/releases/download/",
+]
