@@ -1,0 +1,8 @@
+name = "libdeflate"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/ebiggers/libdeflate"
+sources = [
+  "https://github.com/ebiggers/libdeflate/releases/download/",
+]

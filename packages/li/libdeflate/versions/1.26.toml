@@ -1,0 +1,29 @@
+version = "1.26"
+
+[source]
+url = "https://github.com/ebiggers/libdeflate/releases/download/v1.26/libdeflate-1.26.tar.gz"
+sha256 = "125856d4656e0feab660f94842f835923410c9281fedbcee64598c918da42b5a"
+
+[build]
+kind = "cmake"
+setup-flags = [
+  "-DLIBDEFLATE_BUILD_STATIC_LIB=OFF",
+  "-DLIBDEFLATE_USE_SHARED_LIB=ON",
+  "-DLIBDEFLATE_BUILD_TESTS=ON",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+  "pkgconf",
+  "zlib",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
