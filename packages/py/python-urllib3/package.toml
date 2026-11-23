@@ -1,0 +1,8 @@
+name = "python-urllib3"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/urllib3/urllib3"
+sources = [
+  "https://files.pythonhosted.org/packages/source/u/urllib3/",
+]
