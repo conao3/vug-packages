@@ -101,6 +101,46 @@ uses Flit and imports MarkupSafe at runtime.
   a missing native extension, check the compiler output and the runtime
   libraries and confirm that the resulting wheel targets the selected Python.
 
+## Perl modules
+
+Start with the pinned CPAN archive's URL and SHA-256 in `[source]`.
+For a distribution with `Makefile.PL`, use these fields:
+
+```toml
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = ["Try::Tiny"]
+
+[dependencies]
+build = ["make"]
+run = ["perl"]
+
+[check]
+enabled = true
+skip = []
+```
+
+[Try::Tiny](packages/tr/try-tiny/versions/0.32.toml) is a pure Perl
+example. [Clone](packages/cl/clone/versions/0.51.toml) builds XS and links
+against musl. Its upstream suite requires
+[B::COW](packages/b-/b-cow/versions/0.007.toml), so Clone lists it in
+`dependencies.build`.
+
+- For a distribution with `Build.PL`, choose `driver = "module-build"` and
+  provide `Module::Build` in `dependencies.build` if the archive requires it.
+- Add required configure, build and test modules to `dependencies.build`.
+  Add Perl, imported modules and shared libraries needed by XS extensions to
+  `dependencies.run`. Read the distribution's `META.json` or `META.yml`
+  for module version constraints.
+- Enable the upstream tests with `check.enabled = true` and list the modules
+  to load after installation in `build.modules`. The suite runs in the sandbox.
+- If a prerequisite check fails, choose a package that supplies the named
+  module at a compatible version and place it in the dependency group for
+  the failing phase. For a Perl ABI mismatch, rebuild the dependency with
+  the selected Perl. For an XS loader error, check the library dependencies
+  and load the named module from the installed tree.
+
 ## Package builds on GitHub
 
 Open the **Package builds** run from your pull request. The plan lists the
