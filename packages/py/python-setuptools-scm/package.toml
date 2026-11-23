@@ -1,0 +1,8 @@
+name = "python-setuptools-scm"
+license = "MIT"
+
+[upstream]
+homepage = "https://pypi.org/project/setuptools-scm/"
+sources = [
+  "https://files.pythonhosted.org/packages/85/d8/fc143f88819ccf10ba2388ba86732ee2de193e578234e25a783f6cc14bf7/",
+]
