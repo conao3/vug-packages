@@ -1,0 +1,8 @@
+name = "libxinerama"
+license = "MIT AND MIT-open-group AND X11"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/xorg/lib/libxinerama"
+sources = [
+  "https://www.x.org/releases/individual/lib/",
+]
