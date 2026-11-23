@@ -1,0 +1,8 @@
+name = "libxcb-render-util"
+license = "HPND-sell-variant AND X11"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/xorg/lib/libxcb-render-util"
+sources = [
+  "https://xorg.freedesktop.org/archive/individual/xcb/",
+]
