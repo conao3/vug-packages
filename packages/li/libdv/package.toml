@@ -1,0 +1,8 @@
+name = "libdv"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://sourceforge.net/projects/libdv/"
+sources = [
+  "https://downloads.sourceforge.net/libdv/",
+]

@@ -1,0 +1,35 @@
+version = "1.0.0"
+
+[source]
+url = "https://downloads.sourceforge.net/libdv/libdv-1.0.0.tar.gz"
+sha256 = "a305734033a9c25541a59e8dd1c254409953269ea7c710c39e540bd8853389ba"
+
+[build]
+kind = "autotools"
+configure-command = [
+  "sh",
+  "-c",
+  "cp {dep:automake}/share/automake-1.20/config.sub config.sub && cp {dep:automake}/share/automake-1.20/config.guess config.guess && ./configure --prefix={out} --disable-gtk --disable-sdl --disable-xv && sed -i 's/--rpath/-rpath/g' libtool",
+]
+configure-flags = [
+  "--disable-gtk",
+  "--disable-sdl",
+  "--disable-xv",
+]
+
+[dependencies]
+build = [
+  "automake",
+  "binutils",
+  "make",
+  "pkgconf",
+  "popt",
+]
+run = [
+  "musl",
+  "popt",
+]
+
+[check]
+enabled = true
+skip = []
