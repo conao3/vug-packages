@@ -1,0 +1,8 @@
+name = "perl-tie-ixhash"
+license = "Artistic-1.0-Perl OR GPL-1.0-or-later"
+
+[upstream]
+homepage = "https://metacpan.org/dist/Tie-IxHash"
+sources = [
+  "https://cpan.metacpan.org/authors/id/C/CH/CHORNY/",
+]
