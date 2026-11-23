@@ -1,0 +1,14 @@
+name = "home-login"
+packages = [
+  "bubblewrap",
+  "coreutils",
+  "vug",
+]
+
+[[file]]
+path = "/etc/profile.d/vug-home.sh"
+content = """
+if [ "$(/bin/id -u)" -ne 0 ] && [ -n "$HOME" ] && [ -r "$HOME/.config/vug/home/profile/environment/profile.sh" ]; then
+    . "$HOME/.config/vug/home/profile/environment/profile.sh"
+fi
+"""
