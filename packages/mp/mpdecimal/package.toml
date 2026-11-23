@@ -1,0 +1,8 @@
+name = "mpdecimal"
+license = "BSD-2-Clause"
+
+[upstream]
+homepage = "https://www.bytereef.org/mpdecimal/"
+sources = [
+  "https://www.bytereef.org/software/mpdecimal/releases/",
+]
