@@ -1,0 +1,8 @@
+name = "perl-json"
+license = "Artistic-1.0-Perl OR GPL-1.0-or-later"
+
+[upstream]
+homepage = "https://metacpan.org/dist/JSON"
+sources = [
+  "https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/",
+]

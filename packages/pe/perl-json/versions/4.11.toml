@@ -1,0 +1,25 @@
+version = "4.11"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/JSON-4.11.tar.gz"
+sha256 = "713bdbe724dbb915ed50265ffe47e079a511980cb2427aa19076788bb64c3182"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "JSON",
+  "JSON::backportPP",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+]
+
+[check]
+enabled = true
+skip = []
