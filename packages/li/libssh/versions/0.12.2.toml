@@ -1,0 +1,25 @@
+version = "0.12.2"
+
+[source]
+url = "https://www.libssh.org/files/0.12/libssh-0.12.2.tar.xz"
+sha256 = "49560f677d96e3706a904ac2de1116e25f3680937d51e5c92198fcba4a1c1e9f"
+
+[build]
+kind = "cmake"
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+  "pkgconf",
+]
+run = [
+  "musl",
+  "openssl",
+  "zlib",
+]
+
+[check]
+enabled = true
+skip = []
