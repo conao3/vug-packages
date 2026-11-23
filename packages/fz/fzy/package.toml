@@ -1,0 +1,8 @@
+name = "fzy"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/jhawthorn/fzy"
+sources = [
+  "https://github.com/jhawthorn/fzy/archive/refs/tags/",
+]
