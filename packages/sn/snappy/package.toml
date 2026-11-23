@@ -1,0 +1,8 @@
+name = "snappy"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://google.github.io/snappy/"
+sources = [
+  "https://github.com/google/snappy/archive/",
+]

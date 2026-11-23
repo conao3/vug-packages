@@ -1,0 +1,29 @@
+version = "1.3.1"
+
+[source]
+url = "https://github.com/google/snappy/archive/1.3.1.tar.gz"
+sha256 = "893f708a0bf4b5529d555ffcee390e940e932fcf90261f682604475a76cd0247"
+
+[build]
+kind = "cmake"
+setup-flags = [
+  "-DBUILD_SHARED_LIBS=ON",
+  "-DSNAPPY_BUILD_TESTS=OFF",
+  "-DSNAPPY_BUILD_BENCHMARKS=OFF",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+  "pkgconf",
+]
+run = [
+  "libcxx",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
