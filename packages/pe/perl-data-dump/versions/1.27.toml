@@ -1,0 +1,27 @@
+version = "1.27"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/G/GA/GARU/Data-Dump-1.27.tar.gz"
+sha256 = "009dcf9e51439a8615641dc29a582672e1a325b55c2da12975b9b49417356c0a"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Data::Dump",
+  "Data::Dump::FilterContext",
+  "Data::Dump::Filtered",
+  "Data::Dump::Trace",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+]
+
+[check]
+enabled = true
+skip = []
