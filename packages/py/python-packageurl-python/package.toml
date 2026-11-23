@@ -1,0 +1,8 @@
+name = "python-packageurl-python"
+license = "MIT"
+
+[upstream]
+homepage = "https://pypi.org/project/packageurl-python/"
+sources = [
+  "https://files.pythonhosted.org/packages/",
+]
