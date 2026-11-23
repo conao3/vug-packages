@@ -1,0 +1,8 @@
+name = "libev"
+license = "BSD-2-Clause OR GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://software.schmorp.de/pkg/libev.html"
+sources = [
+  "https://dist.schmorp.de/libev/",
+]
