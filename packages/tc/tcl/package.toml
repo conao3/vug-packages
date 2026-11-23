@@ -1,0 +1,8 @@
+name = "tcl"
+license = "TCL"
+
+[upstream]
+homepage = "https://www.tcl-lang.org/"
+sources = [
+  "https://downloads.sourceforge.net/project/tcl/Tcl/",
+]
