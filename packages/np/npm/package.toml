@@ -1,0 +1,8 @@
+name = "npm"
+license = "Artistic-2.0"
+
+[upstream]
+homepage = "https://github.com/npm/cli"
+sources = [
+  "https://registry.npmjs.org/npm/-/",
+]
