@@ -1,0 +1,33 @@
+diff -ruN a/Makefile.PL b/Makefile.PL
+--- a/Makefile.PL	2026-04-02 06:08:43.000000000 +0900
++++ b/Makefile.PL	2026-11-24 08:48:41.242436395 +0900
+@@ -73,7 +73,6 @@
+         },
+         build_requires => {
+             'Test::More'      => 0,    # For testing
+-            'Readonly::Array' => 0,
+         },
+         resources => {
+             license    => 'https://dev.perl.org/licenses/',
+diff -ruN a/META.json b/META.json
+--- a/META.json	2026-04-03 03:54:18.000000000 +0900
++++ b/META.json	2026-11-24 08:48:41.237493339 +0900
+@@ -23,7 +23,6 @@
+       "build" : {
+          "requires" : {
+             "ExtUtils::MakeMaker" : "0",
+-            "Readonly::Array" : "0",
+             "Test::More" : "0"
+          }
+       },
+diff -ruN a/META.yml b/META.yml
+--- a/META.yml	2026-04-03 03:54:18.000000000 +0900
++++ b/META.yml	2026-11-24 08:48:41.239951445 +0900
+@@ -4,7 +4,6 @@
+   - 'Barrie Slaymaker <barries@slaysys.com>'
+ build_requires:
+   ExtUtils::MakeMaker: '0'
+-  Readonly::Array: '0'
+   Test::More: '0'
+ configure_requires:
+   ExtUtils::MakeMaker: '0'

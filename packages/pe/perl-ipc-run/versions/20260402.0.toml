@@ -1,0 +1,31 @@
+version = "20260402.0"
+patches = [
+  "20260402.0-bogus-build-requires.patch",
+]
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/T/TO/TODDR/IPC-Run-20260402.0.tar.gz"
+sha256 = "d6a326a8b1ffb19495dea4ff5a09ef138bf3562ab1b069d3fb7efbc77b9f6aca"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "IPC::Run",
+  "IPC::Run::Debug",
+  "IPC::Run::IO",
+  "IPC::Run::Timer",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+  "perl-io-tty",
+]
+
+[check]
+enabled = true
+skip = []
