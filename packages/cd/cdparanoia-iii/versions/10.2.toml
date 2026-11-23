@@ -1,0 +1,30 @@
+version = "10.2"
+patches = [
+  "10.2-utils-int-types.patch",
+]
+
+[source]
+url = "https://downloads.xiph.org/releases/cdparanoia/cdparanoia-III-10.2.src.tgz"
+sha256 = "005db45ef4ee017f5c32ec124f913a0546e77014266c6a1c50df902a55fe64df"
+
+[build]
+kind = "autotools"
+configure-command = [
+  "sh",
+  "-c",
+  "cp {dep:automake}/share/automake-1.20/config.sub configure.sub && cp {dep:automake}/share/automake-1.20/config.guess configure.guess && ./configure --prefix={out}",
+]
+
+[dependencies]
+build = [
+  "automake",
+  "binutils",
+  "make",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
