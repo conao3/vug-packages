@@ -1,0 +1,8 @@
+name = "libimobiledevice-glue"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://github.com/libimobiledevice/libimobiledevice-glue"
+sources = [
+  "https://github.com/libimobiledevice/libimobiledevice-glue/releases/download/",
+]

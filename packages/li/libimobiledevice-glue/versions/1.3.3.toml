@@ -1,0 +1,23 @@
+version = "1.3.3"
+
+[source]
+url = "https://github.com/libimobiledevice/libimobiledevice-glue/releases/download/1.3.3/libimobiledevice-glue-1.3.3.tar.bz2"
+sha256 = "920ce01382a32695f49b23292b4979a03f0afd16c58e8755d8b7f41804acc1a9"
+
+[build]
+kind = "autotools"
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "pkgconf",
+]
+run = [
+  "libplist",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
