@@ -1,0 +1,8 @@
+name = "lzip"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://www.nongnu.org/lzip/lzip.html"
+sources = [
+  "https://download.savannah.gnu.org/releases/lzip/",
+]
