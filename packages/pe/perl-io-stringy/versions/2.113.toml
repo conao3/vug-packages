@@ -1,0 +1,31 @@
+version = "2.113"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/C/CA/CAPOEIRAB/IO-Stringy-2.113.tar.gz"
+sha256 = "51220fcaf9f66a639b69d251d7b0757bf4202f4f9debd45bdd341a6aca62fe4e"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "IO::AtomicFile",
+  "IO::InnerFile",
+  "IO::Lines",
+  "IO::Scalar",
+  "IO::ScalarArray",
+  "IO::Stringy",
+  "IO::Wrap",
+  "IO::WrapTie",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+]
+
+[check]
+enabled = true
+skip = []
