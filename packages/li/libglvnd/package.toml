@@ -1,0 +1,8 @@
+name = "libglvnd"
+license = "MIT"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/glvnd/libglvnd"
+sources = [
+  "https://gitlab.freedesktop.org/glvnd/libglvnd/-/archive/",
+]
