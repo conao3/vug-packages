@@ -1,0 +1,8 @@
+name = "krb5"
+license = "BSD-2-Clause"
+
+[upstream]
+homepage = "https://web.mit.edu/kerberos/"
+sources = [
+  "https://kerberos.org/dist/krb5/",
+]
