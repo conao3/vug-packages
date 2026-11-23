@@ -1,0 +1,25 @@
+version = "1.36"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Class-Inspector-1.36.tar.gz"
+sha256 = "cc295d23a472687c24489d58226ead23b9fdc2588e522f0b5f0747741700694e"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Class::Inspector",
+  "Class::Inspector::Functions",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+]
+
+[check]
+enabled = true
+skip = []
