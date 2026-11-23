@@ -1,0 +1,11 @@
+--- a/src/aalinuxkbd.c	2026-11-24 00:48:03.707962532 +0900
++++ b/src/aalinuxkbd.c	2026-11-24 00:48:03.719618330 +0900
+@@ -200,7 +200,7 @@
+ static int rawmode_init(void)
+ {
+     if (!closed)
+-	return;
++	return (1);
+     mypid = getpid();
+     if (tty_fd == -1) {
+ 	tty_fd = fileno(stdin);
