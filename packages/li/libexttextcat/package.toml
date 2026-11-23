@@ -1,0 +1,8 @@
+name = "libexttextcat"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/libreoffice/libexttextcat"
+sources = [
+  "https://dev-www.libreoffice.org/src/libexttextcat/",
+]
