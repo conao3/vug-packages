@@ -1,0 +1,28 @@
+version = "0.09"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/File-BaseDir-0.09.tar.gz"
+sha256 = "6da6f7281562ac8f11ef1a3af6aedb51c41182b60f1f122ced0079efd92967d9"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "File::BaseDir",
+  "File::IconTheme",
+  "File::UserDirs",
+]
+
+[dependencies]
+build = [
+  "make",
+  "perl-file-which",
+]
+run = [
+  "perl",
+  "perl-ipc-system-simple",
+]
+
+[check]
+enabled = true
+skip = []
