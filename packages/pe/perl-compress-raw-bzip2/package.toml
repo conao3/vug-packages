@@ -1,0 +1,8 @@
+name = "perl-compress-raw-bzip2"
+license = "Artistic-1.0-Perl OR GPL-1.0-or-later"
+
+[upstream]
+homepage = "https://metacpan.org/dist/Compress-Raw-Bzip2"
+sources = [
+  "https://cpan.metacpan.org/authors/id/P/PM/PMQS/",
+]

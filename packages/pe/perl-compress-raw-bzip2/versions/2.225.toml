@@ -1,0 +1,25 @@
+version = "2.225"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/P/PM/PMQS/Compress-Raw-Bzip2-2.225.tar.gz"
+sha256 = "5547dd4101411630e33fa04e9f43dfda06f55d6f3c3420d6207efaac7bc43633"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Compress::Raw::Bzip2",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "musl",
+  "perl",
+]
+
+[check]
+enabled = true
+skip = []
