@@ -1,0 +1,25 @@
+version = "1.9.0"
+
+[source]
+url = "https://files.pythonhosted.org/packages/source/d/distro/distro-1.9.0.tar.gz"
+sha256 = "2fa77c6fd8940f116ee1d6b94a2f90b13b5ea8d019b98bc8bafdcabcdd9bdbed"
+
+[build]
+kind = "python"
+imports = [
+  "distro",
+]
+
+[dependencies]
+build = [
+  "python-build",
+  "python-installer",
+  "python-setuptools",
+]
+run = [
+  "python",
+]
+
+[check]
+enabled = true
+skip = []
