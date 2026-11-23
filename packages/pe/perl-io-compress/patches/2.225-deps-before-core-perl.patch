@@ -1,0 +1,176 @@
+diff -ruN a/lib/Compress/Zlib.pm b/lib/Compress/Zlib.pm
+--- a/lib/Compress/Zlib.pm	2026-10-09 22:24:41.000000000 +0900
++++ b/lib/Compress/Zlib.pm	2026-11-24 08:46:02.297426469 +0900
+@@ -8,6 +8,7 @@
+ use Scalar::Util qw(dualvar);
+ 
+ use IO::Compress::Base::Common 2.225 ;
++BEGIN { unshift @INC, grep { -d } map { "$_/x86_64-linux-thread-multi" } grep { m{/lib/perl5\z} } @INC }
+ use Compress::Raw::Zlib 2.225 ;
+ use IO::Compress::Gzip 2.225 ;
+ use IO::Uncompress::Gunzip 2.225 ;
+diff -ruN a/lib/IO/Compress/Adapter/Bzip2.pm b/lib/IO/Compress/Adapter/Bzip2.pm
+--- a/lib/IO/Compress/Adapter/Bzip2.pm	2026-10-09 22:24:41.000000000 +0900
++++ b/lib/IO/Compress/Adapter/Bzip2.pm	2026-11-24 08:47:04.253113672 +0900
+@@ -6,6 +6,7 @@
+ 
+ use IO::Compress::Base::Common  2.225 qw(:Status);
+ 
++BEGIN { unshift @INC, grep { -d } map { "$_/x86_64-linux-thread-multi" } grep { m{/lib/perl5\z} } @INC }
+ use Compress::Raw::Bzip2  2.225 ;
+ 
+ our ($VERSION);
+diff -ruN a/lib/IO/Compress/Adapter/Deflate.pm b/lib/IO/Compress/Adapter/Deflate.pm
+--- a/lib/IO/Compress/Adapter/Deflate.pm	2026-10-09 22:24:41.000000000 +0900
++++ b/lib/IO/Compress/Adapter/Deflate.pm	2026-11-24 08:46:02.318650302 +0900
+@@ -5,6 +5,7 @@
+ use bytes;
+ 
+ use IO::Compress::Base::Common 2.225 qw(:Status);
++BEGIN { unshift @INC, grep { -d } map { "$_/x86_64-linux-thread-multi" } grep { m{/lib/perl5\z} } @INC }
+ use Compress::Raw::Zlib 2.225 qw( !crc32 !adler32 ) ;
+ 
+ require Exporter;
+diff -ruN a/lib/IO/Compress/RawDeflate.pm b/lib/IO/Compress/RawDeflate.pm
+--- a/lib/IO/Compress/RawDeflate.pm	2026-10-09 22:24:41.000000000 +0900
++++ b/lib/IO/Compress/RawDeflate.pm	2026-11-24 08:46:02.329441501 +0900
+@@ -9,6 +9,7 @@
+ use IO::Compress::Base 2.225 ;
+ use IO::Compress::Base::Common  2.225 qw(:Status :Parse);
+ use IO::Compress::Adapter::Deflate 2.225 ;
++BEGIN { unshift @INC, grep { -d } map { "$_/x86_64-linux-thread-multi" } grep { m{/lib/perl5\z} } @INC }
+ use Compress::Raw::Zlib 2.225 qw(Z_DEFLATED Z_DEFAULT_COMPRESSION Z_DEFAULT_STRATEGY);
+ 
+ require Exporter ;
+diff -ruN a/lib/IO/Compress/Zip.pm b/lib/IO/Compress/Zip.pm
+--- a/lib/IO/Compress/Zip.pm	2026-10-09 22:24:41.000000000 +0900
++++ b/lib/IO/Compress/Zip.pm	2026-11-24 08:46:02.306248777 +0900
+@@ -14,6 +14,7 @@
+ use File::Spec();
+ use Config;
+ 
++BEGIN { unshift @INC, grep { -d } map { "$_/x86_64-linux-thread-multi" } grep { m{/lib/perl5\z} } @INC }
+ use Compress::Raw::Zlib 2.225 ();
+ 
+ BEGIN
+diff -ruN a/lib/IO/Uncompress/Adapter/Bunzip2.pm b/lib/IO/Uncompress/Adapter/Bunzip2.pm
+--- a/lib/IO/Uncompress/Adapter/Bunzip2.pm	2026-10-09 22:24:41.000000000 +0900
++++ b/lib/IO/Uncompress/Adapter/Bunzip2.pm	2026-11-24 08:47:04.284121877 +0900
+@@ -6,6 +6,7 @@
+ 
+ use IO::Compress::Base::Common 2.225 qw(:Status);
+ 
++BEGIN { unshift @INC, grep { -d } map { "$_/x86_64-linux-thread-multi" } grep { m{/lib/perl5\z} } @INC }
+ use Compress::Raw::Bzip2 2.225 ;
+ 
+ our ($VERSION, @ISA);
+diff -ruN a/lib/IO/Uncompress/Adapter/Identity.pm b/lib/IO/Uncompress/Adapter/Identity.pm
+--- a/lib/IO/Uncompress/Adapter/Identity.pm	2026-10-09 22:24:41.000000000 +0900
++++ b/lib/IO/Uncompress/Adapter/Identity.pm	2026-11-24 08:46:02.377398092 +0900
+@@ -11,6 +11,7 @@
+ 
+ $VERSION = '2.225';
+ 
++BEGIN { unshift @INC, grep { -d } map { "$_/x86_64-linux-thread-multi" } grep { m{/lib/perl5\z} } @INC }
+ use Compress::Raw::Zlib 2.225 ();
+ 
+ sub mkUncompObject
+diff -ruN a/lib/IO/Uncompress/Adapter/Inflate.pm b/lib/IO/Uncompress/Adapter/Inflate.pm
+--- a/lib/IO/Uncompress/Adapter/Inflate.pm	2026-10-09 22:24:41.000000000 +0900
++++ b/lib/IO/Uncompress/Adapter/Inflate.pm	2026-11-24 08:46:02.358467128 +0900
+@@ -5,6 +5,7 @@
+ use bytes;
+ 
+ use IO::Compress::Base::Common  2.225 qw(:Status);
++BEGIN { unshift @INC, grep { -d } map { "$_/x86_64-linux-thread-multi" } grep { m{/lib/perl5\z} } @INC }
+ use Compress::Raw::Zlib 2.225 qw(Z_OK Z_BUF_ERROR Z_STREAM_END Z_FINISH MAX_WBITS);
+ 
+ our ($VERSION);
+diff -ruN a/lib/IO/Uncompress/Gunzip.pm b/lib/IO/Uncompress/Gunzip.pm
+--- a/lib/IO/Uncompress/Gunzip.pm	2026-10-09 22:24:41.000000000 +0900
++++ b/lib/IO/Uncompress/Gunzip.pm	2026-11-24 08:46:02.342190008 +0900
+@@ -8,6 +8,7 @@
+ 
+ use IO::Uncompress::RawInflate 2.225 ;
+ 
++BEGIN { unshift @INC, grep { -d } map { "$_/x86_64-linux-thread-multi" } grep { m{/lib/perl5\z} } @INC }
+ use Compress::Raw::Zlib 2.225 () ;
+ use IO::Compress::Base::Common 2.225 qw(:Status );
+ use IO::Compress::Gzip::Constants 2.225 ;
+diff -ruN a/lib/IO/Uncompress/RawInflate.pm b/lib/IO/Uncompress/RawInflate.pm
+--- a/lib/IO/Uncompress/RawInflate.pm	2026-10-09 22:24:41.000000000 +0900
++++ b/lib/IO/Uncompress/RawInflate.pm	2026-11-24 08:46:02.405399691 +0900
+@@ -5,6 +5,7 @@
+ use warnings;
+ use bytes;
+ 
++BEGIN { unshift @INC, grep { -d } map { "$_/x86_64-linux-thread-multi" } grep { m{/lib/perl5\z} } @INC }
+ use Compress::Raw::Zlib 2.225 ;
+ use IO::Compress::Base::Common  2.225 qw(:Status );
+ 
+diff -ruN a/lib/IO/Uncompress/Unzip.pm b/lib/IO/Uncompress/Unzip.pm
+--- a/lib/IO/Uncompress/Unzip.pm	2026-10-09 22:24:41.000000000 +0900
++++ b/lib/IO/Uncompress/Unzip.pm	2026-11-24 08:46:02.391974969 +0900
+@@ -13,6 +13,7 @@
+ use IO::Compress::Zlib::Extra 2.225 ;
+ use IO::Compress::Zip::Constants 2.225 ;
+ 
++BEGIN { unshift @INC, grep { -d } map { "$_/x86_64-linux-thread-multi" } grep { m{/lib/perl5\z} } @INC }
+ use Compress::Raw::Zlib 2.225 () ;
+ 
+ BEGIN
+diff -ruN a/Makefile.PL b/Makefile.PL
+--- a/Makefile.PL	2026-10-09 22:22:13.000000000 +0900
++++ b/Makefile.PL	2026-11-24 08:46:02.463117346 +0900
+@@ -8,6 +8,7 @@
+ $::DEP_ZLIB_VERSION = '2.225';
+ $::DEP_BZIP2_VERSION = '2.225';
+ 
++BEGIN { unshift @INC, grep { -d } map { "$_/x86_64-linux-thread-multi" } grep { m{/lib/perl5\z} } @INC }
+ use lib '.';
+ use private::MakeUtil;
+ use ExtUtils::MakeMaker 5.16 ;
+diff -ruN a/t/101truncate-rawdeflate.t b/t/101truncate-rawdeflate.t
+--- a/t/101truncate-rawdeflate.t	2023-11-23 21:18:01.000000000 +0900
++++ b/t/101truncate-rawdeflate.t	2026-11-24 08:46:02.446111405 +0900
+@@ -11,6 +11,7 @@
+ 
+ use Test::More ;
+ 
++BEGIN { unshift @INC, grep { -d } map { "$_/x86_64-linux-thread-multi" } grep { m{/lib/perl5\z} } @INC }
+ use Compress::Raw::Zlib;
+ 
+ BEGIN {
+diff -ruN a/t/111const-deflate.t b/t/111const-deflate.t
+--- a/t/111const-deflate.t	2023-11-23 21:18:01.000000000 +0900
++++ b/t/111const-deflate.t	2026-11-24 08:46:02.457125254 +0900
+@@ -25,6 +25,7 @@
+ 
+ 
+ {
++    BEGIN { unshift @INC, grep { -d } map { "$_/x86_64-linux-thread-multi" } grep { m{/lib/perl5\z} } @INC }
+     use Compress::Raw::Zlib ;
+ 
+     my %all;
+diff -ruN a/t/compress/merge.pl b/t/compress/merge.pl
+--- a/t/compress/merge.pl	2023-11-23 21:18:01.000000000 +0900
++++ b/t/compress/merge.pl	2026-11-24 08:46:02.418447563 +0900
+@@ -6,6 +6,7 @@
+ use Test::More ;
+ use CompTestUtils;
+ 
++BEGIN { unshift @INC, grep { -d } map { "$_/x86_64-linux-thread-multi" } grep { m{/lib/perl5\z} } @INC }
+ use Compress::Raw::Zlib 2 ;
+ 
+ BEGIN
+diff -ruN a/t/compress/zlib-generic.pl b/t/compress/zlib-generic.pl
+--- a/t/compress/zlib-generic.pl	2023-11-23 21:18:01.000000000 +0900
++++ b/t/compress/zlib-generic.pl	2026-11-24 08:46:02.431228606 +0900
+@@ -23,6 +23,7 @@
+ my $Error           = getErrorRef($CompressClass);
+ my $UnError         = getErrorRef($UncompressClass);
+ 
++BEGIN { unshift @INC, grep { -d } map { "$_/x86_64-linux-thread-multi" } grep { m{/lib/perl5\z} } @INC }
+ use Compress::Raw::Zlib;
+ use IO::Handle qw(SEEK_SET SEEK_CUR SEEK_END);
+ 
