@@ -1,0 +1,35 @@
+version = "1.8.1"
+patches = [
+  "1.8.1-meson-build-tests.patch",
+]
+
+[source]
+url = "https://git.kernel.org/pub/scm/utils/dtc/dtc.git/snapshot/dtc-v1.8.1.tar.gz"
+sha256 = "c25a3426feab8d6cf57f54a6f02a358cc95a574ad91a4f76601074e633bd1bd8"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dpython=disabled",
+  "-Dvalgrind=disabled",
+  "-Dyaml=enabled",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "bison",
+  "flex",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "libyaml",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
