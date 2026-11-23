@@ -1,0 +1,8 @@
+name = "hdrhistogram_c"
+license = "CC0-1.0 OR BSD-2-Clause"
+
+[upstream]
+homepage = "https://github.com/HdrHistogram/HdrHistogram_c"
+sources = [
+  "https://github.com/HdrHistogram/HdrHistogram_c/archive/refs/tags/",
+]
