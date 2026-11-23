@@ -1,0 +1,8 @@
+name = "perl-devel-checkcompiler"
+license = "Artistic-1.0-Perl OR GPL-1.0-or-later"
+
+[upstream]
+homepage = "https://metacpan.org/dist/Devel-CheckCompiler"
+sources = [
+  "https://cpan.metacpan.org/authors/id/S/SY/SYOHEX/",
+]
