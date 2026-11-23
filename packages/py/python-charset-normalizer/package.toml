@@ -1,0 +1,8 @@
+name = "python-charset-normalizer"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/jawah/charset_normalizer"
+sources = [
+  "https://files.pythonhosted.org/packages/source/c/charset-normalizer/",
+]
