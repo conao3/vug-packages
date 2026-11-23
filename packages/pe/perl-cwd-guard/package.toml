@@ -1,0 +1,8 @@
+name = "perl-cwd-guard"
+license = "Artistic-1.0-Perl OR GPL-1.0-or-later"
+
+[upstream]
+homepage = "https://metacpan.org/dist/Cwd-Guard"
+sources = [
+  "https://cpan.metacpan.org/authors/id/K/KA/KAZEBURO/",
+]
