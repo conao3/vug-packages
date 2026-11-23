@@ -1,0 +1,27 @@
+version = "0.1.30"
+
+[source]
+url = "https://github.com/tlwg/libthai/releases/download/v0.1.30/libthai-0.1.30.tar.xz"
+sha256 = "ddba8b53dfe584c3253766030218a88825488a51a7deef041d096e715af64bdd"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--disable-doxygen-doc",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "libdatrie",
+  "make",
+  "pkgconf",
+]
+run = [
+  "libdatrie",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []

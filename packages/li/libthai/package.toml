@@ -1,0 +1,8 @@
+name = "libthai"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://linux.thai.net/~thep/libthai/libthai.html"
+sources = [
+  "https://github.com/tlwg/libthai/releases/download/",
+]
