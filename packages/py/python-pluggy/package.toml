@@ -1,0 +1,8 @@
+name = "python-pluggy"
+license = "MIT"
+
+[upstream]
+homepage = "https://pypi.org/project/pluggy/"
+sources = [
+  "https://files.pythonhosted.org/packages/bf/db/7fc19e6f2dc92a966727031389fc2e08b558f0f25eb7403c1119ad4713cd/",
+]
