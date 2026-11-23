@@ -1,0 +1,8 @@
+name = "cjson"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/DaveGamble/cJSON"
+sources = [
+  "https://github.com/DaveGamble/cJSON/archive/",
+]
