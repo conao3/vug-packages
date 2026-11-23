@@ -1,0 +1,8 @@
+name = "python-docutils"
+license = "LicenseRef-Public-Domain AND BSD-0-Clause AND BSD-2-Clause AND GPL-3.0-or-later"
+
+[upstream]
+homepage = "https://docutils.sourceforge.io"
+sources = [
+  "https://files.pythonhosted.org/packages/source/d/docutils/",
+]
