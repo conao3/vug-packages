@@ -1,0 +1,8 @@
+name = "spirv-tools"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://github.com/KhronosGroup/SPIRV-Tools"
+sources = [
+  "https://github.com/KhronosGroup/SPIRV-Tools/archive/refs/tags/",
+]

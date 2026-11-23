@@ -1,0 +1,8 @@
+name = "spirv-headers"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/KhronosGroup/SPIRV-Headers"
+sources = [
+  "https://github.com/KhronosGroup/SPIRV-Headers/archive/refs/tags/",
+]
