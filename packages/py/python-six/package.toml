@@ -1,0 +1,8 @@
+name = "python-six"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/benjaminp/six"
+sources = [
+  "https://files.pythonhosted.org/packages/source/s/six/",
+]

@@ -1,0 +1,25 @@
+version = "1.17.0"
+
+[source]
+url = "https://files.pythonhosted.org/packages/source/s/six/six-1.17.0.tar.gz"
+sha256 = "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
+
+[build]
+kind = "python"
+imports = [
+  "six",
+]
+
+[dependencies]
+build = [
+  "python-build",
+  "python-installer",
+  "python-setuptools",
+]
+run = [
+  "python",
+]
+
+[check]
+enabled = true
+skip = []
