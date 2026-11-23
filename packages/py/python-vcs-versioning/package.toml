@@ -1,0 +1,8 @@
+name = "python-vcs-versioning"
+license = "MIT"
+
+[upstream]
+homepage = "https://pypi.org/project/vcs-versioning/"
+sources = [
+  "https://files.pythonhosted.org/packages/ad/e7/2a691db7d076b75d099fdba1a14cd966931f2aeb591e77f6d22f15097326/",
+]

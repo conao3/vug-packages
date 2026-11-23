@@ -1,0 +1,27 @@
+version = "2.6.0"
+
+[source]
+url = "https://files.pythonhosted.org/packages/ad/e7/2a691db7d076b75d099fdba1a14cd966931f2aeb591e77f6d22f15097326/vcs_versioning-2.6.0.tar.gz"
+sha256 = "22e9159288e2d8bca2fa6f6c31c34c9c66aec157f60e9e526f5d160d2516d60f"
+
+[build]
+kind = "python"
+imports = [
+  "vcs_versioning",
+]
+
+[dependencies]
+build = [
+  "packaging",
+  "python-build",
+  "python-installer",
+  "python-setuptools",
+]
+run = [
+  "packaging",
+  "python",
+]
+
+[check]
+enabled = true
+skip = []
