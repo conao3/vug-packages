@@ -1,0 +1,8 @@
+name = "unibilium"
+license = "LGPL-3.0-or-later"
+
+[upstream]
+homepage = "https://github.com/neovim/unibilium"
+sources = [
+  "https://github.com/neovim/unibilium/archive/",
+]
