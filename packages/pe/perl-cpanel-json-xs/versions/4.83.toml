@@ -1,0 +1,27 @@
+version = "4.83"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/R/RU/RURBAN/Cpanel-JSON-XS-4.83.tar.gz"
+sha256 = "daabf6ad0376ee4613e671c521f5d05650c42205e403cac077e79d8594da3ade"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Cpanel::JSON::XS",
+  "Cpanel::JSON::XS::Boolean",
+  "Cpanel::JSON::XS::Type",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "musl",
+  "perl",
+]
+
+[check]
+enabled = true
+skip = []
