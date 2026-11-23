@@ -1,0 +1,8 @@
+name = "python-platformdirs"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/tox-dev/platformdirs"
+sources = [
+  "https://files.pythonhosted.org/packages/source/p/platformdirs/",
+]

@@ -1,0 +1,28 @@
+version = "4.14.8"
+
+[source]
+url = "https://files.pythonhosted.org/packages/source/p/platformdirs/platformdirs-4.14.8.tar.gz"
+sha256 = "96893d686e84e9e6f358a9ea41a8de544df66dbf2ba6cda250e7dc73acf85b9b"
+
+[build]
+kind = "python"
+imports = [
+  "platformdirs",
+]
+
+[dependencies]
+build = [
+  "python-build",
+  "python-hatch-fancy-pypi-readme",
+  "python-hatch-vcs",
+  "python-hatchling",
+  "python-installer",
+  "python-python-sbom",
+]
+run = [
+  "python",
+]
+
+[check]
+enabled = true
+skip = []
