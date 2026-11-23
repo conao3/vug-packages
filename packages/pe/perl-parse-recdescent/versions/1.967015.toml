@@ -1,0 +1,24 @@
+version = "1.967015"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/J/JT/JTBRAUN/Parse-RecDescent-1.967015.tar.gz"
+sha256 = "1943336a4cb54f1788a733f0827c0c55db4310d5eae15e542639c9dd85656e37"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Parse::RecDescent",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+]
+
+[check]
+enabled = true
+skip = []
