@@ -1,0 +1,18 @@
+--- a/cmake/uvwasi.pc.in
++++ b/cmake/uvwasi.pc.in
+@@ -3,12 +3,11 @@
+ libdir=@CMAKE_INSTALL_FULL_LIBDIR@
+ includedir=@CMAKE_INSTALL_FULL_INCLUDEDIR@
+ bindir=@CMAKE_INSTALL_FULL_BINDIR@
+-libuv_includedir=@LIBUV_INCLUDE_DIR@
+ 
+ Name: @PROJECT_NAME@
+ Description: @PROJECT_DESCRIPTION@
+ Version: @PROJECT_VERSION@
+ 
+-Libs: -L${libdir}
+-Libs.private: -l@LIBUV_LIBRARIES@
+-Cflags: -I${includedir} -I${libuv_includedir} @uvwasi_cflags@
++Libs: -L${libdir} -luvwasi
++Requires.private: libuv
++Cflags: -I${includedir}
