@@ -1,0 +1,8 @@
+name = "libbdplus"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://www.videolan.org/developers/libbdplus.html"
+sources = [
+  "https://get.videolan.org/libbdplus/",
+]
