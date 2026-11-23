@@ -1,0 +1,8 @@
+name = "zlib-ng"
+license = "Zlib"
+
+[upstream]
+homepage = "https://github.com/zlib-ng/zlib-ng"
+sources = [
+  "https://github.com/zlib-ng/zlib-ng/archive/refs/tags/",
+]
