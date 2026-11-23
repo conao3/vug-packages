@@ -1,0 +1,8 @@
+name = "python-shellingham"
+license = "ISC"
+
+[upstream]
+homepage = "https://github.com/sarugaku/shellingham"
+sources = [
+  "https://files.pythonhosted.org/packages/source/s/shellingham/",
+]
