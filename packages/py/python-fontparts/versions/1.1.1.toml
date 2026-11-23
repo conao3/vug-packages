@@ -1,0 +1,32 @@
+version = "1.1.1"
+
+[source]
+url = "https://files.pythonhosted.org/packages/source/f/fontparts/fontparts-1.1.1.tar.gz"
+sha256 = "7ceed66dc176c05f2274e9d09b401b124ce00c46e758e4fecb7f5f19f3d34c61"
+
+[build]
+kind = "python"
+imports = [
+  "fontParts",
+]
+
+[dependencies]
+build = [
+  "python-build",
+  "python-installer",
+  "python-setuptools",
+  "python-setuptools-scm",
+  "python-vcs-versioning",
+  "python-wheel",
+]
+run = [
+  "python",
+  "python-booleanoperations",
+  "python-defcon",
+  "python-fontmath",
+  "python-fonttools",
+]
+
+[check]
+enabled = true
+skip = []
