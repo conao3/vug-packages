@@ -1,0 +1,8 @@
+name = "python-markdown-it-py"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/executablebooks/markdown-it-py"
+sources = [
+  "https://files.pythonhosted.org/packages/source/m/markdown-it-py/",
+]

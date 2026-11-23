@@ -1,0 +1,26 @@
+version = "4.3.0"
+
+[source]
+url = "https://files.pythonhosted.org/packages/source/m/markdown-it-py/markdown_it_py-4.3.0.tar.gz"
+sha256 = "91a58fa5b72c71a40cf7177250fd767480d7a2bb3ac426ccfb76fb90305fdaaa"
+
+[build]
+kind = "python"
+imports = [
+  "markdown_it",
+]
+
+[dependencies]
+build = [
+  "python-build",
+  "python-flit-core",
+  "python-installer",
+]
+run = [
+  "python",
+  "python-mdurl",
+]
+
+[check]
+enabled = true
+skip = []
