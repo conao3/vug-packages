@@ -1,0 +1,8 @@
+name = "libice"
+license = "MIT-open-group"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/xorg/lib/libice"
+sources = [
+  "https://www.x.org/releases/individual/lib/",
+]
