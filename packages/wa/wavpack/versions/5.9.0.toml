@@ -1,0 +1,22 @@
+version = "5.9.0"
+
+[source]
+url = "https://www.wavpack.com/wavpack-5.9.0.tar.xz"
+sha256 = "b5291bc4e6d69ebbd3da3800c5bf4a70f19bb92679b23e09b3b612c1e648d1ff"
+
+[build]
+kind = "autotools"
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "pkgconf",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
