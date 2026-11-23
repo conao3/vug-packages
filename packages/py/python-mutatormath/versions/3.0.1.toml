@@ -1,0 +1,28 @@
+version = "3.0.1"
+
+[source]
+url = "https://github.com/LettError/MutatorMath/archive/refs/tags/3.0.1.tar.gz"
+sha256 = "f05ab756fede722f7b5705c9f97bed14210cf417f4254aeab7b9c712cc24acd4"
+
+[build]
+kind = "python"
+imports = [
+  "mutatorMath",
+]
+
+[dependencies]
+build = [
+  "python-build",
+  "python-installer",
+  "python-setuptools",
+]
+run = [
+  "python",
+  "python-defcon",
+  "python-fontmath",
+  "python-fonttools",
+]
+
+[check]
+enabled = true
+skip = []

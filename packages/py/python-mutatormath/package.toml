@@ -1,0 +1,8 @@
+name = "python-mutatormath"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://github.com/LettError/MutatorMath"
+sources = [
+  "https://github.com/LettError/MutatorMath/archive/refs/tags/",
+]
