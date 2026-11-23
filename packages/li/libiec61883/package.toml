@@ -1,0 +1,8 @@
+name = "libiec61883"
+license = "LGPL-2.1-or-later AND GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://ieee1394.wiki.kernel.org/"
+sources = [
+  "https://www.kernel.org/pub/linux/libs/ieee1394/",
+]
