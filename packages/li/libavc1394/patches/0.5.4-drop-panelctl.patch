@@ -1,0 +1,22 @@
+--- a/test/Makefile.am
++++ b/test/Makefile.am
+@@ -1,7 +1,7 @@
+ MAINTAINERCLEANFILES = Makefile.in
+-bin_PROGRAMS = dvcont mkrfc2734 panelctl
++bin_PROGRAMS = dvcont mkrfc2734
+ noinst_PROGRAMS = romtest setrom avc_vcr 
+-man_MANS = dvcont.1 mkrfc2734.1 panelctl.1
++man_MANS = dvcont.1 mkrfc2734.1
+ EXTRA_DIST = $(man_MANS)
+ 
+ dvcont_SOURCES = dvcont.c
+@@ -27,9 +27,6 @@
+ avc_vcr_SOURCES = avc_vcr.c
+ avc_vcr_LDADD = ../libavc1394/libavc1394.la \
+ 	@LIBRAW1394_LIBS@
+-
+-panelctl_SOURCES = panelctl.c
+-panelctl_LDADD = ../librom1394/librom1394.la ../libavc1394/libavc1394.la \
+-	@LIBRAW1394_LIBS@
+ 
+ INCLUDES = @LIBRAW1394_CFLAGS@
