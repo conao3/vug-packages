@@ -1,0 +1,8 @@
+name = "python-colorama"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://github.com/tartley/colorama"
+sources = [
+  "https://files.pythonhosted.org/packages/source/c/colorama/",
+]
