@@ -1,0 +1,28 @@
+version = "1.2.5"
+
+[source]
+url = "https://www.x.org/releases/individual/lib/libXScrnSaver-1.2.5.tar.xz"
+sha256 = "5057365f847253e0e275871441e10ff7846c8322a5d88e1e187d326de1cd8d00"
+
+[build]
+kind = "autotools"
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "pkgconf",
+  "xorgproto",
+]
+run = [
+  "libx11",
+  "libxext",
+  "musl",
+]
+expose = [
+  "xorgproto",
+]
+
+[check]
+enabled = true
+skip = []
