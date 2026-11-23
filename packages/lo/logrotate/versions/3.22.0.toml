@@ -1,0 +1,39 @@
+version = "3.22.0"
+
+[source]
+url = "https://github.com/logrotate/logrotate/releases/download/3.22.0/logrotate-3.22.0.tar.xz"
+sha256 = "42b4080ee99c9fb6a7d12d8e787637d057a635194e25971997eebbe8d5e57618"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--with-acl",
+  "--with-selinux",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+]
+run = [
+  "acl",
+  "libselinux",
+  "musl",
+  "popt",
+]
+
+[check]
+enabled = true
+skip = [
+  "test-0013.sh",
+  "test-0031.sh",
+  "test-0034.sh",
+  "test-0054.sh",
+  "test-0055.sh",
+  "test-0056.sh",
+  "test-0066.sh",
+  "test-0069.sh",
+  "test-0110.sh",
+  "test-0112.sh",
+]
