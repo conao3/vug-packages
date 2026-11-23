@@ -1,0 +1,8 @@
+name = "python-networkx"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://networkx.org/"
+sources = [
+  "https://files.pythonhosted.org/packages/source/n/networkx/",
+]

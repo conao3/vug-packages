@@ -1,0 +1,25 @@
+version = "3.7"
+
+[source]
+url = "https://files.pythonhosted.org/packages/source/n/networkx/networkx-3.7.tar.gz"
+sha256 = "fd77a511bd90f39f3d016351345b52cf5319b813bdca01de3f755d3cca62e96a"
+
+[build]
+kind = "python"
+imports = [
+  "networkx",
+]
+
+[dependencies]
+build = [
+  "python-build",
+  "python-installer",
+  "python-setuptools",
+]
+run = [
+  "python",
+]
+
+[check]
+enabled = true
+skip = []
