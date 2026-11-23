@@ -17,5 +17,7 @@ run = [
 ]
 
 [check]
-enabled = false
-skip = []
+enabled = true
+skip = [
+  "pipe-output",
+]
