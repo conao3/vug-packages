@@ -1,0 +1,37 @@
+version = "3.11"
+patches = [
+  "3.11-preserve-init-errno.patch",
+]
+
+[source]
+url = "https://github.com/SELinuxProject/selinux/releases/download/3.11/libselinux-3.11.tar.gz"
+sha256 = "73d419c6e20e874adaa4019372cbd097eecf4d276e13f27ec5e67d35c0bd203c"
+
+[build]
+kind = "make"
+make-flags = [
+  "AR=ar",
+  "CC=cc",
+  "FTS_LDLIBS=-lfts",
+  "PREFIX={out}",
+  "SHLIBDIR={out}/lib",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "coreutils",
+  "linux-headers",
+  "make",
+  "pkgconf",
+]
+run = [
+  "libsepol",
+  "musl",
+  "musl-fts",
+  "pcre2",
+]
+
+[check]
+enabled = false
+skip = []

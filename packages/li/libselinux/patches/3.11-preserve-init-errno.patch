@@ -1,0 +1,17 @@
+--- a/src/init.c
++++ b/src/init.c
+@@ -145,12 +145,13 @@
+ static void init_lib(void) __attribute__((constructor));
+ static void init_lib(void)
+ {
+-	SELINUX_PROTECT_ERRNO;
++	int saved_errno = errno;
+ 	selinux_page_size = sysconf(_SC_PAGE_SIZE);
+ 	init_selinuxmnt();
+ #ifndef ANDROID
+ 	has_selinux_config = (access(SELINUXCONFIG, F_OK) == 0);
+ #endif
++	errno = saved_errno;
+ }
+ 
+ static void fini_lib(void) __attribute__((destructor));
