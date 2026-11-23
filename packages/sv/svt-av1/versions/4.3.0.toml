@@ -1,0 +1,26 @@
+version = "4.3.0"
+
+[source]
+url = "https://gitlab.com/AOMediaCodec/SVT-AV1/-/archive/v4.3.0/SVT-AV1-v4.3.0.tar.gz"
+sha256 = "95ce8fc2381ba707e65ac8b9b2e165915bfbe9cd4d2f7b0f58d64ce31bd98f6d"
+
+[build]
+kind = "cmake"
+setup-flags = [
+  "-DCOMPILE_C_ONLY=ON",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+  "pkgconf",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []

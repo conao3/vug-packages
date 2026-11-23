@@ -1,0 +1,8 @@
+name = "svt-av1"
+license = "BSD-3-Clause-Clear"
+
+[upstream]
+homepage = "https://gitlab.com/AOMediaCodec/SVT-AV1"
+sources = [
+  "https://gitlab.com/AOMediaCodec/SVT-AV1/-/archive/",
+]
