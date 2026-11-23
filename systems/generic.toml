@@ -28,6 +28,10 @@ packages = [
 loader = "{pkg:limine}/share/limine/BOOTX64.EFI"
 arguments = ["console=tty0", "console=ttyS0"]
 
+[boot.initrd]
+available-modules = ["virtio_blk", "ext4"]
+force-modules = ["ext4"]
+
 [service.ca-certificates]
 
 [service.dbus]
