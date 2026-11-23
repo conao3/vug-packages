@@ -1,0 +1,33 @@
+version = "1.4.0"
+
+[source]
+url = "https://files.pythonhosted.org/packages/f6/21/3c06205bb407e1f79b73b7b4dfb3950bd9537c4f625a68ab5cc41177f5bc/pyclipper-1.4.0.tar.gz"
+sha256 = "9882bd889f27da78add4dd6f881d25697efc740bf840274e749988d25496c8e1"
+
+[build]
+kind = "python"
+imports = [
+  "pyclipper",
+]
+native-imports = [
+  "pyclipper._pyclipper",
+]
+
+[dependencies]
+build = [
+  "python-build",
+  "python-cython",
+  "python-installer",
+  "python-setuptools",
+  "python-setuptools-scm",
+  "python-wheel",
+]
+run = [
+  "libcxx",
+  "musl",
+  "python",
+]
+
+[check]
+enabled = true
+skip = []

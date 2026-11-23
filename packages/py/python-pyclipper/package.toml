@@ -1,0 +1,8 @@
+name = "python-pyclipper"
+license = "MIT"
+
+[upstream]
+homepage = "https://pypi.org/project/pyclipper/"
+sources = [
+  "https://files.pythonhosted.org/packages/f6/21/3c06205bb407e1f79b73b7b4dfb3950bd9537c4f625a68ab5cc41177f5bc/",
+]
