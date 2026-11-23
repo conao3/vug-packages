@@ -1,0 +1,29 @@
+version = "1.4.0"
+
+[source]
+url = "https://github.com/google/highway/releases/download/1.4.0/highway-1.4.0.tar.gz"
+sha256 = "36f672ab48ddb3c8555e9e89e16fe400cd7d16c6eb455a1a3d0c146a63ababdc"
+
+[build]
+kind = "cmake"
+setup-flags = [
+  "-DBUILD_SHARED_LIBS=ON",
+  "-DHWY_SYSTEM_GTEST=ON",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+  "pkgconf",
+]
+run = [
+  "gtest",
+  "libcxx",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
