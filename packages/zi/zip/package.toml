@@ -1,0 +1,8 @@
+name = "zip"
+license = "Info-ZIP"
+
+[upstream]
+homepage = "https://infozip.sourceforge.net/Zip.html"
+sources = [
+  "https://downloads.sourceforge.net/infozip/",
+]
