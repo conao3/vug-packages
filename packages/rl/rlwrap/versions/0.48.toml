@@ -1,0 +1,25 @@
+version = "0.48"
+
+[source]
+url = "https://github.com/hanslub42/rlwrap/releases/download/v0.48/rlwrap-0.48.tar.gz"
+sha256 = "cdf69074a216a8284574dddd145dd046c904ad5330a616e0eed53c9043f2ecbc"
+
+[build]
+kind = "autotools"
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "perl",
+]
+run = [
+  "libptytty",
+  "musl",
+  "ncurses",
+  "readline",
+]
+
+[check]
+enabled = true
+skip = []

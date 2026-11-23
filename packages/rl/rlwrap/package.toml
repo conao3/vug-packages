@@ -1,0 +1,8 @@
+name = "rlwrap"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://github.com/hanslub42/rlwrap"
+sources = [
+  "https://github.com/hanslub42/rlwrap/releases/download/",
+]
