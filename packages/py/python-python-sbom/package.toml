@@ -1,0 +1,8 @@
+name = "python-python-sbom"
+license = "MIT AND Apache-2.0"
+
+[upstream]
+homepage = "https://pypi.org/project/python-sbom/"
+sources = [
+  "https://files.pythonhosted.org/packages/",
+]

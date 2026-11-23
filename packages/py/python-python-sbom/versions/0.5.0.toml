@@ -1,0 +1,33 @@
+version = "0.5.0"
+
+[source]
+url = "https://files.pythonhosted.org/packages/eb/2a/c65b33d002f4cb910afbe3a9cae6fb12cdf348fe62fe48c2b746401b079f/python_sbom-0.5.0.tar.gz"
+sha256 = "fc7b2c46fa40f52e587ac59cada775e83dcac231fafa90b7a71c3554527ddfb6"
+
+[build]
+kind = "python"
+imports = [
+  "python_sbom",
+]
+
+[dependencies]
+build = [
+  "python-build",
+  "python-hatch-fancy-pypi-readme",
+  "python-hatch-vcs",
+  "python-hatchling",
+  "python-installer",
+  "python-packageurl-python",
+  "python-zipremove",
+]
+run = [
+  "packaging",
+  "python",
+  "python-installer",
+  "python-packageurl-python",
+  "python-zipremove",
+]
+
+[check]
+enabled = true
+skip = []
