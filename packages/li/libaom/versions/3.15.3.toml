@@ -1,0 +1,36 @@
+version = "3.15.3"
+patches = [
+  "3.15.3-offline-api-tests.patch",
+]
+
+[source]
+url = "https://src.fedoraproject.org/lookaside/pkgs/aom/aom-3.15.3.tar.gz/sha512/ec1a988bc9eb5113f4c932e139da510740a7a713ee4eda17a3d053026772fe1b22da1dd9a5cb52c818b18a854eb01f1b0dc23c0b70da0eaf1dab0a490a6be2a6/aom-3.15.3.tar.gz"
+sha256 = "358e932f1d4bbb24b63ce893215b8b3af3e5269c99e761b7feedd1b4af745247"
+strip-components = 0
+
+[build]
+kind = "cmake"
+setup-flags = [
+  "-DCONFIG_TUNE_VMAF=1",
+  "-DCMAKE_C_FLAGS=-D_POSIX_C_SOURCE=200809L",
+  "-DENABLE_TESTDATA=0",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+  "nasm",
+  "perl",
+  "pkgconf",
+]
+run = [
+  "libcxx",
+  "libvmaf",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []

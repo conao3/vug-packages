@@ -1,0 +1,12 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -864,6 +864,9 @@
+ 
+   # Create test_libaom target and the targets it depends on.
+   setup_aom_test_targets()
++  enable_testing()
++  add_test(NAME libaom-offline-api COMMAND test_libaom
++           "--gtest_filter=DecodeAPI.InvalidParams:EncodeAPI.InvalidParams")
+ endif()
+ 
+ if(HAVE_PTHREAD_H AND CONFIG_MULTITHREAD)

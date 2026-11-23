@@ -1,0 +1,9 @@
+name = "libaom"
+license = "BSD-2-Clause"
+
+[upstream]
+homepage = "https://aomedia.org/"
+sources = [
+  "https://aomedia.googlesource.com/aom/+archive/",
+  "https://src.fedoraproject.org/lookaside/pkgs/aom/",
+]
