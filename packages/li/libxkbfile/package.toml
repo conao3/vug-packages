@@ -1,0 +1,8 @@
+name = "libxkbfile"
+license = "MIT-open-group AND HPND AND SMLNJ"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/xorg/lib/libxkbfile"
+sources = [
+  "https://www.x.org/releases/individual/lib/",
+]
