@@ -1,0 +1,26 @@
+version = "3.003000"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF/Config-IniFiles-3.003000.tar.gz"
+sha256 = "4f6f8eb0c4efbc9398a0f1ef0c97fb7704eee4ccd90af1a31dda32854aa81164"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Config::IniFiles",
+]
+
+[dependencies]
+build = [
+  "make",
+  "perl-module-build",
+]
+run = [
+  "perl",
+  "perl-io-stringy",
+]
+
+[check]
+enabled = true
+skip = []
