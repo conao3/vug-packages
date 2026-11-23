@@ -1,0 +1,11 @@
+--- a/configure.ac
++++ b/configure.ac
+@@ -254,7 +254,7 @@
+ # Link libm on platforms where trunc() lives outside libc.
+ AC_SEARCH_LIBS([trunc], [m])
+ LIBM="$ac_cv_search_trunc"
+-if test "x$LIBM" = "xno" || test "x$LIBM" = "xyes" ; then
++if test "x$LIBM" = "xno" || test "x$LIBM" = "xnone required" ; then
+ 	LIBM=""
+ fi
+ AC_SUBST(LIBM)

@@ -1,0 +1,39 @@
+version = "0.9.6"
+patches = [
+  "0.9.6-libm-pkgconfig.patch",
+]
+
+[source]
+url = "https://github.com/pantoniou/libfyaml/archive/v0.9.6.tar.gz"
+sha256 = "2d016379a69f6cf6beaf06d12bcefe1ad1784bab28fbb41a6fa8d49d25f1bc0a"
+
+[build]
+kind = "autotools"
+autoreconf = true
+configure-flags = [
+  "--disable-network",
+  "--with-libclang=latest",
+]
+
+[dependencies]
+build = [
+  "autoconf",
+  "automake",
+  "binutils",
+  "libtool",
+  "llvm:dev",
+  "llvm:tools",
+  "make",
+  "pkgconf",
+]
+run = [
+  "musl",
+]
+expose = [
+  "llvm:dev",
+  "llvm:tools",
+]
+
+[check]
+enabled = true
+skip = []
