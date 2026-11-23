@@ -1,0 +1,8 @@
+name = "libmodplug"
+license = "LicenseRef-Public-Domain"
+
+[upstream]
+homepage = "http://modplug-xmms.sourceforge.net/"
+sources = [
+  "https://downloads.sourceforge.net/project/modplug-xmms/",
+]
