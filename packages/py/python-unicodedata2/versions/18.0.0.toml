@@ -1,0 +1,26 @@
+version = "18.0.0"
+
+[source]
+url = "https://files.pythonhosted.org/packages/source/u/unicodedata2/unicodedata2-18.0.0.tar.gz"
+sha256 = "a9536291a5204caf6423ca7c56131d44f2aafc2fada35ff3a5eac82f7f8c62a7"
+
+[build]
+kind = "python"
+native-imports = [
+  "unicodedata2",
+]
+
+[dependencies]
+build = [
+  "python-build",
+  "python-installer",
+  "python-setuptools",
+]
+run = [
+  "musl",
+  "python",
+]
+
+[check]
+enabled = true
+skip = []
