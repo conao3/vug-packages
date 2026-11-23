@@ -1,0 +1,8 @@
+name = "lame"
+license = "LGPL-2.0-or-later"
+
+[upstream]
+homepage = "https://lame.sourceforge.io/"
+sources = [
+  "https://downloads.sourceforge.net/project/lame/lame/",
+]
