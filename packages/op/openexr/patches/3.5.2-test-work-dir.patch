@@ -1,0 +1,14 @@
+--- a/src/test/OpenEXRCoreTest/main.cpp
++++ b/src/test/OpenEXRCoreTest/main.cpp
+@@ -46,2 +46,4 @@
++#    undef IMF_TMP_DIR
++#    define IMF_TMP_DIR "./"
+ #    define IMF_PATH_SEPARATOR "/"
+ #endif
+--- a/src/test/OpenEXRTest/tmpDir.h
++++ b/src/test/OpenEXRTest/tmpDir.h
+@@ -19,2 +19,4 @@
++#    undef IMF_TMP_DIR
++#    define IMF_TMP_DIR "./"
+ #    define IMF_PATH_SEPARATOR "/"
+ #endif

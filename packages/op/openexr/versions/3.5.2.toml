@@ -1,0 +1,32 @@
+version = "3.5.2"
+patches = [
+  "3.5.2-test-work-dir.patch",
+]
+
+[source]
+url = "https://github.com/AcademySoftwareFoundation/openexr/releases/download/v3.5.2/openexr-3.5.2.tar.gz"
+sha256 = "e5750af57bbed556b462cbf0c39550d9063b2028c0184ec65fe42fdae458cdea"
+
+[build]
+kind = "cmake"
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+  "pkgconf",
+]
+run = [
+  "imath",
+  "libcxx",
+  "libdeflate",
+  "musl",
+  "zstd",
+]
+
+[check]
+enabled = true
+skip = [
+  "OpenEXR.Iex",
+]
