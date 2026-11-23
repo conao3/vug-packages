@@ -1,0 +1,25 @@
+version = "4.68.0"
+
+[source]
+url = "https://files.pythonhosted.org/packages/source/f/fonttools/fonttools-4.68.0.tar.gz"
+sha256 = "73294e233070f71e2b3653b6bd8564af676d57f26d075761fb06d1ab2e4a7a5d"
+
+[build]
+kind = "python"
+imports = [
+  "fontTools",
+]
+
+[dependencies]
+build = [
+  "python-build",
+  "python-installer",
+  "python-setuptools",
+]
+run = [
+  "python",
+]
+
+[check]
+enabled = true
+skip = []

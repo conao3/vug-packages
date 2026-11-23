@@ -1,0 +1,8 @@
+name = "python-fonttools"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/fonttools/fonttools"
+sources = [
+  "https://files.pythonhosted.org/packages/source/f/fonttools/",
+]
