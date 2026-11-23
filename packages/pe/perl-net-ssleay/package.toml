@@ -1,0 +1,8 @@
+name = "perl-net-ssleay"
+license = "Artistic-2.0"
+
+[upstream]
+homepage = "https://metacpan.org/dist/Net-SSLeay"
+sources = [
+  "https://cpan.metacpan.org/authors/id/C/CH/CHRISN/",
+]

@@ -1,0 +1,15 @@
+--- a/Makefile.PL
++++ b/Makefile.PL
+@@ -370,4 +370,12 @@
+         return $ENV{OPENSSL_PREFIX};
+     }
+ 
++    my @vug_cflags = split ' ', $ENV{VUG_CFLAGS} // '';
++    while (defined(my $flag = shift @vug_cflags)) {
++        next unless $flag eq '-isystem';
++        my $inc = shift @vug_cflags or last;
++        (my $prefix = $inc) =~ s{/include\z}{} or next;
++        return $prefix if -f "$prefix/include/openssl/ssl.h";
++    }
++
+     my @guesses = (

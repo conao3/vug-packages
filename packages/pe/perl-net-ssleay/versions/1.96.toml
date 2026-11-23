@@ -1,0 +1,32 @@
+version = "1.96"
+patches = [
+  "1.96-openssl-prefix.patch",
+  "1.96-openssl4.patch",
+]
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.96.tar.gz"
+sha256 = "ab213691685fb2a576c669cbc8d9266f8165a31563ad15b7c4030b94adfc0753"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Net::SSLeay",
+  "Net::SSLeay::Handle",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "musl",
+  "openssl",
+  "perl",
+  "zlib",
+]
+
+[check]
+enabled = true
+skip = []
