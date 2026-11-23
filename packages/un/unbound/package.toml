@@ -1,0 +1,8 @@
+name = "unbound"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://nlnetlabs.nl/projects/unbound/about/"
+sources = [
+  "https://nlnetlabs.nl/downloads/unbound/",
+]

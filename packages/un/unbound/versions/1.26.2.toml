@@ -1,0 +1,32 @@
+version = "1.26.2"
+
+[source]
+url = "https://nlnetlabs.nl/downloads/unbound/unbound-1.26.2.tar.gz"
+sha256 = "d8ee7aa6bbb3ff1be7d9e57637d0d0ec2f18273a8efff1a0afe2c665858b96f7"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--with-ssl={dep:openssl}",
+  "--with-libexpat={dep:expat}",
+  "--with-libevent={dep:libevent}",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "bison",
+  "flex",
+  "make",
+  "pkgconf",
+]
+run = [
+  "expat",
+  "libevent",
+  "musl",
+  "openssl",
+]
+
+[check]
+enabled = true
+skip = []
