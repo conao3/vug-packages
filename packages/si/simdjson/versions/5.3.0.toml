@@ -1,0 +1,27 @@
+version = "5.3.0"
+
+[source]
+url = "https://github.com/simdjson/simdjson/archive/refs/tags/v5.3.0.tar.gz"
+sha256 = "5e59df8bd3fa760937e6a2ca68193399c85b52b5042716700b149a734737dced"
+
+[build]
+kind = "cmake"
+setup-flags = [
+  "-DBUILD_SHARED_LIBS=ON",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+  "pkgconf",
+]
+run = [
+  "libcxx",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []

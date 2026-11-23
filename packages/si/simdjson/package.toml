@@ -1,0 +1,8 @@
+name = "simdjson"
+license = "Apache-2.0 OR MIT"
+
+[upstream]
+homepage = "https://simdjson.org/"
+sources = [
+  "https://github.com/simdjson/simdjson/archive/refs/tags/",
+]
