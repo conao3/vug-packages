@@ -1,0 +1,8 @@
+name = "libxtst"
+license = "HPND-doc AND HPND-doc-sell AND HPND-sell-variant AND MIT-open-group AND X11"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/xorg/lib/libxtst"
+sources = [
+  "https://www.x.org/releases/individual/lib/",
+]
