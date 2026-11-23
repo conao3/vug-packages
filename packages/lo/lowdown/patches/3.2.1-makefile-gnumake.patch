@@ -1,0 +1,50 @@
+--- a/Makefile
++++ b/Makefile
+@@ -150,13 +150,13 @@
+ # failure.
+ # Has no effect unless HAVE_SANDBOX_INIT is defined.
+ 
+-.ifdef SANDBOX_INIT_ERROR_IGNORE
+-.if $(SANDBOX_INIT_ERROR_IGNORE) == "always"
++ifdef SANDBOX_INIT_ERROR_IGNORE
++ifeq ($(SANDBOX_INIT_ERROR_IGNORE),always)
+ CFLAGS		+= -DSANDBOX_INIT_ERROR_IGNORE=2
+-.else
++else
+ CFLAGS		+= -DSANDBOX_INIT_ERROR_IGNORE=1
+-.endif
+-.endif
++endif
++endif
+ 
+ # Names of shared and static libraries.
+ 
+@@ -172,21 +172,21 @@
+ 
+ LIB_LOWDOWN 	 = $(LIB_ST)
+ MAIN_OBJS	 = src/main.o
+-.ifdef LINK_METHOD
+-.if $(LINK_METHOD) == "shared"
++ifdef LINK_METHOD
++ifeq ($(LINK_METHOD),shared)
+ LIB_LOWDOWN 	 = $(LIB_SO)
+ MAIN_OBJS	 = $(COMPAT_OBJS) src/main.o
+-.endif
+-.endif
++endif
++endif
+ 
+ # Mac OS X and other Unix systems use different conventions for
+ # indicating shared library versions.
+ 
+-.if $(LINKER_SOSUFFIX) == "dylib"
++ifeq ($(LINKER_SOSUFFIX),dylib)
+ LIB_SOVER	 = liblowdown.$(LIBVER).$(LINKER_SOSUFFIX)
+-.else
++else
+ LIB_SOVER	 = liblowdown.$(LINKER_SOSUFFIX).$(LIBVER)
+-.endif
++endif
+ 
+ # Because the objects will be compiled into a shared library:
+ CFLAGS		+= -fPIC

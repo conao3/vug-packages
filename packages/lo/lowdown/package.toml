@@ -1,0 +1,8 @@
+name = "lowdown"
+license = "ISC"
+
+[upstream]
+homepage = "https://kristaps.bsd.lv/lowdown/"
+sources = [
+  "https://kristaps.bsd.lv/lowdown/snapshots/",
+]
