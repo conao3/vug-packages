@@ -56,6 +56,51 @@ A package with C++ code lists `libcxx` in `dependencies.run`: the compiler
 then links the shared C++ runtime in place of a private static copy, and a
 build whose output holds such a copy fails.
 
+## Python modules
+
+Use the upstream sdist URL and SHA-256. For a small Flit package:
+
+```toml
+[build]
+kind = "python"
+imports = [
+  "jinja2",
+]
+
+[dependencies]
+build = [
+  "flit-core",
+  "python-build",
+  "python-installer",
+]
+run = [
+  "markupsafe",
+  "python",
+]
+
+[check]
+enabled = true
+skip = []
+```
+
+[MarkupSafe](packages/ma/markupsafe/versions/3.0.3.toml) uses setuptools
+and checks that its C extension loads. [Jinja2](packages/ji/jinja2/versions/3.1.6.toml)
+uses Flit and imports MarkupSafe at runtime.
+
+- `python-build` invokes the PEP 517 backend through `pyproject-hooks`.
+  `python-installer` installs the resulting wheel. Setuptools builds
+  MarkupSafe, and Flit Core builds Jinja2. Use the backend named in the
+  sdist's `pyproject.toml`.
+- Put import dependencies and native libraries in `run`. Put suite
+  runners and plugins in `build`. Use `imports` for import checks,
+  `native-imports` to require compiled modules, or set `pytest = true`
+  to run a suite with the packaged pytest runner.
+- For a missing build requirement, add the matching backend or tool to
+  `build`. For an unsatisfied wheel runtime requirement, add a package
+  with matching installed Python distribution metadata to `run`. For
+  a missing native extension, check the compiler output and the runtime
+  libraries and confirm that the resulting wheel targets the selected Python.
+
 ## Package builds on GitHub
 
 Open the **Package builds** run from your pull request. The plan lists the
