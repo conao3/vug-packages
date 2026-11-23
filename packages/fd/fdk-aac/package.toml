@@ -1,0 +1,8 @@
+name = "fdk-aac"
+license = "FDK-AAC"
+
+[upstream]
+homepage = "https://sourceforge.net/projects/opencore-amr/"
+sources = [
+  "https://downloads.sourceforge.net/project/opencore-amr/fdk-aac/",
+]
