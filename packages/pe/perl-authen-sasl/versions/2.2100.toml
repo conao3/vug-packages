@@ -1,0 +1,27 @@
+version = "2.2100"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/E/EH/EHUELS/Authen-SASL-2.2100.tar.gz"
+sha256 = "4f0f100aeed34b52977a94b7df973e7f0b8f92d167b09f2b249bab81e8590e57"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Authen::SASL",
+  "Authen::SASL::Perl",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+  "perl-crypt-urandom",
+  "perl-digest-hmac",
+]
+
+[check]
+enabled = false
+skip = []
