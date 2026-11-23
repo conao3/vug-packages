@@ -41,6 +41,9 @@ run = [
   "systemd",
   "wayland",
 ]
+expose = [
+  "mesa:dev",
+]
 
 [check]
 enabled = false
