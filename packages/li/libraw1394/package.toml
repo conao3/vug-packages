@@ -1,0 +1,8 @@
+name = "libraw1394"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://ieee1394.docs.kernel.org/en/latest/"
+sources = [
+  "https://www.kernel.org/pub/linux/libs/ieee1394/",
+]
