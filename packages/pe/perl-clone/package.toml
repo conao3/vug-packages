@@ -1,4 +1,4 @@
-name = "clone"
+name = "perl-clone"
 license = "Artistic-1.0-Perl OR GPL-1.0-or-later"
 
 [upstream]
