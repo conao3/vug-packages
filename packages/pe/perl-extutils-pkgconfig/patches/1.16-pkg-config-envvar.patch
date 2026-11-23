@@ -1,0 +1,115 @@
+--- a/lib/ExtUtils/PkgConfig.pm	2026-11-24 08:01:55.222509028 +0900
++++ b/lib/ExtUtils/PkgConfig.pm	2026-11-24 08:02:18.205735152 +0900
+@@ -26,6 +26,8 @@
+ 
+ $VERSION = '1.16';
+ 
++my $pkg_config = $ENV{PKG_CONFIG} || 'pkg-config';
++
+ sub import {
+ 	my $class = shift;
+ 	return unless @_;
+@@ -53,16 +55,16 @@
+ 	                              libs-only-other/)
+ 	{
+ 		# simple
+-		$ans = `pkg-config --$function \"$modulename\"`;
++		$ans = `$pkg_config --$function \"$modulename\"`;
+ 	}
+ 	elsif ('static-libs' eq $function)
+ 	{
+-		$ans = `pkg-config --libs --static \"$modulename\"`;
++		$ans = `$pkg_config --libs --static \"$modulename\"`;
+ 	}
+ 	elsif ('variable' eq $function)
+ 	{
+ 		# variable
+-		$ans = `pkg-config --${function}=$arg \"$modulename\"`;
++		$ans = `$pkg_config --${function}=$arg \"$modulename\"`;
+ 	}
+ 	elsif (grep {$_ eq $function} qw/atleast-version
+ 	                                 exact-version
+@@ -70,7 +72,7 @@
+ 	{
+ 		# boolean
+ 		$ans = not system (
+-			"pkg-config --${function}=$arg \"$modulename\"");
++			"$pkg_config --${function}=$arg \"$modulename\"");
+ 	}
+ 	else
+ 	{
+@@ -89,7 +91,7 @@
+ 	
+ 	foreach my $candidate (@pkg_candidates)
+ 	{
+-		my $output = qx/pkg-config --exists "$candidate" 2>&1/;
++		my $output = qx/$pkg_config --exists "$candidate" 2>&1/;
+ 		if (0 == $CHILD_ERROR) {
+ 			return 1;
+ 		}
+@@ -106,7 +108,7 @@
+ 	# recognizes
+ 	foreach my $candidate (@pkg_candidates)
+ 	{
+-		my $output = qx/pkg-config --exists --print-errors "$candidate" 2>&1/;
++		my $output = qx/$pkg_config --exists --print-errors "$candidate" 2>&1/;
+ 		if (0 == $CHILD_ERROR) {
+ 			push @pkgs_found, $candidate;
+ 		}
+@@ -139,7 +141,7 @@
+ 	my %data = ();
+ 	$data{pkg} = $pkgs_found[0];
+ 	foreach my $what (qw/modversion cflags libs/) {
+-		$data{$what} = `pkg-config --$what \"$data{pkg}\"`;
++		$data{$what} = `$pkg_config --$what \"$data{pkg}\"`;
+                 $data{$what} =~ s/[\015\012]+$//;
+ 		croak "*** can't find $what for \"$data{pkg}\"\n"
+ 		    . "*** is it properly installed and available in PKG_CONFIG_PATH?\n"
+--- a/Makefile.PL	2026-11-24 08:01:55.222538697 +0900
++++ b/Makefile.PL	2026-11-24 08:02:18.205580678 +0900
+@@ -3,7 +3,8 @@
+ use ExtUtils::MakeMaker;
+ 
+ # don't go any further if pkg-config cannot be found.
+-my $have_pkg_config = `pkg-config --version`;
++my $pkg_config = $ENV{PKG_CONFIG} || 'pkg-config';
++my $have_pkg_config = `$pkg_config --version`;
+ 
+ if ($have_pkg_config eq "") {
+ 	# Warn and exit with status 0 to indicate (to the user and the CPAN
+--- a/t/1.t	2026-11-24 08:01:55.222736960 +0900
++++ b/t/1.t	2026-11-24 08:02:18.205825554 +0900
+@@ -14,7 +14,8 @@
+ 
+ #########################
+ 
+-my ($major, $minor) = split /\./, `pkg-config --version`;
++my $pkg_config = $ENV{PKG_CONFIG} || 'pkg-config';
++my ($major, $minor) = split /\./, `$pkg_config --version`;
+ diag ("Testing against pkg-config $major.$minor");
+ 
+ $ENV{PKG_CONFIG_PATH} = './t/';
+--- a/t/2.t	2026-11-24 08:01:55.222763845 +0900
++++ b/t/2.t	2026-11-24 08:02:18.205910970 +0900
+@@ -11,7 +11,8 @@
+ 
+ $ENV{PKG_CONFIG_PATH} = './t/';
+ 
+-my ($major, $minor) = split /\./, `pkg-config --version`; # Ignore micro part
++my $pkg_config = $ENV{PKG_CONFIG} || 'pkg-config';
++my ($major, $minor) = split /\./, `$pkg_config --version`; # Ignore micro part
+ 
+ cmd_ok ('modversion');
+ cmd_ok ('cflags');
+--- a/t/3.t	2026-11-24 08:01:55.222784101 +0900
++++ b/t/3.t	2026-11-24 08:02:18.205987618 +0900
+@@ -10,7 +10,8 @@
+ use ExtUtils::PkgConfig;
+ 
+ $ENV{PKG_CONFIG_PATH} = './t/';
+-my ($major, $minor) = split /\./, `pkg-config --version`;
++my $pkg_config = $ENV{PKG_CONFIG} || 'pkg-config';
++my ($major, $minor) = split /\./, `$pkg_config --version`;
+ 
+ ok( ExtUtils::PkgConfig->atleast_version(qw/test_glib-2.0/, '2.2.0') );
+ ok( not ExtUtils::PkgConfig->atleast_version(qw/test_glib-2.0/, '2.3.0') );

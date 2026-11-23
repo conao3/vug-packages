@@ -1,0 +1,8 @@
+name = "perl-extutils-pkgconfig"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://metacpan.org/dist/ExtUtils-PkgConfig"
+sources = [
+  "https://cpan.metacpan.org/authors/id/X/XA/XAOC/",
+]
