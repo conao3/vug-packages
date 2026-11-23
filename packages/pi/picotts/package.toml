@@ -1,0 +1,8 @@
+name = "picotts"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://github.com/ihuguet/picotts"
+sources = [
+  "https://github.com/ihuguet/picotts/archive/",
+]
