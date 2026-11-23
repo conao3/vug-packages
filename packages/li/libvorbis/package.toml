@@ -1,0 +1,8 @@
+name = "libvorbis"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://xiph.org/vorbis/"
+sources = [
+  "https://downloads.xiph.org/releases/vorbis/",
+]
