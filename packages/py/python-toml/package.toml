@@ -1,0 +1,8 @@
+name = "python-toml"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/uiri/toml"
+sources = [
+  "https://files.pythonhosted.org/packages/source/t/toml/",
+]

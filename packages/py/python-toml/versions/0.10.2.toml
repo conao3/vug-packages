@@ -1,0 +1,25 @@
+version = "0.10.2"
+
+[source]
+url = "https://files.pythonhosted.org/packages/source/t/toml/toml-0.10.2.tar.gz"
+sha256 = "b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"
+
+[build]
+kind = "python"
+imports = [
+  "toml",
+]
+
+[dependencies]
+build = [
+  "python-build",
+  "python-installer",
+  "python-setuptools",
+]
+run = [
+  "python",
+]
+
+[check]
+enabled = true
+skip = []
