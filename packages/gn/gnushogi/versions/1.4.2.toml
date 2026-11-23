@@ -1,0 +1,29 @@
+version = "1.4.2"
+
+[source]
+url = "https://ftp.gnu.org/gnu/gnushogi/gnushogi-1.4.2.tar.gz"
+sha256 = "1ecc48a866303c63652552b325d685e7ef5e9893244080291a61d96505d52b29"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--with-curses",
+  "CFLAGS=-fcommon",
+]
+make-flags = [
+  "LCURSES=-lcurses -ltinfow",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+]
+run = [
+  "musl",
+  "ncurses",
+]
+
+[check]
+enabled = false
+skip = []
