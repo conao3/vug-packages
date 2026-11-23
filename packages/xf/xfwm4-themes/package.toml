@@ -1,0 +1,8 @@
+name = "xfwm4-themes"
+license = "GPL-3.0-only"
+
+[upstream]
+homepage = "https://www.xfce.org/"
+sources = [
+  "https://archive.xfce.org/src/art/xfwm4-themes/",
+]
