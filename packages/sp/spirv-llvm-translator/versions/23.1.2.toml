@@ -1,0 +1,35 @@
+version = "23.1.2"
+
+[source]
+url = "https://github.com/KhronosGroup/SPIRV-LLVM-Translator/archive/refs/tags/v23.1.2.tar.gz"
+sha256 = "b657254b5e0a2dda7914a8cb1eace467f22847d75d877b83829026c1452f827a"
+
+[build]
+kind = "cmake"
+setup-flags = [
+  "-DLLVM_DIR={dep:llvm}/lib/cmake/llvm",
+  "-DBUILD_SHARED_LIBS=ON",
+  "-DLLVM_SPIRV_INCLUDE_TESTS=OFF",
+  "-DLLVM_EXTERNAL_SPIRV_HEADERS_SOURCE_DIR={dep:spirv-headers}",
+  "-DLLVM_LINK_LLVM_DYLIB=ON",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+  "python",
+  "spirv-headers",
+]
+run = [
+  "libcxx",
+  "llvm",
+  "musl",
+  "spirv-tools",
+  "zlib",
+]
+
+[check]
+enabled = false
+skip = []

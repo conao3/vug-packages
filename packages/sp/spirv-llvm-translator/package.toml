@@ -1,0 +1,8 @@
+name = "spirv-llvm-translator"
+license = "NCSA"
+
+[upstream]
+homepage = "https://github.com/KhronosGroup/SPIRV-LLVM-Translator"
+sources = [
+  "https://github.com/KhronosGroup/SPIRV-LLVM-Translator/archive/refs/tags/",
+]
