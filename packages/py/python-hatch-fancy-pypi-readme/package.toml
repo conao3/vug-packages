@@ -1,0 +1,8 @@
+name = "python-hatch-fancy-pypi-readme"
+license = "MIT"
+
+[upstream]
+homepage = "https://pypi.org/project/hatch-fancy-pypi-readme/"
+sources = [
+  "https://files.pythonhosted.org/packages/f3/0f/aed57c301f339936eb91cb4d8c1e5088a101081854bd3ec18a889df32365/",
+]
