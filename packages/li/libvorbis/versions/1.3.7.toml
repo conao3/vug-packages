@@ -1,4 +1,7 @@
 version = "1.3.7"
+patches = [
+  "1.3.7-parallel-check.patch",
+]
 
 [source]
 url = "https://downloads.xiph.org/releases/vorbis/libvorbis-1.3.7.tar.xz"

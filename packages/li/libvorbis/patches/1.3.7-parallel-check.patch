@@ -1,0 +1,10 @@
+--- a/test/Makefile.in
++++ b/test/Makefile.in
+@@ -493,7 +493,6 @@
+ 	  fi; \
+ 	done
+ check-am: all-am
+-	$(MAKE) $(AM_MAKEFLAGS) $(check_PROGRAMS)
+ check: check-am
+ all-am: Makefile
+ installdirs:
