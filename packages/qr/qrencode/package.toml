@@ -1,0 +1,8 @@
+name = "qrencode"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://fukuchi.org/works/qrencode/"
+sources = [
+  "https://github.com/fukuchi/libqrencode/archive/refs/tags/",
+]
