@@ -1,0 +1,24 @@
+version = "1.27"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/File-Which-1.27.tar.gz"
+sha256 = "3201f1a60e3f16484082e6045c896842261fc345de9fb2e620fd2a2c7af3a93a"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "File::Which",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+]
+
+[check]
+enabled = true
+skip = []
