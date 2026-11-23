@@ -1,0 +1,30 @@
+version = "0-unstable-2025-09-10"
+patches = [
+  "0-unstable-2025-09-10-run-checkasm.patch",
+]
+
+[source]
+url = "https://code.videolan.org/api/v4/projects/videolan%2Fx264/repository/archive.tar.gz?sha=0480cb05fa188d37ae87e8f4fd8f1aea3711f7ee"
+sha256 = "b5a369e5680d2faa6964e2eed3d50a87475ca3a5943867be98764d26cce62b29"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--enable-shared",
+]
+
+[dependencies]
+build = [
+  "bash",
+  "binutils",
+  "make",
+  "nasm",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
+target = "checkasm"

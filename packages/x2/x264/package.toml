@@ -1,0 +1,8 @@
+name = "x264"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://www.videolan.org/developers/x264.html"
+sources = [
+  "https://code.videolan.org/api/v4/projects/videolan%2Fx264/",
+]
