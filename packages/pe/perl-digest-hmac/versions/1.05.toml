@@ -1,0 +1,26 @@
+version = "1.05"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/A/AR/ARODLAND/Digest-HMAC-1.05.tar.gz"
+sha256 = "215cb59cba610745cfb2d4b3f8ef756d590e57e3ad7986a992e87c4969fcdc7a"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Digest::HMAC",
+  "Digest::HMAC_MD5",
+  "Digest::HMAC_SHA1",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+]
+
+[check]
+enabled = true
+skip = []
