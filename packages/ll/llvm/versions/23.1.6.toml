@@ -1,4 +1,7 @@
 version = "23.1.6"
+patches = [
+  "23.1.6-relocate-cmake-exports.patch",
+]
 
 [source]
 url = "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.6/llvm-project-23.1.6.src.tar.xz"
@@ -8,6 +11,7 @@ sha256 = "d3b86ab29cfb4445a6652e5c2642ccc75e04e38084dde3701d323320f35a31da"
 kind = "cmake"
 path = "llvm"
 setup-flags = [
+  "-DCMAKE_INSTALL_RPATH={out}/lib/.",
   "-DLLVM_TARGETS_TO_BUILD=X86;AMDGPU",
   "-DLLVM_ENABLE_PROJECTS=clang",
   "-DCLANG_LINK_CLANG_DYLIB=ON",
@@ -33,7 +37,77 @@ build = [
   "make",
   "python",
 ]
+run = []
+
+[outputs.dev]
+paths = [
+  "bin/llvm-config",
+  "include",
+  "lib/*.a",
+  "lib/cmake",
+  "lib/libLLVM-23.so",
+  "lib/libLLVM.so",
+  "lib/libLTO.so*",
+  "lib/libRemarks.so*",
+]
 run = [
+  ":lib",
+  ":out",
+  ":tools",
+  "libcxx",
+  "musl",
+  "zlib",
+]
+
+[outputs.lib]
+paths = [
+  "lib/libLLVM.so.23.1",
+]
+run = [
+  "libcxx",
+  "musl",
+  "zlib",
+]
+
+[outputs.out]
+run = [
+  ":lib",
+  "libcxx",
+  "musl",
+  "zlib",
+]
+
+[outputs.tools]
+paths = [
+  "bin/clang",
+  "bin/clang++",
+  "bin/clang-23",
+  "bin/clang-cl",
+  "bin/clang-cpp",
+  "bin/clang-format",
+  "bin/clang-installapi",
+  "bin/clang-linker-wrapper",
+  "bin/clang-nvlink-wrapper",
+  "bin/clang-offload-bundler",
+  "bin/clang-offload-packager",
+  "bin/clang-refactor",
+  "bin/clang-repl",
+  "bin/clang-scan-deps",
+  "bin/clang-ssaf-*",
+  "bin/clang-sycl-linker",
+  "bin/clang-tblgen",
+  "bin/git-clang-format",
+  "bin/llvm-offload-binary",
+  "lib/clang",
+  "lib/libclang-cpp.so",
+  "lib/libclang-cpp.so.23.1",
+  "lib/libclang.so",
+  "lib/libclang.so.23.1",
+  "lib/libclang.so.23.1.6",
+  "share/clang",
+]
+run = [
+  ":lib",
   "libcxx",
   "musl",
   "zlib",
