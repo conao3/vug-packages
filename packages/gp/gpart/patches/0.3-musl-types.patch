@@ -1,0 +1,24 @@
+diff --git a/src/l64seek.h b/src/l64seek.h
+--- a/src/l64seek.h
++++ b/src/l64seek.h
+@@ -27,7 +27,7 @@
+  * offsets.
+  */
+ 
+-typedef loff_t off64_t;
++typedef off_t off64_t;
+ typedef off64_t s64_t;
+ 
+ off64_t l64seek(int fd, off64_t offset, int whence);
+diff --git a/src/gm_s86dl.h b/src/gm_s86dl.h
+--- a/src/gm_s86dl.h
++++ b/src/gm_s86dl.h
+@@ -40,7 +40,7 @@
+ struct solaris_x86_slice {
+ 	ushort	s_tag;			/* ID tag of partition */
+ 	ushort	s_flag;			/* permision flags */
+-	daddr_t s_start;		/* start sector no of partition */
++	long s_start;		/* start sector no of partition */
+ 	long	s_size;			/* # of blocks in partition */
+ };
+ 

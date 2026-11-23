@@ -1,0 +1,8 @@
+name = "gpart"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://github.com/baruch/gpart"
+sources = [
+  "https://github.com/baruch/gpart/archive/",
+]
