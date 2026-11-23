@@ -1,0 +1,8 @@
+name = "game-music-emu"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://github.com/libgme/game-music-emu"
+sources = [
+  "https://github.com/libgme/game-music-emu/releases/download/",
+]
