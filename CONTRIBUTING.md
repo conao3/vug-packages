@@ -147,6 +147,56 @@ Use GitHub CLI and Git for its branch-management commands.
 [yq-go](packages/yq/yq-go/versions/4.54.1.toml) installs the `yq` executable
 and tests the root module.
 
+## Node CLI packages
+
+Pin a source archive that contains `package.json` and a version 3
+`package-lock.json`. The lock entries must point to npm registry tarballs
+with SHA-512 integrity. Use this build configuration for a CLI whose
+manifest declares a `bin` entry and a `build` script:
+
+```toml
+[build]
+kind = "node"
+build-script = true
+
+[dependencies]
+build = ["npm"]
+run = ["nodejs"]
+
+[check]
+enabled = false
+skip = []
+```
+
+The build uses `npm` with the packaged `nodejs`. The Node executable
+uses Alpine's `libgcc` and `libstdcxx` at runtime. The `patchelf`
+build tool sets the interpreter and library search path for Node. A
+package can also use it to relocate a bundled musl interpreter. Declare
+the executable's project-relative path in `build.musl-executables`,
+add `patchelf` to build dependencies, and add `musl` to run dependencies.
+
+Set `check.enabled = true` when the upstream `test` script exits on its
+own and works offline. Use an empty `check.skip`. Both example records
+use ACP `initialize` as a CLI smoke test. Both build scripts run with
+dependency install hooks disabled. `codex-acp` uses the lock's esbuild
+platform package directly and declares the private C++ runtime in its
+bundled Codex distribution.
+
+If the lock is missing, use a pinned source archive or patch containing a
+reviewed lock generated for the same manifest. For an integrity failure,
+compare the tarball bytes against the lock and review the input before
+updating it. For `ENOTCACHED`, look for the missing package in the lock
+and check its platform fields. If a package needs a lifecycle hook to
+download an executable, supply the pinned platform artifact before the
+offline build. For a native executable that exists but returns
+`ENOENT`, inspect its ELF interpreter and check that the runtime closure
+contains it.
+
+[claude-agent-acp](packages/cl/claude-agent-acp/versions/0.107.0.toml)
+uses TypeScript and the Claude SDK's Linux x64 musl optional package.
+[codex-acp](packages/co/codex-acp/versions/2.6.0.toml) bundles TypeScript
+with esbuild and keeps the Linux x64 Codex native distribution.
+
 ## Perl modules
 
 Start with the pinned CPAN archive's URL and SHA-256 in `[source]`.
