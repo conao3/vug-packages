@@ -9,6 +9,7 @@ kind = "prebuilt"
 install = [
   { from = "meson.py", to = "bin/meson" },
   { from = "mesonbuild", to = "bin/mesonbuild" },
+  { from = "PKG-INFO", to = "lib/python3.13/site-packages/meson-1.9.1.dist-info/METADATA" },
 ]
 
 [dependencies]
