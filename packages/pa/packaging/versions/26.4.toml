@@ -1,0 +1,22 @@
+version = "26.4"
+
+[source]
+url = "https://files.pythonhosted.org/packages/c3/75/ffb1dc0ed12352139fb4ca0e3fde4325a23e3d0f3f40efe89717bc4f557b/packaging-26.4.tar.gz"
+sha256 = "c4b671c41ddb9bf26e543c37723610d28fb6bf7affc4da17cf048d419d2c062a"
+
+[build]
+kind = "prebuilt"
+install = [
+  { from = "src/packaging", to = "lib/python3.13/site-packages/packaging" },
+  { from = "PKG-INFO", to = "lib/python3.13/site-packages/packaging-26.4.dist-info/METADATA" },
+]
+
+[dependencies]
+build = []
+run = [
+  "python",
+]
+
+[check]
+enabled = false
+skip = []
