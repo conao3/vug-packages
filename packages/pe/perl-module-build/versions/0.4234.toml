@@ -1,0 +1,22 @@
+version = "0.4234"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/L/LE/LEONT/Module-Build-0.4234.tar.gz"
+sha256 = "66aeac6127418be5e471ead3744648c766bd01482825c5b66652675f2bc86a8f"
+
+[build]
+kind = "perl"
+driver = "module-build"
+modules = [
+  "Module::Build",
+]
+
+[dependencies]
+build = []
+run = [
+  "perl",
+]
+
+[check]
+enabled = true
+skip = []
