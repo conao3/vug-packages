@@ -1,0 +1,24 @@
+version = "9999.32"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/C/CA/CAPOEIRAB/File-Slurp-9999.32.tar.gz"
+sha256 = "4c3c21992a9d42be3a79dd74a3c83d27d38057269d65509a2f555ea0fb2bc5b0"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "File::Slurp",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+]
+
+[check]
+enabled = true
+skip = []
