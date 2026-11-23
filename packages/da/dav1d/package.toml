@@ -1,0 +1,8 @@
+name = "dav1d"
+license = "BSD-2-Clause"
+
+[upstream]
+homepage = "https://www.videolan.org/projects/dav1d.html"
+sources = [
+  "https://downloads.videolan.org/pub/videolan/dav1d/",
+]
