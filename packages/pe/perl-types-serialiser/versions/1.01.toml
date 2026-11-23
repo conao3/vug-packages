@@ -1,0 +1,26 @@
+version = "1.01"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/M/ML/MLEHMANN/Types-Serialiser-1.01.tar.gz"
+sha256 = "f8c7173b0914d0e3d957282077b366f0c8c70256715eaef3298ff32b92388a80"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Types::Serialiser",
+  "Types::Serialiser::Error",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+  "perl-common-sense",
+]
+
+[check]
+enabled = true
+skip = []

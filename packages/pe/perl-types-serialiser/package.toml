@@ -1,0 +1,8 @@
+name = "perl-types-serialiser"
+license = "Artistic-1.0-Perl OR GPL-1.0-or-later"
+
+[upstream]
+homepage = "https://metacpan.org/dist/Types-Serialiser"
+sources = [
+  "https://cpan.metacpan.org/authors/id/M/ML/MLEHMANN/",
+]
