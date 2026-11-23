@@ -1,19 +1,23 @@
 """Prune and publish complete, signed vug cache exports."""
 
 import argparse
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
 import os
 from pathlib import Path
 import re
 import shutil
+import subprocess
 import sys
 from tempfile import NamedTemporaryFile
+from threading import Thread
 
 
 ID = re.compile(r"[a-z2-7]{32}")
 SIGNATURE = re.compile(r"[a-f0-9]{128}")
 KEY = re.compile(r"(?:keys|output-keys)/[a-z2-7]{32}")
 ARCHIVE = re.compile(r"paths/[a-z2-7]{32}\.cpio(?:\.zst)?")
+LOCAL_PARTIAL = re.compile(r"(?:paths|keys|output-keys)/\.vug-cache-[a-z0-9_]+\.partial")
 DEFAULT_LIMIT = 9_000_000_000
 
 
@@ -21,7 +25,7 @@ class CacheError(Exception):
     pass
 
 
-def generation(root):
+def generation(root, allow_empty=False):
     objects = {}
     for directory in ("keys", "output-keys"):
         for file in (root / directory).glob("*"):
@@ -46,7 +50,7 @@ def generation(root):
                     raise CacheError(f"Missing archive {archive}")
                 objects[archive] = root / archive
             objects[name] = file
-    if not objects:
+    if not objects and not allow_empty:
         raise CacheError("A generation must contain signed key files")
     return objects
 
@@ -74,7 +78,9 @@ class Directory:
     def put(self, name, source):
         target = self.root / name
         target.parent.mkdir(parents=True, exist_ok=True)
-        with NamedTemporaryFile(dir=target.parent, delete=False) as output:
+        with NamedTemporaryFile(
+            dir=target.parent, prefix=".vug-cache-", suffix=".partial", delete=False,
+        ) as output:
             temporary = Path(output.name)
             try:
                 with source.open("rb") as contents:
@@ -123,6 +129,49 @@ class Bucket:
             )
 
 
+def reachable(args, target, sizes, desired):
+    """Expose exclusively the signed metadata to the local vug resolver."""
+    class Metadata(BaseHTTPRequestHandler):
+        def log_message(self, *_args):
+            pass
+
+        def do_GET(self):
+            name = self.path.removeprefix("/")
+            try:
+                if not KEY.fullmatch(name) or name not in desired and name not in sizes:
+                    self.send_error(404)
+                    return
+                data = (
+                    desired[name].read_bytes() if name in desired
+                    else target.read(name, sizes[name])
+                )
+            except Exception:
+                self.send_error(502)
+                return
+            self.send_response(200)
+            self.send_header("Content-Length", str(len(data)))
+            self.end_headers()
+            self.wfile.write(data)
+
+    with ThreadingHTTPServer(("127.0.0.1", 0), Metadata) as server:
+        thread = Thread(target=server.serve_forever)
+        thread.start()
+        try:
+            result = subprocess.run(
+                [args.vug, "--output", "json", "store", "list-cache",
+                 "--root", args.repository,
+                 "--binary-cache", f"http://127.0.0.1:{server.server_port}",
+                 "--trusted-key", args.trusted_key],
+                capture_output=True, text=True,
+            )
+        finally:
+            server.shutdown()
+            thread.join()
+    if result.returncode:
+        raise CacheError("Could not resolve signed metadata for the repository")
+    return set(json.loads(result.stdout))
+
+
 def publish(args):
     desired = {}
     sources = args.generation[:args.keep]
@@ -132,20 +181,22 @@ def publish(args):
             or args.directory.resolve().is_relative_to(root.resolve())
         ):
             raise CacheError("Export and destination directories must be disjoint")
-        for name, source in generation(root).items():
+        for name, source in generation(root, allow_empty=bool(args.repository)).items():
             existing = desired.setdefault(name, source)
             if KEY.fullmatch(name) and existing.read_bytes() != source.read_bytes():
                 raise CacheError(f"Conflicting retained key {name}")
 
     target = Directory(args.directory) if args.directory else Bucket()
     sizes = target.sizes()
+    retained = reachable(args, target, sizes, desired) if args.repository else desired.keys()
     stale = sorted(
-        (name for name in sizes.keys() - desired.keys()
-         if KEY.fullmatch(name) or ARCHIVE.fullmatch(name)),
+        (name for name in sizes.keys() - retained
+         if KEY.fullmatch(name) or ARCHIVE.fullmatch(name)
+         or (args.directory and LOCAL_PARTIAL.fullmatch(name))),
         key=lambda name: (not KEY.fullmatch(name), name),
     )
     for name, source in desired.items():
-        if name not in sizes:
+        if name not in retained or name not in sizes:
             continue
         size = source.stat().st_size
         if sizes[name] != size or (
@@ -156,7 +207,10 @@ def publish(args):
     for name in stale:
         print(f"Delete {name} ({sizes[name]} bytes)")
     removed = sum(sizes[name] for name in stale)
-    pending = {name: source for name, source in desired.items() if name not in sizes}
+    pending = {
+        name: source for name, source in desired.items()
+        if name in retained and name not in sizes
+    }
     incoming = sum(source.stat().st_size for source in pending.values())
     print(f"Total to delete: {removed} bytes")
     if args.apply:
@@ -184,11 +238,19 @@ def main():
     parser.add_argument("--generation", type=Path, action="append", required=True,
                         help="complete signed export directory, newest first (repeatable)")
     parser.add_argument("--keep", type=int, default=1)
+    parser.add_argument("--repository", type=Path, help="derive retention from current records")
+    parser.add_argument("--vug", default="vug", help="vug executable used with --repository")
+    parser.add_argument("--trusted-key", help="public key used with --repository")
     parser.add_argument("--max-bytes", type=int, default=DEFAULT_LIMIT)
     parser.add_argument("--apply", action="store_true", help="apply the plan")
     args = parser.parse_args()
     if not 1 <= args.keep <= len(args.generation) or args.max_bytes < 1:
         parser.error("require 1 <= keep <= the number of generations and max-bytes >= 1")
+    if args.repository:
+        if args.keep != 1:
+            parser.error("--repository requires exactly one retained generation")
+        if not re.fullmatch(r"[0-9a-fA-F]{64}", args.trusted_key or ""):
+            parser.error("--repository requires a 64-digit hex public key via --trusted-key")
     try:
         publish(args)
     except CacheError as error:

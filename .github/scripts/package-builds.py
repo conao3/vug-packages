@@ -161,12 +161,24 @@ def vug_tag():
     return tag
 
 
-def build_package(name, data, log):
+def build_package(name, data, log, from_source=()):
+    cache_url = os.environ.get("VUG_BINARY_CACHE_URL")
+    public_key = os.environ.get("VUG_CACHE_PUBLIC_KEY")
+    options = []
+    if cache_url and public_key:
+        version, _ = current_record(CANDIDATE / "packages/vu/vug")
+        if version_key(version) >= version_key("0.2.14"):
+            options = ["--binary-cache", cache_url, "--trusted-key", public_key]
+    if options:
+        for package in from_source:
+            if not NAME.fullmatch(package):
+                raise ValueError("Invalid changed package name")
+            options.extend(["--build-from-source", package])
     with log.open("w+b") as stderr:
         result = subprocess.run(
             [VUG, "--output", "json", "package", "build-package",
-             "--root", CANDIDATE, "--name", name, "--jobs", "4",
-             "--data-dir", data, "--cache-dir", data.parent / "sources"],
+             "--root", CANDIDATE, "--name", name, "--jobs", os.environ.get("VUG_BUILD_JOBS", "4"),
+             "--data-dir", data, "--cache-dir", data.parent / "sources", *options],
             stdout=subprocess.PIPE,
             stderr=stderr,
         )
@@ -212,11 +224,12 @@ def build():
     ids = {}
     preview_budget = 160_000
     names = json.loads(os.environ["PACKAGES"])
+    from_source = json.loads(os.environ.get("CHANGED_PACKAGES", "[]"))
     for name in names:
         start = time.monotonic()
         log = reports / f"{name}.log"
         try:
-            outputs = build_package(name, data, log)
+            outputs = build_package(name, data, log, from_source)
             listings = {}
             for output, store_id in sorted(outputs.items()):
                 if not NAME.fullmatch(output) or not STORE_ID.fullmatch(store_id):
@@ -247,6 +260,23 @@ def build():
 
     (reports / "ids.json").write_text(json.dumps(ids, sort_keys=True) + "\n")
     return int(len(ids) != len(names))
+
+
+def cache_plan():
+    base, head = (os.environ[key] for key in ("BASE_SHA", "HEAD_SHA"))
+    ensure_commit(base)
+    ensure_commit(head)
+    checkout(head, CANDIDATE)
+    step_output("tag", vug_tag())
+    files = git("diff", "--name-only", "--no-renames", "-z", base, head, "--", "packages/",
+                capture_output=True).stdout
+    packages = set()
+    for path in filter(None, files.split(b"\0")):
+        _, shard, name, *_ = os.fsdecode(path).split("/")
+        if is_package(shard, name) and (CANDIDATE / "packages" / shard / name / "package.toml").is_file():
+            packages.add(name)
+    step_output("changed", json.dumps(sorted(packages)))
+    return 0
 
 
 def compare():
@@ -323,7 +353,7 @@ install:
 
 
 if __name__ == "__main__":
-    handlers = {"plan": plan, "build": build, "compare": compare, "probe": probe}
+    handlers = {"plan": plan, "build": build, "compare": compare, "probe": probe, "cache-plan": cache_plan}
     command = sys.argv[1]
     if command == "checkout":
         checkout(os.environ["HEAD_SHA"], CANDIDATE)

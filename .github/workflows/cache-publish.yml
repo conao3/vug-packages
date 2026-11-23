@@ -1,0 +1,100 @@
+name: Publish binary cache
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'packages/**'
+      - 'systems/**'
+      - 'services/**'
+      - 'seed.toml'
+      - '.github/workflows/cache-publish.yml'
+permissions:
+  contents: read
+concurrency:
+  group: publish-binary-cache
+  cancel-in-progress: false
+env:
+  VUG_BINARY_CACHE_URL: https://pub-da78c0bd9fc84d998fefca158806f160.r2.dev
+  VUG_CACHE_PUBLIC_KEY: ${{ vars.VUG_CACHE_PUBLIC_KEY }}
+jobs:
+  publish:
+    runs-on: ubuntu-26.04
+    timeout-minutes: 300
+    steps:
+      - name: Check publisher configuration
+        id: config
+        env:
+          HAS_SIGNING_KEY: ${{ secrets.VUG_CACHE_SIGNING_KEY != '' }}
+          HAS_ENDPOINT: ${{ secrets.VUG_CACHE_S3_ENDPOINT != '' }}
+          HAS_ACCESS_KEY: ${{ secrets.VUG_CACHE_S3_ACCESS_KEY_ID != '' }}
+          HAS_SECRET_KEY: ${{ secrets.VUG_CACHE_S3_SECRET_ACCESS_KEY != '' }}
+        run: |
+          ready=false
+          if [[ "$HAS_SIGNING_KEY" == true && "$HAS_ENDPOINT" == true &&
+                "$HAS_ACCESS_KEY" == true && "$HAS_SECRET_KEY" == true &&
+                -n "$VUG_CACHE_PUBLIC_KEY" ]]; then
+            ready=true
+          fi
+          echo "ready=$ready" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@v7.0.1
+        if: steps.config.outputs.ready == 'true'
+        with:
+          persist-credentials: false
+      - name: Select the fixed tree and changed packages
+        id: plan
+        if: steps.config.outputs.ready == 'true'
+        env:
+          BASE_SHA: ${{ github.event.before }}
+          HEAD_SHA: ${{ github.sha }}
+        run: python3 .github/scripts/package-builds.py cache-plan
+      - uses: cachix/install-nix-action@v32.0.0
+        if: steps.config.outputs.ready == 'true'
+      - name: Build changed packages
+        if: steps.config.outputs.ready == 'true'
+        env:
+          VUG_TAG: ${{ steps.plan.outputs.tag }}
+          PACKAGES: ${{ steps.plan.outputs.changed }}
+          CHANGED_PACKAGES: ${{ steps.plan.outputs.changed }}
+          VUG_BUILD_JOBS: "3"
+        run: |
+          sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+          nix build "github:conao3/rust-vug/$VUG_TAG" -o "$RUNNER_TEMP/vug"
+          python3 .github/scripts/package-builds.py build
+      - name: Sign the staged output index
+        if: steps.config.outputs.ready == 'true'
+        env:
+          VUG_CACHE_SIGNING_KEY: ${{ secrets.VUG_CACHE_SIGNING_KEY }}
+        run: |
+          umask 077
+          keyfile=$(mktemp "$RUNNER_TEMP/vug-signing.XXXXXX")
+          trap 'rm -f "$keyfile"' EXIT
+          printf '%s\n' "$VUG_CACHE_SIGNING_KEY" > "$keyfile"
+          unset VUG_CACHE_SIGNING_KEY
+          "$RUNNER_TEMP/vug/bin/vug" store export-cache \
+            --directory "$RUNNER_TEMP/generated-cache" --data-dir "$RUNNER_TEMP/vug-data" \
+            --secret-key-file "$keyfile"
+      - name: Prune and publish within the byte limit
+        shell: bash
+        if: steps.config.outputs.ready == 'true'
+        env:
+          VUG_CACHE_S3_ENDPOINT: ${{ secrets.VUG_CACHE_S3_ENDPOINT }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.VUG_CACHE_S3_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.VUG_CACHE_S3_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: auto
+        run: |
+          current=$(git ls-remote origin refs/heads/master | cut -f1)
+          if [[ "$current" != "$GITHUB_SHA" ]]; then
+            echo "Publication skipped for a superseded commit"
+            exit 0
+          fi
+          if [[ "${VUG_CACHE_S3_ENDPOINT%/}" =~ ^(https://[^/]+)/([a-z0-9][a-z0-9.-]*)$ ]]; then
+            export VUG_CACHE_S3_ENDPOINT="${BASH_REMATCH[1]}"
+            export VUG_CACHE_BUCKET="${BASH_REMATCH[2]}"
+          else
+            echo "Configure the S3 endpoint secret as an HTTPS endpoint followed by the bucket name" >&2
+            exit 1
+          fi
+          nix shell --impure --expr 'let pkgs = import (builtins.getFlake "nixpkgs") { system = builtins.currentSystem; }; in pkgs.python3.withPackages (p: [ p.boto3 ])' \
+            --command python3 .github/scripts/cache-publish.py --s3 --apply \
+            --repository "$RUNNER_TEMP/candidate" --vug "$RUNNER_TEMP/vug/bin/vug" \
+            --generation "$RUNNER_TEMP/generated-cache" --trusted-key "$VUG_CACHE_PUBLIC_KEY"

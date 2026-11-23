@@ -18,6 +18,8 @@ on:
         default: false
 permissions:
   contents: read
+env:
+  VUG_BINARY_CACHE_URL: https://pub-da78c0bd9fc84d998fefca158806f160.r2.dev
 jobs:
   plan:
     runs-on: ubuntu-26.04
@@ -70,6 +72,8 @@ jobs:
       - name: Build and test packages
         if: matrix.lane != 'probe'
         env:
+          CHANGED_PACKAGES: ${{ needs.plan.outputs.changed }}
+          VUG_CACHE_PUBLIC_KEY: ${{ vars.VUG_CACHE_PUBLIC_KEY }}
           PACKAGES: ${{ matrix.lane == 'primary' && needs.plan.outputs.targets || needs.plan.outputs.changed }}
         run: python3 .github/scripts/package-builds.py build
       - name: Save output IDs and file lists
