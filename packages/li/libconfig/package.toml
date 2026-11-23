@@ -1,0 +1,8 @@
+name = "libconfig"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://hyperrealm.github.io/libconfig/"
+sources = [
+  "https://hyperrealm.github.io/libconfig/dist/",
+]
