@@ -1,0 +1,24 @@
+version = "20261105"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/L/LW/LWP/Mozilla-CA-20261105.tar.gz"
+sha256 = "b29dfd05d0f0038091fab9d7a184e8e476bc24fb5de5963cd23d21d262e0be10"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Mozilla::CA",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+]
+
+[check]
+enabled = true
+skip = []

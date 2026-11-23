@@ -1,0 +1,8 @@
+name = "perl-mozilla-ca"
+license = "MPL-2.0"
+
+[upstream]
+homepage = "https://metacpan.org/dist/Mozilla-CA"
+sources = [
+  "https://cpan.metacpan.org/authors/id/L/LW/LWP/",
+]
