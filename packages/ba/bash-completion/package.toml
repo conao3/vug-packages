@@ -1,0 +1,8 @@
+name = "bash-completion"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://github.com/scop/bash-completion"
+sources = [
+  "https://github.com/scop/bash-completion/releases/download/",
+]
