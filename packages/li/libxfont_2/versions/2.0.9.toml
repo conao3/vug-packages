@@ -1,0 +1,34 @@
+version = "2.0.9"
+
+[source]
+url = "https://www.x.org/releases/individual/lib/libXfont2-2.0.9.tar.xz"
+sha256 = "f042a370666815e7b941e9b7019024755bd1c6c2954afbfa515af378251799e2"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--without-xmlto",
+  "--without-fop",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "pkgconf",
+  "xorgproto",
+  "xtrans",
+]
+run = [
+  "freetype",
+  "libfontenc",
+  "musl",
+  "zlib",
+]
+expose = [
+  "xorgproto",
+]
+
+[check]
+enabled = true
+skip = []
