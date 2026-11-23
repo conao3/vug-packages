@@ -1,0 +1,32 @@
+version = "2.6.2"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/S/SY/SYOHEX/Mouse-v2.6.2.tar.gz"
+sha256 = "3ab8b0f9f96cbe43ff23498d900f91add52455dc9a7d6613a0a8186142bdeecf"
+
+[build]
+kind = "perl"
+driver = "module-build"
+modules = [
+  "Mouse",
+]
+
+[dependencies]
+build = [
+  "perl-module-build",
+  "perl-module-build-xsutil",
+  "perl-test-exception",
+  "perl-test-fatal",
+  "perl-test-leaktrace",
+  "perl-test-output",
+  "perl-test-requires",
+  "perl-try-tiny",
+]
+run = [
+  "musl",
+  "perl",
+]
+
+[check]
+enabled = true
+skip = []
