@@ -1,0 +1,8 @@
+name = "python-idna"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://github.com/kjd/idna"
+sources = [
+  "https://files.pythonhosted.org/packages/source/i/idna/",
+]
