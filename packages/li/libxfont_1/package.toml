@@ -1,0 +1,8 @@
+name = "libxfont_1"
+license = "MIT"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/xorg/lib/libxfont"
+sources = [
+  "https://www.x.org/releases/individual/lib/",
+]
