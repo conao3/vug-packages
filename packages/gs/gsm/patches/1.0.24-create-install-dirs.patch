@@ -1,0 +1,17 @@
+--- a/Makefile
++++ b/Makefile
+@@ -332,11 +332,14 @@
+ 
+ gsminstall:
+ 		-if [ x"$(GSM_INSTALL_ROOT)" != x ] ; then	\
++			mkdir -p $(GSM_INSTALL_LIB) $(GSM_INSTALL_INC) \
++				$(GSM_INSTALL_MAN) ;	\
+ 			make $(GSM_INSTALL_TARGETS) ;	\
+ 		fi
+ 
+ toastinstall:
+ 		-if [ x"$(TOAST_INSTALL_ROOT)" != x ]; then	\
++			mkdir -p $(TOAST_INSTALL_BIN) $(TOAST_INSTALL_MAN) ; \
+ 			make $(TOAST_INSTALL_TARGETS);	\
+ 		fi
+ 

@@ -1,0 +1,31 @@
+version = "1.0.24"
+patches = [
+  "1.0.24-create-install-dirs.patch",
+]
+
+[source]
+url = "https://www.quut.com/gsm/gsm-1.0.24.tar.gz"
+sha256 = "a3c40c6471928383f4abfcb2e8f24012a1f562be2f17b8d672145d5986681a92"
+
+[build]
+kind = "make"
+make-flags = [
+  "INSTALL_ROOT={out}",
+  "GSM_INSTALL_INC={out}/include/gsm",
+  "GSM_INSTALL_MAN={out}/share/man/man3",
+  "TOAST_INSTALL_MAN={out}/share/man/man1",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "pkgconf",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
