@@ -1,0 +1,8 @@
+name = "python-fontmath"
+license = "MIT"
+
+[upstream]
+homepage = "https://pypi.org/project/fontMath/"
+sources = [
+  "https://files.pythonhosted.org/packages/69/a5/9abc6de47d7fe4bb7ec7bd3bf67aceb7fcdf7164083d7dfb1e1beb5b0f39/",
+]

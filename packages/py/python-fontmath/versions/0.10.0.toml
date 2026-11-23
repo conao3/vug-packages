@@ -1,0 +1,28 @@
+version = "0.10.0"
+
+[source]
+url = "https://files.pythonhosted.org/packages/69/a5/9abc6de47d7fe4bb7ec7bd3bf67aceb7fcdf7164083d7dfb1e1beb5b0f39/fontmath-0.10.0.tar.gz"
+sha256 = "7b0b39336d83d7fc03fb9dc3c662ef7d26b2c15355a34c643d1cfbd03f89fb74"
+
+[build]
+kind = "python"
+imports = [
+  "fontMath",
+]
+
+[dependencies]
+build = [
+  "python-build",
+  "python-installer",
+  "python-setuptools",
+  "python-setuptools-scm",
+  "python-wheel",
+]
+run = [
+  "python",
+  "python-fonttools",
+]
+
+[check]
+enabled = true
+skip = []
