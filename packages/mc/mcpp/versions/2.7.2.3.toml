@@ -1,0 +1,21 @@
+version = "2.7.2.3"
+
+[source]
+url = "https://github.com/museoa/mcpp/archive/refs/tags/2.7.2.3.tar.gz"
+sha256 = "4f44a3f94abdaf9c31d1c7970b1480c730306034b4850bad963b6150860b8d7f"
+
+[build]
+kind = "autotools"
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
