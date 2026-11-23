@@ -1,0 +1,8 @@
+name = "libpfm"
+license = "MIT"
+
+[upstream]
+homepage = "https://perfmon2.sourceforge.net/"
+sources = [
+  "https://downloads.sourceforge.net/project/perfmon2/libpfm4/",
+]
