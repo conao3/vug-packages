@@ -21,5 +21,8 @@ run = [
 ]
 
 [check]
-enabled = false
-skip = []
+enabled = true
+skip = [
+  "test-c32ispunct.sh",
+  "test-float-h",
+]
