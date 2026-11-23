@@ -14,10 +14,6 @@ configure-flags = [
   "--with-pam",
   "--disable-strip",
 ]
-install-flags = [
-  "sysconfdir={out}/etc/ssh",
-  "PRIVSEP_PATH={out}/var/empty",
-]
 install-targets = [
   "install-nokeys",
 ]
