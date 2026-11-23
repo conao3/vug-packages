@@ -12,8 +12,8 @@ imports = [
 
 [dependencies]
 build = [
-  "flit-core",
   "python-build",
+  "python-flit-core",
   "python-installer",
 ]
 run = [

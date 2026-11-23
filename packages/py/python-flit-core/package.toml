@@ -1,4 +1,4 @@
-name = "flit-core"
+name = "python-flit-core"
 license = "BSD-3-Clause"
 
 [upstream]

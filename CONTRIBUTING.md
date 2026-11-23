@@ -73,7 +73,7 @@ imports = [
 
 [dependencies]
 build = [
-  "flit-core",
+  "python-flit-core",
   "python-build",
   "python-installer",
 ]
