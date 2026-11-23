@@ -1,0 +1,8 @@
+name = "soxr"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://soxr.sourceforge.net/"
+sources = [
+  "https://downloads.sourceforge.net/project/soxr/",
+]
