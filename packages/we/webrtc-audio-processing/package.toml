@@ -1,0 +1,8 @@
+name = "webrtc-audio-processing"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://freedesktop.org/software/pulseaudio/webrtc-audio-processing/"
+sources = [
+  "https://freedesktop.org/software/pulseaudio/webrtc-audio-processing/",
+]

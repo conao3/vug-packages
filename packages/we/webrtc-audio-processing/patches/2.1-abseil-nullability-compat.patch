@@ -1,0 +1,114 @@
+--- a/webrtc/api/abseil_nullability_compat.h
++++ b/webrtc/api/abseil_nullability_compat.h
+@@ -0,0 +1,34 @@
++// Compatibility shim for abseil releases that removed the
++// absl::Nonnull / absl::Nullable / absl::NullabilityUnknown template
++// aliases in favor of the absl_nonnull / absl_nullable macros
++// (templates present through abseil 20250127, gone by 20260817).
++// Upstream documents these annotations as a human readable signal
++// with no semantics, so identity aliases are sufficient.
++
++#ifndef API_ABSEIL_NULLABILITY_COMPAT_H_
++#define API_ABSEIL_NULLABILITY_COMPAT_H_
++
++#include "absl/base/nullability.h"
++
++#if defined(__has_include)
++#  if __has_include("absl/base/internal/nullability_impl.h")
++#    define WEBRTC_ABSEIL_HAS_NULLABILITY_TEMPLATES 1
++#  endif
++#endif
++
++#if !defined(WEBRTC_ABSEIL_HAS_NULLABILITY_TEMPLATES)
++namespace absl {
++
++template <typename T>
++using Nullable = T;
++
++template <typename T>
++using Nonnull = T;
++
++template <typename T>
++using NullabilityUnknown = T;
++
++}  // namespace absl
++#endif  // !defined(WEBRTC_ABSEIL_HAS_NULLABILITY_TEMPLATES)
++
++#endif  // API_ABSEIL_NULLABILITY_COMPAT_H_
+--- a/webrtc/api/audio/audio_processing.h
++++ b/webrtc/api/audio/audio_processing.h
+@@ -28,7 +28,7 @@
+ #include <string>
+ #include <utility>
+ 
+-#include "absl/base/nullability.h"
++#include "api/abseil_nullability_compat.h"
+ #include "absl/strings/string_view.h"
+ #include "api/array_view.h"
+ #include "api/audio/audio_processing_statistics.h"
+--- a/webrtc/api/make_ref_counted.h
++++ b/webrtc/api/make_ref_counted.h
+@@ -13,7 +13,7 @@
+ #include <type_traits>
+ #include <utility>
+ 
+-#include "absl/base/nullability.h"
++#include "api/abseil_nullability_compat.h"
+ #include "api/ref_count.h"
+ #include "api/scoped_refptr.h"
+ #include "rtc_base/ref_counted_object.h"
+--- a/webrtc/api/scoped_refptr.h
++++ b/webrtc/api/scoped_refptr.h
+@@ -66,7 +66,7 @@
+ #include <cstddef>
+ #include <utility>
+ 
+-#include "absl/base/nullability.h"
++#include "api/abseil_nullability_compat.h"
+ 
+ namespace webrtc {
+ 
+--- a/webrtc/modules/audio_processing/aec_dump/aec_dump_factory.h
++++ b/webrtc/modules/audio_processing/aec_dump/aec_dump_factory.h
+@@ -13,7 +13,7 @@
+ 
+ #include <memory>
+ 
+-#include "absl/base/nullability.h"
++#include "api/abseil_nullability_compat.h"
+ #include "absl/strings/string_view.h"
+ #include "api/task_queue/task_queue_base.h"
+ #include "modules/audio_processing/include/aec_dump.h"
+--- a/webrtc/modules/audio_processing/aec_dump/null_aec_dump_factory.cc
++++ b/webrtc/modules/audio_processing/aec_dump/null_aec_dump_factory.cc
+@@ -8,7 +8,7 @@
+  *  be found in the AUTHORS file in the root of the source tree.
+  */
+ 
+-#include "absl/base/nullability.h"
++#include "api/abseil_nullability_compat.h"
+ #include "absl/strings/string_view.h"
+ #include "api/task_queue/task_queue_base.h"
+ #include "modules/audio_processing/aec_dump/aec_dump_factory.h"
+--- a/webrtc/modules/audio_processing/audio_processing_impl.cc
++++ b/webrtc/modules/audio_processing/audio_processing_impl.cc
+@@ -19,7 +19,7 @@
+ #include <type_traits>
+ #include <utility>
+ 
+-#include "absl/base/nullability.h"
++#include "api/abseil_nullability_compat.h"
+ #include "absl/strings/match.h"
+ #include "absl/strings/string_view.h"
+ #include "api/array_view.h"
+--- a/webrtc/modules/audio_processing/audio_processing_impl.h
++++ b/webrtc/modules/audio_processing/audio_processing_impl.h
+@@ -20,7 +20,7 @@
+ #include <string>
+ #include <vector>
+ 
+-#include "absl/base/nullability.h"
++#include "api/abseil_nullability_compat.h"
+ #include "absl/strings/string_view.h"
+ #include "api/array_view.h"
+ #include "api/audio/audio_processing.h"

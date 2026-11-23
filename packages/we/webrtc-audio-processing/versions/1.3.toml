@@ -1,0 +1,26 @@
+version = "1.3"
+
+[source]
+url = "https://freedesktop.org/software/pulseaudio/webrtc-audio-processing/webrtc-audio-processing-1.3.tar.gz"
+sha256 = "95552fc17faa0202133707bbb3727e8c2cf64d4266fe31bfdb2298d769c1db75"
+
+[build]
+kind = "meson"
+
+[dependencies]
+build = [
+  "binutils",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "abseil-cpp",
+  "libcxx",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
