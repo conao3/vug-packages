@@ -1,0 +1,25 @@
+version = "0.18.6"
+patches = [
+  "0.18.6-embed-test-fixtures.patch",
+]
+
+[source]
+url = "https://github.com/seachicken/gh-poi/archive/refs/tags/v0.18.6.tar.gz"
+sha256 = "3321e5cacc17586152be12801dbe99024bf4dd1b58f9abc46a3503be3165760e"
+
+[build]
+kind = "go"
+targets = [
+  { path = ".", bin = "gh-poi" },
+]
+vendor = { url = "https://github.com/conao3/rust-vug/releases/download/v0.2.11/gh-poi-0.18.6-vendor.tar.gz", sha256 = "c2214e79e7bd0185f665097f8524449098bf9f4aadb735028ac202868ee72d39" }
+
+[dependencies]
+build = [
+  "go",
+]
+run = []
+
+[check]
+enabled = true
+skip = []

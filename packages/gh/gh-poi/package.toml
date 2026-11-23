@@ -1,0 +1,8 @@
+name = "gh-poi"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/seachicken/gh-poi"
+sources = [
+  "https://github.com/seachicken/gh-poi/archive/",
+]

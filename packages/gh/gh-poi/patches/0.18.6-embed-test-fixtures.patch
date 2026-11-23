@@ -1,0 +1,33 @@
+--- a/conn/stub.go
++++ b/conn/stub.go
+@@ -1,9 +1,8 @@
+ package conn
+ 
+ import (
+-	"os"
+-	"path/filepath"
+-	"runtime"
++	"embed"
++	"path"
+ 
+ 	"github.com/seachicken/gh-poi/mocks"
+ 	"go.uber.org/mock/gomock"
+@@ -287,14 +286,15 @@
+ 	}
+ }
+ 
++//go:embed fixtures
++var fixtures embed.FS
++
+ func (s *Stub) ReadFile(command string, category string, name string) string {
+-	_, filename, _, _ := runtime.Caller(0)
+-
+ 	ext := ".txt"
+ 	if command == "gh" {
+ 		ext = ".json"
+ 	}
+-	b, err := os.ReadFile(filepath.Join(filename, "..", fixturePath, command, category+"_"+name+ext))
++	b, err := fixtures.ReadFile(path.Join(fixturePath, command, category+"_"+name+ext))
+ 	if err != nil {
+ 		s.T.Fatalf("%v", err)
+ 	}
