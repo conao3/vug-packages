@@ -1,4 +1,7 @@
 version = "1.6.3"
+patches = [
+  "1.6.3-relative-development-library.patch",
+]
 
 [source]
 url = "https://git.kernel.org/pub/scm/linux/kernel/git/dhowells/keyutils.git/snapshot/keyutils-1.6.3.tar.gz"
