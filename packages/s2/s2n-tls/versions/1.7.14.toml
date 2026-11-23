@@ -1,0 +1,27 @@
+version = "1.7.14"
+
+[source]
+url = "https://github.com/aws/s2n-tls/archive/refs/tags/v1.7.14.tar.gz"
+sha256 = "8a8b87b890de23c980aa31925241b52ee3fa49167f7c72bd6762e5d43d5fa892"
+
+[build]
+kind = "cmake"
+setup-flags = [
+  "-DBUILD_SHARED_LIBS=ON",
+  "-DS2N_USE_CRYPTO_SHARED_LIBS=ON",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+]
+run = [
+  "musl",
+  "openssl",
+]
+
+[check]
+enabled = true
+skip = []
