@@ -1,0 +1,8 @@
+name = "python-tzdata"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://github.com/python/tzdata"
+sources = [
+  "https://files.pythonhosted.org/packages/source/t/tzdata/",
+]
