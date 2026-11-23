@@ -8,7 +8,7 @@ sha256 = "4e4e438eac7b840a9383988cbb7c08dad8041da544b9319fc26d319fa7348961"
 kind = "meson"
 setup-flags = [
   "-Dsysconfdir=/etc",
-  "-Dgallium-drivers=llvmpipe,virgl,zink,radeonsi",
+  "-Dgallium-drivers=llvmpipe,virgl,zink,radeonsi,iris,crocus",
   "-Dvulkan-drivers=",
   "-Dllvm=enabled",
   "-Dcpp_rtti=false",
@@ -46,6 +46,8 @@ run = [
   "libdrm",
   "llvm",
   "musl",
+  "spirv-llvm-translator",
+  "spirv-tools",
   "wayland",
   "zlib",
   "zstd",
