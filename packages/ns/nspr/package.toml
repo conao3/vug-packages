@@ -1,0 +1,8 @@
+name = "nspr"
+license = "MPL-2.0"
+
+[upstream]
+homepage = "https://firefox-source-docs.mozilla.org/nspr/index.html"
+sources = [
+  "https://ftp.mozilla.org/pub/nspr/releases/",
+]
