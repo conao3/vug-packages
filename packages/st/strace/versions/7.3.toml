@@ -16,7 +16,6 @@ configure-flags = [
 build = [
   "binutils",
   "gawk",
-  "linux-headers",
   "make",
 ]
 run = [
