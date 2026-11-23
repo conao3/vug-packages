@@ -1,0 +1,31 @@
+version = "1.7.2"
+
+[source]
+url = "https://github.com/hunspell/hunspell/archive/refs/tags/v1.7.2.tar.gz"
+sha256 = "69fa312d3586c988789266eaf7ffc9861d9f6396c31fc930a014d551b59bbd6e"
+
+[build]
+kind = "autotools"
+autoreconf = true
+configure-flags = [
+  "--with-readline",
+]
+
+[dependencies]
+build = [
+  "autoconf",
+  "automake",
+  "binutils",
+  "libtool",
+  "make",
+  "pkgconf",
+]
+run = [
+  "libcxx",
+  "musl",
+  "readline",
+]
+
+[check]
+enabled = true
+skip = []
