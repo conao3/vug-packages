@@ -1,0 +1,33 @@
+version = "1.7.1"
+patches = [
+  "1.7.1-cleanup-includes.patch",
+]
+
+[source]
+url = "https://kernel.org/pub/linux/utils/net/bridge-utils/bridge-utils-1.7.1.tar.xz"
+sha256 = "a61d8be4f1a1405c60c8ef38d544f0c18c05b33b9b07e5b4b31033536165e60e"
+
+[build]
+kind = "autotools"
+autoreconf = true
+
+[dependencies]
+build = [
+  "autoconf",
+  "automake",
+  "binutils",
+  "grep",
+  "libtool",
+  "m4",
+  "make",
+  "perl",
+  "pkgconf",
+  "sed",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
