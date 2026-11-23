@@ -1,0 +1,32 @@
+version = "0.98.1"
+patches = [
+  "0.98.1-cppflags-include.patch",
+]
+
+[source]
+url = "https://github.com/BLAKE2/libb2/archive/refs/tags/v0.98.1.tar.gz"
+sha256 = "10053dbc2fa342516b780a6bbf6e7b2a2360b8d49c5ac426936bf3df82526732"
+
+[build]
+kind = "autotools"
+autoreconf = true
+configure-flags = [
+  "--disable-native",
+]
+
+[dependencies]
+build = [
+  "autoconf",
+  "automake",
+  "binutils",
+  "libtool",
+  "make",
+  "pkgconf",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []

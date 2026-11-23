@@ -1,0 +1,8 @@
+name = "libb2"
+license = "CC0-1.0"
+
+[upstream]
+homepage = "https://blake2.net/"
+sources = [
+  "https://github.com/BLAKE2/libb2/",
+]

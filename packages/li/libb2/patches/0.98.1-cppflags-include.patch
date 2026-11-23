@@ -1,0 +1,11 @@
+--- a/src/Makefile.am
++++ b/src/Makefile.am
+@@ -19,7 +19,7 @@
+ libb2_la_LIBADD = # -lgomp -lpthread
+ libb2_la_CPPFLAGS =  -DSUFFIX=  \
+                      $(LTDLINCL) \
+-                     ${top_builddir}/src/
++                     -I${top_builddir}/src/
+ 
+ include_HEADERS = blake2.h
+ 
