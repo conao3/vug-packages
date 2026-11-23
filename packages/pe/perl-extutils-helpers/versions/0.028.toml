@@ -1,0 +1,25 @@
+version = "0.028"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/L/LE/LEONT/ExtUtils-Helpers-0.028.tar.gz"
+sha256 = "c8574875cce073e7dc5345a7b06d502e52044d68894f9160203fcaab379514fe"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "ExtUtils::Helpers",
+  "ExtUtils::Helpers::Unix",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+]
+
+[check]
+enabled = true
+skip = []
