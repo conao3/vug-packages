@@ -1,0 +1,24 @@
+version = "0.05"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/M/MA/MALLEN/Test-RequiresInternet-0.05.tar.gz"
+sha256 = "bba7b32a1cc0d58ce2ec20b200a7347c69631641e8cae8ff4567ad24ef1e833e"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Test::RequiresInternet",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+]
+
+[check]
+enabled = true
+skip = []
