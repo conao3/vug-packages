@@ -1,0 +1,11 @@
+--- a/src/logging.C	2026-11-24 01:40:56.434464585 +0900
++++ b/src/logging.C	2026-11-24 01:40:56.449696643 +0900
+@@ -144,7 +144,7 @@
+ 
+   if (login_shell)
+     {
+-#if defined(WTMP_SUPPORT) && defined(HAVE_UPDWTMPX)
++#if defined(WTMP_SUPPORT) && defined(HAVE_UPDWTMPX) && defined(WTMPX_FILE)
+       updwtmpx (WTMPX_FILE, &utx);
+ #endif
+ 

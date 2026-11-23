@@ -1,0 +1,8 @@
+name = "libptytty"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "http://software.schmorp.de/pkg/libptytty.html"
+sources = [
+  "https://dist.schmorp.de/libptytty/",
+]
