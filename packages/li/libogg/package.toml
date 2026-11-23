@@ -1,0 +1,8 @@
+name = "libogg"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://www.xiph.org/ogg/"
+sources = [
+  "https://downloads.xiph.org/releases/ogg/",
+]
