@@ -1,0 +1,8 @@
+name = "font-util"
+license = "MIT AND BSD-2-Clause AND BSD-3-Clause"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/xorg/font/util"
+sources = [
+  "https://www.x.org/releases/individual/font/",
+]
