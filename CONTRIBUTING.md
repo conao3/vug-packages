@@ -91,7 +91,7 @@ skip = []
 and checks that its C extension loads. [Jinja2](packages/ji/jinja2/versions/3.1.6.toml)
 uses Flit and imports MarkupSafe at runtime.
 
-- `python-build` invokes the PEP 517 backend through `pyproject-hooks`.
+- `python-build` invokes the PEP 517 backend through `python-pyproject-hooks`.
   `python-installer` installs the resulting wheel. Setuptools builds
   MarkupSafe, and Flit Core builds Jinja2. Use the backend named in the
   sdist's `pyproject.toml`.

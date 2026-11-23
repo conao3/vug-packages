@@ -1,4 +1,4 @@
-name = "pyproject-hooks"
+name = "python-pyproject-hooks"
 license = "MIT"
 
 [upstream]

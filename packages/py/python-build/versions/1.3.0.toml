@@ -14,8 +14,8 @@ install = [
 build = []
 run = [
   "packaging",
-  "pyproject-hooks",
   "python",
+  "python-pyproject-hooks",
 ]
 
 [check]
