@@ -1,0 +1,8 @@
+name = "libfreeaptx"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://github.com/regularhunter/libfreeaptx"
+sources = [
+  "https://github.com/regularhunter/libfreeaptx/archive/refs/tags/",
+]
