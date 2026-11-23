@@ -1,0 +1,8 @@
+name = "python-pdm-backend"
+license = "MIT"
+
+[upstream]
+homepage = "https://pypi.org/project/pdm-backend/"
+sources = [
+  "https://files.pythonhosted.org/packages/fc/d5/a82f533ed51f91a2183faf67a1fcb3b759615ffeca95d05b3e7648bf84bf/",
+]
