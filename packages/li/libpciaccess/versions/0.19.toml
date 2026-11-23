@@ -1,0 +1,29 @@
+version = "0.19"
+
+[source]
+url = "https://www.x.org/releases/individual/lib/libpciaccess-0.19.tar.xz"
+sha256 = "3c55aa86c82e54a4e3109786f0463530d53b36b6d1cfd14616454f985dd2aa43"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dpci-ids={dep:hwdata}/share/hwdata",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "hwdata",
+  "musl",
+  "zlib",
+]
+
+[check]
+enabled = true
+skip = []
