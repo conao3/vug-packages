@@ -1,0 +1,8 @@
+name = "font-alias"
+license = "MIT"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/xorg/font/alias"
+sources = [
+  "https://xorg.freedesktop.org/releases/individual/font/",
+]
