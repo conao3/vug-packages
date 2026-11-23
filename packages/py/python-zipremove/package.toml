@@ -1,0 +1,8 @@
+name = "python-zipremove"
+license = "MIT"
+
+[upstream]
+homepage = "https://pypi.org/project/zipremove/"
+sources = [
+  "https://files.pythonhosted.org/packages/",
+]
