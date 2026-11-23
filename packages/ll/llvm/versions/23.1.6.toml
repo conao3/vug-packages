@@ -96,6 +96,7 @@ paths = [
   "bin/clang-ssaf-*",
   "bin/clang-sycl-linker",
   "bin/clang-tblgen",
+  "bin/diagtool",
   "bin/git-clang-format",
   "bin/llvm-offload-binary",
   "lib/clang",
