@@ -1,0 +1,29 @@
+version = "0.19"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/H/HI/HIDEAKIO/Module-Build-XSUtil-0.19.tar.gz"
+sha256 = "9063b3c346edeb422807ffe49ffb23038c4f900d4a77b845ce4b53d97bf29400"
+
+[build]
+kind = "perl"
+driver = "module-build"
+modules = [
+  "Module::Build::XSUtil",
+]
+
+[dependencies]
+build = [
+  "perl-capture-tiny",
+  "perl-cwd-guard",
+  "perl-file-copy-recursive-reduced",
+  "perl-module-build",
+]
+run = [
+  "perl",
+  "perl-devel-checkcompiler",
+  "perl-module-build",
+]
+
+[check]
+enabled = true
+skip = []
