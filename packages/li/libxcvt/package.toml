@@ -1,0 +1,8 @@
+name = "libxcvt"
+license = "MIT AND HPND-sell-variant"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/xorg/lib/libxcvt"
+sources = [
+  "https://www.x.org/releases/individual/lib/",
+]
