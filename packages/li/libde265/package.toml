@@ -1,0 +1,8 @@
+name = "libde265"
+license = "LGPL-3.0-or-later AND MIT"
+
+[upstream]
+homepage = "https://github.com/strukturag/libde265"
+sources = [
+  "https://github.com/strukturag/libde265/releases/download/",
+]

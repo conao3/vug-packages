@@ -1,0 +1,24 @@
+version = "1.1.3"
+
+[source]
+url = "https://github.com/strukturag/libde265/releases/download/v1.1.3/libde265-1.1.3.tar.gz"
+sha256 = "554228bd17788c99a7e63b37ab5634722190e6e2bf60c1dcb01cef328e133905"
+
+[build]
+kind = "cmake"
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+  "pkgconf",
+]
+run = [
+  "libcxx",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
