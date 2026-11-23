@@ -1,0 +1,8 @@
+name = "python-annotated-types"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/annotated-types/annotated-types"
+sources = [
+  "https://files.pythonhosted.org/packages/source/a/annotated-types/",
+]
