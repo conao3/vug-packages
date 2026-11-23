@@ -1,0 +1,23 @@
+version = "15.2.0-r5"
+
+[source]
+url = "https://dl-cdn.alpinelinux.org/alpine/v3.24/main/x86_64/libgcc-15.2.0-r5.apk"
+sha256 = "393dcd32629f06d7d85409c272d142d0c082772d10b87ef55ee82f47de3be637"
+
+[build]
+kind = "commands"
+commands = [
+  ["sh", "-ec", "set -o pipefail; gzip -dc *.apk | tar -ixf -; mkdir -p {out}/lib; cp -L usr/lib/libgcc_s.so.1 {out}/lib/"],
+]
+
+[dependencies]
+build = [
+  "tar",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
