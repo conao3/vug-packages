@@ -1,0 +1,8 @@
+name = "abseil-cpp"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://abseil.io"
+sources = [
+  "https://github.com/abseil/abseil-cpp/archive/refs/tags/",
+]
