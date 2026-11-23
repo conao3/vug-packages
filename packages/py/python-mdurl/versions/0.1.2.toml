@@ -1,0 +1,25 @@
+version = "0.1.2"
+
+[source]
+url = "https://files.pythonhosted.org/packages/source/m/mdurl/mdurl-0.1.2.tar.gz"
+sha256 = "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
+
+[build]
+kind = "python"
+imports = [
+  "mdurl",
+]
+
+[dependencies]
+build = [
+  "python-build",
+  "python-flit-core",
+  "python-installer",
+]
+run = [
+  "python",
+]
+
+[check]
+enabled = true
+skip = []

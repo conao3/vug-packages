@@ -1,0 +1,8 @@
+name = "python-mdurl"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/executablebooks/mdurl"
+sources = [
+  "https://files.pythonhosted.org/packages/source/m/mdurl/",
+]
