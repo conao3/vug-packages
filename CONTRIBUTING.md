@@ -73,8 +73,8 @@ imports = [
 
 [dependencies]
 build = [
-  "python-flit-core",
   "python-build",
+  "python-flit-core",
   "python-installer",
 ]
 run = [
@@ -95,6 +95,30 @@ uses Flit and imports MarkupSafe at runtime.
   `python-installer` installs the resulting wheel. Setuptools builds
   MarkupSafe, and Flit Core builds Jinja2. Use the backend named in the
   sdist's `pyproject.toml`.
+
+  | `[build-system].requires` in the sdist | vug package in `dependencies.build` |
+  | --- | --- |
+  | `setuptools` | `python-setuptools` |
+  | `setuptools-scm`, including `setuptools_scm[toml]` | `python-setuptools-scm` |
+  | `vcs-versioning` | `python-vcs-versioning` |
+  | `wheel` | `python-wheel` |
+  | `flit_core` | `python-flit-core` |
+  | `hatchling` | `python-hatchling` |
+  | `hatch-vcs` | `python-hatch-vcs` |
+  | `hatch-fancy-pypi-readme` | `python-hatch-fancy-pypi-readme` |
+  | `python-sbom[hatch]` | `python-python-sbom`, with `python-hatchling` for the Hatch plugin |
+  | `poetry-core` | `python-poetry-core` |
+  | `pdm-backend` | `python-pdm-backend` |
+  | `meson-python` | `python-meson-python` |
+  | `meson` | `meson` |
+  | `pyproject-metadata` | `python-pyproject-metadata` |
+  | `cython` | `python-cython` |
+
+  In-tree backends with a `backend-path` use the code from the sdist.
+  Include the frontend, installer, and the backend's applicable build
+  requirements. Meson Python uses the packaged Meson, Samurai and patchelf
+  executables for Linux builds.
+
 - Put import dependencies and native libraries in `run`. Put suite
   runners and plugins in `build`. Use `imports` for import checks,
   `native-imports` to require compiled modules, or set `pytest = true`
