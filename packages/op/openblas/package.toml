@@ -1,0 +1,8 @@
+name = "openblas"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://www.openblas.net/"
+sources = [
+  "https://github.com/OpenMathLib/OpenBLAS/archive/refs/tags/",
+]
