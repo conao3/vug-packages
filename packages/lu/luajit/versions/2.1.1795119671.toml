@@ -1,0 +1,25 @@
+version = "2.1.1795119671"
+
+[source]
+url = "https://github.com/LuaJIT/LuaJIT/archive/96f7b297326e9fd454b7186c6858b2773f94a0dc.tar.gz"
+sha256 = "ce9d03b33e4c28492e8dacacf69c6975a0502cf9225957a6b42dc28f92cbbd34"
+
+[build]
+kind = "make"
+make-flags = [
+  "PREFIX={out}",
+  "XCFLAGS=-DLUAJIT_NO_UNWIND",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

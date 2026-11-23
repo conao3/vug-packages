@@ -1,0 +1,8 @@
+name = "luajit"
+license = "MIT"
+
+[upstream]
+homepage = "https://luajit.org/"
+sources = [
+  "https://github.com/LuaJIT/LuaJIT/archive/",
+]
