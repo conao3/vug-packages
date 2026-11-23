@@ -1,0 +1,8 @@
+name = "openfec"
+license = "CECILL-C"
+
+[upstream]
+homepage = "https://github.com/roc-streaming/openfec"
+sources = [
+  "https://github.com/roc-streaming/openfec/archive/refs/tags/",
+]

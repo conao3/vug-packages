@@ -1,0 +1,11 @@
+--- a/tests/code_params_test.c
++++ b/tests/code_params_test.c
+@@ -197,6 +197,8 @@
+ 					goto error;
+ 				}
+ 				my_params->prng_seed	= rand();
++				if (my_params->prng_seed == 0)
++					my_params->prng_seed = 1;
+ 				my_params->N1		= 5;
+ 				params = (of_parameters_t *) my_params;
+ 				break;
