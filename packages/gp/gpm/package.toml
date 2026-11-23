@@ -1,0 +1,8 @@
+name = "gpm"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://www.nico.schottelius.org/software/gpm/"
+sources = [
+  "https://github.com/telmich/gpm/archive/",
+]
