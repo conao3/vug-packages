@@ -1,0 +1,8 @@
+name = "libxcb-keysyms"
+license = "X11"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/xorg/lib/libxcb-keysyms"
+sources = [
+  "https://xorg.freedesktop.org/archive/individual/xcb/",
+]
