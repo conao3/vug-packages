@@ -1,0 +1,8 @@
+name = "minizip"
+license = "Zlib"
+
+[upstream]
+homepage = "https://www.winimage.com/zLibDll/minizip.html"
+sources = [
+  "https://github.com/madler/zlib/releases/download/",
+]
