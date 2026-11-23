@@ -1,0 +1,8 @@
+name = "perl-test-nowarnings"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://metacpan.org/dist/Test-NoWarnings"
+sources = [
+  "https://cpan.metacpan.org/authors/id/H/HA/HAARG/",
+]

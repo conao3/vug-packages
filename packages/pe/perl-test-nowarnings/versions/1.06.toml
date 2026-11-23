@@ -1,0 +1,24 @@
+version = "1.06"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/H/HA/HAARG/Test-NoWarnings-1.06.tar.gz"
+sha256 = "c2dc51143b7eb63231210e27df20d2c8393772e0a333547ec8b7a205ed62f737"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Test::NoWarnings::Warning",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+]
+
+[check]
+enabled = true
+skip = []
