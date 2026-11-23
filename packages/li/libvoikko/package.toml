@@ -1,0 +1,8 @@
+name = "libvoikko"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://voikko.puimula.org/"
+sources = [
+  "https://www.puimula.org/voikko-sources/libvoikko/",
+]
