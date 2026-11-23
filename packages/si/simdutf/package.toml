@@ -1,0 +1,8 @@
+name = "simdutf"
+license = "Apache-2.0 OR MIT"
+
+[upstream]
+homepage = "https://simdutf.github.io/simdutf/"
+sources = [
+  "https://github.com/simdutf/simdutf/archive/refs/tags/",
+]
