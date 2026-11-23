@@ -1,0 +1,8 @@
+name = "libmpc"
+license = "LGPL-3.0-or-later"
+
+[upstream]
+homepage = "https://www.multiprecision.org/mpc/"
+sources = [
+  "https://ftp.gnu.org/gnu/mpc/",
+]
