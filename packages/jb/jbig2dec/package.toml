@@ -1,0 +1,8 @@
+name = "jbig2dec"
+license = "AGPL-3.0-or-later"
+
+[upstream]
+homepage = "https://jbig2dec.com/"
+sources = [
+  "https://github.com/ArtifexSoftware/jbig2dec/releases/download/",
+]
