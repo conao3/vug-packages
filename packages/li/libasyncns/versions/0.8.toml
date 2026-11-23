@@ -1,0 +1,30 @@
+version = "0.8"
+
+[source]
+url = "https://0pointer.de/lennart/projects/libasyncns/libasyncns-0.8.tar.gz"
+sha256 = "4f1a66e746cbe54ff3c2fbada5843df4fbbbe7481d80be003e8d11161935ab74"
+
+[build]
+kind = "autotools"
+configure-command = [
+  "sh",
+  "-c",
+  "cp {dep:automake}/share/automake-1.20/config.sub config.sub && cp {dep:automake}/share/automake-1.20/config.guess config.guess && ./configure --prefix={out}",
+]
+configure-flags = [
+  "--disable-lynx",
+]
+
+[dependencies]
+build = [
+  "automake",
+  "binutils",
+  "make",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
