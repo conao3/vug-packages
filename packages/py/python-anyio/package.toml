@@ -1,0 +1,8 @@
+name = "python-anyio"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/agronholm/anyio"
+sources = [
+  "https://files.pythonhosted.org/packages/source/a/anyio/",
+]

@@ -1,0 +1,28 @@
+version = "4.16.0"
+
+[source]
+url = "https://files.pythonhosted.org/packages/source/a/anyio/anyio-4.16.0.tar.gz"
+sha256 = "59bb03251907983d1603d27c3087ddb1e93299ea2163adcdba37899a4fb12ffb"
+
+[build]
+kind = "python"
+imports = [
+  "anyio",
+]
+
+[dependencies]
+build = [
+  "python-build",
+  "python-installer",
+  "python-setuptools",
+  "python-setuptools-scm",
+]
+run = [
+  "python",
+  "python-idna",
+  "python-typing-extensions",
+]
+
+[check]
+enabled = true
+skip = []
