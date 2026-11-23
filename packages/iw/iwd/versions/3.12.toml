@@ -13,9 +13,6 @@ configure-flags = [
   "--localstatedir=/var",
   "--sysconfdir=/etc",
 ]
-install-flags = [
-  "daemon_storagedir={out}/var/lib/iwd",
-]
 
 [dependencies]
 build = [
