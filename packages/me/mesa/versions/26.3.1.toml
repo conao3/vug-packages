@@ -29,6 +29,7 @@ build = [
   "bison",
   "flex",
   "linux-headers",
+  "llvm:dev",
   "mako",
   "markupsafe",
   "meson",
@@ -39,12 +40,28 @@ build = [
   "samurai",
   "wayland-protocols",
 ]
+run = []
+
+[outputs.dev]
+paths = [
+  "include",
+  "lib/libEGL.so",
+  "lib/libGLESv1_CM.so",
+  "lib/libGLESv2.so",
+  "lib/libgbm.so",
+  "lib/pkgconfig",
+]
+run = [
+  ":out",
+]
+
+[outputs.out]
 run = [
   "elfutils",
   "expat",
   "libcxx",
   "libdrm",
-  "llvm",
+  "llvm:lib",
   "musl",
   "spirv-llvm-translator",
   "spirv-tools",
