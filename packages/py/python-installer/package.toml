@@ -1,0 +1,8 @@
+name = "python-installer"
+license = "MIT"
+
+[upstream]
+homepage = "https://pypi.org/project/installer/"
+sources = [
+  "https://files.pythonhosted.org/packages/",
+]
