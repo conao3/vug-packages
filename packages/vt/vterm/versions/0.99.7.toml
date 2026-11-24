@@ -1,0 +1,20 @@
+version = "0.99.7"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "libvterm"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/fwm1plyrk1pwxswm34imc94s2grfvkq8-libvterm-0.99.7"
+nar-hash = "sha256:0npn7fiflk8dpyl4q2id6mq8shvw2fggq7431kj43gwqsm9c1b6m"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
