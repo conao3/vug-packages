@@ -1,0 +1,25 @@
+version = "1.04"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Net-SMTP-SSL-1.04.tar.gz"
+sha256 = "7b29c45add19d3d5084b751f7ba89a8e40479a446ce21cfd9cc741e558332a00"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Net::SMTP::SSL",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+  "perl-io-socket-ssl",
+]
+
+[check]
+enabled = true
+skip = []
