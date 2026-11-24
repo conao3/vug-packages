@@ -1,0 +1,19 @@
+version = "0.1.0"
+
+[source]
+url = "https://codeberg.org/kpbaks/tree-sitter-shellcheckrc/archive/v0.1.0.tar.gz"
+sha256 = "9c8cf8ae373180f504e92427365acaecfa31a380094c1d252516842fcb0d7bf5"
+
+[build]
+kind = "tree-sitter"
+language = "shellcheckrc"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

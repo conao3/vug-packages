@@ -1,0 +1,7 @@
+name = "tree-sitter-shellcheckrc"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://codeberg.org/kpbaks/tree-sitter-shellcheckrc/archive/",
+]
