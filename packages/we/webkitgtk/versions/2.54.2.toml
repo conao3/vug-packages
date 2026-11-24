@@ -1,0 +1,22 @@
+version = "2.54.2"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "webkitgtk_4_1"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/9qai6if0m1z0hvmr18prkmswq9hys5wy-webkitgtk-2.54.2+abi=4.1"
+nar-hash = "sha256:0xsqirr20hblnfnrwfbvm9ldjff8qm0aw52ianz60721diq1nb80"
+expose = [
+  "bin/WebKitWebDriver",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
