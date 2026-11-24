@@ -1,0 +1,19 @@
+version = "0-unstable-2026-08-05"
+
+[source]
+url = "https://github.com/tree-sitter-grammars/tree-sitter-tcl/archive/850a72ab6436e06645b33b11cfa60cbdb04b1f01.tar.gz"
+sha256 = "4d3bbc7db5fd3398af714afc3dd4a0b4aba0b372bf30192bc4cff00d5acf54fa"
+
+[build]
+kind = "tree-sitter"
+language = "tcl"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
