@@ -1,0 +1,8 @@
+name = "aws-c-auth"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://github.com/awslabs/aws-c-auth"
+sources = [
+  "https://github.com/awslabs/aws-c-auth/archive/refs/tags/",
+]
