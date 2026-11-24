@@ -1,0 +1,8 @@
+name = "libdbusmenu-gtk3"
+license = "GPL-3.0 AND LGPL-2.1 AND LGPL-3.0"
+
+[upstream]
+homepage = "https://launchpad.net/dbusmenu"
+sources = [
+  "https://cache.nixos.org/",
+]
