@@ -1,0 +1,34 @@
+version = "1.8.0"
+patches = [
+  "1.8.0-pkgconfig-private-libs.patch",
+]
+
+[source]
+url = "https://github.com/libbpf/libbpf/archive/refs/tags/v1.8.0.tar.gz"
+sha256 = "b7a1e685f90f6a63ead0dd85d053694b222975da8d09c1a966041cff6f0055ff"
+
+[build]
+kind = "make"
+make-flags = [
+  "-C",
+  "src",
+  "PREFIX={out}",
+  "LIBSUBDIR=lib",
+  "NO_PKG_CONFIG=1",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "pkgconf",
+]
+run = [
+  "elfutils",
+  "musl",
+  "zlib",
+]
+
+[check]
+enabled = false
+skip = []

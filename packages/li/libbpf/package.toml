@@ -1,0 +1,8 @@
+name = "libbpf"
+license = "LGPL-2.1-only OR BSD-2-Clause"
+
+[upstream]
+homepage = "https://github.com/libbpf/libbpf"
+sources = [
+  "https://github.com/libbpf/libbpf/archive/refs/tags/",
+]

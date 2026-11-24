@@ -1,0 +1,9 @@
+--- a/src/libbpf.pc.template
++++ b/src/libbpf.pc.template
+@@ -8,5 +8,5 @@
+ Description: BPF library
+ Version: @VERSION@
+ Libs: -L${libdir} -lbpf
+-Requires.private: libelf zlib
++Libs.private: -lelf -lz
+ Cflags: -I${includedir}
