@@ -1,0 +1,7 @@
+name = "tree-sitter-talon"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/wenkokke/tree-sitter-talon/archive/",
+]

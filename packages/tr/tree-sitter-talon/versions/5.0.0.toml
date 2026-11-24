@@ -1,0 +1,19 @@
+version = "5.0.0"
+
+[source]
+url = "https://github.com/wenkokke/tree-sitter-talon/archive/refs/tags/5.0.0.tar.gz"
+sha256 = "045d0bac797ace71265b52482243d3eb57b58594fac8c24a1f3c381aea07262d"
+
+[build]
+kind = "tree-sitter"
+language = "talon"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
