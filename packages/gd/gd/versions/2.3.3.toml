@@ -1,0 +1,38 @@
+version = "2.3.3"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "gd"
+
+[build.nix-outputs.bin]
+store-path = "/nix/store/015klvl1ql52hd7d1m1v1d27p9hy1xv0-gd-2.3.3-bin"
+nar-hash = "sha256:1pj2ha9l5anw9gadjnnwfg4fxfqcb8gqwqmrx9zahldbny8zfm37"
+expose = [
+  "bin/annotate",
+  "bin/bdftogd",
+  "bin/gd2copypal",
+  "bin/gd2togif",
+  "bin/gd2topng",
+  "bin/gdcmpgif",
+  "bin/gdparttopng",
+  "bin/gdtopng",
+  "bin/giftogd2",
+  "bin/pngtogd",
+  "bin/pngtogd2",
+  "bin/webpng",
+]
+
+[build.nix-outputs.out]
+store-path = "/nix/store/qqbpzqba841sq9rcmyvqs8wdd7f11gz9-gd-2.3.3"
+nar-hash = "sha256:0g8h4rv33v8h36bcmbyzpkr3zd3db768h8n0q7pi6qdjlswgjd89"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []

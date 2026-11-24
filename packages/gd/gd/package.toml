@@ -1,0 +1,8 @@
+name = "gd"
+license = "GD"
+
+[upstream]
+homepage = "https://libgd.github.io/"
+sources = [
+  "https://cache.nixos.org/",
+]
