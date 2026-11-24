@@ -1,0 +1,19 @@
+version = "0-unstable-2025-12-25"
+
+[source]
+url = "https://github.com/lsh/tree-sitter-mojo/archive/03966fb3f209bea86844aab3bd0f2158a5a8bb8d.tar.gz"
+sha256 = "522de58fba0abbc136ccc8d2853691db70f0984bbaf3d734d3f733fa9406771f"
+
+[build]
+kind = "tree-sitter"
+language = "mojo"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
