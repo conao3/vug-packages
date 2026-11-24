@@ -1,0 +1,7 @@
+name = "tree-sitter-koto"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/koto-lang/tree-sitter-koto/archive/",
+]

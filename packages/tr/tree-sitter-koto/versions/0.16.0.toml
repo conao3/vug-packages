@@ -1,0 +1,19 @@
+version = "0.16.0"
+
+[source]
+url = "https://github.com/koto-lang/tree-sitter-koto/archive/refs/tags/v0.16.0.tar.gz"
+sha256 = "08e9b907c1b7cf38dc3555b420b5b118aa6f9457de7ea2ea8a8dbda4b0749cdd"
+
+[build]
+kind = "tree-sitter"
+language = "koto"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
