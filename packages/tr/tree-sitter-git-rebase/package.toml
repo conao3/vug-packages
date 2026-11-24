@@ -1,0 +1,7 @@
+name = "tree-sitter-git-rebase"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/the-mikedavis/tree-sitter-git-rebase/archive/",
+]

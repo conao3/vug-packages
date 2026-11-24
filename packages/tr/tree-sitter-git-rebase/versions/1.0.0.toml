@@ -1,0 +1,19 @@
+version = "1.0.0"
+
+[source]
+url = "https://github.com/the-mikedavis/tree-sitter-git-rebase/archive/refs/tags/v1.0.0.tar.gz"
+sha256 = "22d84e54cd215cca2fb74bde2ad5b3319191b8d7588a5041c43139bbf2e3b1f4"
+
+[build]
+kind = "tree-sitter"
+language = "git_rebase"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
