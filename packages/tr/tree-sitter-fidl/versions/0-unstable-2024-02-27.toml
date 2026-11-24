@@ -1,0 +1,19 @@
+version = "0-unstable-2024-02-27"
+
+[source]
+url = "https://github.com/google/tree-sitter-fidl/archive/0a8910f293268e27ff554357c229ba172b0eaed2.tar.gz"
+sha256 = "01f0d147f7fec96911be3f348635b9dd611055c809c0deee0d93587f13cbcbab"
+
+[build]
+kind = "tree-sitter"
+language = "fidl"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
