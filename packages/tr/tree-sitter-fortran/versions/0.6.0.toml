@@ -1,0 +1,19 @@
+version = "0.6.0"
+
+[source]
+url = "https://github.com/stadelmanma/tree-sitter-fortran/archive/refs/tags/v0.6.0.tar.gz"
+sha256 = "d917f56a27c6b8e5edb71ba6ea7155a8ec007d4c1376d1b759882d1a7fdd5248"
+
+[build]
+kind = "tree-sitter"
+language = "fortran"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

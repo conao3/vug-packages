@@ -1,0 +1,7 @@
+name = "tree-sitter-fortran"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/stadelmanma/tree-sitter-fortran/archive/",
+]
