@@ -1,0 +1,36 @@
+version = "2.8.2"
+patches = [
+  "2.8.2-pkgconfig-nss-libs.patch",
+]
+
+[source]
+url = "https://www.spice-space.org/download/libcacard/libcacard-2.8.2.tar.xz"
+sha256 = "45fc28a6ff3c7a359d4448132ca190f0a9c760540c445dba4597a5b71de40f68"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--enable-pcsc",
+  "CACARD_CFLAGS=-I{dep:nss}/include/nss -I{dep:nspr}/include/nspr",
+  "CACARD_LIBS=-L{dep:nss}/lib -L{dep:nspr}/lib -lnss3 -lnssutil3 -lnspr4 -lplc4 -lplds4",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "pkgconf",
+]
+run = [
+  "glib",
+  "musl",
+  "nspr",
+  "nss",
+  "pcsclite",
+]
+
+[check]
+enabled = true
+skip = [
+  "tests/hwtests",
+]

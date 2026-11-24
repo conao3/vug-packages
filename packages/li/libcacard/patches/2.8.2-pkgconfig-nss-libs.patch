@@ -1,0 +1,12 @@
+--- a/libcacard.pc.in
++++ b/libcacard.pc.in
+@@ -6,7 +6,8 @@
+ Name: cacard
+ Description: CAC (Common Access Card) library
+ Version: @PACKAGE_VERSION@
+ Requires: glib-2.0
+-Requires.private: nss
++Requires.private: libpcsclite
+ Libs: -L${libdir} -lcacard
++Libs.private: @CACARD_LIBS@
+ Cflags: -I${includedir}/cacard

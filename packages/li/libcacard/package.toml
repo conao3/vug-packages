@@ -1,0 +1,8 @@
+name = "libcacard"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://www.spice-space.org/"
+sources = [
+  "https://www.spice-space.org/download/libcacard/",
+]
