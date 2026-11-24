@@ -1,0 +1,20 @@
+version = "0.2.6"
+
+[source]
+url = "https://github.com/nvim-neorg/tree-sitter-norg/archive/refs/tags/v0.2.6.tar.gz"
+sha256 = "daa41fd98f20f2f55b92b04fdb4bfbc93289f02e5670856ac95e0f78424196ea"
+
+[build]
+kind = "tree-sitter"
+language = "norg"
+
+[dependencies]
+build = []
+run = [
+  "libcxx",
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
