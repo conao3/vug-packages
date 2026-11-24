@@ -1,0 +1,23 @@
+version = "0.30.0"
+
+[source]
+url = "https://github.com/k1LoW/git-wt/archive/refs/tags/v0.30.0.tar.gz"
+sha256 = "e308431b02a2809e54757edbb1f40e8a2a189b03860d5418914f33584339e62c"
+
+[build]
+kind = "go"
+targets = [
+  { path = ".", bin = "git-wt" },
+]
+
+[dependencies]
+build = [
+  "go",
+]
+run = [
+  "git",
+]
+
+[check]
+enabled = true
+skip = []

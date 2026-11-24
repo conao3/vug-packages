@@ -1,0 +1,8 @@
+name = "git-wt"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/k1LoW/git-wt"
+sources = [
+  "https://github.com/k1LoW/git-wt/archive/",
+]
