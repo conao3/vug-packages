@@ -1,0 +1,19 @@
+version = "0-unstable-2022-11-23"
+
+[source]
+url = "https://github.com/the-mikedavis/tree-sitter-edoc/archive/74774af7b45dd9cefbf9510328fc6ff2374afc50.tar.gz"
+sha256 = "aa5d46efc4ed9192c63ccdcfd9120f574309f117e17401ce4adcb91df7579dd9"
+
+[build]
+kind = "tree-sitter"
+language = "edoc"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
