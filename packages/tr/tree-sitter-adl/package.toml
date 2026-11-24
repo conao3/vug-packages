@@ -1,0 +1,7 @@
+name = "tree-sitter-adl"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/adl-lang/tree-sitter-adl/archive/",
+]

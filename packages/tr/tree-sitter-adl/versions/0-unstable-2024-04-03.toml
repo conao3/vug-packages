@@ -1,0 +1,19 @@
+version = "0-unstable-2024-04-03"
+
+[source]
+url = "https://github.com/adl-lang/tree-sitter-adl/archive/2787d04beadfbe154d3f2da6e98dc45a1b134bbf.tar.gz"
+sha256 = "96437e9d8e45a21d3236a2e825928da34a46509750ea75670462594d63e43207"
+
+[build]
+kind = "tree-sitter"
+language = "adl"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
