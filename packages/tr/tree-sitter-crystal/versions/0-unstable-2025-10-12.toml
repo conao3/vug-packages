@@ -1,0 +1,19 @@
+version = "0-unstable-2025-10-12"
+
+[source]
+url = "https://github.com/crystal-lang-tools/tree-sitter-crystal/archive/50ca9e6fcfb16a2cbcad59203cfd8ad650e25c49.tar.gz"
+sha256 = "2d3c20aedf6bbe136d0d88d9ad0ebddbe05c8acdeb4e3dac983accd91a133389"
+
+[build]
+kind = "tree-sitter"
+language = "crystal"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
