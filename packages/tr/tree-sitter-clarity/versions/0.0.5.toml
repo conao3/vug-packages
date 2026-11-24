@@ -1,0 +1,19 @@
+version = "0.0.5"
+
+[source]
+url = "https://github.com/xlittlerag/tree-sitter-clarity/archive/refs/tags/v0.0.5.tar.gz"
+sha256 = "d5e4f0eb955f6bd11b658b5e22b12b0f5c7661e55a11b7c9180dce3fb8dd6e81"
+
+[build]
+kind = "tree-sitter"
+language = "clarity"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
