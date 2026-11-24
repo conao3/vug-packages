@@ -1,0 +1,7 @@
+name = "tree-sitter-styx"
+license = "MIT OR Apache-2.0"
+
+[upstream]
+sources = [
+  "https://github.com/bearcove/styx/archive/",
+]
