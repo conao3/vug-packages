@@ -1,0 +1,8 @@
+name = "symphony"
+license = "EPL-2.0"
+
+[upstream]
+homepage = "https://www.coin-or.org/SYMPHONY/index.htm"
+sources = [
+  "https://cache.nixos.org/",
+]
