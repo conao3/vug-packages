@@ -1,0 +1,47 @@
+version = "12.8.0"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "libvirt"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/1vlzk92z13dk8s5mxjm8rzs52myijwb8-libvirt-12.8.0"
+nar-hash = "sha256:0aijcckqr4m6jhslvnb3jwi6wm453z4lk51p4s2f4njx2y0zx5c8"
+expose = [
+  "bin/libvirtd",
+  "bin/virsh",
+  "bin/virt-admin",
+  "bin/virt-host-validate",
+  "bin/virt-login-shell",
+  "bin/virt-pki-query-dn",
+  "bin/virt-pki-validate",
+  "bin/virt-qemu-qmp-proxy",
+  "bin/virt-qemu-run",
+  "bin/virt-qemu-sev-validate",
+  "bin/virt-ssh-helper",
+  "bin/virt-xml-validate",
+  "bin/virtchd",
+  "bin/virtinterfaced",
+  "bin/virtlockd",
+  "bin/virtlogd",
+  "bin/virtlxcd",
+  "bin/virtnetworkd",
+  "bin/virtnodedevd",
+  "bin/virtnwfilterd",
+  "bin/virtproxyd",
+  "bin/virtqemud",
+  "bin/virtsecretd",
+  "bin/virtstoraged",
+  "bin/virtvboxd",
+  "bin/virtxend",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
