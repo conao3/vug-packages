@@ -1,0 +1,19 @@
+version = "0-unstable-2023-11-22"
+
+[source]
+url = "https://github.com/grafana/tree-sitter-river/archive/eafcdc5147f985fea120feb670f1df7babb2f79e.tar.gz"
+sha256 = "51223afc0ba4a9b97991721b5c81de9c1d7859094a0a84b6918960b1182b8d5d"
+
+[build]
+kind = "tree-sitter"
+language = "river"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

@@ -1,0 +1,7 @@
+name = "tree-sitter-river"
+license = "Apache-2.0"
+
+[upstream]
+sources = [
+  "https://github.com/grafana/tree-sitter-river/archive/",
+]
