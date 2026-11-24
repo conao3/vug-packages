@@ -1,0 +1,8 @@
+name = "aws-lc"
+license = "Apache-2.0 OR ISC"
+
+[upstream]
+homepage = "https://github.com/aws/aws-lc"
+sources = [
+  "https://github.com/aws/aws-lc/archive/refs/tags/",
+]

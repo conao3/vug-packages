@@ -1,0 +1,28 @@
+version = "5.12.0"
+patches = [
+  "5.12.0-jitterentropy-ufortify.patch",
+]
+
+[source]
+url = "https://github.com/aws/aws-lc/archive/refs/tags/v5.12.0.tar.gz"
+sha256 = "52c7f98ffd296d267cc015ad4653d1ffae399db65b14421da4f5f7efc44becd2"
+
+[build]
+kind = "cmake"
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "go",
+  "make",
+  "perl",
+]
+run = [
+  "libcxx",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
