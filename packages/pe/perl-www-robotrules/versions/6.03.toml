@@ -1,0 +1,25 @@
+version = "6.03"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/WWW-RobotRules-6.03.tar.gz"
+sha256 = "8522b532935a11bfa688c2e113bac66729df4851be50c2c26d4b06f45fade472"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "WWW::RobotRules",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+  "perl-uri",
+]
+
+[check]
+enabled = true
+skip = []
