@@ -1,0 +1,19 @@
+version = "0.3.1"
+
+[source]
+url = "https://github.com/yuja/tree-sitter-qmljs/archive/refs/tags/0.3.1.tar.gz"
+sha256 = "a2ec4c64bc60ced57a8c8b527949b873803b64b74e3d524d1197ab853bd1d890"
+
+[build]
+kind = "tree-sitter"
+language = "qmljs"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
