@@ -1,0 +1,32 @@
+version = "0.22.3"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "libraw"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/8yv8prpsksr6sx7i0gqlq1120w6yg9bc-libraw-0.22.3"
+nar-hash = "sha256:0s2cq8im4g76ip1p8qc41zih2d14jzxmf0lyq9wdlygci3mvbc63"
+expose = [
+  "bin/4channels",
+  "bin/dcraw_emu",
+  "bin/dcraw_half",
+  "bin/half_mt",
+  "bin/mem_image",
+  "bin/multirender_test",
+  "bin/postprocessing_benchmark",
+  "bin/raw-identify",
+  "bin/rawtextdump",
+  "bin/simple_dcraw",
+  "bin/unprocessed_raw",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []

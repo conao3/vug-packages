@@ -1,0 +1,8 @@
+name = "libraw"
+license = "CDDL-1.0 OR LGPL-2.0-or-later"
+
+[upstream]
+homepage = "https://www.libraw.org/"
+sources = [
+  "https://cache.nixos.org/",
+]
