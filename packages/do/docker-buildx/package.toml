@@ -1,0 +1,8 @@
+name = "docker-buildx"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://github.com/docker/buildx"
+sources = [
+  "https://github.com/docker/buildx/archive/",
+]
