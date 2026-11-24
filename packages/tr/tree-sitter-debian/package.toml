@@ -1,0 +1,7 @@
+name = "tree-sitter-debian"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://gitlab.com/MggMuggins/tree-sitter-debian/-/archive/",
+]

@@ -1,0 +1,19 @@
+version = "0-unstable-2025-04-01"
+
+[source]
+url = "https://gitlab.com/MggMuggins/tree-sitter-debian/-/archive/9b3f4b78c45aab8a2f25a5f9e7bbc00995bc3dde/tree-sitter-debian-9b3f4b78c45aab8a2f25a5f9e7bbc00995bc3dde.tar.gz"
+sha256 = "c70dff82eb1283b7f94d9d34e281bbaad0e3811db6d7dc4ebb307cee02a0a8e8"
+
+[build]
+kind = "tree-sitter"
+language = "debian"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
