@@ -1,0 +1,19 @@
+version = "0.1.0"
+
+[source]
+url = "https://github.com/pest-parser/tree-sitter-pest/archive/refs/tags/v0.1.0.tar.gz"
+sha256 = "3147bdcedeaea3e4bddd48499bfdf531db410dba0e795aa3d4877268dd22c8da"
+
+[build]
+kind = "tree-sitter"
+language = "pest"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

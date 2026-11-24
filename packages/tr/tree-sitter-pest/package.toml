@@ -1,0 +1,7 @@
+name = "tree-sitter-pest"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/pest-parser/tree-sitter-pest/archive/",
+]
