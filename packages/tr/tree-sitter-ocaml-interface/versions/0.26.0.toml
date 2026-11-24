@@ -1,0 +1,20 @@
+version = "0.26.0"
+
+[source]
+url = "https://github.com/tree-sitter/tree-sitter-ocaml/archive/refs/tags/v0.26.0.tar.gz"
+sha256 = "6b70d9aa7672dfb6ee09e95296292298383a6ba657bbdc07c3340135f0146cfe"
+
+[build]
+kind = "tree-sitter"
+path = "grammars/interface"
+language = "ocaml_interface"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
