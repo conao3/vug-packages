@@ -1,0 +1,8 @@
+name = "bcache-tools"
+license = "GPL-2.0-only"
+
+[upstream]
+homepage = "https://git.kernel.org/pub/scm/linux/kernel/git/colyli/bcache-tools.git"
+sources = [
+  "https://git.kernel.org/pub/scm/linux/kernel/git/colyli/bcache-tools.git/snapshot/",
+]
