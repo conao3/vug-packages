@@ -1,0 +1,7 @@
+name = "tree-sitter-typespec"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/happenslol/tree-sitter-typespec/archive/",
+]
