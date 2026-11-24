@@ -1,0 +1,19 @@
+version = "0-unstable-2022-12-01"
+
+[source]
+url = "https://github.com/ath3/tree-sitter-passwd/archive/20239395eacdc2e0923a7e5683ad3605aee7b716.tar.gz"
+sha256 = "74996de5b372b2fe106acae9b3aa036f008000e173a9a1ccfd258c134ccff5a7"
+
+[build]
+kind = "tree-sitter"
+language = "passwd"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
