@@ -1,0 +1,7 @@
+name = "tree-sitter-turtle"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/GordianDziwis/tree-sitter-turtle/archive/",
+]

@@ -1,0 +1,19 @@
+version = "0.1.0"
+
+[source]
+url = "https://github.com/GordianDziwis/tree-sitter-turtle/archive/refs/tags/0.1.0.tar.gz"
+sha256 = "23fd5d2a9565c101a9caa223ea5e361516a3cd9d0bc2d600d62d3ecdf041f1cf"
+
+[build]
+kind = "tree-sitter"
+language = "turtle"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
