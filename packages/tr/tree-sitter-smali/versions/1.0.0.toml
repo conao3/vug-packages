@@ -1,0 +1,19 @@
+version = "1.0.0"
+
+[source]
+url = "https://github.com/amaanq/tree-sitter-smali/archive/refs/tags/v1.0.0.tar.gz"
+sha256 = "ba0d34a21520d7874f745082529db09207ce9fbbb41be16d05bf6cf35588b079"
+
+[build]
+kind = "tree-sitter"
+language = "smali"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
