@@ -1,0 +1,19 @@
+version = "0.1.7"
+
+[source]
+url = "https://github.com/rshtml/tree-sitter-rshtml/archive/refs/tags/v0.1.7.tar.gz"
+sha256 = "96d17e9afe1a8fd187a84ca023b389ea400c01713770700a88acce6b428156ec"
+
+[build]
+kind = "tree-sitter"
+language = "rshtml"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

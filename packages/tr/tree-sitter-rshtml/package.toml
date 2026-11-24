@@ -1,0 +1,7 @@
+name = "tree-sitter-rshtml"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/rshtml/tree-sitter-rshtml/archive/",
+]
