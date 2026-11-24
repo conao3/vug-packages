@@ -1,0 +1,8 @@
+name = "codex-release"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://github.com/openai/codex"
+sources = [
+  "https://cache.nixos.org/",
+]
