@@ -1,0 +1,7 @@
+name = "tree-sitter-freebasic"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/Ra77a3l3-jar/tree-sitter-freebasic/archive/",
+]
