@@ -1,0 +1,19 @@
+version = "0-unstable-2025-12-12"
+
+[source]
+url = "https://github.com/novusnota/tree-sitter-ohm/archive/a1de3e748a185a335b446613aaeff1eb10e83cdf.tar.gz"
+sha256 = "88ba343d672038a59da87d6d26c2ed54c0f098fcb7b41d25d1439ae4b99c5d66"
+
+[build]
+kind = "tree-sitter"
+language = "ohm"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

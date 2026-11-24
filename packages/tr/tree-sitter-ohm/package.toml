@@ -1,0 +1,7 @@
+name = "tree-sitter-ohm"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/novusnota/tree-sitter-ohm/archive/",
+]
