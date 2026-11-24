@@ -1,0 +1,8 @@
+name = "perl-mousex-nativetraits"
+license = "Artistic-1.0-Perl OR GPL-1.0-or-later"
+
+[upstream]
+homepage = "https://metacpan.org/dist/MouseX-NativeTraits"
+sources = [
+  "https://cpan.metacpan.org/authors/id/G/GF/GFUJI/",
+]

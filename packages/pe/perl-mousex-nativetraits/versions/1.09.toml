@@ -1,0 +1,53 @@
+version = "1.09"
+patches = [
+  "1.09-inc-in-inc.patch",
+]
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/G/GF/GFUJI/MouseX-NativeTraits-1.09.tar.gz"
+sha256 = "f8a5bf5a28702dfb13c8093be5c41cab9c5fc1c5d247ab91e22e7dd72764cb5e"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Mouse::Meta::Attribute::Custom::Trait::Array",
+  "Mouse::Meta::Attribute::Custom::Trait::Bool",
+  "Mouse::Meta::Attribute::Custom::Trait::Code",
+  "Mouse::Meta::Attribute::Custom::Trait::Counter",
+  "Mouse::Meta::Attribute::Custom::Trait::Hash",
+  "Mouse::Meta::Attribute::Custom::Trait::Number",
+  "Mouse::Meta::Attribute::Custom::Trait::String",
+  "Mouse::Meta::Attribute::Native",
+  "MouseX::NativeTraits",
+  "MouseX::NativeTraits::ArrayRef",
+  "MouseX::NativeTraits::Bool",
+  "MouseX::NativeTraits::CodeRef",
+  "MouseX::NativeTraits::Counter",
+  "MouseX::NativeTraits::HashRef",
+  "MouseX::NativeTraits::MethodProvider",
+  "MouseX::NativeTraits::MethodProvider::ArrayRef",
+  "MouseX::NativeTraits::MethodProvider::Bool",
+  "MouseX::NativeTraits::MethodProvider::CodeRef",
+  "MouseX::NativeTraits::MethodProvider::Counter",
+  "MouseX::NativeTraits::MethodProvider::HashRef",
+  "MouseX::NativeTraits::MethodProvider::Num",
+  "MouseX::NativeTraits::MethodProvider::Str",
+  "MouseX::NativeTraits::Num",
+  "MouseX::NativeTraits::Str",
+]
+
+[dependencies]
+build = [
+  "make",
+  "perl-any-moose",
+  "perl-test-fatal",
+]
+run = [
+  "perl",
+  "perl-mouse",
+]
+
+[check]
+enabled = true
+skip = []
