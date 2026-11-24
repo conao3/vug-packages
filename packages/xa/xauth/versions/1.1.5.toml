@@ -1,0 +1,27 @@
+version = "1.1.5"
+
+[source]
+url = "https://www.x.org/releases/individual/app/xauth-1.1.5.tar.xz"
+sha256 = "a4000e2f441facebf569026bedecc23ba262cc6927be52070abe0002625cfbe0"
+
+[build]
+kind = "autotools"
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "pkgconf",
+  "xorgproto",
+]
+run = [
+  "libx11",
+  "libxau",
+  "libxext",
+  "libxmu",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
