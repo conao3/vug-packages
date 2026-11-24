@@ -1,0 +1,20 @@
+version = "1.9.0"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "python3Packages.torchmetrics"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/sbdl5qv3l1n6lqa7r8k7rpssr0m496q5-python3.14-torchmetrics-1.9.0"
+nar-hash = "sha256:0qlpr07c9m4lh38h637bnngiismysz1l6mnimxjqa5scaakp02xh"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []

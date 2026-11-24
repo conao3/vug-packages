@@ -1,0 +1,8 @@
+name = "python-torchmetrics"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://lightning.ai/docs/torchmetrics/"
+sources = [
+  "https://cache.nixos.org/",
+]
