@@ -1,0 +1,19 @@
+version = "1.0.0"
+
+[source]
+url = "https://github.com/tree-sitter-grammars/tree-sitter-hare/archive/refs/tags/v1.0.0.tar.gz"
+sha256 = "f931b57887ca68d36972dcb6ba8ea137d0bb816039774f673e7164dff84f1bac"
+
+[build]
+kind = "tree-sitter"
+language = "hare"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

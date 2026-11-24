@@ -1,0 +1,7 @@
+name = "tree-sitter-hare"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/tree-sitter-grammars/tree-sitter-hare/archive/",
+]
