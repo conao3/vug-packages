@@ -1,0 +1,31 @@
+version = "0.09"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/T/TO/TOKUHIROM/FCGI-Client-0.09.tar.gz"
+sha256 = "d537cb09ce5aab3f447a6bb4415e46cc06efe01611cd56289b5582bdb46221e8"
+
+[build]
+kind = "perl"
+driver = "module-build"
+modules = [
+  "FCGI::Client",
+  "FCGI::Client::Connection",
+  "FCGI::Client::Constant",
+  "FCGI::Client::Record",
+  "FCGI::Client::RecordFactory",
+  "FCGI::Client::RecordHeader",
+]
+
+[dependencies]
+build = [
+  "perl-module-build-tiny",
+]
+run = [
+  "perl",
+  "perl-moo",
+  "perl-type-tiny",
+]
+
+[check]
+enabled = true
+skip = []
