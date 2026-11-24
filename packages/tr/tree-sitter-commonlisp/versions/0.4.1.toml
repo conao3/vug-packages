@@ -1,0 +1,19 @@
+version = "0.4.1"
+
+[source]
+url = "https://github.com/tree-sitter-grammars/tree-sitter-commonlisp/archive/refs/tags/v0.4.1.tar.gz"
+sha256 = "f9767782bf94e82b847094f632f2db95b342e0ab54b1b8c8234cc1d6ac6c69a5"
+
+[build]
+kind = "tree-sitter"
+language = "commonlisp"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
