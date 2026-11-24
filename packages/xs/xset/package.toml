@@ -1,0 +1,8 @@
+name = "xset"
+license = "MIT-open-group"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/xorg/app/xset"
+sources = [
+  "https://www.x.org/releases/individual/app/",
+]
