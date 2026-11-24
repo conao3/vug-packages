@@ -1,0 +1,19 @@
+version = "0-unstable-2023-10-13"
+
+[source]
+url = "https://gitlab.com/api/v4/projects/TheZoq2%2Ftree-sitter-lpf/repository/archive.tar.gz?sha=db7372e60c722ca7f12ab359e57e6bf7611ab126"
+sha256 = "dc17fdac692e2a1267e776e995448bc38e13eab238a1619e0347228341e1c96c"
+
+[build]
+kind = "tree-sitter"
+language = "lpf"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

@@ -1,0 +1,7 @@
+name = "tree-sitter-lpf"
+license = "NOASSERTION"
+
+[upstream]
+sources = [
+  "https://gitlab.com/api/v4/projects/TheZoq2%2Ftree-sitter-lpf/repository/",
+]
