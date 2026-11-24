@@ -1,0 +1,31 @@
+version = "3.1.1"
+
+[source]
+url = "https://github.com/zxing-cpp/zxing-cpp/archive/refs/tags/v3.1.1.tar.gz"
+sha256 = "7286b1e6ade66fe82b7c8208b4595deeb55d6486b410834fdc65702f46650542"
+
+[build]
+kind = "cmake"
+setup-flags = [
+  "-DZXING_C_API=OFF",
+  "-DZXING_EXAMPLES=OFF",
+  "-DZXING_USE_BUNDLED_ZINT=OFF",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "libpng",
+  "make",
+  "zlib",
+]
+run = [
+  "libcxx",
+  "musl",
+  "zint",
+]
+
+[check]
+enabled = false
+skip = []

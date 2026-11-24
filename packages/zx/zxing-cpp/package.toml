@@ -1,0 +1,8 @@
+name = "zxing-cpp"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://github.com/zxing-cpp/zxing-cpp"
+sources = [
+  "https://github.com/zxing-cpp/zxing-cpp/archive/refs/tags/",
+]
