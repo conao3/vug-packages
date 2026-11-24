@@ -1,0 +1,19 @@
+version = "0.1.3"
+
+[source]
+url = "https://github.com/uncenter/tree-sitter-tera/archive/refs/tags/v0.1.3.tar.gz"
+sha256 = "6542327cae503b099661b32c41101c89fdc08eedcd0a8af3d4860baa2bd75a15"
+
+[build]
+kind = "tree-sitter"
+language = "tera"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

@@ -1,0 +1,7 @@
+name = "tree-sitter-tera"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/uncenter/tree-sitter-tera/archive/",
+]
