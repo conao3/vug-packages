@@ -1,0 +1,19 @@
+version = "0-unstable-2025-05-04"
+
+[source]
+url = "https://github.com/rotmh/tree-sitter-dunstrc/archive/9cb9d5cc51cf5e2a47bb2a0e2f2e519ff11c1431.tar.gz"
+sha256 = "0e0aaf8955400b05cc3652bed5af6a01a8ce96204c69530b853d1429a4383f7d"
+
+[build]
+kind = "tree-sitter"
+language = "dunstrc"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
