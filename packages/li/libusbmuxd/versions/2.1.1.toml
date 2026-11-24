@@ -1,0 +1,24 @@
+version = "2.1.1"
+
+[source]
+url = "https://github.com/libimobiledevice/libusbmuxd/releases/download/2.1.1/libusbmuxd-2.1.1.tar.bz2"
+sha256 = "5546f1aba1c3d1812c2b47d976312d00547d1044b84b6a461323c621f396efce"
+
+[build]
+kind = "autotools"
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "pkgconf",
+]
+run = [
+  "libimobiledevice-glue",
+  "libplist",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []

@@ -1,0 +1,8 @@
+name = "libusbmuxd"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://libimobiledevice.org/"
+sources = [
+  "https://github.com/libimobiledevice/libusbmuxd/releases/download/",
+]
