@@ -1,0 +1,19 @@
+version = "0-unstable-2025-09-24"
+
+[source]
+url = "https://github.com/mi2ebi/tree-sitter-nearley/archive/12d01113e194c8e83f6341aab8c2a5f21db9cac9.tar.gz"
+sha256 = "07c22b95199326dc6a20f7daad09d218a12f7ab5dfbb338afb9b70736fc91867"
+
+[build]
+kind = "tree-sitter"
+language = "nearley"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

@@ -1,0 +1,7 @@
+name = "tree-sitter-nearley"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/mi2ebi/tree-sitter-nearley/archive/",
+]
