@@ -1,0 +1,20 @@
+version = "0-unstable-2022-05-17"
+
+[source]
+url = "https://github.com/wasm-lsp/tree-sitter-wasm/archive/2ca28a9f9d709847bf7a3de0942a84e912f59088.tar.gz"
+sha256 = "96f4e008abc75ec94a290f7a49963cbecaf0605f58fa0ba175ab04b96c911aeb"
+
+[build]
+kind = "tree-sitter"
+path = "wast"
+language = "wast"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
