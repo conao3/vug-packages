@@ -1,0 +1,8 @@
+name = "perl-gd"
+license = "Artistic-1.0 OR GPL-1.0-or-later"
+
+[upstream]
+homepage = "https://metacpan.org/dist/GD"
+sources = [
+  "https://cache.nixos.org/",
+]
