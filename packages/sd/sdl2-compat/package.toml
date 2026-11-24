@@ -1,0 +1,8 @@
+name = "sdl2-compat"
+license = "Zlib"
+
+[upstream]
+homepage = "https://libsdl.org"
+sources = [
+  "https://cache.nixos.org/",
+]
