@@ -1,0 +1,27 @@
+version = "1.0.0"
+
+[source]
+url = "https://github.com/awslabs/aws-c-cal/archive/refs/tags/v1.0.0.tar.gz"
+sha256 = "9c6d424d206dd7822aa44fa39ce31575dcbaa83133620abdac8e56e4cea9667c"
+
+[build]
+kind = "cmake"
+setup-flags = [
+  "-DAWS_USE_CRYPTO_SHARED_LIBS=ON",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+]
+run = [
+  "aws-c-common",
+  "musl",
+  "openssl",
+]
+
+[check]
+enabled = true
+skip = []
