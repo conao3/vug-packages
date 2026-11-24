@@ -1,0 +1,19 @@
+version = "1.0"
+
+[source]
+url = "https://github.com/rockorager/tree-sitter-scfg/archive/refs/tags/1.0.tar.gz"
+sha256 = "4c66f4b343d68209a40e371570c9f91c1a0a4154f5393bc383d91dd936d4a20d"
+
+[build]
+kind = "tree-sitter"
+language = "scfg"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

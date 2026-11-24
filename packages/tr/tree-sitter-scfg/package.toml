@@ -1,0 +1,7 @@
+name = "tree-sitter-scfg"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/rockorager/tree-sitter-scfg/archive/",
+]
