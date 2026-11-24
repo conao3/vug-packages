@@ -1,0 +1,19 @@
+version = "0-unstable-2025-07-14"
+
+[source]
+url = "https://github.com/nik-rev/tree-sitter-rust-format-args/archive/3cf8431a4951656bcf24ae06689fbd094fce0187.tar.gz"
+sha256 = "059b9fe7f633eec78ff927ec699b70ac7d1144a319d32394eb395ad3fc3b3176"
+
+[build]
+kind = "tree-sitter"
+language = "rust_format_args"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

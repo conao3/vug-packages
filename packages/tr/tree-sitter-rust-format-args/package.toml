@@ -1,0 +1,7 @@
+name = "tree-sitter-rust-format-args"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/nik-rev/tree-sitter-rust-format-args/archive/",
+]
