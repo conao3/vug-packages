@@ -1,0 +1,19 @@
+version = "0.10.3"
+
+[source]
+url = "https://github.com/Isopod/tree-sitter-pascal/archive/refs/tags/v0.10.3.tar.gz"
+sha256 = "cec09978472aa2b83a99f544c365b698e37d7f2fda8f92d2b859d309e8f3082f"
+
+[build]
+kind = "tree-sitter"
+language = "pascal"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

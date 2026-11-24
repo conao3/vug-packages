@@ -1,0 +1,7 @@
+name = "tree-sitter-pascal"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/Isopod/tree-sitter-pascal/archive/",
+]
