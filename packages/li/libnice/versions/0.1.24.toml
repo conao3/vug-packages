@@ -1,0 +1,28 @@
+version = "0.1.24"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "libnice"
+
+[build.nix-outputs.bin]
+store-path = "/nix/store/d6l556wl9i2h5aff4r4b0lbh2vf2yibd-libnice-0.1.24-bin"
+nar-hash = "sha256:10xc349in5nfg06qdjnl2gasxg5kd05gmq4a9w9fzs0p7y295g26"
+expose = [
+  "bin/stunbdc",
+  "bin/stund",
+]
+
+[build.nix-outputs.out]
+store-path = "/nix/store/fr1nbg6z20py9gz4v0mmqfnlgiabwlz3-libnice-0.1.24"
+nar-hash = "sha256:13hcmixpvhc5x5vj1bxjbwzfdcxc5vmlq77l39z7aq7rdci1mlv7"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []

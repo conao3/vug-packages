@@ -1,0 +1,8 @@
+name = "libnice"
+license = "LGPL-2.1 OR MPL-1.1"
+
+[upstream]
+homepage = "https://libnice.freedesktop.org/"
+sources = [
+  "https://cache.nixos.org/",
+]
