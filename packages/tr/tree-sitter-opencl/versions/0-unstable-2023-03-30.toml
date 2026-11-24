@@ -1,0 +1,19 @@
+version = "0-unstable-2023-03-30"
+
+[source]
+url = "https://github.com/lefp/tree-sitter-opencl/archive/8e1d24a57066b3cd1bb9685bbc1ca9de5c1b78fb.tar.gz"
+sha256 = "919d96678787666c0381b2382ca4942fd1f29a688e58c3ee36e7193fbb466f13"
+
+[build]
+kind = "tree-sitter"
+language = "opencl"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
