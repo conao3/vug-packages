@@ -1,0 +1,8 @@
+name = "libxmu"
+license = "MIT-open-group AND MIT"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/xorg/lib/libxmu"
+sources = [
+  "https://www.x.org/releases/individual/lib/",
+]
