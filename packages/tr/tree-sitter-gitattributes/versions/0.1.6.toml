@@ -1,0 +1,19 @@
+version = "0.1.6"
+
+[source]
+url = "https://github.com/tree-sitter-grammars/tree-sitter-gitattributes/archive/refs/tags/v0.1.6.tar.gz"
+sha256 = "118a66d8b3332593e61f7466ac3f21fd15b580e60eb2436ca3ee70955d6714ae"
+
+[build]
+kind = "tree-sitter"
+language = "gitattributes"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
