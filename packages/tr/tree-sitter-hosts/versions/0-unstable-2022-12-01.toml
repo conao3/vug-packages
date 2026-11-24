@@ -1,0 +1,19 @@
+version = "0-unstable-2022-12-01"
+
+[source]
+url = "https://github.com/ath3/tree-sitter-hosts/archive/301b9379ce7dfc8bdbe2c2699a6887dcb73953f9.tar.gz"
+sha256 = "ef454996b90abe0d209a6e32af509b243c2b681de8189e7d772342801a4b395e"
+
+[build]
+kind = "tree-sitter"
+language = "hosts"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

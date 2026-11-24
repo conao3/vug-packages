@@ -1,0 +1,7 @@
+name = "tree-sitter-hosts"
+license = "Unlicense"
+
+[upstream]
+sources = [
+  "https://github.com/ath3/tree-sitter-hosts/archive/",
+]
