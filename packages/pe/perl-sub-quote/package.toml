@@ -1,0 +1,8 @@
+name = "perl-sub-quote"
+license = "Artistic-1.0-Perl OR GPL-1.0-or-later"
+
+[upstream]
+homepage = "https://metacpan.org/dist/Sub-Quote"
+sources = [
+  "https://cpan.metacpan.org/authors/id/H/HA/HAARG/",
+]
