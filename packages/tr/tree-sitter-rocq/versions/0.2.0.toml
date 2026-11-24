@@ -1,0 +1,19 @@
+version = "0.2.0"
+
+[source]
+url = "https://github.com/aruzdh/tree-sitter-rocq/archive/refs/tags/v0.2.0.tar.gz"
+sha256 = "90b89bd5958b89e1623f769e3aba5296ba923b25da50a18d8e46db17be576ee9"
+
+[build]
+kind = "tree-sitter"
+language = "rocq"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
