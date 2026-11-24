@@ -1,0 +1,29 @@
+version = "6.12"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Cookies-6.12.tar.gz"
+sha256 = "4e460c4bae76285bfc726f641349402fc9038fcd9ca0f33346bec036d73876b8"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "HTTP::Cookies",
+  "HTTP::Cookies::Netscape",
+]
+
+[dependencies]
+build = [
+  "make",
+  "perl-http-message",
+  "perl-uri",
+]
+run = [
+  "perl",
+  "perl-http-date",
+  "perl-http-message",
+]
+
+[check]
+enabled = true
+skip = []
