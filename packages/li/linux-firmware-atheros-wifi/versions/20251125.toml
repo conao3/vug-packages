@@ -1,0 +1,36 @@
+version = "20251125"
+
+[source]
+url = "https://cdn.kernel.org/pub/linux/kernel/firmware/linux-firmware-20251125.tar.xz"
+sha256 = "eb807a01c52882ac97ef5b678d4a246b209e6165ac1287d62a5f93a09ee93cd2"
+
+[build]
+kind = "prebuilt"
+install = [
+  { from = "ath9k_htc", to = "lib/firmware/ath9k_htc" },
+  { from = "ath10k", to = "lib/firmware/ath10k" },
+  { from = "ath11k", to = "lib/firmware/ath11k" },
+  { from = "WHENCE", to = "share/licenses/linux-firmware-atheros-wifi/WHENCE" },
+  { from = "LICENCE.atheros_firmware", to = "share/licenses/linux-firmware-atheros-wifi/LICENCE.atheros_firmware" },
+  { from = "LICENCE.open-ath9k-htc-firmware", to = "share/licenses/linux-firmware-atheros-wifi/LICENCE.open-ath9k-htc-firmware" },
+  { from = "LICENSE.QualcommAtheros_ath10k", to = "share/licenses/linux-firmware-atheros-wifi/LICENSE.QualcommAtheros_ath10k" },
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
+
+[links]
+"lib/firmware/ath10k/WCN3990/hw1.0/qrb4210/firmware-5.bin" = "../qcm2290/firmware-5.bin"
+"lib/firmware/ath10k/WCN3990/hw1.0/qrb4210/wlanmdsp.mbn" = "../qcm2290/wlanmdsp.mbn"
+"lib/firmware/ath11k/WCN6750/hw1.0/wpss.mdt" = "sc7280/wpss.mbn"
+"lib/firmware/ath11k/WCN6855/hw2.1/amss.bin" = "../hw2.0/amss.bin"
+"lib/firmware/ath11k/WCN6855/hw2.1/board-2.bin" = "../hw2.0/board-2.bin"
+"lib/firmware/ath11k/WCN6855/hw2.1/m3.bin" = "../hw2.0/m3.bin"
+"lib/firmware/ath11k/WCN6855/hw2.1/nfa765/amss.bin" = "../../hw2.0/nfa765/amss.bin"
+"lib/firmware/ath11k/WCN6855/hw2.1/nfa765/m3.bin" = "../../hw2.0/nfa765/m3.bin"
+"lib/firmware/ath11k/WCN6855/hw2.1/regdb.bin" = "../hw2.0/regdb.bin"

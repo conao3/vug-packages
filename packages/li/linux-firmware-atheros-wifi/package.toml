@@ -1,0 +1,8 @@
+name = "linux-firmware-atheros-wifi"
+license = "LicenseRef-linux-firmware-atheros-wifi"
+
+[upstream]
+homepage = "https://gitlab.com/kernel-firmware/linux-firmware"
+sources = [
+  "https://cdn.kernel.org/pub/linux/kernel/firmware/",
+]
