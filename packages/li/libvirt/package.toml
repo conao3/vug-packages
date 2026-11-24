@@ -1,0 +1,8 @@
+name = "libvirt"
+license = "LGPL-2.0-or-later"
+
+[upstream]
+homepage = "https://libvirt.org/"
+sources = [
+  "https://cache.nixos.org/",
+]
