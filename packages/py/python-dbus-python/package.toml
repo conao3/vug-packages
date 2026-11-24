@@ -1,0 +1,8 @@
+name = "python-dbus-python"
+license = "MIT AND (GPL-2.0-or-later OR AFL-2.1)"
+
+[upstream]
+homepage = "https://dbus.freedesktop.org/doc/dbus-python/"
+sources = [
+  "https://files.pythonhosted.org/packages/",
+]

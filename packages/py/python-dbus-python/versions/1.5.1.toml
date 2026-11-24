@@ -1,0 +1,41 @@
+version = "1.5.1"
+patches = [
+  "1.5.1-build-requires.patch",
+]
+
+[source]
+url = "https://files.pythonhosted.org/packages/f3/cc/23f24bc7cbfec3a0ab508b7e11bc98837d77a91445d5f666a8545353a147/dbus_python-1.5.1.tar.gz"
+sha256 = "57423cf87d09b7d084f420b55b737fe654c33339b06df77945620d97795c6ac4"
+
+[build]
+kind = "python"
+imports = [
+  "dbus",
+]
+native-imports = [
+  "_dbus_bindings",
+  "_dbus_glib_bindings",
+]
+
+[dependencies]
+build = [
+  "meson",
+  "patchelf",
+  "pkgconf",
+  "python-build",
+  "python-installer",
+  "python-meson-python",
+  "python-setuptools",
+  "python-wheel",
+  "samurai",
+]
+run = [
+  "dbus",
+  "glib",
+  "musl",
+  "python",
+]
+
+[check]
+enabled = true
+skip = []
