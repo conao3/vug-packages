@@ -1,0 +1,46 @@
+version = "0.75"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/I/IN/INGY/Pegex-0.75.tar.gz"
+sha256 = "4dc8d335de80b25247cdb3f946f0d10d9ba0b3c34b0ed7d00316fd068fd05edc"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Pegex",
+  "Pegex::Base",
+  "Pegex::Bootstrap",
+  "Pegex::Compiler",
+  "Pegex::Grammar",
+  "Pegex::Grammar::Atoms",
+  "Pegex::Input",
+  "Pegex::Module",
+  "Pegex::Optimizer",
+  "Pegex::Parser",
+  "Pegex::Parser::Indent",
+  "Pegex::Pegex::AST",
+  "Pegex::Pegex::Grammar",
+  "Pegex::Receiver",
+  "Pegex::Regex",
+  "Pegex::Tree",
+  "Pegex::Tree::Wrap",
+]
+
+[dependencies]
+build = [
+  "make",
+  "perl-file-sharedir-install",
+  "perl-test-pod",
+  "perl-tie-ixhash",
+]
+run = [
+  "perl",
+  "perl-file-sharedir-install",
+  "perl-xxx",
+  "perl-yaml-pp",
+]
+
+[check]
+enabled = true
+skip = []
