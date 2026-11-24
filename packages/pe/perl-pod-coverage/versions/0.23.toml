@@ -1,0 +1,29 @@
+version = "0.23"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/Pod-Coverage-0.23.tar.gz"
+sha256 = "30b7a0b0c942f44a7552c0d34e9b1f2e0ba0b67955c61e3b1589ec369074b107"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Pod::Coverage",
+  "Pod::Coverage::CountParents",
+  "Pod::Coverage::ExportOnly",
+  "Pod::Coverage::Overloader",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+  "perl-devel-symdump",
+  "perl-pod-parser",
+]
+
+[check]
+enabled = true
+skip = []
