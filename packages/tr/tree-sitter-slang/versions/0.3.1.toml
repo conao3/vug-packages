@@ -1,0 +1,19 @@
+version = "0.3.1"
+
+[source]
+url = "https://github.com/tree-sitter-grammars/tree-sitter-slang/archive/refs/tags/v0.3.1.tar.gz"
+sha256 = "81c5ca98baa698071294d5d7f71c11e77000501a3c0f7a8cd0fec08e117c09ff"
+
+[build]
+kind = "tree-sitter"
+language = "slang"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
