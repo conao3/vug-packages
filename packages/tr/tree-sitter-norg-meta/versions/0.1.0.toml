@@ -1,0 +1,19 @@
+version = "0.1.0"
+
+[source]
+url = "https://github.com/nvim-neorg/tree-sitter-norg-meta/archive/refs/tags/v0.1.0.tar.gz"
+sha256 = "467acb3ff6dd6beada041f4b409a9853d70ae8429010d121b9549beb176256a7"
+
+[build]
+kind = "tree-sitter"
+language = "norg_meta"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
