@@ -1,7 +1,7 @@
 version = "0.5.4"
 patches = [
   "0.5.4-automake-config-header.patch",
-  "0.5.4-drop-panelctl.patch",
+  "0.5.4-remove-panelctl.patch",
 ]
 
 [source]

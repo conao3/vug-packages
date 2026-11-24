@@ -10,13 +10,13 @@
  EXTRA_DIST = $(man_MANS)
  
  dvcont_SOURCES = dvcont.c
-@@ -27,9 +27,6 @@
- avc_vcr_SOURCES = avc_vcr.c
+@@ -24,9 +24,5 @@
  avc_vcr_LDADD = ../libavc1394/libavc1394.la \
  	@LIBRAW1394_LIBS@
--
+ 
 -panelctl_SOURCES = panelctl.c
 -panelctl_LDADD = ../librom1394/librom1394.la ../libavc1394/libavc1394.la \
 -	@LIBRAW1394_LIBS@
- 
+-
  INCLUDES = @LIBRAW1394_CFLAGS@
+ 
