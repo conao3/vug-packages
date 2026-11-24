@@ -1,0 +1,8 @@
+name = "ayatana-ido"
+license = "LGPL-3.0-or-later AND LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://github.com/AyatanaIndicators/ayatana-ido"
+sources = [
+  "https://cache.nixos.org/",
+]
