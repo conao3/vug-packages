@@ -1,0 +1,19 @@
+version = "2.0.0"
+
+[source]
+url = "https://github.com/osthomas/tree-sitter-snakemake/archive/refs/tags/v2.0.0.tar.gz"
+sha256 = "e86854efadf966a7d4385233f813cc6ae5d4edb8f15669d04cb87e6a7a44c738"
+
+[build]
+kind = "tree-sitter"
+language = "snakemake"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

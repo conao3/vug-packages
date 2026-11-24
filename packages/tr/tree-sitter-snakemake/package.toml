@@ -1,0 +1,7 @@
+name = "tree-sitter-snakemake"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/osthomas/tree-sitter-snakemake/archive/",
+]
