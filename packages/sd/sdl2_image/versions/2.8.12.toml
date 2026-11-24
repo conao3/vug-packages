@@ -1,0 +1,20 @@
+version = "2.8.12"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "SDL2_image"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/g8bqnngg4d9idcl86018zpfmiiwrqm6g-SDL2_image-2.8.12"
+nar-hash = "sha256:0x6j5sr7cz5yidpbgf6y8rw5gm1zv293k8vg3dgil5i6gn7xaj1s"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
