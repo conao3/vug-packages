@@ -1,0 +1,19 @@
+version = "0-unstable-2024-05-03"
+
+[source]
+url = "https://github.com/vito/tree-sitter-bass/archive/28dc7059722be090d04cd751aed915b2fee2f89a.tar.gz"
+sha256 = "b23f5b737fd809b7894c990acfb09d2528756dce64a39d758424147b852f0e36"
+
+[build]
+kind = "tree-sitter"
+language = "bass"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
