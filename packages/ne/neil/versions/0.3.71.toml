@@ -1,0 +1,22 @@
+version = "0.3.71"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "neil"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/0lqkh8gslkqk046h3s74bzvs5rz3y5ps-neil-0.3.71"
+nar-hash = "sha256:1lcmm2h483akciq6010vxrls0adwgxr98hvdalwcy45ckh8lz9fs"
+expose = [
+  "bin/neil",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
