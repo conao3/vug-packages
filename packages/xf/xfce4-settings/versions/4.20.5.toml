@@ -1,0 +1,33 @@
+version = "4.20.5"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "xfce.xfce4-settings"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/0rgd7iiq3ghwq5lg52agdxl8gj78w7qf-xfce4-settings-4.20.5"
+nar-hash = "sha256:10b8z2ijhji6mx04a94ikci2f3hgpw200p71a3r087jg2wh8wn96"
+expose = [
+  "bin/xfce4-accessibility-settings",
+  "bin/xfce4-appearance-settings",
+  "bin/xfce4-color-settings",
+  "bin/xfce4-display-settings",
+  "bin/xfce4-find-cursor",
+  "bin/xfce4-keyboard-settings",
+  "bin/xfce4-mime-helper",
+  "bin/xfce4-mime-settings",
+  "bin/xfce4-mouse-settings",
+  "bin/xfce4-settings-editor",
+  "bin/xfce4-settings-manager",
+  "bin/xfsettingsd",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
