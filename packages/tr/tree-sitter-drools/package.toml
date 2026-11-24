@@ -1,0 +1,7 @@
+name = "tree-sitter-drools"
+license = "AGPL-3.0-only"
+
+[upstream]
+sources = [
+  "https://github.com/iByteABit256/tree-sitter-drools/archive/",
+]

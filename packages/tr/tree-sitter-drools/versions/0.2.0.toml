@@ -1,0 +1,19 @@
+version = "0.2.0"
+
+[source]
+url = "https://github.com/iByteABit256/tree-sitter-drools/archive/refs/tags/v0.2.0.tar.gz"
+sha256 = "e9f164cc5cbaa21873005f0d8c96586650513ce0cfdf55fbd16566e1fb16415c"
+
+[build]
+kind = "tree-sitter"
+language = "drools"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
