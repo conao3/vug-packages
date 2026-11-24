@@ -1,0 +1,28 @@
+version = "7.0.0"
+
+[source]
+url = "https://get.videolan.org/libdvdnav/7.0.0/libdvdnav-7.0.0.tar.xz"
+sha256 = "a2a18f5ad36d133c74bf9106b6445806fa253b09141a46392550394b647b221e"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dc_args=-D_LARGEFILE64_SOURCE",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "libdvdread",
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

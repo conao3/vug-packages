@@ -1,0 +1,8 @@
+name = "libdvdnav"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://www.videolan.org/developers/libdvdnav.html"
+sources = [
+  "https://get.videolan.org/libdvdnav/",
+]
