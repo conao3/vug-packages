@@ -1,0 +1,7 @@
+name = "tree-sitter-llvm-mir"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/Flakebi/tree-sitter-llvm-mir/archive/",
+]

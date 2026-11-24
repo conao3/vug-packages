@@ -1,0 +1,19 @@
+version = "0-unstable-2024-10-03"
+
+[source]
+url = "https://github.com/Flakebi/tree-sitter-llvm-mir/archive/d166ff8c5950f80b0a476956e7a0ad2f27c12505.tar.gz"
+sha256 = "ae28f73d646c1ae100e276c00b406f295e5238cefcff04f71329ad34f44888f5"
+
+[build]
+kind = "tree-sitter"
+language = "llvm_mir"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
