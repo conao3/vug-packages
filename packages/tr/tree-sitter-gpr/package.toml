@@ -1,0 +1,7 @@
+name = "tree-sitter-gpr"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/brownts/tree-sitter-gpr/archive/",
+]

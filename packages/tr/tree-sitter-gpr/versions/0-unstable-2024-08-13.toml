@@ -1,0 +1,19 @@
+version = "0-unstable-2024-08-13"
+
+[source]
+url = "https://github.com/brownts/tree-sitter-gpr/archive/cea857d3c18d1385d1f5b66cd09ea1e44173945c.tar.gz"
+sha256 = "2a97f95afe8f9f3c3b6ba14606aa24171c342b4fd653b92a8ef494c83516aaa6"
+
+[build]
+kind = "tree-sitter"
+language = "gpr"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
