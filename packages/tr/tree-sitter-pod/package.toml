@@ -1,0 +1,7 @@
+name = "tree-sitter-pod"
+license = "Artistic-2.0"
+
+[upstream]
+sources = [
+  "https://github.com/tree-sitter-perl/tree-sitter-pod/archive/",
+]

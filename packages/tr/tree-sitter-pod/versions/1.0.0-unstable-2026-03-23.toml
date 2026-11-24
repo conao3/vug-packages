@@ -1,0 +1,19 @@
+version = "1.0.0-unstable-2026-03-23"
+
+[source]
+url = "https://github.com/tree-sitter-perl/tree-sitter-pod/archive/3f15a3f11b422753fbf985190dceacb4bbf80ecf.tar.gz"
+sha256 = "46c6844a25681df2238903d16f6903e53c1c627c1fc3849d2f017d401fadd4de"
+
+[build]
+kind = "tree-sitter"
+language = "pod"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
