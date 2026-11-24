@@ -1,0 +1,8 @@
+name = "passt"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://passt.top/passt/"
+sources = [
+  "https://passt.top/passt/snapshot/",
+]

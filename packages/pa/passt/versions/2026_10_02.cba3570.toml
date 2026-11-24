@@ -1,0 +1,29 @@
+version = "2026_10_02.cba3570"
+patches = [
+  "2026_10_02.cba3570-getconf-fallback.patch",
+]
+
+[source]
+url = "https://passt.top/passt/snapshot/passt-2026_10_02.cba3570.tar.gz"
+sha256 = "7b81892b1070521ed217de672cdce43d7a37436e6f850cd04f2b63919ac484b6"
+
+[build]
+kind = "make"
+make-flags = [
+  "prefix={out}",
+  "VERSION=2026_10_02.cba3570",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "coreutils",
+  "make",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
