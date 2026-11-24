@@ -1,0 +1,24 @@
+version = "1.4.2"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "libavif"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/1blkcb0z0qb32pgis9sjn4z8516b5yfv-libavif-1.4.2"
+nar-hash = "sha256:0xiq6ln8nwafjrvpnq40vwck2yp3cxv9hgp5s0s9v8i21b6q93vx"
+expose = [
+  "bin/avifdec",
+  "bin/avifenc",
+  "bin/avifgainmaputil",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
