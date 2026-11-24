@@ -1,0 +1,8 @@
+name = "libsamplerate"
+license = "BSD-2-Clause"
+
+[upstream]
+homepage = "https://libsndfile.github.io/libsamplerate/"
+sources = [
+  "https://cache.nixos.org/",
+]
