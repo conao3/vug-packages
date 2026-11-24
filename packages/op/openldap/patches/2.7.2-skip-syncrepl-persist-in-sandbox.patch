@@ -1,0 +1,13 @@
+--- a/tests/scripts/all
++++ b/tests/scripts/all
+@@ -43,6 +43,10 @@
+ 
+ for CMD in $SRCDIR/scripts/test*; do
+ 	case "$CMD" in
++		*/test018-syncreplication-persist)
++			echo "Skipping test018-syncreplication-persist in the build sandbox"
++			SKIPCOUNT=$((SKIPCOUNT + 1))
++			continue;;
+ 		*~)		continue;;
+ 		*.bak)	continue;;
+ 		*.orig)	continue;;

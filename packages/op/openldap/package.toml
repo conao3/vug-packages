@@ -1,0 +1,8 @@
+name = "openldap"
+license = "OLDAP-2.8"
+
+[upstream]
+homepage = "https://www.openldap.org/"
+sources = [
+  "https://www.openldap.org/software/download/OpenLDAP/openldap-release/",
+]

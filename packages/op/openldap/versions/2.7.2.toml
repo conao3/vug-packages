@@ -1,0 +1,34 @@
+version = "2.7.2"
+patches = [
+  "2.7.2-skip-syncrepl-persist-in-sandbox.patch",
+]
+
+[source]
+url = "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.7.2.tgz"
+sha256 = "aad731aa22118ff327b9b4ddfc4b6f18ef9476586205da88a532e90940b523d2"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--with-cyrus-sasl",
+  "--with-systemd",
+  "systemdsystemunitdir=/usr/lib/systemd/system",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "groff",
+  "make",
+  "pkgconf",
+]
+run = [
+  "cyrus-sasl",
+  "musl",
+  "openssl",
+  "systemd",
+]
+
+[check]
+enabled = true
+skip = []
