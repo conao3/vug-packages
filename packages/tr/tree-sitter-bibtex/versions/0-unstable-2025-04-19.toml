@@ -1,0 +1,19 @@
+version = "0-unstable-2025-04-19"
+
+[source]
+url = "https://github.com/latex-lsp/tree-sitter-bibtex/archive/8d04ed27b3bc7929f14b7df9236797dab9f3fa66.tar.gz"
+sha256 = "be1d4ae3cdb7ee85bc4c153bd54905ba50480dafb310bae2129761f654bf2d50"
+
+[build]
+kind = "tree-sitter"
+language = "bibtex"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

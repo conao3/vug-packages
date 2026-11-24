@@ -1,0 +1,7 @@
+name = "tree-sitter-bibtex"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/latex-lsp/tree-sitter-bibtex/archive/",
+]
