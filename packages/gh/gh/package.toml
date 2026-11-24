@@ -1,0 +1,8 @@
+name = "gh"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/cli/cli"
+sources = [
+  "https://github.com/cli/cli/archive/",
+]

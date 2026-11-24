@@ -1,0 +1,28 @@
+version = "2.104.0"
+patches = [
+  "2.104.0-complete-go-module-checksums.patch",
+  "2.104.0-skip-ssh-tests-without-passwd.patch",
+]
+
+[source]
+url = "https://github.com/cli/cli/archive/refs/tags/v2.104.0.tar.gz"
+sha256 = "779060cbdc5a354fa2fc8afb56e9277f64a29ac599daefd941558356509081e4"
+
+[build]
+kind = "go"
+targets = [
+  { path = "./cmd/gh", bin = "gh" },
+]
+
+[dependencies]
+build = [
+  "go",
+]
+run = [
+  "git",
+  "openssh",
+]
+
+[check]
+enabled = true
+skip = []
