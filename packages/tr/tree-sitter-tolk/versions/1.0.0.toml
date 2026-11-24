@@ -1,0 +1,20 @@
+version = "1.0.0"
+
+[source]
+url = "https://github.com/ton-blockchain/ton-language-server/archive/refs/tags/v1.0.0.tar.gz"
+sha256 = "355536ada8baa19e6c65d03b0fefea2e4b8538b00c17c2078b2cab0c0b79b890"
+
+[build]
+kind = "tree-sitter"
+path = "server/src/languages/tolk/tree-sitter-tolk"
+language = "tolk"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

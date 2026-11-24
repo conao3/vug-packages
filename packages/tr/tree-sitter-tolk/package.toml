@@ -1,0 +1,7 @@
+name = "tree-sitter-tolk"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/ton-blockchain/ton-language-server/archive/",
+]
