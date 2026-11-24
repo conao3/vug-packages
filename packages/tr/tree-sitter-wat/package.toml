@@ -1,0 +1,7 @@
+name = "tree-sitter-wat"
+license = "Apache-2.0 WITH LLVM-exception"
+
+[upstream]
+sources = [
+  "https://github.com/wasm-lsp/tree-sitter-wasm/archive/",
+]
