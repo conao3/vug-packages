@@ -1,0 +1,19 @@
+version = "0-unstable-2024-10-29"
+
+[source]
+url = "https://github.com/vala-lang/tree-sitter-vala/archive/97e6db3c8c73b15a9541a458d8e797a07f588ef4.tar.gz"
+sha256 = "a53037a628b4cf2421b40265824bdb0b382c815426096d2d07cb6718ba5c09a0"
+
+[build]
+kind = "tree-sitter"
+language = "vala"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

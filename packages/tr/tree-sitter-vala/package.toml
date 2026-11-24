@@ -1,0 +1,7 @@
+name = "tree-sitter-vala"
+license = "LGPL-2.1-only"
+
+[upstream]
+sources = [
+  "https://github.com/vala-lang/tree-sitter-vala/archive/",
+]
