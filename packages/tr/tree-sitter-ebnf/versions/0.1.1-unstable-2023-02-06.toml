@@ -1,0 +1,24 @@
+version = "0.1.1-unstable-2023-02-06"
+
+[source]
+url = "https://github.com/RubixDev/ebnf/archive/8e635b0b723c620774dfb8abf382a7f531894b40.tar.gz"
+sha256 = "72581ce45548f646609b66eefb361f24b52a4f297eb965d2bc344e7e7e8da8d2"
+
+[build]
+kind = "tree-sitter"
+path = "crates/tree-sitter-ebnf"
+language = "ebnf"
+generate = true
+
+[dependencies]
+build = [
+  "nodejs",
+  "tree-sitter-cli",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

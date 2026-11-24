@@ -1,0 +1,7 @@
+name = "tree-sitter-ebnf"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/RubixDev/ebnf/archive/",
+]
