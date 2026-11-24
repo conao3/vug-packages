@@ -1,0 +1,19 @@
+version = "0-unstable-2026-04-17"
+
+[source]
+url = "https://github.com/slint-ui/tree-sitter-slint/archive/68b25244cec6eb9d7f8f790ef781c29c822d8f84.tar.gz"
+sha256 = "f223c77ab25d328b5a44812e81a36f6b5f121b6ee538312b869992a36e60f660"
+
+[build]
+kind = "tree-sitter"
+language = "slint"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

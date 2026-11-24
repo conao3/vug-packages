@@ -1,0 +1,7 @@
+name = "tree-sitter-slint"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/slint-ui/tree-sitter-slint/archive/",
+]
