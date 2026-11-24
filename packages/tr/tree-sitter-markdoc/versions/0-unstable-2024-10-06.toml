@@ -1,0 +1,19 @@
+version = "0-unstable-2024-10-06"
+
+[source]
+url = "https://github.com/markdoc-extra/tree-sitter-markdoc/archive/e4211fe541a13350275e4684de79adfebe9a91f8.tar.gz"
+sha256 = "c82420c194feeb23a8e18b11c0011f46cef964bb719c7712adf18f41bbd62e0c"
+
+[build]
+kind = "tree-sitter"
+language = "markdoc"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

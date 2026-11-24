@@ -1,0 +1,7 @@
+name = "tree-sitter-markdoc"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/markdoc-extra/tree-sitter-markdoc/archive/",
+]
