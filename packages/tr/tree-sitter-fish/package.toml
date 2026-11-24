@@ -1,0 +1,7 @@
+name = "tree-sitter-fish"
+license = "Unlicense"
+
+[upstream]
+sources = [
+  "https://github.com/ram02z/tree-sitter-fish/archive/",
+]

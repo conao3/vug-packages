@@ -1,0 +1,19 @@
+version = "3.7.0"
+
+[source]
+url = "https://github.com/ram02z/tree-sitter-fish/archive/refs/tags/3.7.0.tar.gz"
+sha256 = "00234274eebcd0815bb3679b0ac82d96c69a61a9e4d7db9dd2ab34fc89010871"
+
+[build]
+kind = "tree-sitter"
+language = "fish"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
