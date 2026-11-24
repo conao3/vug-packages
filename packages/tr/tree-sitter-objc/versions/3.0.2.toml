@@ -1,0 +1,19 @@
+version = "3.0.2"
+
+[source]
+url = "https://github.com/tree-sitter-grammars/tree-sitter-objc/archive/refs/tags/v3.0.2.tar.gz"
+sha256 = "186d03ecb9ae41cde85efbe283dcbe67c277fff766a946f7efd6d51fee72370d"
+
+[build]
+kind = "tree-sitter"
+language = "objc"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
