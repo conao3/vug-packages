@@ -1,0 +1,20 @@
+version = "0.1.1"
+
+[source]
+url = "https://github.com/plankevm/plank-monorepo/archive/refs/tags/v0.1.1.tar.gz"
+sha256 = "458fb5ab96879134bbb9e438b393fcae2a1435176f5f926acebb376fde4cf635"
+
+[build]
+kind = "tree-sitter"
+path = "plank-tree-sitter"
+language = "plank"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

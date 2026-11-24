@@ -1,0 +1,7 @@
+name = "tree-sitter-plank"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/plankevm/plank-monorepo/archive/",
+]
