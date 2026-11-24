@@ -1,0 +1,19 @@
+version = "0.0.2"
+
+[source]
+url = "https://github.com/ember-tooling/tree-sitter-glimmer-javascript/archive/refs/tags/v0.0.2.tar.gz"
+sha256 = "151be88ea2553367a865bc2f8600ca623aeef8981f89b62b6b593feb18dee0e9"
+
+[build]
+kind = "tree-sitter"
+language = "glimmer_javascript"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

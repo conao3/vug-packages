@@ -1,0 +1,7 @@
+name = "tree-sitter-glimmer-javascript"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/ember-tooling/tree-sitter-glimmer-javascript/archive/",
+]
