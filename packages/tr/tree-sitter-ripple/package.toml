@@ -1,0 +1,7 @@
+name = "tree-sitter-ripple"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/Ripple-TS/ripple/archive/",
+]

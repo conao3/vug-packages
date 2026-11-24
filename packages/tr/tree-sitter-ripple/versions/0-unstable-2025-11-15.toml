@@ -1,0 +1,20 @@
+version = "0-unstable-2025-11-15"
+
+[source]
+url = "https://github.com/Ripple-TS/ripple/archive/49762f0a63de0d1845fcd2e6632639c095995336.tar.gz"
+sha256 = "9df162df3fed9435c1c557feccf140dc36d09439c242a2feb07e27c8eeb161f3"
+
+[build]
+kind = "tree-sitter"
+path = "packages/tree-sitter"
+language = "ripple"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
