@@ -1,0 +1,7 @@
+name = "tree-sitter-pgn"
+license = "BSD-2-Clause"
+
+[upstream]
+sources = [
+  "https://github.com/rolandwalker/tree-sitter-pgn/archive/",
+]
