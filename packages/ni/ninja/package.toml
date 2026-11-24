@@ -1,0 +1,8 @@
+name = "ninja"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://ninja-build.org/"
+sources = [
+  "https://github.com/ninja-build/ninja/archive/refs/tags/",
+]
