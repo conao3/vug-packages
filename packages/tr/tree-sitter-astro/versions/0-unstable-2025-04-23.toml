@@ -1,0 +1,19 @@
+version = "0-unstable-2025-04-23"
+
+[source]
+url = "https://github.com/virchau13/tree-sitter-astro/archive/213f6e6973d9b456c6e50e86f19f66877e7ef0ee.tar.gz"
+sha256 = "0876aab720967ec051622593f558030ccc64ecc3c862707a41f89c8f197d9357"
+
+[build]
+kind = "tree-sitter"
+language = "astro"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
