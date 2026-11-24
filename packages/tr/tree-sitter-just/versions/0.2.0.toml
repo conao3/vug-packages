@@ -1,0 +1,19 @@
+version = "0.2.0"
+
+[source]
+url = "https://github.com/casey/tree-sitter-just/archive/refs/tags/v0.2.0.tar.gz"
+sha256 = "52a6f2617f770997a602d9dfce6bac720eaaa6e1b377f0267e3a503492a693b4"
+
+[build]
+kind = "tree-sitter"
+language = "just"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
