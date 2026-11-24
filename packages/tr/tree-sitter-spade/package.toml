@@ -1,0 +1,7 @@
+name = "tree-sitter-spade"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://gitlab.com/spade-lang/tree-sitter-spade/-/archive/",
+]

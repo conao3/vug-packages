@@ -1,0 +1,19 @@
+version = "0-unstable-2025-12-08"
+
+[source]
+url = "https://gitlab.com/spade-lang/tree-sitter-spade/-/archive/6569cd11cc9362e277845ce24111735059b145ee/tree-sitter-spade-6569cd11cc9362e277845ce24111735059b145ee.tar.gz"
+sha256 = "1a690959ab612ac1ebe3b4996cff3690915e4af303eb1537a1c040aab065840d"
+
+[build]
+kind = "tree-sitter"
+language = "spade"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
