@@ -88,6 +88,26 @@ The boot menu lists the generations of the machine.
 `systems/minimal.toml` is the smallest system that boots: a kernel, a shell
 script as init, and the basic tools.
 
+## Time, wireless networking, and sound
+
+Build the `generic-services` system to enable iwd and ALSA mixer state
+management alongside systemd-timesyncd:
+
+```console
+$ vug system build-image --root . --name generic-services --image generic-services.img --size 8g
+```
+
+The `timesyncd` service record configures the NTP servers used by the
+systemd service. Set `servers` in `[service.timesyncd]` to a space-separated
+list of names or addresses. With the `iwd` service, use `sudo iwctl` to
+connect a wireless interface. The `dhcpcd` service obtains an IP address for
+the connected interface. The system uses the selected wireless firmware
+packages from `firmware-packages`.
+
+The `alsa-state` service restores mixer state when the sound target starts
+and stores it at `/var/lib/alsa/asound.state` when the service stops.
+Use `aplay -l` to list cards, and `amixer` to inspect mixer controls.
+
 ## Desktop
 
 `services/sway.toml` adds a Wayland session to a system: the sway compositor

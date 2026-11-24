@@ -1,0 +1,27 @@
+name = "iwd"
+packages = [
+  "iwd",
+]
+
+[[file]]
+path = "/etc/systemd/system/iwd.service"
+content = """
+[Unit]
+Description=Wireless network daemon
+Requires=dbus.socket
+After=dbus.socket
+
+[Service]
+Type=dbus
+BusName=net.connman.iwd
+ExecStart={pkg:iwd}/libexec/iwd
+Restart=on-failure
+StateDirectory=iwd
+"""
+
+[[file]]
+path = "/etc/systemd/system/multi-user.target.d/iwd.conf"
+content = """
+[Unit]
+Wants=iwd.service
+"""

@@ -1,0 +1,14 @@
+name = "timesyncd"
+packages = [
+  "systemd",
+]
+
+[parameter.servers]
+default = "0.pool.ntp.org 1.pool.ntp.org 2.pool.ntp.org 3.pool.ntp.org"
+
+[[file]]
+path = "/etc/systemd/timesyncd.conf.d/vug.conf"
+content = """
+[Time]
+NTP={param:servers}
+"""

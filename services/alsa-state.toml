@@ -1,0 +1,26 @@
+name = "alsa-state"
+packages = [
+  "alsa-utils",
+]
+
+[[file]]
+path = "/etc/systemd/system/alsa-state.service"
+content = """
+[Unit]
+Description=Restore and save ALSA mixer state
+ConditionPathExistsGlob=/dev/snd/controlC*
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+StateDirectory=alsa
+ExecStart=-{pkg:alsa-utils}/sbin/alsactl -f /var/lib/alsa/asound.state restore
+ExecStop={pkg:alsa-utils}/sbin/alsactl -f /var/lib/alsa/asound.state store
+"""
+
+[[file]]
+path = "/etc/systemd/system/sound.target.d/alsa-state.conf"
+content = """
+[Unit]
+Wants=alsa-state.service
+"""

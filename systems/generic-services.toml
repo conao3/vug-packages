@@ -1,0 +1,143 @@
+name = "generic-services"
+kernel = "linux-generic"
+init = "{pkg:systemd}/lib/systemd/systemd"
+sh = "{pkg:bash}/bin/bash"
+packages = [
+  "bash",
+  "coreutils",
+  "curl",
+  "file",
+  "findutils",
+  "git",
+  "grep",
+  "htop",
+  "iproute2",
+  "iputils",
+  "kmod",
+  "less",
+  "limine",
+  "procps",
+  "sed",
+  "shadow",
+  "tmux",
+  "vim",
+  "vug",
+]
+
+firmware-packages = [
+  "linux-firmware-atheros-wifi",
+  "linux-firmware-broadcom-wifi",
+  "linux-firmware-intel-wifi",
+  "linux-firmware-mediatek-wifi",
+  "linux-firmware-realtek-wifi",
+]
+
+[boot]
+loader = "{pkg:limine}/share/limine/BOOTX64.EFI"
+arguments = ["console=tty0", "console=ttyS0"]
+
+[boot.initrd]
+available-modules = ["virtio_blk", "ext4"]
+force-modules = ["ext4"]
+
+[disk]
+table = "gpt"
+
+[[disk.partition]]
+name = "esp"
+type = "esp"
+size-mib = 1024
+
+[[disk.partition]]
+name = "root"
+type = "linux-filesystem"
+grow = true
+
+[[filesystem]]
+partition = "root"
+mount = "/"
+type = "ext4"
+
+[[filesystem]]
+partition = "esp"
+mount = "/boot"
+type = "vfat"
+options = ["umask=0077"]
+
+[service.alsa-state]
+
+[service.ca-certificates]
+
+[service.dbus]
+
+[service.dhcpcd]
+
+[service.iwd]
+
+[service.pam]
+
+[service.serial-autologin]
+user = "demo"
+
+[service.sshd]
+
+[service.sudo]
+wheel = "NOPASSWD: ALL"
+
+[service.systemd]
+
+[service.timesyncd]
+
+[service.timezone]
+
+[[file]]
+path = "/etc/os-release"
+content = """
+NAME="vug"
+ID=vug
+PRETTY_NAME="vug"
+"""
+
+[[file]]
+path = "/etc/hostname"
+kind = "seed"
+content = "vug\n"
+
+[[file]]
+path = "/etc/login.defs"
+content = """
+ENCRYPT_METHOD SHA512
+ENV_PATH PATH=/run/wrappers/bin:/bin
+ENV_SUPATH PATH=/run/wrappers/bin:/bin
+"""
+
+[[file]]
+path = "/etc/profile"
+content = """
+echo VUG-LOGIN-OK "$(id -un)" "$(tty)"
+sudo true && echo VUG-SUDO-OK "$(sudo id -u)"
+"""
+
+[[group]]
+name = "root"
+gid = 0
+
+[[group]]
+name = "demo"
+gid = 1000
+
+[[user]]
+name = "root"
+uid = 0
+group = "root"
+home = "/root"
+shell = "/bin/bash"
+
+[[user]]
+name = "demo"
+uid = 1000
+group = "demo"
+groups = ["wheel"]
+home = "/home/demo"
+shell = "/bin/bash"
+password = ""
