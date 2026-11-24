@@ -1,0 +1,7 @@
+name = "tree-sitter-prisma"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/victorhqc/tree-sitter-prisma/archive/",
+]

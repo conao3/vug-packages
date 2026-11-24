@@ -1,0 +1,19 @@
+version = "1.6.0"
+
+[source]
+url = "https://github.com/victorhqc/tree-sitter-prisma/archive/refs/tags/v1.6.0.tar.gz"
+sha256 = "fc89b2793fcdd5baea197f463c1830da7b5ae54b5217508d790fdb59307062d0"
+
+[build]
+kind = "tree-sitter"
+language = "prisma"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
