@@ -1,4 +1,7 @@
 version = "16.6.0"
+patches = [
+  "16.6.0-limit-doc-inlining.patch",
+]
 
 [source]
 url = "https://github.com/KhronosGroup/glslang/archive/refs/tags/16.6.0.tar.gz"

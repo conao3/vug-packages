@@ -1,0 +1,13 @@
+--- a/glslang/CMakeLists.txt
++++ b/glslang/CMakeLists.txt
+@@ -167,6 +167,10 @@
+     Include/Types.h
+     Include/visibility.h)
+ 
++# Inlining the SPIR-V opcode tables can exhaust memory during compilation.
++set_source_files_properties("${PROJECT_SOURCE_DIR}/SPIRV/doc.cpp"
++    PROPERTIES COMPILE_OPTIONS "-fno-inline" SKIP_PRECOMPILE_HEADERS ON)
++
+ add_library(glslang ${LIB_TYPE} ${GLSLANG_SOURCES} ${GLSLANG_HEADERS} ${GENERICCODEGEN_SOURCES} ${GENERICCODEGEN_HEADERS} ${OSDEPENDENT_SOURCES} ${OSDEPENDENT_HEADERS} ${MACHINEINDEPENDENT_SOURCES} ${MACHINEINDEPENDENT_HEADERS} ${SPIRV_SOURCES} ${SPIRV_HEADERS})
+ add_library(glslang::glslang ALIAS glslang)
+ set_target_properties(glslang PROPERTIES
