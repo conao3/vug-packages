@@ -1,0 +1,20 @@
+--- a/CMakeLists.txt	2026-11-24 11:00:27.465359882 +0900
++++ b/CMakeLists.txt	2026-11-24 11:00:50.614130008 +0900
+@@ -54,7 +54,7 @@
+ endif()
+ 
+ set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=gnu99 -Werror -Wextra -Wall -pedantic-errors -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat")
+-set (CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-s")
++set (CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,-z,relro -Wl,-s")
+ 
+ # Build
+ 
+@@ -82,7 +82,7 @@
+ add_executable (tini src/tini.c)
+ 
+ add_executable (tini-static src/tini.c)
+-set_target_properties (tini-static PROPERTIES LINK_FLAGS "-Wl,--no-export-dynamic -static")
++set_target_properties (tini-static PROPERTIES LINK_FLAGS "-static")
+ 
+ # Installation
+ install (TARGETS tini DESTINATION bin)

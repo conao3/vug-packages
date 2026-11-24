@@ -1,0 +1,8 @@
+name = "docker-tini"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/krallin/tini"
+sources = [
+  "https://github.com/krallin/tini/archive/",
+]
