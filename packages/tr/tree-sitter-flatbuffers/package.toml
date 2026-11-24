@@ -1,0 +1,7 @@
+name = "tree-sitter-flatbuffers"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/yuanchenxi95/tree-sitter-flatbuffers/archive/",
+]

@@ -1,0 +1,19 @@
+version = "0-unstable-2024-10-23"
+
+[source]
+url = "https://github.com/yuanchenxi95/tree-sitter-flatbuffers/archive/95e6f9ef101ea97e870bf6eebc0bd1fdfbaf5490.tar.gz"
+sha256 = "7bc02597ad23668c2b2976dc4bc8e5e8890a03e485992d5893c97c15de47c899"
+
+[build]
+kind = "tree-sitter"
+language = "flatbuffers"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
