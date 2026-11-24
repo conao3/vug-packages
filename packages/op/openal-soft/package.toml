@@ -1,0 +1,8 @@
+name = "openal-soft"
+license = "LGPL-2.0"
+
+[upstream]
+homepage = "https://openal-soft.org/"
+sources = [
+  "https://cache.nixos.org/",
+]

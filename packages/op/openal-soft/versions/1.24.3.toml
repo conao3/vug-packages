@@ -1,0 +1,26 @@
+version = "1.24.3"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "openal-soft"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/frf9ny653knaj8q6pc2vslfih4km8nzp-openal-soft-1.24.3"
+nar-hash = "sha256:0h8df0248sbzm4bx7icdw513qqwj69pv9x1zjxw3m1h801q78ff8"
+expose = [
+  "bin/aldebug",
+  "bin/allafplay",
+  "bin/alrecord",
+  "bin/altonegen",
+  "bin/openal-info",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
