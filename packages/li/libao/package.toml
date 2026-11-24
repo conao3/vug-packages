@@ -1,0 +1,8 @@
+name = "libao"
+license = "GPL-2.0"
+
+[upstream]
+homepage = "https://xiph.org/ao/"
+sources = [
+  "https://cache.nixos.org/",
+]
