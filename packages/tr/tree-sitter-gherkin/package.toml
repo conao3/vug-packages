@@ -1,0 +1,7 @@
+name = "tree-sitter-gherkin"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/SamyAB/tree-sitter-gherkin/archive/",
+]

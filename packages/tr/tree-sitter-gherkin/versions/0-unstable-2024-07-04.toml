@@ -1,0 +1,19 @@
+version = "0-unstable-2024-07-04"
+
+[source]
+url = "https://github.com/SamyAB/tree-sitter-gherkin/archive/43873ee8de16476635b48d52c46f5b6407cb5c09.tar.gz"
+sha256 = "1a111167d80838b2de303d5b50e9cd9b241d7e8bdc2e8ae977fa7931a3dccd1d"
+
+[build]
+kind = "tree-sitter"
+language = "gherkin"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
