@@ -1,0 +1,19 @@
+version = "0-unstable-2026-07-23"
+
+[source]
+url = "https://github.com/starkware-libs/tree-sitter-cairo/archive/638b096f276196e0e201970f39f665c2e4613b0d.tar.gz"
+sha256 = "54d5a5953ae4587ed8764949cddef356bc699b3cbab31aad59dfcce4dc56a87d"
+
+[build]
+kind = "tree-sitter"
+language = "cairo"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
