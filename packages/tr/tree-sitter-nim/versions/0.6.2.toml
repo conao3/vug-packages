@@ -1,0 +1,19 @@
+version = "0.6.2"
+
+[source]
+url = "https://github.com/alaviss/tree-sitter-nim/archive/refs/tags/0.6.2.tar.gz"
+sha256 = "ec68b7a782c9946eec5ff2c3a41cff0c804835da9a858ab8079039d7554a2067"
+
+[build]
+kind = "tree-sitter"
+language = "nim"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
