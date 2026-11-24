@@ -274,14 +274,18 @@ against musl. Its upstream suite requires
 
 ## Tree-sitter grammars
 
-Use `build.kind = "tree-sitter"` for archives that ship `src/parser.c`.
+Use `build.kind = "tree-sitter"` to build a grammar as a shared library.
 Set `build.path` when the grammar lives below the archive root and
 `build.language` to the suffix of its exported `tree_sitter_*` symbol.
 See the [TSX record](packages/tr/tree-sitter-tsx/versions/0.23.2.toml).
 
 Declare `musl` in `dependencies.run` and add `libcxx` for a C++ scanner.
-The builder compiles the generated parser and scanner without running the
-upstream generator. Set `check.enabled = false` and validate the installed
+When the parser needs generation, set `build.generate = true` and add
+`nodejs` and `tree-sitter-cli` to `dependencies.build`. The builder runs
+`tree-sitter generate grammar.js` in the offline sandbox. Include any imported
+JavaScript modules in the source archive or a record patch.
+
+Set `check.enabled = false` and validate the installed
 library by parsing a short example with the packaged Tree-sitter runtime.
 Check that upstream query files are present under `queries/<language>/`.
 
