@@ -1,0 +1,8 @@
+name = "zint"
+license = "BSD-3-Clause AND GPL-3.0-or-later"
+
+[upstream]
+homepage = "https://zint.org.uk/"
+sources = [
+  "https://github.com/zint/zint/archive/refs/tags/",
+]

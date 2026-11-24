@@ -1,0 +1,29 @@
+version = "2.16.0"
+
+[source]
+url = "https://github.com/zint/zint/archive/refs/tags/2.16.0.tar.gz"
+sha256 = "e1077fd5846bdd0128fef3ab8c3c28e93e450d2efaf1424d0aa96e0c9e514591"
+
+[build]
+kind = "cmake"
+setup-flags = [
+  "-DZINT_TEST=ON",
+  "-DZINT_USE_GS1SE=OFF",
+  "-DZINT_USE_QT=OFF",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+]
+run = [
+  "libpng",
+  "musl",
+  "zlib",
+]
+
+[check]
+enabled = true
+skip = []
