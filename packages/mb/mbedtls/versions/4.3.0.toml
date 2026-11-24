@@ -1,4 +1,7 @@
 version = "4.3.0"
+patches = [
+  "4.3.0-isolate-psa-storage-tests.patch",
+]
 
 [source]
 url = "https://github.com/Mbed-TLS/mbedtls/releases/download/mbedtls-4.3.0/mbedtls-4.3.0.tar.bz2"

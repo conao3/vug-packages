@@ -1,0 +1,10 @@
+--- a/tf-psa-crypto/tests/CMakeLists.txt
++++ b/tf-psa-crypto/tests/CMakeLists.txt
+@@ -316,4 +316,7 @@
+     else()
+         add_test(${data_name}-suite test_suite_${data_name} --verbose)
++        if(data_name MATCHES "^psa_crypto_storage_format[.]")
++            set_tests_properties(${data_name}-suite PROPERTIES RUN_SERIAL TRUE)
++        endif()
+     endif()
+ endfunction(tf_psa_crypto_add_test_suite)
