@@ -1,0 +1,7 @@
+name = "tree-sitter-swift"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/alex-pinkus/tree-sitter-swift/archive/",
+]

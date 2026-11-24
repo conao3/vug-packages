@@ -1,0 +1,23 @@
+version = "0.7.4"
+
+[source]
+url = "https://github.com/alex-pinkus/tree-sitter-swift/archive/0.7.4.tar.gz"
+sha256 = "3e451bde981f0110cdc2028b5b4a9dd7752fe77778f1a22607ddbf752ae7efd3"
+
+[build]
+kind = "tree-sitter"
+language = "swift"
+generate = true
+
+[dependencies]
+build = [
+  "nodejs",
+  "tree-sitter-cli",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
