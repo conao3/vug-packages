@@ -1,0 +1,19 @@
+version = "1.0.0"
+
+[source]
+url = "https://github.com/tree-sitter-grammars/tree-sitter-uxntal/archive/refs/tags/v1.0.0.tar.gz"
+sha256 = "a970e7792ec6511b50bb2281fabc26e8b72740bbfa184b954fbf56c59ed4ef4a"
+
+[build]
+kind = "tree-sitter"
+language = "uxntal"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
