@@ -1,0 +1,7 @@
+name = "tree-sitter-matlab"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/acristoffers/tree-sitter-matlab/archive/",
+]
