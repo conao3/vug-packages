@@ -1,0 +1,7 @@
+name = "tree-sitter-llvm"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/benwilliamgraham/tree-sitter-llvm/archive/",
+]

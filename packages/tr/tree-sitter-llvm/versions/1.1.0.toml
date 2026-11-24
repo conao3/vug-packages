@@ -1,0 +1,19 @@
+version = "1.1.0"
+
+[source]
+url = "https://github.com/benwilliamgraham/tree-sitter-llvm/archive/refs/tags/v1.1.0.tar.gz"
+sha256 = "be4f36ebbff41d5625e8a0347437941573c3653ae51443750cd772dd44b54782"
+
+[build]
+kind = "tree-sitter"
+language = "llvm"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
