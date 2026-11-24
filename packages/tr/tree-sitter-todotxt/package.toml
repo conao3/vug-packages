@@ -1,0 +1,7 @@
+name = "tree-sitter-todotxt"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/arnarg/tree-sitter-todotxt/archive/",
+]

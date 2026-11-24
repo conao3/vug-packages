@@ -1,0 +1,19 @@
+version = "0-unstable-2024-01-15"
+
+[source]
+url = "https://github.com/arnarg/tree-sitter-todotxt/archive/3937c5cd105ec4127448651a21aef45f52d19609.tar.gz"
+sha256 = "13386bebda9d713f37ae17625f6af74809783bc3f157b35394cb78bea3d40f81"
+
+[build]
+kind = "tree-sitter"
+language = "todotxt"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
