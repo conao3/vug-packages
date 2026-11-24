@@ -1,0 +1,19 @@
+version = "1.0.0"
+
+[source]
+url = "https://github.com/FuelLabs/tree-sitter-sway/archive/refs/tags/v1.0.0.tar.gz"
+sha256 = "5f1692eecf9d03bff8e276f8d7c14eac02080d2ac57da3339b68e12f893f9292"
+
+[build]
+kind = "tree-sitter"
+language = "sway"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
