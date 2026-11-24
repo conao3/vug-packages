@@ -1,0 +1,24 @@
+version = "0.4.0"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "roc-toolkit"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/c26ic049c6knl8247rpqwz51r7wkzh6j-roc-toolkit-0.4.0"
+nar-hash = "sha256:1s3m0fi3ykwm9qiv2iq4822v5z1yk04mxzs8yhs5r4j08vcw6fn7"
+expose = [
+  "bin/roc-copy",
+  "bin/roc-recv",
+  "bin/roc-send",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
