@@ -1,0 +1,19 @@
+version = "0-unstable-2023-06-06"
+
+[source]
+url = "https://github.com/fvacek/tree-sitter-cpon/archive/d42786f6295db7046372c042b208b8094940e9cd.tar.gz"
+sha256 = "2b626588248f251638fa1be3bff9bdd116ba378048b16ea3a1e878fc47847315"
+
+[build]
+kind = "tree-sitter"
+language = "cpon"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

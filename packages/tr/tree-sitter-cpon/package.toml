@@ -1,0 +1,7 @@
+name = "tree-sitter-cpon"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/fvacek/tree-sitter-cpon/archive/",
+]
