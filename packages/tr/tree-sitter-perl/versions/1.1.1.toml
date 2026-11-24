@@ -1,0 +1,19 @@
+version = "1.1.1"
+
+[source]
+url = "https://github.com/ganezdragon/tree-sitter-perl/archive/refs/tags/v1.1.1.tar.gz"
+sha256 = "6abe25b1c485ef10e3f720e8ec51b52131cb322dd8d4125221dff76a92bb7e55"
+
+[build]
+kind = "tree-sitter"
+language = "perl"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
