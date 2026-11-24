@@ -1,0 +1,8 @@
+name = "opencode"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/anomalyco/opencode"
+sources = [
+  "https://cache.nixos.org/",
+]
