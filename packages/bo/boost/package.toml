@@ -1,0 +1,8 @@
+name = "boost"
+license = "BSL-1.0"
+
+[upstream]
+homepage = "https://www.boost.org/"
+sources = [
+  "https://archives.boost.io/release/",
+]

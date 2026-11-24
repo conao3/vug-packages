@@ -1,0 +1,33 @@
+version = "1.91.0"
+
+[source]
+url = "https://archives.boost.io/release/1.91.0/source/boost_1_91_0.tar.bz2"
+sha256 = "de5e6b0e4913395c6bdfa90537febd9028ea4c0735d2cdb0cd9b45d5f51264f5"
+
+[build]
+kind = "commands"
+commands = [
+  ["./bootstrap.sh"],
+  ["sh", "-ec", "printf '%s\\n' 'using gcc : : c++ ;' 'using python : : python3 ;' > project-config.jam"],
+  ["./b2", "install", "--prefix={out}", "--layout=system", "link=shared", "variant=release", "threading=multi", "--without-mpi", "toolset=gcc", "pch=off", "-j3"],
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "which",
+]
+run = [
+  "bzip2",
+  "icu4c",
+  "libcxx",
+  "musl",
+  "python",
+  "xz",
+  "zlib",
+  "zstd",
+]
+
+[check]
+enabled = false
+skip = []
