@@ -1,0 +1,20 @@
+version = "0-unstable-2026-03-21"
+
+[source]
+url = "https://github.com/ngalaiko/tree-sitter-go-template/archive/aa71f63de226c5592dfbfc1f29949522d7c95fac.tar.gz"
+sha256 = "86bcd2cd462a2fdd94a60bb44b6f15e99b3d02177c5d631cbf45761bae482458"
+
+[build]
+kind = "tree-sitter"
+path = "dialects/helm"
+language = "helm"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
