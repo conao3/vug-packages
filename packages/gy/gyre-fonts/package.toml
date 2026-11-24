@@ -1,0 +1,8 @@
+name = "gyre-fonts"
+license = "LPPL-1.3c"
+
+[upstream]
+homepage = "https://www.gust.org.pl/projects/e-foundry/tex-gyre/index_html#Readings"
+sources = [
+  "https://cache.nixos.org/",
+]
