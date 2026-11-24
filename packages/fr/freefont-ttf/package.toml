@@ -1,0 +1,8 @@
+name = "freefont-ttf"
+license = "GPL-3.0-or-later"
+
+[upstream]
+homepage = "https://www.gnu.org/software/freefont/"
+sources = [
+  "https://cache.nixos.org/",
+]
