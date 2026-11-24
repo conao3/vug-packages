@@ -1,0 +1,24 @@
+version = "0.929"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Sub-Install-0.929.tar.gz"
+sha256 = "80b1e281d8cd3b2b31dac711f5c8a1657a87cd80bbe69af3924bcbeb4e5db077"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Sub::Install",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+]
+
+[check]
+enabled = true
+skip = []
