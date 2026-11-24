@@ -1,0 +1,25 @@
+version = "0.05"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/P/PO/PODMASTER/XML-TokeParser-0.05.tar.gz"
+sha256 = "8539b4f98436b1a6d088341a8b4530b7922acd651f3f29377f8b1948c7e2d7c2"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "XML::TokeParser",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+  "perl-xml-parser",
+]
+
+[check]
+enabled = true
+skip = []
