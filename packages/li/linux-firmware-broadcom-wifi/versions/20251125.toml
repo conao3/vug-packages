@@ -1,0 +1,87 @@
+version = "20251125"
+
+[source]
+url = "https://cdn.kernel.org/pub/linux/kernel/firmware/linux-firmware-20251125.tar.xz"
+sha256 = "eb807a01c52882ac97ef5b678d4a246b209e6165ac1287d62a5f93a09ee93cd2"
+
+[build]
+kind = "prebuilt"
+install = [
+  { from = "brcm", to = "lib/firmware/brcm" },
+  { from = "cypress", to = "lib/firmware/cypress" },
+  { from = "WHENCE", to = "share/licenses/linux-firmware-broadcom-wifi/WHENCE" },
+  { from = "LICENCE.broadcom_bcm43xx", to = "share/licenses/linux-firmware-broadcom-wifi/LICENCE.broadcom_bcm43xx" },
+  { from = "LICENCE.cypress", to = "share/licenses/linux-firmware-broadcom-wifi/LICENCE.cypress" },
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
+
+[links]
+"lib/firmware/brcm/BCM-0a5c-6410.hcd" = "BCM-0bb4-0306.hcd"
+"lib/firmware/brcm/brcmfmac43012-sdio.bin" = "../cypress/cyfmac43012-sdio.bin"
+"lib/firmware/brcm/brcmfmac43012-sdio.clm_blob" = "../cypress/cyfmac43012-sdio.clm_blob"
+"lib/firmware/brcm/brcmfmac43340-sdio.bin" = "../cypress/cyfmac43340-sdio.bin"
+"lib/firmware/brcm/brcmfmac43362-sdio.bin" = "../cypress/cyfmac43362-sdio.bin"
+"lib/firmware/brcm/brcmfmac43362-sdio.kobo,aura.txt" = "brcmfmac43362-sdio.WC121.txt"
+"lib/firmware/brcm/brcmfmac43362-sdio.kobo,tolino-shine2hd.txt" = "brcmfmac43362-sdio.WC121.txt"
+"lib/firmware/brcm/brcmfmac43362-sdio.lemaker,bananapro.txt" = "brcmfmac43362-sdio.cubietech,cubietruck.txt"
+"lib/firmware/brcm/brcmfmac4339-sdio.bin" = "../cypress/cyfmac4339-sdio.bin"
+"lib/firmware/brcm/brcmfmac43430-sdio.beagle,beaglev-starlight-jh7100-a1.txt" = "brcmfmac43430-sdio.AP6212.txt"
+"lib/firmware/brcm/brcmfmac43430-sdio.beagle,beaglev-starlight-jh7100-r0.txt" = "brcmfmac43430-sdio.AP6212.txt"
+"lib/firmware/brcm/brcmfmac43430-sdio.bin" = "../cypress/cyfmac43430-sdio.bin"
+"lib/firmware/brcm/brcmfmac43430-sdio.clm_blob" = "../cypress/cyfmac43430-sdio.clm_blob"
+"lib/firmware/brcm/brcmfmac43430-sdio.friendlyarm,nanopi-neo4.txt" = "brcmfmac43430-sdio.AP6212.txt"
+"lib/firmware/brcm/brcmfmac43430-sdio.friendlyarm,nanopi-r1.txt" = "brcmfmac43430-sdio.AP6212.txt"
+"lib/firmware/brcm/brcmfmac43430-sdio.raspberrypi,model-zero-2-w.txt" = "brcmfmac43430-sdio.raspberrypi,3-model-b.txt"
+"lib/firmware/brcm/brcmfmac43430-sdio.raspberrypi,model-zero-w.txt" = "brcmfmac43430-sdio.raspberrypi,3-model-b.txt"
+"lib/firmware/brcm/brcmfmac43430-sdio.sinovoip,bananapi-m64.txt" = "brcmfmac43430-sdio.AP6212.txt"
+"lib/firmware/brcm/brcmfmac43430-sdio.sinovoip,bpi-m2-plus.txt" = "brcmfmac43430-sdio.AP6212.txt"
+"lib/firmware/brcm/brcmfmac43430-sdio.sinovoip,bpi-m2-ultra.txt" = "brcmfmac43430-sdio.AP6212.txt"
+"lib/firmware/brcm/brcmfmac43430-sdio.sinovoip,bpi-m2-zero.txt" = "brcmfmac43430-sdio.AP6212.txt"
+"lib/firmware/brcm/brcmfmac43430-sdio.sinovoip,bpi-m3.txt" = "brcmfmac43430-sdio.AP6212.txt"
+"lib/firmware/brcm/brcmfmac43430-sdio.starfive,visionfive-v1.txt" = "brcmfmac43430-sdio.AP6212.txt"
+"lib/firmware/brcm/brcmfmac43455-sdio.Raspberry Pi Foundation-Raspberry Pi 4 Model B.txt" = "brcmfmac43455-sdio.raspberrypi,4-model-b.txt"
+"lib/firmware/brcm/brcmfmac43455-sdio.Raspberry Pi Foundation-Raspberry Pi Compute Module 4.txt" = "brcmfmac43455-sdio.raspberrypi,4-model-b.txt"
+"lib/firmware/brcm/brcmfmac43455-sdio.beagle,am5729-beagleboneai.txt" = "brcmfmac43455-sdio.AW-CM256SM.txt"
+"lib/firmware/brcm/brcmfmac43455-sdio.bin" = "../cypress/cyfmac43455-sdio.bin"
+"lib/firmware/brcm/brcmfmac43455-sdio.clm_blob" = "../cypress/cyfmac43455-sdio.clm_blob"
+"lib/firmware/brcm/brcmfmac43455-sdio.khadas,vim.txt" = "brcmfmac43455-sdio.AW-CM256SM.txt"
+"lib/firmware/brcm/brcmfmac43455-sdio.pine64,pinebook-pro.txt" = "brcmfmac43455-sdio.AW-CM256SM.txt"
+"lib/firmware/brcm/brcmfmac43455-sdio.pine64,pinenote-v1.1.txt" = "brcmfmac43455-sdio.AW-CM256SM.txt"
+"lib/firmware/brcm/brcmfmac43455-sdio.pine64,pinenote-v1.2.txt" = "brcmfmac43455-sdio.AW-CM256SM.txt"
+"lib/firmware/brcm/brcmfmac43455-sdio.pine64,pinephone-pro.txt" = "brcmfmac43455-sdio.AW-CM256SM.txt"
+"lib/firmware/brcm/brcmfmac43455-sdio.pine64,quartz64-a.txt" = "brcmfmac43455-sdio.AW-CM256SM.txt"
+"lib/firmware/brcm/brcmfmac43455-sdio.pine64,quartz64-b.txt" = "brcmfmac43455-sdio.AW-CM256SM.txt"
+"lib/firmware/brcm/brcmfmac43455-sdio.pine64,rockpro64-v2.0.txt" = "brcmfmac43455-sdio.AW-CM256SM.txt"
+"lib/firmware/brcm/brcmfmac43455-sdio.pine64,rockpro64-v2.1.txt" = "brcmfmac43455-sdio.AW-CM256SM.txt"
+"lib/firmware/brcm/brcmfmac43455-sdio.pine64,soquartz-blade.txt" = "brcmfmac43455-sdio.AW-CM256SM.txt"
+"lib/firmware/brcm/brcmfmac43455-sdio.pine64,soquartz-cm4io.txt" = "brcmfmac43455-sdio.AW-CM256SM.txt"
+"lib/firmware/brcm/brcmfmac43455-sdio.pine64,soquartz-model-a.txt" = "brcmfmac43455-sdio.AW-CM256SM.txt"
+"lib/firmware/brcm/brcmfmac43455-sdio.raspberrypi,3-model-a-plus.txt" = "brcmfmac43455-sdio.raspberrypi,3-model-b-plus.txt"
+"lib/firmware/brcm/brcmfmac43455-sdio.raspberrypi,4-compute-module.txt" = "brcmfmac43455-sdio.raspberrypi,4-model-b.txt"
+"lib/firmware/brcm/brcmfmac43455-sdio.raspberrypi,5-compute-module.txt" = "brcmfmac43455-sdio.raspberrypi,4-model-b.txt"
+"lib/firmware/brcm/brcmfmac43455-sdio.raspberrypi,5-model-b.txt" = "brcmfmac43455-sdio.raspberrypi,4-model-b.txt"
+"lib/firmware/brcm/brcmfmac43455-sdio.raspberrypi,500.txt" = "brcmfmac43455-sdio.raspberrypi,4-model-b.txt"
+"lib/firmware/brcm/brcmfmac4354-sdio.bin" = "../cypress/cyfmac4354-sdio.bin"
+"lib/firmware/brcm/brcmfmac4354-sdio.clm_blob" = "../cypress/cyfmac4354-sdio.clm_blob"
+"lib/firmware/brcm/brcmfmac4356-pcie.bin" = "../cypress/cyfmac4356-pcie.bin"
+"lib/firmware/brcm/brcmfmac4356-pcie.clm_blob" = "../cypress/cyfmac4356-pcie.clm_blob"
+"lib/firmware/brcm/brcmfmac4356-sdio.bin" = "../cypress/cyfmac4356-sdio.bin"
+"lib/firmware/brcm/brcmfmac4356-sdio.clm_blob" = "../cypress/cyfmac4356-sdio.clm_blob"
+"lib/firmware/brcm/brcmfmac4356-sdio.firefly,firefly-rk3399.txt" = "brcmfmac4356-sdio.AP6356S.txt"
+"lib/firmware/brcm/brcmfmac4356-sdio.friendlyarm,nanopc-t4.txt" = "brcmfmac4356-sdio.AP6356S.txt"
+"lib/firmware/brcm/brcmfmac4356-sdio.friendlyarm,nanopi-m4.txt" = "brcmfmac4356-sdio.AP6356S.txt"
+"lib/firmware/brcm/brcmfmac4356-sdio.khadas,vim2.txt" = "brcmfmac4356-sdio.AP6356S.txt"
+"lib/firmware/brcm/brcmfmac4356-sdio.vamrs,rock960.txt" = "brcmfmac4356-sdio.AP6356S.txt"
+"lib/firmware/brcm/brcmfmac43570-pcie.bin" = "../cypress/cyfmac43570-pcie.bin"
+"lib/firmware/brcm/brcmfmac43570-pcie.clm_blob" = "../cypress/cyfmac43570-pcie.clm_blob"
+"lib/firmware/brcm/brcmfmac4373-sdio.bin" = "../cypress/cyfmac4373-sdio.bin"
+"lib/firmware/brcm/brcmfmac4373-sdio.clm_blob" = "../cypress/cyfmac4373-sdio.clm_blob"
+"lib/firmware/brcm/brcmfmac54591-pcie.bin" = "../cypress/cyfmac54591-pcie.bin"
+"lib/firmware/brcm/brcmfmac54591-pcie.clm_blob" = "../cypress/cyfmac54591-pcie.clm_blob"
