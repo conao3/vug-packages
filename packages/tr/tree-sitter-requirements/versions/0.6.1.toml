@@ -1,0 +1,19 @@
+version = "0.6.1"
+
+[source]
+url = "https://github.com/tree-sitter-grammars/tree-sitter-requirements/archive/refs/tags/v0.6.1.tar.gz"
+sha256 = "bf4f989bcee2a0bbc892aed01e5864e9de25db7e314eb211d0d449ef801b4d18"
+
+[build]
+kind = "tree-sitter"
+language = "requirements"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
