@@ -1,0 +1,7 @@
+name = "tree-sitter-gleam"
+license = "Apache-2.0"
+
+[upstream]
+sources = [
+  "https://github.com/gleam-lang/tree-sitter-gleam/archive/",
+]

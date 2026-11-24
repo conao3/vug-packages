@@ -1,0 +1,19 @@
+version = "1.1.0"
+
+[source]
+url = "https://github.com/gleam-lang/tree-sitter-gleam/archive/refs/tags/v1.1.0.tar.gz"
+sha256 = "1e6f07141a154caf62dc344ede958f70d4f84cae516bb9274ffb53983d0146e0"
+
+[build]
+kind = "tree-sitter"
+language = "gleam"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
