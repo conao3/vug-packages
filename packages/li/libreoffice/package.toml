@@ -1,0 +1,8 @@
+name = "libreoffice"
+license = "MPL-2.0 AND LGPL-3.0-or-later AND Apache-2.0"
+
+[upstream]
+homepage = "https://libreoffice.org/"
+sources = [
+  "https://cache.nixos.org/",
+]
