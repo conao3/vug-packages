@@ -1,0 +1,19 @@
+version = "0-unstable-2025-10-30"
+
+[source]
+url = "https://github.com/LaurentRDC/tree-sitter-haskell-literate/archive/8ad7bd1b1595f4cc1a4ccc775d4a3c460f43a596.tar.gz"
+sha256 = "a3e9e601c77bc86957a0082ca8a6befc70fed7b1311e43f16845c84ec5b3706f"
+
+[build]
+kind = "tree-sitter"
+language = "haskell_literate"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
