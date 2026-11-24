@@ -1,0 +1,7 @@
+name = "tree-sitter-janet-simple"
+license = "CC0-1.0"
+
+[upstream]
+sources = [
+  "https://github.com/sogaiu/tree-sitter-janet-simple/archive/",
+]

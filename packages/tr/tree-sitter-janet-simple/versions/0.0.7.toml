@@ -1,0 +1,19 @@
+version = "0.0.7"
+
+[source]
+url = "https://github.com/sogaiu/tree-sitter-janet-simple/archive/refs/tags/v0.0.7.tar.gz"
+sha256 = "f24ee9480a656eaf30a8fea98c8592a346e13affb21985d86b0a9e7e95e7aa97"
+
+[build]
+kind = "tree-sitter"
+language = "janet_simple"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
