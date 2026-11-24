@@ -1,0 +1,11 @@
+--- a/tests/test-umockdev-run.vala
++++ b/tests/test-umockdev-run.vala
+@@ -313,7 +313,7 @@
+     // unsuitable device for scripts
+     check_program_error ("true", "-d " + rootdir +
+         "/devices/cameras/canon-powershot-sx200.umockdev -s " +
+-        "/dev/bus/usb/001/011=/etc/passwd -- true",
++        "/dev/bus/usb/001/011=/etc/hosts -- true",
+         "not a device suitable for scripts");
+ 
+     // nonexisting script

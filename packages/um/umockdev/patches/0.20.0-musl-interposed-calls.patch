@@ -1,0 +1,116 @@
+--- a/src/libumockdev-preload.c
++++ b/src/libumockdev-preload.c
+@@ -116,6 +116,7 @@
+ get_libc_func(const char *f)
+ {
+     void *fp;
++#ifdef __GLIBC__
+     static void *nextlib;
+ 
+     if (nextlib == NULL) {
+@@ -129,6 +130,12 @@
+     }
+ 
+     fp = dlsym(nextlib, f);
++#else
++    /* musl provides no libc.so.6 handle; dlsym() does not take the ldso
++       lock, and RTLD_NEXT finds the real libc definition after this
++       preloaded library in the search order. */
++    fp = dlsym(RTLD_NEXT, f);
++#endif
+ 
+     return fp;
+ }
+@@ -175,8 +182,15 @@
+ 
+ /* multi-thread locking for trap_path users; the saved signal mask is per
+  * thread, as each thread blocks signals before waiting for the lock */
+-static pthread_mutex_t trap_path_lock = PTHREAD_MUTEX_INITIALIZER;
++/* musl lets internal calls to public functions be interposed, e.g. its
++   stat() calls fstatat() through the PLT, so a wrapped function can
++   re-enter this lock while a wrapper holds it; make it recursive and
++   only save/restore the signal mask at the outermost level, as the
++   restore slot is a single __thread variable. glibc is unaffected. */
++static pthread_mutex_t trap_path_lock;
++static pthread_mutexattr_t trap_path_recursive_attr;
+ static __thread sigset_t trap_path_sig_restore;
++static __thread unsigned trap_path_lock_depth;
+ 
+ /* multi-thread locking for the fd maps of netlink sockets, ioctl emulation,
+  * and script recording; also guards the reference count of the ioctl
+@@ -188,15 +202,18 @@
+ 
+ #define TRAP_PATH_LOCK \
+     do { \
+-        sigset_t sig_set; \
+-        sigfillset(&sig_set); \
+-        pthread_sigmask(SIG_SETMASK, &sig_set, &trap_path_sig_restore); \
++        if (trap_path_lock_depth++ == 0) { \
++            sigset_t sig_set; \
++            sigfillset(&sig_set); \
++            pthread_sigmask(SIG_SETMASK, &sig_set, &trap_path_sig_restore); \
++        } \
+         pthread_mutex_lock (&trap_path_lock); \
+     } while (0)
+ #define TRAP_PATH_UNLOCK \
+     do { \
+         pthread_mutex_unlock (&trap_path_lock); \
+-        pthread_sigmask(SIG_SETMASK, &trap_path_sig_restore, NULL); \
++        if (--trap_path_lock_depth == 0) \
++            pthread_sigmask(SIG_SETMASK, &trap_path_sig_restore, NULL); \
+     } while (0)
+ 
+ /* The only way to take fd_maps_lock: block signals first, so that a signal
+@@ -234,9 +251,30 @@
+ 
+ static size_t trap_path_prefix_len = 0;
+ 
++/* musl's realpath() resolves symlinks with readlink() through the PLT,
++   so it re-enters this function through the wrapper; while resolving,
++   pass paths through unchanged so the inner call does the real lookup.
++   glibc calls its internal aliases instead and never recurses. */
++static __thread bool in_trap_path;
++
++static const char *trap_path_locked(const char *path);
++
+ static const char *
+ trap_path(const char *path)
+ {
++    const char *ret;
++
++    if (in_trap_path)
++        return path;
++    in_trap_path = true;
++    ret = trap_path_locked(path);
++    in_trap_path = false;
++    return ret;
++}
++
++static const char *
++trap_path_locked(const char *path)
++{
+     libc_func(realpath, char *, const char *, char *);
+     static char abspath_buf[PATH_MAX];
+     static char buf[PATH_MAX * 2];
+@@ -793,7 +831,9 @@
+ {
+     size_t i;
+ 
+-    fd_maps_lock = trap_path_lock = (pthread_mutex_t)PTHREAD_MUTEX_INITIALIZER;
++    fd_maps_lock = (pthread_mutex_t)PTHREAD_MUTEX_INITIALIZER;
++    pthread_mutex_init(&trap_path_lock, &trap_path_recursive_attr);
++    trap_path_lock_depth = 0;
+     fd_maps_lock_held = false;
+     for (i = 0; i < FD_MAP_MAX; ++i) {
+         if (ioctl_wrapped_fds.set[i]) {
+@@ -810,6 +850,10 @@
+ {
+     int ret;
+ 
++    pthread_mutexattr_init(&trap_path_recursive_attr);
++    pthread_mutexattr_settype(&trap_path_recursive_attr, PTHREAD_MUTEX_RECURSIVE);
++    pthread_mutex_init(&trap_path_lock, &trap_path_recursive_attr);
++
+     ret = pthread_atfork(NULL, NULL, after_fork_in_child);
+     if (ret != 0) {
+         errx(EXIT_FAILURE, "umockdev: pthread_atfork failed: %s",

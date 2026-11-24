@@ -1,0 +1,39 @@
+version = "0.20.0"
+patches = [
+  "0.20.0-musl-interposed-calls.patch",
+  "0.20.0-test-etc-hosts.patch",
+]
+
+[source]
+url = "https://github.com/martinpitt/umockdev/releases/download/0.20.0/umockdev-0.20.0.tar.xz"
+sha256 = "c6ea246c457d29d5892c6622bf4812737aee975153497f3462c572e61b0404be"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dgtk_doc=false",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "busybox",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+  "usbutils",
+  "vala",
+  "which",
+]
+run = [
+  "glib",
+  "libpcap",
+  "libselinux",
+  "musl",
+  "systemd",
+]
+
+[check]
+enabled = true
+skip = []

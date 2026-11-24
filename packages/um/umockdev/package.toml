@@ -1,0 +1,8 @@
+name = "umockdev"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://github.com/martinpitt/umockdev"
+sources = [
+  "https://github.com/martinpitt/umockdev/releases/download/",
+]
