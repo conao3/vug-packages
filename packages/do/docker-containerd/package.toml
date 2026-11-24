@@ -1,0 +1,8 @@
+name = "docker-containerd"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://containerd.io/"
+sources = [
+  "https://github.com/containerd/containerd/archive/refs/tags/",
+]

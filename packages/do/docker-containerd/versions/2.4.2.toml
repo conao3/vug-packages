@@ -1,0 +1,30 @@
+version = "2.4.2"
+
+[source]
+url = "https://github.com/containerd/containerd/archive/refs/tags/v2.4.2.tar.gz"
+sha256 = "02cbbecd0ef78a521d124afa791b843ba5458ef206e1f7f017999ff45c80c0b4"
+
+[build]
+kind = "go"
+targets = [
+  { path = "./cmd/containerd", bin = "containerd" },
+  { path = "./cmd/containerd-shim-runc-v2", bin = "containerd-shim-runc-v2" },
+  { path = "./cmd/containerd-stress", bin = "containerd-stress" },
+  { path = "./cmd/ctr", bin = "ctr" },
+]
+ldflags = [
+  "-X github.com/containerd/containerd/v2/version.Version=v2.4.2",
+  "-X github.com/containerd/containerd/v2/version.Revision=49c2af6b7b0785ff636bed8b70a86f073ce8bd6e",
+]
+
+[dependencies]
+build = [
+  "go",
+]
+run = [
+  "docker-runc",
+]
+
+[check]
+enabled = false
+skip = []
