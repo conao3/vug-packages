@@ -1,0 +1,19 @@
+version = "0.1.8"
+
+[source]
+url = "https://github.com/claytonrcarter/tree-sitter-phpdoc/archive/refs/tags/v0.1.8.tar.gz"
+sha256 = "b7a750e002b916a50c878c53087175dde5f256eb73d2d479b11b24d6c4b9a885"
+
+[build]
+kind = "tree-sitter"
+language = "phpdoc"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

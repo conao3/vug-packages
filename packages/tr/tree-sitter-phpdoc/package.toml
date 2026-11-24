@@ -1,0 +1,7 @@
+name = "tree-sitter-phpdoc"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/claytonrcarter/tree-sitter-phpdoc/archive/",
+]
