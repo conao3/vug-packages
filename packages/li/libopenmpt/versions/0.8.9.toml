@@ -1,0 +1,27 @@
+version = "0.8.9"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "libopenmpt"
+
+[build.nix-outputs.bin]
+store-path = "/nix/store/s0yyayj8i33l3bhmx046h48qajlns8cv-libopenmpt-0.8.9-bin"
+nar-hash = "sha256:0b3ql3dxdxllh3fmbi0rv3f6k06ddw5b9w88g2g80zqdf8vpv43z"
+expose = [
+  "bin/openmpt123",
+]
+
+[build.nix-outputs.out]
+store-path = "/nix/store/cy50qnx0sxxcxljw7ya24ssizjxf203d-libopenmpt-0.8.9"
+nar-hash = "sha256:12701pap3ib9mnh5jdm7v53c6jv5r7p208xvmh5p95fi371zxp5x"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []

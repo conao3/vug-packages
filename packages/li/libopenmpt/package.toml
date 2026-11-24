@@ -1,0 +1,8 @@
+name = "libopenmpt"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://lib.openmpt.org/libopenmpt/"
+sources = [
+  "https://cache.nixos.org/",
+]
