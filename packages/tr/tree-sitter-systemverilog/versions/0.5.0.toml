@@ -1,0 +1,19 @@
+version = "0.5.0"
+
+[source]
+url = "https://github.com/gmlarumbe/tree-sitter-systemverilog/archive/refs/tags/v0.5.0.tar.gz"
+sha256 = "8eb6d37ddeacb1325c2abf5ca4a47be8945f1a8477e31e3739524125768f75d1"
+
+[build]
+kind = "tree-sitter"
+language = "systemverilog"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

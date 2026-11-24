@@ -1,0 +1,7 @@
+name = "tree-sitter-systemverilog"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/gmlarumbe/tree-sitter-systemverilog/archive/",
+]
