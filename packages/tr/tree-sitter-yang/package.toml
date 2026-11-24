@@ -1,0 +1,7 @@
+name = "tree-sitter-yang"
+license = "Apache-2.0"
+
+[upstream]
+sources = [
+  "https://github.com/hubro/tree-sitter-yang/archive/",
+]

@@ -1,0 +1,19 @@
+version = "0-unstable-2022-11-21"
+
+[source]
+url = "https://github.com/hubro/tree-sitter-yang/archive/2c0e6be8dd4dcb961c345fa35c309ad4f5bd3502.tar.gz"
+sha256 = "e67ccc99220605c790166e074a2ccea93ca91bdf795a136f30e943364a59429a"
+
+[build]
+kind = "tree-sitter"
+language = "yang"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
