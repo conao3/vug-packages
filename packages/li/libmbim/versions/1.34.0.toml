@@ -1,0 +1,31 @@
+version = "1.34.0"
+
+[source]
+url = "https://gitlab.freedesktop.org/api/v4/projects/mobile-broadband%2Flibmbim/repository/archive.tar.gz?sha=1.34.0"
+sha256 = "ba6c1f316b108c0b59c920044a363b7fdcc87d41882b3dfd5a4ece7c003d112b"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dbash_completion=false",
+  "-Dgtk_doc=false",
+  "-Dintrospection=false",
+  "-Dman=false",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "glib",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []

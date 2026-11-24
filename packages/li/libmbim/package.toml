@@ -1,0 +1,8 @@
+name = "libmbim"
+license = "GPL-2.0-or-later AND LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/mobile-broadband/libmbim"
+sources = [
+  "https://gitlab.freedesktop.org/api/v4/projects/mobile-broadband%2Flibmbim/",
+]
