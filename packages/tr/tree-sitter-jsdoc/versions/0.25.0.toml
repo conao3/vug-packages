@@ -1,0 +1,19 @@
+version = "0.25.0"
+
+[source]
+url = "https://github.com/tree-sitter/tree-sitter-jsdoc/archive/refs/tags/v0.25.0.tar.gz"
+sha256 = "ca870c983c51bfb6b25c4cf316e28c685d0f6e9847e359c7da8d16eedd60d623"
+
+[build]
+kind = "tree-sitter"
+language = "jsdoc"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
