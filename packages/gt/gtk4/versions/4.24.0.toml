@@ -1,0 +1,23 @@
+version = "4.24.0"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "gtk4"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/6pjjrqlhqii4j4cpnz67zpgf74dkd1jn-gtk4-4.24.0"
+nar-hash = "sha256:15q8d2n4jyw0dj58bswcipyarrc6qdk1xywjq0w97rz1d2dxw79d"
+expose = [
+  "bin/gtk4-broadwayd",
+  "bin/gtk4-update-icon-cache",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
