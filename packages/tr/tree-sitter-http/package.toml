@@ -1,0 +1,7 @@
+name = "tree-sitter-http"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/rest-nvim/tree-sitter-http/archive/",
+]

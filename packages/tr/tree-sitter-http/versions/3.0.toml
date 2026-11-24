@@ -1,0 +1,19 @@
+version = "3.0"
+
+[source]
+url = "https://github.com/rest-nvim/tree-sitter-http/archive/refs/tags/v3.0.tar.gz"
+sha256 = "3dbfc6b21b7620bf57ddc965d3b03846ed31433d484405a27da62cf80619bde5"
+
+[build]
+kind = "tree-sitter"
+language = "http"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
