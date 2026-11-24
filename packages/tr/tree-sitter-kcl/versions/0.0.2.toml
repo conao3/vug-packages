@@ -1,0 +1,19 @@
+version = "0.0.2"
+
+[source]
+url = "https://github.com/KittyCAD/tree-sitter-kcl/archive/refs/tags/v0.0.2.tar.gz"
+sha256 = "4a85735d6ae518a48c15ef60de7f577bf2bffdfd80067e50d41f43452664d9e7"
+
+[build]
+kind = "tree-sitter"
+language = "kcl"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

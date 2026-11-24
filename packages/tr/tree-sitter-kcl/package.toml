@@ -1,0 +1,7 @@
+name = "tree-sitter-kcl"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/KittyCAD/tree-sitter-kcl/archive/",
+]
