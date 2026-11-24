@@ -1,0 +1,52 @@
+version = "1.24.2"
+
+[source]
+url = "https://gitlab.freedesktop.org/api/v4/projects/mobile-broadband%2FModemManager/repository/archive.tar.gz?sha=1.24.2"
+sha256 = "016490f008dd0abebb052ab293d46d82cbec830764523a5a7bdb37280a0ba670"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dc_link_args=-lintl -Wl,-rpath,{dep:dbus}/lib -Wl,-rpath,{dep:gettext}/lib -Wl,-rpath,{dep:glib}/lib -Wl,-rpath,{dep:libgudev}/lib -Wl,-rpath,{dep:libmbim}/lib -Wl,-rpath,{dep:libqmi}/lib -Wl,-rpath,{dep:libqrtr-glib}/lib -Wl,-rpath,{dep:polkit}/lib -Wl,-rpath,{dep:ppp}/lib -Wl,-rpath,{dep:systemd}/lib",
+  "-Dudev=true",
+  "-Dudevdir=lib/udev",
+  "-Dsystemd_suspend_resume=true",
+  "-Dsystemd_journal=true",
+  "-Dpolkit=strict",
+  "-Dmbim=true",
+  "-Dqmi=true",
+  "-Dqrtr=true",
+  "-Dintrospection=false",
+]
+
+[dependencies]
+build = [
+  "bash-completion",
+  "binutils",
+  "dbus",
+  "gettext",
+  "libxslt",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "dbus",
+  "gettext",
+  "glib",
+  "libgudev",
+  "libmbim",
+  "libqmi",
+  "libqrtr-glib",
+  "musl",
+  "polkit",
+  "ppp",
+  "systemd",
+]
+
+[check]
+enabled = true
+skip = [
+  "test-plugin-generic",
+]
