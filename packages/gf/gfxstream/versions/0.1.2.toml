@@ -1,0 +1,31 @@
+version = "0.1.2"
+
+[source]
+url = "https://github.com/msft-mirror-aosp/platform.hardware.google.gfxstream/archive/refs/tags/v0.1.2-gfxstream-release.tar.gz"
+sha256 = "8e216f990630ff079ae54cba55ba2c1f0387aa37c1cc494cb7c964b772f1d51d"
+
+[build]
+kind = "meson"
+
+[dependencies]
+build = [
+  "aemu-base",
+  "binutils",
+  "libdrm",
+  "libglvnd",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "aemu-base",
+  "libcxx",
+  "libdrm",
+  "libglvnd",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []

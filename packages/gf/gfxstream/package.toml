@@ -1,0 +1,9 @@
+name = "gfxstream"
+license = "MIT OR Apache-2.0"
+
+[upstream]
+homepage = "https://android.googlesource.com/platform/hardware/google/gfxstream"
+sources = [
+  "https://android.googlesource.com/platform/hardware/google/gfxstream/",
+  "https://github.com/msft-mirror-aosp/platform.hardware.google.gfxstream/",
+]
