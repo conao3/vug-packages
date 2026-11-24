@@ -1,0 +1,35 @@
+version = "3.87"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTML-Parser-3.87.tar.gz"
+sha256 = "04342b30b3b1675041b28cfecb693a3d3a0c051587cc40b746a7f9a72a7e3b8a"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "HTML::Entities",
+  "HTML::Filter",
+  "HTML::HeadParser",
+  "HTML::LinkExtor",
+  "HTML::Parser",
+  "HTML::PullParser",
+  "HTML::TokeParser",
+]
+
+[dependencies]
+build = [
+  "make",
+  "perl-uri",
+]
+run = [
+  "musl",
+  "perl",
+  "perl-html-tagset",
+  "perl-http-message",
+  "perl-uri",
+]
+
+[check]
+enabled = true
+skip = []
