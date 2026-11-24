@@ -1,0 +1,19 @@
+version = "0.1.1"
+
+[source]
+url = "https://github.com/tree-sitter-grammars/tree-sitter-pem/archive/refs/tags/v0.1.1.tar.gz"
+sha256 = "21fc31d8209b3715d0edbbc3bf0f02fa0af946f0c22f901883d152670bd031e2"
+
+[build]
+kind = "tree-sitter"
+language = "pem"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
