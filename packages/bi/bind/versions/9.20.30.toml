@@ -1,0 +1,45 @@
+version = "9.20.30"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "bind"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/awp5hs2sy3dw9g9gipb7jj2x5czb8za0-bind-9.20.30"
+nar-hash = "sha256:0nj6h1z9ypnq4kwrdmccxms0lzm7n52cwv7bqhgraaqlqq97kbs4"
+expose = [
+  "bin/arpaname",
+  "bin/ddns-confgen",
+  "bin/dnssec-cds",
+  "bin/dnssec-dsfromkey",
+  "bin/dnssec-importkey",
+  "bin/dnssec-keyfromlabel",
+  "bin/dnssec-keygen",
+  "bin/dnssec-ksr",
+  "bin/dnssec-revoke",
+  "bin/dnssec-settime",
+  "bin/dnssec-signzone",
+  "bin/dnssec-verify",
+  "bin/dnstap-read",
+  "bin/mdig",
+  "bin/named",
+  "bin/named-checkconf",
+  "bin/named-checkzone",
+  "bin/named-compilezone",
+  "bin/named-journalprint",
+  "bin/named-rrchecker",
+  "bin/nsec3hash",
+  "bin/rndc",
+  "bin/rndc-confgen",
+  "bin/tsig-keygen",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []

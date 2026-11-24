@@ -1,0 +1,8 @@
+name = "bind"
+license = "MPL-2.0"
+
+[upstream]
+homepage = "https://www.isc.org/bind/"
+sources = [
+  "https://cache.nixos.org/",
+]
