@@ -1,0 +1,8 @@
+name = "python-pybind11"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://github.com/pybind/pybind11"
+sources = [
+  "https://files.pythonhosted.org/packages/source/p/pybind11/",
+]
