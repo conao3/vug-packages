@@ -1,0 +1,7 @@
+name = "tree-sitter-ptx"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://codeberg.org/jer-gremlin/tree-sitter-ptx/archive/",
+]
