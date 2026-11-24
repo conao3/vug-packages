@@ -1,0 +1,8 @@
+name = "libsm"
+license = "MIT"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/xorg/lib/libsm"
+sources = [
+  "https://www.x.org/releases/individual/lib/",
+]

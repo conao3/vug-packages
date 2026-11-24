@@ -1,0 +1,34 @@
+version = "1.2.6"
+
+[source]
+url = "https://www.x.org/releases/individual/lib/libSM-1.2.6.tar.xz"
+sha256 = "be7c0abdb15cbfd29ac62573c1c82e877f9d4047ad15321e7ea97d1e43d835be"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--with-libuuid",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "pkgconf",
+  "xorgproto",
+  "xtrans",
+]
+run = [
+  "libice",
+  "musl",
+  "util-linux",
+]
+expose = [
+  "libice",
+  "util-linux",
+  "xorgproto",
+]
+
+[check]
+enabled = true
+skip = []
