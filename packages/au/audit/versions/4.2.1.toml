@@ -1,0 +1,34 @@
+version = "4.2.1"
+
+[source]
+url = "https://github.com/linux-audit/audit-userspace/archive/refs/tags/v4.2.1.tar.gz"
+sha256 = "42876d195ee2ded19e5f72d7664096eee314928aa36ad346719ba5b25818fc84"
+
+[build]
+kind = "autotools"
+autoreconf = true
+configure-flags = [
+  "--disable-zos-remote",
+  "--without-python3",
+]
+
+[dependencies]
+build = [
+  "autoconf",
+  "automake",
+  "binutils",
+  "libtool",
+  "linux-headers",
+  "make",
+]
+run = [
+  "libcap-ng",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = [
+  "lookup_test",
+  "uid_name_wrap_test",
+]

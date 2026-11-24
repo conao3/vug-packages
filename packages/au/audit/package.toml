@@ -1,0 +1,8 @@
+name = "audit"
+license = "GPL-2.0-or-later AND LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://github.com/linux-audit/audit-userspace"
+sources = [
+  "https://github.com/linux-audit/audit-userspace/archive/refs/tags/",
+]
