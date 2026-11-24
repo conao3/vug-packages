@@ -1,0 +1,7 @@
+name = "tree-sitter-gdscript"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/prestonknopp/tree-sitter-gdscript/archive/",
+]

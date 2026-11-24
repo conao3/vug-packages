@@ -1,0 +1,19 @@
+version = "6.1.0"
+
+[source]
+url = "https://github.com/prestonknopp/tree-sitter-gdscript/archive/refs/tags/v6.1.0.tar.gz"
+sha256 = "f8233abffde8939b4bface6388264981b849074d836dfc0ab538b4586678c393"
+
+[build]
+kind = "tree-sitter"
+language = "gdscript"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
