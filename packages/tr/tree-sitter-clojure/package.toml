@@ -1,0 +1,7 @@
+name = "tree-sitter-clojure"
+license = "CC0-1.0"
+
+[upstream]
+sources = [
+  "https://github.com/sogaiu/tree-sitter-clojure/archive/",
+]
