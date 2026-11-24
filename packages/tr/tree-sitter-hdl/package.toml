@@ -1,0 +1,7 @@
+name = "tree-sitter-hdl"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/quantonganh/tree-sitter-hdl/archive/",
+]
