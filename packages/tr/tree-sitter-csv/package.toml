@@ -1,0 +1,7 @@
+name = "tree-sitter-csv"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/weartist/rainbow-csv-tree-sitter/archive/",
+]

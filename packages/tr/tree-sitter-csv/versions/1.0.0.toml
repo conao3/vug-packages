@@ -1,0 +1,19 @@
+version = "1.0.0"
+
+[source]
+url = "https://github.com/weartist/rainbow-csv-tree-sitter/archive/refs/tags/v1.0.0.tar.gz"
+sha256 = "c4faf9af813ccc9830c1418ee62af7fac92542f3f30f1d3899eb98f2073708c6"
+
+[build]
+kind = "tree-sitter"
+language = "csv"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
