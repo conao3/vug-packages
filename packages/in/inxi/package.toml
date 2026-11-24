@@ -1,0 +1,8 @@
+name = "inxi"
+license = "GPL-3.0-or-later"
+
+[upstream]
+homepage = "https://smxi.org/docs/inxi.htm"
+sources = [
+  "https://cache.nixos.org/",
+]
