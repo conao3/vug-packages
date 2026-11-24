@@ -1,0 +1,20 @@
+version = "0.20.0"
+
+[source]
+url = "https://github.com/tree-sitter/tree-sitter-cpp/archive/refs/tags/v0.20.0.tar.gz"
+sha256 = "8f8281a73106982b9a4921a24361643b1d30446295c3ee601fcd4486b6ad95c9"
+
+[build]
+kind = "tree-sitter"
+language = "cpp"
+
+[dependencies]
+build = []
+run = [
+  "libcxx",
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
