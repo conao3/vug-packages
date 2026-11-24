@@ -1,0 +1,23 @@
+version = "1.0.1"
+
+[source]
+url = "https://github.com/awslabs/aws-checksums/archive/refs/tags/v1.0.1.tar.gz"
+sha256 = "b24d4896e8406ddff8080037936c86d539929369918265694bedcb887cbe602b"
+
+[build]
+kind = "cmake"
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+]
+run = [
+  "aws-c-common",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []

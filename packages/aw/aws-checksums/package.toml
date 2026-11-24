@@ -1,0 +1,8 @@
+name = "aws-checksums"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://github.com/awslabs/aws-checksums"
+sources = [
+  "https://github.com/awslabs/aws-checksums/archive/refs/tags/",
+]
