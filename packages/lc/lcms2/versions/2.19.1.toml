@@ -1,0 +1,31 @@
+version = "2.19.1"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "lcms2"
+
+[build.nix-outputs.bin]
+store-path = "/nix/store/ajfrq0ihcv5iyp40s2bg7fmbgnz9gfkd-lcms2-2.19.1-bin"
+nar-hash = "sha256:0vk6x4b4rl31938k0jhjf5ingxikfsxifwq8xv0dw9yl8w68vixn"
+expose = [
+  "bin/jpgicc",
+  "bin/linkicc",
+  "bin/psicc",
+  "bin/tificc",
+  "bin/transicc",
+]
+
+[build.nix-outputs.out]
+store-path = "/nix/store/28z11yz990sjcd8hh73r66mfk3mc4gab-lcms2-2.19.1"
+nar-hash = "sha256:0c6y6s1ikrm9n9nk7n51nqa2xa2cq6ajy1j4hcypw2cy2bc5dn34"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []

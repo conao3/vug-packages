@@ -1,0 +1,8 @@
+name = "lcms2"
+license = "MIT"
+
+[upstream]
+homepage = "http://www.littlecms.com/"
+sources = [
+  "https://cache.nixos.org/",
+]
