@@ -1,0 +1,8 @@
+name = "python-mako"
+license = "MIT"
+
+[upstream]
+homepage = "https://www.makotemplates.org/"
+sources = [
+  "https://files.pythonhosted.org/packages/",
+]
