@@ -1,0 +1,19 @@
+version = "1.0.1"
+
+[source]
+url = "https://github.com/tree-sitter-grammars/tree-sitter-luap/archive/refs/tags/v1.0.1.tar.gz"
+sha256 = "918a4ac04399c98843b44132f8e00ffe6d71f0d9ae194b498b90d88e25734dec"
+
+[build]
+kind = "tree-sitter"
+language = "luap"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
