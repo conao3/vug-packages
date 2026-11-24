@@ -1,0 +1,7 @@
+name = "tree-sitter-sshclientconfig"
+license = "CC0-1.0"
+
+[upstream]
+sources = [
+  "https://github.com/metio/tree-sitter-ssh-client-config/archive/",
+]
