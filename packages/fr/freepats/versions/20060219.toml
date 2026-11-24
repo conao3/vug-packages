@@ -1,0 +1,20 @@
+version = "20060219"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "freepats"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/iyyxyfvl2ggh2gjsmswzwlxzrwcj22d9-freepats-20060219"
+nar-hash = "sha256:0ajqy7nbb8dydhyp2qz4bxw04fc0ibgjlv7pc9inqc0mlv48sqya"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []

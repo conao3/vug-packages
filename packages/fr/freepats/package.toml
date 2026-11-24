@@ -1,0 +1,8 @@
+name = "freepats"
+license = "GPL-2.0"
+
+[upstream]
+homepage = "https://freepats.zenvoid.org/"
+sources = [
+  "https://cache.nixos.org/",
+]
