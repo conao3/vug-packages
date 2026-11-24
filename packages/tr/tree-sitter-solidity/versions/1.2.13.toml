@@ -1,0 +1,19 @@
+version = "1.2.13"
+
+[source]
+url = "https://github.com/JoranHonig/tree-sitter-solidity/archive/refs/tags/v1.2.13.tar.gz"
+sha256 = "33e53d67032d7751c734ebc0b75b416badf0f8b5ea8daa108dc2ebcb6c5c40ef"
+
+[build]
+kind = "tree-sitter"
+language = "solidity"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

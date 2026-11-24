@@ -1,0 +1,7 @@
+name = "tree-sitter-solidity"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/JoranHonig/tree-sitter-solidity/archive/",
+]
