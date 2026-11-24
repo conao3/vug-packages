@@ -1,0 +1,19 @@
+version = "0-unstable-2026-03-20"
+
+[source]
+url = "https://github.com/cbarrete/tree-sitter-ledger/archive/22a1ab8195c1f6e808679f803007756fe7638c6f.tar.gz"
+sha256 = "9fc097d71f3c326840ec410478b2aeae4631f239ed04ad9c1e51820de8485e5a"
+
+[build]
+kind = "tree-sitter"
+language = "ledger"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
