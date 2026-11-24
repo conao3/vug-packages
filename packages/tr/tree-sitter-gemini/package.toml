@@ -1,0 +1,7 @@
+name = "tree-sitter-gemini"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://git.sr.ht/~nbsp/tree-sitter-gemini/archive/",
+]

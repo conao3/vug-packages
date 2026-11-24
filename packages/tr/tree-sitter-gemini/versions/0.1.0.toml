@@ -1,0 +1,19 @@
+version = "0.1.0"
+
+[source]
+url = "https://git.sr.ht/~nbsp/tree-sitter-gemini/archive/3cc5e4bdf572d5df4277fc2e54d6299bd59a54b3.tar.gz"
+sha256 = "8da6c0db66d71db423213debda1298aa023f00e17976e3c8e56b36ec8ae2b895"
+
+[build]
+kind = "tree-sitter"
+language = "gemini"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
