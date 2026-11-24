@@ -1,0 +1,22 @@
+version = "2026.10.26"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "clj-kondo"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/lb1nb26s017ylhmgqqzl83n82bpk8is2-clj-kondo-2026.10.26"
+nar-hash = "sha256:03279zkkpqrzvd7j41s2gzvf2lpbksp8zgmdgmfhw6qr6cqrqplv"
+expose = [
+  "bin/clj-kondo",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
