@@ -1,0 +1,22 @@
+version = "1.13.230"
+
+[source]
+url = "https://github.com/babashka/babashka/releases/download/v1.13.230/babashka-1.13.230-linux-amd64-static.tar.gz"
+sha256 = "ffa98e905c75b6b13eb0b644b778219205180569bfe6004a3e35c3a9798a145d"
+strip-components = 0
+
+[build]
+kind = "commands"
+commands = [
+  ["install", "-D", "-m", "755", "bb", "{out}/bin/bb"],
+]
+
+[dependencies]
+build = []
+run = [
+  "bash",
+]
+
+[check]
+enabled = true
+skip = []

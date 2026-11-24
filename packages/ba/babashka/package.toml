@@ -1,0 +1,8 @@
+name = "babashka"
+license = "EPL-1.0"
+
+[upstream]
+homepage = "https://babashka.org/"
+sources = [
+  "https://github.com/babashka/babashka/releases/download/",
+]
