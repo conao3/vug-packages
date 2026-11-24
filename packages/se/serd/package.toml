@@ -1,0 +1,8 @@
+name = "serd"
+license = "ISC"
+
+[upstream]
+homepage = "https://drobilla.net/software/serd.html"
+sources = [
+  "https://download.drobilla.net/",
+]
