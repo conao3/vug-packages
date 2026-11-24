@@ -1,0 +1,22 @@
+version = "0.1.0"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "makeInitrdNGTool"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/7axpjzm9rihf3w8xcw1422qgib2dl4y4-make-initrd-ng-0.1.0"
+nar-hash = "sha256:04syn1vp59xk1chf6n240bn2k73z2jn08r3agy4kydc696dbhhw2"
+expose = [
+  "bin/make-initrd-ng",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
