@@ -1,0 +1,8 @@
+name = "libsecret"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://gitlab.gnome.org/GNOME/libsecret"
+sources = [
+  "https://cache.nixos.org/",
+]
