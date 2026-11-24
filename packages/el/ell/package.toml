@@ -1,0 +1,8 @@
+name = "ell"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://git.kernel.org/pub/scm/libs/ell/ell.git/"
+sources = [
+  "https://mirrors.edge.kernel.org/pub/linux/libs/ell/",
+]

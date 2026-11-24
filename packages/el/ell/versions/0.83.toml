@@ -1,0 +1,28 @@
+version = "0.83"
+patches = [
+  "0.83-libgen-h.patch",
+]
+
+[source]
+url = "https://mirrors.edge.kernel.org/pub/linux/libs/ell/ell-0.83.tar.xz"
+sha256 = "39a562f5ab2768e69da1ffbb1f98a8eb3483baffc7d2ef6adc3705e4fd4e53fb"
+
+[build]
+kind = "autotools"
+
+[dependencies]
+build = [
+  "binutils",
+  "linux-headers",
+  "make",
+  "pkgconf",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = true
+skip = [
+  "unit/test-hwdb",
+]

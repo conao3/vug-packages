@@ -1,0 +1,10 @@
+--- a/unit/test-path.c
++++ b/unit/test-path.c
+@@ -14,6 +14,7 @@
+ #include <unistd.h>
+ #include <errno.h>
+ #include <fcntl.h>
++#include <libgen.h>
+ #include <stdlib.h>
+ 
+ #include <ell/ell.h>
