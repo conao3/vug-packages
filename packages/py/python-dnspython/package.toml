@@ -1,0 +1,8 @@
+name = "python-dnspython"
+license = "ISC"
+
+[upstream]
+homepage = "https://www.dnspython.org/"
+sources = [
+  "https://files.pythonhosted.org/packages/source/d/dnspython/",
+]
