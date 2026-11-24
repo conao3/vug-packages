@@ -1,0 +1,41 @@
+--- a/pesto.c
++++ b/pesto.c
+@@ -293,7 +293,7 @@
+  *
+  * #syscalls:pesto socket s390x:socketcall i686:socketcall
+  * #syscalls:pesto connect shutdown close
+- * #syscalls:pesto exit_group fstat read write openat
++ * #syscalls:pesto exit_group fstat read write writev openat
+  */
+ int main(int argc, char **argv)
+ {
+@@ -323,6 +323,9 @@
+ 	int optname, ret, s;
+ 	uint32_t s_version;
+ 
++	/* Finish the libc file I/O before installing the seccomp filter. */
++	fwd_probe_ephemeral();
++
+ 	prctl(PR_SET_DUMPABLE, 0);
+ 
+ 	prog.len = (unsigned short)sizeof(filter_pesto) /
+@@ -337,8 +340,6 @@
+ 	 */
+ 	if (setvbuf(stdout, stdout_buf, _IOFBF, sizeof(stdout_buf)))
+ 		die_perror("Failed to set stdout buffer");
+-
+-	fwd_probe_ephemeral();
+ 
+ 	do {
+ 		optname = getopt_long(argc, argv, optstring, options, NULL);
+--- a/passt-repair.c
++++ b/passt-repair.c
+@@ -133,7 +133,7 @@
+  *
+  * Return: 0 on success (EOF), 1 on error, 2 on usage error
+  *
+- * #syscalls:repair connect setsockopt write close exit_group
++ * #syscalls:repair connect setsockopt write writev close exit_group
+  * #syscalls:repair socket s390x:socketcall i686:socketcall
+  * #syscalls:repair recvfrom recvmsg arm:recv ppc64le:recv
+  * #syscalls:repair sendto sendmsg arm:send ppc64le:send
