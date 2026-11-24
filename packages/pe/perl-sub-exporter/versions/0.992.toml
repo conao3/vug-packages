@@ -1,0 +1,28 @@
+version = "0.992"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Sub-Exporter-0.992.tar.gz"
+sha256 = "31d1b7016390528f3ed2cda379f4026a4e7fbad2aa40c8c9a1808961bf642c67"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Sub::Exporter",
+  "Sub::Exporter::Util",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+  "perl-data-optlist",
+  "perl-params-someutil",
+  "perl-sub-install",
+]
+
+[check]
+enabled = true
+skip = []
