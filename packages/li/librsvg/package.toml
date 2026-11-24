@@ -1,0 +1,8 @@
+name = "librsvg"
+license = "LGPL-2.0-or-later"
+
+[upstream]
+homepage = "https://gitlab.gnome.org/GNOME/librsvg"
+sources = [
+  "https://cache.nixos.org/",
+]
