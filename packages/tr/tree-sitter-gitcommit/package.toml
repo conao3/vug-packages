@@ -1,0 +1,7 @@
+name = "tree-sitter-gitcommit"
+license = "WTFPL"
+
+[upstream]
+sources = [
+  "https://github.com/gbprod/tree-sitter-gitcommit/archive/",
+]

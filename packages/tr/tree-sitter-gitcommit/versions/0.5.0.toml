@@ -1,0 +1,19 @@
+version = "0.5.0"
+
+[source]
+url = "https://github.com/gbprod/tree-sitter-gitcommit/archive/refs/tags/v0.5.0.tar.gz"
+sha256 = "d22e688a643f5c26e462175f03dff25932f31bdd1c84e6c3d3571084f67f2680"
+
+[build]
+kind = "tree-sitter"
+language = "gitcommit"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
