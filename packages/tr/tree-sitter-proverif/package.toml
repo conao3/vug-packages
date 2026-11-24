@@ -1,0 +1,7 @@
+name = "tree-sitter-proverif"
+license = "ISC"
+
+[upstream]
+sources = [
+  "https://codeberg.org/maribu/tree-sitter-proverif/archive/",
+]

@@ -1,0 +1,19 @@
+version = "0-unstable-2026-02-28"
+
+[source]
+url = "https://codeberg.org/maribu/tree-sitter-proverif/archive/7741807092c4009c1fe4c3648da60ca72b1b80f1.tar.gz"
+sha256 = "ecf2b5cc424b072909160bac757beaafe1796618d817a411b70a30c9bb2a82a3"
+
+[build]
+kind = "tree-sitter"
+language = "proverif"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
