@@ -1,0 +1,19 @@
+version = "0.2.0"
+
+[source]
+url = "https://github.com/stsewd/tree-sitter-rst/archive/refs/tags/v0.2.0.tar.gz"
+sha256 = "0a295e4774b3b39ab3e55c09878c58480b78385f82017d3664e1ce22c7b8a937"
+
+[build]
+kind = "tree-sitter"
+language = "rst"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
