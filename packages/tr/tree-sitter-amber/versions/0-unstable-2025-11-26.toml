@@ -1,0 +1,19 @@
+version = "0-unstable-2025-11-26"
+
+[source]
+url = "https://github.com/amber-lang/tree-sitter-amber/archive/107c6d4a420fb0c5962b62ebd9347b7eb0015957.tar.gz"
+sha256 = "dff71b9159870c26b2ded73825ebf092d7f1177021dab8203c779a0ef3a0c9a9"
+
+[build]
+kind = "tree-sitter"
+language = "amber"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
