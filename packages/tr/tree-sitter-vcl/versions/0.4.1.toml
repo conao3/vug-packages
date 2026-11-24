@@ -1,0 +1,19 @@
+version = "0.4.1"
+
+[source]
+url = "https://github.com/ntsk/tree-sitter-vcl/archive/refs/tags/v0.4.1.tar.gz"
+sha256 = "61acfe142a0eff9f03fad418863855bf13d5dc2e48678637b56372e079dc9c6d"
+
+[build]
+kind = "tree-sitter"
+language = "vcl"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
