@@ -1,0 +1,8 @@
+name = "lm-sensors"
+license = "GPL-2.0-or-later AND LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://github.com/hramrach/lm-sensors"
+sources = [
+  "https://github.com/hramrach/lm-sensors/archive/",
+]
