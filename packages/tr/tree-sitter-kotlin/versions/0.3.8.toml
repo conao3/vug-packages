@@ -1,0 +1,19 @@
+version = "0.3.8"
+
+[source]
+url = "https://github.com/fwcd/tree-sitter-kotlin/archive/refs/tags/0.3.8.tar.gz"
+sha256 = "7dd60975786bf9cb4be6a5176f5ccb5fed505f9929a012da30762505b1015669"
+
+[build]
+kind = "tree-sitter"
+language = "kotlin"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
