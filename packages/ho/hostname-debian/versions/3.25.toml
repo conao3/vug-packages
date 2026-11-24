@@ -1,0 +1,26 @@
+version = "3.25"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "hostname-debian"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/n327xnampskxk86nadhrgcxl0ab8hbcw-hostname-debian-3.25"
+nar-hash = "sha256:02ab944smvvpp3jxaplhxp31smyvgz2547whj9j78cj8x7rym89r"
+expose = [
+  "bin/dnsdomainname",
+  "bin/domainname",
+  "bin/hostname",
+  "bin/nisdomainname",
+  "bin/ypdomainname",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
