@@ -1,0 +1,9 @@
+--- a/include/Makefile.in
++++ b/include/Makefile.in
+@@ -633,4 +633,6 @@
+ 	mv  $(DESTDIR)$(includedir)/bsd/sys/cdefs.h.new \
+ 	    $(DESTDIR)$(includedir)/bsd/sys/cdefs.h
++	$(MKDIR_P) "$(DESTDIR)$(includedir)/sys"
++	cd "$(DESTDIR)$(includedir)/sys" && $(LN_S) -f ../bsd/sys/queue.h queue.h
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.

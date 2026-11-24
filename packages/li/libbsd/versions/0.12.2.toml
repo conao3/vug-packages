@@ -1,4 +1,7 @@
 version = "0.12.2"
+patches = [
+  "0.12.2-install-queue-header-link.patch",
+]
 
 [source]
 url = "https://libbsd.freedesktop.org/releases/libbsd-0.12.2.tar.xz"
