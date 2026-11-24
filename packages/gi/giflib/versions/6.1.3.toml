@@ -13,7 +13,6 @@ make-flags = [
 [dependencies]
 build = [
   "binutils",
-  "coreutils",
   "make",
 ]
 run = [
