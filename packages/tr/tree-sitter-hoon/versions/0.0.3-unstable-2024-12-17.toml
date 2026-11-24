@@ -1,0 +1,19 @@
+version = "0.0.3-unstable-2024-12-17"
+
+[source]
+url = "https://github.com/urbit-pilled/tree-sitter-hoon/archive/1545137aadcc63660c47db9ad98d02fa602655d0.tar.gz"
+sha256 = "5ae4fe866aeeac1975c197b9d66243af9298120784d28de58b8db6a42db80df6"
+
+[build]
+kind = "tree-sitter"
+language = "hoon"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

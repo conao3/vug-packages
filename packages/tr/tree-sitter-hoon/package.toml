@@ -1,0 +1,7 @@
+name = "tree-sitter-hoon"
+license = "BSD-3-Clause"
+
+[upstream]
+sources = [
+  "https://github.com/urbit-pilled/tree-sitter-hoon/archive/",
+]
