@@ -1,0 +1,19 @@
+version = "0.26.6"
+
+[source]
+url = "https://github.com/airbus-cert/tree-sitter-powershell/archive/refs/tags/v0.26.6.tar.gz"
+sha256 = "ef50282d95bb66fac71e0ae65308358a5f4bd1da1606cb01149b201eb92c42c5"
+
+[build]
+kind = "tree-sitter"
+language = "powershell"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
