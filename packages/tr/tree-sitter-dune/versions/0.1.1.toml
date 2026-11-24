@@ -1,0 +1,19 @@
+version = "0.1.1"
+
+[source]
+url = "https://github.com/tmcgilchrist/tree-sitter-dune/archive/refs/tags/0.1.1.tar.gz"
+sha256 = "07e60d9eb61be5b4839bdebc40f31045b6a8b430128987c5bf08f2901ae4b22c"
+
+[build]
+kind = "tree-sitter"
+language = "dune"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
