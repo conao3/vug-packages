@@ -1,0 +1,19 @@
+version = "0.3.0"
+
+[source]
+url = "https://github.com/tree-sitter-grammars/tree-sitter-properties/archive/refs/tags/v0.3.0.tar.gz"
+sha256 = "afda73133465ed29229eb54da657ea931fc806921ce5c6f193210314bf742bed"
+
+[build]
+kind = "tree-sitter"
+language = "properties"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
