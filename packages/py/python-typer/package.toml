@@ -1,0 +1,8 @@
+name = "python-typer"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/fastapi/typer"
+sources = [
+  "https://files.pythonhosted.org/packages/source/t/typer/",
+]

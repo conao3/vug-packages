@@ -1,0 +1,29 @@
+version = "0.29.2"
+
+[source]
+url = "https://files.pythonhosted.org/packages/source/t/typer/typer-0.29.2.tar.gz"
+sha256 = "b1998dc5f2c3dedafa1517a9521fa944cc4dc1fadcea085d81a3b10ebcaeb075"
+
+[build]
+kind = "python"
+imports = [
+  "typer",
+]
+
+[dependencies]
+build = [
+  "python-build",
+  "python-installer",
+  "python-pdm-backend",
+]
+run = [
+  "python",
+  "python-annotated-doc",
+  "python-pydantic",
+  "python-rich",
+  "python-shellingham",
+]
+
+[check]
+enabled = true
+skip = []
