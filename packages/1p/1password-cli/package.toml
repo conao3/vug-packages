@@ -1,0 +1,8 @@
+name = "1password-cli"
+license = "LicenseRef-1password-cli"
+
+[upstream]
+homepage = "https://developer.1password.com/docs/cli/"
+sources = [
+  "https://cache.agilebits.com/dist/1P/op2/pkg/",
+]
