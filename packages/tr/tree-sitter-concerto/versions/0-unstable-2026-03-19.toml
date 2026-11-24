@@ -1,0 +1,19 @@
+version = "0-unstable-2026-03-19"
+
+[source]
+url = "https://github.com/accordproject/concerto-tree-sitter/archive/920ba23ea93af56b19dfc38fcddf80b3ddc62685.tar.gz"
+sha256 = "0a1292062991750565d219c5d8f9e4ba4b245194a93982d154d2824d720ccc58"
+
+[build]
+kind = "tree-sitter"
+language = "concerto"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
