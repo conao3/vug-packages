@@ -1,0 +1,19 @@
+version = "0-unstable-2024-04-22"
+
+[source]
+url = "https://github.com/monaqa/tree-sitter-mermaid/archive/90ae195b31933ceb9d079abfa8a3ad0a36fee4cc.tar.gz"
+sha256 = "f11fdbc364e43cfae48a41d5f9c1830d34b4eaf56a584b3b711ca9d8a9cb9229"
+
+[build]
+kind = "tree-sitter"
+language = "mermaid"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

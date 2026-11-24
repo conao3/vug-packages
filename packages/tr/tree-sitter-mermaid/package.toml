@@ -1,0 +1,7 @@
+name = "tree-sitter-mermaid"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/monaqa/tree-sitter-mermaid/archive/",
+]
