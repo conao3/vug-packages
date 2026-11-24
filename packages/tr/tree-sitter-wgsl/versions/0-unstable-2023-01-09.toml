@@ -1,0 +1,19 @@
+version = "0-unstable-2023-01-09"
+
+[source]
+url = "https://github.com/szebniok/tree-sitter-wgsl/archive/40259f3c77ea856841a4e0c4c807705f3e4a2b65.tar.gz"
+sha256 = "ddd4a41dacb45e8c58a304312cb68994a8be65b6681c5402ef4492a05df7c407"
+
+[build]
+kind = "tree-sitter"
+language = "wgsl"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
