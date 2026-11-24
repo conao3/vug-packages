@@ -1,0 +1,19 @@
+version = "0-unstable-2026-03-27"
+
+[source]
+url = "https://github.com/tymbalodeon/tree-sitter-chuck/archive/68fb7bdba480915d87177feaa5593a666c0bb602.tar.gz"
+sha256 = "362bfffe171971ca815c81097ad2f1b2074c77416d0623dec30c83877c10f4f3"
+
+[build]
+kind = "tree-sitter"
+language = "chuck"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

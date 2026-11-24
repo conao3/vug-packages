@@ -1,0 +1,7 @@
+name = "tree-sitter-chuck"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/tymbalodeon/tree-sitter-chuck/archive/",
+]
