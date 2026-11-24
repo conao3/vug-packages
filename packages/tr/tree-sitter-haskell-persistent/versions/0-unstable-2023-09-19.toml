@@ -1,0 +1,19 @@
+version = "0-unstable-2023-09-19"
+
+[source]
+url = "https://github.com/MercuryTechnologies/tree-sitter-haskell-persistent/archive/577259b4068b2c281c9ebf94c109bd50a74d5857.tar.gz"
+sha256 = "2fc6f171c427e2147eb9e5c776c04a785a137528b4a538d098b15b433549d40e"
+
+[build]
+kind = "tree-sitter"
+language = "haskell_persistent"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

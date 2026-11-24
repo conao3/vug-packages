@@ -1,0 +1,7 @@
+name = "tree-sitter-haskell-persistent"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/MercuryTechnologies/tree-sitter-haskell-persistent/archive/",
+]
