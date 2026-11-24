@@ -1,0 +1,7 @@
+name = "tree-sitter-c3"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/c3lang/tree-sitter-c3/archive/",
+]

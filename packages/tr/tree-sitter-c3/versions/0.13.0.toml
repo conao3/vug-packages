@@ -1,0 +1,19 @@
+version = "0.13.0"
+
+[source]
+url = "https://github.com/c3lang/tree-sitter-c3/archive/refs/tags/v0.13.0.tar.gz"
+sha256 = "f74062e5b43f74137dfed85298f57d87b9a38cafaaba4d4c097c7aa05e87fe26"
+
+[build]
+kind = "tree-sitter"
+language = "c3"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
