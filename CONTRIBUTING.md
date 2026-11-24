@@ -263,6 +263,19 @@ against musl. Its upstream suite requires
   the selected Perl. For an XS loader error, check the library dependencies
   and load the named module from the installed tree.
 
+## Tree-sitter grammars
+
+Use `build.kind = "tree-sitter"` for archives that ship `src/parser.c`.
+Set `build.path` when the grammar lives below the archive root and
+`build.language` to the suffix of its exported `tree_sitter_*` symbol.
+See the [TSX record](packages/tr/tree-sitter-tsx/versions/0.23.2.toml).
+
+Declare `musl` in `dependencies.run` and add `libcxx` for a C++ scanner.
+The builder compiles the generated parser and scanner without running the
+upstream generator. Set `check.enabled = false` and validate the installed
+library by parsing a short example with the packaged Tree-sitter runtime.
+Check that upstream query files are present under `queries/<language>/`.
+
 ## Package builds on GitHub
 
 Open the **Package builds** run from your pull request. The plan lists the
