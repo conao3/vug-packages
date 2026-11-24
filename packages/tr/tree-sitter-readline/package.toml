@@ -1,0 +1,7 @@
+name = "tree-sitter-readline"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/tree-sitter-grammars/tree-sitter-readline/archive/",
+]

@@ -1,0 +1,19 @@
+version = "1.1.1"
+
+[source]
+url = "https://github.com/tree-sitter-grammars/tree-sitter-readline/archive/refs/tags/v1.1.1.tar.gz"
+sha256 = "49b74980bb8ff5fea8aef1b5c02656031b86260f3fd137d5ed3637740712145c"
+
+[build]
+kind = "tree-sitter"
+language = "readline"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
