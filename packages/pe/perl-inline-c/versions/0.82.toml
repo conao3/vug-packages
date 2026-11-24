@@ -1,0 +1,20 @@
+version = "0.82"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "perlPackages.InlineC"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/z00ccgk20qkzhx19745b2x98z8a7cnvw-perl5.42.3-Inline-C-0.82"
+nar-hash = "sha256:0w5lkhjfswl95rja40cfygzqhcnv0v4yklm3hm4p660gf863dsdg"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
