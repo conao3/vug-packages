@@ -1,0 +1,25 @@
+version = "2.18"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/A/AN/ANDK/Devel-Symdump-2.18.tar.gz"
+sha256 = "826f81a107f5592a2516766ed43beb47e10cc83edc9ea48090b02a36040776c0"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Devel::Symdump",
+  "Devel::Symdump::Export",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+]
+
+[check]
+enabled = true
+skip = []
