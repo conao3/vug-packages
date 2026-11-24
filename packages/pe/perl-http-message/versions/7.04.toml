@@ -1,0 +1,42 @@
+version = "7.04"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Message-7.04.tar.gz"
+sha256 = "699f3350dbb7bd8fdc9f3b013b0c91b7c059783708443e39bc395fa33352f006"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "HTTP::Config",
+  "HTTP::Headers",
+  "HTTP::Headers::Auth",
+  "HTTP::Headers::ETag",
+  "HTTP::Headers::Util",
+  "HTTP::Message",
+  "HTTP::Request",
+  "HTTP::Request::Common",
+  "HTTP::Response",
+  "HTTP::Status",
+]
+
+[dependencies]
+build = [
+  "make",
+  "perl-test-needs",
+  "perl-try-tiny",
+]
+run = [
+  "perl",
+  "perl-clone",
+  "perl-compress-raw-bzip2",
+  "perl-encode-locale",
+  "perl-http-date",
+  "perl-io-html",
+  "perl-lwp-mediatypes",
+  "perl-uri",
+]
+
+[check]
+enabled = true
+skip = []
