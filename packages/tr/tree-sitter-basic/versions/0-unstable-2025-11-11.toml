@@ -1,0 +1,19 @@
+version = "0-unstable-2025-11-11"
+
+[source]
+url = "https://github.com/Ra77a3l3-jar/tree-sitter-basic/archive/a98449c11d6c688b54c1ca132148a62d7e586a2a.tar.gz"
+sha256 = "e5e311ee756db985d70d105ea3d28cf54c1dc108189a46bf413c2b3bb9c4c2fa"
+
+[build]
+kind = "tree-sitter"
+language = "basic"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
