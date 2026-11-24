@@ -1,0 +1,19 @@
+version = "0.2.0"
+
+[source]
+url = "https://github.com/connorlay/tree-sitter-surface/archive/refs/tags/v0.2.0.tar.gz"
+sha256 = "2f07b5f51e2dab7cdbf3c5b8e118b02d89d3b9728af88e7989643cf01d876ee3"
+
+[build]
+kind = "tree-sitter"
+language = "surface"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

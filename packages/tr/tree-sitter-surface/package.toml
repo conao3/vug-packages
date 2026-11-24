@@ -1,0 +1,7 @@
+name = "tree-sitter-surface"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/connorlay/tree-sitter-surface/archive/",
+]
