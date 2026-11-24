@@ -1,0 +1,24 @@
+name = "desktop"
+packages = ["hello"]
+
+[environment]
+VUG_MIGRATION_PROFILE = "desktop"
+
+[[file]]
+path = ".config/migration-example/settings.ini"
+content = "theme=light\n"
+
+[[unit]]
+name = "migration-example.service"
+enable = ["default.target"]
+secrets = ["example-key"]
+content = """
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart={pkg:hello}/bin/hello
+ExecStart=/bin/sh -ec 'echo "$VUG_MIGRATION_PROFILE" > "$XDG_RUNTIME_DIR/migration-profile"; sha256sum < "$CREDENTIALS_DIRECTORY/example-key" > "$XDG_RUNTIME_DIR/credential-digest"'
+"""
+
+[[secret]]
+name = "example-key"
