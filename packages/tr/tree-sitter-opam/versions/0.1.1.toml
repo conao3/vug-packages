@@ -1,0 +1,19 @@
+version = "0.1.1"
+
+[source]
+url = "https://github.com/tmcgilchrist/tree-sitter-opam/archive/refs/tags/0.1.1.tar.gz"
+sha256 = "1f8384a6163845d04213f619234a206965ad1bdc7c605f51ccf8f2f5fe510efb"
+
+[build]
+kind = "tree-sitter"
+language = "opam"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
