@@ -1,0 +1,19 @@
+version = "0.0.2"
+
+[source]
+url = "https://github.com/tree-sitter-grammars/tree-sitter-yuck/archive/refs/tags/v0.0.2.tar.gz"
+sha256 = "5543f42f06a25ceaf8f8899513dc18337b68bc01faa983d3554e7ff6e952964d"
+
+[build]
+kind = "tree-sitter"
+language = "yuck"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
