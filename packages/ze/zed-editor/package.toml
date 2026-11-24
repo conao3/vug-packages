@@ -1,0 +1,8 @@
+name = "zed-editor"
+license = "GPL-3.0-only"
+
+[upstream]
+homepage = "https://zed.dev"
+sources = [
+  "https://cache.nixos.org/",
+]
