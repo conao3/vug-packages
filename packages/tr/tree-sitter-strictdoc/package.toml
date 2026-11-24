@@ -1,0 +1,7 @@
+name = "tree-sitter-strictdoc"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/manueldiagostino/tree-sitter-strictdoc/archive/",
+]

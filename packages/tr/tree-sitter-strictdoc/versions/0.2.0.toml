@@ -1,0 +1,19 @@
+version = "0.2.0"
+
+[source]
+url = "https://github.com/manueldiagostino/tree-sitter-strictdoc/archive/refs/tags/v0.2.0.tar.gz"
+sha256 = "ced7381c9c40b64218e9fc0f5b6fa3748251d5be88d33ca34a807c78c32b7e64"
+
+[build]
+kind = "tree-sitter"
+language = "strictdoc"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
