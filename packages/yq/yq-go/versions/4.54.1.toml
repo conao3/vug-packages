@@ -9,7 +9,6 @@ kind = "go"
 targets = [
   { path = ".", bin = "yq" },
 ]
-vendor = { url = "https://github.com/conao3/rust-vug/releases/download/v0.2.11/yq-4.54.1-vendor.tar.gz", sha256 = "7ea64725eb74d7ae7b7bdad93c5535694ac43d6e755adf2c663d525cc2266243" }
 
 [dependencies]
 build = [
