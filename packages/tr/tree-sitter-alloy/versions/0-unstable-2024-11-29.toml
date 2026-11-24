@@ -1,0 +1,19 @@
+version = "0-unstable-2024-11-29"
+
+[source]
+url = "https://github.com/mattsre/tree-sitter-alloy/archive/58d462b1cdb077682b130caa324f3822aeb00b8e.tar.gz"
+sha256 = "8e746795223c9d8274e84739a0951751baac934d6dc4052c49154eda2c773fb1"
+
+[build]
+kind = "tree-sitter"
+language = "alloy"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

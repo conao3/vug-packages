@@ -1,0 +1,7 @@
+name = "tree-sitter-alloy"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/mattsre/tree-sitter-alloy/archive/",
+]
