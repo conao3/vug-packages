@@ -1,0 +1,18 @@
+--- a/docs/meson.build	2026-11-24 18:58:41.986256930 +0900
++++ b/docs/meson.build	2026-11-24 18:58:42.006857823 +0900
+@@ -28,7 +28,7 @@
+     '--stringparam', 'man.th.extra1.suppress', '1',
+     '--stringparam', 'man.authors.section.enabled', '0',
+     '--stringparam', 'man.copyright.section.enabled', '0',
+-    'http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl',
++    get_option('docbook_xsl'),
+     '@INPUT@',
+   ]
+ 
+--- a/meson_options.txt	2026-11-24 18:58:41.984355925 +0900
++++ b/meson_options.txt	2026-11-24 18:58:42.006743740 +0900
+@@ -3,3 +3,4 @@
+ option('gtk_doc', type: 'boolean', value: false, description: 'use gtk-doc to build documentation')
+ option('vapi', type: 'boolean', value: true, description: 'install dconf client vapi')
+ option('systemduserunitdir', type: 'string', value: '', description: 'override systemd user unit directory')
++option('docbook_xsl', type: 'string', value: 'http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl', description: 'path or URI of the DocBook manpages stylesheet')

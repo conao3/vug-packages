@@ -1,0 +1,8 @@
+name = "dconf"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://wiki.gnome.org/Projects/dconf"
+sources = [
+  "https://download.gnome.org/sources/dconf/",
+]
