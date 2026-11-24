@@ -1,0 +1,19 @@
+version = "0.7.0"
+
+[source]
+url = "https://github.com/kaermorchen/tree-sitter-twig/archive/refs/tags/v0.7.0.tar.gz"
+sha256 = "99c595fe5b600dc73c789b43b2f9e5e14ce9d5b6aed4be516711746b6e38d32f"
+
+[build]
+kind = "tree-sitter"
+language = "twig"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
