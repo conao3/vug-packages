@@ -1,0 +1,35 @@
+version = "66.0"
+
+[source]
+url = "https://github.com/linux-rdma/rdma-core/archive/v66.0.tar.gz"
+sha256 = "385a3f2e7a919fedcf6c9c4bece4d40717c5627b6dbb1fedc805a50dd819c1a1"
+
+[build]
+kind = "cmake"
+setup-flags = [
+  "-DCMAKE_INSTALL_PYTHON_ARCH_LIB={out}/lib/python3.13/site-packages",
+  "-DNO_MAN_PAGES=1",
+  "-DSYSUSERS_DIR={out}/lib/sysusers.d",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+  "pkgconf",
+  "python",
+  "python-cython",
+  "python-docutils",
+]
+run = [
+  "libnl",
+  "musl",
+  "perl",
+  "python",
+  "systemd",
+]
+
+[check]
+enabled = false
+skip = []

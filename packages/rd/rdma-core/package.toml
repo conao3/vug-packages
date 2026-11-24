@@ -1,0 +1,8 @@
+name = "rdma-core"
+license = "BSD-2-Clause OR GPL-2.0-only"
+
+[upstream]
+homepage = "https://github.com/linux-rdma/rdma-core"
+sources = [
+  "https://github.com/linux-rdma/rdma-core/archive/",
+]
