@@ -1,0 +1,19 @@
+version = "0-unstable-2023-05-27"
+
+[source]
+url = "https://github.com/kepet19/tree-sitter-ldif/archive/0a917207f65ba3e3acfa9cda16142ee39c4c1aaa.tar.gz"
+sha256 = "117d23059cd18f39b46fc5cd78c6b6f5ebacbc3441a995ad3ed1dd83b9b56800"
+
+[build]
+kind = "tree-sitter"
+language = "ldif"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

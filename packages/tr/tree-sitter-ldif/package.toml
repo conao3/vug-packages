@@ -1,0 +1,7 @@
+name = "tree-sitter-ldif"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/kepet19/tree-sitter-ldif/archive/",
+]
