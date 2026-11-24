@@ -1,0 +1,19 @@
+version = "0.23.1"
+
+[source]
+url = "https://github.com/tree-sitter/tree-sitter-ql-dbscheme/archive/refs/tags/v0.23.1.tar.gz"
+sha256 = "a863b4aec19f9e723d580a079a71d092f1a0b6f1e7e51e72b6c4e3e26b068e21"
+
+[build]
+kind = "tree-sitter"
+language = "ql_dbscheme"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
