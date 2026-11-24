@@ -1,0 +1,8 @@
+name = "sonic-unstable"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://github.com/waywardgeek/sonic"
+sources = [
+  "https://cache.nixos.org/",
+]
