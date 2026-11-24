@@ -1,0 +1,8 @@
+name = "pure-prompt"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/sindresorhus/pure"
+sources = [
+  "https://cache.nixos.org/",
+]
