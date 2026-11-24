@@ -1,0 +1,8 @@
+name = "flite"
+license = "BSD-4-Clause"
+
+[upstream]
+homepage = "http://www.festvox.org/flite/"
+sources = [
+  "https://cache.nixos.org/",
+]
