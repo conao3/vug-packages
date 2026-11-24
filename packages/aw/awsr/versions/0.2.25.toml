@@ -1,0 +1,26 @@
+version = "0.2.25"
+
+[source]
+url = "https://api.github.com/repositories/1446143854/tarball/v0.2.25?archive=.tar.gz"
+sha256 = "e37f4baa3782d8600d893965991e13c495d526329fb6095d2151d46fc73358d4"
+
+[build]
+kind = "cargo"
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "rust",
+]
+run = [
+  "groff",
+  "less",
+  "musl",
+  "rust-libunwind",
+  "zlib",
+]
+
+[check]
+enabled = true
+skip = []
