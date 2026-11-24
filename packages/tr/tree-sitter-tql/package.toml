@@ -1,0 +1,7 @@
+name = "tree-sitter-tql"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/tenzir/tree-sitter-tql/archive/",
+]

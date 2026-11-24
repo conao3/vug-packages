@@ -1,0 +1,19 @@
+version = "1.5.0"
+
+[source]
+url = "https://github.com/tenzir/tree-sitter-tql/archive/refs/tags/v1.5.0.tar.gz"
+sha256 = "92ff0fbd113d43f1312a0d945750db9be0727d48341a28e4a847c70b2b700e81"
+
+[build]
+kind = "tree-sitter"
+language = "tql"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
