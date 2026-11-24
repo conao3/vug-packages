@@ -1,0 +1,22 @@
+version = "3.0.5"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "mo"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/prhj2br0hkldc8cz7sc1zlz4gpcbw9yj-mo-3.0.5"
+nar-hash = "sha256:11k563cr362942z0ifjbd109w2xxp4175m66ciyrvsp4bfkglkvz"
+expose = [
+  "bin/mo",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
