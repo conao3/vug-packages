@@ -1,0 +1,13 @@
+--- a/utils/statd/rmtcall.c	2026-11-24 19:11:46.459386895 +0900
++++ b/utils/statd/rmtcall.c	2026-11-24 19:12:13.852001381 +0900
+@@ -93,8 +93,10 @@
+ 					__func__);
+ 			break;
+ 		}
++#if 0
+ 		se = getservbyport(sin.sin_port, "udp");
+ 		if (se == NULL)
++#endif
+ 			break;
+ 
+ 		if (retries == MAX_BRP_RETRIES) {

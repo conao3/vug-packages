@@ -1,0 +1,12 @@
+--- a/tools/rpcgen/rpc_main.c	2026-11-24 19:17:56.200223274 +0900
++++ b/tools/rpcgen/rpc_main.c	2026-11-24 19:17:56.218528864 +0900
+@@ -374,6 +374,9 @@
+       putarg (0, CPP);
+       putarg (1, CPPFLAGS);
+       addarg (define);
++      /* the cpp available here does not recognize the .x extension */
++      addarg ("-x");
++      addarg ("c");
+       if (infile)
+ 	addarg (infile);
+       addarg ((char *) NULL);

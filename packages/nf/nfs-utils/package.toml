@@ -1,0 +1,8 @@
+name = "nfs-utils"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://linux-nfs.org/"
+sources = [
+  "https://mirrors.edge.kernel.org/pub/linux/utils/nfs-utils/",
+]

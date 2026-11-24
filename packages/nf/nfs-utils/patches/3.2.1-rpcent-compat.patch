@@ -1,0 +1,97 @@
+--- a/support/nfs/svc_socket.c	2026-11-24 19:11:46.458168830 +0900
++++ b/support/nfs/svc_socket.c	2026-11-24 19:12:06.810717663 +0900
+@@ -29,6 +29,7 @@
+ #include "nfslib.h"
+ 
+ #include "config.h"
++#include <stdlib.h>
+ 
+ #ifdef _LIBC
+ # include <libintl.h>
+@@ -40,6 +41,86 @@
+ # define __close(f)		close ((f))
+ #endif
+ 
++#if !defined(__GLIBC__)
++/*
++ * musl provides no /etc/rpc database API, and libtirpc only ships its
++ * implementation when built with --enable-rpcdb.  Implement the two
++ * entry points used by this package by scanning /etc/rpc directly.
++ */
++static int
++nfs_rpc_name_match(const struct rpcent *entry, const char *name)
++{
++	char **a;
++
++	if (strcmp(entry->r_name, name) == 0)
++		return 1;
++	if (entry->r_aliases == NULL)
++		return 0;
++	for (a = entry->r_aliases; *a != NULL; a++)
++		if (strcmp(*a, name) == 0)
++			return 1;
++	return 0;
++}
++
++static struct rpcent *
++nfs_lookup_rpcent(const char *name, int number)
++{
++	static char rpcbuf[BUFSIZ + 1];
++	static char *rpcaliases[32];
++	static struct rpcent entry;
++	char line[BUFSIZ + 1], *save, *tok;
++	int n;
++	FILE *fp;
++
++	fp = fopen("/etc/rpc", "r");
++	if (fp == NULL)
++		return NULL;
++	while (fgets(line, sizeof line, fp) != NULL) {
++		snprintf(rpcbuf, sizeof rpcbuf, "%s", line);
++		save = NULL;
++		tok = strtok_r(rpcbuf, " \t\n", &save);
++		if (tok == NULL || *tok == '#')
++			continue;
++		entry.r_name = tok;
++		tok = strtok_r(NULL, " \t\n", &save);
++		if (tok == NULL)
++			continue;
++		entry.r_number = atoi(tok);
++		n = 0;
++		while (n < 31 &&
++		       (tok = strtok_r(NULL, " \t\n", &save)) != NULL) {
++			if (*tok == '#')
++				break;
++			rpcaliases[n++] = tok;
++		}
++		rpcaliases[n] = NULL;
++		entry.r_aliases = rpcaliases;
++		if (name == NULL) {
++			if (entry.r_number != number)
++				continue;
++		} else if (!nfs_rpc_name_match(&entry, name)) {
++			continue;
++		}
++		fclose(fp);
++		return &entry;
++	}
++	fclose(fp);
++	return NULL;
++}
++
++struct rpcent *
++getrpcbynumber(int number)
++{
++	return nfs_lookup_rpcent(NULL, number);
++}
++
++struct rpcent *
++getrpcbyname(const char *name)
++{
++	return nfs_lookup_rpcent(name, 0);
++}
++#endif
++
+ int getservport(u_long number, const char *proto)
+ {
+ 	char servdata[1024];

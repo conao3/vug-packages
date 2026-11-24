@@ -1,0 +1,55 @@
+--- a/support/export/v4root.c	2026-11-24 19:21:08.064650745 +0900
++++ b/support/export/v4root.c	2026-11-24 19:21:08.109202133 +0900
+@@ -13,7 +13,7 @@
+ 
+ #include <sys/types.h>
+ #include <sys/stat.h>
+-#include <sys/queue.h>
++#include <bsd/sys/queue.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <ctype.h>
+--- a/support/misc/tcpwrapper.c	2026-11-24 19:21:08.070427740 +0900
++++ b/support/misc/tcpwrapper.c	2026-11-24 19:21:08.109322061 +0900
+@@ -44,7 +44,7 @@
+ #include <pwd.h>
+ #include <sys/types.h>
+ #include <sys/signal.h>
+-#include <sys/queue.h>
++#include <bsd/sys/queue.h>
+ #include <sys/stat.h>
+ #include <tcpd.h>
+ 
+--- a/support/include/conffile.h	2026-11-24 19:21:08.075953903 +0900
++++ b/support/include/conffile.h	2026-11-24 19:21:18.433444630 +0900
+@@ -33,7 +33,7 @@
+ #ifndef _CONFFILE_H_
+ #define _CONFFILE_H_
+ 
+-#include <sys/queue.h>
++#include <bsd/sys/queue.h>
+ #include <ctype.h>
+ #include <stdint.h>
+ #include <stdbool.h>
+--- a/utils/gssd/svcgssd.h	2026-11-24 19:21:08.087287918 +0900
++++ b/utils/gssd/svcgssd.h	2026-11-24 19:21:18.438176562 +0900
+@@ -32,7 +32,7 @@
+ #define _RPC_SVCGSSD_H_
+ 
+ #include <sys/types.h>
+-#include <sys/queue.h>
++#include <bsd/sys/queue.h>
+ #include <gssapi/gssapi.h>
+ 
+ void handle_nullreq(char *cp);
+--- a/utils/gssd/gssd.h	2026-11-24 19:21:08.092879737 +0900
++++ b/utils/gssd/gssd.h	2026-11-24 19:21:18.440366917 +0900
+@@ -32,7 +32,7 @@
+ #define _RPC_GSSD_H_
+ 
+ #include <sys/types.h>
+-#include <sys/queue.h>
++#include <bsd/sys/queue.h>
+ #include <gssapi/gssapi.h>
+ #include <event.h>
+ #include <stdbool.h>

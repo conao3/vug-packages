@@ -1,0 +1,13 @@
+--- a/utils/nfsdctl/nfsdctl.c	2026-11-24 19:23:02.327424649 +0900
++++ b/utils/nfsdctl/nfsdctl.c	2026-11-24 19:23:34.859845740 +0900
+@@ -18,8 +18,9 @@
+ #include <getopt.h>
+ #include <string.h>
+ #include <sched.h>
+-#include <sys/queue.h>
++#include <bsd/sys/queue.h>
+ #include <limits.h>
++#include <libgen.h>
+ 
+ #include <netlink/genl/family.h>
+ #include <netlink/genl/ctrl.h>
