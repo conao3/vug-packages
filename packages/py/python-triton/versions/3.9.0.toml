@@ -1,0 +1,20 @@
+version = "3.9.0"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "python3Packages.triton"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/2i32kf8z6712vd8dg9a68x8145cwkwjg-python3.14-triton-3.9.0"
+nar-hash = "sha256:1gdqz25zrss35lv6ar4y8c9az4imlhlfllkyk5hgvs2m6jk01zgh"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []

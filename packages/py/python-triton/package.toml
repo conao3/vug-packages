@@ -1,0 +1,8 @@
+name = "python-triton"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/triton-lang/triton"
+sources = [
+  "https://cache.nixos.org/",
+]
