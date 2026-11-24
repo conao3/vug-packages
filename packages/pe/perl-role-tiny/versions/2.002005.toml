@@ -1,0 +1,25 @@
+version = "2.002005"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/H/HA/HAARG/Role-Tiny-2.002005.tar.gz"
+sha256 = "4618ec524618c104dc28a8cc86af129a00cad282aea7f4c75060ba05d4c8f4d7"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Role::Tiny",
+  "Role::Tiny::With",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+]
+
+[check]
+enabled = true
+skip = []
