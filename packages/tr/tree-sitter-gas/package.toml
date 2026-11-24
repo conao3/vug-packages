@@ -1,0 +1,7 @@
+name = "tree-sitter-gas"
+license = "GPL-3.0-only"
+
+[upstream]
+sources = [
+  "https://github.com/sirius94/tree-sitter-gas/archive/",
+]

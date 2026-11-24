@@ -1,0 +1,19 @@
+version = "0.0.1"
+
+[source]
+url = "https://github.com/sirius94/tree-sitter-gas/archive/refs/tags/0.0.1.tar.gz"
+sha256 = "61c7c250d42b561bc50d44311eafaaa7384eb0cc919871265626f9829ff0c213"
+
+[build]
+kind = "tree-sitter"
+language = "gas"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
