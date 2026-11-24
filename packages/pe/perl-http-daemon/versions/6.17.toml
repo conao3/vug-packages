@@ -1,0 +1,29 @@
+version = "6.17"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Daemon-6.17.tar.gz"
+sha256 = "16281580c40e23108d028434698b5d7d53637bf904c9df822481e253cbec920c"
+
+[build]
+kind = "perl"
+driver = "module-build"
+modules = [
+  "HTTP::Daemon",
+]
+
+[dependencies]
+build = [
+  "perl-http-message",
+  "perl-module-build-tiny",
+  "perl-test-needs",
+]
+run = [
+  "perl",
+  "perl-http-date",
+  "perl-http-message",
+  "perl-lwp-mediatypes",
+]
+
+[check]
+enabled = true
+skip = []
