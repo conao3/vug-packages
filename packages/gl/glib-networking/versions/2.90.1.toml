@@ -1,0 +1,40 @@
+version = "2.90.1"
+
+[source]
+url = "https://download.gnome.org/sources/glib-networking/2.90/glib-networking-2.90.1.tar.xz"
+sha256 = "ea95636590098355a05e3027579dba1a9a950b05e456b2488ea03d82e4b6c18a"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dc_link_args=-lintl -Wl,-rpath,{dep:glib}/lib -Wl,-rpath,{dep:gnutls}/lib -Wl,-rpath,{dep:gettext}/lib -Wl,-rpath,{dep:libproxy}/lib",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "gettext",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "gettext",
+  "glib",
+  "gnutls",
+  "gsettings-desktop-schemas",
+  "libproxy",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = [
+  "certificate-gnutls",
+  "connection-gnutls",
+  "connection-gnutls-tls1.2",
+  "environment-libproxy",
+  "file-database-gnutls",
+  "gnome",
+]
