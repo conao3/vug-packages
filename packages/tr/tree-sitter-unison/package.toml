@@ -1,0 +1,7 @@
+name = "tree-sitter-unison"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/kylegoetz/tree-sitter-unison/archive/",
+]

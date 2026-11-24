@@ -1,0 +1,19 @@
+version = "2.1.3"
+
+[source]
+url = "https://github.com/kylegoetz/tree-sitter-unison/archive/refs/tags/2.1.3.tar.gz"
+sha256 = "d674fa0e3e08c3160509c855da5c81b8edaeee45d504c1765dc4e7bda5790cb3"
+
+[build]
+kind = "tree-sitter"
+language = "unison"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
