@@ -1,0 +1,19 @@
+version = "0-unstable-2024-11-23"
+
+[source]
+url = "https://github.com/naclsn/tree-sitter-nasm/archive/d1b3638d017f2a8585e26dcfc66fe1df94185e30.tar.gz"
+sha256 = "26c038419abf7345c2fce401e696b87e1d4a3e8ef8e9a17a63af2b139dccc745"
+
+[build]
+kind = "tree-sitter"
+language = "nasm"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
