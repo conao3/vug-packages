@@ -1,0 +1,8 @@
+name = "sound-theme-freedesktop"
+license = "CC-BY-3.0 AND CC-BY-SA-2.5 AND GPL-2.0 AND GPL-2.0-or-later"
+
+[upstream]
+homepage = "http://freedesktop.org/wiki/Specifications/sound-theme-spec"
+sources = [
+  "https://cache.nixos.org/",
+]
