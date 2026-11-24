@@ -1,0 +1,8 @@
+name = "libva"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/intel/libva"
+sources = [
+  "https://github.com/intel/libva/releases/download/",
+]

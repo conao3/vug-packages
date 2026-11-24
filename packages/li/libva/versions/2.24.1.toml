@@ -1,0 +1,36 @@
+version = "2.24.1"
+
+[source]
+url = "https://github.com/intel/libva/releases/download/2.24.1/libva-2.24.1.tar.bz2"
+sha256 = "eec6050b52876f229bd35e9df17cd31a06785e18e6f7990c445b584628483d67"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dwith_glx=yes",
+  "-Dwith_wayland=yes",
+  "-Dwith_x11=yes",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "libdrm",
+  "libglvnd",
+  "libx11",
+  "libxcb",
+  "libxext",
+  "libxfixes",
+  "musl",
+  "wayland",
+]
+
+[check]
+enabled = false
+skip = []
