@@ -1,0 +1,7 @@
+name = "tree-sitter-teal"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/euclidianAce/tree-sitter-teal/archive/",
+]
