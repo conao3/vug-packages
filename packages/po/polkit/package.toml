@@ -1,0 +1,8 @@
+name = "polkit"
+license = "LGPL-2.0-or-later"
+
+[upstream]
+homepage = "https://github.com/polkit-org/polkit"
+sources = [
+  "https://github.com/polkit-org/polkit/archive/",
+]

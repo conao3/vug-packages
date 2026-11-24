@@ -1,0 +1,40 @@
+version = "128"
+
+[source]
+url = "https://github.com/polkit-org/polkit/archive/128.tar.gz"
+sha256 = "6edb06bf1448e49e428f9597a97af6a05d62146dd0b58f86eeaebcee3f5ecfaa"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dc_link_args=-lintl -Wl,-rpath,{dep:dbus}/lib -Wl,-rpath,{dep:duktape}/lib -Wl,-rpath,{dep:expat}/lib -Wl,-rpath,{dep:gettext}/lib -Wl,-rpath,{dep:glib}/lib -Wl,-rpath,{dep:linux-pam}/lib -Wl,-rpath,{dep:systemd}/lib",
+  "-Dgtk_doc=false",
+  "-Dintrospection=false",
+  "-Dman=false",
+  "-Dtests=false",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "gettext",
+  "meson",
+  "perl",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "dbus",
+  "duktape",
+  "expat",
+  "gettext",
+  "glib",
+  "linux-pam",
+  "musl",
+  "systemd",
+]
+
+[check]
+enabled = false
+skip = []
