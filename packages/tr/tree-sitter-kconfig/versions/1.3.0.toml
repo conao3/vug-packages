@@ -1,0 +1,19 @@
+version = "1.3.0"
+
+[source]
+url = "https://github.com/tree-sitter-grammars/tree-sitter-kconfig/archive/refs/tags/v1.3.0.tar.gz"
+sha256 = "7f56300b17aa5647749dd26a3dc62efc4155715114dc4064780c7dec7f4637ec"
+
+[build]
+kind = "tree-sitter"
+language = "kconfig"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
