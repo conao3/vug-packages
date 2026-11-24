@@ -1,0 +1,19 @@
+version = "0.7.6"
+
+[source]
+url = "https://github.com/uyha/tree-sitter-cmake/archive/refs/tags/v0.7.6.tar.gz"
+sha256 = "388129103b886be0f2191c9ddda6ddcee1e21c284838a0e86cc538431c6759c3"
+
+[build]
+kind = "tree-sitter"
+language = "cmake"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
