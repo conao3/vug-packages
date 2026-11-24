@@ -1,0 +1,8 @@
+name = "electron"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/electron/electron"
+sources = [
+  "https://cache.nixos.org/",
+]

@@ -1,0 +1,22 @@
+version = "45.3.4"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "electron"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/85swl8lj0kshas6s0a99rlxrk1b4pwmk-electron-45.3.4"
+nar-hash = "sha256:090vgsvfpd9qj5nlb9gkdkv6bf0g1pjfaj9dznkf1ajqa7hb0l41"
+expose = [
+  "bin/electron",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
