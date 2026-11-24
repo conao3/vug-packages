@@ -1,0 +1,37 @@
+version = "4.0.8"
+
+[source]
+url = "https://github.com/libical/libical/releases/download/v4.0.8/libical-4.0.8.tar.gz"
+sha256 = "cd486bb3ece8256c34f1a236e174992c66ecb46b592a65f3f55d24d49eb66a5d"
+
+[build]
+kind = "cmake"
+setup-flags = [
+  "-DLIBICAL_JAVA_BINDINGS=False",
+  "-DLIBICAL_GOBJECT_INTROSPECTION=False",
+  "-DLIBICAL_BUILD_DOCS=False",
+  "-DLIBICAL_BUILD_TESTING=True",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+  "perl",
+  "pkgconf",
+]
+run = [
+  "glib",
+  "icu4c",
+  "libcxx",
+  "libxml2",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = [
+  "builtin_timezones",
+  "regression",
+]
