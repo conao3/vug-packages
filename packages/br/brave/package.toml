@@ -1,0 +1,8 @@
+name = "brave"
+license = "MPL-2.0"
+
+[upstream]
+homepage = "https://brave.com/"
+sources = [
+  "https://cache.nixos.org/",
+]
