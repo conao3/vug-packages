@@ -1,0 +1,19 @@
+version = "1.2.5.1"
+
+[source]
+url = "https://www.alsa-project.org/files/pub/lib/alsa-topology-conf-1.2.5.1.tar.bz2"
+sha256 = "f7c5bae1545abcd73824bc97f4e72c340e11abea188ba0f1c06f5e0ad776b179"
+
+[build]
+kind = "prebuilt"
+install = [
+  { from = "topology", to = "share/alsa/topology" },
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = true
+skip = []
