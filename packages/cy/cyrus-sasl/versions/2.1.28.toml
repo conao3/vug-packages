@@ -1,0 +1,44 @@
+version = "2.1.28"
+patches = [
+  "2.1.28-time-h.patch",
+]
+
+[source]
+url = "https://github.com/cyrusimap/cyrus-sasl/releases/download/cyrus-sasl-2.1.28/cyrus-sasl-2.1.28.tar.gz"
+sha256 = "7ccfc6abd01ed67c1a0924b353e526f1b766b21f42d4562ee635a8ebfc5bb38c"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--with-openssl",
+  "--with-dblib=berkeley",
+  "--enable-gssapi={dep:krb5}",
+  "--with-pam",
+  "--without-ldap",
+  "--disable-ldapdb",
+  "--without-mysql",
+  "--without-pgsql",
+  "--enable-sql",
+  "--with-sqlite3={dep:sqlite}",
+  "--without-sqlite",
+  "--disable-ntlm",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+]
+run = [
+  "db",
+  "krb5",
+  "libxcrypt",
+  "linux-pam",
+  "musl",
+  "openssl",
+  "sqlite",
+]
+
+[check]
+enabled = true
+skip = []

@@ -1,0 +1,8 @@
+name = "cyrus-sasl"
+license = "BSD-4-Clause"
+
+[upstream]
+homepage = "https://www.cyrusimap.org/sasl/"
+sources = [
+  "https://github.com/cyrusimap/cyrus-sasl/releases/download/",
+]
