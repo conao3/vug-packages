@@ -1,0 +1,19 @@
+version = "0-unstable-2026-04-11"
+
+[source]
+url = "https://github.com/murtaza64/tree-sitter-groovy/archive/deb0dcf8c4544f07564060f6e9b9f6e4b0bfc27d.tar.gz"
+sha256 = "c0e121b50e4513bab3c0e646696de643e3b2ec992409f8bf104b4e70e7d4f778"
+
+[build]
+kind = "tree-sitter"
+language = "groovy"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
