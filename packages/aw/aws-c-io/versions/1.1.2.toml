@@ -1,0 +1,29 @@
+version = "1.1.2"
+
+[source]
+url = "https://github.com/awslabs/aws-c-io/archive/refs/tags/v1.1.2.tar.gz"
+sha256 = "5da5bbfb97a2e52cea58ed1f76fb94a877df11763dcbd1373c14d699ed1efd18"
+
+[build]
+kind = "cmake"
+setup-flags = [
+  "-DENABLE_NET_TESTS=OFF",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+]
+run = [
+  "aws-c-cal",
+  "aws-c-common",
+  "musl",
+  "openssl",
+  "s2n-tls",
+]
+
+[check]
+enabled = true
+skip = []
