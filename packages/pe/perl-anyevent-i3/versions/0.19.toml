@@ -1,7 +1,4 @@
 version = "0.19"
-patches = [
-  "0.19-skip-tests-without-i3.patch",
-]
 
 [source]
 url = "https://cpan.metacpan.org/authors/id/M/MS/MSTPLBG/AnyEvent-I3-0.19.tar.gz"
@@ -26,4 +23,7 @@ run = [
 
 [check]
 enabled = true
-skip = []
+skip = [
+  "t/01-workspaces.t",
+  "t/02-sugar.t",
+]
