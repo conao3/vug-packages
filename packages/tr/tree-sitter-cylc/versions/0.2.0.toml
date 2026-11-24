@@ -1,0 +1,19 @@
+version = "0.2.0"
+
+[source]
+url = "https://github.com/elliotfontaine/tree-sitter-cylc/archive/refs/tags/v0.2.0.tar.gz"
+sha256 = "12016cb5ffe333b94e3da36a841117bb3a737335412c90262e9b1589d530be76"
+
+[build]
+kind = "tree-sitter"
+language = "cylc"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
