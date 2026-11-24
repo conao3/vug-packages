@@ -1,0 +1,7 @@
+name = "tree-sitter-hurl"
+license = "Apache-2.0"
+
+[upstream]
+sources = [
+  "https://github.com/pfeiferj/tree-sitter-hurl/archive/",
+]
