@@ -1,0 +1,19 @@
+version = "0.1.1"
+
+[source]
+url = "https://github.com/rhizoome/tree-sitter-ink/archive/refs/tags/v0.1.1.tar.gz"
+sha256 = "89276052b86621486769288fa7bdcd359944425a2ef47411658b96492faa523d"
+
+[build]
+kind = "tree-sitter"
+language = "ink"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

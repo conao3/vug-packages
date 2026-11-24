@@ -1,0 +1,7 @@
+name = "tree-sitter-ink"
+license = "MIT OR Apache-2.0"
+
+[upstream]
+sources = [
+  "https://github.com/rhizoome/tree-sitter-ink/archive/",
+]
