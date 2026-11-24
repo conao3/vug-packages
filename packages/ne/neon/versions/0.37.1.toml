@@ -1,0 +1,38 @@
+version = "0.37.1"
+
+[source]
+url = "https://notroj.github.io/neon/neon-0.37.1.tar.gz"
+sha256 = "a99b7262525a454d1065cf76dd17240fd808dfc4ef15636990ff83a5d0d9e740"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--enable-shared",
+  "--with-ssl=openssl",
+  "--with-libxml2",
+  "--without-pakchois",
+  "--without-libntlm",
+  "--without-libproxy",
+  "--disable-nls",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "coreutils",
+  "gzip",
+  "make",
+  "perl",
+  "pkgconf",
+]
+run = [
+  "krb5",
+  "libxml2",
+  "musl",
+  "openssl",
+  "zlib",
+]
+
+[check]
+enabled = true
+skip = []

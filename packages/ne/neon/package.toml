@@ -1,0 +1,8 @@
+name = "neon"
+license = "LGPL-2.0-or-later"
+
+[upstream]
+homepage = "https://notroj.github.io/neon/"
+sources = [
+  "https://notroj.github.io/neon/",
+]
