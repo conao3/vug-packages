@@ -23,6 +23,4 @@ run = [
 
 [check]
 enabled = true
-skip = [
-  "tests/test-30574",
-]
+skip = []
