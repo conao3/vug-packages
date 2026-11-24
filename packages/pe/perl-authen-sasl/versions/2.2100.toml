@@ -15,6 +15,9 @@ modules = [
 [dependencies]
 build = [
   "make",
+  "perl-pod-coverage-trustpod",
+  "perl-test-pod",
+  "perl-test-pod-coverage",
 ]
 run = [
   "perl",
@@ -23,5 +26,5 @@ run = [
 ]
 
 [check]
-enabled = false
+enabled = true
 skip = []
