@@ -1,0 +1,30 @@
+version = "1.10.8"
+
+[source]
+url = "https://download.gnome.org/sources/graphene/1.10/graphene-1.10.8.tar.xz"
+sha256 = "a37bb0e78a419dcbeaa9c7027bcff52f5ec2367c25ec859da31dfde2928f279a"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dgtk_doc=false",
+  "-Dinstalled_tests=false",
+  "-Dintrospection=disabled",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "glib",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []

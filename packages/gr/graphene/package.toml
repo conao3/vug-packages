@@ -1,0 +1,8 @@
+name = "graphene"
+license = "MIT"
+
+[upstream]
+homepage = "https://ebassi.github.io/graphene/"
+sources = [
+  "https://download.gnome.org/sources/graphene/",
+]
