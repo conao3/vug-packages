@@ -1,0 +1,8 @@
+name = "graphviz"
+license = "EPL-1.0"
+
+[upstream]
+homepage = "https://graphviz.org"
+sources = [
+  "https://cache.nixos.org/",
+]
