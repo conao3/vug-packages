@@ -1,0 +1,7 @@
+name = "tree-sitter-tsx"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/tree-sitter/tree-sitter-typescript/archive/",
+]
