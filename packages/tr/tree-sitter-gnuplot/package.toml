@@ -1,0 +1,7 @@
+name = "tree-sitter-gnuplot"
+license = "ISC"
+
+[upstream]
+sources = [
+  "https://codeberg.org/maribu/tree-sitter-gnuplot/archive/",
+]

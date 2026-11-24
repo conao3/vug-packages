@@ -1,0 +1,19 @@
+version = "0-unstable-2026-01-29"
+
+[source]
+url = "https://codeberg.org/maribu/tree-sitter-gnuplot/archive/21a3a3929facb964b3592daeb69119294ff84cf2.tar.gz"
+sha256 = "ef1107af2f203f7a74b3bde1ac7093f9434bba0b8243ccd6f58649875914832e"
+
+[build]
+kind = "tree-sitter"
+language = "gnuplot"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
