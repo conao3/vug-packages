@@ -1,0 +1,19 @@
+version = "0-unstable-2026-03-14"
+
+[source]
+url = "https://github.com/sei40kr/tree-sitter-fstar/archive/cdb06d462e0ee727c313f3e07c71bc2d288e0f89.tar.gz"
+sha256 = "d26b14297dd0cbdd452b882ffee514307a121095b3e41d402a8a93abe03a941a"
+
+[build]
+kind = "tree-sitter"
+language = "fstar"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
