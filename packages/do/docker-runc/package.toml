@@ -1,0 +1,8 @@
+name = "docker-runc"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://github.com/opencontainers/runc"
+sources = [
+  "https://github.com/opencontainers/runc/releases/download/",
+]
