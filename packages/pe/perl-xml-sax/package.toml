@@ -1,0 +1,8 @@
+name = "perl-xml-sax"
+license = "Artistic-1.0-Perl OR GPL-1.0-or-later"
+
+[upstream]
+homepage = "https://metacpan.org/dist/XML-SAX"
+sources = [
+  "https://cpan.metacpan.org/authors/id/G/GR/GRANTM/",
+]

@@ -1,0 +1,47 @@
+version = "1.02"
+patches = [
+  "1.02-install-sax-inc.patch",
+]
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/G/GR/GRANTM/XML-SAX-1.02.tar.gz"
+sha256 = "4506c387043aa6a77b455f00f57409f3720aa7e553495ab2535263b4ed1ea12a"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "XML::SAX",
+  "XML::SAX::DocumentLocator",
+  "XML::SAX::ParserFactory",
+  "XML::SAX::PurePerl",
+  "XML::SAX::PurePerl::DTDDecls",
+  "XML::SAX::PurePerl::DebugHandler",
+  "XML::SAX::PurePerl::DocType",
+  "XML::SAX::PurePerl::EncodingDetect",
+  "XML::SAX::PurePerl::Exception",
+  "XML::SAX::PurePerl::NoUnicodeExt",
+  "XML::SAX::PurePerl::Productions",
+  "XML::SAX::PurePerl::Reader",
+  "XML::SAX::PurePerl::Reader::NoUnicodeExt",
+  "XML::SAX::PurePerl::Reader::Stream",
+  "XML::SAX::PurePerl::Reader::String",
+  "XML::SAX::PurePerl::Reader::URI",
+  "XML::SAX::PurePerl::Reader::UnicodeExt",
+  "XML::SAX::PurePerl::UnicodeExt",
+  "XML::SAX::PurePerl::XMLDecl",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+  "perl-xml-namespacesupport",
+  "perl-xml-sax-base",
+]
+
+[check]
+enabled = true
+skip = []
