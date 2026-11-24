@@ -1,0 +1,19 @@
+version = "0-unstable-2025-07-09"
+
+[source]
+url = "https://github.com/bryceberger/tree-sitter-jjtemplate/archive/4313eda8ac31c60e550e3ad5841b100a0a686715.tar.gz"
+sha256 = "ae4561e9b4bcc3c16f32f108f9204464a50f5c100e6649decc740a3eea22354a"
+
+[build]
+kind = "tree-sitter"
+language = "jjtemplate"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
