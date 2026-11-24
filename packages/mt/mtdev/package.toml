@@ -5,4 +5,5 @@ license = "MIT"
 homepage = "https://bitmath.org/code/mtdev/"
 sources = [
   "https://bitmath.org/code/mtdev/",
+  "https://ftp.osuosl.org/pub/blfs/conglomeration/mtdev/",
 ]
