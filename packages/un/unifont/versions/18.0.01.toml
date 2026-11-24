@@ -1,0 +1,68 @@
+version = "18.0.01"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "unifont"
+
+[build.nix-outputs.bin]
+store-path = "/nix/store/2ifz3znhrp40ps80w62wz4fn8jzgxs47-unifont-18.0.01-bin"
+nar-hash = "sha256:1xijn9sk09fz1mr88w2jmymiywjdp455gg86fdhlfk69vr2iav7l"
+expose = [
+  "bin/bdfimplode",
+  "bin/hex2bdf",
+  "bin/hex2otf",
+  "bin/hex2sfd",
+  "bin/hexbraille",
+  "bin/hexdraw",
+  "bin/hexkinya",
+  "bin/hexmerge",
+  "bin/johab2syllables",
+  "bin/johab2ucs2",
+  "bin/unibdf2hex",
+  "bin/unibmp2hex",
+  "bin/unibmpbump",
+  "bin/unicoverage",
+  "bin/unidup",
+  "bin/unifont-viewer",
+  "bin/unifont1per",
+  "bin/unifontchojung",
+  "bin/unifontksx",
+  "bin/unifontpic",
+  "bin/unigen-hangul",
+  "bin/unigencircles",
+  "bin/unigenwidth",
+  "bin/unihex2bmp",
+  "bin/unihex2png",
+  "bin/unihexfill",
+  "bin/unihexgen",
+  "bin/unihexpose",
+  "bin/unihexrotate",
+  "bin/unijohab2html",
+  "bin/unipagecount",
+  "bin/unipng2hex",
+]
+
+[build.nix-outputs.out]
+store-path = "/nix/store/jfl6ifvby7y7dd06pd9yiw6f0phhhkaf-unifont-18.0.01"
+nar-hash = "sha256:1m30i8mhf8nzr8dbdl7vh9zz4ww51flk91z6mmkbvbrlz6z6r8b8"
+expose = [
+  "share/fonts/X11/misc/unifont.pcf.gz",
+  "share/fonts/X11/misc/unifont_csur.pcf.gz",
+  "share/fonts/X11/misc/unifont_jp.pcf.gz",
+  "share/fonts/X11/misc/unifont_t.pcf.gz",
+  "share/fonts/opentype/unifont/unifont.otf",
+  "share/fonts/opentype/unifont/unifont_csur.otf",
+  "share/fonts/opentype/unifont/unifont_jp.otf",
+  "share/fonts/opentype/unifont/unifont_t.otf",
+  "share/fonts/opentype/unifont/unifont_upper.otf",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
