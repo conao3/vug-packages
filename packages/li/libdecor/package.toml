@@ -1,0 +1,8 @@
+name = "libdecor"
+license = "MIT"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/libdecor/libdecor"
+sources = [
+  "https://cache.nixos.org/",
+]
