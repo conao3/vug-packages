@@ -1,0 +1,8 @@
+name = "switch-to-configuration"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/NixOS/nixpkgs/tree/2786a2a72088ecf32aea5b3ec52099e6a7cff78f/pkgs/by-name/sw/switch-to-configuration-ng"
+sources = [
+  "https://cache.nixos.org/",
+]

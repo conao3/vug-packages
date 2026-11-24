@@ -1,0 +1,22 @@
+version = "0.1.0"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "switch-to-configuration-ng"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/x117r24airwlzh4zvzxfjbyyphz01382-switch-to-configuration-0.1.0"
+nar-hash = "sha256:0djz12gslx4mxfnq2iibjlaldkkbx35djrvp4xbnw5wcpsqdb949"
+expose = [
+  "bin/switch-to-configuration",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
