@@ -1,0 +1,28 @@
+version = "1.4.0"
+
+[source]
+url = "https://gitlab.freedesktop.org/api/v4/projects/mobile-broadband%2Flibqrtr-glib/repository/archive.tar.gz?sha=1.4.0"
+sha256 = "b57068934577b0070c2f180f3dfcd115ce19efec10aeaf877b8a99c9226aaa2c"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dgtk_doc=false",
+  "-Dintrospection=false",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "meson",
+  "pkgconf",
+  "samurai",
+]
+run = [
+  "glib",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []

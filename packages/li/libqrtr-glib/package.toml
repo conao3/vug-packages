@@ -1,0 +1,8 @@
+name = "libqrtr-glib"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/mobile-broadband/libqrtr-glib"
+sources = [
+  "https://gitlab.freedesktop.org/api/v4/projects/mobile-broadband%2Flibqrtr-glib/",
+]
