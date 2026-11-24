@@ -1,0 +1,19 @@
+version = "0-unstable-2026-02-23"
+
+[source]
+url = "https://github.com/ventojs/tree-sitter-vento/archive/4569bc1fb81f050ca4ef3ceefdd31cfeb35c4f0a.tar.gz"
+sha256 = "ce527c8549083d231373459133a30cd84c49cfee5de57bf880b0a5eec8c32512"
+
+[build]
+kind = "tree-sitter"
+language = "vento"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

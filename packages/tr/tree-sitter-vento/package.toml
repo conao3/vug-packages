@@ -1,0 +1,7 @@
+name = "tree-sitter-vento"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/ventojs/tree-sitter-vento/archive/",
+]
