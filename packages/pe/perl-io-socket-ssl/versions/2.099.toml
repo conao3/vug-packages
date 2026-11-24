@@ -1,0 +1,26 @@
+version = "2.099"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.099.tar.gz"
+sha256 = "a0be800ff4852b1567ee5500e772417ad7a360abff80c01b5b875c15d44be832"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "IO::Socket::SSL",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+  "perl-mozilla-ca",
+  "perl-net-ssleay",
+]
+
+[check]
+enabled = true
+skip = []
