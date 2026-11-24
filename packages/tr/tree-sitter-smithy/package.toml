@@ -1,0 +1,7 @@
+name = "tree-sitter-smithy"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/indoorvivants/tree-sitter-smithy/archive/",
+]

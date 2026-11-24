@@ -1,0 +1,19 @@
+version = "0.2.0"
+
+[source]
+url = "https://github.com/indoorvivants/tree-sitter-smithy/archive/refs/tags/v0.2.0.tar.gz"
+sha256 = "0d177bb5a6d701271311181380604b856161290a1aab62f17f6610919909db60"
+
+[build]
+kind = "tree-sitter"
+language = "smithy"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
