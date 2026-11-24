@@ -1,0 +1,7 @@
+name = "tree-sitter-less"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/jimliang/tree-sitter-less/archive/",
+]

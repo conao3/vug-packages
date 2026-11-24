@@ -1,0 +1,19 @@
+version = "1.0.0"
+
+[source]
+url = "https://github.com/jimliang/tree-sitter-less/archive/refs/tags/v1.0.0.tar.gz"
+sha256 = "f3f70e44dc34a93ff82d07520929ea247a6bb2667ea9f8fc72a5b86b669060f9"
+
+[build]
+kind = "tree-sitter"
+language = "less"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
