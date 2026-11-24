@@ -1,0 +1,36 @@
+version = "1.6.10"
+patches = [
+  "1.6.10-python-shebang.patch",
+]
+
+[source]
+url = "https://download.gnome.org/sources/gupnp/1.6/gupnp-1.6.10.tar.xz"
+sha256 = "a1ee07b7b12673c32d7fc73ca158a50c1a4dc69ab35b65e94d24d38ac875345e"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dintrospection=false",
+  "-Dvapi=false",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "glib",
+  "gssdp",
+  "libsoup",
+  "libxml2",
+  "musl",
+  "python",
+]
+
+[check]
+enabled = true
+skip = []
