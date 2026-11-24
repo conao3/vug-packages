@@ -1,0 +1,20 @@
+version = "1.1.3"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "xdg-desktop-portal-xapp"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/rhr8lk80ly82pgzlx9bfj9y6wj35nm8p-xdg-desktop-portal-xapp-1.1.3"
+nar-hash = "sha256:1xvhaxw0z3cvy4cla06bl9af6glnp65ffqn59h8wr9vh9nbh7yhh"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []

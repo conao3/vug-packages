@@ -1,0 +1,8 @@
+name = "xdg-desktop-portal-xapp"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://github.com/linuxmint/xdg-desktop-portal-xapp"
+sources = [
+  "https://cache.nixos.org/",
+]
