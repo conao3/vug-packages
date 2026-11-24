@@ -1,0 +1,38 @@
+version = "5.02"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/L/LE/LEEJO/CGI-5.02.tar.gz"
+sha256 = "47637ad0413c527e00e1249d14dba0c234073ad4bef09746fafd73dd85ded665"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "CGI",
+  "CGI::Carp",
+  "CGI::Cookie",
+  "CGI::File::Temp",
+  "CGI::HTML::Functions",
+  "CGI::Pretty",
+  "CGI::Push",
+  "CGI::Util",
+  "Fh",
+]
+
+[dependencies]
+build = [
+  "make",
+  "perl-html-parser",
+  "perl-test-nowarnings",
+  "perl-test-warn",
+  "perl-uri",
+]
+run = [
+  "perl",
+  "perl-html-parser",
+  "perl-uri",
+]
+
+[check]
+enabled = true
+skip = []

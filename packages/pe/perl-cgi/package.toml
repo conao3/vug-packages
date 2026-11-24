@@ -1,0 +1,8 @@
+name = "perl-cgi"
+license = "Artistic-2.0"
+
+[upstream]
+homepage = "https://metacpan.org/dist/CGI"
+sources = [
+  "https://cpan.metacpan.org/authors/id/L/LE/LEEJO/",
+]
