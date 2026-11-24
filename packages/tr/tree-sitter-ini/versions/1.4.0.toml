@@ -1,0 +1,19 @@
+version = "1.4.0"
+
+[source]
+url = "https://github.com/justinmk/tree-sitter-ini/archive/refs/tags/v1.4.0.tar.gz"
+sha256 = "300adc8b5db7604dff2b156a3962c1fbc955d89dc8be6da90e6dfe2adc950d9b"
+
+[build]
+kind = "tree-sitter"
+language = "ini"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

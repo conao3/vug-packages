@@ -1,0 +1,7 @@
+name = "tree-sitter-ini"
+license = "Apache-2.0"
+
+[upstream]
+sources = [
+  "https://github.com/justinmk/tree-sitter-ini/archive/",
+]
