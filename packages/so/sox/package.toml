@@ -1,0 +1,8 @@
+name = "sox"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://sox.sourceforge.net/"
+sources = [
+  "https://cache.nixos.org/",
+]
