@@ -1,0 +1,7 @@
+name = "tree-sitter-xit"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/synaptiko/tree-sitter-xit/archive/",
+]

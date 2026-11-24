@@ -1,0 +1,19 @@
+version = "0.2"
+
+[source]
+url = "https://github.com/synaptiko/tree-sitter-xit/archive/refs/tags/0.2.tar.gz"
+sha256 = "b919916f7c087d5546b7fceb656badcdb79f5e420229704b4c5b6288ca88b12c"
+
+[build]
+kind = "tree-sitter"
+language = "xit"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
