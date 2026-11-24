@@ -1,0 +1,19 @@
+version = "0.7.0"
+
+[source]
+url = "https://github.com/prestonknopp/tree-sitter-godot-resource/archive/refs/tags/v0.7.0.tar.gz"
+sha256 = "26db55e2483c3b8bd11dfe3d386afb6f6fee5bae9fc1a89075dd969bbd10492b"
+
+[build]
+kind = "tree-sitter"
+language = "godot_resource"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
