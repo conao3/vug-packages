@@ -1,0 +1,8 @@
+name = "python-semantic-version"
+license = "BSD-2-Clause"
+
+[upstream]
+homepage = "https://github.com/rbarrois/python-semanticversion"
+sources = [
+  "https://files.pythonhosted.org/packages/source/s/semantic-version/",
+]
