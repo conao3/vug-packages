@@ -1,0 +1,8 @@
+name = "python-curl-cffi"
+license = "MIT"
+
+[upstream]
+homepage = "https://curl-cffi.readthedocs.io"
+sources = [
+  "https://cache.nixos.org/",
+]
