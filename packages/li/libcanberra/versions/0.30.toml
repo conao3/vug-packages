@@ -1,0 +1,22 @@
+version = "0.30"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "libcanberra"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/h20gjznng61dkj2gmf3b1gdj9ngk8gab-libcanberra-0.30"
+nar-hash = "sha256:1gm7499c5yr9m5r4ijhqlbj7cl81drk4h4h9wkxih28cd4acvxkj"
+expose = [
+  "bin/canberra-boot",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []

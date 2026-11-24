@@ -1,0 +1,8 @@
+name = "libcanberra"
+license = "LGPL-2.0-or-later"
+
+[upstream]
+homepage = "http://0pointer.de/lennart/projects/libcanberra/"
+sources = [
+  "https://cache.nixos.org/",
+]
