@@ -1,0 +1,29 @@
+version = "0.014"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/HTTP-CookieJar-0.014.tar.gz"
+sha256 = "7094ea5c91f536d263b85e83ab4e9a963e11c4408ce08ecae553fa9c0cc47e73"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "HTTP::CookieJar",
+  "HTTP::CookieJar::LWP",
+]
+
+[dependencies]
+build = [
+  "make",
+  "perl-test-deep",
+  "perl-test-requires",
+  "perl-uri",
+]
+run = [
+  "perl",
+  "perl-http-date",
+]
+
+[check]
+enabled = true
+skip = []

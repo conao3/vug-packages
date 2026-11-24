@@ -1,0 +1,8 @@
+name = "perl-http-cookiejar"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://metacpan.org/dist/HTTP-CookieJar"
+sources = [
+  "https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/",
+]
