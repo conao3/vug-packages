@@ -1,0 +1,19 @@
+version = "0.23.1"
+
+[source]
+url = "https://github.com/tree-sitter/tree-sitter-ruby/archive/refs/tags/v0.23.1.tar.gz"
+sha256 = "e7e49577ddc1f2de8e42d42353b477e338c15bbb95b2558e123ddc13d88789f0"
+
+[build]
+kind = "tree-sitter"
+language = "ruby"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
