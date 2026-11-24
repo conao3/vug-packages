@@ -1,0 +1,23 @@
+version = "1.6.1"
+
+[source]
+url = "https://github.com/wilfred/tree-sitter-elisp/archive/1.6.1.tar.gz"
+sha256 = "1aa036436d4f0343fe78ace7ca16d10d1a8d502590363a5e626671579694408c"
+
+[build]
+kind = "tree-sitter"
+language = "elisp"
+generate = true
+
+[dependencies]
+build = [
+  "nodejs",
+  "tree-sitter-cli",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
