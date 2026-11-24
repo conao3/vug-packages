@@ -1,0 +1,19 @@
+version = "0.1.0"
+
+[source]
+url = "https://github.com/wgsl-tooling-wg/tree-sitter-wesl/archive/refs/tags/v0.1.0.tar.gz"
+sha256 = "a90501725c66519f536c960739509cc7d91f9949237d11674a11754a4e0bc16f"
+
+[build]
+kind = "tree-sitter"
+language = "wesl"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

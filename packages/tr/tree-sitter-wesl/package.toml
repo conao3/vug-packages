@@ -1,0 +1,7 @@
+name = "tree-sitter-wesl"
+license = "(MIT OR Apache-2.0) AND W3C-20150513"
+
+[upstream]
+sources = [
+  "https://github.com/wgsl-tooling-wg/tree-sitter-wesl/archive/",
+]
