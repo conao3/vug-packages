@@ -1,0 +1,19 @@
+version = "0-unstable-2026-03-18"
+
+[source]
+url = "https://github.com/jobindex-open/tree-sitter-embedded-perl/archive/5557a53f1f59a67cbd54c25bacd0c56d43158818.tar.gz"
+sha256 = "b25685a72617634b4fdc9c194bffcd66af876e2a77ef5be48ed0e3c23b7a10b5"
+
+[build]
+kind = "tree-sitter"
+language = "embedded_perl"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

@@ -1,0 +1,7 @@
+name = "tree-sitter-embedded-perl"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/jobindex-open/tree-sitter-embedded-perl/archive/",
+]
