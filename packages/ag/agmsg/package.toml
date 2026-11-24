@@ -1,0 +1,8 @@
+name = "agmsg"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/fujibee/agmsg"
+sources = [
+  "https://github.com/fujibee/agmsg/archive/refs/tags/",
+]

@@ -1,0 +1,30 @@
+version = "1.8.2"
+
+[source]
+url = "https://github.com/fujibee/agmsg/archive/refs/tags/v1.8.2.tar.gz"
+sha256 = "437e4ac44ddbf5574abf0766de6d5ccb690591d0c4d32a7cbd15a9dc13b6e9fe"
+
+[build]
+kind = "commands"
+commands = [
+  ["mkdir", "-p", "{out}/share/agmsg"],
+  ["cp", "-r", "scripts", "{out}/share/agmsg/"],
+  ["cp", "SKILL.md", "VERSION", "LICENSE", "uninstall.sh", "{out}/share/agmsg/"],
+]
+
+[dependencies]
+build = []
+run = [
+  "bash",
+  "jq",
+  "nodejs",
+  "sqlite",
+  "tmux",
+]
+
+[check]
+enabled = true
+skip = []
+
+[wrappers]
+"bin/agmsg" = ["{out}/share/agmsg/scripts/agmsg"]
