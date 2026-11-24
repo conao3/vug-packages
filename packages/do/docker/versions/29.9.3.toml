@@ -1,0 +1,24 @@
+version = "29.9.3"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "docker"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/m76gmgmmx16dipvgfgsn3bxhrs3f4bgi-docker-29.9.3"
+nar-hash = "sha256:0awf0pkr9c7nyddnavcx32ak2mjll4pj0znrk5j2y1mxasp4b9lc"
+expose = [
+  "bin/docker",
+  "bin/dockerd",
+  "bin/dockerd-rootless",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
