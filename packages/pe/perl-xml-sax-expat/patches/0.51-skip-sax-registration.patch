@@ -1,0 +1,11 @@
+--- a/Makefile.PL	2026-11-24 10:13:19.573070248 +0900
++++ b/Makefile.PL	2026-11-24 10:13:19.592532092 +0900
+@@ -31,7 +31,7 @@
+ sub MY::install {
+     package MY;
+     my $script = shift->SUPER::install(@_);
+-    unless ($ENV{'SKIP_SAX_INSTALL'}) {
++    unless (1) {
+       $script =~ s/install :: (.*)$/install :: $1 install_sax_expat/m;
+       $script .= <<"INSTALL";
+ 
