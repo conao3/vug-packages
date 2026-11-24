@@ -1,7 +1,4 @@
 version = "1.8.1"
-patches = [
-  "1.8.1-meson-build-tests.patch",
-]
 
 [source]
 url = "https://git.kernel.org/pub/scm/utils/dtc/dtc.git/snapshot/dtc-v1.8.1.tar.gz"
