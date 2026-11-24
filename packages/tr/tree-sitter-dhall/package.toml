@@ -1,0 +1,7 @@
+name = "tree-sitter-dhall"
+license = "MIT AND BSD-3-Clause"
+
+[upstream]
+sources = [
+  "https://github.com/jbellerb/tree-sitter-dhall/archive/",
+]

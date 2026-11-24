@@ -1,0 +1,19 @@
+version = "1.0.0"
+
+[source]
+url = "https://github.com/jbellerb/tree-sitter-dhall/archive/refs/tags/1.0.0.tar.gz"
+sha256 = "49d10d23e2eaef20a5d804cb8c7bd1d55501d053b51a5668577051bc1f905b93"
+
+[build]
+kind = "tree-sitter"
+language = "dhall"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
