@@ -1,0 +1,19 @@
+version = "0-unstable-2025-09-15"
+
+[source]
+url = "https://github.com/xenogenics/tree-sitter-slisp/archive/29f9c6707ce9dfc2fc915d175ec720b207f179f3.tar.gz"
+sha256 = "d281811b4bbfc94ac79ad5a27fa212f307932651c4015a6bde17fe7f2482c040"
+
+[build]
+kind = "tree-sitter"
+language = "slisp"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

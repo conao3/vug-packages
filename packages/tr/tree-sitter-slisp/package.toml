@@ -1,0 +1,7 @@
+name = "tree-sitter-slisp"
+license = "BSD-2-Clause"
+
+[upstream]
+sources = [
+  "https://github.com/xenogenics/tree-sitter-slisp/archive/",
+]
