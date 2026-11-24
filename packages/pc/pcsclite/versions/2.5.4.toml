@@ -1,0 +1,28 @@
+version = "2.5.4"
+
+[source]
+url = "https://salsa.debian.org/api/v4/projects/rousseau%2FPCSC/repository/archive.tar.gz?sha=refs%2Ftags%2F2.5.4"
+sha256 = "81c3466b216e78df0d8172f455b4fd3645c723cccba0d2897962d218b3c47bf3"
+
+[build]
+kind = "meson"
+
+[dependencies]
+build = [
+  "binutils",
+  "flex",
+  "meson",
+  "perl",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "musl",
+  "polkit",
+  "systemd",
+]
+
+[check]
+enabled = true
+skip = []

@@ -1,0 +1,8 @@
+name = "pcsclite"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://pcsclite.apdu.fr/"
+sources = [
+  "https://salsa.debian.org/api/v4/projects/rousseau%2FPCSC/repository/",
+]
