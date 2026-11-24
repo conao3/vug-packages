@@ -1,0 +1,19 @@
+version = "0.3.2"
+
+[source]
+url = "https://github.com/shnarazk/tree-sitter-bqn/archive/refs/tags/v0.3.2.tar.gz"
+sha256 = "9a2391336b840e5d4cb4d6c88228063c7441fdf47f6ceafc5d95d99551d8bf76"
+
+[build]
+kind = "tree-sitter"
+language = "bqn"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
