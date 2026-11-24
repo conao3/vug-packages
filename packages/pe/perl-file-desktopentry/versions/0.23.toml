@@ -1,0 +1,26 @@
+version = "0.23"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/M/MI/MICHIELB/File-DesktopEntry-0.23.tar.gz"
+sha256 = "63f95798d80b81ea8cea4848f342f26593c60f152dbd04d8981c846f979e6835"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "File::DesktopEntry",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+  "perl-file-basedir",
+  "perl-uri",
+]
+
+[check]
+enabled = true
+skip = []
