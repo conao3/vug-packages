@@ -153,24 +153,19 @@ needed at runtime in `dependencies.run`. vug runs `go test ./...` offline
 when checks are enabled. Use a source patch for a test that needs a portable
 fixture path.
 
-If the source already contains `vendor/`, the source hash covers it.
-For a source with external modules and no vendor tree, run `go mod vendor`
-on the pinned source with a compatible Go toolchain. Verify that the
-source's `go.mod` and `go.sum` stay unchanged. Archive the resulting
-`vendor/` directory, preserve dependency license files, and upload the
-archive to a stable HTTPS URL. Add
-`vendor = { url = "https://example.org/tool-vendor.tar.gz", sha256 = "<hex>" }`
-under `[build]`. Use the archive's 64-character lowercase SHA-256.
-A source without external modules can omit vendor entirely.
+If the source contains `vendor/`, the source hash covers it and Go uses
+vendor mode. Otherwise vug fetches the module files from the Go module
+proxy and verifies them against the pinned source's `go.sum`. Include
+checksums for the manifests and source ZIPs required by the declared
+targets and enabled tests.
 
-For an inconsistent vendor error, regenerate the archive from the exact
-recorded source revision and verify `vendor/modules.txt` is present.
-For a SHA-256 error, compare the served bytes with the pinned archive.
-If Go reports a newer required version, check the selected `go` record
-against the source's `go.mod`. This build kind compiles with cgo disabled.
+For a checksum or module lookup error, check the upstream `go.mod` and
+`go.sum` at the pinned revision. If Go reports a newer required version,
+check the selected `go` record against the source's `go.mod`. This build
+kind compiles with cgo disabled.
 
-[gh-poi](packages/gh/gh-poi/versions/0.18.6.toml) uses an external vendor
-archive and embeds its test fixtures so the tests can run with `-trimpath`.
+[gh-poi](packages/gh/gh-poi/versions/0.18.6.toml) embeds its test fixtures so
+the tests can run with `-trimpath`.
 Use GitHub CLI and Git for its branch-management commands.
 [yq-go](packages/yq/yq-go/versions/4.54.1.toml) installs the `yq` executable
 and tests the root module.
