@@ -1,0 +1,19 @@
+version = "0-unstable-2024-11-17"
+
+[source]
+url = "https://github.com/zealot128/tree-sitter-pug/archive/13e9195370172c86a8b88184cc358b23b677cc46.tar.gz"
+sha256 = "2d8543a22e48bfecdd713cd13c531321d7921273af0d5ec3773422002e29e682"
+
+[build]
+kind = "tree-sitter"
+language = "pug"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

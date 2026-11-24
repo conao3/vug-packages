@@ -1,0 +1,7 @@
+name = "tree-sitter-pug"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/zealot128/tree-sitter-pug/archive/",
+]
