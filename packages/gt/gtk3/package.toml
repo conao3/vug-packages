@@ -1,0 +1,8 @@
+name = "gtk3"
+license = "LGPL-2.0-or-later"
+
+[upstream]
+homepage = "https://www.gtk.org/"
+sources = [
+  "https://cache.nixos.org/",
+]
