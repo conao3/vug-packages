@@ -1,0 +1,7 @@
+name = "tree-sitter-factor"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/erochest/tree-sitter-factor/archive/",
+]

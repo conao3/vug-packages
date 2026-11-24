@@ -1,0 +1,19 @@
+version = "0-unstable-2025-01-12"
+
+[source]
+url = "https://github.com/erochest/tree-sitter-factor/archive/554d8b705df61864eb41a0ecf3741e94eb9f0c54.tar.gz"
+sha256 = "91d8feb96eba33e59f2974513a8dc0437716ec27f61e66627122846d7b361f5c"
+
+[build]
+kind = "tree-sitter"
+language = "factor"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
