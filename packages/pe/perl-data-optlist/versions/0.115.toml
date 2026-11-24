@@ -1,0 +1,26 @@
+version = "0.115"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Data-OptList-0.115.tar.gz"
+sha256 = "fa0e7cdc10925db925a82f8eb9608a701f1c2bf5e88d512d9acd46977e174056"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Data::OptList",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+  "perl-params-someutil",
+  "perl-sub-install",
+]
+
+[check]
+enabled = true
+skip = []
