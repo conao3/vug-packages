@@ -1,0 +1,8 @@
+name = "gimp"
+license = "GPL-3.0-or-later"
+
+[upstream]
+homepage = "https://www.gimp.org/"
+sources = [
+  "https://cache.nixos.org/",
+]
