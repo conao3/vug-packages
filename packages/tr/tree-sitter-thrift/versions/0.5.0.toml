@@ -1,0 +1,19 @@
+version = "0.5.0"
+
+[source]
+url = "https://github.com/tree-sitter-grammars/tree-sitter-thrift/archive/refs/tags/v0.5.0.tar.gz"
+sha256 = "fb10b0901c0be74768ec5af75d436380fa52f9fe6e641f5485aa2639bc4cd19c"
+
+[build]
+kind = "tree-sitter"
+language = "thrift"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
