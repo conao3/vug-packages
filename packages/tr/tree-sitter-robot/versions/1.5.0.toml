@@ -1,0 +1,19 @@
+version = "1.5.0"
+
+[source]
+url = "https://github.com/Hubro/tree-sitter-robot/archive/refs/tags/v1.5.0.tar.gz"
+sha256 = "b1cff1ddb2668c781fa8c32e72592fddd206843ed0c2d21db0e334199702bdd2"
+
+[build]
+kind = "tree-sitter"
+language = "robot"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

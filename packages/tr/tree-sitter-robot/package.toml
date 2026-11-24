@@ -1,0 +1,7 @@
+name = "tree-sitter-robot"
+license = "ISC"
+
+[upstream]
+sources = [
+  "https://github.com/Hubro/tree-sitter-robot/archive/",
+]
