@@ -1,0 +1,22 @@
+version = "1.6.2"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "python3Packages.modal"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/l1q0n7c8rafm9vig20bwqzpz7i49bz4h-python3.14-modal-1.6.2"
+nar-hash = "sha256:1p2x7a0zxmwmf2sqgzk1xjvj6hqw8jhkwmb77nrvz0n0nlp49srx"
+expose = [
+  "bin/modal",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
