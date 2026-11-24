@@ -1,0 +1,7 @@
+name = "tree-sitter-jjrevset"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/bryceberger/tree-sitter-jjrevset/archive/",
+]

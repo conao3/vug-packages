@@ -1,0 +1,19 @@
+version = "0-unstable-2025-07-09"
+
+[source]
+url = "https://github.com/bryceberger/tree-sitter-jjrevset/archive/d9af23944b884ec528b505f41d81923bb3136a51.tar.gz"
+sha256 = "20d972388f6b36b351a4232a92807651d3af8664bea324a3b75f2a924e987241"
+
+[build]
+kind = "tree-sitter"
+language = "jjrevset"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
