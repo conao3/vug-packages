@@ -53,6 +53,12 @@ the same SHA-256. The URL must start with a prefix listed in the package's
 `upstream.sources`. Add the mirror prefix to that list when introducing
 the mirror.
 
+## Nix outputs
+
+Use a `nix-output` version record to pin selected outputs from the signed
+Nix cache. See [Nix outputs](docs/nix-outputs.md) for the generator,
+the closure check, and the GCC and PyTorch smoke tests.
+
 ## What a build may use
 
 The build has no network and sees only busybox, the C and C++ compiler

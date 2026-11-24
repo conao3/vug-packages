@@ -1,14 +1,31 @@
 name: CI
 on:
   push:
-    branches: [master]
+    branches: [master, nix-outputs-records]
   pull_request:
 permissions:
   contents: read
 jobs:
   check:
+    if: github.event_name != 'push' || github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7.0.1
       - uses: cachix/install-nix-action@v32.0.0
       - run: nix run github:conao3/rust-vug -- record check-tree --root .
+  nix-output-closures:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Verify changed Nix output closures
+        env:
+          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+          HEAD: ${{ github.sha }}
+        run: |
+          if [[ "$BASE" == 0000000000000000000000000000000000000000 ]]; then
+            BASE=$(git merge-base origin/master "$HEAD")
+          fi
+          python3 .github/scripts/nix-outputs.py record check-closure --base "$BASE" --head "$HEAD"
