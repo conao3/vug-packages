@@ -1,0 +1,19 @@
+version = "0-unstable-2023-02-28"
+
+[source]
+url = "https://github.com/Philipp-M/tree-sitter-ungrammar/archive/debd26fed283d80456ebafa33a06957b0c52e451.tar.gz"
+sha256 = "a6e04207891cce986bafce796fe25632b3675105cb28ba5211e2df553879f09d"
+
+[build]
+kind = "tree-sitter"
+language = "ungrammar"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
