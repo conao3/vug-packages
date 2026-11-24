@@ -1,0 +1,24 @@
+version = "9.0.2"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "ffmpeg"
+
+[build.nix-outputs.bin]
+store-path = "/nix/store/g02x8w554zwgflvm6fdnafqzzkrhh3rp-ffmpeg-9.0.2-bin"
+nar-hash = "sha256:10y5wc5d0ssqk9mix7vbgk2jcnda4m19j8ifjgsg0yk2dj7691z8"
+expose = [
+  "bin/ffmpeg",
+  "bin/ffplay",
+  "bin/ffprobe",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
