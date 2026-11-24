@@ -1,0 +1,8 @@
+name = "vte"
+license = "LGPL-3.0-or-later"
+
+[upstream]
+homepage = "https://www.gnome.org/"
+sources = [
+  "https://cache.nixos.org/",
+]
