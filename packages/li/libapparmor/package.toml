@@ -1,0 +1,8 @@
+name = "libapparmor"
+license = "LGPL-2.1-only"
+
+[upstream]
+homepage = "https://apparmor.net/"
+sources = [
+  "https://gitlab.com/api/v4/projects/apparmor%2Fapparmor/repository/",
+]

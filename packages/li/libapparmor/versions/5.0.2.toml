@@ -1,0 +1,37 @@
+version = "5.0.2"
+patches = [
+  "5.0.2-check-unit.patch",
+  "5.0.2-clang-vla.patch",
+]
+
+[source]
+url = "https://gitlab.com/api/v4/projects/apparmor%2Fapparmor/repository/archive.tar.gz?sha=refs%2Ftags%2Fv5.0.2"
+sha256 = "bd88018d201f6612f7785c6f5d9b182d89890e4856323d862530b724386c435f"
+
+[build]
+kind = "autotools"
+path = "libraries/libapparmor"
+autoreconf = true
+
+[dependencies]
+build = [
+  "autoconf",
+  "autoconf-archive",
+  "automake",
+  "binutils",
+  "bison",
+  "flex",
+  "libtool",
+  "linux-headers",
+  "make",
+  "perl",
+  "pkgconf",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
+target = "check-unit"

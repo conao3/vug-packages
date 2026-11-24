@@ -1,0 +1,9 @@
+--- a/libraries/libapparmor/Makefile.am
++++ b/libraries/libapparmor/Makefile.am
+@@ -5,3 +5,6 @@
+ SUBDIRS = doc src include swig testsuite
+ 
+ EXTRA_DIST = AUTHORS ChangeLog COPYING.LGPL INSTALL NEWS README
++
++check-unit:
++	$(MAKE) -C src check
