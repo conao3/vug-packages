@@ -1,0 +1,55 @@
+version = "0.44.5"
+
+[source]
+url = "https://github.com/awslabs/aws-crt-cpp/archive/v0.44.5.tar.gz"
+sha256 = "1c3b4345d5cb609e782a1555cc5c6c97aa18991754081104fd9e04787789a281"
+
+[build]
+kind = "cmake"
+setup-flags = [
+  "-DBUILD_DEPS=OFF",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+]
+run = [
+  "aws-c-auth",
+  "aws-c-cal",
+  "aws-c-common",
+  "aws-c-compression",
+  "aws-c-event-stream",
+  "aws-c-http",
+  "aws-c-io",
+  "aws-c-mqtt",
+  "aws-c-s3",
+  "aws-c-sdkutils",
+  "aws-checksums",
+  "libcxx",
+  "musl",
+  "openssl",
+  "s2n-tls",
+]
+
+[check]
+enabled = true
+skip = [
+  "HttpClientConnectionManagerResourceSafety",
+  "HttpClientConnectionWithPendingAcquisitions",
+  "HttpClientConnectionWithPendingAcquisitionsAndClosedConnections",
+  "HttpCreateConnectionCustomBootstrapRespected",
+  "HttpDownloadNoBackPressureHTTP1_1",
+  "HttpDownloadNoBackPressureHTTP1_1ViaSocks5Proxy",
+  "HttpDownloadNoBackPressureHTTP2",
+  "HttpStreamUnActivated",
+  "IoTSDKMetricsAllFeaturesSet",
+  "Mqtt5to3AdapterWSConnectionMinimalThroughMqtt5",
+  "MqttClientResourceSafety",
+  "STSWebIdentityCredentialsProviderFailureTest",
+  "TLSContextResourceSafety",
+  "TestProviderDefaultChainGet",
+  "TestProviderDefaultChainManualTlsContextGet",
+]
