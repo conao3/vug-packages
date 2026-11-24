@@ -1,0 +1,7 @@
+name = "tree-sitter-luau"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/polychromatist/tree-sitter-luau/archive/",
+]

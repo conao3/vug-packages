@@ -1,0 +1,19 @@
+version = "0-unstable-2025-12-08"
+
+[source]
+url = "https://github.com/polychromatist/tree-sitter-luau/archive/71b03e66b2c8dd04e0133c9b998a54a58f239ca4.tar.gz"
+sha256 = "353fbd5bfa204025e717cea2296cd0f678454ccc90f7745a9341b76cbe746431"
+
+[build]
+kind = "tree-sitter"
+language = "luau"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
