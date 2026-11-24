@@ -1,0 +1,19 @@
+version = "1.1.0"
+
+[source]
+url = "https://github.com/tree-sitter-grammars/tree-sitter-bitbake/archive/refs/tags/v1.1.0.tar.gz"
+sha256 = "5ff837dc170d93938abe04eccad056bc2ef7c3ac42c5af88a1a8f0766f93ffe2"
+
+[build]
+kind = "tree-sitter"
+language = "bitbake"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
