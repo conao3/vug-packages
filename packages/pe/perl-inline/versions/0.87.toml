@@ -1,0 +1,25 @@
+version = "0.87"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/I/IN/INGY/Inline-0.87.tar.gz"
+sha256 = "105e4271ace1c1b5a264d771ff111d8b928b256002888222862c7be9686f39c5"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Inline",
+]
+
+[dependencies]
+build = [
+  "make",
+  "perl-test-warn",
+]
+run = [
+  "perl",
+]
+
+[check]
+enabled = true
+skip = []
