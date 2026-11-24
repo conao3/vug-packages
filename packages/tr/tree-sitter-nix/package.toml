@@ -1,0 +1,7 @@
+name = "tree-sitter-nix"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/nix-community/tree-sitter-nix/archive/",
+]

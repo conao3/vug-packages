@@ -1,0 +1,19 @@
+version = "0.3.0"
+
+[source]
+url = "https://github.com/nix-community/tree-sitter-nix/archive/refs/tags/v0.3.0.tar.gz"
+sha256 = "5805dfb3b1ab30fadf7b3436abaadb1e204d44f101b840ac8ab9c6edb5bf4924"
+
+[build]
+kind = "tree-sitter"
+language = "nix"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
