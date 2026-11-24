@@ -1,0 +1,8 @@
+name = "python-pytorch-lightning"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://github.com/Lightning-AI/pytorch-lightning"
+sources = [
+  "https://cache.nixos.org/",
+]
