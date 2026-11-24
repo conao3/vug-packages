@@ -1,0 +1,19 @@
+version = "0-unstable-2024-10-16"
+
+[source]
+url = "https://github.com/PorterAtGoogle/tree-sitter-textproto/archive/568471b80fd8793d37ed01865d8c2208a9fefd1b.tar.gz"
+sha256 = "916a4ee5fd522d0d53e11ab75a2ec8ece728d5233a61b137926a2e87965fa704"
+
+[build]
+kind = "tree-sitter"
+language = "textproto"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

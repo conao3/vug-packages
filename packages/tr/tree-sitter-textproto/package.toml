@@ -1,0 +1,7 @@
+name = "tree-sitter-textproto"
+license = "ISC"
+
+[upstream]
+sources = [
+  "https://github.com/PorterAtGoogle/tree-sitter-textproto/archive/",
+]
