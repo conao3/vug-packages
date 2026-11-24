@@ -1,0 +1,19 @@
+version = "1.0.0"
+
+[source]
+url = "https://github.com/interdependence/tree-sitter-htmldjango/archive/refs/tags/v1.0.0.tar.gz"
+sha256 = "4a80911d3c410df615262b90cd8c933175a5a915fa919acbe75684569e6ae0a8"
+
+[build]
+kind = "tree-sitter"
+language = "htmldjango"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
