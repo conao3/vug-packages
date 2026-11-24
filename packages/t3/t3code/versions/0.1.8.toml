@@ -1,0 +1,23 @@
+version = "0.1.8"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "t3code"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/43wq55lvkpad87jfpa6nlmj4yx8wxbxb-t3code-0.1.8"
+nar-hash = "sha256:1kb0v7ndk8vph8zw9v5bv5d78v2cszhxwkivvrsf3vfvmw9hhfqz"
+expose = [
+  "bin/t3",
+  "bin/t3code-desktop",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
