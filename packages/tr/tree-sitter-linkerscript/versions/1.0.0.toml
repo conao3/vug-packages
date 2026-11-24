@@ -1,0 +1,19 @@
+version = "1.0.0"
+
+[source]
+url = "https://github.com/tree-sitter-grammars/tree-sitter-linkerscript/archive/refs/tags/v1.0.0.tar.gz"
+sha256 = "21332d4f20ebf088bd78b6dad88a1e86e14aa72bd7132016350c081c93a22b0e"
+
+[build]
+kind = "tree-sitter"
+language = "linkerscript"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
