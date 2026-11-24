@@ -1,0 +1,7 @@
+name = "tree-sitter-graphql"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/bkegley/tree-sitter-graphql/archive/",
+]

@@ -1,0 +1,19 @@
+version = "0-unstable-2021-05-10"
+
+[source]
+url = "https://github.com/bkegley/tree-sitter-graphql/archive/5e66e961eee421786bdda8495ed1db045e06b5fe.tar.gz"
+sha256 = "ff542fddb51b1f1c110bb36fa16703d2212eeae0c0d12a2e1bf813c5f5db9507"
+
+[build]
+kind = "tree-sitter"
+language = "graphql"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
