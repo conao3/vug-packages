@@ -1,0 +1,19 @@
+version = "2.5.1"
+
+[source]
+url = "https://github.com/polarmutex/tree-sitter-beancount/archive/refs/tags/v2.5.1.tar.gz"
+sha256 = "ec6cf5dde44409879c1f7972a03e86f0a05e72a26b91f4fc9e686cc90a2451cb"
+
+[build]
+kind = "tree-sitter"
+language = "beancount"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

@@ -1,0 +1,7 @@
+name = "tree-sitter-beancount"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/polarmutex/tree-sitter-beancount/archive/",
+]
