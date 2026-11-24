@@ -1,0 +1,8 @@
+name = "protobuf-c"
+license = "BSD-2-Clause"
+
+[upstream]
+homepage = "https://github.com/protobuf-c/protobuf-c/"
+sources = [
+  "https://cache.nixos.org/",
+]
