@@ -1,0 +1,23 @@
+version = "0.23.1"
+
+[source]
+url = "https://github.com/tree-sitter/tree-sitter-ql/archive/v0.23.1.tar.gz"
+sha256 = "ec9eeb50eebc461061acf56c2c7635e833c3d84ce05f1afba9b7e93560f6a4e7"
+
+[build]
+kind = "tree-sitter"
+language = "ql"
+generate = true
+
+[dependencies]
+build = [
+  "nodejs",
+  "tree-sitter-cli",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
