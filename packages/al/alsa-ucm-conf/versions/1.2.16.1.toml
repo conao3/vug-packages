@@ -1,0 +1,20 @@
+version = "1.2.16.1"
+
+[source]
+url = "https://www.alsa-project.org/files/pub/lib/alsa-ucm-conf-1.2.16.1.tar.bz2"
+sha256 = "cf3d1c07e089a83c4ece2c20f05dd6a8aab7fcd108768c38811386880575492b"
+
+[build]
+kind = "prebuilt"
+install = [
+  { from = "ucm", to = "share/alsa/ucm" },
+  { from = "ucm2", to = "share/alsa/ucm2" },
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = true
+skip = []

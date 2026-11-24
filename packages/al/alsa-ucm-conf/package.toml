@@ -1,0 +1,8 @@
+name = "alsa-ucm-conf"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://www.alsa-project.org/"
+sources = [
+  "https://www.alsa-project.org/files/pub/lib/",
+]
