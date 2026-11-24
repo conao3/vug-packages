@@ -1,4 +1,7 @@
 version = "2.16.0"
+patches = [
+  "2.16.0-lock-image-tests.patch",
+]
 
 [source]
 url = "https://github.com/zint/zint/archive/refs/tags/2.16.0.tar.gz"

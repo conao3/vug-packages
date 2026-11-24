@@ -1,0 +1,12 @@
+--- a/backend/tests/CMakeLists.txt
++++ b/backend/tests/CMakeLists.txt
+@@ -110,3 +110,9 @@
+ zint_add_test(ultra test_ultra)
+ zint_add_test(upcean test_upcean)
+ zint_add_test(vector test_vector)
++
++foreach(test png print raster png-static print-static raster-static)
++    if(TEST ${test})
++        set_tests_properties(${test} PROPERTIES RESOURCE_LOCK zint_image_output)
++    endif()
++endforeach()
