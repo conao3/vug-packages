@@ -1,0 +1,27 @@
+version = "0.37"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/M/MI/MICHIELB/File-MimeInfo-0.37.tar.gz"
+sha256 = "13e5bbfdd36da8af198913a94ab067312947239020906577b6bf938219b2d06b"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "File::MimeInfo",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+  "perl-encode-locale",
+  "perl-file-basedir",
+  "perl-file-desktopentry",
+]
+
+[check]
+enabled = true
+skip = []
