@@ -1,0 +1,25 @@
+version = "3.2.3"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "xapp"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/ffjx9masrdj59vzvmiziky5c70n4bgf0-xapp-3.2.3"
+nar-hash = "sha256:1rw9dy7q2qk9f0m7vlssgf9vbb48r6lvg0rpqi5vr01aq40lwanm"
+expose = [
+  "bin/pastebin",
+  "bin/upload-system-info",
+  "bin/xapp-gpu-offload",
+  "bin/xfce4-set-wallpaper",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
