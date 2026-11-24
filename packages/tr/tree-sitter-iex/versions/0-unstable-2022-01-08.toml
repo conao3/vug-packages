@@ -1,0 +1,19 @@
+version = "0-unstable-2022-01-08"
+
+[source]
+url = "https://github.com/elixir-lang/tree-sitter-iex/archive/39f20bb51f502e32058684e893c0c0b00bb2332c.tar.gz"
+sha256 = "ad744f4e1e7d8f7be61cf5b56d10d2bca5d69d91a1c08b5b62882aa3ec2592d6"
+
+[build]
+kind = "tree-sitter"
+language = "iex"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
