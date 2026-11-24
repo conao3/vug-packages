@@ -1,0 +1,8 @@
+name = "adwaita-icon-theme"
+license = "CC-BY-SA-3.0"
+
+[upstream]
+homepage = "https://gitlab.gnome.org/GNOME/adwaita-icon-theme"
+sources = [
+  "https://cache.nixos.org/",
+]
