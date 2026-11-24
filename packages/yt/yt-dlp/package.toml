@@ -1,0 +1,8 @@
+name = "yt-dlp"
+license = "Unlicense"
+
+[upstream]
+homepage = "https://github.com/yt-dlp/yt-dlp/"
+sources = [
+  "https://cache.nixos.org/",
+]
