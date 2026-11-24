@@ -1,0 +1,45 @@
+version = "3.5.30"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "djvulibre"
+
+[build.nix-outputs.bin]
+store-path = "/nix/store/r43cjgirrhbm4573f5ijzckhc4xfbl6g-djvulibre-3.5.30-bin"
+nar-hash = "sha256:0nhr46dnpfqwsrf86fgmrl09rag0qk2gmpx2bb2qs1v47pw48rlr"
+expose = [
+  "bin/any2djvu",
+  "bin/bzz",
+  "bin/c44",
+  "bin/cjb2",
+  "bin/cpaldjvu",
+  "bin/csepdjvu",
+  "bin/ddjvu",
+  "bin/djvm",
+  "bin/djvmcvt",
+  "bin/djvudigital",
+  "bin/djvudump",
+  "bin/djvuextract",
+  "bin/djvumake",
+  "bin/djvups",
+  "bin/djvused",
+  "bin/djvuserve",
+  "bin/djvutoxml",
+  "bin/djvutxt",
+  "bin/djvuxmlparser",
+]
+
+[build.nix-outputs.out]
+store-path = "/nix/store/wg1aklasnh70fk2b39nsgw7rx45lcjxm-djvulibre-3.5.30"
+nar-hash = "sha256:10xj3jc4y29mckri5k7lmck3zl4b6x2pz3wzyfiz665cw5yln3qz"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
