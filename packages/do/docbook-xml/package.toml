@@ -1,0 +1,8 @@
+name = "docbook-xml"
+license = "MIT"
+
+[upstream]
+homepage = "https://docbook.org/"
+sources = [
+  "https://www.oasis-open.org/docbook/xml/",
+]
