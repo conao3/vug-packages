@@ -1,0 +1,29 @@
+version = "1.67"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/M/MA/MAREKR/Pod-Parser-1.67.tar.gz"
+sha256 = "5deccbf55d750ce65588cd211c1a03fa1ef3aaa15d1ac2b8d85383a42c1427ea"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Pod::Find",
+  "Pod::InputObjects",
+  "Pod::ParseUtils",
+  "Pod::Parser",
+  "Pod::PlainText",
+  "Pod::Select",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+]
+
+[check]
+enabled = true
+skip = []
