@@ -1,0 +1,19 @@
+version = "0-unstable-2025-12-01"
+
+[source]
+url = "https://github.com/alexanderbrevig/tree-sitter-forth/archive/360ef13f8c609ec6d2e80782af69958b84e36cd0.tar.gz"
+sha256 = "e6e81976d4655c06aa378b2b095ce96b0ce1aa01eaa78c34ea817fc780c1bd0c"
+
+[build]
+kind = "tree-sitter"
+language = "forth"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
