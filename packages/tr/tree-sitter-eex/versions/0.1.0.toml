@@ -1,0 +1,19 @@
+version = "0.1.0"
+
+[source]
+url = "https://github.com/connorlay/tree-sitter-eex/archive/refs/tags/v0.1.0.tar.gz"
+sha256 = "5d395a9309713192cc021d19185ce847158ad8ba5793b2ed42e9a03bc59af629"
+
+[build]
+kind = "tree-sitter"
+language = "eex"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
