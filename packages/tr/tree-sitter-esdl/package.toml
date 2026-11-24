@@ -1,0 +1,7 @@
+name = "tree-sitter-esdl"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/greym0uth/tree-sitter-esdl/archive/",
+]

@@ -1,0 +1,19 @@
+version = "0-unstable-2024-03-28"
+
+[source]
+url = "https://github.com/greym0uth/tree-sitter-esdl/archive/7e6692b2e2b4f73b03f1371e8d8b83f23bc1c6c8.tar.gz"
+sha256 = "6c26249ad7187f704239d727036934cbadc8e94aafc0f54ff5d2e7a5cfa34071"
+
+[build]
+kind = "tree-sitter"
+language = "esdl"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
