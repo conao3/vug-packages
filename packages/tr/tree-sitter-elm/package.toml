@@ -1,0 +1,7 @@
+name = "tree-sitter-elm"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/elm-tooling/tree-sitter-elm/archive/",
+]

@@ -1,0 +1,19 @@
+version = "5.9.4"
+
+[source]
+url = "https://github.com/elm-tooling/tree-sitter-elm/archive/refs/tags/v5.9.4.tar.gz"
+sha256 = "cabb5f0b7dc527f81c82a756a34669259f0f8019e6b4252b5f7e33f0ec7cb44d"
+
+[build]
+kind = "tree-sitter"
+language = "elm"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
