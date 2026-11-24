@@ -1,0 +1,8 @@
+name = "inetutils"
+license = "GPL-3.0-or-later"
+
+[upstream]
+homepage = "https://www.gnu.org/software/inetutils/"
+sources = [
+  "https://ftp.gnu.org/gnu/inetutils/",
+]
