@@ -1,0 +1,7 @@
+name = "tree-sitter-mail"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/ficcdaf/tree-sitter-mail/archive/",
+]

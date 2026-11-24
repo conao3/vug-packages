@@ -1,0 +1,19 @@
+version = "0-unstable-2026-03-08"
+
+[source]
+url = "https://github.com/ficcdaf/tree-sitter-mail/archive/5eddbfdbec4c893182c79047499901c196332e78.tar.gz"
+sha256 = "60a5677fd72d52fb61dd5ff98154c0c78c4c697d4d20e57527c0dd406e24794e"
+
+[build]
+kind = "tree-sitter"
+language = "mail"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
