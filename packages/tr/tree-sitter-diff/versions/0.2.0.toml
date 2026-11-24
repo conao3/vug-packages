@@ -1,0 +1,19 @@
+version = "0.2.0"
+
+[source]
+url = "https://github.com/the-mikedavis/tree-sitter-diff/archive/refs/tags/v0.2.0.tar.gz"
+sha256 = "6092f7fd11e186d96d3c130fdbe8d03cfc426ee9cc62cf4a2112571b1b0372e6"
+
+[build]
+kind = "tree-sitter"
+language = "diff"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
