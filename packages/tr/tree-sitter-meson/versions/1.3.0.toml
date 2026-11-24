@@ -1,0 +1,19 @@
+version = "1.3.0"
+
+[source]
+url = "https://github.com/tree-sitter-grammars/tree-sitter-meson/archive/refs/tags/v1.3.0.tar.gz"
+sha256 = "fe9923e14405edfc41d76a1ffa82c8a03d8cf42e8651459a57882a55c00c83ea"
+
+[build]
+kind = "tree-sitter"
+language = "meson"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

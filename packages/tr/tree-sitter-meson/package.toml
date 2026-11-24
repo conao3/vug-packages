@@ -1,0 +1,7 @@
+name = "tree-sitter-meson"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/tree-sitter-grammars/tree-sitter-meson/archive/",
+]
