@@ -1,0 +1,29 @@
+version = "1.1.4"
+
+[source]
+url = "https://github.com/awslabs/aws-c-mqtt/archive/refs/tags/v1.1.4.tar.gz"
+sha256 = "7180dc078c8e815856bcc21c88a57ec36e61893ffe4585b4ec855284c0d96674"
+
+[build]
+kind = "cmake"
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+]
+run = [
+  "aws-c-cal",
+  "aws-c-common",
+  "aws-c-compression",
+  "aws-c-http",
+  "aws-c-io",
+  "musl",
+  "openssl",
+  "s2n-tls",
+]
+
+[check]
+enabled = true
+skip = []
