@@ -1,0 +1,19 @@
+version = "0-unstable-2024-08-15"
+
+[source]
+url = "https://github.com/sourcegraph/tree-sitter-jsonnet/archive/ddd075f1939aed8147b7aa67f042eda3fce22790.tar.gz"
+sha256 = "0d68bc9b85db3986284668eec6d9bb1a50c75e33b376cdbc8cce46cdb4af80b2"
+
+[build]
+kind = "tree-sitter"
+language = "jsonnet"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
