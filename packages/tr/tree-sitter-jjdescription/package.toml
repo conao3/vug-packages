@@ -1,0 +1,7 @@
+name = "tree-sitter-jjdescription"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/ribru17/tree-sitter-jjdescription/archive/",
+]

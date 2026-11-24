@@ -1,0 +1,19 @@
+version = "1.0.3"
+
+[source]
+url = "https://github.com/ribru17/tree-sitter-jjdescription/archive/refs/tags/v1.0.3.tar.gz"
+sha256 = "9a71e500dd75cd1cb5ff1edfd5d01c6c0df5952653faafde6ad5d5d5f704fda9"
+
+[build]
+kind = "tree-sitter"
+language = "jjdescription"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
