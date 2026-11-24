@@ -1,0 +1,19 @@
+version = "1.1.0"
+
+[source]
+url = "https://github.com/camdencheek/tree-sitter-go-mod/archive/refs/tags/v1.1.0.tar.gz"
+sha256 = "66f55e0dfa9d654484146c405261d667196d3b20872fa3f7813d5125a82d6de8"
+
+[build]
+kind = "tree-sitter"
+language = "gomod"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

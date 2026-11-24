@@ -1,0 +1,7 @@
+name = "tree-sitter-gomod"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/camdencheek/tree-sitter-go-mod/archive/",
+]
