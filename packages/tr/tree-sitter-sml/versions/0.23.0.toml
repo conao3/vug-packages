@@ -1,0 +1,19 @@
+version = "0.23.0"
+
+[source]
+url = "https://github.com/MatthewFluet/tree-sitter-sml/archive/refs/tags/v0.23.0.tar.gz"
+sha256 = "27531b2530519770d8b2699bd134cbf1545678ce7f8ab2d117cadc157861bd76"
+
+[build]
+kind = "tree-sitter"
+language = "sml"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
