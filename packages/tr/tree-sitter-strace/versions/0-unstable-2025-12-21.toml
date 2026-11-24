@@ -1,0 +1,19 @@
+version = "0-unstable-2025-12-21"
+
+[source]
+url = "https://github.com/sigmaSd/tree-sitter-strace/archive/ac874ddfcc08d689fee1f4533789e06d88388f29.tar.gz"
+sha256 = "64d6c991f4cd011ddc7dab0d9e654b389586c1c65ef86a6c283c403b4f2aee19"
+
+[build]
+kind = "tree-sitter"
+language = "strace"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

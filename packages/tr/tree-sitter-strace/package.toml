@@ -1,0 +1,7 @@
+name = "tree-sitter-strace"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/sigmaSd/tree-sitter-strace/archive/",
+]
