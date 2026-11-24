@@ -1,0 +1,8 @@
+name = "python-pydantic"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/pydantic/pydantic"
+sources = [
+  "https://files.pythonhosted.org/packages/source/p/pydantic/",
+]

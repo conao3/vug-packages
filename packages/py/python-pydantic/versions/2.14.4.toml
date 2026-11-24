@@ -1,0 +1,30 @@
+version = "2.14.4"
+
+[source]
+url = "https://files.pythonhosted.org/packages/source/p/pydantic/pydantic-2.14.4.tar.gz"
+sha256 = "7c19f1d46f8accf55a4617a6116e1ade64840870f397b846a2c53fb9019414ba"
+
+[build]
+kind = "python"
+imports = [
+  "pydantic",
+]
+
+[dependencies]
+build = [
+  "python-build",
+  "python-hatch-fancy-pypi-readme",
+  "python-hatchling",
+  "python-installer",
+]
+run = [
+  "python",
+  "python-annotated-types",
+  "python-pydantic-core",
+  "python-typing-extensions",
+  "python-typing-inspection",
+]
+
+[check]
+enabled = true
+skip = []
