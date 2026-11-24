@@ -1,0 +1,29 @@
+version = "0.19"
+patches = [
+  "0.19-skip-tests-without-i3.patch",
+]
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/M/MS/MSTPLBG/AnyEvent-I3-0.19.tar.gz"
+sha256 = "1bcd3b60db3d5560148de791353e8af1172264f5a85e77197b9ffc041dac483a"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "AnyEvent::I3",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+  "perl-anyevent",
+  "perl-json-xs",
+]
+
+[check]
+enabled = true
+skip = []
