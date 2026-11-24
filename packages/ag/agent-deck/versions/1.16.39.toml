@@ -1,0 +1,31 @@
+version = "1.16.39"
+patches = [
+  "1.16.39-complete-go-module-checksums.patch",
+]
+
+[source]
+url = "https://github.com/asheshgoplani/agent-deck/archive/refs/tags/v1.16.39.tar.gz"
+sha256 = "61df599be4a79a086ed55f67daab9b7deed672f12198cb96aecdbdc5f10e8cfa"
+
+[build]
+kind = "go"
+targets = [
+  { path = "./cmd/agent-deck", bin = "agent-deck" },
+]
+
+[dependencies]
+build = [
+  "go",
+]
+run = [
+  "bash",
+  "git",
+  "ncurses",
+  "procps",
+  "python",
+  "tmux",
+]
+
+[check]
+enabled = false
+skip = []

@@ -1,0 +1,8 @@
+name = "agent-deck"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/asheshgoplani/agent-deck"
+sources = [
+  "https://github.com/asheshgoplani/agent-deck/archive/",
+]
