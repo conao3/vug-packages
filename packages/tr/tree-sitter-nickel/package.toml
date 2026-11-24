@@ -1,0 +1,7 @@
+name = "tree-sitter-nickel"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/nickel-lang/tree-sitter-nickel/archive/",
+]
