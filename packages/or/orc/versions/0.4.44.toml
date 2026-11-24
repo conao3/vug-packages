@@ -1,0 +1,27 @@
+version = "0.4.44"
+
+[source]
+url = "https://gstreamer.freedesktop.org/src/orc/orc-0.4.44.tar.xz"
+sha256 = "4aeb97aea2b58224029dc2b23d7d064cfa990cb4fb8c4da440bcbe9c95bc5d2d"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dhotdoc=disabled",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []

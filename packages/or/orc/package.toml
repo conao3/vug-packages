@@ -1,0 +1,8 @@
+name = "orc"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://gstreamer.freedesktop.org/modules/orc.html"
+sources = [
+  "https://gstreamer.freedesktop.org/src/orc/",
+]
