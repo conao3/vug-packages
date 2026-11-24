@@ -1,0 +1,8 @@
+name = "nuspell"
+license = "LGPL-3.0-or-later"
+
+[upstream]
+homepage = "https://nuspell.github.io/"
+sources = [
+  "https://github.com/nuspell/nuspell/archive/refs/tags/",
+]
