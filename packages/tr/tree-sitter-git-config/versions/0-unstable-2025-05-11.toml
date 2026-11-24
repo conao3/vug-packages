@@ -1,0 +1,19 @@
+version = "0-unstable-2025-05-11"
+
+[source]
+url = "https://github.com/the-mikedavis/tree-sitter-git-config/archive/0fbc9f99d5a28865f9de8427fb0672d66f9d83a5.tar.gz"
+sha256 = "4a008a5392e2696879f60c0490bef6c6fe7f554aecb1d612bb6efec799e45584"
+
+[build]
+kind = "tree-sitter"
+language = "git_config"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
