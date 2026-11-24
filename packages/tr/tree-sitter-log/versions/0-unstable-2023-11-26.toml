@@ -1,0 +1,19 @@
+version = "0-unstable-2023-11-26"
+
+[source]
+url = "https://github.com/Tudyx/tree-sitter-log/archive/62cfe307e942af3417171243b599cc7deac5eab9.tar.gz"
+sha256 = "fc009711ed59ad62d5ef7c3abdc82cba458a4354aad8e79d3cf3c9eef79e0f0a"
+
+[build]
+kind = "tree-sitter"
+language = "log"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
