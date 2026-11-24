@@ -1,0 +1,7 @@
+name = "tree-sitter-blueprint"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/smrtrfszm/tree-sitter-blueprint/archive/",
+]

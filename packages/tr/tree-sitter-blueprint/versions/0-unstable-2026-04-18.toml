@@ -1,0 +1,19 @@
+version = "0-unstable-2026-04-18"
+
+[source]
+url = "https://github.com/smrtrfszm/tree-sitter-blueprint/archive/f2b043912ffbfcf4e9e8d09709b86ab39a4b78ea.tar.gz"
+sha256 = "38ba081d1c0dbe4e97c0a87777330201371eeb2df45c3ecb0e31fd15fc765135"
+
+[build]
+kind = "tree-sitter"
+language = "blueprint"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
