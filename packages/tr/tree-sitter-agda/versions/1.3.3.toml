@@ -1,0 +1,19 @@
+version = "1.3.3"
+
+[source]
+url = "https://github.com/tree-sitter/tree-sitter-agda/archive/refs/tags/v1.3.3.tar.gz"
+sha256 = "f09055ac4df99d8c27af4a80442abd0659b75babd46e8693a7dd9133d5711ef5"
+
+[build]
+kind = "tree-sitter"
+language = "agda"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

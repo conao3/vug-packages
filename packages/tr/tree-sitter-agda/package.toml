@@ -1,0 +1,7 @@
+name = "tree-sitter-agda"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/tree-sitter/tree-sitter-agda/archive/",
+]
