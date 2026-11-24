@@ -1,0 +1,19 @@
+version = "2026.11.19"
+
+[source]
+url = "https://github.com/metio/tree-sitter-ssh-client-config/archive/refs/tags/2026.11.19.tar.gz"
+sha256 = "b7e99a1ad4c4dacd817e26cdfa1122dffe3f53639f0660a9cadab15d6d8dfcea"
+
+[build]
+kind = "tree-sitter"
+language = "ssh_client_config"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
