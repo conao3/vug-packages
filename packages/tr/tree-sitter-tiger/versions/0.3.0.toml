@@ -1,0 +1,19 @@
+version = "0.3.0"
+
+[source]
+url = "https://github.com/ambroisie/tree-sitter-tiger/archive/refs/tags/v0.3.0.tar.gz"
+sha256 = "f5ab5bed11bbba622954661f274bf30fc1d7f9c8a6ace80ceaf69caeed2248f0"
+
+[build]
+kind = "tree-sitter"
+language = "tiger"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
