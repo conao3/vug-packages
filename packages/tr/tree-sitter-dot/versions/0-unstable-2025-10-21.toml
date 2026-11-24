@@ -1,0 +1,19 @@
+version = "0-unstable-2025-10-21"
+
+[source]
+url = "https://github.com/rydesun/tree-sitter-dot/archive/80327abbba6f47530edeb0df9f11bd5d5c93c14d.tar.gz"
+sha256 = "545185ad843ffe5c6157bb9fdb62a4c717614a2b44f1e6ad24b2616df42bcb55"
+
+[build]
+kind = "tree-sitter"
+language = "dot"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
