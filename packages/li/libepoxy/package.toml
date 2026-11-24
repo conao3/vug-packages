@@ -1,0 +1,8 @@
+name = "libepoxy"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/anholt/libepoxy"
+sources = [
+  "https://github.com/anholt/libepoxy/archive/",
+]
