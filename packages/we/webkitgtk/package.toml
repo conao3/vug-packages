@@ -1,0 +1,8 @@
+name = "webkitgtk"
+license = "BSD-2-Clause"
+
+[upstream]
+homepage = "https://webkitgtk.org/"
+sources = [
+  "https://cache.nixos.org/",
+]
