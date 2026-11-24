@@ -1,0 +1,27 @@
+version = "0.100006"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Pod-Coverage-TrustPod-0.100006.tar.gz"
+sha256 = "358adc2504f039eb69098aa99bdde6ae9dc935364a8e144f6405e8293b3a7ca3"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Pod::Coverage::TrustPod",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+  "perl-pod-coverage",
+  "perl-pod-eventual",
+  "perl-pod-parser",
+]
+
+[check]
+enabled = true
+skip = []
