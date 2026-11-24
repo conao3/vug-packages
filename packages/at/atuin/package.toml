@@ -1,0 +1,8 @@
+name = "atuin"
+license = "MIT"
+
+[upstream]
+homepage = "https://atuin.sh"
+sources = [
+  "https://github.com/atuinsh/atuin/archive/refs/tags/",
+]

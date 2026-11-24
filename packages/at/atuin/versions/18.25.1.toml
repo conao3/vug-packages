@@ -1,0 +1,27 @@
+version = "18.25.1"
+
+[source]
+url = "https://github.com/atuinsh/atuin/archive/refs/tags/v18.25.1.tar.gz"
+sha256 = "44e3376136fc5786868121955adabc824ea7f2e5e0e51345a95100b3bd6d4c91"
+
+[build]
+kind = "cargo"
+path = "crates/atuin"
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "pkgconf",
+  "rust",
+]
+run = [
+  "libcxx",
+  "musl",
+  "openssl",
+  "rust-libunwind",
+]
+
+[check]
+enabled = true
+skip = []
