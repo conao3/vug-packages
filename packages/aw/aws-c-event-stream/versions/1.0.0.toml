@@ -1,0 +1,31 @@
+version = "1.0.0"
+
+[source]
+url = "https://github.com/awslabs/aws-c-event-stream/archive/refs/tags/v1.0.0.tar.gz"
+sha256 = "c3817ab04bf9c70fa3582a31243666a9a643ebe45f121f58d5fef5ff4787f8e0"
+
+[build]
+kind = "cmake"
+setup-flags = [
+  "-DENABLE_NET_TESTS=OFF",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+]
+run = [
+  "aws-c-cal",
+  "aws-c-common",
+  "aws-c-io",
+  "aws-checksums",
+  "musl",
+  "openssl",
+  "s2n-tls",
+]
+
+[check]
+enabled = true
+skip = []

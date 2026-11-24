@@ -1,0 +1,8 @@
+name = "aws-c-event-stream"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://github.com/awslabs/aws-c-event-stream"
+sources = [
+  "https://github.com/awslabs/aws-c-event-stream/archive/refs/tags/",
+]
