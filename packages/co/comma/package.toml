@@ -1,0 +1,8 @@
+name = "comma"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/nix-community/comma"
+sources = [
+  "https://cache.nixos.org/",
+]
