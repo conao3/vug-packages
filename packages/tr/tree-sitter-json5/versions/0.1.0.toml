@@ -1,0 +1,19 @@
+version = "0.1.0"
+
+[source]
+url = "https://github.com/joakker/tree-sitter-json5/archive/refs/tags/v0.1.0.tar.gz"
+sha256 = "8822d83c5955b597e9366ba7073bffadb6df96c0b56a6545fbd391930b80d235"
+
+[build]
+kind = "tree-sitter"
+language = "json5"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

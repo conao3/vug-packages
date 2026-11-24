@@ -1,0 +1,7 @@
+name = "tree-sitter-json5"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/joakker/tree-sitter-json5/archive/",
+]
