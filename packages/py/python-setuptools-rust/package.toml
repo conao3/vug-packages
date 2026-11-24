@@ -1,0 +1,8 @@
+name = "python-setuptools-rust"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/PyO3/setuptools-rust"
+sources = [
+  "https://files.pythonhosted.org/packages/source/s/setuptools-rust/",
+]

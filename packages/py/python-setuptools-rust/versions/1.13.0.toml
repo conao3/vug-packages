@@ -1,0 +1,27 @@
+version = "1.13.0"
+
+[source]
+url = "https://files.pythonhosted.org/packages/source/s/setuptools-rust/setuptools_rust-1.13.0.tar.gz"
+sha256 = "f2afcf4baeee689910ce49cfa8aad4e08cce72f417449bcc32891b8664fdc726"
+
+[build]
+kind = "python"
+imports = [
+  "setuptools_rust",
+]
+
+[dependencies]
+build = [
+  "python-build",
+  "python-installer",
+  "python-setuptools-scm",
+]
+run = [
+  "python",
+  "python-semantic-version",
+  "python-setuptools",
+]
+
+[check]
+enabled = true
+skip = []
