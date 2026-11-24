@@ -1,0 +1,19 @@
+version = "2.1.0"
+
+[source]
+url = "https://github.com/nvim-orgmode/tree-sitter-org/archive/refs/tags/2.1.0.tar.gz"
+sha256 = "bffef6ea63ddf67bcd4713713a9dbea0504345361e697243fda848bb770f93aa"
+
+[build]
+kind = "tree-sitter"
+language = "org"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
