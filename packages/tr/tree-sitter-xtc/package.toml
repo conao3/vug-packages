@@ -1,0 +1,7 @@
+name = "tree-sitter-xtc"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/Alexis-Lapierre/tree-sitter-xtc/archive/",
+]

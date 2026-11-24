@@ -1,0 +1,19 @@
+version = "0-unstable-2024-04-15"
+
+[source]
+url = "https://github.com/Alexis-Lapierre/tree-sitter-xtc/archive/7bc11b736250c45e25cfb0215db2f8393779957e.tar.gz"
+sha256 = "beb0d5ff4bf801f721a4c930d34aa7b272178182bb71d0e55abea82499e523f5"
+
+[build]
+kind = "tree-sitter"
+language = "xtc"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
