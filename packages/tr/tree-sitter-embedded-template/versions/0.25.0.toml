@@ -1,0 +1,19 @@
+version = "0.25.0"
+
+[source]
+url = "https://github.com/tree-sitter/tree-sitter-embedded-template/archive/refs/tags/v0.25.0.tar.gz"
+sha256 = "c45330d6c53b64c9dfbcb00e85ddb5b3f79e0f3457bc76ca764c57630ee4df54"
+
+[build]
+kind = "tree-sitter"
+language = "embedded_template"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
