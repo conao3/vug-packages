@@ -1,0 +1,7 @@
+name = "tree-sitter-go-format-string"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://codeberg.org/kpbaks/tree-sitter-go-format-string/archive/",
+]
