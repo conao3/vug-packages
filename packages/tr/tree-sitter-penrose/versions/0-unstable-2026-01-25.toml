@@ -1,0 +1,19 @@
+version = "0-unstable-2026-01-25"
+
+[source]
+url = "https://github.com/klukaszek/tree-sitter-penrose/archive/d9368ff7f743b2ac2145a3342db13b1ad950cba5.tar.gz"
+sha256 = "3643df1d2480c74699751d31eee6382983f264d34ea2380082b0407b18b31087"
+
+[build]
+kind = "tree-sitter"
+language = "penrose"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
