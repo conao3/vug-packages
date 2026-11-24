@@ -1,0 +1,7 @@
+name = "tree-sitter-wit"
+license = "Apache-2.0"
+
+[upstream]
+sources = [
+  "https://github.com/bytecodealliance/tree-sitter-wit/archive/",
+]
