@@ -1,0 +1,29 @@
+version = "0.16.0"
+
+[source]
+url = "https://github.com/libusb/hidapi/archive/hidapi-0.16.0.tar.gz"
+sha256 = "bc599d295792fe515778f19ce86a49760b0ea5fc114e5258245d470609632bbf"
+
+[build]
+kind = "cmake"
+setup-flags = [
+  "-DHIDAPI_WITH_HIDRAW=ON",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+  "pkgconf",
+  "systemd",
+]
+run = [
+  "libusb",
+  "musl",
+  "systemd",
+]
+
+[check]
+enabled = true
+skip = []

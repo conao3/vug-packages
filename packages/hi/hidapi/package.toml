@@ -1,0 +1,8 @@
+name = "hidapi"
+license = "BSD-3-Clause OR GPL-3.0-only"
+
+[upstream]
+homepage = "https://github.com/libusb/hidapi"
+sources = [
+  "https://github.com/libusb/hidapi/archive/",
+]
