@@ -1,0 +1,19 @@
+version = "0-unstable-2024-04-20"
+
+[source]
+url = "https://github.com/erasin/tree-sitter-po/archive/bd860a0f57f697162bf28e576674be9c1500db5e.tar.gz"
+sha256 = "5a888bd0bfbf654b0755b2567d06ac8f24c2704df78b114e183e49e956768195"
+
+[build]
+kind = "tree-sitter"
+language = "po"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
