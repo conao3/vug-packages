@@ -1,0 +1,8 @@
+name = "chromaprint"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://acoustid.org/chromaprint"
+sources = [
+  "https://cache.nixos.org/",
+]
