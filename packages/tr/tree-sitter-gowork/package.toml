@@ -1,0 +1,7 @@
+name = "tree-sitter-gowork"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/omertuc/tree-sitter-go-work/archive/",
+]

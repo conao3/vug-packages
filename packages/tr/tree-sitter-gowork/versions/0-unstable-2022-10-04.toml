@@ -1,0 +1,19 @@
+version = "0-unstable-2022-10-04"
+
+[source]
+url = "https://github.com/omertuc/tree-sitter-go-work/archive/949a8a470559543857a62102c84700d291fc984c.tar.gz"
+sha256 = "e72981468f9d17af91d5a0f2d54b082b86a863d5cbba6cce792e0d4f54bb4e38"
+
+[build]
+kind = "tree-sitter"
+language = "gowork"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
