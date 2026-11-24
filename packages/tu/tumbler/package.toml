@@ -1,0 +1,8 @@
+name = "tumbler"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://gitlab.xfce.org/xfce/tumbler"
+sources = [
+  "https://cache.nixos.org/",
+]

@@ -1,0 +1,20 @@
+version = "4.20.2"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "tumbler"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/ii6mzq8bisz551f7bcjn5rml2pc05f1a-tumbler-4.20.2"
+nar-hash = "sha256:0yb0x7kl66imsc1n1h8d1wlm52lphikhnvvx7g80w2i38pdqa3b0"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
