@@ -1,0 +1,7 @@
+name = "tree-sitter-sourcepawn"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/nilshelmig/tree-sitter-sourcepawn/archive/",
+]
