@@ -1,0 +1,7 @@
+name = "tree-sitter-templ"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/vrischmann/tree-sitter-templ/archive/",
+]

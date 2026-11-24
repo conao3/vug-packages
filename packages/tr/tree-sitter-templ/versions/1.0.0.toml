@@ -1,0 +1,19 @@
+version = "1.0.0"
+
+[source]
+url = "https://github.com/vrischmann/tree-sitter-templ/archive/refs/tags/v1.0.0.tar.gz"
+sha256 = "74e3666ef5822748573d76446f726e7ec41c95d9136556664698ef95abeed23e"
+
+[build]
+kind = "tree-sitter"
+language = "templ"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
