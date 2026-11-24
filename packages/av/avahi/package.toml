@@ -1,0 +1,8 @@
+name = "avahi"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://avahi.org/"
+sources = [
+  "https://github.com/lathiat/avahi/releases/download/",
+]
