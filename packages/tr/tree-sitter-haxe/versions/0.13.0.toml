@@ -1,0 +1,19 @@
+version = "0.13.0"
+
+[source]
+url = "https://github.com/vantreeseba/tree-sitter-haxe/archive/refs/tags/v0.13.0.tar.gz"
+sha256 = "45fa65734f9e97b763112fe69238250ce7d14ff29773a79888cfe5be25d4e009"
+
+[build]
+kind = "tree-sitter"
+language = "haxe"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
