@@ -1,0 +1,7 @@
+name = "tree-sitter-yara"
+license = "Apache-2.0"
+
+[upstream]
+sources = [
+  "https://github.com/egibs/tree-sitter-yara/archive/",
+]

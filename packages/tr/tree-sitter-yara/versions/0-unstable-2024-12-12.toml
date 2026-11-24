@@ -1,0 +1,19 @@
+version = "0-unstable-2024-12-12"
+
+[source]
+url = "https://github.com/egibs/tree-sitter-yara/archive/eb3ede203275c38000177f72ec0f9965312806ef.tar.gz"
+sha256 = "b192e6d3fb2269f68223709aa53a8cbe5c8e975c0a5d4dc1ee62cc66c7b2d2df"
+
+[build]
+kind = "tree-sitter"
+language = "yara"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
