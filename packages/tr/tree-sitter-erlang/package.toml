@@ -1,0 +1,7 @@
+name = "tree-sitter-erlang"
+license = "Apache-2.0"
+
+[upstream]
+sources = [
+  "https://github.com/WhatsApp/tree-sitter-erlang/archive/",
+]

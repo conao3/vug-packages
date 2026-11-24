@@ -1,0 +1,19 @@
+version = "0.22.0"
+
+[source]
+url = "https://github.com/WhatsApp/tree-sitter-erlang/archive/refs/tags/0.22.0.tar.gz"
+sha256 = "c49584e09223f8cf84cbbcb360a024f327e20d6eafa68a943bd3ec90a73014c3"
+
+[build]
+kind = "tree-sitter"
+language = "erlang"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
