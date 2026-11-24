@@ -1,0 +1,19 @@
+version = "0.9.0"
+
+[source]
+url = "https://github.com/phoenixframework/tree-sitter-heex/archive/refs/tags/v0.9.0.tar.gz"
+sha256 = "8064cef025207d5c051398eba5936d31d716b28b0ed2638cea34cd4449153cf6"
+
+[build]
+kind = "tree-sitter"
+language = "heex"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
