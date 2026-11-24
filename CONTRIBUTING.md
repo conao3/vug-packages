@@ -113,11 +113,20 @@ uses Flit and imports MarkupSafe at runtime.
   | `meson` | `meson` |
   | `pyproject-metadata` | `python-pyproject-metadata` |
   | `cython` | `python-cython` |
+  | `maturin` | `python-maturin` |
+  | `uv_build` | `python-uv-build` |
+  | `setuptools-rust` | `python-setuptools-rust` |
 
   In-tree backends with a `backend-path` use the code from the sdist.
   Include the frontend, installer, and the backend's applicable build
   requirements. Meson Python uses the packaged Meson, Samurai and patchelf
   executables for Linux builds.
+
+- For a wheel compiled with Cargo, set `cargo-lock = true` in `[build]`
+  and declare the Rust toolchain in `dependencies.build`. The source
+  needs a root `Cargo.lock` with checksums for its crates.io dependencies.
+  Maturin and uv-build install a Python backend and a native executable
+  from the same wheel.
 
 - Put import dependencies and native libraries in `run`. Put suite
   runners and plugins in `build`. Use `imports` for import checks,
