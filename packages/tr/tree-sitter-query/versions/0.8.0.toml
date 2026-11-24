@@ -1,0 +1,19 @@
+version = "0.8.0"
+
+[source]
+url = "https://github.com/tree-sitter-grammars/tree-sitter-query/archive/refs/tags/v0.8.0.tar.gz"
+sha256 = "c2b23b9a54cffcc999ded4a5d3949daf338bebb7945dece229f832332e6e6a7d"
+
+[build]
+kind = "tree-sitter"
+language = "query"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
