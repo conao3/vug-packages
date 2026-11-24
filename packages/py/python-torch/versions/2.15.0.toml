@@ -1,0 +1,23 @@
+version = "2.15.0"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "python3Packages.torch"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/aas1gpm3gbrl274rq51rinnih87rzddi-python3.14-torch-2.15.0"
+nar-hash = "sha256:0q7spawcx8ba87958a4aamhbyx80d3hlrpq5bg9k7f4k3qfshy8p"
+expose = [
+  "bin/torchfrtrace",
+  "bin/torchrun",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
