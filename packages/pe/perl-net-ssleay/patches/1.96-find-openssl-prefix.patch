@@ -1,6 +1,6 @@
 --- a/Makefile.PL
 +++ b/Makefile.PL
-@@ -370,4 +370,12 @@
+@@ -370,6 +370,14 @@
          return $ENV{OPENSSL_PREFIX};
      }
  
@@ -13,3 +13,5 @@
 +    }
 +
      my @guesses = (
+ 	'/home/linuxbrew/.linuxbrew/opt/openssl/bin/openssl' => '/home/linuxbrew/.linuxbrew/opt/openssl', # LinuxBrew openssl
+ 	'/opt/homebrew/opt/openssl/bin/openssl' => '/opt/homebrew/opt/openssl', # macOS ARM homebrew

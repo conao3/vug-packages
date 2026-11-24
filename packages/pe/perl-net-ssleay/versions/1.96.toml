@@ -1,6 +1,6 @@
 version = "1.96"
 patches = [
-  "1.96-openssl-prefix.patch",
+  "1.96-find-openssl-prefix.patch",
   "1.96-openssl4.patch",
 ]
 
