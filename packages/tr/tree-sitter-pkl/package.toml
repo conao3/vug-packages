@@ -1,0 +1,7 @@
+name = "tree-sitter-pkl"
+license = "Apache-2.0"
+
+[upstream]
+sources = [
+  "https://github.com/apple/tree-sitter-pkl/archive/",
+]

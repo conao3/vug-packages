@@ -1,0 +1,19 @@
+version = "0.22.0"
+
+[source]
+url = "https://github.com/apple/tree-sitter-pkl/archive/refs/tags/v0.22.0.tar.gz"
+sha256 = "28e2ba932d889997488ab15635039b5f016292c12872a1f717f4ff11c4176ef8"
+
+[build]
+kind = "tree-sitter"
+language = "pkl"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
