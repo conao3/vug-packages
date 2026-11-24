@@ -1,0 +1,19 @@
+version = "1.0.0"
+
+[source]
+url = "https://github.com/dynamotn/tree-sitter-dbml/archive/refs/tags/v1.0.0.tar.gz"
+sha256 = "02f0c0e73410362c5884dff3c921d36b4e312f59c1ae2524d4af37ae357acb67"
+
+[build]
+kind = "tree-sitter"
+language = "dbml"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

@@ -1,0 +1,7 @@
+name = "tree-sitter-dbml"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/dynamotn/tree-sitter-dbml/archive/",
+]
