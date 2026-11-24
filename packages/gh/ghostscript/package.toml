@@ -1,0 +1,8 @@
+name = "ghostscript"
+license = "AGPL-3.0-or-later"
+
+[upstream]
+homepage = "https://www.ghostscript.com/"
+sources = [
+  "https://cache.nixos.org/",
+]
