@@ -1,0 +1,15 @@
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -1499,7 +1499,11 @@
+ 
+ install-dvi-am:
+ 
+-install-exec-am: install-binPROGRAMS install-libLTLIBRARIES
++install-exec-am: install-binPROGRAMS install-libLTLIBRARIES install-pkg-config-link
++
++.PHONY: install-pkg-config-link
++install-pkg-config-link: install-binPROGRAMS
++	cd "$(DESTDIR)$(bindir)" && $(LN_S) -f pkgconf pkg-config
+ 
+ install-html: install-html-am
+ 

@@ -1,4 +1,7 @@
 version = "2.5.1"
+patches = [
+  "2.5.1-install-pkg-config-link.patch",
+]
 
 [source]
 url = "https://distfiles.ariadne.space/pkgconf/pkgconf-2.5.1.tar.xz"
