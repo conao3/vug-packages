@@ -1,0 +1,7 @@
+name = "tree-sitter-ponylang"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/mfelsche/tree-sitter-ponylang/archive/",
+]

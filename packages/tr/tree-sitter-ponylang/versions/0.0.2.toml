@@ -1,0 +1,19 @@
+version = "0.0.2"
+
+[source]
+url = "https://github.com/mfelsche/tree-sitter-ponylang/archive/refs/tags/v0.0.2.tar.gz"
+sha256 = "c53e14fa71af2f590f200947ffdb33bce030f2f7e9be41bd1b239e311bc44bfb"
+
+[build]
+kind = "tree-sitter"
+language = "ponylang"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
