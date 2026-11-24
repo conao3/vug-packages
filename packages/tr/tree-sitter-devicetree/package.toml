@@ -1,0 +1,7 @@
+name = "tree-sitter-devicetree"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/joelspadin/tree-sitter-devicetree/archive/",
+]

@@ -1,0 +1,19 @@
+version = "0.15.0"
+
+[source]
+url = "https://github.com/joelspadin/tree-sitter-devicetree/archive/refs/tags/v0.15.0.tar.gz"
+sha256 = "c436de34e25ea7cadb0e12135ff11598bc84aace88c4a90e2b9fe11793c92e3c"
+
+[build]
+kind = "tree-sitter"
+language = "devicetree"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
