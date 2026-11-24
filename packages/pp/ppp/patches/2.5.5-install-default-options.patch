@@ -1,0 +1,20 @@
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -9,6 +9,7 @@
+ DIST_SUBDIRS = $(SUBDIRS) include scripts
+ 
+ install-data-hook:
++	$(INSTALL_DATA) /dev/null "$(DESTDIR)$(sampledir)/options"
+ 	(cd $(DESTDIR)/$(sysconfdir)/$(PACKAGE) ; \
+ 	 chmod 600 chap-secrets.example pap-secrets.example \
+ 	 eaptls-server.example eaptls-client.example)
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -948,6 +948,7 @@
+ 
+ 
+ install-data-hook:
++	$(INSTALL_DATA) /dev/null "$(DESTDIR)$(sampledir)/options"
+ 	(cd $(DESTDIR)/$(sysconfdir)/$(PACKAGE) ; \
+ 	 chmod 600 chap-secrets.example pap-secrets.example \
+ 	 eaptls-server.example eaptls-client.example)

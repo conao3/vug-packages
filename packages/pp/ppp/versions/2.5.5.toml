@@ -1,0 +1,32 @@
+version = "2.5.5"
+patches = [
+  "2.5.5-install-default-options.patch",
+]
+
+[source]
+url = "https://download.samba.org/pub/ppp/ppp-2.5.5.tar.gz"
+sha256 = "0ebbcfef906d16cfbb9cbdd19c0d92aa3df2fd8fdd29731f614c58d16a279aa5"
+
+[build]
+kind = "autotools"
+
+[dependencies]
+build = [
+  "binutils",
+  "linux-headers",
+  "make",
+  "pkgconf",
+]
+run = [
+  "libpcap",
+  "libxcrypt",
+  "linux-pam",
+  "musl",
+  "openssl",
+]
+
+[check]
+enabled = true
+skip = [
+  "utest_pppcrypt",
+]

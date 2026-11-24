@@ -1,0 +1,8 @@
+name = "ppp"
+license = "BSD-3-Clause AND GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://ppp-project.github.io/ppp/"
+sources = [
+  "https://download.samba.org/pub/ppp/",
+]
