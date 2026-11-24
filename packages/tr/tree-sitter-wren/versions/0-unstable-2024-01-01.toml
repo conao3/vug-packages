@@ -1,0 +1,19 @@
+version = "0-unstable-2024-01-01"
+
+[source]
+url = "https://git.sr.ht/~jummit/tree-sitter-wren/archive/6748694be32f11e7ec6b5faeb1b48ca6156d4e06.tar.gz"
+sha256 = "3550ddcbc7c7aefc021a9e810cc0515e3ac4087ae8166d9cf712d16596afabfb"
+
+[build]
+kind = "tree-sitter"
+language = "wren"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

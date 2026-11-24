@@ -1,0 +1,7 @@
+name = "tree-sitter-wren"
+license = "LGPL-3.0-or-later"
+
+[upstream]
+sources = [
+  "https://git.sr.ht/~jummit/tree-sitter-wren/archive/",
+]
