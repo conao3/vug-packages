@@ -1,0 +1,8 @@
+name = "libajantv2"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/aja-video/libajantv2"
+sources = [
+  "https://cache.nixos.org/",
+]
