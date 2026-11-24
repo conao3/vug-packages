@@ -1,0 +1,19 @@
+version = "1.5.0"
+
+[source]
+url = "https://github.com/tlaplus-community/tree-sitter-tlaplus/archive/refs/tags/1.5.0.tar.gz"
+sha256 = "6472553f18a4031bb1f5dc925984b9971311313d3956ebf7d60e00f420656622"
+
+[build]
+kind = "tree-sitter"
+language = "tlaplus"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

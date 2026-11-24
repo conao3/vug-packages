@@ -1,0 +1,7 @@
+name = "tree-sitter-tlaplus"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/tlaplus-community/tree-sitter-tlaplus/archive/",
+]
