@@ -1,0 +1,8 @@
+name = "imagemagick"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "http://www.imagemagick.org/"
+sources = [
+  "https://cache.nixos.org/",
+]
