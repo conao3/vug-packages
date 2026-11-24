@@ -1,0 +1,8 @@
+name = "triton-amd-codegen"
+license = "MIT AND Apache-2.0 WITH LLVM-exception"
+
+[upstream]
+homepage = "https://github.com/triton-lang/triton"
+sources = [
+  "https://cache.nixos.org/",
+]
