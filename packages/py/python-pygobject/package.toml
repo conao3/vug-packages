@@ -1,0 +1,8 @@
+name = "python-pygobject"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://pygobject.gnome.org"
+sources = [
+  "https://download.gnome.org/sources/pygobject/",
+]

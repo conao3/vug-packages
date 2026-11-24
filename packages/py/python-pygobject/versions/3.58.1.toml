@@ -1,0 +1,38 @@
+version = "3.58.1"
+
+[source]
+url = "https://download.gnome.org/sources/pygobject/3.58/pygobject-3.58.1.tar.gz"
+sha256 = "4c80598ade17fbaa7798e01a25d0bf29ce109740786026a074c5c62bb3e79d23"
+
+[build]
+kind = "python"
+imports = [
+  "gi",
+]
+native-imports = [
+  "gi._gi",
+  "gi._gi_cairo",
+]
+
+[dependencies]
+build = [
+  "gobject-introspection",
+  "meson",
+  "pkgconf",
+  "python-build",
+  "python-installer",
+  "python-meson-python",
+  "python-pycairo",
+]
+run = [
+  "cairo",
+  "glib",
+  "libffi",
+  "musl",
+  "python",
+  "python-pycairo",
+]
+
+[check]
+enabled = true
+skip = []
