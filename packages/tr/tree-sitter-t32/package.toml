@@ -1,0 +1,7 @@
+name = "tree-sitter-t32"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/xasc/tree-sitter-t32/archive/",
+]

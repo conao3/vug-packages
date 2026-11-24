@@ -1,0 +1,19 @@
+version = "10.0.0"
+
+[source]
+url = "https://github.com/xasc/tree-sitter-t32/archive/refs/tags/v10.0.0.tar.gz"
+sha256 = "0b27a3475a49fb8b07822ff8c689fc28596c52c028544d597c2ba4dbc1e5f40c"
+
+[build]
+kind = "tree-sitter"
+language = "t32"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
