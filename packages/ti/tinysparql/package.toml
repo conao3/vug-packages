@@ -1,0 +1,8 @@
+name = "tinysparql"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://tracker.gnome.org/"
+sources = [
+  "https://cache.nixos.org/",
+]
