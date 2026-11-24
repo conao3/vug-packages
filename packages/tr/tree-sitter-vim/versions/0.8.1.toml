@@ -1,0 +1,19 @@
+version = "0.8.1"
+
+[source]
+url = "https://github.com/tree-sitter-grammars/tree-sitter-vim/archive/refs/tags/v0.8.1.tar.gz"
+sha256 = "93cafb9a0269420362454ace725a118ff1c3e08dcdfdc228aa86334b54d53c2a"
+
+[build]
+kind = "tree-sitter"
+language = "vim"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
