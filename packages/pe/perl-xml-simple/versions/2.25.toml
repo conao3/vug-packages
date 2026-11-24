@@ -1,0 +1,27 @@
+version = "2.25"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/G/GR/GRANTM/XML-Simple-2.25.tar.gz"
+sha256 = "531fddaebea2416743eb5c4fdfab028f502123d9a220405a4100e68fc480dbf8"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "XML::Simple",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+  "perl-xml-namespacesupport",
+  "perl-xml-sax",
+  "perl-xml-sax-expat",
+]
+
+[check]
+enabled = true
+skip = []
