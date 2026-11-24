@@ -1,0 +1,48 @@
+version = "3.8.1"
+
+[source]
+url = "https://download.gnome.org/sources/libsoup/3.8/libsoup-3.8.1.tar.xz"
+sha256 = "5013dcef9136f6f861e6529fca578af50c1f52a39219027fb5aff652d1371a04"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dc_link_args=-lintl",
+  "-Dautobahn=disabled",
+  "-Ddocs=disabled",
+  "-Dgssapi=enabled",
+  "-Dintrospection=disabled",
+  "-Dntlm=disabled",
+  "-Dsysprof=disabled",
+  "-Dtls_check=false",
+  "-Dvapi=disabled",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "gettext",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "brotli",
+  "gettext",
+  "glib",
+  "krb5",
+  "libpsl",
+  "musl",
+  "nghttp2",
+  "sqlite",
+  "zlib",
+  "zstd",
+]
+
+[check]
+enabled = true
+skip = [
+  "hsts-db-test",
+  "hsts-test",
+]
