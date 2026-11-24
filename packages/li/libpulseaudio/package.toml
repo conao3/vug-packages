@@ -1,0 +1,8 @@
+name = "libpulseaudio"
+license = "LGPL-2.0-or-later"
+
+[upstream]
+homepage = "http://www.pulseaudio.org/"
+sources = [
+  "https://cache.nixos.org/",
+]
