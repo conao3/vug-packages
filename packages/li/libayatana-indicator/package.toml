@@ -1,0 +1,8 @@
+name = "libayatana-indicator"
+license = "GPL-3.0-or-later"
+
+[upstream]
+homepage = "https://github.com/AyatanaIndicators/libayatana-indicator"
+sources = [
+  "https://cache.nixos.org/",
+]
