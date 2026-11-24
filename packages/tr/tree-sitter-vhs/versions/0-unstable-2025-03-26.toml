@@ -1,0 +1,19 @@
+version = "0-unstable-2025-03-26"
+
+[source]
+url = "https://github.com/charmbracelet/tree-sitter-vhs/archive/0c6fae9d2cfc5b217bfd1fe84a7678f5917116db.tar.gz"
+sha256 = "e19d7ab464c243b4c5011dcc359ddf7d310f8e665951e570228c6aca7650dc9a"
+
+[build]
+kind = "tree-sitter"
+language = "vhs"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

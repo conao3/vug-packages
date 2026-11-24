@@ -1,0 +1,7 @@
+name = "tree-sitter-vhs"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/charmbracelet/tree-sitter-vhs/archive/",
+]
