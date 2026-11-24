@@ -1,0 +1,25 @@
+version = "3.4.18"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "sdl3"
+
+[build.nix-outputs.lib]
+store-path = "/nix/store/yx8d504p8a5dm612j4vwrzfbz2jvkhwv-sdl3-3.4.18-lib"
+nar-hash = "sha256:0i29gr3ylmx3vhdwa1lj35b092rqcfghifmqss76wr09cz2q3700"
+expose = []
+
+[build.nix-outputs.out]
+store-path = "/nix/store/qr5hjwphj5qhrl99kpi0ib505bkcpzkx-sdl3-3.4.18"
+nar-hash = "sha256:0y217i88fdr4v73397f5kxvpdh0xqmda2gj63i894s5a1l8lrp1d"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
