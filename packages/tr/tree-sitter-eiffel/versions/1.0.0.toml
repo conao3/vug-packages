@@ -1,0 +1,19 @@
+version = "1.0.0"
+
+[source]
+url = "https://github.com/imustafin/tree-sitter-eiffel/archive/refs/tags/v1.0.0.tar.gz"
+sha256 = "e78703790394d3d252bb37f5cbee39058ec683b2bdd5d875f2de37c7a5d2c970"
+
+[build]
+kind = "tree-sitter"
+language = "eiffel"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

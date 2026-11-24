@@ -1,0 +1,7 @@
+name = "tree-sitter-eiffel"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/imustafin/tree-sitter-eiffel/archive/",
+]
