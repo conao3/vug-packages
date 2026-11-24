@@ -1,0 +1,8 @@
+name = "cloud-hypervisor"
+license = "Apache-2.0 AND BSD-3-Clause"
+
+[upstream]
+homepage = "https://github.com/cloud-hypervisor/cloud-hypervisor"
+sources = [
+  "https://cache.nixos.org/",
+]
