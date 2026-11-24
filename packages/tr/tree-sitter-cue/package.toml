@@ -1,0 +1,7 @@
+name = "tree-sitter-cue"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/eonpatapon/tree-sitter-cue/archive/",
+]

@@ -1,0 +1,19 @@
+version = "0.2.0"
+
+[source]
+url = "https://github.com/eonpatapon/tree-sitter-cue/archive/refs/tags/v0.2.0.tar.gz"
+sha256 = "c165b24d54ab8f6a3b5a0292e13132c299b45af06e6a28f30a8f3934f5fc5dbf"
+
+[build]
+kind = "tree-sitter"
+language = "cue"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
