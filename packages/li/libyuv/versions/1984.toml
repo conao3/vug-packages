@@ -1,0 +1,24 @@
+version = "1984"
+
+[source]
+url = "https://deb.debian.org/debian/pool/main/liby/libyuv/libyuv_0.0.1984.20261118.orig.tar.xz"
+sha256 = "f788296f7049c14b11bae672ebc896b03efa58b4c621747046c05860802e8062"
+
+[build]
+kind = "cmake"
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+]
+run = [
+  "libcxx",
+  "libjpeg-turbo",
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

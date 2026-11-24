@@ -1,0 +1,9 @@
+name = "libyuv"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://chromium.googlesource.com/libyuv/libyuv/"
+sources = [
+  "https://chromium.googlesource.com/libyuv/libyuv/",
+  "https://deb.debian.org/debian/pool/main/liby/libyuv/",
+]
