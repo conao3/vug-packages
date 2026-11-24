@@ -1,0 +1,69 @@
+version = "2.010001"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/T/TO/TOBYINK/Type-Tiny-2.010001.tar.gz"
+sha256 = "cd583e4983039f35052d490f0c4439124ba667d4f09c4e3aec47de5200f9921a"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Devel::TypeTiny::Perl58Compat",
+  "Error::TypeTiny",
+  "Error::TypeTiny::Assertion",
+  "Error::TypeTiny::Compilation",
+  "Error::TypeTiny::WrongNumberOfParameters",
+  "Eval::TypeTiny",
+  "Eval::TypeTiny::CodeAccumulator",
+  "Test::TypeTiny",
+  "Type::Coercion",
+  "Type::Coercion::FromMoose",
+  "Type::Coercion::Union",
+  "Type::Library",
+  "Type::Params",
+  "Type::Params::Alternatives",
+  "Type::Params::Parameter",
+  "Type::Params::Signature",
+  "Type::Parser",
+  "Type::Registry",
+  "Type::Tie",
+  "Type::Tiny",
+  "Type::Tiny::Bitfield",
+  "Type::Tiny::Class",
+  "Type::Tiny::ConstrainedObject",
+  "Type::Tiny::Duck",
+  "Type::Tiny::Enum",
+  "Type::Tiny::Intersection",
+  "Type::Tiny::Role",
+  "Type::Tiny::Union",
+  "Type::Tiny::_DeclaredType",
+  "Type::Tiny::_HalfOp",
+  "Type::Utils",
+  "Types::Common",
+  "Types::Common::Numeric",
+  "Types::Common::String",
+  "Types::Standard",
+  "Types::Standard::ArrayRef",
+  "Types::Standard::CycleTuple",
+  "Types::Standard::Dict",
+  "Types::Standard::HashRef",
+  "Types::Standard::Map",
+  "Types::Standard::ScalarRef",
+  "Types::Standard::StrMatch",
+  "Types::Standard::Tied",
+  "Types::Standard::Tuple",
+  "Types::TypeTiny",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+  "perl-exporter-tiny",
+]
+
+[check]
+enabled = true
+skip = []
