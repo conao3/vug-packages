@@ -1,0 +1,28 @@
+version = "1.2"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "tcb"
+
+[build.nix-outputs.bin]
+store-path = "/nix/store/cy7jilwib8b64mzhml8l25y5ipjv1705-tcb-1.2-bin"
+nar-hash = "sha256:07dimsvxd8n1vqjv07sfvrj1zn41zpqbymh85d7qph4rll51c24j"
+expose = [
+  "bin/tcb_convert",
+  "bin/tcb_unconvert",
+]
+
+[build.nix-outputs.out]
+store-path = "/nix/store/2lm7ds4yw7m4gzmxxd2j7w9zsnlrxgpc-tcb-1.2"
+nar-hash = "sha256:0fnr51xvjg743jyw0x5571bw10xqy7ym5ykp9a26xmx1yqgl3j7d"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
