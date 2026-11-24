@@ -1,0 +1,7 @@
+name = "tree-sitter-wing"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/winglang/tree-sitter-wing/archive/",
+]
