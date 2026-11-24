@@ -1,0 +1,19 @@
+version = "0-unstable-2024-12-25"
+
+[source]
+url = "https://github.com/Julian/tree-sitter-lean/archive/efe6b87145608d12f5996bd7f0cf6095a0e82261.tar.gz"
+sha256 = "33e26c7775e954450b3348ee5118c2121d4599d239665841885c4b48842fb40e"
+
+[build]
+kind = "tree-sitter"
+language = "lean"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
