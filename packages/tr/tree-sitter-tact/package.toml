@@ -1,0 +1,7 @@
+name = "tree-sitter-tact"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/tact-lang/tree-sitter-tact/archive/",
+]

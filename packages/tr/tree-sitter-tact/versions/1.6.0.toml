@@ -1,0 +1,19 @@
+version = "1.6.0"
+
+[source]
+url = "https://github.com/tact-lang/tree-sitter-tact/archive/refs/tags/v1.6.0.tar.gz"
+sha256 = "76db3ae67f4e18bcede707acd24e8fd530d033e80578c62bf26449fb830c6301"
+
+[build]
+kind = "tree-sitter"
+language = "tact"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
