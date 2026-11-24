@@ -1,0 +1,22 @@
+version = "1.28.8"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "gst_all_1.gst-plugins-bad"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/g7b4y9398szaq41llpyz0yq4vr4j881h-gst-plugins-bad-1.28.8"
+nar-hash = "sha256:02rf32gm3fz7iiwy7b0f7bx4zh9b49ff67ciwphyk4y72v0h7n99"
+expose = [
+  "bin/gst-transcoder-1.0",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
