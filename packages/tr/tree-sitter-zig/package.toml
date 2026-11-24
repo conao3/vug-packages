@@ -1,0 +1,7 @@
+name = "tree-sitter-zig"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/tree-sitter-grammars/tree-sitter-zig/archive/",
+]

@@ -1,0 +1,19 @@
+version = "1.1.2"
+
+[source]
+url = "https://github.com/tree-sitter-grammars/tree-sitter-zig/archive/refs/tags/v1.1.2.tar.gz"
+sha256 = "612d67059faa90ec7691e5d786d70d8f7c2c8b15b83de901b9b801122ad4cf25"
+
+[build]
+kind = "tree-sitter"
+language = "zig"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
