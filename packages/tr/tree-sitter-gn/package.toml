@@ -1,0 +1,7 @@
+name = "tree-sitter-gn"
+license = "Apache-2.0"
+
+[upstream]
+sources = [
+  "https://github.com/willcassella/tree-sitter-gn/archive/",
+]

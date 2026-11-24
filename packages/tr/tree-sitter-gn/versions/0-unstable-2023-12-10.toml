@@ -1,0 +1,19 @@
+version = "0-unstable-2023-12-10"
+
+[source]
+url = "https://github.com/willcassella/tree-sitter-gn/archive/fbaa7b3d52b958e3ac06e15416e1785138bde063.tar.gz"
+sha256 = "a1277cb276c96de260cdadb7922b6a917dac86fecef48ea5d9caf2996f40cb8b"
+
+[build]
+kind = "tree-sitter"
+language = "gn"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
