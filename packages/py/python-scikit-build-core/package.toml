@@ -1,0 +1,8 @@
+name = "python-scikit-build-core"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://github.com/scikit-build/scikit-build-core"
+sources = [
+  "https://files.pythonhosted.org/packages/",
+]

@@ -1,0 +1,28 @@
+version = "1.1.2"
+
+[source]
+url = "https://files.pythonhosted.org/packages/30/8a/a1777e7eef0e91cc182b8a1eea3b88be6520c7b5afaf08232a7d8899c0ae/scikit_build_core-1.1.2.tar.gz"
+sha256 = "7893709119c5ab1be75cd10442383132c9433b9f104dacef5185949efbea7974"
+
+[build]
+kind = "python"
+imports = [
+  "scikit_build_core",
+]
+
+[dependencies]
+build = [
+  "python-build",
+  "python-hatch-vcs",
+  "python-hatchling",
+  "python-installer",
+]
+run = [
+  "python",
+  "python-packaging",
+  "python-pathspec",
+]
+
+[check]
+enabled = true
+skip = []
