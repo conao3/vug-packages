@@ -1,0 +1,19 @@
+version = "0.6.1"
+
+[source]
+url = "https://github.com/coder3101/tree-sitter-proto/archive/refs/tags/0.6.1.tar.gz"
+sha256 = "4fe63f191b0f9bb23762349be9f2efa3bbc671b1f6ed61a10b81044d7b323c02"
+
+[build]
+kind = "tree-sitter"
+language = "proto"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
