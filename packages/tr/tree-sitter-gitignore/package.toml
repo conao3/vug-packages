@@ -1,0 +1,7 @@
+name = "tree-sitter-gitignore"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/shunsambongi/tree-sitter-gitignore/archive/",
+]

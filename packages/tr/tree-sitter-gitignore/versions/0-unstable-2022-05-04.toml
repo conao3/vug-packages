@@ -1,0 +1,19 @@
+version = "0-unstable-2022-05-04"
+
+[source]
+url = "https://github.com/shunsambongi/tree-sitter-gitignore/archive/f4685bf11ac466dd278449bcfe5fd014e94aa504.tar.gz"
+sha256 = "15727772801cf49bd85b147dc7f77f6c3ddabbdb3b3d55c6580e7dd8f7aa559c"
+
+[build]
+kind = "tree-sitter"
+language = "gitignore"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
