@@ -1,0 +1,8 @@
+name = "nsncd"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://github.com/twosigma/nsncd"
+sources = [
+  "https://cache.nixos.org/",
+]
