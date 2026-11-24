@@ -2,7 +2,7 @@ name = "awsr"
 license = "Apache-2.0"
 
 [upstream]
-homepage = "https://github.com/repositories/1446143854"
+homepage = "https://api.github.com/repositories/1446143854"
 sources = [
   "https://api.github.com/repositories/1446143854/tarball/",
 ]
