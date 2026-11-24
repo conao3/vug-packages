@@ -1,0 +1,8 @@
+name = "docbook-xsl-nons"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/docbook/xslt10-stylesheets"
+sources = [
+  "https://github.com/docbook/xslt10-stylesheets/releases/download/",
+]
