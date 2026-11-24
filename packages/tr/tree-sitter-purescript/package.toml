@@ -1,0 +1,7 @@
+name = "tree-sitter-purescript"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/postsolar/tree-sitter-purescript/archive/",
+]

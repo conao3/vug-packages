@@ -1,0 +1,19 @@
+version = "0.3.0"
+
+[source]
+url = "https://github.com/postsolar/tree-sitter-purescript/archive/refs/tags/v0.3.0.tar.gz"
+sha256 = "17a6c1e61d2ad5d1760ea1c22cecd1f362946407ea15a49e7631b02418803e17"
+
+[build]
+kind = "tree-sitter"
+language = "purescript"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
