@@ -1,0 +1,7 @@
+name = "tree-sitter-regex"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/tree-sitter/tree-sitter-regex/archive/",
+]

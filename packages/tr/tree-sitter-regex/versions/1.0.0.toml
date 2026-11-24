@@ -1,0 +1,19 @@
+version = "1.0.0"
+
+[source]
+url = "https://github.com/tree-sitter/tree-sitter-regex/archive/refs/tags/v1.0.0.tar.gz"
+sha256 = "6cd46fb5a7b29f956daa5393e7b76fd9285e9028c9dcb9e0d5a9bea2c3db9015"
+
+[build]
+kind = "tree-sitter"
+language = "regex"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
