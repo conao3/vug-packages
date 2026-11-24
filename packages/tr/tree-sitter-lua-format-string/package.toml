@@ -1,0 +1,7 @@
+name = "tree-sitter-lua-format-string"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://codeberg.org/kpbaks/tree-sitter-lua-format-string/archive/",
+]
