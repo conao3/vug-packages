@@ -1,0 +1,20 @@
+version = "0.2.1"
+
+[source]
+url = "https://github.com/ikatyang/tree-sitter-vue/archive/refs/tags/v0.2.1.tar.gz"
+sha256 = "cc4b1e6ecb0e3edbfa9f33afca36cb53664fbd6d0d8331592f6b834c20e7d2cc"
+
+[build]
+kind = "tree-sitter"
+language = "vue"
+
+[dependencies]
+build = []
+run = [
+  "libcxx",
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
