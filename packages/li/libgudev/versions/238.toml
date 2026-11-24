@@ -1,0 +1,40 @@
+version = "238"
+patches = [
+  "238-export-dynamic-wl.patch",
+]
+
+[source]
+url = "https://download.gnome.org/sources/libgudev/238/libgudev-238.tar.xz"
+sha256 = "61266ab1afc9d73dbc60a8b2af73e99d2fdff47d99544d085760e4fa667b5dd1"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dc_link_args=-Wl,-rpath,{dep:umockdev}/lib -Wl,-rpath,{dep:glib}/lib -Wl,-rpath,{dep:systemd}/lib",
+  "-Dtests=enabled",
+  "-Dintrospection=disabled",
+  "-Dvapi=disabled",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+  "umockdev",
+]
+run = [
+  "glib",
+  "musl",
+  "systemd",
+]
+
+[check]
+enabled = true
+skip = [
+  "test-double",
+  "test-enumerator-filter",
+  "test-sysfsattr",
+]
