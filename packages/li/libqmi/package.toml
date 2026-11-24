@@ -1,0 +1,8 @@
+name = "libqmi"
+license = "LGPL-2.1-or-later AND GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://www.freedesktop.org/wiki/Software/libqmi/"
+sources = [
+  "https://gitlab.freedesktop.org/",
+]

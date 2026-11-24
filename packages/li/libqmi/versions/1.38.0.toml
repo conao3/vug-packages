@@ -1,0 +1,35 @@
+version = "1.38.0"
+
+[source]
+url = "https://gitlab.freedesktop.org/api/v4/projects/mobile-broadband%2Flibqmi/repository/archive.tar.gz?sha=1.38.0"
+sha256 = "0bb02f08b8dac678540f865cac3cf1156e487aae1d3b350e1c45f03be651bb2e"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dintrospection=false",
+  "-Dman=false",
+]
+
+[dependencies]
+build = [
+  "bash-completion",
+  "binutils",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+  "systemd",
+]
+run = [
+  "bash",
+  "glib",
+  "libgudev",
+  "libmbim",
+  "libqrtr-glib",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
