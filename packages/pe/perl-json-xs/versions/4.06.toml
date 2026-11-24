@@ -1,0 +1,28 @@
+version = "4.06"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/M/ML/MLEHMANN/JSON-XS-4.06.tar.gz"
+sha256 = "07f09b369f64575cb269a7d6572fb253fe747de8fab1dd9c1ba46e5ae19cd2a0"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "JSON::XS",
+]
+
+[dependencies]
+build = [
+  "make",
+  "perl-canary-stability",
+]
+run = [
+  "musl",
+  "perl",
+  "perl-common-sense",
+  "perl-types-serialiser",
+]
+
+[check]
+enabled = true
+skip = []
