@@ -1,0 +1,7 @@
+name = "tree-sitter-odoc"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/tmcgilchrist/tree-sitter-odoc/archive/",
+]

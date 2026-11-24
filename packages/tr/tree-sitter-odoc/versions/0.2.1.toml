@@ -1,0 +1,19 @@
+version = "0.2.1"
+
+[source]
+url = "https://github.com/tmcgilchrist/tree-sitter-odoc/archive/refs/tags/0.2.1.tar.gz"
+sha256 = "110f8741d6673518606115125f552bd0aea7d6a5e78e9f7facdfba547e9b7bff"
+
+[build]
+kind = "tree-sitter"
+language = "odoc"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
