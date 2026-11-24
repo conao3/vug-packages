@@ -1,0 +1,8 @@
+name = "duktape"
+license = "MIT"
+
+[upstream]
+homepage = "https://duktape.org/"
+sources = [
+  "https://duktape.org/",
+]

@@ -1,0 +1,28 @@
+version = "2.7.0"
+
+[source]
+url = "https://duktape.org/duktape-2.7.0.tar.xz"
+sha256 = "90f8d2fa8b5567c6899830ddef2c03f3c27960b11aca222fa17aa7ac613c2890"
+
+[build]
+kind = "commands"
+commands = [
+  ["make", "-f", "Makefile.sharedlibrary", "all", "CC=cc", "INSTALL_PREFIX={out}"],
+  ["make", "-f", "Makefile.cmdline", "duk", "CC=cc"],
+  ["make", "-f", "Makefile.sharedlibrary", "install", "INSTALL_PREFIX={out}"],
+  ["mkdir", "-p", "{out}/bin"],
+  ["cp", "duk", "{out}/bin/duk"],
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
