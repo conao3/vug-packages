@@ -1,0 +1,8 @@
+name = "raptor2"
+license = "LGPL-2.1-or-later OR Apache-2.0 OR GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://librdf.org/raptor/"
+sources = [
+  "https://download.librdf.org/source/",
+]
