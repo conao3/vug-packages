@@ -1,0 +1,8 @@
+name = "libtiff"
+license = "libtiff"
+
+[upstream]
+homepage = "https://libtiff.gitlab.io/libtiff"
+sources = [
+  "https://cache.nixos.org/",
+]

@@ -1,0 +1,44 @@
+version = "4.7.2"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "libtiff"
+
+[build.nix-outputs.bin]
+store-path = "/nix/store/j8sxhnkaz4l1rq39zsf2p3mvyyypww0q-libtiff-4.7.2-bin"
+nar-hash = "sha256:0nd9zhh48m1vq8dagyzyydyqjv90jl9qz4nk7yp92m4bhwynsqgs"
+expose = [
+  "bin/fax2ps",
+  "bin/fax2tiff",
+  "bin/pal2rgb",
+  "bin/ppm2tiff",
+  "bin/raw2tiff",
+  "bin/tiff2bw",
+  "bin/tiff2pdf",
+  "bin/tiff2ps",
+  "bin/tiff2rgba",
+  "bin/tiffcmp",
+  "bin/tiffcp",
+  "bin/tiffcrop",
+  "bin/tiffdither",
+  "bin/tiffdump",
+  "bin/tiffinfo",
+  "bin/tiffmedian",
+  "bin/tiffset",
+  "bin/tiffsplit",
+]
+
+[build.nix-outputs.out]
+store-path = "/nix/store/v154wvscivq3j7cizhnfccyi8b1ws0kl-libtiff-4.7.2"
+nar-hash = "sha256:10fbl79pzadyz1xr2kj3lvki5136fz9ppa0scc7jlsmyswnh178j"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
