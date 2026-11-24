@@ -1,0 +1,7 @@
+name = "tree-sitter-doxyfile"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/tingerrr/tree-sitter-doxyfile/archive/",
+]

@@ -1,0 +1,19 @@
+version = "0-unstable-2025-08-14"
+
+[source]
+url = "https://github.com/tingerrr/tree-sitter-doxyfile/archive/18e44c6da639632a4e42264c7193df34be915f34.tar.gz"
+sha256 = "57fa40bc1d47e9e90941317efac7a9b8a49289391ccdeee0d80284d0b3cf383a"
+
+[build]
+kind = "tree-sitter"
+language = "doxyfile"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
