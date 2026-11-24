@@ -1,0 +1,19 @@
+version = "0-unstable-2025-07-26"
+
+[source]
+url = "https://github.com/mtoohey31/tree-sitter-koka/archive/6dce132911ac375ac1a3591c868c47a2a84b30aa.tar.gz"
+sha256 = "3b00e82a47815d9aa4e362fcee19192ede1deb6a040c2856ea2cdf46a5e5660c"
+
+[build]
+kind = "tree-sitter"
+language = "koka"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

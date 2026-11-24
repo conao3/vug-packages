@@ -1,0 +1,7 @@
+name = "tree-sitter-koka"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/mtoohey31/tree-sitter-koka/archive/",
+]
