@@ -1,0 +1,7 @@
+name = "tree-sitter-scss"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/serenadeai/tree-sitter-scss/archive/",
+]

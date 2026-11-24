@@ -1,0 +1,19 @@
+version = "1.0.0"
+
+[source]
+url = "https://github.com/serenadeai/tree-sitter-scss/archive/refs/tags/v1.0.0.tar.gz"
+sha256 = "20132891d779d522d92889e98b44ce5e204fdf00f089f0e4e9e3b258561e4b2e"
+
+[build]
+kind = "tree-sitter"
+language = "scss"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
