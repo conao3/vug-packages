@@ -1,0 +1,30 @@
+version = "0.1.2"
+
+[source]
+url = "https://github.com/msft-mirror-aosp/platform.hardware.google.aemu/archive/refs/tags/v0.1.2-aemu-release.tar.gz"
+sha256 = "6ae53d3d25aacb8c1319df172cd96df6e328e9d5f8325791842d5cf67432adcf"
+
+[build]
+kind = "cmake"
+setup-flags = [
+  "-DAEMU_COMMON_BUILD_CONFIG=gfxstream",
+  "-DAEMU_COMMON_GEN_PKGCONFIG=ON",
+  "-DBUILD_SHARED_LIBS=ON",
+  "-DCMAKE_CXX_FLAGS=-D_LARGEFILE64_SOURCE",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+  "pkgconf",
+]
+run = [
+  "libcxx",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []

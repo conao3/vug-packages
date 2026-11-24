@@ -1,0 +1,9 @@
+name = "aemu-base"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://android.googlesource.com/platform/hardware/google/aemu"
+sources = [
+  "https://android.googlesource.com/platform/hardware/google/aemu/",
+  "https://github.com/msft-mirror-aosp/platform.hardware.google.aemu/",
+]
