@@ -6,9 +6,6 @@ sha256 = "017cd1e437ef2073a4dd10ddf7b55e86bc3d6ebac0393d13bd22f6a57055d32b"
 
 [build]
 kind = "cmake"
-setup-flags = [
-  "-DENABLE_STATIC=OFF",
-]
 
 [dependencies]
 build = [
