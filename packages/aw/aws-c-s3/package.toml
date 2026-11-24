@@ -1,0 +1,8 @@
+name = "aws-c-s3"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://github.com/awslabs/aws-c-s3"
+sources = [
+  "https://github.com/awslabs/aws-c-s3/archive/refs/tags/",
+]

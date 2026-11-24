@@ -1,0 +1,38 @@
+version = "1.5.2"
+
+[source]
+url = "https://github.com/awslabs/aws-c-s3/archive/refs/tags/v1.5.2.tar.gz"
+sha256 = "26bac413daa8b4146abd1fceb55a282a5d3869524c24aca64a00ec1a4e0449bd"
+
+[build]
+kind = "cmake"
+setup-flags = [
+  "-DENABLE_NET_TESTS=OFF",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+]
+run = [
+  "aws-c-auth",
+  "aws-c-cal",
+  "aws-c-common",
+  "aws-c-compression",
+  "aws-c-http",
+  "aws-c-io",
+  "aws-c-sdkutils",
+  "aws-checksums",
+  "musl",
+  "openssl",
+  "s2n-tls",
+]
+
+[check]
+enabled = true
+skip = [
+  "test_s3_client_feature_ids",
+  "test_s3_client_max_attempts",
+]
