@@ -1,0 +1,27 @@
+version = "0.111"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Mixin-Linewise-0.111.tar.gz"
+sha256 = "d28e88516ce9b5295c31631dcccdc0fc8f2ab7d8a5cc876bb1b20131087b01db"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Mixin::Linewise::Readers",
+  "Mixin::Linewise::Writers",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+  "perl-perlio-utf8-strict",
+  "perl-sub-exporter",
+]
+
+[check]
+enabled = true
+skip = []
