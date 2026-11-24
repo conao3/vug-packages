@@ -1,0 +1,19 @@
+version = "0-unstable-2025-04-09"
+
+[source]
+url = "https://github.com/gruhn/tree-sitter-quint/archive/e413b1b57849a0097478548b25fcae2f3d0171d1.tar.gz"
+sha256 = "56ae2a6e33207f2785875e5b9d62c49f96f810eac906d8dbcc1a185b48c5bd22"
+
+[build]
+kind = "tree-sitter"
+language = "quint"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
