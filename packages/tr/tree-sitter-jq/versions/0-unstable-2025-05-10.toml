@@ -1,0 +1,19 @@
+version = "0-unstable-2025-05-10"
+
+[source]
+url = "https://github.com/flurie/tree-sitter-jq/archive/c204e36d2c3c6fce1f57950b12cabcc24e5cc4d9.tar.gz"
+sha256 = "bf9259194926492871d6174c268b8f0899763eaf26db642c7045212d20f02c7b"
+
+[build]
+kind = "tree-sitter"
+language = "jq"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
