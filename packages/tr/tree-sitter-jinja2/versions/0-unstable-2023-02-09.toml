@@ -1,0 +1,19 @@
+version = "0-unstable-2023-02-09"
+
+[source]
+url = "https://github.com/varpeti/tree-sitter-jinja2/archive/a533cd3c33aea6acb0f9bf9a56f35dcfe6a8eb53.tar.gz"
+sha256 = "0b25e28e46c3cbb22db8014ca862f1698b1a394eb19b2be905655834905110ec"
+
+[build]
+kind = "tree-sitter"
+language = "jinja2"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
