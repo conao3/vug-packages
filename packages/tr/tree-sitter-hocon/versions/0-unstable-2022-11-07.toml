@@ -1,0 +1,19 @@
+version = "0-unstable-2022-11-07"
+
+[source]
+url = "https://github.com/antosha417/tree-sitter-hocon/archive/c390f10519ae69fdb03b3e5764f5592fb6924bcc.tar.gz"
+sha256 = "aac9ff83cd879ebcfb56a9297e036038eaf9ab843c43b4f7743da67d09cf4c42"
+
+[build]
+kind = "tree-sitter"
+language = "hocon"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
