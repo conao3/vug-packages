@@ -1,0 +1,35 @@
+version = "3.134"
+
+[source]
+url = "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_134_RTM/src/nss-3.134.tar.gz"
+sha256 = "bb3b300b457f44da9a9486917c3b33bbc5935ae3cdf60aa759a6880889439c50"
+
+[build]
+kind = "commands"
+commands = [
+  ["make", "-C", "nss", "all", "USE_64=1", "BUILD_OPT=1", "NS_USE_GCC=1", "NSS_DISABLE_GTESTS=1", "NSS_ENABLE_WERROR=0", "CCC=c++", "OBJDIR_NAME=vug.OBJ", "NSPR_INCLUDE_DIR={dep:nspr}/include/nspr", "NSPR_LIB_DIR={dep:nspr}/lib", "SQLITE_INCLUDE_DIR={dep:sqlite}/include", "SQLITE_LIB_DIR={dep:sqlite}/lib"],
+  ["mkdir", "-p", "{out}/include"],
+  ["cp", "-aL", "dist/vug.OBJ/bin", "{out}/bin"],
+  ["cp", "-aL", "dist/vug.OBJ/lib", "{out}/lib"],
+  ["cp", "-aL", "dist/public/nss", "{out}/include/nss"],
+]
+
+[dependencies]
+build = [
+  "bash",
+  "binutils",
+  "coreutils",
+  "make",
+  "perl",
+]
+run = [
+  "libcxx",
+  "musl",
+  "nspr",
+  "sqlite",
+  "zlib",
+]
+
+[check]
+enabled = false
+skip = []

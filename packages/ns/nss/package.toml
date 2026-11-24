@@ -1,0 +1,8 @@
+name = "nss"
+license = "MPL-2.0"
+
+[upstream]
+homepage = "https://firefox-source-docs.mozilla.org/security/nss/index.html"
+sources = [
+  "https://ftp.mozilla.org/pub/security/nss/releases/",
+]
