@@ -1,0 +1,79 @@
+version = "1.28.9"
+
+[source]
+url = "https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.28.9.tar.xz"
+sha256 = "c1fda668b520e6aef763c0eb962c032c9fe52bce322e8b00c69b4e9e847bddc1"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dc_link_args=-lintl -Wl,-rpath,{dep:alsa-lib}/lib -Wl,-rpath,{dep:cdparanoia-iii}/lib -Wl,-rpath,{dep:gettext}/lib -Wl,-rpath,{dep:glib}/lib -Wl,-rpath,{dep:graphene}/lib -Wl,-rpath,{dep:gstreamer}/lib -Wl,-rpath,{dep:iso-codes}/lib -Wl,-rpath,{dep:libdrm}/lib -Wl,-rpath,{dep:libglvnd}/lib -Wl,-rpath,{dep:libjpeg-turbo}/lib -Wl,-rpath,{dep:libogg}/lib -Wl,-rpath,{dep:libopus}/lib -Wl,-rpath,{dep:libpng}/lib -Wl,-rpath,{dep:libtheora}/lib -Wl,-rpath,{dep:libvorbis}/lib -Wl,-rpath,{dep:libx11}/lib -Wl,-rpath,{dep:libxcb}/lib -Wl,-rpath,{dep:libxext}/lib -Wl,-rpath,{dep:libxi}/lib -Wl,-rpath,{dep:libxv}/lib -Wl,-rpath,{dep:musl}/lib -Wl,-rpath,{dep:orc}/lib -Wl,-rpath,{dep:pango}/lib -Wl,-rpath,{dep:wayland}/lib -Wl,-rpath,{dep:zlib}/lib",
+  "-Dgl-graphene=enabled",
+  "-Dorc=enabled",
+  "-Dorc-compiler=enabled",
+  "-Dintrospection=disabled",
+  "-Dtremor=disabled",
+  "-Dlibvisual=disabled",
+  "-Dqt5=disabled",
+  "-Dexamples=disabled",
+  "-Dnls=disabled",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "meson",
+  "orc",
+  "pkgconf",
+  "python",
+  "samurai",
+  "wayland-protocols",
+  "xorgproto",
+]
+run = [
+  "alsa-lib",
+  "cdparanoia-iii",
+  "gettext",
+  "glib",
+  "graphene",
+  "gstreamer",
+  "iso-codes",
+  "libdrm",
+  "libglvnd",
+  "libjpeg-turbo",
+  "libogg",
+  "libopus",
+  "libpng",
+  "libtheora",
+  "libvorbis",
+  "libx11",
+  "libxcb",
+  "libxext",
+  "libxi",
+  "libxv",
+  "musl",
+  "orc",
+  "pango",
+  "wayland",
+  "zlib",
+]
+
+[check]
+enabled = true
+skip = [
+  "elements_glfilter",
+  "elements_glimagesink",
+  "elements_glmixer",
+  "elements_glstereo",
+  "elements_textoverlay",
+  "libs_gstglcolorconvert",
+  "libs_gstglcontext",
+  "libs_gstglheaders",
+  "libs_gstglmemory",
+  "libs_gstglquery",
+  "libs_gstglshader",
+  "libs_gstglslstage",
+  "libs_gstglupload",
+  "libs_pbutils",
+  "pipelines_gl_launch_lines",
+]
