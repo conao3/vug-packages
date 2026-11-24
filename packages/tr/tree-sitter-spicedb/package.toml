@@ -1,0 +1,7 @@
+name = "tree-sitter-spicedb"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/jzelinskie/tree-sitter-spicedb/archive/",
+]

@@ -1,0 +1,19 @@
+version = "0-unstable-2024-02-08"
+
+[source]
+url = "https://github.com/jzelinskie/tree-sitter-spicedb/archive/a4e4645651f86d6684c15dfa9931b7841dc52a66.tar.gz"
+sha256 = "39bb5a8a8882e14889f05881f352ff481ad5773a2f5b434752e9d1d8d605374c"
+
+[build]
+kind = "tree-sitter"
+language = "spicedb"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
