@@ -1,0 +1,15 @@
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -381,7 +381,11 @@
+ example$(EXEEXT): $(example_OBJECTS) $(example_DEPENDENCIES) $(EXTRA_example_DEPENDENCIES) 
+ 	@rm -f example$(EXEEXT)
+ 	$(CXXLINK) $(example_OBJECTS) $(example_LDADD) $(LIBS)
+-install-dist_binSCRIPTS: $(dist_bin_SCRIPTS)
++.PHONY: fix-perl-shebang
++fix-perl-shebang:
++	sed -i '1s|^#!.*|#!$(PERL)|' $(srcdir)/th_gen_idx.pl
++
++install-dist_binSCRIPTS: $(dist_bin_SCRIPTS) fix-perl-shebang
+ 	@$(NORMAL_INSTALL)
+ 	test -z "$(bindir)" || $(MKDIR_P) "$(DESTDIR)$(bindir)"
+ 	@list='$(dist_bin_SCRIPTS)'; test -n "$(bindir)" || list=; \

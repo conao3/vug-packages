@@ -1,0 +1,8 @@
+name = "mythes"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://hunspell.github.io/"
+sources = [
+  "https://downloads.sourceforge.net/project/hunspell/MyThes/",
+]
