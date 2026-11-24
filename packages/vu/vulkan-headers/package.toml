@@ -1,0 +1,8 @@
+name = "vulkan-headers"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://github.com/KhronosGroup/Vulkan-Headers"
+sources = [
+  "https://github.com/KhronosGroup/Vulkan-Headers/archive/refs/tags/",
+]
