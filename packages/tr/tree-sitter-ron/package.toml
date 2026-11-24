@@ -1,0 +1,7 @@
+name = "tree-sitter-ron"
+license = "MIT OR Apache-2.0"
+
+[upstream]
+sources = [
+  "https://github.com/tree-sitter-grammars/tree-sitter-ron/archive/",
+]

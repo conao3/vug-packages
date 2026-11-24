@@ -1,0 +1,19 @@
+version = "0.2.0"
+
+[source]
+url = "https://github.com/tree-sitter-grammars/tree-sitter-ron/archive/refs/tags/v0.2.0.tar.gz"
+sha256 = "e8c157984f16645014395c5e94c8c9819beb22183f8fa5f21148e7dae6429f82"
+
+[build]
+kind = "tree-sitter"
+language = "ron"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
