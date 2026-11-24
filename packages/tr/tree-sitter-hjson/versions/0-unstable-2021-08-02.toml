@@ -1,0 +1,19 @@
+version = "0-unstable-2021-08-02"
+
+[source]
+url = "https://github.com/winston0410/tree-sitter-hjson/archive/02fa3b79b3ff9a296066da6277adfc3f26cbc9e0.tar.gz"
+sha256 = "6fd0323e087b9a383eb6353ce6d768a2c0fdbc7d69d941f126507eea3e6f37f2"
+
+[build]
+kind = "tree-sitter"
+language = "hjson"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

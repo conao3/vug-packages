@@ -1,0 +1,7 @@
+name = "tree-sitter-hjson"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/winston0410/tree-sitter-hjson/archive/",
+]
