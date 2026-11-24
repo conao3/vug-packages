@@ -1,0 +1,19 @@
+version = "1.0.4"
+
+[source]
+url = "https://github.com/norgate-av/tree-sitter-netlinx/archive/refs/tags/v1.0.4.tar.gz"
+sha256 = "7ff2371f6d6f1c752b5578faefaa95e5b87909358154f08f0a615697e8a960c6"
+
+[build]
+kind = "tree-sitter"
+language = "netlinx"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
