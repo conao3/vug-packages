@@ -1,0 +1,8 @@
+name = "hackgen-font"
+license = "OFL-1.1"
+
+[upstream]
+homepage = "https://github.com/yuru7/HackGen"
+sources = [
+  "https://cache.nixos.org/",
+]
