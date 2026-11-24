@@ -1,0 +1,19 @@
+version = "0-unstable-2024-04-12"
+
+[source]
+url = "https://github.com/mtoohey31/tree-sitter-ld/archive/0e9695ae0ede47b8744a8e2ad44d4d40c5d4e4c9.tar.gz"
+sha256 = "66947b7686a4b5848e7b436d2fef471a6de4826b2bdf472d928509119c7d596b"
+
+[build]
+kind = "tree-sitter"
+language = "ld"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
