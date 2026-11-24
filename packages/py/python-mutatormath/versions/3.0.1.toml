@@ -1,8 +1,8 @@
 version = "3.0.1"
 
 [source]
-url = "https://github.com/LettError/MutatorMath/archive/refs/tags/3.0.1.tar.gz"
-sha256 = "f05ab756fede722f7b5705c9f97bed14210cf417f4254aeab7b9c712cc24acd4"
+url = "https://files.pythonhosted.org/packages/44/02/d1ddbbc5698db8ad2a0d1f8a23d52305e66166b6fea5ada5e146dd3a709a/MutatorMath-3.0.1.zip"
+sha256 = "8127c1ffad1646f11a953752296c43f5d88cbd5293fff03f093d916b0bc13864"
 
 [build]
 kind = "python"
