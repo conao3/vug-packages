@@ -1,0 +1,8 @@
+name = "tailscale"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://tailscale.com"
+sources = [
+  "https://cache.nixos.org/",
+]
