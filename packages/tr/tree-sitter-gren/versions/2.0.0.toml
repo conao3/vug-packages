@@ -1,0 +1,19 @@
+version = "2.0.0"
+
+[source]
+url = "https://github.com/MaeBrooks/tree-sitter-gren/archive/refs/tags/v2.0.0.tar.gz"
+sha256 = "ec5e80d912497f4b4f1446b4a9ac2a425f6caaa84e568a7738fb6c2a8dedceeb"
+
+[build]
+kind = "tree-sitter"
+language = "gren"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
