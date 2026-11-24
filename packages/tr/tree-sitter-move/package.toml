@@ -1,0 +1,7 @@
+name = "tree-sitter-move"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/tzakian/tree-sitter-move/archive/",
+]

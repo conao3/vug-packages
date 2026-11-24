@@ -1,0 +1,19 @@
+version = "0-unstable-2025-06-17"
+
+[source]
+url = "https://github.com/tzakian/tree-sitter-move/archive/640ee15e4a7b0d09a4bc95dcc71336c28d97999b.tar.gz"
+sha256 = "9b7f99a6acc171e0bf3edda359efdd3defd9e8ad67c0e2a69944669c7ebada06"
+
+[build]
+kind = "tree-sitter"
+language = "move"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
