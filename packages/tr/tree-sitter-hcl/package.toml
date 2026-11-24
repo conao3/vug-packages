@@ -1,0 +1,7 @@
+name = "tree-sitter-hcl"
+license = "Apache-2.0"
+
+[upstream]
+sources = [
+  "https://github.com/tree-sitter-grammars/tree-sitter-hcl/archive/",
+]
