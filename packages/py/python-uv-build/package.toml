@@ -1,0 +1,8 @@
+name = "python-uv-build"
+license = "MIT OR Apache-2.0"
+
+[upstream]
+homepage = "https://github.com/astral-sh/uv"
+sources = [
+  "https://github.com/astral-sh/uv/archive/refs/tags/",
+]

@@ -1,0 +1,24 @@
+version = "0.13.9"
+
+[source]
+url = "https://github.com/astral-sh/uv/archive/refs/tags/0.13.9.tar.gz"
+sha256 = "66b26bd860dd35790bd7e3b721bbb3d39451cb18e3ff25fb0557d25a26f06c00"
+
+[build]
+kind = "cargo"
+path = "crates/uv-build"
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "rust",
+]
+run = [
+  "musl",
+  "rust-libunwind",
+]
+
+[check]
+enabled = false
+skip = []
