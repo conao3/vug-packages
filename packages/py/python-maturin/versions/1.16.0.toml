@@ -1,26 +1,33 @@
 version = "1.16.0"
 
 [source]
-url = "https://github.com/PyO3/maturin/archive/refs/tags/v1.16.0.tar.gz"
-sha256 = "b22d15b7dc4f27af50b831af0866bcd901bcce2433182c5b2f252dd420531c0d"
+url = "https://files.pythonhosted.org/packages/source/m/maturin/maturin-1.16.0.tar.gz"
+sha256 = "13e69ca12542999d8c5467131de72a49bb76e4c284b9a45c5783df7c0fcb3a8a"
 
 [build]
-kind = "cargo"
-flags = [
-  "--no-default-features",
+kind = "python"
+imports = [
+  "maturin",
 ]
+cargo-lock = true
 
 [dependencies]
 build = [
   "binutils",
   "make",
+  "python-build",
+  "python-installer",
+  "python-setuptools",
+  "python-setuptools-rust",
+  "python-wheel",
   "rust",
 ]
 run = [
   "musl",
+  "python",
   "rust-libunwind",
 ]
 
 [check]
-enabled = false
+enabled = true
 skip = []

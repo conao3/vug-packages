@@ -4,5 +4,5 @@ license = "MIT OR Apache-2.0"
 [upstream]
 homepage = "https://github.com/PyO3/maturin"
 sources = [
-  "https://github.com/PyO3/maturin/archive/refs/tags/",
+  "https://files.pythonhosted.org/packages/source/m/maturin/",
 ]
