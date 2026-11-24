@@ -1,0 +1,8 @@
+name = "docker"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://www.docker.com/"
+sources = [
+  "https://cache.nixos.org/",
+]
