@@ -1,0 +1,19 @@
+version = "0-unstable-2026-07-01"
+
+[source]
+url = "https://github.com/nushell/tree-sitter-nu/archive/d694570aa26b53d0d642460a0430e8aa07dcbea0.tar.gz"
+sha256 = "18cef44231627c567d71d0d2398700550b5b1d2d53dd5a122f6cd9017ab475a0"
+
+[build]
+kind = "tree-sitter"
+language = "nu"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

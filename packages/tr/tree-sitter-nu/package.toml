@@ -1,0 +1,7 @@
+name = "tree-sitter-nu"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/nushell/tree-sitter-nu/archive/",
+]
