@@ -1,0 +1,19 @@
+version = "0.21.2"
+
+[source]
+url = "https://github.com/tree-sitter-grammars/tree-sitter-cuda/archive/refs/tags/v0.21.2.tar.gz"
+sha256 = "d24158d20217f363e0a7a7e0a903efe2b4417697796082b6e005af5c9817cf67"
+
+[build]
+kind = "tree-sitter"
+language = "cuda"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
