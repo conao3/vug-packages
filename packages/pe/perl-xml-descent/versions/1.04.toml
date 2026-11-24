@@ -1,0 +1,26 @@
+version = "1.04"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/A/AN/ANDYA/XML-Descent-1.04.tar.gz"
+sha256 = "a711b856f8cdf5e647a44c71f967d48c096035b9dbd3f1efbdbea40605afbd50"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "XML::Descent",
+]
+
+[dependencies]
+build = [
+  "make",
+]
+run = [
+  "perl",
+  "perl-test-differences",
+  "perl-xml-tokeparser",
+]
+
+[check]
+enabled = true
+skip = []
