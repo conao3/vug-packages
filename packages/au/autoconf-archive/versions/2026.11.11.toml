@@ -1,0 +1,18 @@
+version = "2026.11.11"
+
+[source]
+url = "https://ftp.gnu.org/gnu/autoconf-archive/autoconf-archive-2026.11.11.tar.xz"
+sha256 = "2c18f15e2b3bb79e09622b27391df07d8608ce9f07fbfc7c1143fa683891ab26"
+
+[build]
+kind = "autotools"
+
+[dependencies]
+build = [
+  "make",
+]
+run = []
+
+[check]
+enabled = true
+skip = []
