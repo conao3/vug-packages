@@ -1,0 +1,19 @@
+version = "0.13.0"
+
+[source]
+url = "https://github.com/shnarazk/tree-sitter-uiua/archive/refs/tags/v0.13.0.tar.gz"
+sha256 = "98c3a909eaedd96e9e660f4597453a89a56c647a74b8a7b540b0ba569c86861b"
+
+[build]
+kind = "tree-sitter"
+language = "uiua"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
