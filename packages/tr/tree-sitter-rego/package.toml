@@ -1,0 +1,7 @@
+name = "tree-sitter-rego"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/FallenAngel97/tree-sitter-rego/archive/",
+]

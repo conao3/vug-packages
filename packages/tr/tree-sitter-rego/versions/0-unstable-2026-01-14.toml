@@ -1,0 +1,19 @@
+version = "0-unstable-2026-01-14"
+
+[source]
+url = "https://github.com/FallenAngel97/tree-sitter-rego/archive/ddd39af81fe8b0288102a7cb97959dfce723e0f3.tar.gz"
+sha256 = "75ff88840b187b7146076898eb5d8f2dbb40ad8b03bb06707009dd766065e2b5"
+
+[build]
+kind = "tree-sitter"
+language = "rego"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
