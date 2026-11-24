@@ -1,0 +1,22 @@
+version = "3.3.41-1"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "inxi"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/c2w6njmp3fm32ynrkqp6280ig7ypp942-inxi-3.3.41-1"
+nar-hash = "sha256:04wbzykbjmmdayn1c79r9zrx4yi2fvsvf7mkfqw00jbfgp20c68d"
+expose = [
+  "bin/inxi",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
