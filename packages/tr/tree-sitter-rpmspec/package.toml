@@ -1,0 +1,7 @@
+name = "tree-sitter-rpmspec"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://gitlab.com/cryptomilk/tree-sitter-rpmspec/-/archive/",
+]

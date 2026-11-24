@@ -1,0 +1,19 @@
+version = "0-unstable-2025-08-11"
+
+[source]
+url = "https://gitlab.com/cryptomilk/tree-sitter-rpmspec/-/archive/d0275cd1316d9b7a2e0fae028ce95a5a18741e1d/tree-sitter-rpmspec-d0275cd1316d9b7a2e0fae028ce95a5a18741e1d.tar.gz"
+sha256 = "17273c2106a231f9baf4fe3d4436ec035b148710448f1004b3fb8f03e6a9c308"
+
+[build]
+kind = "tree-sitter"
+language = "rpmspec"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
