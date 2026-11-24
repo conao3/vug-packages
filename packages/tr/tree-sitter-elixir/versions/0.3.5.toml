@@ -1,0 +1,19 @@
+version = "0.3.5"
+
+[source]
+url = "https://github.com/elixir-lang/tree-sitter-elixir/archive/refs/tags/v0.3.5.tar.gz"
+sha256 = "7d8bf37949e2bea75a19d38491d7680ed1c9f0f5a41a5235832d718ec174c7c4"
+
+[build]
+kind = "tree-sitter"
+language = "elixir"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

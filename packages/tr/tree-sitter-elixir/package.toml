@@ -1,0 +1,7 @@
+name = "tree-sitter-elixir"
+license = "Apache-2.0"
+
+[upstream]
+sources = [
+  "https://github.com/elixir-lang/tree-sitter-elixir/archive/",
+]
