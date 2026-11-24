@@ -13,6 +13,14 @@ kind = "go"
 targets = [
   { path = "./cmd/gh", bin = "gh" },
 ]
+ldflags = [
+  "-s",
+  "-w",
+  "-X",
+  "github.com/cli/cli/v2/internal/build.Version=2.104.0",
+  "-X",
+  "github.com/cli/cli/v2/internal/build.Date=2026-11-12",
+]
 
 [dependencies]
 build = [
