@@ -1,0 +1,7 @@
+name = "tree-sitter-picat"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/dlr-ft/tree-sitter-picat/archive/",
+]

@@ -1,0 +1,19 @@
+version = "0.1.0"
+
+[source]
+url = "https://github.com/dlr-ft/tree-sitter-picat/archive/refs/tags/v0.1.0.tar.gz"
+sha256 = "6a3c30f452192f24e3468d9002df6e5002da79aed58b6287a2229fdfdbb4e145"
+
+[build]
+kind = "tree-sitter"
+language = "picat"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
