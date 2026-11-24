@@ -1,0 +1,8 @@
+name = "python-tensorboardx"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/lanpa/tensorboardX"
+sources = [
+  "https://files.pythonhosted.org/packages/",
+]

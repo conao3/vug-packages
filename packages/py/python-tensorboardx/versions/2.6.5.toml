@@ -1,0 +1,30 @@
+version = "2.6.5"
+
+[source]
+url = "https://files.pythonhosted.org/packages/48/a9/fc520ea91ab1f3ba51cbf3fe24f2b6364ed3b49046969e0868d46d6da372/tensorboardx-2.6.5.tar.gz"
+sha256 = "ca176db3997ee8c07d2eb77381225956a3fd1c10c91beafab1f17069adc47017"
+
+[build]
+kind = "python"
+imports = [
+  "tensorboardX",
+]
+
+[dependencies]
+build = [
+  "python-build",
+  "python-installer",
+  "python-setuptools",
+  "python-setuptools-scm",
+  "python-wheel",
+]
+run = [
+  "packaging",
+  "python",
+  "python-numpy",
+  "python-protobuf",
+]
+
+[check]
+enabled = true
+skip = []
