@@ -1,0 +1,19 @@
+version = "0.3.2"
+
+[source]
+url = "https://github.com/madskjeldgaard/tree-sitter-supercollider/archive/v0.3.2.tar.gz"
+sha256 = "051fae46d759d2f4f878b859cc0f01ea74edb276f51633b34172255c521bc014"
+
+[build]
+kind = "tree-sitter"
+language = "supercollider"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

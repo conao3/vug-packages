@@ -1,0 +1,7 @@
+name = "tree-sitter-supercollider"
+license = "NOASSERTION"
+
+[upstream]
+sources = [
+  "https://github.com/madskjeldgaard/tree-sitter-supercollider/archive/",
+]
