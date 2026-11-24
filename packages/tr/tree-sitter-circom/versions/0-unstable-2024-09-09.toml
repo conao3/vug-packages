@@ -1,0 +1,19 @@
+version = "0-unstable-2024-09-09"
+
+[source]
+url = "https://github.com/Decurity/tree-sitter-circom/archive/02150524228b1e6afef96949f2d6b7cc0aaf999e.tar.gz"
+sha256 = "77ee7899ce0fbd2d0872f0206f15f608ae5058795438fb40ac4592b9754f3b79"
+
+[build]
+kind = "tree-sitter"
+language = "circom"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

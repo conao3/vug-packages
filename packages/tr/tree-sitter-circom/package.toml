@@ -1,0 +1,7 @@
+name = "tree-sitter-circom"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/Decurity/tree-sitter-circom/archive/",
+]
