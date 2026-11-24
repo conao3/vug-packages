@@ -1,0 +1,8 @@
+name = "perl-test-pod-coverage"
+license = "Artistic-2.0"
+
+[upstream]
+homepage = "https://metacpan.org/dist/Test-Pod-Coverage"
+sources = [
+  "https://cpan.metacpan.org/authors/id/N/NE/NEILB/",
+]
