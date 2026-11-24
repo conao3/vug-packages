@@ -1,0 +1,34 @@
+version = "3.2.8"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "gimp"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/giwj0hpmcv5f1azy4szya16q0lm5gway-gimp-3.2.8"
+nar-hash = "sha256:0k1d50m75l794v6xg86p9xx33s88np443k2acd2jx4kw3x0kwa3k"
+expose = [
+  "bin/gimp",
+  "bin/gimp-3",
+  "bin/gimp-3.2",
+  "bin/gimp-console",
+  "bin/gimp-console-3",
+  "bin/gimp-console-3.2",
+  "bin/gimp-script-fu-interpreter-3.0",
+  "bin/gimp-test-clipboard",
+  "bin/gimp-test-clipboard-3",
+  "bin/gimp-test-clipboard-3.2",
+  "bin/gimptool",
+  "bin/gimptool-3",
+  "bin/gimptool-3.2",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
