@@ -1,0 +1,7 @@
+name = "tree-sitter-vhdl"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/jpt13653903/tree-sitter-vhdl/archive/",
+]

@@ -1,0 +1,19 @@
+version = "2.1.0"
+
+[source]
+url = "https://github.com/jpt13653903/tree-sitter-vhdl/archive/refs/tags/v2.1.0.tar.gz"
+sha256 = "01f935d08506574a0041e5ab0827a9f96cc532e04b2724e5ddca3db01cd0fa93"
+
+[build]
+kind = "tree-sitter"
+language = "vhdl"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
