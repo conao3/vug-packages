@@ -1,0 +1,36 @@
+version = "1.2.2"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "libsndfile"
+
+[build.nix-outputs.bin]
+store-path = "/nix/store/md9hm4zpg608ajz8fwz3pwvdy5gh3hxd-libsndfile-1.2.2-bin"
+nar-hash = "sha256:091320p5sjjzqsf6b8c90k26dal3wz596hfnxq6j844pml0fznmq"
+expose = [
+  "bin/sndfile-cmp",
+  "bin/sndfile-concat",
+  "bin/sndfile-convert",
+  "bin/sndfile-deinterleave",
+  "bin/sndfile-info",
+  "bin/sndfile-interleave",
+  "bin/sndfile-metadata-get",
+  "bin/sndfile-metadata-set",
+  "bin/sndfile-play",
+  "bin/sndfile-salvage",
+]
+
+[build.nix-outputs.out]
+store-path = "/nix/store/sqrv5n1sfwp1amsy9mg0swd82kv16ryq-libsndfile-1.2.2"
+nar-hash = "sha256:1266djkzvl0ciz9gzxfrxim4gal2f6q4jxnqklnb2f2cwqxcfw31"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
