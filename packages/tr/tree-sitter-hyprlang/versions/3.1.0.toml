@@ -1,0 +1,19 @@
+version = "3.1.0"
+
+[source]
+url = "https://github.com/tree-sitter-grammars/tree-sitter-hyprlang/archive/refs/tags/v3.1.0.tar.gz"
+sha256 = "f54794874fcc99b38254f31db749744651238add44e99ba18c3857be2296ed9b"
+
+[build]
+kind = "tree-sitter"
+language = "hyprlang"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
