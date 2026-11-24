@@ -1,0 +1,7 @@
+name = "tree-sitter-comment"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/stsewd/tree-sitter-comment/archive/",
+]

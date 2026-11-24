@@ -1,0 +1,19 @@
+version = "0.3.0"
+
+[source]
+url = "https://github.com/stsewd/tree-sitter-comment/archive/refs/tags/v0.3.0.tar.gz"
+sha256 = "2569b2460131ca2a93e745429c5c4100689ed410aa229db11ffed0b6c465114d"
+
+[build]
+kind = "tree-sitter"
+language = "comment"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
