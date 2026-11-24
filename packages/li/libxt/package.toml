@@ -1,0 +1,8 @@
+name = "libxt"
+license = "MIT"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/xorg/lib/libxt"
+sources = [
+  "https://www.x.org/releases/individual/lib/",
+]
