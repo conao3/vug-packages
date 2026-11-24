@@ -1,0 +1,19 @@
+version = "0-unstable-2026-03-19"
+
+[source]
+url = "https://github.com/matoous/tree-sitter-fga/archive/ce72d1c484ba133a18e966d67be66bce85695451.tar.gz"
+sha256 = "506de96890a8ab18d80cbf6ad922ce669e10f940c94985b42887af0fd25155aa"
+
+[build]
+kind = "tree-sitter"
+language = "fga"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

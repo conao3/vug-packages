@@ -1,0 +1,7 @@
+name = "tree-sitter-fga"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/matoous/tree-sitter-fga/archive/",
+]
