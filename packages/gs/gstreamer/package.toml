@@ -1,0 +1,8 @@
+name = "gstreamer"
+license = "LGPL-2.0-or-later"
+
+[upstream]
+homepage = "https://gstreamer.freedesktop.org/"
+sources = [
+  "https://gstreamer.freedesktop.org/src/gstreamer/",
+]

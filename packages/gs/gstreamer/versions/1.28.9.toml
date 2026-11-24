@@ -1,0 +1,43 @@
+version = "1.28.9"
+
+[source]
+url = "https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.28.9.tar.xz"
+sha256 = "6dbf744f583131a34845cc641e803843766a9ba80ce00378a9043fd6d8d5fb38"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dbash-completion=disabled",
+  "-Dc_link_args=-lintl -Wl,-rpath,{dep:gettext}/lib -Wl,-rpath,{dep:glib}/lib -Wl,-rpath,{dep:libcap}/lib -Wl,-rpath,{dep:libunwind}/lib",
+  "-Ddoc=disabled",
+  "-Dintrospection=disabled",
+  "-Dlibdw=disabled",
+  "-Dlibunwind=enabled",
+  "-Dnls=enabled",
+  "-Dptp-helper=disabled",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "bison",
+  "flex",
+  "gettext",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "gettext",
+  "glib",
+  "libcap",
+  "libunwind",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = [
+  "gst_gstdevice",
+]
