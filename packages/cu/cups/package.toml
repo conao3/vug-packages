@@ -1,0 +1,8 @@
+name = "cups"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://openprinting.github.io/cups/"
+sources = [
+  "https://cache.nixos.org/",
+]
