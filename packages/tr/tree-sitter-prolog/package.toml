@@ -1,0 +1,7 @@
+name = "tree-sitter-prolog"
+license = "ISC"
+
+[upstream]
+sources = [
+  "https://codeberg.org/foxy/tree-sitter-prolog/archive/",
+]

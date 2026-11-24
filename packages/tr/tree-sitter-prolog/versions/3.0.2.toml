@@ -1,0 +1,20 @@
+version = "3.0.2"
+
+[source]
+url = "https://codeberg.org/foxy/tree-sitter-prolog/archive/3.0.2.tar.gz"
+sha256 = "5d560a3ea65d60c050f0895f55da8f1458c085f3c310e56591ea0c7639e2ee20"
+
+[build]
+kind = "tree-sitter"
+path = "grammars/prolog"
+language = "prolog"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
