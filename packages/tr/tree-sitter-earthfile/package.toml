@@ -1,0 +1,7 @@
+name = "tree-sitter-earthfile"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/glehmann/tree-sitter-earthfile/archive/",
+]

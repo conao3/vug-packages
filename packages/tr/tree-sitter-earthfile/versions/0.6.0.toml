@@ -1,0 +1,19 @@
+version = "0.6.0"
+
+[source]
+url = "https://github.com/glehmann/tree-sitter-earthfile/archive/refs/tags/0.6.0.tar.gz"
+sha256 = "5eb844f6bff0642d72b840eb11cf6e73917328abbc9592a0a0680682dff27b45"
+
+[build]
+kind = "tree-sitter"
+language = "earthfile"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
