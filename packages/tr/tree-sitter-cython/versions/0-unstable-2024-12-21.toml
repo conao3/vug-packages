@@ -1,0 +1,19 @@
+version = "0-unstable-2024-12-21"
+
+[source]
+url = "https://github.com/b0o/tree-sitter-cython/archive/62f44f5e7e41dde03c5f0a05f035e293bcf2bcf8.tar.gz"
+sha256 = "734622180a8dd5a9374e6fbd2266a5631ad99f9bb2b8429541c3da2f402379eb"
+
+[build]
+kind = "tree-sitter"
+language = "cython"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

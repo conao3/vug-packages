@@ -1,0 +1,7 @@
+name = "tree-sitter-cython"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/b0o/tree-sitter-cython/archive/",
+]
