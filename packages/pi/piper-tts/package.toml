@@ -1,0 +1,8 @@
+name = "piper-tts"
+license = "GPL-3.0-only"
+
+[upstream]
+homepage = "https://github.com/OHF-Voice/piper1-gpl"
+sources = [
+  "https://cache.nixos.org/",
+]
