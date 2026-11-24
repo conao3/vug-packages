@@ -1,0 +1,8 @@
+name = "libebur128"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/jiixyj/libebur128"
+sources = [
+  "https://github.com/jiixyj/libebur128/archive/",
+]
