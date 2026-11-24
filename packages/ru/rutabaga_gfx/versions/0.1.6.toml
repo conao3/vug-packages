@@ -1,0 +1,20 @@
+version = "0.1.6"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "rutabaga_gfx"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/6b1p6hxmci999508v10964cjv18p7zj5-rutabaga_gfx-0.1.6"
+nar-hash = "sha256:088yg1vjh1y5r4v6hgp2d23sm6xz62r129jn0qlj8yfyqmcc03dn"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []

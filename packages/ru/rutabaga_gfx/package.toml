@@ -1,0 +1,8 @@
+name = "rutabaga_gfx"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://crosvm.dev/book/appendix/rutabaga_gfx.html"
+sources = [
+  "https://cache.nixos.org/",
+]
