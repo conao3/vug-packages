@@ -1,0 +1,19 @@
+version = "0.9.1"
+
+[source]
+url = "https://github.com/gdamore/tree-sitter-d/archive/refs/tags/v0.9.1.tar.gz"
+sha256 = "8e7f90598b2b400c456e228819b8946f9c049f5f97446d2741751e12196b3cec"
+
+[build]
+kind = "tree-sitter"
+language = "d"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
