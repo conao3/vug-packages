@@ -1,0 +1,7 @@
+name = "tree-sitter-cel"
+license = "Apache-2.0"
+
+[upstream]
+sources = [
+  "https://github.com/bufbuild/tree-sitter-cel/archive/",
+]

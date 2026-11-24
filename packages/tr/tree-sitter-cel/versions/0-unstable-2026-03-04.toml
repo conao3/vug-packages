@@ -1,0 +1,19 @@
+version = "0-unstable-2026-03-04"
+
+[source]
+url = "https://github.com/bufbuild/tree-sitter-cel/archive/fd2e8efaa07e71e46dcc1d5c4c85556a742d8c36.tar.gz"
+sha256 = "e7584c99b9810f71f1322a096f03568623ae1f4dee17f44fd2787b63742e6a16"
+
+[build]
+kind = "tree-sitter"
+language = "cel"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
