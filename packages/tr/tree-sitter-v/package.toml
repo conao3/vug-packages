@@ -1,0 +1,7 @@
+name = "tree-sitter-v"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/vlang/v-analyzer/archive/",
+]

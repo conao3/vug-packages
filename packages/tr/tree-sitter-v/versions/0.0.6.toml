@@ -1,0 +1,20 @@
+version = "0.0.6"
+
+[source]
+url = "https://github.com/vlang/v-analyzer/archive/refs/tags/0.0.6.tar.gz"
+sha256 = "634d3aa26de2e1ee5e119691294a7811caf48632296a30cee1ae2eec505f5e0a"
+
+[build]
+kind = "tree-sitter"
+path = "tree_sitter_v"
+language = "v"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
