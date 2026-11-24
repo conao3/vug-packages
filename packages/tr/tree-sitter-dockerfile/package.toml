@@ -1,0 +1,7 @@
+name = "tree-sitter-dockerfile"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/camdencheek/tree-sitter-dockerfile/archive/",
+]

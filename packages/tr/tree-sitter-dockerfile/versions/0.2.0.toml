@@ -1,0 +1,19 @@
+version = "0.2.0"
+
+[source]
+url = "https://github.com/camdencheek/tree-sitter-dockerfile/archive/refs/tags/v0.2.0.tar.gz"
+sha256 = "8cbdf50838cc55e841aa9585a1a09e5b8c41454ae30ce0a93a7bd71adb140818"
+
+[build]
+kind = "tree-sitter"
+language = "dockerfile"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
