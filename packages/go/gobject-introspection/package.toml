@@ -1,0 +1,8 @@
+name = "gobject-introspection"
+license = "GPL-2.0-or-later AND LGPL-2.0-or-later"
+
+[upstream]
+homepage = "https://gi.readthedocs.io/"
+sources = [
+  "https://download.gnome.org/sources/gobject-introspection/",
+]

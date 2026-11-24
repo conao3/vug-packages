@@ -1,0 +1,16 @@
+--- a/tests/scanner/test_ccompiler.py
++++ b/tests/scanner/test_ccompiler.py
+@@ -15,7 +15,12 @@
+ # Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+ # Boston, MA 02111-1307, USA.
+ 
+-import distutils
++try:
++    import distutils.ccompiler
++    import distutils
++except ImportError:
++    import setuptools._distutils.ccompiler
++    import setuptools._distutils as distutils
+ import os
+ import shlex
+ import unittest

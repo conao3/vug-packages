@@ -1,0 +1,15 @@
+--- a/giscanner/utils.py
++++ b/giscanner/utils.py
+@@ -382,6 +382,9 @@
+             return ['vcruntime140']
+ 
+ 
+-import distutils.cygwinccompiler
+-orig_get_msvcr = distutils.cygwinccompiler.get_msvcr  # type: ignore
+-distutils.cygwinccompiler.get_msvcr = get_msvcr_overwrite  # type: ignore
++try:
++    import distutils.cygwinccompiler as cygwinccompiler
++except ModuleNotFoundError:
++    from setuptools._distutils import cygwinccompiler
++orig_get_msvcr = cygwinccompiler.get_msvcr  # type: ignore
++cygwinccompiler.get_msvcr = get_msvcr_overwrite  # type: ignore

@@ -1,0 +1,40 @@
+--- a/tools/meson.build
++++ b/tools/meson.build
+@@ -15,6 +15,18 @@
+   python_cmd = '/usr/bin/env python@0@'.format(python.language_version().split('.')[0])
+ endif
+ 
++vug_pythonpath = run_command(python, '-c', '''
++import importlib.util
++import os
++from pathlib import Path
++
++modules = ("setuptools", "mako", "markupsafe", "markdown")
++print(os.pathsep.join(
++    str(Path(importlib.util.find_spec(module).origin).parent.parent)
++    for module in modules
++))
++''', check: true).stdout().strip()
++
+ tool_output = []
+ foreach tool : tools
+   tools_conf = configuration_data()
+@@ -23,6 +35,7 @@
+   tools_conf.set('gir_dir_prefix', gir_dir_prefix)
+   tools_conf.set('GIR_DIR', girdir)
+   tools_conf.set('PYTHON_CMD', python_cmd)
++  tools_conf.set_quoted('VUG_PYTHONPATH', vug_pythonpath)
+ 
+   tools_conf.set('TOOL_MODULE', tool[1])
+   tools_conf.set('TOOL_FUNCTION', tool[2])
+--- a/tools/g-ir-tool-template.in
++++ b/tools/g-ir-tool-template.in
+@@ -23,6 +23,8 @@
+ import sys
+ import sysconfig
+ import builtins
++
++sys.path.extend(filter(None, @VUG_PYTHONPATH@.split(os.pathsep)))
+ 
+ 
+ debug = os.getenv('GI_SCANNER_DEBUG')

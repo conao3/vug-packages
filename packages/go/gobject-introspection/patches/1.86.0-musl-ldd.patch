@@ -1,0 +1,31 @@
+--- a/giscanner/shlibs.py
++++ b/giscanner/shlibs.py
+@@ -18,10 +18,12 @@
+ # 02110-1301, USA.
+ #
+ 
++import glob
+ import os
+ import sys
+ import platform
+ import re
++import shutil
+ import subprocess
+ 
+ from .utils import get_libtool_command, extract_libtool_shlib, host_os
+@@ -103,7 +105,14 @@
+         elif platform_system == 'Darwin':
+             args.extend(['otool', '-L', binary.args[0]])
+         else:
+-            args.extend(['ldd', binary.args[0]])
++            if shutil.which('ldd') is not None:
++                args.extend(['ldd', binary.args[0]])
++            else:
++                loaders = glob.glob('/vug/store/*/lib/ld-musl-*.so.1')
++                if loaders:
++                    args.extend([loaders[0], '--list', binary.args[0]])
++                else:
++                    args.extend(['ldd', binary.args[0]])
+         output = subprocess.check_output(args)
+         if isinstance(output, bytes):
+             output = output.decode("utf-8", "replace")
