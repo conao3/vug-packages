@@ -1,0 +1,19 @@
+version = "0.11.0"
+
+[source]
+url = "https://github.com/uben0/tree-sitter-typst/archive/refs/tags/v0.11.0.tar.gz"
+sha256 = "d195b420e2f143c8f595c347fbba88f640dfe7a228c047b7aa2e3394e93839c5"
+
+[build]
+kind = "tree-sitter"
+language = "typst"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
