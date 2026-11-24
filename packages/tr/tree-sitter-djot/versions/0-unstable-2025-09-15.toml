@@ -1,0 +1,19 @@
+version = "0-unstable-2025-09-15"
+
+[source]
+url = "https://codeberg.org/treeman/tree-sitter-djot/archive/74fac1f53c6d52aeac104b6874e5506be6d0cfe6.tar.gz"
+sha256 = "725b3748473956ea1d604f6de852bae67baaf059629ac40fbdfd35769d72499e"
+
+[build]
+kind = "tree-sitter"
+language = "djot"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

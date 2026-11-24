@@ -1,0 +1,7 @@
+name = "tree-sitter-djot"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://codeberg.org/treeman/tree-sitter-djot/archive/",
+]
