@@ -1,0 +1,8 @@
+name = "linux-firmware-mediatek-wifi"
+license = "LicenseRef-linux-firmware-mediatek-wifi"
+
+[upstream]
+homepage = "https://gitlab.com/kernel-firmware/linux-firmware"
+sources = [
+  "https://cdn.kernel.org/pub/linux/kernel/firmware/",
+]
