@@ -1,0 +1,8 @@
+name = "linux-firmware-realtek-wifi"
+license = "LicenseRef-linux-firmware-realtek-wifi"
+
+[upstream]
+homepage = "https://gitlab.com/kernel-firmware/linux-firmware"
+sources = [
+  "https://cdn.kernel.org/pub/linux/kernel/firmware/",
+]
