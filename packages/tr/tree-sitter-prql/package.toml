@@ -1,0 +1,7 @@
+name = "tree-sitter-prql"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/PRQL/tree-sitter-prql/archive/",
+]
