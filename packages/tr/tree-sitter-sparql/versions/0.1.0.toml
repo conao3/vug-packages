@@ -1,0 +1,19 @@
+version = "0.1.0"
+
+[source]
+url = "https://github.com/GordianDziwis/tree-sitter-sparql/archive/refs/tags/0.1.0.tar.gz"
+sha256 = "db4e5b033843652d647715c966ca238ee38dfeaa595a89d6bd6f72b20273f0d3"
+
+[build]
+kind = "tree-sitter"
+language = "sparql"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
