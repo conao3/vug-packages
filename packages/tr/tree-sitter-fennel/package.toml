@@ -1,0 +1,7 @@
+name = "tree-sitter-fennel"
+license = "CC0-1.0"
+
+[upstream]
+sources = [
+  "https://github.com/alexmozaidze/tree-sitter-fennel/archive/",
+]

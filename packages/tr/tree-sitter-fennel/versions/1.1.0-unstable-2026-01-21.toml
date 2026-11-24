@@ -1,0 +1,19 @@
+version = "1.1.0-unstable-2026-01-21"
+
+[source]
+url = "https://github.com/alexmozaidze/tree-sitter-fennel/archive/3f0f6b24d599e92460b969aabc4f4c5a914d15a0.tar.gz"
+sha256 = "e9de083e75ae61537c0ae4a53540f3230c84ea1e313e5b650cf485213067f66a"
+
+[build]
+kind = "tree-sitter"
+language = "fennel"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
