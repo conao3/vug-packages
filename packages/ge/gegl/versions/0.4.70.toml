@@ -1,0 +1,20 @@
+version = "0.4.70"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "gegl"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/dcfbizfhf7a187jybpg2vyyqjh0ml6q5-gegl-0.4.70"
+nar-hash = "sha256:14rj0kmblqic51yazjsx4ym1zsxa66462gid1ykhxh1xmibkx6kg"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
