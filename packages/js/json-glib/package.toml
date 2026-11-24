@@ -1,0 +1,8 @@
+name = "json-glib"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://gitlab.gnome.org/GNOME/json-glib"
+sources = [
+  "https://download.gnome.org/sources/json-glib/",
+]
