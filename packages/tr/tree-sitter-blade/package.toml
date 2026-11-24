@@ -1,0 +1,7 @@
+name = "tree-sitter-blade"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/EmranMR/tree-sitter-blade/archive/",
+]

@@ -1,0 +1,19 @@
+version = "0.12.3"
+
+[source]
+url = "https://github.com/EmranMR/tree-sitter-blade/archive/refs/tags/v0.12.3.tar.gz"
+sha256 = "3d8b055ba39ef929ae1a7fa6e441ec448d651c64b2c12160c1a5871cab7eb39e"
+
+[build]
+kind = "tree-sitter"
+language = "blade"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
