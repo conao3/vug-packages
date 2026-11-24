@@ -1,0 +1,8 @@
+name = "sord"
+license = "ISC"
+
+[upstream]
+homepage = "https://gitlab.com/drobilla/sord"
+sources = [
+  "https://download.drobilla.net/",
+]

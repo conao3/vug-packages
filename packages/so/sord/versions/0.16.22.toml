@@ -1,0 +1,32 @@
+version = "0.16.22"
+
+[source]
+url = "https://download.drobilla.net/sord-0.16.22.tar.xz"
+sha256 = "bb23b34b216579136795d518cffa73d91cf205594ce9accebfd408afb839173f"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dbindings_cpp=enabled",
+  "-Ddocs=disabled",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "libcxx",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "musl",
+  "pcre2",
+  "serd",
+  "zix",
+]
+
+[check]
+enabled = true
+skip = []
