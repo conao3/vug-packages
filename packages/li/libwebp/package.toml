@@ -1,0 +1,8 @@
+name = "libwebp"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://developers.google.com/speed/webp/"
+sources = [
+  "https://cache.nixos.org/",
+]
