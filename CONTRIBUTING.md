@@ -45,6 +45,14 @@ $ ./vug/bin/vug --help
    $ ./vug/bin/vug package run-package --root . --name <name> --program bin/<program> --arguments --version
    ```
 
+## Source URLs
+
+Pin the source archive's SHA-256 in the version record. If the upstream
+distribution URL is unavailable, use a mirror that serves an archive with
+the same SHA-256. The URL must start with a prefix listed in the package's
+`upstream.sources`. Add the mirror prefix to that list when introducing
+the mirror.
+
 ## What a build may use
 
 The build has no network and sees only busybox, the C and C++ compiler
