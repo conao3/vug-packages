@@ -1,0 +1,30 @@
+version = "0.12.0"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "libjxl"
+
+[build.nix-outputs.bin]
+store-path = "/nix/store/iqczsb0gbxrdlkayxfr7pisg8xp3pg40-libjxl-0.12.0-bin"
+nar-hash = "sha256:09sk340w62bz77pvh7g3fs8plpb4jgx9amxa2q7prgafbifw0365"
+expose = [
+  "bin/cjxl",
+  "bin/djxl",
+  "bin/jxlinfo",
+  "bin/jxltran",
+]
+
+[build.nix-outputs.out]
+store-path = "/nix/store/n39k1jp443h2xwphf0j0310w3xi1fry9-libjxl-0.12.0"
+nar-hash = "sha256:0bqx9ikrlpzr1w0x2kkisycxrgqk23q9lgl64aqyxlkssm954xjj"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []

@@ -1,0 +1,8 @@
+name = "libjxl"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://github.com/libjxl/libjxl"
+sources = [
+  "https://cache.nixos.org/",
+]
