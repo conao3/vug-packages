@@ -1,0 +1,8 @@
+name = "coinmp"
+license = "EPL-1.0"
+
+[upstream]
+homepage = "https://projects.coin-or.org/CoinMP/"
+sources = [
+  "https://cache.nixos.org/",
+]
