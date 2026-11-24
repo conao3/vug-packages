@@ -1,0 +1,7 @@
+name = "tree-sitter-robots-txt"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/opa-oz/tree-sitter-robots-txt/archive/",
+]

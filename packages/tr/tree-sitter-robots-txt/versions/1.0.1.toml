@@ -1,0 +1,19 @@
+version = "1.0.1"
+
+[source]
+url = "https://github.com/opa-oz/tree-sitter-robots-txt/archive/refs/tags/v1.0.1.tar.gz"
+sha256 = "5b673f87fb5bf5015ea405e63bf1e95af6e7b68b53ecc6416bc3525dc8edb4c0"
+
+[build]
+kind = "tree-sitter"
+language = "robots_txt"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
