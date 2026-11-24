@@ -1,0 +1,24 @@
+version = "12.23.0"
+
+[source]
+url = "https://registry.npmjs.org/@pnpm/exe.linux-x64-musl/-/exe.linux-x64-musl-12.23.0.tgz"
+sha256 = "1c1632a9390fd8c52b92f0510f2b14dda38c89ba5071c75cad1071b6dfb81a75"
+
+[build]
+kind = "prebuilt"
+install = [
+  { from = "pnpm", to = "bin/pnpm" },
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
+
+[links]
+"bin/pn" = "pnpm"
+"bin/pnpx" = "pnpm"
+"bin/pnx" = "pnpm"

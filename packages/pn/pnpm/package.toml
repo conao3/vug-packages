@@ -1,0 +1,8 @@
+name = "pnpm"
+license = "MIT"
+
+[upstream]
+homepage = "https://pnpm.io/"
+sources = [
+  "https://registry.npmjs.org/",
+]
