@@ -1,0 +1,19 @@
+version = "0-unstable-2023-07-17"
+
+[source]
+url = "https://github.com/ckafi/tree-sitter-elvish/archive/5e7210d945425b77f82cbaebc5af4dd3e1ad40f5.tar.gz"
+sha256 = "6c0212d4c1a055fcf4bda316ff39410cd94ec93050385c6a5ec195254f17f21b"
+
+[build]
+kind = "tree-sitter"
+language = "elvish"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

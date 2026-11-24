@@ -1,0 +1,7 @@
+name = "tree-sitter-elvish"
+license = "ISC"
+
+[upstream]
+sources = [
+  "https://github.com/ckafi/tree-sitter-elvish/archive/",
+]
