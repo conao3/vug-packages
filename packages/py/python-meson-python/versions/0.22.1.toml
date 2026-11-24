@@ -13,18 +13,18 @@ imports = [
 [dependencies]
 build = [
   "meson",
-  "packaging",
   "patchelf",
   "python-build",
   "python-installer",
+  "python-packaging",
   "python-pyproject-metadata",
   "samurai",
 ]
 run = [
   "meson",
-  "packaging",
   "patchelf",
   "python",
+  "python-packaging",
   "python-pyproject-metadata",
   "samurai",
 ]

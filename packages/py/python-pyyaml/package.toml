@@ -1,4 +1,4 @@
-name = "pyyaml"
+name = "python-pyyaml"
 license = "MIT"
 
 [upstream]

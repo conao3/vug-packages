@@ -1,4 +1,4 @@
-name = "packaging"
+name = "python-packaging"
 license = "Apache-2.0 OR BSD-2-Clause"
 
 [upstream]

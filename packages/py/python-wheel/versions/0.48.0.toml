@@ -17,8 +17,8 @@ build = [
   "python-installer",
 ]
 run = [
-  "packaging",
   "python",
+  "python-packaging",
 ]
 
 [check]

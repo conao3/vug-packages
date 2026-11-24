@@ -1,4 +1,4 @@
-name = "jinja2"
+name = "python-jinja2"
 license = "BSD-3-Clause"
 
 [upstream]

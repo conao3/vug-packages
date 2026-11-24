@@ -21,10 +21,10 @@ build = [
   "python-zipremove",
 ]
 run = [
-  "packaging",
   "python",
   "python-installer",
   "python-packageurl-python",
+  "python-packaging",
   "python-zipremove",
 ]
 

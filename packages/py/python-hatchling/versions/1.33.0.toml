@@ -12,17 +12,17 @@ imports = [
 
 [dependencies]
 build = [
-  "packaging",
   "python-build",
   "python-installer",
+  "python-packaging",
   "python-pathspec",
   "python-pluggy",
   "python-tomlkit",
   "python-trove-classifiers",
 ]
 run = [
-  "packaging",
   "python",
+  "python-packaging",
   "python-pathspec",
   "python-pluggy",
   "python-tomlkit",

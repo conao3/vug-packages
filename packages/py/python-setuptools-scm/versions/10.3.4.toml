@@ -18,8 +18,8 @@ build = [
   "python-vcs-versioning",
 ]
 run = [
-  "packaging",
   "python",
+  "python-packaging",
   "python-setuptools",
   "python-vcs-versioning",
 ]

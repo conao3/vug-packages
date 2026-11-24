@@ -1,4 +1,4 @@
-name = "markupsafe"
+name = "python-markupsafe"
 license = "BSD-3-Clause"
 
 [upstream]

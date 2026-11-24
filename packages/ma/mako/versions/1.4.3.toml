@@ -13,8 +13,8 @@ install = [
 [dependencies]
 build = []
 run = [
-  "markupsafe",
   "python",
+  "python-markupsafe",
 ]
 
 [check]

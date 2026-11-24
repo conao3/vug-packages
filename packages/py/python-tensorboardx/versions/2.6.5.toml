@@ -19,9 +19,9 @@ build = [
   "python-wheel",
 ]
 run = [
-  "packaging",
   "python",
   "python-numpy",
+  "python-packaging",
   "python-protobuf",
 ]
 

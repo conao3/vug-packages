@@ -17,8 +17,8 @@ build = [
   "python-installer",
 ]
 run = [
-  "markupsafe",
   "python",
+  "python-markupsafe",
 ]
 
 [check]

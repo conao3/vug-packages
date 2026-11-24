@@ -12,14 +12,14 @@ imports = [
 
 [dependencies]
 build = [
-  "packaging",
   "python-build",
   "python-installer",
+  "python-packaging",
   "python-setuptools",
 ]
 run = [
-  "packaging",
   "python",
+  "python-packaging",
 ]
 
 [check]

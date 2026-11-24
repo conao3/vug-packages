@@ -13,8 +13,8 @@ install = [
 [dependencies]
 build = []
 run = [
-  "packaging",
   "python",
+  "python-packaging",
   "python-pyproject-hooks",
 ]
 

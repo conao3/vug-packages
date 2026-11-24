@@ -122,11 +122,11 @@ build = [
   "gawk",
   "gperf",
   "grep",
-  "jinja2",
   "linux-headers",
   "meson",
   "pkgconf",
   "python",
+  "python-jinja2",
   "samurai",
   "sed",
 ]
