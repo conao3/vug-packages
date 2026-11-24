@@ -1,7 +1,4 @@
 version = "1.16"
-patches = [
-  "1.16-pkg-config-envvar.patch",
-]
 
 [source]
 url = "https://cpan.metacpan.org/authors/id/X/XA/XAOC/ExtUtils-PkgConfig-1.16.tar.gz"
