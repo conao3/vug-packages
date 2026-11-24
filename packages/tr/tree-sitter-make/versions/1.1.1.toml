@@ -1,0 +1,19 @@
+version = "1.1.1"
+
+[source]
+url = "https://github.com/tree-sitter-grammars/tree-sitter-make/archive/refs/tags/v1.1.1.tar.gz"
+sha256 = "31affca06041623cfa5f6a728cb3f0f2a8eb7fd01607e1a2681ea1f318367211"
+
+[build]
+kind = "tree-sitter"
+language = "make"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
