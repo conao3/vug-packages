@@ -1,0 +1,8 @@
+name = "clojure-lsp"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/clojure-lsp/clojure-lsp"
+sources = [
+  "https://cache.nixos.org/",
+]
