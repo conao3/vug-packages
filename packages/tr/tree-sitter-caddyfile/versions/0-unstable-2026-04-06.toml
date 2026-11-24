@@ -1,0 +1,19 @@
+version = "0-unstable-2026-04-06"
+
+[source]
+url = "https://github.com/caddyserver/tree-sitter-caddyfile/archive/6e62b4e297c955f050a6542a8d24df2f223a90e8.tar.gz"
+sha256 = "d7a51efe79e2e7261b66b02d660a8912e9f1a77b507af38443cc79706ecc32f3"
+
+[build]
+kind = "tree-sitter"
+language = "caddyfile"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
