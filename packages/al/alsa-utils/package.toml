@@ -1,0 +1,8 @@
+name = "alsa-utils"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://www.alsa-project.org/"
+sources = [
+  "https://www.alsa-project.org/files/pub/utils/",
+]
