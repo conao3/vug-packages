@@ -1,0 +1,82 @@
+version = "5.40"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-5.40.tar.gz"
+sha256 = "ef5d2ef099a1a24a6e83ffe543de73337805d3d39c00b84fa205d725ad1a1b63"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "URI",
+  "URI::Escape",
+  "URI::Heuristic",
+  "URI::IRI",
+  "URI::QueryParam",
+  "URI::Split",
+  "URI::URL",
+  "URI::WithBase",
+  "URI::data",
+  "URI::file",
+  "URI::file::Base",
+  "URI::file::FAT",
+  "URI::file::Mac",
+  "URI::file::OS2",
+  "URI::file::QNX",
+  "URI::file::Unix",
+  "URI::file::Win32",
+  "URI::ftp",
+  "URI::ftpes",
+  "URI::ftps",
+  "URI::geo",
+  "URI::gopher",
+  "URI::http",
+  "URI::https",
+  "URI::icap",
+  "URI::icaps",
+  "URI::irc",
+  "URI::ircs",
+  "URI::ldap",
+  "URI::ldapi",
+  "URI::ldaps",
+  "URI::mailto",
+  "URI::mms",
+  "URI::news",
+  "URI::nntp",
+  "URI::nntps",
+  "URI::otpauth",
+  "URI::pop",
+  "URI::rlogin",
+  "URI::rsync",
+  "URI::rtsp",
+  "URI::rtspu",
+  "URI::scp",
+  "URI::sftp",
+  "URI::sip",
+  "URI::sips",
+  "URI::smb",
+  "URI::smtp",
+  "URI::snews",
+  "URI::ssh",
+  "URI::telnet",
+  "URI::tn3270",
+  "URI::urn",
+  "URI::urn::oid",
+  "URI::ws",
+  "URI::wss",
+]
+
+[dependencies]
+build = [
+  "make",
+  "perl-test-needs",
+  "perl-test-warnings",
+]
+run = [
+  "perl",
+  "perl-mime-base32",
+]
+
+[check]
+enabled = true
+skip = []
