@@ -37,6 +37,12 @@ For an executable in a separate `bin` output, use a selector such as
 `ffmpeg:bin`. Keep libraries and headers within the Nix closure. Use the
 program that owns those dependencies for glibc-based execution.
 
+To use specific store paths from an existing Nix closure, pass
+`--version VERSION` and repeat `--store-path OUTPUT:PATH` for each selected
+output. Supply the nixpkgs revision, system, and attribute corresponding to
+those outputs. The generator skips Nix evaluation and verifies the same
+public narinfo signatures and reference closure.
+
 ## Verify changed closures
 
 Run the same metadata check as CI from the repository root. Pass the

@@ -186,12 +186,34 @@ def generate_version(args, cache):
         r"[a-z0-9_]+-[a-z0-9_]+", args.system
     ) or not ATTRIBUTE.fullmatch(args.attribute):
         raise ValueError("invalid --system or --attribute")
-    if len(set(args.outputs)) != len(args.outputs) or any(
-        not OUTPUT.fullmatch(name) for name in args.outputs
-    ):
-        raise ValueError("--outputs requires unique output names")
+    paths = {}
+    if args.store_path:
+        if not args.version:
+            raise ValueError("--store-path requires --version")
+        for selection in args.store_path:
+            name, _, path = selection.partition(":")
+            if (
+                not OUTPUT.fullmatch(name)
+                or name in paths
+                or not STORE_PATH.fullmatch(path)
+            ):
+                raise ValueError(
+                    f"invalid store path selection {selection!r}; "
+                    "expected a unique OUTPUT:/nix/store/HASH-NAME"
+                )
+            paths[name] = path
+        version = args.version
+        names = list(paths)
+    else:
+        if args.version is not None:
+            raise ValueError("--version requires --store-path")
+        names = args.outputs or ["out"]
+        if len(set(names)) != len(names) or any(
+            not OUTPUT.fullmatch(name) for name in names
+        ):
+            raise ValueError("--outputs requires unique output names")
 
-    exposed = {name: [] for name in args.outputs}
+    exposed = {name: [] for name in names}
     for selection in args.expose:
         name, separator, path = selection.partition(":")
         parts = path.split("/")
@@ -208,21 +230,25 @@ def generate_version(args, cache):
             )
         exposed[name].append(path)
 
-    installable = f"github:NixOS/nixpkgs/{args.nixpkgs_rev}#legacyPackages.{args.system}.{args.attribute}"
-    nix_eval = (
-        "nix",
-        "--extra-experimental-features",
-        "nix-command flakes",
-        "eval",
-        "--option",
-        "allow-import-from-derivation",
-        "false",
-        "--raw",
-    )
-    version = run(*nix_eval, f"{installable}.version").strip()
+    if not paths:
+        installable = f"github:NixOS/nixpkgs/{args.nixpkgs_rev}#legacyPackages.{args.system}.{args.attribute}"
+        nix_eval = (
+            "nix",
+            "--extra-experimental-features",
+            "nix-command flakes",
+            "eval",
+            "--option",
+            "allow-import-from-derivation",
+            "false",
+            "--raw",
+        )
+        version = run(*nix_eval, f"{installable}.version").strip()
+        paths = {
+            name: run(*nix_eval, f"{installable}.{name}.outPath").strip()
+            for name in names
+        }
     outputs = {}
-    for name in args.outputs:
-        path = run(*nix_eval, f"{installable}.{name}.outPath").strip()
+    for name, path in paths.items():
         nar_hash, _ = cache.verify(path)
         outputs[name] = {
             "store-path": path,
@@ -289,12 +315,15 @@ def main():
     operations = group.add_subparsers(required=True)
     generate = operations.add_parser(
         "generate-version",
-        help="Evaluate Nix outputs and write a version record to stdout",
+        help="Write a version record from evaluated or explicit Nix outputs",
     )
     generate.add_argument("--nixpkgs-rev", required=True)
     generate.add_argument("--system", required=True)
     generate.add_argument("--attribute", required=True)
-    generate.add_argument("--outputs", nargs="+", default=["out"])
+    selection = generate.add_mutually_exclusive_group()
+    selection.add_argument("--outputs", nargs="+")
+    selection.add_argument("--store-path", action="append", metavar="OUTPUT:PATH")
+    generate.add_argument("--version", help="Package version for explicit store paths")
     generate.add_argument("--expose", nargs="*", default=[], metavar="OUTPUT:PATH")
     generate.set_defaults(operation=generate_version)
     check = operations.add_parser(
