@@ -1,0 +1,19 @@
+version = "1.5.0"
+
+[source]
+url = "https://github.com/amaanq/tree-sitter-capnp/archive/refs/tags/v1.5.0.tar.gz"
+sha256 = "65631f0bb3d221b9dbacbb0b4c05daf514b080a8328d0e52200f162c7273636a"
+
+[build]
+kind = "tree-sitter"
+language = "capnp"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

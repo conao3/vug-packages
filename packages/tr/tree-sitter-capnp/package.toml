@@ -1,0 +1,7 @@
+name = "tree-sitter-capnp"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/amaanq/tree-sitter-capnp/archive/",
+]
