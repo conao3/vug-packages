@@ -1,0 +1,8 @@
+name = "lttng-ust"
+license = "LGPL-2.1-only AND MIT"
+
+[upstream]
+homepage = "https://lttng.org/"
+sources = [
+  "https://lttng.org/files/lttng-ust/",
+]
