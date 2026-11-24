@@ -1,0 +1,8 @@
+name = "bluez"
+license = "GPL-2.0-or-later AND LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://www.bluez.org/"
+sources = [
+  "https://mirrors.edge.kernel.org/pub/linux/bluetooth/",
+]

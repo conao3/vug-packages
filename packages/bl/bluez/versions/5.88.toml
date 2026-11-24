@@ -1,0 +1,39 @@
+version = "5.88"
+patches = [
+  "5.88-lld-weak-debug-section-symbols.patch",
+]
+
+[source]
+url = "https://mirrors.edge.kernel.org/pub/linux/bluetooth/bluez-5.88.tar.xz"
+sha256 = "6952c39eb5f8b0ee712cc50ab3bcff03be17c410dd97ca640f4849d9a1653ba3"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--enable-library",
+  "--enable-mesh",
+  "--enable-midi",
+  "--disable-cups",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "pkgconf",
+  "python-docutils",
+]
+run = [
+  "alsa-lib",
+  "dbus",
+  "glib",
+  "json-c",
+  "libical",
+  "musl",
+  "readline",
+  "systemd",
+]
+
+[check]
+enabled = true
+skip = []

@@ -1,0 +1,30 @@
+--- a/src/log.c	2026-11-24 20:11:41.526628152 +0900
++++ b/src/log.c	2026-11-24 20:11:41.543251551 +0900
+@@ -118,8 +118,10 @@
+ 	va_end(ap);
+ }
+ 
+-extern struct btd_debug_desc __start___debug[];
+-extern struct btd_debug_desc __stop___debug[];
++extern struct btd_debug_desc __start___debug[]
++	__attribute__ ((weak, visibility("hidden")));
++extern struct btd_debug_desc __stop___debug[]
++	__attribute__ ((weak, visibility("hidden")));
+ 
+ static char **enabled = NULL;
+ 
+--- a/obexd/src/log.c	2026-11-24 20:11:41.527840134 +0900
++++ b/obexd/src/log.c	2026-11-24 20:11:41.543367658 +0900
+@@ -54,8 +54,10 @@
+ 	va_end(ap);
+ }
+ 
+-extern struct obex_debug_desc __start___debug[];
+-extern struct obex_debug_desc __stop___debug[];
++extern struct obex_debug_desc __start___debug[]
++	__attribute__ ((weak, visibility("hidden")));
++extern struct obex_debug_desc __stop___debug[]
++	__attribute__ ((weak, visibility("hidden")));
+ 
+ static char **enabled = NULL;
+ 
