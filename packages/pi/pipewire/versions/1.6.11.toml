@@ -1,0 +1,55 @@
+version = "1.6.11"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "pipewire"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/pygxxs9lvg40d8514z3ansm2y078n48c-pipewire-1.6.11"
+nar-hash = "sha256:06b2nkn9ffjhkmi3d5pbdpcwr4ygphr37p23ir0d9rfak8ihya61"
+expose = [
+  "bin/pipewire",
+  "bin/pipewire-aes67",
+  "bin/pipewire-avb",
+  "bin/pipewire-pulse",
+  "bin/pipewire-vulkan",
+  "bin/pw-cat",
+  "bin/pw-cli",
+  "bin/pw-config",
+  "bin/pw-container",
+  "bin/pw-dot",
+  "bin/pw-dsdplay",
+  "bin/pw-dump",
+  "bin/pw-encplay",
+  "bin/pw-link",
+  "bin/pw-loopback",
+  "bin/pw-metadata",
+  "bin/pw-midi2play",
+  "bin/pw-midi2record",
+  "bin/pw-mididump",
+  "bin/pw-midiplay",
+  "bin/pw-midirecord",
+  "bin/pw-mon",
+  "bin/pw-play",
+  "bin/pw-profiler",
+  "bin/pw-record",
+  "bin/pw-reserve",
+  "bin/pw-sysex",
+  "bin/pw-top",
+  "bin/pw-v4l2",
+  "bin/spa-acp-tool",
+  "bin/spa-inspect",
+  "bin/spa-json-dump",
+  "bin/spa-monitor",
+  "bin/spa-resample",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
