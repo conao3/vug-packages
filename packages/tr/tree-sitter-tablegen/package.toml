@@ -1,0 +1,7 @@
+name = "tree-sitter-tablegen"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/Flakebi/tree-sitter-tablegen/archive/",
+]

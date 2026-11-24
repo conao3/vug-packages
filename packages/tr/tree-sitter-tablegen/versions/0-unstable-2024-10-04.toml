@@ -1,0 +1,19 @@
+version = "0-unstable-2024-10-04"
+
+[source]
+url = "https://github.com/Flakebi/tree-sitter-tablegen/archive/3e9c4822ab5cdcccf4f8aa9dcd42117f736d51d9.tar.gz"
+sha256 = "0c48dc03d140dc2ae9ca55502e66e2ececfcc916c907825fee8046ce553f045a"
+
+[build]
+kind = "tree-sitter"
+language = "tablegen"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
