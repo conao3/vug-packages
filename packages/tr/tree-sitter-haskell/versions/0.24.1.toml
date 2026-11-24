@@ -1,0 +1,19 @@
+version = "0.24.1"
+
+[source]
+url = "https://github.com/tree-sitter/tree-sitter-haskell/archive/refs/tags/v0.24.1.tar.gz"
+sha256 = "d0d6807bd9dc3098e230e947e07974f1aa7defadfccc95f5dad67bcf4fdf2f90"
+
+[build]
+kind = "tree-sitter"
+language = "haskell"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
