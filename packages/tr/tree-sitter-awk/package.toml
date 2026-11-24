@@ -1,0 +1,7 @@
+name = "tree-sitter-awk"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/Beaglefoot/tree-sitter-awk/archive/",
+]
