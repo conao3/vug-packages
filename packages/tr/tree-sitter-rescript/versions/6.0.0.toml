@@ -1,0 +1,19 @@
+version = "6.0.0"
+
+[source]
+url = "https://github.com/rescript-lang/tree-sitter-rescript/archive/refs/tags/v6.0.0.tar.gz"
+sha256 = "30c1de15e7cafb1d14e5fcca348bc812b989a914341bbf63753d4a38a55c6cd9"
+
+[build]
+kind = "tree-sitter"
+language = "rescript"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
