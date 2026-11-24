@@ -1,0 +1,19 @@
+version = "0-unstable-2026-03-14"
+
+[source]
+url = "https://github.com/usernobody14/tree-sitter-dart/archive/0fc19c3a57b1109802af41d2b8f60d8835c5da3a.tar.gz"
+sha256 = "65fc24069f1c4985440942b6aa4ce1fed0df1222b2d877e1a19f8c76bce94d53"
+
+[build]
+kind = "tree-sitter"
+language = "dart"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

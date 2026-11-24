@@ -1,0 +1,7 @@
+name = "tree-sitter-dart"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/usernobody14/tree-sitter-dart/archive/",
+]
