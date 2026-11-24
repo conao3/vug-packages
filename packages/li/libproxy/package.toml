@@ -1,0 +1,8 @@
+name = "libproxy"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://libproxy.github.io/libproxy/"
+sources = [
+  "https://github.com/libproxy/libproxy/archive/refs/tags/",
+]
