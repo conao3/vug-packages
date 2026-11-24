@@ -1,0 +1,27 @@
+version = "1.102"
+
+[source]
+url = "https://cpan.metacpan.org/authors/id/R/RE/REHSACK/Params-Util-1.102.tar.gz"
+sha256 = "499bb1b482db24fda277a51525596ad092c2bd51dd508fa8fec2e9f849097402"
+
+[build]
+kind = "perl"
+driver = "make-maker"
+modules = [
+  "Params::Util",
+  "Params::Util::PP",
+]
+
+[dependencies]
+build = [
+  "make",
+  "perl-test-leaktrace",
+]
+run = [
+  "musl",
+  "perl",
+]
+
+[check]
+enabled = true
+skip = []
