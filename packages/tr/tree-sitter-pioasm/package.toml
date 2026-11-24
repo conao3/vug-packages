@@ -1,0 +1,7 @@
+name = "tree-sitter-pioasm"
+license = "MIT"
+
+[upstream]
+sources = [
+  "https://github.com/leo60228/tree-sitter-pioasm/archive/",
+]

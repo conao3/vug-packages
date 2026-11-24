@@ -1,0 +1,19 @@
+version = "0-unstable-2024-10-12"
+
+[source]
+url = "https://github.com/leo60228/tree-sitter-pioasm/archive/afece58efdb30440bddd151ef1347fa8d6f744a9.tar.gz"
+sha256 = "9a3d3ccf63fef7f79f1f4ff307622971a697cf8ccca17e6e505893abc3f90fde"
+
+[build]
+kind = "tree-sitter"
+language = "pioasm"
+
+[dependencies]
+build = []
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []
