@@ -49,7 +49,10 @@ before and after checkouts. vug 0.2.14 or newer resolves reachable keys
 for each checkout against an overlay of the signed export and existing
 cache metadata. The publisher includes all named outputs of each
 reachable split manifest. System records use these same package outputs.
-The workflow preserves existing objects with `--no-prune`.
+The workflow removes the objects that neither checkout reaches, so the
+destination stays within the byte limit. Dispatch it with `dry-run` to print
+the deletion list and the projected total without writing, and with `no-prune`
+to keep every object.
 
 The read-only cache URL is `https://pub-da78c0bd9fc84d998fefca158806f160.r2.dev`.
 Set the repository variable `VUG_CACHE_PUBLIC_KEY`.
