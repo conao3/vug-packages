@@ -1,0 +1,8 @@
+name = "hyphen"
+license = "GPL-2.0-or-later OR LGPL-2.1-or-later OR MPL-1.1"
+
+[upstream]
+homepage = "https://github.com/hunspell/hyphen"
+sources = [
+  "https://github.com/hunspell/hyphen/releases/download/",
+]

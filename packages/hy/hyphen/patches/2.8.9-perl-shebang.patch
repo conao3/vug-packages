@@ -1,0 +1,6 @@
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -518,2 +518,3 @@
+ install-binSCRIPTS: $(bin_SCRIPTS)
++	sed -i '1s|^#!.*|#!$(PERL)|' $(srcdir)/substrings.pl
+ 	@$(NORMAL_INSTALL)
