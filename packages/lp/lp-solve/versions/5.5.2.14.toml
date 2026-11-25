@@ -1,0 +1,32 @@
+version = "5.5.2.14"
+patches = [
+  "5.5.2.14-compile-sources-one-by-one.patch",
+]
+
+[source]
+url = "https://github.com/lp-solve/lp_solve/archive/refs/tags/5.5.2.14.tar.gz"
+sha256 = "3d8c01e9ea9ca8f60e9495cfdf1108548446b0b36b8f0a5f5712e4f0c05d71ea"
+
+[build]
+kind = "commands"
+commands = [
+  ["sh", "-c", "cd lpsolve55 && sh ccc"],
+  ["sh", "-c", "cd lp_solve && sh ccc"],
+  ["mkdir", "-p", "{out}/bin", "{out}/lib"],
+  ["cp", "-a", "lpsolve55/bin/ux64/liblpsolve55.a", "lpsolve55/bin/ux64/liblpsolve55.so", "{out}/lib/"],
+  ["cp", "-a", "lp_solve/bin/ux64/lp_solve", "{out}/bin/lp_solve"],
+]
+
+[dependencies]
+build = [
+  "bash",
+  "binutils",
+  "coreutils",
+]
+run = [
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

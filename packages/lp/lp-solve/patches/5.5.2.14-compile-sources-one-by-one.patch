@@ -1,0 +1,32 @@
+diff --git a/lpsolve55/ccc b/lpsolve55/ccc
+--- a/lpsolve55/ccc
++++ b/lpsolve55/ccc
++++ b/lpsolve55/ccc
+@@ -41,13 +41,13 @@ fi
+ 
+ opts='-O3'
+ 
+-$c -s -c -I.. -I../shared -I../bfp -I../bfp/bfp_LUSOL -I../bfp/bfp_LUSOL/LUSOL -I../colamd $opts $def $NOISNAN -DYY_NEVER_INTERACTIVE -DPARSER_LP -DINVERSE_ACTIVE=INVERSE_LUSOL -DRoleIsExternalInvEngine $src
++for f in $src; do $c -s -c -I.. -I../shared -I../bfp -I../bfp/bfp_LUSOL -I../bfp/bfp_LUSOL/LUSOL -I../colamd $opts $def $NOISNAN -DYY_NEVER_INTERACTIVE -DPARSER_LP -DINVERSE_ACTIVE=INVERSE_LUSOL -DRoleIsExternalInvEngine $f || exit 1; done
+ ar rv bin/$PLATFORM/liblpsolve55.a `echo $src|sed s/[.]c/.o/g|sed 's/[^ ]*\///g'`
+ ranlib bin/$PLATFORM/liblpsolve55.a
+ 
+ if [ "$so" != "" ]
+ then
+-  $c -fpic -s -c -I.. -I../shared -I../bfp -I../bfp/bfp_LUSOL -I../bfp/bfp_LUSOL/LUSOL -I../colamd -I. $opts $NOISNAN -DYY_NEVER_INTERACTIVE -DPARSER_LP -DINVERSE_ACTIVE=INVERSE_LUSOL -DRoleIsExternalInvEngine $src
++  for f in $src; do $c -fpic -s -c -I.. -I../shared -I../bfp -I../bfp/bfp_LUSOL -I../bfp/bfp_LUSOL/LUSOL -I../colamd -I. $opts $NOISNAN -DYY_NEVER_INTERACTIVE -DPARSER_LP -DINVERSE_ACTIVE=INVERSE_LUSOL -DRoleIsExternalInvEngine $f || exit 1; done
+   $c -shared -Wl,-Bsymbolic -Wl,-soname,liblpsolve55.so -o bin/$PLATFORM/liblpsolve55.so `echo $src|sed s/[.]c/.o/g|sed 's/[^ ]*\///g'` -lc -lm -ldl
+ fi
+ 
+diff --git a/lp_solve/ccc b/lp_solve/ccc
+--- a/lp_solve/ccc
++++ b/lp_solve/ccc
++++ b/lp_solve/ccc
+@@ -42,4 +42,6 @@ then opts='-O0'
+ else dl=-ldl
+ fi
+ 
+-$c -I.. -I../bfp -I../bfp/bfp_LUSOL -I../bfp/bfp_LUSOL/LUSOL -I../colamd -I../shared $opts $def $NOISNAN -DYY_NEVER_INTERACTIVE -DPARSER_LP -DINVERSE_ACTIVE=INVERSE_LUSOL -DRoleIsExternalInvEngine $src -o bin/$PLATFORM/lp_solve $math $dl
++for f in $src; do $c -c -I.. -I../bfp -I../bfp/bfp_LUSOL -I../bfp/bfp_LUSOL/LUSOL -I../colamd -I../shared $opts $def $NOISNAN -DYY_NEVER_INTERACTIVE -DPARSER_LP -DINVERSE_ACTIVE=INVERSE_LUSOL -DRoleIsExternalInvEngine $f || exit 1; done
++$c `echo $src|sed 's/[.]c/.o/g;s/[^ ]*\///g'` -o bin/$PLATFORM/lp_solve $math $dl
++rm *.o 2>/dev/null
