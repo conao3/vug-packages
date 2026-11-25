@@ -1,0 +1,20 @@
+version = "2.44"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "93a9ed0a866099a230ed5146a5bb7d16fd5c9b14"
+attribute = "glibc"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/r3hvhzl5fxhrgn0rfy5g7rda17702pj4-glibc-2.44-57"
+nar-hash = "sha256:0h9kdkvc1iv4lj1mvmdvybf1pfr4bf5vsa1nlszhf6h4awymrd12"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
