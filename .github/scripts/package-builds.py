@@ -16,6 +16,7 @@ VERSION = re.compile(r"[A-Za-z0-9][A-Za-z0-9+._~-]{0,63}")
 STORE_ID = re.compile(r"[a-z2-7]{32}")
 TEMP = Path(os.environ["RUNNER_TEMP"])
 CANDIDATE = TEMP / "candidate"
+CACHE_PUBLISH_PLAN = TEMP / "cache-publish-plan"
 VUG = TEMP / "vug/bin/vug"
 
 
@@ -225,6 +226,8 @@ def build():
     preview_budget = 160_000
     names = json.loads(os.environ["PACKAGES"])
     from_source = json.loads(os.environ.get("CHANGED_PACKAGES", "[]"))
+    if CACHE_PUBLISH_PLAN.is_file() and "vug" not in names:
+        names.append("vug")
     for name in names:
         start = time.monotonic()
         log = reports / f"{name}.log"
@@ -275,6 +278,7 @@ def cache_plan():
         _, shard, name, *_ = os.fsdecode(path).split("/")
         if is_package(shard, name) and (CANDIDATE / "packages" / shard / name / "package.toml").is_file():
             packages.add(name)
+    CACHE_PUBLISH_PLAN.touch()
     step_output("changed", json.dumps(sorted(packages)))
     return 0
 
