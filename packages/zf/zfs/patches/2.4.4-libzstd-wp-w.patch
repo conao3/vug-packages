@@ -1,0 +1,11 @@
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -4664,7 +4664,7 @@
+ @CONFIG_USER_TRUE@libzstd_la_CFLAGS = $(AM_CFLAGS) $(LIBRARY_CFLAGS) \
+ @CONFIG_USER_TRUE@	-fno-tree-vectorize -include \
+ @CONFIG_USER_TRUE@	$(top_srcdir)/module/zstd/include/zstd_compat_wrapper.h \
+-@CONFIG_USER_TRUE@	-fno-tree-vectorize -Wp,-w $(AM_CFLAGS)
++@CONFIG_USER_TRUE@	-fno-tree-vectorize -w $(AM_CFLAGS)
+ @CONFIG_USER_TRUE@libzstd_la_CPPFLAGS = $(AM_CPPFLAGS) $(LIBZPOOL_CPPFLAGS)
+ @CONFIG_USER_TRUE@nodist_libzstd_la_SOURCES = \
+ @CONFIG_USER_TRUE@	module/zstd/lib/common/entropy_common.c \

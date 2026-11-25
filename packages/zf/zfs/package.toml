@@ -1,0 +1,8 @@
+name = "zfs"
+license = "CDDL-1.0"
+
+[upstream]
+homepage = "https://openzfs.org/"
+sources = [
+  "https://github.com/openzfs/zfs/releases/download/",
+]
