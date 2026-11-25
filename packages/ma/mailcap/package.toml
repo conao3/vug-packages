@@ -1,0 +1,8 @@
+name = "mailcap"
+license = "MIT"
+
+[upstream]
+homepage = "https://pagure.io/mailcap"
+sources = [
+  "https://github.com/InfrastructureServices/mailcap/archive/",
+]

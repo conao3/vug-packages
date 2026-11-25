@@ -1,0 +1,25 @@
+version = "2.1.54"
+
+[source]
+url = "https://github.com/InfrastructureServices/mailcap/archive/refs/tags/r2-1-54.tar.gz"
+sha256 = "71ff0cbada4c56e9b80de8f4f433925ff93c47d517da4fe3bc30fade5599f1ae"
+
+[build]
+kind = "make"
+make-flags = [
+  "mandir={out}/share/man",
+  "sysconfdir={out}/etc",
+]
+
+[dependencies]
+build = [
+  "bash",
+  "coreutils",
+  "make",
+  "python",
+]
+run = []
+
+[check]
+enabled = true
+skip = []
