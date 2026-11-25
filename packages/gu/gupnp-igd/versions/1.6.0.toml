@@ -1,0 +1,30 @@
+version = "1.6.0"
+
+[source]
+url = "https://download.gnome.org/sources/gupnp-igd/1.6/gupnp-igd-1.6.0.tar.xz"
+sha256 = "4099978339ab22126d4968f2a332b6d094fc44c78797860781f1fc2f11771b74"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dintrospection=false",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "glib",
+  "gssdp",
+  "gupnp",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
