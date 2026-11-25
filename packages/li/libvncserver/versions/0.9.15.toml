@@ -1,0 +1,40 @@
+version = "0.9.15"
+
+[source]
+url = "https://github.com/LibVNC/libvncserver/archive/refs/tags/LibVNCServer-0.9.15.tar.gz"
+sha256 = "62352c7795e231dfce044beb96156065a05a05c974e5de9e023d688d8ff675d7"
+
+[build]
+kind = "cmake"
+setup-flags = [
+  "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
+  "-DWITH_FFMPEG=OFF",
+  "-DWITH_GTK=OFF",
+  "-DWITH_LIBSSHTUNNEL=OFF",
+  "-DWITH_QT=OFF",
+  "-DWITH_SDL=OFF",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+  "pkgconf",
+]
+run = [
+  "cyrus-sasl",
+  "gnutls",
+  "libgcrypt",
+  "libjpeg-turbo",
+  "libpng",
+  "lzo",
+  "musl",
+  "openssl",
+  "systemd",
+  "zlib",
+]
+
+[check]
+enabled = true
+skip = []

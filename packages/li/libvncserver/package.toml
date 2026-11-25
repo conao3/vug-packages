@@ -1,0 +1,8 @@
+name = "libvncserver"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://libvnc.github.io/"
+sources = [
+  "https://github.com/LibVNC/libvncserver/archive/refs/tags/",
+]
