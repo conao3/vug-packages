@@ -1,0 +1,26 @@
+version = "0.15.0"
+
+[source]
+url = "https://gitlab.freedesktop.org/api/v4/projects/spice%2Fusbredir/repository/archive.tar.gz?sha=usbredir-0.15.0"
+sha256 = "e8e41b3651b0005f15f1914f50dae4a1714a2d746731dd76980fdb6e719bd270"
+
+[build]
+kind = "meson"
+
+[dependencies]
+build = [
+  "binutils",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "glib",
+  "libusb",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
