@@ -17,6 +17,7 @@ EXCLUDED = {
     "linux-firmware-mediatek-wifi",
     "linux-firmware-realtek",
     "linux-firmware-realtek-wifi",
+    "steam",
     "tree-sitter-lpf",
     "tree-sitter-supercollider",
 }

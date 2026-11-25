@@ -1,0 +1,108 @@
+version = "1.0.0.87"
+
+[source]
+url = "https://repo.steampowered.com/steam/archive/stable/steam_1.0.0.87.tar.gz"
+sha256 = "649375d2f9377f8009aaf3e2ff09978041eb9114897d9c5a3886f1d82e27ba1f"
+
+[build]
+kind = "prebuilt"
+install = [
+  { from = "bin_steam.sh", to = "bin/steam" },
+  { from = "bootstraplinux_ubuntu12_32.tar.xz", to = "bin/bootstraplinux_ubuntu12_32.tar.xz" },
+  { from = "steam.desktop", to = "share/applications/steam.desktop" },
+  { from = "steam_subscriber_agreement.txt", to = "share/licenses/steam/steam_subscriber_agreement.txt" },
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
+
+[fhs]
+program = "bin/steam"
+runtime-x86_64 = [
+  { output = "nix-bash:out", from = "bin/bash", to = "usr/bin/bash" },
+  { output = "nix-busybox:out", from = "bin/awk", to = "usr/bin/awk" },
+  { output = "nix-busybox:out", from = "bin/basename", to = "usr/bin/basename" },
+  { output = "nix-busybox:out", from = "bin/cat", to = "usr/bin/cat" },
+  { output = "nix-busybox:out", from = "bin/chmod", to = "usr/bin/chmod" },
+  { output = "nix-busybox:out", from = "bin/cmp", to = "usr/bin/cmp" },
+  { output = "nix-busybox:out", from = "bin/cp", to = "usr/bin/cp" },
+  { output = "nix-busybox:out", from = "bin/cut", to = "usr/bin/cut" },
+  { output = "nix-busybox:out", from = "bin/date", to = "usr/bin/date" },
+  { output = "nix-busybox:out", from = "bin/dirname", to = "usr/bin/dirname" },
+  { output = "nix-busybox:out", from = "bin/du", to = "usr/bin/du" },
+  { output = "nix-busybox:out", from = "bin/env", to = "usr/bin/env" },
+  { output = "nix-busybox:out", from = "bin/expr", to = "usr/bin/expr" },
+  { output = "nix-busybox:out", from = "bin/find", to = "usr/bin/find" },
+  { output = "nix-busybox:out", from = "bin/grep", to = "usr/bin/grep" },
+  { output = "nix-busybox:out", from = "bin/gzip", to = "usr/bin/gzip" },
+  { output = "nix-busybox:out", from = "bin/head", to = "usr/bin/head" },
+  { output = "nix-busybox:out", from = "bin/id", to = "usr/bin/id" },
+  { output = "nix-busybox:out", from = "bin/kill", to = "usr/bin/kill" },
+  { output = "nix-busybox:out", from = "bin/ln", to = "usr/bin/ln" },
+  { output = "nix-busybox:out", from = "bin/ls", to = "usr/bin/ls" },
+  { output = "nix-busybox:out", from = "bin/mkdir", to = "usr/bin/mkdir" },
+  { output = "nix-busybox:out", from = "bin/mktemp", to = "usr/bin/mktemp" },
+  { output = "nix-busybox:out", from = "bin/mv", to = "usr/bin/mv" },
+  { output = "nix-busybox:out", from = "bin/od", to = "usr/bin/od" },
+  { output = "nix-busybox:out", from = "bin/pgrep", to = "usr/bin/pgrep" },
+  { output = "nix-busybox:out", from = "bin/pidof", to = "usr/bin/pidof" },
+  { output = "nix-busybox:out", from = "bin/pwd", to = "usr/bin/pwd" },
+  { output = "nix-busybox:out", from = "bin/rm", to = "usr/bin/rm" },
+  { output = "nix-busybox:out", from = "bin/rmdir", to = "usr/bin/rmdir" },
+  { output = "nix-busybox:out", from = "bin/sed", to = "usr/bin/sed" },
+  { output = "nix-busybox:out", from = "bin/seq", to = "usr/bin/seq" },
+  { output = "nix-busybox:out", from = "bin/sh", to = "usr/bin/sh" },
+  { output = "nix-busybox:out", from = "bin/sha256sum", to = "usr/bin/sha256sum" },
+  { output = "nix-busybox:out", from = "bin/sleep", to = "usr/bin/sleep" },
+  { output = "nix-busybox:out", from = "bin/sort", to = "usr/bin/sort" },
+  { output = "nix-busybox:out", from = "bin/stat", to = "usr/bin/stat" },
+  { output = "nix-busybox:out", from = "bin/tail", to = "usr/bin/tail" },
+  { output = "nix-busybox:out", from = "bin/tee", to = "usr/bin/tee" },
+  { output = "nix-busybox:out", from = "bin/test", to = "usr/bin/test" },
+  { output = "nix-busybox:out", from = "bin/touch", to = "usr/bin/touch" },
+  { output = "nix-busybox:out", from = "bin/tr", to = "usr/bin/tr" },
+  { output = "nix-busybox:out", from = "bin/uname", to = "usr/bin/uname" },
+  { output = "nix-busybox:out", from = "bin/wc", to = "usr/bin/wc" },
+  { output = "nix-busybox:out", from = "bin/which", to = "usr/bin/which" },
+  { output = "nix-busybox:out", from = "bin/xargs", to = "usr/bin/xargs" },
+  { output = "nix-coreutils:out", from = "bin/readlink", to = "usr/bin/readlink" },
+  { output = "nix-coreutils:out", from = "bin/realpath", to = "usr/bin/realpath" },
+  { output = "nix-fontconfig:out", from = "lib", to = "usr/lib64" },
+  { output = "nix-freetype:out", from = "lib", to = "usr/lib64" },
+  { output = "nix-gcc-libs:out", from = "lib/libstdc++.so.6", to = "usr/lib64/libstdc++.so.6" },
+  { output = "nix-gettext:out", from = "bin/gettext", to = "usr/bin/gettext" },
+  { output = "nix-glibc:out", from = "lib", to = "usr/lib64" },
+  { output = "nix-libdrm:out", from = "lib", to = "usr/lib64" },
+  { output = "nix-libgcc:out", from = "lib/libgcc_s.so.1", to = "usr/lib64/libgcc_s.so.1" },
+  { output = "nix-libglvnd:out", from = "lib", to = "usr/lib64" },
+  { output = "nix-libx11:out", from = "lib", to = "usr/lib64" },
+  { output = "nix-libxext:out", from = "lib", to = "usr/lib64" },
+  { output = "nix-mesa-drivers:out", from = "lib", to = "usr/lib64" },
+  { output = "nix-mesa-drivers:out", from = "share/glvnd/egl_vendor.d", to = "usr/share/glvnd/egl_vendor.d" },
+  { output = "nix-mesa-drivers:out", from = "share/vulkan/icd.d", to = "usr/share/vulkan/icd.d" },
+  { output = "nix-nspr:out", from = "lib", to = "usr/lib64" },
+  { output = "nix-nss:out", from = "lib", to = "usr/lib64" },
+  { output = "nix-procps:out", from = "bin/ps", to = "usr/bin/ps" },
+  { output = "nix-tar:out", from = "bin/tar", to = "usr/bin/tar" },
+  { output = "nix-xz:out", from = "bin/xz", to = "usr/bin/xz" },
+]
+runtime-i686 = [
+  { output = "nix-fontconfig-i686:out", from = "lib", to = "usr/lib32" },
+  { output = "nix-freetype-i686:out", from = "lib", to = "usr/lib32" },
+  { output = "nix-gcc-libs-i686:out", from = "lib/libstdc++.so.6", to = "usr/lib32/libstdc++.so.6" },
+  { output = "nix-glibc-i686:out", from = "lib", to = "usr/lib32" },
+  { output = "nix-libdrm-i686:out", from = "lib", to = "usr/lib32" },
+  { output = "nix-libgcc-i686:out", from = "lib/libgcc_s.so.1", to = "usr/lib32/libgcc_s.so.1" },
+  { output = "nix-libglvnd-i686:out", from = "lib", to = "usr/lib32" },
+  { output = "nix-libx11-i686:out", from = "lib", to = "usr/lib32" },
+  { output = "nix-libxext-i686:out", from = "lib", to = "usr/lib32" },
+  { output = "nix-mesa-drivers-i686:out", from = "lib", to = "usr/lib32" },
+  { output = "nix-mesa-drivers-i686:out", from = "share/glvnd/egl_vendor.d", to = "usr/lib32/glvnd/egl_vendor.d" },
+  { output = "nix-mesa-drivers-i686:out", from = "share/vulkan/icd.d", to = "usr/lib32/vulkan/icd.d" },
+]
+graphics = true
