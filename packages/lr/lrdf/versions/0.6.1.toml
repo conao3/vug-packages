@@ -1,0 +1,29 @@
+version = "0.6.1"
+
+[source]
+url = "https://github.com/swh/LRDF/archive/refs/tags/v0.6.1.tar.gz"
+sha256 = "d579417c477ac3635844cd1b94f273ee2529a8c3b6b21f9b09d15f462b89b1ef"
+
+[build]
+kind = "autotools"
+autoreconf = true
+
+[dependencies]
+build = [
+  "autoconf",
+  "automake",
+  "binutils",
+  "libtool",
+  "make",
+  "pkgconf",
+]
+run = [
+  "musl",
+  "raptor2",
+]
+
+[check]
+enabled = true
+skip = [
+  "remove_test",
+]
