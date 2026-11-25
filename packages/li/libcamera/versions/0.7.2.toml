@@ -1,0 +1,63 @@
+version = "0.7.2"
+patches = [
+  "0.7.2-ln-sf-portable.patch",
+]
+
+[source]
+url = "https://gitlab.freedesktop.org/api/v4/projects/camera%2Flibcamera/repository/archive.tar.gz?sha=refs%2Ftags%2Fv0.7.2"
+sha256 = "e27f5670fe9443eebc8e2f24235cd20b533324ef481a3684d34c78f1c3a12afb"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dtest=true",
+  "-Dwerror=false",
+  "-Dapps-output-dng=disabled",
+  "-Dcam-output-sdl2=disabled",
+  "-Ddocumentation=disabled",
+  "-Dlibdw=disabled",
+  "-Dqcam=disabled",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "gtest",
+  "meson",
+  "openssl",
+  "pkgconf",
+  "python",
+  "python-jinja2",
+  "python-ply",
+  "python-pybind11",
+  "python-pyyaml",
+  "samurai",
+]
+run = [
+  "glib",
+  "gnutls",
+  "gst-plugins-base",
+  "gstreamer",
+  "libcxx",
+  "libdrm",
+  "libevent",
+  "libglvnd",
+  "libjpeg-turbo",
+  "libunwind",
+  "libyaml",
+  "libyuv",
+  "lttng-ust",
+  "musl",
+  "python",
+  "systemd",
+]
+
+[check]
+enabled = true
+skip = [
+  "memory_lifetime_test",
+  "multi_stream_test",
+  "single_stream_test",
+  "v4l2_compat_test",
+  "yaml-parser",
+]

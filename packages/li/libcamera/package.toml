@@ -1,0 +1,8 @@
+name = "libcamera"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://libcamera.org/"
+sources = [
+  "https://gitlab.freedesktop.org/api/v4/projects/camera%2Flibcamera/repository/",
+]
