@@ -1,0 +1,13 @@
+--- a/tests/meson.build
++++ b/tests/meson.build
+@@ -1,8 +1,9 @@
+-intent_cache_test = find_program('intent-cache.sh')
++intent_cache_test = find_program('bash')
+ 
+ build_root = meson.project_build_root()
+ 
+ test('intent-cache', intent_cache_test,
++  args: [files('intent-cache.sh')],
+   depends: update_desktop_database,
+   env: [f'BUILD_ROOT=@build_root@'],
+ )

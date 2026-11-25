@@ -1,0 +1,29 @@
+version = "0.29"
+patches = [
+  "0.29-run-intent-cache-with-bash.patch",
+]
+
+[source]
+url = "https://www.freedesktop.org/software/desktop-file-utils/releases/desktop-file-utils-0.29.tar.xz"
+sha256 = "661f225be4c667abc4962f075717db4252b63c84480f6d37b26050d029da8fa0"
+
+[build]
+kind = "meson"
+
+[dependencies]
+build = [
+  "bash",
+  "binutils",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "glib",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
