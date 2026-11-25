@@ -1,0 +1,15 @@
+--- a/meson.build
++++ b/meson.build
+@@ -78,9 +78,9 @@
+         dep_systemd = dependency('systemd', version: '>=230')
+ 
+         add_project_arguments('-DSYSTEMUIDMAX=' + dep_systemd.get_variable('systemuidmax'), language: 'c')
+-        conf.set('systemunitdir', dep_systemd.get_variable('systemdsystemunitdir'))
+-        conf.set('userunitdir', dep_systemd.get_variable('systemduserunitdir'))
+-        conf.set('catalogdir', dep_systemd.get_variable('catalogdir'))
++        conf.set('systemunitdir', 'lib/systemd/system')
++        conf.set('userunitdir', 'lib/systemd/user')
++        conf.set('catalogdir', 'lib/systemd/catalog')
+ endif
+ 
+ #

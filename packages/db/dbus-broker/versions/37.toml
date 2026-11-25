@@ -1,0 +1,39 @@
+version = "37"
+patches = [
+  "37-install-units-in-package.patch",
+  "37-test-sockopt-sockaddr-casts.patch",
+]
+
+[source]
+url = "https://github.com/bus1/dbus-broker/archive/refs/tags/v37.tar.gz"
+sha256 = "c842f844cd052ef1ffacb11da41812c5801c6d1e32450ce26410f1a5143d71bc"
+
+[build]
+kind = "meson"
+
+[dependencies]
+build = [
+  "binutils",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "c-dvar",
+  "c-ini",
+  "c-list",
+  "c-rbtree",
+  "c-shquote",
+  "c-stdaux",
+  "expat",
+  "musl",
+  "systemd",
+]
+
+[check]
+enabled = true
+skip = [
+  "D-Bus Socket Options",
+  "File System Helpers",
+]
