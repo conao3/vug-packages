@@ -1,0 +1,20 @@
+version = "5.8.4"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "93a9ed0a866099a230ed5146a5bb7d16fd5c9b14"
+attribute = "xz.bin"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/6mm66zaj29q72pcax4xhzgh4vwp6qy0y-xz-5.8.4-bin"
+nar-hash = "sha256:0r64kvivp4kqd4f6aws4j7g54r90qp7papp54nnrs218a790clm1"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
