@@ -1,0 +1,8 @@
+name = "wildmidi"
+license = "GPL-3.0-or-later AND LGPL-3.0-or-later"
+
+[upstream]
+homepage = "https://www.mindwerks.net/projects/wildmidi/"
+sources = [
+  "https://github.com/Mindwerks/wildmidi/archive/",
+]

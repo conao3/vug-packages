@@ -1,0 +1,23 @@
+version = "0.5.0"
+
+[source]
+url = "https://github.com/Mindwerks/wildmidi/archive/wildmidi-0.5.0.tar.gz"
+sha256 = "2164396d5fe80153fd2af9764fcd991883d06fbf1fdfd96efbc99eed21ed1a2f"
+
+[build]
+kind = "cmake"
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+]
+run = [
+  "alsa-lib",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
