@@ -1,0 +1,20 @@
+version = "9.12"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "93a9ed0a866099a230ed5146a5bb7d16fd5c9b14"
+attribute = "coreutils"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/a50ml7za6h61m4mv4cdbvkl33c6sx5yn-coreutils-9.12"
+nar-hash = "sha256:1a3rk975nf3b6v4iz0c695nkb9c7cnfkb5ylr62s7bcz4sr3jdy8"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []

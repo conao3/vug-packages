@@ -1,0 +1,8 @@
+name = "nix-busybox"
+license = "GPL-2.0-only"
+
+[upstream]
+homepage = "https://github.com/NixOS/nixpkgs"
+sources = [
+  "https://cache.nixos.org/",
+]

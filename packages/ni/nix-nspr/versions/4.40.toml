@@ -1,0 +1,20 @@
+version = "4.40"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "93a9ed0a866099a230ed5146a5bb7d16fd5c9b14"
+attribute = "nspr"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/pnxvd50raf8l2j8qx4cdpk6g5hp2fp7x-nspr-4.40"
+nar-hash = "sha256:1prc1qz8zn5gsmhridbz0ww0xcc769567wgngcg0rw60nzikds4y"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []

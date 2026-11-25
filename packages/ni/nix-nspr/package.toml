@@ -1,0 +1,8 @@
+name = "nix-nspr"
+license = "MPL-2.0"
+
+[upstream]
+homepage = "https://github.com/NixOS/nixpkgs"
+sources = [
+  "https://cache.nixos.org/",
+]

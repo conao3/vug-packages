@@ -1,0 +1,20 @@
+version = "3.125"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "93a9ed0a866099a230ed5146a5bb7d16fd5c9b14"
+attribute = "nss"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/4hsyji0klgg9782jybwg7w4kh65yr9n7-nss-3.125"
+nar-hash = "sha256:1p1w5kpxgv8zd6i4y8qqxnwcgb9qxi0mg90aqp1dz7n9jmr61rf6"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []

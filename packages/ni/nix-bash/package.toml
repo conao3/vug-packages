@@ -1,0 +1,8 @@
+name = "nix-bash"
+license = "GPL-3.0-or-later"
+
+[upstream]
+homepage = "https://github.com/NixOS/nixpkgs"
+sources = [
+  "https://cache.nixos.org/",
+]

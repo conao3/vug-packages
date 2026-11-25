@@ -1,0 +1,8 @@
+name = "nix-freetype"
+license = "FTL OR GPL-2.0-only"
+
+[upstream]
+homepage = "https://github.com/NixOS/nixpkgs"
+sources = [
+  "https://cache.nixos.org/",
+]

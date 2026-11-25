@@ -1,0 +1,8 @@
+name = "steam"
+license = "LicenseRef-Steam-Subscriber-Agreement"
+
+[upstream]
+homepage = "https://store.steampowered.com/"
+sources = [
+  "https://repo.steampowered.com/steam/archive/stable/",
+]

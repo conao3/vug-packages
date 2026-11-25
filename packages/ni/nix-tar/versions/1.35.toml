@@ -1,0 +1,20 @@
+version = "1.35"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "93a9ed0a866099a230ed5146a5bb7d16fd5c9b14"
+attribute = "gnutar"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/80c50gsgpxymdhvs5c2vvnq4zfc44k2r-gnutar-1.35"
+nar-hash = "sha256:0xnaf7xdb5zg2spvfmq9l3b86w8nlhlb899rvj8fjfm9yaswwm6z"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
