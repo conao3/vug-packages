@@ -1,0 +1,20 @@
+version = "2.4.134"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "93a9ed0a866099a230ed5146a5bb7d16fd5c9b14"
+attribute = "libdrm"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/nm4nadhjw0m873b1g7b63jlv9qwhphqg-libdrm-2.4.134"
+nar-hash = "sha256:18g7jpa9b58y4c970h6rdlj18p3242s8vrzlsh025jmgpqddki2i"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
