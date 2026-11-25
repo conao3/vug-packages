@@ -1,0 +1,8 @@
+name = "scons"
+license = "MIT"
+
+[upstream]
+homepage = "https://www.scons.org/"
+sources = [
+  "https://files.pythonhosted.org/packages/source/s/scons/",
+]
