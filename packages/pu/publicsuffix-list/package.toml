@@ -1,0 +1,8 @@
+name = "publicsuffix-list"
+license = "MPL-2.0"
+
+[upstream]
+homepage = "https://publicsuffix.org/"
+sources = [
+  "https://github.com/publicsuffix/list/archive/",
+]

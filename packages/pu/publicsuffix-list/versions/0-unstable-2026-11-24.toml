@@ -1,0 +1,19 @@
+version = "0-unstable-2026-11-24"
+
+[source]
+url = "https://github.com/publicsuffix/list/archive/5eac4012cdb4d8fee9613d6497d1739c72d858bb.tar.gz"
+sha256 = "36b78f8e33c200e19481f7b417f8f2bad1125527b1e5f8f8f760fd90ac066509"
+
+[build]
+kind = "prebuilt"
+install = [
+  { from = "public_suffix_list.dat", to = "share/publicsuffix/public_suffix_list.dat" },
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
