@@ -1,0 +1,22 @@
+version = "24.1.15"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "93a9ed0a866099a230ed5146a5bb7d16fd5c9b14"
+attribute = "xwayland"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/fsy70cjj75mjw3ak38rj5pivyz2cqm4n-xwayland-24.1.15"
+nar-hash = "sha256:0vnjhzg9rc8fzibcz54dfra0zjrj05gkpjs6ik4ldsghzas2754y"
+expose = [
+  "bin/Xwayland",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
