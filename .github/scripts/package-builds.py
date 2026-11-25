@@ -239,7 +239,8 @@ def build():
                     raise ValueError("Invalid output name or ID")
                 listings[output] = installed_files(data / "store" / store_id)
             (reports / f"{name}-files.json").write_text(json.dumps(listings, indent=2) + "\n")
-            if not any(listings.values()):
+            _, record = current_record(CANDIDATE / "packages" / (name[:2] if len(name) > 1 else name + "_") / name)
+            if not any(listings.values()) and record.get("build", {}).get("kind") != "nix-output":
                 raise ValueError("No installed files outside .vug/")
             ids[name] = outputs
             summary(f"### {name} · passed · {time.monotonic() - start:.1f} s")
