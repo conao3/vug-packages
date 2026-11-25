@@ -1,0 +1,8 @@
+name = "zellij"
+license = "MIT"
+
+[upstream]
+homepage = "https://zellij.dev"
+sources = [
+  "https://github.com/zellij-org/zellij/archive/refs/tags/",
+]

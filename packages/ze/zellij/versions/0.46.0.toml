@@ -1,0 +1,36 @@
+version = "0.46.0"
+patches = [
+  "0.46.0-openssl-sys-4.patch",
+]
+
+[source]
+url = "https://github.com/zellij-org/zellij/archive/refs/tags/v0.46.0.tar.gz"
+sha256 = "2dfa237fea447f3cc98954e81b0097b9d25841010036720e11f67880fe7861f0"
+
+[build]
+kind = "cargo"
+flags = [
+  "--no-default-features",
+  "--features",
+  "web_server_capability",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "pkgconf",
+  "rust",
+]
+run = [
+  "curl",
+  "libssh2",
+  "musl",
+  "openssl",
+  "rust-libunwind",
+  "sqlite",
+]
+
+[check]
+enabled = false
+skip = []
