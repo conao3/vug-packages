@@ -1,0 +1,8 @@
+name = "xterm"
+license = "MIT"
+
+[upstream]
+homepage = "https://invisible-island.net/xterm/"
+sources = [
+  "https://invisible-island.net/archives/xterm/",
+]
