@@ -18,3 +18,10 @@ run = []
 [check]
 enabled = false
 skip = []
+
+[fhs]
+program = "bin/op"
+runtime-x86_64 = [
+  { output = "nix-glibc:out", from = "lib", to = "usr/lib64" },
+]
+graphics = false
