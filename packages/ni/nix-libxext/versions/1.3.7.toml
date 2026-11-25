@@ -1,0 +1,20 @@
+version = "1.3.7"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "93a9ed0a866099a230ed5146a5bb7d16fd5c9b14"
+attribute = "libxext"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/ig03w1najff9c7rfi3fm7fsnr1azkfs7-libxext-1.3.7"
+nar-hash = "sha256:0hh4vcqc16j5mwpp26bnhbjgfbbx0xkgy6xjbz6mb7jay6mzb2p7"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
