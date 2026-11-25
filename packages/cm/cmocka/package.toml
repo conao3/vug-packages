@@ -1,0 +1,8 @@
+name = "cmocka"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://cmocka.org/"
+sources = [
+  "https://cmocka.org/files/",
+]
