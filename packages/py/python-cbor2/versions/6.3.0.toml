@@ -1,0 +1,36 @@
+version = "6.3.0"
+patches = [
+  "6.3.0-root-cargo-lock.patch",
+]
+
+[source]
+url = "https://files.pythonhosted.org/packages/source/c/cbor2/cbor2-6.3.0.tar.gz"
+sha256 = "fd4d6b3533e966eec3fb33ce0f17e925fc09b512500ab7770867ebec7d7d5dc1"
+
+[build]
+kind = "python"
+imports = [
+  "cbor2",
+]
+native-imports = [
+  "cbor2._cbor2",
+]
+cargo-lock = true
+
+[dependencies]
+build = [
+  "python-build",
+  "python-installer",
+  "python-setuptools",
+  "python-setuptools-rust",
+  "python-setuptools-scm",
+  "rust",
+]
+run = [
+  "musl",
+  "python",
+]
+
+[check]
+enabled = true
+skip = []

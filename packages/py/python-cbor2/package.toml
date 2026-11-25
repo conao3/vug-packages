@@ -1,0 +1,8 @@
+name = "python-cbor2"
+license = "MIT"
+
+[upstream]
+homepage = "https://cbor2.readthedocs.io/"
+sources = [
+  "https://files.pythonhosted.org/packages/source/c/cbor2/",
+]
