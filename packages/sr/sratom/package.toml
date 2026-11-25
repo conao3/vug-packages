@@ -1,0 +1,8 @@
+name = "sratom"
+license = "0BSD OR ISC"
+
+[upstream]
+homepage = "https://drobilla.net/software/sratom"
+sources = [
+  "https://download.drobilla.net/",
+]
