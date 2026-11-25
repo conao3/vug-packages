@@ -1,0 +1,8 @@
+name = "libunibreak"
+license = "Zlib"
+
+[upstream]
+homepage = "https://github.com/adah1972/libunibreak"
+sources = [
+  "https://github.com/adah1972/libunibreak/releases/download/",
+]
