@@ -14,10 +14,18 @@ expose = [
   "bin/metaflac",
 ]
 
-[build.nix-outputs.out]
+[build.nix-outputs.lib]
 store-path = "/nix/store/adx0bv0ifaa3sqv6ldn0bgf712sxc7pf-flac-1.5.0"
 nar-hash = "sha256:1gvyr65yx5jnhyc2ddy18s1czzp4y5npm95lp9a5iagbq9ry95l4"
 expose = []
+
+[build.nix-outputs.out]
+store-path = "/nix/store/b8s9dj6a3g5db93iq08hpi81hyhpq0vy-flac-1.5.0-bin"
+nar-hash = "sha256:02c414bbqlbxa8ds5ppk1f5mrayp3vhd7dk3dg1gkv5yl4nh31wi"
+expose = [
+  "bin/flac",
+  "bin/metaflac",
+]
 
 [dependencies]
 build = []
