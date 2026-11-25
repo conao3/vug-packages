@@ -1,0 +1,20 @@
+version = "4.0.7"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "93a9ed0a866099a230ed5146a5bb7d16fd5c9b14"
+attribute = "procps"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/aj08b694apkc1jay2akywym9ghlailf5-procps-4.0.7"
+nar-hash = "sha256:042ya45vbk2fw1hci2gsm8w4v02r57kipnrvsgkj6mhi5yrlq067"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
