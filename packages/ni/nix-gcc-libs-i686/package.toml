@@ -1,0 +1,8 @@
+name = "nix-gcc-libs-i686"
+license = "GPL-3.0-or-later WITH GCC-exception-3.1"
+
+[upstream]
+homepage = "https://github.com/NixOS/nixpkgs"
+sources = [
+  "https://cache.nixos.org/",
+]
