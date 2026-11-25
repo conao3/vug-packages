@@ -1,0 +1,8 @@
+name = "liblqr-1"
+license = "LGPL-3.0-only"
+
+[upstream]
+homepage = "https://github.com/carlobaldassi/liblqr"
+sources = [
+  "https://github.com/carlobaldassi/liblqr/archive/",
+]
