@@ -1,0 +1,23 @@
+version = "1.28.4"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "pure-prompt"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/h5rqh2jhlg0n95hznsanz5jgbxsgd5zy-pure-prompt-1.28.4"
+nar-hash = "sha256:0sh5a9qbixzs5dgc66hnhwbic6m0sq7pxb23jfkr3c27lczp8pfy"
+expose = [
+  "share/zsh/site-functions/async",
+  "share/zsh/site-functions/prompt_pure_setup",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []

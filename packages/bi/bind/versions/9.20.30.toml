@@ -1,0 +1,32 @@
+version = "9.20.30"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "bind"
+
+[build.nix-outputs.dnsutils]
+store-path = "/nix/store/q2ylz11l5adqh638pj11n2353ii5rbf2-bind-9.20.30-dnsutils"
+nar-hash = "sha256:0s3iw4sg380fwf5ad1wrn7zykzx1kq13phlfra615rh2dy13wmib"
+expose = [
+  "bin/delv",
+  "bin/dig",
+  "bin/nslookup",
+  "bin/nsupdate",
+]
+
+[build.nix-outputs.host]
+store-path = "/nix/store/7604zc3jyzjvm5d913lz8i1kq2r461ca-bind-9.20.30-host"
+nar-hash = "sha256:1qkj3nkv6px94dg32ifxglaz44ypv75797yijahv8ip9mqshvcrx"
+expose = [
+  "bin/host",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []

@@ -1,0 +1,8 @@
+name = "gcc"
+license = "GPL-3.0-or-later"
+
+[upstream]
+homepage = "https://gcc.gnu.org/"
+sources = [
+  "https://cache.nixos.org/",
+]

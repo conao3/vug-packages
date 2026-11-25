@@ -1,0 +1,22 @@
+version = "1.8.0"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "piper-tts"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/c18iiw4r6qnv9jzdkdk36f01r7vjy7y0-piper-tts-1.8.0"
+nar-hash = "sha256:0r3wxf2pgzaaqzhzj7bizimzq2x9r52sbfr5376cxq907bl9k9sh"
+expose = [
+  "bin/piper",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []

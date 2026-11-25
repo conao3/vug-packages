@@ -1,0 +1,8 @@
+name = "openjpeg"
+license = "BSD-2-Clause"
+
+[upstream]
+homepage = "https://www.openjpeg.org/"
+sources = [
+  "https://cache.nixos.org/",
+]

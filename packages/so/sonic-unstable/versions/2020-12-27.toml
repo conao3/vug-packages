@@ -1,0 +1,22 @@
+version = "2020-12-27"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "sonic"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/9xj9ndz92m4fk5asyvpgsy5lg4vcnd76-sonic-unstable-2020-12-27"
+nar-hash = "sha256:1s3bd6m5k8k88nypvwpi42x5bwi8qp31rbjwm0f97sgalc647nfb"
+expose = [
+  "bin/sonic",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []

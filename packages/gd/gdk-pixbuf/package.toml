@@ -1,0 +1,8 @@
+name = "gdk-pixbuf"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://gitlab.gnome.org/GNOME/gdk-pixbuf"
+sources = [
+  "https://cache.nixos.org/",
+]

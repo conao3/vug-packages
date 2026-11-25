@@ -1,0 +1,8 @@
+name = "unifont"
+license = "GPL-2.0-or-later AND Font-exception-2.0"
+
+[upstream]
+homepage = "https://unifoundry.com/unifont/"
+sources = [
+  "https://cache.nixos.org/",
+]

@@ -1,0 +1,8 @@
+name = "fluidsynth"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://www.fluidsynth.org"
+sources = [
+  "https://cache.nixos.org/",
+]

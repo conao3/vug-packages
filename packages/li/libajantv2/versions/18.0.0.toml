@@ -1,0 +1,47 @@
+version = "18.0.0"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "libajantv2"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/5hxhysb61pyb8lj8gv7wwy44anj43gnd-libajantv2-18.0.0"
+nar-hash = "sha256:1kp17qf9lgpg6zx72943amz7n6crl3dj33hr0g8mxcyyc60rpyma"
+expose = [
+  "bin/logreader",
+  "bin/ntv2burn",
+  "bin/ntv2burn4kquadrant",
+  "bin/ntv2capture",
+  "bin/ntv2capture4k",
+  "bin/ntv2capture8k",
+  "bin/ntv2dolbycapture",
+  "bin/ntv2dolbyplayer",
+  "bin/ntv2enumerateboards",
+  "bin/ntv2fieldburn",
+  "bin/ntv2firmwareinstaller",
+  "bin/ntv2hdrsetup",
+  "bin/ntv2llburn",
+  "bin/ntv2outputtestpattern",
+  "bin/ntv2overlay",
+  "bin/ntv2player",
+  "bin/ntv2player4k",
+  "bin/ntv2player8k",
+  "bin/ntv2sign",
+  "bin/ntv2streamplayer",
+  "bin/ntv2switchbitfile",
+  "bin/ntv2thermo",
+  "bin/ntv2vcam",
+  "bin/pciwhacker",
+  "bin/regio",
+  "bin/supportlog",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []

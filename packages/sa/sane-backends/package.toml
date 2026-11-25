@@ -1,0 +1,8 @@
+name = "sane-backends"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "http://www.sane-project.org/"
+sources = [
+  "https://cache.nixos.org/",
+]

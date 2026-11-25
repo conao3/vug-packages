@@ -1,0 +1,8 @@
+name = "lilv"
+license = "MIT"
+
+[upstream]
+homepage = "http://drobilla.net/software/lilv"
+sources = [
+  "https://cache.nixos.org/",
+]

@@ -1,0 +1,8 @@
+name = "afdko"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://adobe-type-tools.github.io/afdko"
+sources = [
+  "https://cache.nixos.org/",
+]

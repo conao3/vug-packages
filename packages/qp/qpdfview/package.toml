@@ -1,0 +1,8 @@
+name = "qpdfview"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://launchpad.net/qpdfview"
+sources = [
+  "https://cache.nixos.org/",
+]

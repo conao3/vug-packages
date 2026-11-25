@@ -1,0 +1,8 @@
+name = "hostname-debian"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://tracker.debian.org/pkg/hostname"
+sources = [
+  "https://cache.nixos.org/",
+]

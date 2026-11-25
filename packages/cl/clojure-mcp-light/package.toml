@@ -1,0 +1,8 @@
+name = "clojure-mcp-light"
+license = "EPL-2.0"
+
+[upstream]
+homepage = "https://github.com/bhauman/clojure-mcp-light"
+sources = [
+  "https://cache.nixos.org/",
+]

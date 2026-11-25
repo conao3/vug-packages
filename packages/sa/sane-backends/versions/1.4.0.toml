@@ -1,0 +1,27 @@
+version = "1.4.0"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "sane-backends"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/vqap80h9sin57naq44hqsavmqkl5y1sn-sane-backends-1.4.0"
+nar-hash = "sha256:0kkv50apgcvidfkc7lpbgwy916cr05zrbhbm1zlk9pvs7ksbp33m"
+expose = [
+  "bin/gamma4scanimage",
+  "bin/sane-config",
+  "bin/sane-find-scanner",
+  "bin/saned",
+  "bin/scanimage",
+  "bin/umax_pp",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []

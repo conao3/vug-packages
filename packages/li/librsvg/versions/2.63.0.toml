@@ -1,0 +1,22 @@
+version = "2.63.0"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "librsvg"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/hbr878lpbvawd9f1gy5jbz6la1rnlhr1-librsvg-2.63.0"
+nar-hash = "sha256:162114sdh92l0zg53n9sxg0ij4va42yyg8nwybqc6rkjrzaamfl6"
+expose = [
+  "bin/rsvg-convert",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []

@@ -1,0 +1,8 @@
+name = "clj-kondo"
+license = "EPL-1.0"
+
+[upstream]
+homepage = "https://github.com/clj-kondo/clj-kondo"
+sources = [
+  "https://cache.nixos.org/",
+]

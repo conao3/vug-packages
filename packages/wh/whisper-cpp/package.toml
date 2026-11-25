@@ -1,0 +1,8 @@
+name = "whisper-cpp"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/ggerganov/whisper.cpp"
+sources = [
+  "https://cache.nixos.org/",
+]

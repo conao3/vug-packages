@@ -1,0 +1,8 @@
+name = "noto-fonts-color-emoji"
+license = "OFL-1.1 AND Apache-2.0"
+
+[upstream]
+homepage = "https://github.com/googlefonts/noto-emoji"
+sources = [
+  "https://cache.nixos.org/",
+]

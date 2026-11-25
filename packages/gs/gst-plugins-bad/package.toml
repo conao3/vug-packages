@@ -1,0 +1,8 @@
+name = "gst-plugins-bad"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://gstreamer.freedesktop.org"
+sources = [
+  "https://cache.nixos.org/",
+]

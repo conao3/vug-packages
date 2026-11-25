@@ -1,0 +1,8 @@
+name = "xapp"
+license = "LGPL-3.0"
+
+[upstream]
+homepage = "https://github.com/linuxmint/xapp"
+sources = [
+  "https://cache.nixos.org/",
+]

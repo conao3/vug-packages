@@ -1,0 +1,25 @@
+version = "2.10.0"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "hackgen-nf-font"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/sqkgw7ramzinkzkgx4lfccsnmx7v3173-hackgen-nf-font-2.10.0"
+nar-hash = "sha256:0qcr02q6k40s1avdl0wy2wcdsx00h6clw8bklp7bqvcj6dad5p4k"
+expose = [
+  "share/fonts/hackgen-nf/HackGen35ConsoleNF-Bold.ttf",
+  "share/fonts/hackgen-nf/HackGen35ConsoleNF-Regular.ttf",
+  "share/fonts/hackgen-nf/HackGenConsoleNF-Bold.ttf",
+  "share/fonts/hackgen-nf/HackGenConsoleNF-Regular.ttf",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []

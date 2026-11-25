@@ -1,0 +1,8 @@
+name = "triton-llvm"
+license = "NCSA"
+
+[upstream]
+homepage = "https://github.com/llvm/llvm-project"
+sources = [
+  "https://cache.nixos.org/",
+]

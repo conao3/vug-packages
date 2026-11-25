@@ -1,0 +1,54 @@
+version = "2.501"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "gyre-fonts"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/jrd7hdajnkihqb4m52v45lnk0nzfsjag-gyre-fonts-2.501"
+nar-hash = "sha256:00jr39bchxa99wwj2mj9b12swa3x90yx0b9l2byscf14bqy77ang"
+expose = [
+  "share/fonts/opentype/texgyreadventor-bold.otf",
+  "share/fonts/opentype/texgyreadventor-bolditalic.otf",
+  "share/fonts/opentype/texgyreadventor-italic.otf",
+  "share/fonts/opentype/texgyreadventor-regular.otf",
+  "share/fonts/opentype/texgyrebonum-bold.otf",
+  "share/fonts/opentype/texgyrebonum-bolditalic.otf",
+  "share/fonts/opentype/texgyrebonum-italic.otf",
+  "share/fonts/opentype/texgyrebonum-regular.otf",
+  "share/fonts/opentype/texgyrechorus-mediumitalic.otf",
+  "share/fonts/opentype/texgyrecursor-bold.otf",
+  "share/fonts/opentype/texgyrecursor-bolditalic.otf",
+  "share/fonts/opentype/texgyrecursor-italic.otf",
+  "share/fonts/opentype/texgyrecursor-regular.otf",
+  "share/fonts/opentype/texgyreheros-bold.otf",
+  "share/fonts/opentype/texgyreheros-bolditalic.otf",
+  "share/fonts/opentype/texgyreheros-italic.otf",
+  "share/fonts/opentype/texgyreheros-regular.otf",
+  "share/fonts/opentype/texgyreheroscn-bold.otf",
+  "share/fonts/opentype/texgyreheroscn-bolditalic.otf",
+  "share/fonts/opentype/texgyreheroscn-italic.otf",
+  "share/fonts/opentype/texgyreheroscn-regular.otf",
+  "share/fonts/opentype/texgyrepagella-bold.otf",
+  "share/fonts/opentype/texgyrepagella-bolditalic.otf",
+  "share/fonts/opentype/texgyrepagella-italic.otf",
+  "share/fonts/opentype/texgyrepagella-regular.otf",
+  "share/fonts/opentype/texgyreschola-bold.otf",
+  "share/fonts/opentype/texgyreschola-bolditalic.otf",
+  "share/fonts/opentype/texgyreschola-italic.otf",
+  "share/fonts/opentype/texgyreschola-regular.otf",
+  "share/fonts/opentype/texgyretermes-bold.otf",
+  "share/fonts/opentype/texgyretermes-bolditalic.otf",
+  "share/fonts/opentype/texgyretermes-italic.otf",
+  "share/fonts/opentype/texgyretermes-regular.otf",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []

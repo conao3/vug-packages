@@ -1,0 +1,8 @@
+name = "pipewire"
+license = "MIT"
+
+[upstream]
+homepage = "https://pipewire.org/"
+sources = [
+  "https://cache.nixos.org/",
+]

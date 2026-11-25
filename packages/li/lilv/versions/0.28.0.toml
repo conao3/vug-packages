@@ -1,0 +1,25 @@
+version = "0.28.0"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "lilv"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/sfvrj2snsy0hn2kbvax3cy96pbmvyd3d-lilv-0.28.0"
+nar-hash = "sha256:0ns0i5vyj0xf1l7liic4nc4p9wk02dzw55vy25r3jdqllvk23szr"
+expose = [
+  "bin/lv2apply",
+  "bin/lv2bench",
+  "bin/lv2info",
+  "bin/lv2ls",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []

@@ -1,0 +1,8 @@
+name = "libbs2b"
+license = "MIT"
+
+[upstream]
+homepage = "https://bs2b.sourceforge.net/"
+sources = [
+  "https://cache.nixos.org/",
+]

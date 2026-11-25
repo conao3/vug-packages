@@ -1,0 +1,57 @@
+version = "0.8"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
+attribute = "sound-theme-freedesktop"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/b4hzidkkk29l6w36xcqs7dsmjddq6ix9-sound-theme-freedesktop-0.8"
+nar-hash = "sha256:1b59a12jab277pqbkdn8qsp5jw2g5pcjf1nnxaj2dd0iaig959dx"
+expose = [
+  "share/sounds/freedesktop/index.theme",
+  "share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga",
+  "share/sounds/freedesktop/stereo/audio-channel-front-center.oga",
+  "share/sounds/freedesktop/stereo/audio-channel-front-left.oga",
+  "share/sounds/freedesktop/stereo/audio-channel-front-right.oga",
+  "share/sounds/freedesktop/stereo/audio-channel-rear-center.oga",
+  "share/sounds/freedesktop/stereo/audio-channel-rear-left.oga",
+  "share/sounds/freedesktop/stereo/audio-channel-rear-right.oga",
+  "share/sounds/freedesktop/stereo/audio-channel-side-left.oga",
+  "share/sounds/freedesktop/stereo/audio-channel-side-right.oga",
+  "share/sounds/freedesktop/stereo/audio-test-signal.oga",
+  "share/sounds/freedesktop/stereo/audio-volume-change.oga",
+  "share/sounds/freedesktop/stereo/bell.oga",
+  "share/sounds/freedesktop/stereo/camera-shutter.oga",
+  "share/sounds/freedesktop/stereo/complete.oga",
+  "share/sounds/freedesktop/stereo/device-added.oga",
+  "share/sounds/freedesktop/stereo/device-removed.oga",
+  "share/sounds/freedesktop/stereo/dialog-error.oga",
+  "share/sounds/freedesktop/stereo/dialog-information.oga",
+  "share/sounds/freedesktop/stereo/dialog-warning.oga",
+  "share/sounds/freedesktop/stereo/message-new-instant.oga",
+  "share/sounds/freedesktop/stereo/message.oga",
+  "share/sounds/freedesktop/stereo/network-connectivity-established.oga",
+  "share/sounds/freedesktop/stereo/network-connectivity-lost.oga",
+  "share/sounds/freedesktop/stereo/phone-incoming-call.oga",
+  "share/sounds/freedesktop/stereo/phone-outgoing-busy.oga",
+  "share/sounds/freedesktop/stereo/phone-outgoing-calling.oga",
+  "share/sounds/freedesktop/stereo/power-plug.oga",
+  "share/sounds/freedesktop/stereo/power-unplug.oga",
+  "share/sounds/freedesktop/stereo/screen-capture.oga",
+  "share/sounds/freedesktop/stereo/service-login.oga",
+  "share/sounds/freedesktop/stereo/service-logout.oga",
+  "share/sounds/freedesktop/stereo/suspend-error.oga",
+  "share/sounds/freedesktop/stereo/trash-empty.oga",
+  "share/sounds/freedesktop/stereo/window-attention.oga",
+  "share/sounds/freedesktop/stereo/window-question.oga",
+]
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []

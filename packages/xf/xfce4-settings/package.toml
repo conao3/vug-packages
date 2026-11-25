@@ -1,0 +1,8 @@
+name = "xfce4-settings"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://gitlab.xfce.org/xfce/xfce4-settings"
+sources = [
+  "https://cache.nixos.org/",
+]
