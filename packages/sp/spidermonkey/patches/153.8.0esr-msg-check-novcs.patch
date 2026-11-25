@@ -1,0 +1,29 @@
+--- a/config/check_js_msg_encoding.py	2026-11-25 16:23:26.273450032 +0900
++++ b/config/check_js_msg_encoding.py	2026-11-25 16:23:26.292569691 +0900
+@@ -46,7 +46,25 @@
+ def check_files():
+     result = True
+ 
+-    with get_repository_from_env() as repo:
++    try:
++        repo = get_repository_from_env()
++    except Exception:
++        repo = None
++
++    if repo is None:
++        topsrcdir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
++        for dirpath, _, filenames in os.walk(topsrcdir):
++            for name in filenames:
++                if not name.endswith(".msg"):
++                    continue
++                path = os.path.join(dirpath, name)
++                if os.path.relpath(path, topsrcdir) in ignore_files:
++                    continue
++                if not check_single_file(path):
++                    result = False
++        return result
++
++    with repo:
+         root = repo.path
+ 
+         for filename, _ in repo.get_tracked_files_finder().find("**/*.msg"):

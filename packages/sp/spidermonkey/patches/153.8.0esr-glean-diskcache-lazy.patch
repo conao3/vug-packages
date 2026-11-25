@@ -1,0 +1,19 @@
+Make the diskcache import optional. diskcache pulls in sqlite3, which the
+vug python does not provide; it is only used to cache remote fetches, and
+metrics generation uses local yaml files, so it is never needed at build
+time.
+
+--- a/third_party/python/glean_parser/glean_parser/util.py
++++ b/third_party/python/glean_parser/glean_parser/util.py
+@@ -14,7 +14,10 @@
+ from typing import Any, Callable, Iterable, Sequence, Tuple, Union, Optional
+ import urllib.request
+ 
+-import diskcache  # type: ignore
++try:
++    import diskcache  # type: ignore
++except ImportError:
++    diskcache = None  # type: ignore
+ import jinja2
+ import jsonschema  # type: ignore
+ from jsonschema import _utils  # type: ignore

@@ -1,0 +1,19 @@
+Recognize zig's self-hosted linker in select_linker. `zig cc
+-Wl,--version` prints "zig ld <version>"; the linker is lld-compatible,
+so treat it as lld. Without this the kind comes out "unknown",
+GCC_USE_GNU_LD stays unset, and config_status dies with
+"SharedLibrary object has no attribute symbols_link_arg".
+
+--- a/build/moz.configure/toolchain.configure
++++ b/build/moz.configure/toolchain.configure
+@@ -1808,6 +1808,10 @@
+             elif "GNU gold" in stdout:
+                 kind = "gold"
+ 
++            elif "zig ld" in stdout:
++                # zig's self-hosted linker is lld-compatible.
++                kind = "lld"
++
+             elif "LLD" in stdout:
+                 kind = "lld"
+ 

@@ -1,0 +1,15 @@
+--- a/config/check_vanilla_allocations.py	2026-11-25 16:41:36.801520602 +0900
++++ b/config/check_vanilla_allocations.py	2026-11-25 16:41:36.821475129 +0900
+@@ -156,6 +156,12 @@
+         # where `aStr` is a `std::stringstream`. In inlined opt builds, this calls
+         # `operator new()` and `operator delete` for a temporary.
+         "Debug.o",
++        # libc++ std::function::__func::__clone allocates through operator
++        # new, which mozalloc's weak operator new definition gets inlined
++        # into, leaving a weak `moz_xmalloc` reference in unified objects.
++        "Unified_cpp_js_src_debugger0.o",
++        "Unified_cpp_js_src_irregexp0.o",
++        "Unified_cpp_js_src_vm11.o",
+     ]
+     all_ignored_files = set((f, 1) for f in ignored_files)
+ 

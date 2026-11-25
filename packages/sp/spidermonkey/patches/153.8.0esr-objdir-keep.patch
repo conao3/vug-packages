@@ -1,0 +1,8 @@
+Create a separate objdir for the standalone js build. Running the top
+configure from js/src makes the objdir equal js/src, which the build
+system rejects when a moz.build LOCAL_INCLUDES resolves to topobjdir.
+
+--- /dev/null
++++ b/obj/.keep
+@@ -0,0 +1 @@
++

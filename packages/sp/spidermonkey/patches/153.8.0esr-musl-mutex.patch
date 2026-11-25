@@ -1,0 +1,22 @@
+--- a/memory/build/Mutex.h	2026-11-25 15:42:10.929245915 +0900
++++ b/memory/build/Mutex.h	2026-11-25 15:42:17.259401560 +0900
+@@ -50,7 +50,8 @@
+   mozilla::detail::MaybeStorageBase<CRITICAL_SECTION> mMutex;
+ #elif defined(XP_DARWIN)
+   os_unfair_lock mMutex = OS_UNFAIR_LOCK_INIT;
+-#elif defined(XP_LINUX) && !defined(ANDROID)
++#elif defined(XP_LINUX) && !defined(ANDROID) && \
++    defined(PTHREAD_ADAPTIVE_MUTEX_INITIALIZER_NP)
+   pthread_mutex_t mMutex = PTHREAD_ADAPTIVE_MUTEX_INITIALIZER_NP;
+ #else
+   pthread_mutex_t mMutex = PTHREAD_MUTEX_INITIALIZER;
+@@ -85,7 +86,9 @@
+     if (pthread_mutexattr_init(&attr) != 0) {
+       return false;
+     }
++#ifdef PTHREAD_MUTEX_ADAPTIVE_NP
+     pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_ADAPTIVE_NP);
++#endif
+     if (pthread_mutex_init(&mMutex, &attr) != 0) {
+       pthread_mutexattr_destroy(&attr);
+       return false;

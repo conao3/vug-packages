@@ -1,0 +1,34 @@
+Drop rustc's self-contained CRT objects in the linker wrapper. zig cc
+ignores -nostartfiles and always injects its own musl crt1/crti/crtn
+set, so rustc's rcrt1.o/crti.o/... arrive twice ("duplicate symbol:
+_start"). zig's CRT is the right one anyway: zig links a static musl
+executable regardless of the -static-pie flag it discards.
+
+--- a/build/cargo-linker
++++ b/build/cargo-linker
+@@ -46,6 +46,25 @@
+ wrap_ld = os.environ["MOZ_CARGO_WRAP_LD"]
+ args = []
+ for arg in sys.argv[1:]:
++    if (
++        "self-contained" in arg
++        and os.path.basename(arg)
++        in {
++            "crt1.o",
++            "crti.o",
++            "crtn.o",
++            "crtbegin.o",
++            "crtbeginS.o",
++            "crtend.o",
++            "crtendS.o",
++            "rcrt1.o",
++        }
++    ):
++        # zig cc ignores -nostartfiles and always injects its own musl CRT
++        # objects; rustc's self-contained copies would duplicate them
++        # ("duplicate symbol: _start"). zig's set is complete for the static
++        # musl binaries produced here.
++        continue
+     if arg in ["-lc++", "-lstdc++"]:
+         wrap_ld = os.environ["MOZ_CARGO_WRAP_LD_CXX"]
+     elif use_clang_sanitizer and arg.endswith("san.a"):

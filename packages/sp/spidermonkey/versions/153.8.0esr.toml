@@ -1,0 +1,61 @@
+version = "153.8.0esr"
+patches = [
+  "153.8.0esr-mozboot-lazy-ssl.patch",
+  "153.8.0esr-objdir-keep.patch",
+  "153.8.0esr-zig-ld-detect.patch",
+  "153.8.0esr-glean-diskcache-lazy.patch",
+  "153.8.0esr-cargo-linker-nostartfiles.patch",
+  "153.8.0esr-musl-mutex.patch",
+  "153.8.0esr-musl-malloc-nothrow.patch",
+  "153.8.0esr-system-wrappers.patch",
+  "153.8.0esr-msg-check-novcs.patch",
+  "153.8.0esr-vanilla-alloc-ignores.patch",
+]
+
+[source]
+url = "https://ftp.mozilla.org/pub/firefox/releases/153.8.0esr/source/firefox-153.8.0esr.source.tar.xz"
+sha256 = "824d5e0bbcae30825ee4ec3267d21018b01d33ac2fda50065de8c41153d4ec85"
+
+[build]
+kind = "autotools"
+path = "obj"
+configure-command = [
+  "../js/src/configure",
+  "--prefix={out}",
+]
+configure-flags = [
+  "--enable-readline",
+  "--host=x86_64-unknown-linux-musl",
+  "CXX=c++",
+  "--with-system-icu",
+  "--with-system-nspr",
+  "--with-system-zlib",
+]
+
+[dependencies]
+build = [
+  "bash",
+  "binutils",
+  "cbindgen",
+  "llvm",
+  "m4",
+  "make",
+  "perl",
+  "pkgconf",
+  "python",
+  "rust",
+  "which",
+  "zip",
+]
+run = [
+  "icu4c",
+  "libcxx",
+  "musl",
+  "nspr",
+  "readline",
+  "zlib",
+]
+
+[check]
+enabled = true
+skip = []
