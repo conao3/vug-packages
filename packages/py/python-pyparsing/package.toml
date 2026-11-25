@@ -1,0 +1,8 @@
+name = "python-pyparsing"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/pyparsing/pyparsing/"
+sources = [
+  "https://files.pythonhosted.org/packages/source/p/pyparsing/",
+]

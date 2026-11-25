@@ -1,0 +1,25 @@
+version = "3.3.3"
+
+[source]
+url = "https://files.pythonhosted.org/packages/source/p/pyparsing/pyparsing-3.3.3.tar.gz"
+sha256 = "928ae7e20211f3b6f3915a72f06a0cfd29ab9d24279dd6346b6b1a7146397d36"
+
+[build]
+kind = "python"
+imports = [
+  "pyparsing",
+]
+
+[dependencies]
+build = [
+  "python-build",
+  "python-flit-core",
+  "python-installer",
+]
+run = [
+  "python",
+]
+
+[check]
+enabled = true
+skip = []
