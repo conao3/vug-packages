@@ -1,0 +1,47 @@
+version = "2.62.2"
+
+[source]
+url = "https://download.gnome.org/sources/at-spi2-core/2.62/at-spi2-core-2.62.2.tar.xz"
+sha256 = "7ce81820ddf873b8d930177e0790f730f60d22d8e0acee9ba8f75d8202598de3"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dc_link_args=-lintl -Wl,-rpath,{dep:dbus}/lib -Wl,-rpath,{dep:dbus-broker}/lib -Wl,-rpath,{dep:gettext}/lib -Wl,-rpath,{dep:glib}/lib -Wl,-rpath,{dep:libx11}/lib -Wl,-rpath,{dep:libxext}/lib -Wl,-rpath,{dep:libxi}/lib -Wl,-rpath,{dep:libxml2}/lib -Wl,-rpath,{dep:libxtst}/lib -Wl,-rpath,{dep:musl}/lib -Wl,-rpath,{dep:systemd}/lib",
+  "-Dintrospection=disabled",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "dbus-broker",
+  "gettext",
+  "gobject-introspection",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "dbus",
+  "dbus-broker",
+  "gettext",
+  "glib",
+  "libx11",
+  "libxext",
+  "libxi",
+  "libxml2",
+  "libxtst",
+  "musl",
+  "systemd",
+]
+
+[check]
+enabled = true
+skip = [
+  "atk-test",
+  "dbind-test",
+  "direct-connection",
+  "droute-test",
+  "memory",
+]

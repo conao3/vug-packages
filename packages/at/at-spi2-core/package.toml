@@ -1,0 +1,8 @@
+name = "at-spi2-core"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://gitlab.gnome.org/GNOME/at-spi2-core"
+sources = [
+  "https://download.gnome.org/sources/at-spi2-core/",
+]
