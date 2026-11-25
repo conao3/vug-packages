@@ -1,0 +1,8 @@
+name = "xdg-dbus-proxy"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://github.com/flatpak/xdg-dbus-proxy"
+sources = [
+  "https://github.com/flatpak/xdg-dbus-proxy/releases/download/",
+]

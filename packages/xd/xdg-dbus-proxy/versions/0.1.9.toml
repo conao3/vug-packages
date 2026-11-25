@@ -1,0 +1,29 @@
+version = "0.1.9"
+
+[source]
+url = "https://github.com/flatpak/xdg-dbus-proxy/releases/download/0.1.9/xdg-dbus-proxy-0.1.9.tar.xz"
+sha256 = "5450dda586ec3bb3ca709d311e845487883faa3b09cf562608d7e84f4311dced"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dman=disabled",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "dbus",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "glib",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
