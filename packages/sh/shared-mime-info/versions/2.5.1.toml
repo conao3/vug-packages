@@ -1,0 +1,32 @@
+version = "2.5.1"
+
+[source]
+url = "https://gitlab.freedesktop.org/api/v4/projects/xdg%2Fshared-mime-info/repository/archive.tar.gz?sha=refs%2Ftags%2F2.5.1"
+sha256 = "c025ee6321700f0b2fd68fc3c0966fa3df64f65b890d0fcadda6c64a86b5d313"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dbuild-spec=false",
+  "-Dbuild-tests=false",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "gettext",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "glib",
+  "libcxx",
+  "libxml2",
+  "musl",
+]
+
+[check]
+enabled = false
+skip = []

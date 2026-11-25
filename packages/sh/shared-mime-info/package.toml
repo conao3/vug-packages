@@ -1,0 +1,8 @@
+name = "shared-mime-info"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/xdg/shared-mime-info"
+sources = [
+  "https://gitlab.freedesktop.org/api/v4/projects/xdg%2Fshared-mime-info/",
+]
