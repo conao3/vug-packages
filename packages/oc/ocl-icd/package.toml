@@ -1,0 +1,8 @@
+name = "ocl-icd"
+license = "BSD-2-Clause"
+
+[upstream]
+homepage = "https://github.com/OCL-dev/ocl-icd"
+sources = [
+  "https://github.com/OCL-dev/ocl-icd/archive/",
+]
