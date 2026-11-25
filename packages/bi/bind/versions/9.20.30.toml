@@ -23,6 +23,16 @@ expose = [
   "bin/host",
 ]
 
+[build.nix-outputs.out]
+store-path = "/nix/store/q2ylz11l5adqh638pj11n2353ii5rbf2-bind-9.20.30-dnsutils"
+nar-hash = "sha256:0s3iw4sg380fwf5ad1wrn7zykzx1kq13phlfra615rh2dy13wmib"
+expose = [
+  "bin/delv",
+  "bin/dig",
+  "bin/nslookup",
+  "bin/nsupdate",
+]
+
 [dependencies]
 build = []
 run = []
