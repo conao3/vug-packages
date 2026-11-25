@@ -1,0 +1,8 @@
+name = "argp-standalone"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://github.com/argp-standalone/argp-standalone"
+sources = [
+  "https://github.com/argp-standalone/argp-standalone/archive/refs/tags/",
+]
