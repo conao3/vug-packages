@@ -1,0 +1,20 @@
+version = "5.3p20"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "93a9ed0a866099a230ed5146a5bb7d16fd5c9b14"
+attribute = "bash"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/lfm00fnq66xfgbn099vqckabyl5jllz6-bash-interactive-5.3p20"
+nar-hash = "sha256:05dqwb9wz9nmmi0b93lv9cc4c4gw4f2hzqg1bzgrwxwlpcqsdbcr"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
