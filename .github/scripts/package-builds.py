@@ -279,6 +279,11 @@ def cache_plan():
         _, shard, name, *_ = os.fsdecode(path).split("/")
         if is_package(shard, name) and (CANDIDATE / "packages" / shard / name / "package.toml").is_file():
             packages.add(name)
+    for name in os.environ.get("REBUILD_PACKAGES", "").split():
+        shard = name[:2] if len(name) > 1 else name + "_"
+        if not is_package(shard, name) or not (CANDIDATE / "packages" / shard / name / "package.toml").is_file():
+            raise ValueError(f"Unknown package to rebuild: {name!r}")
+        packages.add(name)
     CACHE_PUBLISH_PLAN.touch()
     step_output("changed", json.dumps(sorted(packages)))
     return 0
