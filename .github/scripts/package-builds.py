@@ -270,6 +270,7 @@ def cache_plan():
     ensure_commit(base)
     ensure_commit(head)
     checkout(head, CANDIDATE)
+    checkout(base, TEMP / "previous")
     step_output("tag", vug_tag())
     files = git("diff", "--name-only", "--no-renames", "-z", base, head, "--", "packages/",
                 capture_output=True).stdout

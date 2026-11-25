@@ -1,13 +1,14 @@
 # Publishing binary cache generations
 
 Use vug 0.2.13 or later to export a signed cache into a fresh directory.
-Pass an index prepared for the package and system outputs of one fixed
-repository commit to `vug store export-cache` using `--data-dir`. The
-publisher derives the retained object set from the key files in this
-export, including split-output manifests. An export containing accumulated
-keys from previous builds is unsuitable as the current generation.
+Stage the indexes against a fixed repository checkout before signing a
+public export. The staging script copies matching version indexes, skips
+packages excluded from public redistribution, and reads archives from
+the original store tree.
 
 ```sh
+python3 .github/scripts/cache-export-index.py --root . --data-dir data --directory staged
+vug store export-cache --data-dir staged --directory current --secret-key-file signing.key
 python3 .github/scripts/cache-publish.py --directory published --generation current
 python3 .github/scripts/cache-publish.py --directory published --generation current --apply
 ```
@@ -24,23 +25,24 @@ Use `--s3` in place of `--directory` with boto3 installed. Set
 `AWS_SESSION_TOKEN` when using temporary credentials. Keep the signing
 key in the signing process and give the publisher only its signed export.
 
-The publisher removes obsolete keys before obsolete archives. After
-pruning it counts every object in the destination and projects the size
-after upload. If the total would exceed `--max-bytes` (default
-9,000,000,000 bytes), it exits before uploading. It uploads compressed
+The publisher projects the size after upload before writing. If the total
+would exceed `--max-bytes` (default 9,000,000,000 bytes), it exits.
+With pruning enabled, it removes obsolete keys before obsolete archives.
+Use `--no-prune` to preserve every existing object and count its size
+against the limit. The publisher uploads compressed
 archives before signed keys and split-output manifests. A conflicting
 existing key causes publication to stop before pruning. Reapply with the
 same export to resume an interrupted upload.
 
 ## GitHub Actions
 
-The master push workflow builds changed packages before signing their outputs
-in a separate step. It runs the publisher with `--repository` on the fixed
-checkout. vug 0.2.14 or newer derives the current generation from the
-repository's current package records and an overlay of the signed export
-and existing cache metadata. The publisher uses no persisted index. It
-retains all named outputs of each reachable split manifest. System
-records use these same package outputs.
+The master push workflow builds changed packages before staging and
+signing their outputs in a separate step. It uses `--keep 2` with the
+before and after checkouts. vug 0.2.14 or newer resolves reachable keys
+for each checkout against an overlay of the signed export and existing
+cache metadata. The publisher includes all named outputs of each
+reachable split manifest. System records use these same package outputs.
+The workflow preserves existing objects with `--no-prune`.
 
 The read-only cache URL is `https://pub-da78c0bd9fc84d998fefca158806f160.r2.dev`.
 Set the repository variable `VUG_CACHE_PUBLIC_KEY`.

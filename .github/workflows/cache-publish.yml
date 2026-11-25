@@ -7,6 +7,8 @@ on:
       - 'systems/**'
       - 'services/**'
       - 'seed.toml'
+      - '.github/scripts/cache-export-index.py'
+      - '.github/scripts/cache-publish.py'
       - '.github/workflows/cache-publish.yml'
 permissions:
   contents: read
@@ -70,10 +72,13 @@ jobs:
           trap 'rm -f "$keyfile"' EXIT
           printf '%s\n' "$VUG_CACHE_SIGNING_KEY" > "$keyfile"
           unset VUG_CACHE_SIGNING_KEY
+          python3 .github/scripts/cache-export-index.py \
+            --root "$RUNNER_TEMP/candidate" --data-dir "$RUNNER_TEMP/vug-data" \
+            --directory "$RUNNER_TEMP/cache-export-index"
           "$RUNNER_TEMP/vug/bin/vug" store export-cache \
-            --directory "$RUNNER_TEMP/generated-cache" --data-dir "$RUNNER_TEMP/vug-data" \
+            --directory "$RUNNER_TEMP/generated-cache" --data-dir "$RUNNER_TEMP/cache-export-index" \
             --secret-key-file "$keyfile"
-      - name: Prune and publish within the byte limit
+      - name: Publish within the byte limit
         shell: bash
         if: steps.config.outputs.ready == 'true'
         env:
@@ -95,6 +100,7 @@ jobs:
             exit 1
           fi
           nix shell --impure --expr 'let pkgs = import (builtins.getFlake "nixpkgs") { system = builtins.currentSystem; }; in pkgs.python3.withPackages (p: [ p.boto3 ])' \
-            --command python3 .github/scripts/cache-publish.py --s3 --apply \
-            --repository "$RUNNER_TEMP/candidate" --vug "$RUNNER_TEMP/vug/bin/vug" \
+            --command python3 .github/scripts/cache-publish.py --s3 --apply --no-prune --keep 2 \
+            --repository "$RUNNER_TEMP/candidate" --repository "$RUNNER_TEMP/previous" \
+            --vug "$RUNNER_TEMP/vug/bin/vug" \
             --generation "$RUNNER_TEMP/generated-cache" --trusted-key "$VUG_CACHE_PUBLIC_KEY"

@@ -129,7 +129,7 @@ class Bucket:
             )
 
 
-def reachable(args, target, sizes, desired):
+def reachable(args, repository, target, sizes, desired):
     """Expose exclusively the signed metadata to the local vug resolver."""
     class Metadata(BaseHTTPRequestHandler):
         def log_message(self, *_args):
@@ -159,7 +159,7 @@ def reachable(args, target, sizes, desired):
         try:
             result = subprocess.run(
                 [args.vug, "--output", "json", "store", "list-cache",
-                 "--root", args.repository,
+                 "--root", repository,
                  "--binary-cache", f"http://127.0.0.1:{server.server_port}",
                  "--trusted-key", args.trusted_key],
                 capture_output=True, text=True,
@@ -188,7 +188,12 @@ def publish(args):
 
     target = Directory(args.directory) if args.directory else Bucket()
     sizes = target.sizes()
-    retained = reachable(args, target, sizes, desired) if args.repository else desired.keys()
+    if args.repository:
+        retained = set()
+        for repository in args.repository[:args.keep]:
+            retained.update(reachable(args, repository, target, sizes, desired))
+    else:
+        retained = set(desired)
     stale = sorted(
         (name for name in sizes.keys() - retained
          if KEY.fullmatch(name) or ARCHIVE.fullmatch(name)
@@ -204,6 +209,8 @@ def publish(args):
         ):
             raise CacheError(f"Destination object conflicts with export: {name}")
 
+    if args.no_prune:
+        stale = []
     for name in stale:
         print(f"Delete {name} ({sizes[name]} bytes)")
     removed = sum(sizes[name] for name in stale)
@@ -213,19 +220,16 @@ def publish(args):
     }
     incoming = sum(source.stat().st_size for source in pending.values())
     print(f"Total to delete: {removed} bytes")
+    total = sum(sizes.values()) - removed + incoming
+    print(f"Projected total: {total} bytes (limit: {args.max_bytes} bytes)")
+    if total > args.max_bytes:
+        raise CacheError("Projected total exceeds the byte limit")
     if args.apply:
         for name in stale:
             target.delete(name)
         after_prune = target.sizes()
         if after_prune != {name: size for name, size in sizes.items() if name not in stale}:
             raise CacheError("Destination changed during pruning")
-        total = sum(after_prune.values()) + incoming
-    else:
-        total = sum(sizes.values()) - removed + incoming
-    print(f"Projected total: {total} bytes (limit: {args.max_bytes} bytes)")
-    if total > args.max_bytes:
-        raise CacheError("Projected total exceeds the byte limit")
-    if args.apply:
         for name in sorted(pending, key=lambda name: (not ARCHIVE.fullmatch(name), name)):
             target.put(name, pending[name])
 
@@ -238,17 +242,20 @@ def main():
     parser.add_argument("--generation", type=Path, action="append", required=True,
                         help="complete signed export directory, newest first (repeatable)")
     parser.add_argument("--keep", type=int, default=1)
-    parser.add_argument("--repository", type=Path, help="derive retention from current records")
+    parser.add_argument("--repository", type=Path, action="append",
+                        help="derive retention from checked-out records, newest first (repeatable)")
     parser.add_argument("--vug", default="vug", help="vug executable used with --repository")
     parser.add_argument("--trusted-key", help="public key used with --repository")
     parser.add_argument("--max-bytes", type=int, default=DEFAULT_LIMIT)
+    parser.add_argument("--no-prune", action="store_true", help="preserve every existing object")
     parser.add_argument("--apply", action="store_true", help="apply the plan")
     args = parser.parse_args()
-    if not 1 <= args.keep <= len(args.generation) or args.max_bytes < 1:
+    generations = args.repository or args.generation
+    if not 1 <= args.keep <= len(generations) or args.max_bytes < 1:
         parser.error("require 1 <= keep <= the number of generations and max-bytes >= 1")
     if args.repository:
-        if args.keep != 1:
-            parser.error("--repository requires exactly one retained generation")
+        if len(args.generation) != 1:
+            parser.error("--repository requires one staged export")
         if not re.fullmatch(r"[0-9a-fA-F]{64}", args.trusted_key or ""):
             parser.error("--repository requires a 64-digit hex public key via --trusted-key")
     try:
