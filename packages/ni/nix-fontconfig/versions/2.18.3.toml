@@ -1,0 +1,20 @@
+version = "2.18.3"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "93a9ed0a866099a230ed5146a5bb7d16fd5c9b14"
+attribute = "fontconfig.lib"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/rbppbs3qnv7as8wnz7mn5h4wx0wjq4yn-fontconfig-2.18.3-lib"
+nar-hash = "sha256:00i78ghv42ar2xrsinq1d65ii038nsaa85qq31ndh78dnsk1a062"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []

@@ -1,0 +1,8 @@
+name = "nix-fontconfig"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/NixOS/nixpkgs"
+sources = [
+  "https://cache.nixos.org/",
+]
