@@ -1,0 +1,32 @@
+version = "0.2.13"
+
+[source]
+url = "https://download.gnome.org/sources/libmanette/0.2/libmanette-0.2.13.tar.xz"
+sha256 = "287cc2fde0de092919366af757d85e7b3a0248eb1b395344726e97955a77d8ae"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dintrospection=false",
+  "-Dvapi=false",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "glib",
+  "hidapi",
+  "libevdev",
+  "libgudev",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
