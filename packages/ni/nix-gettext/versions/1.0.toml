@@ -1,0 +1,20 @@
+version = "1.0"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "93a9ed0a866099a230ed5146a5bb7d16fd5c9b14"
+attribute = "gettext"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/5fqzqh8jg38w6m3xn76gymn44n0n5bwm-gettext-1.0"
+nar-hash = "sha256:18gahra7p494wl0ds6b6p2m9r0zwjix9f0gv4rwf0chc400pa9l6"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
