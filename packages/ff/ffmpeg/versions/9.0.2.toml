@@ -15,6 +15,15 @@ expose = [
   "bin/ffprobe",
 ]
 
+[build.nix-outputs.out]
+store-path = "/nix/store/g02x8w554zwgflvm6fdnafqzzkrhh3rp-ffmpeg-9.0.2-bin"
+nar-hash = "sha256:10y5wc5d0ssqk9mix7vbgk2jcnda4m19j8ifjgsg0yk2dj7691z8"
+expose = [
+  "bin/ffmpeg",
+  "bin/ffplay",
+  "bin/ffprobe",
+]
+
 [dependencies]
 build = []
 run = []
