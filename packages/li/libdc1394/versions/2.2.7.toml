@@ -1,0 +1,30 @@
+version = "2.2.7"
+patches = [
+  "2.2.7-juju-no-vla-in-struct.patch",
+]
+
+[source]
+url = "https://downloads.sourceforge.net/libdc1394/libdc1394-2.2.7.tar.gz"
+sha256 = "537ceb78dd3cef271a183f4a176191d1cecf85f025520e6bd3758b0e19e6609f"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--disable-examples",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "pkgconf",
+]
+run = [
+  "libraw1394",
+  "libusb",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []

@@ -1,0 +1,8 @@
+name = "libdc1394"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://damien.douxchamps.net/ieee1394/libdc1394/"
+sources = [
+  "https://downloads.sourceforge.net/libdc1394/",
+]
