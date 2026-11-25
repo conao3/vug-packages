@@ -1,0 +1,8 @@
+name = "cbindgen"
+license = "MPL-2.0"
+
+[upstream]
+homepage = "https://github.com/mozilla/cbindgen"
+sources = [
+  "https://github.com/mozilla/cbindgen/archive/refs/tags/",
+]

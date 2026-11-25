@@ -1,0 +1,23 @@
+version = "0.29.4"
+
+[source]
+url = "https://github.com/mozilla/cbindgen/archive/refs/tags/v0.29.4.tar.gz"
+sha256 = "9b5757e915cf8be523d3aca282b9b5651bafa112e14bf1ba488562ba282807d6"
+
+[build]
+kind = "cargo"
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "rust",
+]
+run = [
+  "musl",
+  "rust-libunwind",
+]
+
+[check]
+enabled = false
+skip = []
