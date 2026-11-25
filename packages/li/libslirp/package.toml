@@ -1,0 +1,8 @@
+name = "libslirp"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/slirp/libslirp"
+sources = [
+  "https://gitlab.freedesktop.org/api/v4/projects/slirp%2Flibslirp/repository/",
+]

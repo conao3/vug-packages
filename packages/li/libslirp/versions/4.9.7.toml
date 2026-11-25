@@ -1,0 +1,25 @@
+version = "4.9.7"
+
+[source]
+url = "https://gitlab.freedesktop.org/api/v4/projects/slirp%2Flibslirp/repository/archive.tar.gz?sha=refs%2Ftags%2Fv4.9.7"
+sha256 = "4b17766c4698de4a560f26cab1addce0032a986567963c55f71591282f1aeecb"
+
+[build]
+kind = "meson"
+
+[dependencies]
+build = [
+  "binutils",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "glib",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
