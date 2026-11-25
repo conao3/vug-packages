@@ -1,0 +1,37 @@
+version = "1.3.0"
+
+[source]
+url = "https://gitlab.freedesktop.org/api/v4/projects/virgl%2Fvirglrenderer/repository/archive.tar.gz?sha=refs%2Ftags%2F1.3.0"
+sha256 = "6453616084510b05f084600dfa3cbd2f9a48e55a6073fb13cf4ef63746820427"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dvenus=true",
+  "-Dvideo=true",
+  "-Dc_args=-Wno-c23-extensions",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "mesa:dev",
+  "meson",
+  "pkgconf",
+  "python",
+  "python-pyyaml",
+  "samurai",
+]
+run = [
+  "libdrm",
+  "libepoxy",
+  "libva",
+  "libx11",
+  "mesa",
+  "musl",
+  "vulkan-loader",
+]
+
+[check]
+enabled = false
+skip = []

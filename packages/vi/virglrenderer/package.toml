@@ -1,0 +1,8 @@
+name = "virglrenderer"
+license = "MIT"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/virgl/virglrenderer"
+sources = [
+  "https://gitlab.freedesktop.org/api/v4/projects/",
+]
