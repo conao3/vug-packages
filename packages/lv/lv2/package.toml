@@ -1,0 +1,8 @@
+name = "lv2"
+license = "ISC"
+
+[upstream]
+homepage = "https://lv2plug.in/"
+sources = [
+  "https://lv2plug.in/spec/",
+]
