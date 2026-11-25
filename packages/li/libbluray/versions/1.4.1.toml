@@ -1,0 +1,30 @@
+version = "1.4.1"
+
+[source]
+url = "https://get.videolan.org/libbluray/1.4.1/libbluray-1.4.1.tar.xz"
+sha256 = "76b5dc40097f28dca4ebb009c98ed51321b2927453f75cc72cf74acd09b9f449"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dbdj_jar=disabled",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "fontconfig",
+  "freetype",
+  "libxml2",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []
