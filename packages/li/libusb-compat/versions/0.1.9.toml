@@ -1,0 +1,23 @@
+version = "0.1.9"
+
+[source]
+url = "https://github.com/libusb/libusb-compat-0.1/releases/download/v0.1.9/libusb-compat-0.1.9.tar.gz"
+sha256 = "b09aa33e943080352041ea3d5ac01fd90ea96e9337212865de0dda776886dbb9"
+
+[build]
+kind = "autotools"
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+  "pkgconf",
+]
+run = [
+  "libusb",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []

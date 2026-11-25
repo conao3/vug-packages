@@ -1,0 +1,8 @@
+name = "libusb-compat"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://github.com/libusb/libusb-compat-0.1"
+sources = [
+  "https://github.com/libusb/libusb-compat-0.1/releases/download/",
+]
