@@ -1,0 +1,8 @@
+name = "libsrtp"
+license = "BSD-3-Clause"
+
+[upstream]
+homepage = "https://github.com/cisco/libsrtp"
+sources = [
+  "https://github.com/cisco/libsrtp/archive/",
+]

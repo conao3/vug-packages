@@ -1,0 +1,18 @@
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -195,13 +195,11 @@
+ 
+ $(testapp): libsrtp2.a
+ 
+-test/rtpw$(EXE): test/rtpw.c test/rtp.c test/util.c test/getopt_s.c \
+-		crypto/math/datatypes.c
++test/rtpw$(EXE): test/rtpw.c test/rtp.c test/util.c test/getopt_s.c
+ 	$(COMPILE) $(LDFLAGS) -o $@ $^ $(LIBS) $(SRTPLIB)
+ 
+ ifeq (1, $(HAVE_PCAP))
+-test/rtp_decoder$(EXE): test/rtp_decoder.c test/rtp.c test/util.c test/getopt_s.c \
+-		crypto/math/datatypes.c
++test/rtp_decoder$(EXE): test/rtp_decoder.c test/rtp.c test/util.c test/getopt_s.c
+ 	$(COMPILE) $(LDFLAGS) -o $@ $^ $(PCAP_LIB) $(LIBS) $(SRTPLIB)
+ endif
+ 
