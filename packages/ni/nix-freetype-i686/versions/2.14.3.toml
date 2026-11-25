@@ -1,0 +1,20 @@
+version = "2.14.3"
+
+[build]
+kind = "nix-output"
+system = "i686-linux"
+nixpkgs-rev = "93a9ed0a866099a230ed5146a5bb7d16fd5c9b14"
+attribute = "freetype"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/pql6qvrz8g3rvg1zk0bppnhxwccq9acc-freetype-2.14.3"
+nar-hash = "sha256:0r26ff126hviaclk1s7k8qnrvff1bh07mq57swpwhlbqapwgp6gd"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
