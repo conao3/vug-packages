@@ -21,6 +21,14 @@ on:
       replace-archives:
         description: Space-separated store IDs whose published archives are overwritten
         default: ''
+      prune:
+        description: Delete objects outside the two retained checkouts
+        type: boolean
+        default: false
+      dry-run:
+        description: Print the plan without writing
+        type: boolean
+        default: false
 permissions:
   contents: read
 concurrency:
@@ -100,6 +108,8 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.VUG_CACHE_S3_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: auto
           REPLACE_ARCHIVES: ${{ inputs.replace-archives }}
+          PRUNE: ${{ inputs.prune }}
+          DRY_RUN: ${{ inputs.dry-run }}
         run: |
           current=$(git ls-remote origin refs/heads/master | cut -f1)
           if [[ "$current" != "$GITHUB_SHA" ]]; then
@@ -113,12 +123,15 @@ jobs:
             echo "Configure the S3 endpoint secret as an HTTPS endpoint followed by the bucket name" >&2
             exit 1
           fi
+          mode=(--apply --no-prune)
+          [[ "$PRUNE" == true ]] && mode=(--apply)
+          [[ "$DRY_RUN" == true ]] && mode=()
           replace=()
           for id in $REPLACE_ARCHIVES; do
             replace+=(--replace-archive "$id")
           done
           nix shell --impure --expr 'let pkgs = import (builtins.getFlake "nixpkgs") { system = builtins.currentSystem; }; in pkgs.python3.withPackages (p: [ p.boto3 ])' \
-            --command python3 .github/scripts/cache-publish.py --s3 --apply --no-prune --keep 2 \
+            --command python3 .github/scripts/cache-publish.py --s3 "${mode[@]}" --keep 2 \
             --repository "$RUNNER_TEMP/candidate" --repository "$RUNNER_TEMP/previous" \
             --vug "$RUNNER_TEMP/vug/bin/vug" \
             "${replace[@]}" \
