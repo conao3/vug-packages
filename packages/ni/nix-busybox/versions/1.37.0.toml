@@ -1,0 +1,20 @@
+version = "1.37.0"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "93a9ed0a866099a230ed5146a5bb7d16fd5c9b14"
+attribute = "pkgsStatic.busybox"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/kxhfhki8cb10qn0sc7yz9cm7dpv5ggiy-busybox-static-x86_64-unknown-linux-musl-1.37.0"
+nar-hash = "sha256:1m44lkl0rml230brp6c9vmqcy8jjxz96ipyzn326i63pyw0hqnpx"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
