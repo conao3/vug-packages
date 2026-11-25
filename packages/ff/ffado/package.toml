@@ -1,0 +1,8 @@
+name = "ffado"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://ffado.org/"
+sources = [
+  "https://www.ffado.org/files/",
+]

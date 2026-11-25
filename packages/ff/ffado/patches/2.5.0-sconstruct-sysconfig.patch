@@ -1,0 +1,20 @@
+--- a/SConstruct	2026-11-25 09:44:52.428707397 +0900
++++ b/SConstruct	2026-11-25 09:44:52.433484747 +0900
+@@ -32,7 +32,7 @@
+ import re
+ import sys
+ from string import Template
+-import distutils.sysconfig
++import sysconfig
+ 
+ if not os.path.isdir( "cache" ):
+     os.makedirs( "cache" )
+@@ -54,7 +54,7 @@
+     PathVariable( "LIBDATADIR", "Location for architecture-dependent data.", "$LIBDIR/libffado", PathVariable.PathAccept ),
+     PathVariable( "MANDIR", "Overwrite the directory where manpages are installed", "$DATADIR/man", PathVariable.PathAccept ),
+     PathVariable( "PYPKGDIR", "The directory where the python modules get installed.",
+-        distutils.sysconfig.get_python_lib( prefix="$PREFIX" ), PathVariable.PathAccept ),
++        sysconfig.get_path( "platlib", vars={ "base": "$PREFIX", "platbase": "$PREFIX" } ), PathVariable.PathAccept ),
+     PathVariable( "UDEVDIR", "Overwrite the directory where udev rules are installed to.", "/lib/udev/rules.d/", PathVariable.PathAccept ),
+     BoolVariable( "ENABLE_BEBOB", "Enable/Disable support for the BeBoB platform.", True ),
+     BoolVariable( "ENABLE_FIREWORKS", "Enable/Disable support for the ECHO Audio FireWorks platform.", True ),

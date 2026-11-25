@@ -1,0 +1,39 @@
+version = "2.5.0"
+patches = [
+  "2.5.0-sconstruct-sysconfig.patch",
+]
+
+[source]
+url = "https://www.ffado.org/files/libffado-2.5.0.tgz"
+sha256 = "25c12d93d53988f3caf9965236ed379f167abde3ea4cc633b134ee6254d87ca1"
+
+[build]
+kind = "commands"
+commands = [
+  ["scons", "SERIALIZE_USE_EXPAT=True", "PREFIX={out}", "COMPILE_FLAGS=-Wno-reserved-user-defined-literal", "PYTHON_INTERPRETER={dep:python}/bin/python3", "UDEVDIR={out}/lib/udev/rules.d"],
+  ["sh", "-ec", "ln -sf libffado.so src/libffado.so.2 && LD_LIBRARY_PATH=\"$PWD/src\" tests/test-devicestringparser"],
+  ["scons", "install", "SERIALIZE_USE_EXPAT=True", "PREFIX={out}", "COMPILE_FLAGS=-Wno-reserved-user-defined-literal", "PYTHON_INTERPRETER={dep:python}/bin/python3", "UDEVDIR={out}/lib/udev/rules.d"],
+]
+
+[dependencies]
+build = [
+  "argp-standalone",
+  "binutils",
+  "pkgconf",
+  "scons",
+]
+run = [
+  "alsa-lib",
+  "expat",
+  "libavc1394",
+  "libconfig",
+  "libcxx",
+  "libiec61883",
+  "libraw1394",
+  "musl",
+  "python",
+]
+
+[check]
+enabled = false
+skip = []
