@@ -1,0 +1,8 @@
+name = "graphite2"
+license = "LGPL-2.1-or-later OR MPL-2.0 OR GPL-2.0-or-later OR MIT"
+
+[upstream]
+homepage = "https://graphite.sil.org/"
+sources = [
+  "https://github.com/silnrsi/graphite/releases/download/",
+]
