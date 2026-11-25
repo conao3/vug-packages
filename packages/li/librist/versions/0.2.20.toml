@@ -1,0 +1,34 @@
+version = "0.2.20"
+
+[source]
+url = "https://code.videolan.org/api/v4/projects/rist%2Flibrist/repository/archive.tar.gz?sha=v0.2.20"
+sha256 = "64a392f16317b10e54bf8d96fd1524355197dd44b8b4ce6229889b2c783572f9"
+
+[build]
+kind = "meson"
+
+[dependencies]
+build = [
+  "bash",
+  "binutils",
+  "cmocka",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "cjson",
+  "libmicrohttpd",
+  "lz4",
+  "mbedtls",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = [
+  "Simple profile multicast",
+  "Simple profile multicast packet loss 10%",
+  "Simple profile multicast packet loss 25%",
+]

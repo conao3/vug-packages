@@ -1,0 +1,8 @@
+name = "librist"
+license = "BSD-2-Clause"
+
+[upstream]
+homepage = "https://code.videolan.org/rist/librist"
+sources = [
+  "https://code.videolan.org/api/v4/projects/rist%2Flibrist/repository/",
+]
