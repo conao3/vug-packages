@@ -1,0 +1,20 @@
+version = "1.7.0"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "93a9ed0a866099a230ed5146a5bb7d16fd5c9b14"
+attribute = "libglvnd"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/j6crvk2m147s1wp0gs26iyqm26srchxz-libglvnd-1.7.0"
+nar-hash = "sha256:1pvwq8x071y2z28v2qp8293wpvqwbllssn02lpymx5ssp2bbzxyh"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
