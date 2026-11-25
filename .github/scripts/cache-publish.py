@@ -1,6 +1,7 @@
 """Prune and publish complete, signed vug cache exports."""
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
 import os
@@ -230,8 +231,12 @@ def publish(args):
         after_prune = target.sizes()
         if after_prune != {name: size for name, size in sizes.items() if name not in stale}:
             raise CacheError("Destination changed during pruning")
-        for name in sorted(pending, key=lambda name: (not ARCHIVE.fullmatch(name), name)):
-            target.put(name, pending[name])
+        with ThreadPoolExecutor(max_workers=args.upload_jobs) as pool:
+            names = sorted(pending)
+            for archives in (True, False):
+                batch = [name for name in names if bool(ARCHIVE.fullmatch(name)) == archives]
+                for _ in pool.map(target.put, batch, (pending[name] for name in batch)):
+                    pass
 
 
 def main():
@@ -248,11 +253,14 @@ def main():
     parser.add_argument("--trusted-key", help="public key used with --repository")
     parser.add_argument("--max-bytes", type=int, default=DEFAULT_LIMIT)
     parser.add_argument("--no-prune", action="store_true", help="preserve every existing object")
+    parser.add_argument("--upload-jobs", type=int, default=1, help="concurrent object uploads")
     parser.add_argument("--apply", action="store_true", help="apply the plan")
     args = parser.parse_args()
     generations = args.repository or args.generation
     if not 1 <= args.keep <= len(generations) or args.max_bytes < 1:
         parser.error("require 1 <= keep <= the number of generations and max-bytes >= 1")
+    if not 1 <= args.upload_jobs <= 10:
+        parser.error("require 1 <= upload-jobs <= 10")
     if args.repository:
         if len(args.generation) != 1:
             parser.error("--repository requires one staged export")

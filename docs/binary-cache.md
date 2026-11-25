@@ -33,6 +33,7 @@ against the limit. The publisher uploads compressed
 archives before signed keys and split-output manifests. A conflicting
 existing key causes publication to stop before pruning. Reapply with the
 same export to resume an interrupted upload.
+Use `--upload-jobs` for concurrent uploads within the archive and metadata phases.
 
 ## GitHub Actions
 
