@@ -1,0 +1,8 @@
+name = "brltty"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://brltty.app/"
+sources = [
+  "https://brltty.app/archive/",
+]
