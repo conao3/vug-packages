@@ -16,10 +16,20 @@ expose = [
   "bin/heif-thumbnailer",
 ]
 
-[build.nix-outputs.out]
+[build.nix-outputs.lib]
 store-path = "/nix/store/ni7cn1g4ngsg2m0ij2lbid6g6m8lzyp3-libheif-1.23.7"
 nar-hash = "sha256:1d1nzgv4f8h8xjy4raf9wma76lgjjyf6gx4yi4v9hcbjlfi8pl4g"
 expose = []
+
+[build.nix-outputs.out]
+store-path = "/nix/store/x786w6l4mglg91a8l9xfa58awhxsc9iw-libheif-1.23.7-bin"
+nar-hash = "sha256:0l147zk4cdrrx2mxcqy0i6x1mwp3h9yykamyyvldfv1sy20hxv27"
+expose = [
+  "bin/heif-dec",
+  "bin/heif-enc",
+  "bin/heif-info",
+  "bin/heif-thumbnailer",
+]
 
 [dependencies]
 build = []
