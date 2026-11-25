@@ -1,0 +1,25 @@
+version = "3.11"
+
+[source]
+url = "https://files.pythonhosted.org/packages/source/p/ply/ply-3.11.tar.gz"
+sha256 = "00c7c1aaa88358b9c765b6d3000c6eec0ba42abca5351b095321aef446081da3"
+
+[build]
+kind = "python"
+imports = [
+  "ply",
+]
+
+[dependencies]
+build = [
+  "python-build",
+  "python-installer",
+  "python-setuptools",
+]
+run = [
+  "python",
+]
+
+[check]
+enabled = true
+skip = []
