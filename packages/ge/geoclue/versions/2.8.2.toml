@@ -1,0 +1,40 @@
+version = "2.8.2"
+
+[source]
+url = "https://gitlab.freedesktop.org/geoclue/geoclue/-/archive/2.8.2/geoclue-2.8.2.tar.gz"
+sha256 = "5435f7d48105fe89a4259f807658281e854881267254bcd4eeac6e26c222055b"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dsystemd-system-unit-dir=lib/systemd/system",
+  "-Dc_link_args=-lintl -Wl,-rpath,{dep:avahi}/lib -Wl,-rpath,{dep:gettext}/lib -Wl,-rpath,{dep:glib}/lib -Wl,-rpath,{dep:glib-networking}/lib -Wl,-rpath,{dep:json-glib}/lib -Wl,-rpath,{dep:libsoup}/lib -Wl,-rpath,{dep:modemmanager}/lib -Wl,-rpath,{dep:musl}/lib",
+  "-Ddemo-agent=false",
+  "-Dgtk-doc=false",
+  "-Dintrospection=false",
+  "-Dvapi=false",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "gettext",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "avahi",
+  "gettext",
+  "glib",
+  "glib-networking",
+  "json-glib",
+  "libsoup",
+  "modemmanager",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []

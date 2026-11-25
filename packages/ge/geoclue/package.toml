@@ -1,0 +1,8 @@
+name = "geoclue"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/geoclue/geoclue"
+sources = [
+  "https://gitlab.freedesktop.org/geoclue/geoclue/-/archive/",
+]
