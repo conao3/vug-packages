@@ -1,0 +1,8 @@
+name = "erlang"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://www.erlang.org/"
+sources = [
+  "https://github.com/erlang/otp/releases/download/",
+]

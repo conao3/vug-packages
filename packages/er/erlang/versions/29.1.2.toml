@@ -1,0 +1,38 @@
+version = "29.1.2"
+patches = [
+  "29.1.2-drop-werror-undef.patch",
+  "29.1.2-no-asmjit-pch.patch",
+]
+
+[source]
+url = "https://github.com/erlang/otp/releases/download/OTP-29.1.2/otp_src_29.1.2.tar.gz"
+sha256 = "c79966661e35fe4aff8ec003db63682e3b33b10b672220d51bf93c0a9244b049"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "CFLAGS=-O2 -g -idirafter /seed/zig/lib/libc/include/x86_64-linux-musl -idirafter /seed/zig/lib/libc/include/generic-musl -idirafter /seed/zig/lib/libc/include/x86-linux-any -idirafter /seed/zig/lib/libc/include/any-linux-any -idirafter /seed/zig/lib/include",
+  "CXXFLAGS=-O2 -g -idirafter /seed/zig/lib/libc/include/x86_64-linux-musl -idirafter /seed/zig/lib/libc/include/generic-musl -idirafter /seed/zig/lib/libc/include/x86-linux-any -idirafter /seed/zig/lib/libc/include/any-linux-any -idirafter /seed/zig/lib/libunwind/include -idirafter /seed/zig/lib/include",
+  "--disable-sctp",
+  "--without-javac",
+  "--with-ssl={dep:openssl}",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "m4",
+  "make",
+  "perl",
+]
+run = [
+  "libcxx",
+  "musl",
+  "ncurses",
+  "openssl",
+  "zlib",
+]
+
+[check]
+enabled = false
+skip = []

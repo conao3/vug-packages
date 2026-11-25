@@ -1,0 +1,69 @@
+diff -ruN a/erts/configure b/erts/configure
+--- a/erts/configure	2026-11-25 08:47:08.078717781 +0900
++++ b/erts/configure	2026-11-25 08:47:08.088429056 +0900
+@@ -8572,7 +8572,7 @@
+     if test "X$can_enable_flag" = "Xtrue"
+ then :
+ 
+-        WERRORFLAGS="-Werror=undef $WERRORFLAGS"
++        WERRORFLAGS=$WERRORFLAGS
+         { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ printf "%s\n" "yes" >&6; }
+ 
+@@ -28727,7 +28727,7 @@
+     if test "X$can_enable_flag" = "Xtrue"
+ then :
+ 
+-        DED_WERRORFLAGS="-Werror=undef $DED_WERRORFLAGS"
++        DED_WERRORFLAGS=$DED_WERRORFLAGS
+         { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ printf "%s\n" "yes" >&6; }
+ 
+diff -ruN a/lib/crypto/configure b/lib/crypto/configure
+--- a/lib/crypto/configure	2026-11-25 08:47:08.098902636 +0900
++++ b/lib/crypto/configure	2026-11-25 08:47:08.103428549 +0900
+@@ -5633,7 +5633,7 @@
+     if test "X$can_enable_flag" = "Xtrue"
+ then :
+ 
+-        DED_WERRORFLAGS="-Werror=undef $DED_WERRORFLAGS"
++        DED_WERRORFLAGS=$DED_WERRORFLAGS
+         { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ printf "%s\n" "yes" >&6; }
+ 
+diff -ruN a/lib/erl_interface/configure b/lib/erl_interface/configure
+--- a/lib/erl_interface/configure	2026-11-25 08:47:08.116893778 +0900
++++ b/lib/erl_interface/configure	2026-11-25 08:47:08.125427805 +0900
+@@ -5219,7 +5219,7 @@
+     if test "X$can_enable_flag" = "Xtrue"
+ then :
+ 
+-        DED_WERRORFLAGS="-Werror=undef $DED_WERRORFLAGS"
++        DED_WERRORFLAGS=$DED_WERRORFLAGS
+         { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ printf "%s\n" "yes" >&6; }
+ 
+diff -ruN a/lib/megaco/configure b/lib/megaco/configure
+--- a/lib/megaco/configure	2026-11-25 08:47:08.136157630 +0900
++++ b/lib/megaco/configure	2026-11-25 08:47:08.143427197 +0900
+@@ -5679,7 +5679,7 @@
+     if test "X$can_enable_flag" = "Xtrue"
+ then :
+ 
+-        DED_WERRORFLAGS="-Werror=undef $DED_WERRORFLAGS"
++        DED_WERRORFLAGS=$DED_WERRORFLAGS
+         { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ printf "%s\n" "yes" >&6; }
+ 
+diff -ruN a/make/configure b/make/configure
+--- a/make/configure	2026-11-25 08:47:08.154268944 +0900
++++ b/make/configure	2026-11-25 08:47:08.158426690 +0900
+@@ -6929,7 +6929,7 @@
+     if test "X$can_enable_flag" = "Xtrue"
+ then :
+ 
+-        DED_WERRORFLAGS="-Werror=undef $DED_WERRORFLAGS"
++        DED_WERRORFLAGS=$DED_WERRORFLAGS
+         { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ printf "%s\n" "yes" >&6; }
+ 

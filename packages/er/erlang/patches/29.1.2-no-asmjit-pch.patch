@@ -1,0 +1,29 @@
+--- a/erts/emulator/Makefile.in	2026-11-25 08:50:45.812060362 +0900
++++ b/erts/emulator/Makefile.in	2026-11-25 08:50:50.307098898 +0900
+@@ -1027,20 +1027,20 @@
+ IGNORE_CORE_DIRS+=$(TTF_DIR)/asmjit/
+ endif
+ 
+-$(OBJDIR)/%.o: beam/jit/%.cpp $(ASMJIT_PCH_OBJ)
++$(OBJDIR)/%.o: beam/jit/%.cpp
+ 	$(V_CXX) $(ASMJIT_FLAGS) $(INCLUDES)                                  \
+           $(subst $(space)-O2$(space), $(GEN_OPT_FLGS) , $(CXXFLAGS))         \
+-          -x c++-header -include $(ASMJIT_PCH_SRC) -x c++ -c $< -o $@
++          -include $(ASMJIT_PCH_SRC) -c $< -o $@
+ 
+-$(OBJDIR)/%.o: beam/jit/$(JIT_ARCH)/%.cpp beam/jit/$(JIT_ARCH)/beam_asm.hpp $(ASMJIT_PCH_OBJ)
++$(OBJDIR)/%.o: beam/jit/$(JIT_ARCH)/%.cpp beam/jit/$(JIT_ARCH)/beam_asm.hpp
+ 	$(V_CXX) $(ASMJIT_FLAGS) $(INCLUDES)                                  \
+           $(subst $(space)-O2$(space), $(GEN_OPT_FLGS) , $(CXXFLAGS))         \
+-          -x c++-header -include $(ASMJIT_PCH_SRC) -x c++ -c $< -o $@
++          -include $(ASMJIT_PCH_SRC) -c $< -o $@
+ 
+-$(OBJDIR)/asmjit/%.o: asmjit/%.cpp $(ASMJIT_PCH_OBJ) $(dir $@)
++$(OBJDIR)/asmjit/%.o: asmjit/%.cpp $(dir $@)
+ 	$(V_CXX) $(ASMJIT_FLAGS) $(INCLUDES)                                  \
+           $(subst $(space)-O2$(space), $(GEN_OPT_FLGS) , $(ASMJIT_CXXFLAGS))  \
+-          -x c++-header -include $(ASMJIT_PCH_SRC) -x c++ -c $< -o $@
++          -include $(ASMJIT_PCH_SRC) -c $< -o $@
+ 
+ ## The dependency on erl_bif_info.c is in order to trigger a rebuild when
+ ## the git sha define on the command line argument changes
