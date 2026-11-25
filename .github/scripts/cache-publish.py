@@ -76,7 +76,7 @@ class Directory:
     def delete(self, name):
         (self.root / name).unlink(missing_ok=True)
 
-    def put(self, name, source):
+    def put(self, name, source, replace=False):
         target = self.root / name
         target.parent.mkdir(parents=True, exist_ok=True)
         with NamedTemporaryFile(
@@ -123,11 +123,10 @@ class Bucket:
     def delete(self, name):
         self.client.delete_object(Bucket=self.name, Key=name)
 
-    def put(self, name, source):
+    def put(self, name, source, replace=False):
+        extra = {} if replace else {"IfNoneMatch": "*"}
         with source.open("rb") as body:
-            self.client.put_object(
-                Bucket=self.name, Key=name, Body=body, IfNoneMatch="*",
-            )
+            self.client.put_object(Bucket=self.name, Key=name, Body=body, **extra)
 
 
 def reachable(args, repository, target, sizes, desired):
@@ -187,6 +186,10 @@ def publish(args):
             if KEY.fullmatch(name) and existing.read_bytes() != source.read_bytes():
                 raise CacheError(f"Conflicting retained key {name}")
 
+    replaced = {f"paths/{output_id}.cpio.zst" for output_id in args.replace_archive}
+    if not replaced <= desired.keys():
+        raise CacheError("A replaced archive is missing from the export")
+
     target = Directory(args.directory) if args.directory else Bucket()
     sizes = target.sizes()
     if args.repository:
@@ -202,7 +205,7 @@ def publish(args):
         key=lambda name: (not KEY.fullmatch(name), name),
     )
     for name, source in desired.items():
-        if name not in retained or name not in sizes:
+        if name not in retained or name not in sizes or name in replaced:
             continue
         size = source.stat().st_size
         if sizes[name] != size or (
@@ -217,11 +220,14 @@ def publish(args):
     removed = sum(sizes[name] for name in stale)
     pending = {
         name: source for name, source in desired.items()
-        if name in retained and name not in sizes
+        if name in retained and (name not in sizes or name in replaced)
     }
     incoming = sum(source.stat().st_size for source in pending.values())
+    superseded = sum(sizes[name] for name in pending if name in sizes)
+    for name in sorted(replaced & pending.keys() & sizes.keys()):
+        print(f"Replace {name} ({sizes[name]} bytes)")
     print(f"Total to delete: {removed} bytes")
-    total = sum(sizes.values()) - removed + incoming
+    total = sum(sizes.values()) - removed - superseded + incoming
     print(f"Projected total: {total} bytes (limit: {args.max_bytes} bytes)")
     if total > args.max_bytes:
         raise CacheError("Projected total exceeds the byte limit")
@@ -235,7 +241,10 @@ def publish(args):
             names = sorted(pending)
             for archives in (True, False):
                 batch = [name for name in names if bool(ARCHIVE.fullmatch(name)) == archives]
-                for _ in pool.map(target.put, batch, (pending[name] for name in batch)):
+                for _ in pool.map(
+                    target.put, batch, (pending[name] for name in batch),
+                    (name in replaced for name in batch),
+                ):
                     pass
 
 
@@ -254,6 +263,8 @@ def main():
     parser.add_argument("--max-bytes", type=int, default=DEFAULT_LIMIT)
     parser.add_argument("--no-prune", action="store_true", help="preserve every existing object")
     parser.add_argument("--upload-jobs", type=int, default=1, help="concurrent object uploads")
+    parser.add_argument("--replace-archive", action="append", default=[], metavar="ID",
+                        help="overwrite the existing archive of this store ID with the export's")
     parser.add_argument("--apply", action="store_true", help="apply the plan")
     args = parser.parse_args()
     generations = args.repository or args.generation
@@ -261,6 +272,8 @@ def main():
         parser.error("require 1 <= keep <= the number of generations and max-bytes >= 1")
     if not 1 <= args.upload_jobs <= 10:
         parser.error("require 1 <= upload-jobs <= 10")
+    if not all(ID.fullmatch(output_id) for output_id in args.replace_archive):
+        parser.error("--replace-archive requires 32-character store IDs")
     if args.repository:
         if len(args.generation) != 1:
             parser.error("--repository requires one staged export")

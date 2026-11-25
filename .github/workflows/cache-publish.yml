@@ -10,6 +10,17 @@ on:
       - '.github/scripts/cache-export-index.py'
       - '.github/scripts/cache-publish.py'
       - '.github/workflows/cache-publish.yml'
+  workflow_dispatch:
+    inputs:
+      base:
+        description: Commit to compare with the master head; its packages are published as if pushed together
+        required: true
+      rebuild:
+        description: Space-separated unchanged packages to build from source as well
+        default: ''
+      replace-archives:
+        description: Space-separated store IDs whose published archives are overwritten
+        default: ''
 permissions:
   contents: read
 concurrency:
@@ -20,6 +31,7 @@ env:
   VUG_CACHE_PUBLIC_KEY: ${{ vars.VUG_CACHE_PUBLIC_KEY }}
 jobs:
   publish:
+    if: github.event_name == 'push' || github.ref == 'refs/heads/master'
     runs-on: ubuntu-26.04
     timeout-minutes: 300
     steps:
@@ -46,8 +58,9 @@ jobs:
         id: plan
         if: steps.config.outputs.ready == 'true'
         env:
-          BASE_SHA: ${{ github.event.before }}
+          BASE_SHA: ${{ github.event.before || inputs.base }}
           HEAD_SHA: ${{ github.sha }}
+          REBUILD_PACKAGES: ${{ inputs.rebuild }}
         run: python3 .github/scripts/package-builds.py cache-plan
       - uses: cachix/install-nix-action@v32.0.0
         if: steps.config.outputs.ready == 'true'
@@ -86,6 +99,7 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.VUG_CACHE_S3_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.VUG_CACHE_S3_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: auto
+          REPLACE_ARCHIVES: ${{ inputs.replace-archives }}
         run: |
           current=$(git ls-remote origin refs/heads/master | cut -f1)
           if [[ "$current" != "$GITHUB_SHA" ]]; then
@@ -99,8 +113,13 @@ jobs:
             echo "Configure the S3 endpoint secret as an HTTPS endpoint followed by the bucket name" >&2
             exit 1
           fi
+          replace=()
+          for id in $REPLACE_ARCHIVES; do
+            replace+=(--replace-archive "$id")
+          done
           nix shell --impure --expr 'let pkgs = import (builtins.getFlake "nixpkgs") { system = builtins.currentSystem; }; in pkgs.python3.withPackages (p: [ p.boto3 ])' \
             --command python3 .github/scripts/cache-publish.py --s3 --apply --no-prune --keep 2 \
             --repository "$RUNNER_TEMP/candidate" --repository "$RUNNER_TEMP/previous" \
             --vug "$RUNNER_TEMP/vug/bin/vug" \
+            "${replace[@]}" \
             --generation "$RUNNER_TEMP/generated-cache" --trusted-key "$VUG_CACHE_PUBLIC_KEY"

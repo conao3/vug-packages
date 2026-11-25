@@ -34,6 +34,12 @@ archives before signed keys and split-output manifests. A conflicting
 existing key causes publication to stop before pruning. Reapply with the
 same export to resume an interrupted upload.
 Use `--upload-jobs` for concurrent uploads within the archive and metadata phases.
+Pass `--replace-archive ID` (repeatable) to overwrite the published archive of
+a store ID with the export's copy. Clients accept an archive only when its
+unpacked tree hashes to the ID, so replace an archive that fails this check
+and nothing else. Export only from a store that sandboxed builds filled:
+running a program outside the sandbox can add files such as `__pycache__`
+to a store tree, and the archive of that tree no longer hashes to its ID.
 
 ## GitHub Actions
 
@@ -54,6 +60,13 @@ Configure the following secrets for the publish workflow:
   bucket name, for example `https://s3.example.test/cache`. The workflow extracts
   `VUG_CACHE_BUCKET` from this value inside the publish step.
 - `VUG_CACHE_S3_ACCESS_KEY_ID` and `VUG_CACHE_S3_SECRET_ACCESS_KEY`: bucket credentials.
+
+Run the workflow manually on master (`workflow_dispatch`) to publish packages
+that an earlier push left out. Set `base` to the last commit whose packages
+are published; the run builds the packages that differ between `base` and the
+master head. List unchanged packages in `rebuild` to build them from source as
+well, and list store IDs in `replace-archives` to overwrite their published
+archives.
 
 The publish workflow skips its work when configuration is incomplete. PR
 builds use the public URL and public key for dependencies once the key is
