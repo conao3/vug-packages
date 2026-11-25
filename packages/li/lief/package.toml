@@ -1,0 +1,8 @@
+name = "lief"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://lief.re/"
+sources = [
+  "https://github.com/lief-project/LIEF/archive/",
+]
