@@ -1,0 +1,27 @@
+version = "0.11.0"
+
+[source]
+url = "https://github.com/HOST-Oman/libraqm/archive/v0.11.0.tar.gz"
+sha256 = "2ba3521d3f24e9696185a67a16f1a9643429d6c897d89d83dfb2aad3a398732a"
+
+[build]
+kind = "meson"
+
+[dependencies]
+build = [
+  "binutils",
+  "meson",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "freetype",
+  "fribidi",
+  "harfbuzz",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = []

@@ -1,0 +1,8 @@
+name = "libraqm"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/HOST-Oman/libraqm"
+sources = [
+  "https://github.com/HOST-Oman/libraqm/archive/",
+]
