@@ -1,0 +1,9 @@
+name = "v4l-utils"
+license = "GPL-2.0-or-later AND LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://linuxtv.org/"
+sources = [
+  "https://linuxtv.org/downloads/v4l-utils/",
+  "https://sources.voidlinux.org/",
+]

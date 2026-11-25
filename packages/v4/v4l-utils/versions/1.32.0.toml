@@ -1,0 +1,44 @@
+version = "1.32.0"
+patches = [
+  "1.32.0-musl-lfs64.patch",
+]
+
+[source]
+url = "https://sources.voidlinux.org/v4l-utils-1.32.0/v4l-utils-1.32.0.tar.xz"
+sha256 = "6828828a17775526eb93fb258a9294d1d1073d633c344dd71ecd4e7a1ffb7dfc"
+
+[build]
+kind = "meson"
+setup-flags = [
+  "-Dqv4l2=disabled",
+  "-Dqvidcap=disabled",
+  "-Dgconv=disabled",
+  "-Ddoxygen-doc=disabled",
+]
+
+[dependencies]
+build = [
+  "bash",
+  "binutils",
+  "llvm:tools",
+  "meson",
+  "perl",
+  "pkgconf",
+  "python",
+  "samurai",
+]
+run = [
+  "alsa-lib",
+  "argp-standalone",
+  "elfutils",
+  "gettext",
+  "json-c",
+  "libbpf",
+  "libjpeg-turbo",
+  "musl",
+  "systemd",
+]
+
+[check]
+enabled = true
+skip = []
