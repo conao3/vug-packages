@@ -1,0 +1,8 @@
+name = "xorg-server"
+license = "MIT"
+
+[upstream]
+homepage = "https://gitlab.freedesktop.org/xorg/xserver"
+sources = [
+  "https://www.x.org/releases/individual/xserver/",
+]
