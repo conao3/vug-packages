@@ -1,0 +1,8 @@
+name = "moby"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://mobyproject.org/"
+sources = [
+  "https://github.com/moby/moby/archive/",
+]

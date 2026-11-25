@@ -1,0 +1,42 @@
+version = "29.10.0"
+
+[source]
+url = "https://github.com/moby/moby/archive/refs/tags/docker-v29.10.0.tar.gz"
+sha256 = "52ee9d504b0ff278fb591956d761f6f5a8f0008b6bc6d19bc2916856b3f725b9"
+
+[build]
+kind = "go"
+targets = [
+  { path = "./cmd/dockerd", bin = "dockerd" },
+  { path = "./cmd/docker-proxy", bin = "docker-proxy" },
+]
+ldflags = [
+  "-X github.com/moby/moby/v2/dockerversion.Version=29.10.0",
+  "-X github.com/moby/moby/v2/dockerversion.GitCommit=06db1734267bf7770914b417bff6556d835bf8cc",
+]
+
+[dependencies]
+build = [
+  "go",
+]
+run = [
+  "bash",
+  "btrfs-progs",
+  "docker-containerd",
+  "docker-runc",
+  "docker-tini",
+  "e2fsprogs",
+  "git",
+  "iproute2",
+  "iptables",
+  "lvm2",
+  "nftables",
+  "procps",
+  "sqlite",
+  "util-linux",
+  "xz",
+]
+
+[check]
+enabled = false
+skip = []
