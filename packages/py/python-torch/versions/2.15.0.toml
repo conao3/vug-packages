@@ -6,6 +6,36 @@ system = "x86_64-linux"
 nixpkgs-rev = "2786a2a72088ecf32aea5b3ec52099e6a7cff78f"
 attribute = "python3Packages.torch"
 
+[build.nix-outputs.filelock]
+store-path = "/nix/store/9ydy03a15j24l3dyl5qkzj7hrnh30sjw-python3.14-filelock-4.2.4"
+nar-hash = "sha256:0maf6aj4raglq3r64cq38gvqzvqjj8bms7m1szvhyykha3ivqgmn"
+expose = []
+
+[build.nix-outputs.fsspec]
+store-path = "/nix/store/qhavraipqm4dsd3vipmmvh781z10jmvc-python3.14-fsspec-2026.7.0"
+nar-hash = "sha256:0qklf8q6k12vkgz7l4829gzmz0grcvchr9irjlb38al2xwkv0lq0"
+expose = []
+
+[build.nix-outputs.jinja2]
+store-path = "/nix/store/icg5hgwfs0cbcmj3jz01i9j4hnnyv09a-python3.14-jinja2-3.1.6"
+nar-hash = "sha256:0mf2zwcj78kbr7plxbcisnjkd9cg0m322ch242c5wl4yqd9s21cj"
+expose = []
+
+[build.nix-outputs.markupsafe]
+store-path = "/nix/store/mlhm08iwvimm8hg5slngwk6axk1p73zr-python3.14-markupsafe-3.0.4"
+nar-hash = "sha256:0mb9vkrlycccvr8wvdf1hdwd5z7lcm7cxzr4qhkj732ksalkch66"
+expose = []
+
+[build.nix-outputs.mpmath]
+store-path = "/nix/store/6fdx273gq8q77q3y51916zvifj4hhfc9-python3.14-mpmath-1.4.1"
+nar-hash = "sha256:0xm7c2pnjvm9x78nczqml52scgfzdx114q18z4650mjjs7jvavc2"
+expose = []
+
+[build.nix-outputs.networkx]
+store-path = "/nix/store/zr2l1kvw9dys68yhfsycavnqradh0f8p-python3.14-networkx-3.6.1"
+nar-hash = "sha256:1rqiyd8wd70z7kr01vlfggy9fhq3pbdvkzj5j4v26lba3s5ifl7m"
+expose = []
+
 [build.nix-outputs.out]
 store-path = "/nix/store/aas1gpm3gbrl274rq51rinnih87rzddi-python3.14-torch-2.15.0"
 nar-hash = "sha256:0q7spawcx8ba87958a4aamhbyx80d3hlrpq5bg9k7f4k3qfshy8p"
@@ -13,6 +43,31 @@ expose = [
   "bin/torchfrtrace",
   "bin/torchrun",
 ]
+
+[build.nix-outputs.pybind11]
+store-path = "/nix/store/zpasif4izbwk814rxpbvhq03mxqmi760-python3.14-pybind11-3.1.0"
+nar-hash = "sha256:1hryk5jpvwfrvqnw2nmhragp5s2r974w306svlcma6n8b11b01l8"
+expose = []
+
+[build.nix-outputs.setuptools]
+store-path = "/nix/store/rgglg6rpwjiirfgrkjg01jx2cgr2p7sc-python3.14-setuptools-83.0.0"
+nar-hash = "sha256:12ljv8gxmgic2g3fdnac6ck2r4lbmjmm973i3wswlsz3cdhs1jaq"
+expose = []
+
+[build.nix-outputs.sympy]
+store-path = "/nix/store/l4d44znrd7g3q8ac6agqgdf0bh55ya4l-python3.14-sympy-1.14.0"
+nar-hash = "sha256:12dv6m5qcmpp6gciyssqxj1cfjqh93j4zf8z6s4hb9cnyinxz4p6"
+expose = []
+
+[build.nix-outputs.triton]
+store-path = "/nix/store/2i32kf8z6712vd8dg9a68x8145cwkwjg-python3.14-triton-3.9.0"
+nar-hash = "sha256:1gdqz25zrss35lv6ar4y8c9az4imlhlfllkyk5hgvs2m6jk01zgh"
+expose = []
+
+[build.nix-outputs.typing-extensions]
+store-path = "/nix/store/pys4fmdkv9d39dwj165mxhrgxlx0yr1s-python3.14-typing-extensions-4.16.0"
+nar-hash = "sha256:0icn27v5vyhrm5dfix0f8b9bydcg8yckq7lfjziy5f7bsw8f7kda"
+expose = []
 
 [dependencies]
 build = []

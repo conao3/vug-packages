@@ -77,11 +77,27 @@ print(torch.__version__)
 print(torch.tensor([1, 2, 3]).sum().item())
 PYTHON
 
-vug package run-package --root . --name python-torch \
+torch_path=$(python3 - packages/py/python-torch/versions/2.15.0.toml <<'PYTHON'
+import sys
+import tomllib
+
+with open(sys.argv[1], "rb") as record:
+    outputs = tomllib.load(record)["build"]["nix-outputs"]
+print(":".join(
+    output["store-path"] + "/lib/python3.14/site-packages"
+    for name, output in outputs.items()
+    if name != "out"
+))
+PYTHON
+)
+
+PYTHONPATH="$torch_path" vug package run-package --root . --name python-torch \
   --data-dir "$data" --cache-dir "$cache" --program bin/torchrun \
   --arguments --standalone --nproc-per-node=1 --start-method=fork --run-path \
   "$data/torch-smoke.py"
 ```
 
-GCC prints version `16.2.0`. The Nix `torchrun` launcher supplies the
-matching Python and PyTorch, and the script prints `2.15.0` and `6`.
+GCC prints version `16.2.0`. The Nix `torchrun` launcher supplies Python
+and PyTorch. The record pins the additional Python modules, which
+`PYTHONPATH` makes available inside the same namespace. The script prints
+`2.15.0` and `6`.
