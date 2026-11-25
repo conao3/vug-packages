@@ -1,0 +1,8 @@
+name = "x11vnc"
+license = "GPL-2.0-or-later"
+
+[upstream]
+homepage = "https://github.com/LibVNC/x11vnc"
+sources = [
+  "https://github.com/LibVNC/x11vnc/archive/refs/tags/",
+]
