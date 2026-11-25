@@ -1,0 +1,8 @@
+name = "w3m"
+license = "MIT"
+
+[upstream]
+homepage = "https://git.sr.ht/~rkta/w3m"
+sources = [
+  "https://git.sr.ht/~rkta/w3m/archive/",
+]
