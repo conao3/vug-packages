@@ -1,0 +1,36 @@
+version = "50.0.2"
+
+[source]
+url = "https://files.pythonhosted.org/packages/source/c/cryptography/cryptography-50.0.2.tar.gz"
+sha256 = "7b46165bb56eb4704e2eaaf86f3c940d19154535d9b0ca7d6d590b04060e00d5"
+
+[build]
+kind = "python"
+imports = [
+  "cryptography",
+]
+native-imports = [
+  "cryptography.hazmat.bindings._rust",
+]
+cargo-lock = true
+
+[dependencies]
+build = [
+  "pkgconf",
+  "python-build",
+  "python-cffi",
+  "python-installer",
+  "python-maturin",
+  "python-setuptools",
+  "rust",
+]
+run = [
+  "musl",
+  "openssl",
+  "python",
+  "python-cffi",
+]
+
+[check]
+enabled = true
+skip = []

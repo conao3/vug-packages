@@ -1,0 +1,8 @@
+name = "python-cryptography"
+license = "Apache-2.0 OR BSD-3-Clause"
+
+[upstream]
+homepage = "https://github.com/pyca/cryptography"
+sources = [
+  "https://files.pythonhosted.org/packages/source/c/cryptography/",
+]
