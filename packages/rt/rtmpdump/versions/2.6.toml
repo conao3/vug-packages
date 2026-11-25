@@ -1,0 +1,27 @@
+version = "2.6"
+
+[source]
+url = "https://deb.debian.org/debian/pool/main/r/rtmpdump/rtmpdump_2.6.orig.tar.xz"
+sha256 = "f88e141ea3e126574dce24dca364f209560e13097fbba9c7f6b2f47a9a167646"
+
+[build]
+kind = "make"
+make-flags = [
+  "CC=cc",
+  "prefix={out}",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "make",
+]
+run = [
+  "musl",
+  "openssl",
+  "zlib",
+]
+
+[check]
+enabled = false
+skip = []

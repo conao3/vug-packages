@@ -1,0 +1,8 @@
+name = "rtmpdump"
+license = "GPL-2.0-or-later AND LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://rtmpdump.mplayerhq.hu/"
+sources = [
+  "https://deb.debian.org/debian/pool/main/r/rtmpdump/",
+]
