@@ -1,0 +1,35 @@
+version = "1.0.0"
+
+[source]
+url = "https://github.com/ggml-org/llama.cpp/archive/refs/tags/v1.0.0.tar.gz"
+sha256 = "3f5f750e36326aea4d65c7623e7d597a33e395d65f4d76e5e0532171f252532b"
+
+[build]
+kind = "cmake"
+setup-flags = [
+  "-DGGML_VULKAN=ON",
+  "-DLLAMA_BUILD_EXAMPLES=OFF",
+  "-DLLAMA_BUILD_TESTS=OFF",
+  "-DLLAMA_USE_PREBUILT_UI=OFF",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+  "pkgconf",
+  "shaderc",
+  "spirv-headers",
+  "vulkan-headers",
+]
+run = [
+  "libcxx",
+  "musl",
+  "openssl",
+  "vulkan-loader",
+]
+
+[check]
+enabled = false
+skip = []

@@ -1,0 +1,8 @@
+name = "llama-cpp"
+license = "MIT"
+
+[upstream]
+homepage = "https://github.com/ggml-org/llama.cpp"
+sources = [
+  "https://github.com/ggml-org/llama.cpp/archive/",
+]
