@@ -1,0 +1,20 @@
+version = "1.8.14"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "93a9ed0a866099a230ed5146a5bb7d16fd5c9b14"
+attribute = "libx11"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/nz6yl26svfj0qap9qnpvd26yp2gxn3xl-libx11-1.8.14"
+nar-hash = "sha256:1n1c2vcfncai1nyb8d6p1hhr6k95jpfs4pm399add29ivxa4iny6"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
