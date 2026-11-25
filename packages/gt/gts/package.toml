@@ -1,0 +1,8 @@
+name = "gts"
+license = "LGPL-2.0-or-later"
+
+[upstream]
+homepage = "https://gts.sourceforge.net/"
+sources = [
+  "https://downloads.sourceforge.net/project/gts/",
+]

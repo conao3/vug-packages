@@ -1,0 +1,34 @@
+version = "0.7.6"
+patches = [
+  "0.7.6-c2-midvertex.patch",
+]
+
+[source]
+url = "https://downloads.sourceforge.net/project/gts/gts/0.7.6/gts-0.7.6.tar.gz"
+sha256 = "059c3e13e3e3b796d775ec9f96abdce8f2b3b5144df8514eda0cc12e13e8b81e"
+
+[build]
+kind = "autotools"
+configure-command = [
+  "sh",
+  "-c",
+  "cp {dep:automake}/share/automake-1.20/config.sub config.sub && cp {dep:automake}/share/automake-1.20/config.guess config.guess && ./configure --prefix={out} && sed -i 's/--rpath/-rpath/g' libtool && chmod +x test/boolean/test.sh test/coarsen/flat.sh test/coarsen/flat1.sh test/delaunay/cartesian.sh test/delaunay/two_segments.sh test/delaunay/too_close.sh && sed -i 's|#! /bin/bash|#!/bin/sh|' test/coarsen/flat.sh test/coarsen/flat1.sh test/delaunay/cartesian.sh test/delaunay/two_segments.sh test/delaunay/too_close.sh",
+]
+
+[dependencies]
+build = [
+  "automake",
+  "binutils",
+  "make",
+  "pkgconf",
+]
+run = [
+  "glib",
+  "musl",
+]
+
+[check]
+enabled = true
+skip = [
+  "test.sh",
+]

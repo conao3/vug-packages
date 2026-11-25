@@ -1,0 +1,24 @@
+--- a/test/coarsen/c2.c	2026-11-25 18:23:48.491041573 +0900
++++ b/test/coarsen/c2.c	2026-11-25 18:23:48.519671134 +0900
+@@ -72,6 +72,12 @@
+   return cost/36.;
+ }
+ 
++static GtsVertex * midvertex (GtsEdge * e, GtsVertexClass * klass)
++{
++  GtsVolumeOptimizedParams params = { 0.5, 0.5, 0. };
++  return gts_volume_optimized_vertex (e, klass, &params);
++}
++
+ static GtsVertex * edge_collapse (GtsSurface * s,
+ 				  GtsEdge * e,
+ 				  GtsVertex * (*midvertex) (GtsEdge *,
+@@ -182,7 +188,7 @@
+   fprintf (stderr, "volume: %g\n", gts_surface_volume (surface));
+ 
+ #if 1
+-  v = edge_collapse (surface, e7, gts_volume_optimized_vertex);
++  v = edge_collapse (surface, e7, midvertex);
+ #else
+   v = gts_volume_optimized_vertex (e7, gts_vertex_class ());
+   fprintf (stderr, "(%g, %g, %g) edge cost: %g cost: %g\n", 
