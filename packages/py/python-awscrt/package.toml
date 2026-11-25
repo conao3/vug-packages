@@ -1,0 +1,8 @@
+name = "python-awscrt"
+license = "Apache-2.0"
+
+[upstream]
+homepage = "https://github.com/awslabs/aws-crt-python"
+sources = [
+  "https://files.pythonhosted.org/packages/source/a/awscrt/",
+]

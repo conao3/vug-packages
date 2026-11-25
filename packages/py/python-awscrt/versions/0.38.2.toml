@@ -1,0 +1,34 @@
+version = "0.38.2"
+patches = [
+  "0.38.2-aws-lc-jitterentropy-fortify.patch",
+  "0.38.2-setup-exclude-libs.patch",
+]
+
+[source]
+url = "https://files.pythonhosted.org/packages/source/a/awscrt/awscrt-0.38.2.tar.gz"
+sha256 = "e758cee4e273b3f559677450df65f5c893efdb657fe7ac6b13c3e0960259a9c2"
+
+[build]
+kind = "python"
+native-imports = [
+  "_awscrt",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "cmake",
+  "make",
+  "perl",
+  "python-build",
+  "python-installer",
+  "python-setuptools",
+]
+run = [
+  "musl",
+  "python",
+]
+
+[check]
+enabled = true
+skip = []
