@@ -1,0 +1,8 @@
+name = "tpm2-tss"
+license = "BSD-2-Clause"
+
+[upstream]
+homepage = "https://github.com/tpm2-software/tpm2-tss"
+sources = [
+  "https://github.com/tpm2-software/tpm2-tss/releases/download/",
+]

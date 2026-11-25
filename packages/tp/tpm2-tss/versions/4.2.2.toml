@@ -1,0 +1,39 @@
+version = "4.2.2"
+
+[source]
+url = "https://github.com/tpm2-software/tpm2-tss/releases/download/4.2.2/tpm2-tss-4.2.2.tar.gz"
+sha256 = "bd4efc89ee01aca8ff771cae268d84333b7594c2d4afee50bb13b859f1113c3f"
+
+[build]
+kind = "autotools"
+configure-flags = [
+  "--disable-tcti-i2c-ftdi",
+  "--enable-unit",
+  "CRYPTO_CFLAGS=-I{dep:openssl}/include",
+  "CRYPTO_LIBS={dep:openssl}/lib/libcrypto.a",
+  "--disable-tcti-spi-ftdi",
+]
+
+[dependencies]
+build = [
+  "binutils",
+  "cmocka",
+  "make",
+  "pkgconf",
+]
+run = [
+  "cmocka",
+  "curl",
+  "json-c",
+  "libtpms",
+  "libusb",
+  "musl",
+  "openssl",
+  "util-linux",
+]
+
+[check]
+enabled = true
+skip = [
+  "test/unit/fapi-get-web-cert",
+]
