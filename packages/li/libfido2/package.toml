@@ -1,0 +1,8 @@
+name = "libfido2"
+license = "BSD-2-Clause"
+
+[upstream]
+homepage = "https://developers.yubico.com/libfido2/"
+sources = [
+  "https://developers.yubico.com/libfido2/Releases/",
+]
