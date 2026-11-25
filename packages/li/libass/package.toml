@@ -1,0 +1,8 @@
+name = "libass"
+license = "ISC"
+
+[upstream]
+homepage = "https://github.com/libass/libass"
+sources = [
+  "https://github.com/libass/libass/releases/download/",
+]
