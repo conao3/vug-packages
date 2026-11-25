@@ -1,0 +1,20 @@
+version = "26.3.1"
+
+[build]
+kind = "nix-output"
+system = "i686-linux"
+nixpkgs-rev = "93a9ed0a866099a230ed5146a5bb7d16fd5c9b14"
+attribute = "mesa"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/fippdqspy3i24apvl2rzd4badsa2hgiq-mesa-26.3.1"
+nar-hash = "sha256:0f11zn73dqmd7abf0d15qzjkw1sh5s493flznmvmc5g7c8snx0w9"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
