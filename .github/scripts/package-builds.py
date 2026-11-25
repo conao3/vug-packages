@@ -109,7 +109,7 @@ def plan():
         git("fetch", "--no-tags", "--depth=2", "origin", head)
         base = git("rev-parse", f"{head}^1", capture_output=True, text=True).stdout.strip()
     ensure_commit(base)
-    summary(f"Base `{base}` · candidate `{head}`")
+    summary(f"Base `{base}` / candidate `{head}`")
     if os.environ["NETWORK_PROBE"] == "true":
         checkout(head, CANDIDATE)
         step_output("tag", vug_tag())
@@ -243,9 +243,9 @@ def build():
             if not any(listings.values()) and record.get("build", {}).get("kind") != "nix-output":
                 raise ValueError("No installed files outside .vug/")
             ids[name] = outputs
-            summary(f"### {name} · passed · {time.monotonic() - start:.1f} s")
+            summary(f"### {name} / passed / {time.monotonic() - start:.1f} s")
             for output, files in listings.items():
-                summary(f"- `{output}` · `{outputs[output]}` · {len(files)} files")
+                summary(f"- `{output}` / `{outputs[output]}` / {len(files)} files")
                 preview = ""
                 for file in files:
                     line = html.escape(json.dumps(file, ensure_ascii=True)[1:-1]) + "\n"
@@ -257,7 +257,7 @@ def build():
                 if preview:
                     summary(f"<details><summary>Installed files</summary><pre>{preview}</pre></details>")
         except (ValueError, OSError, KeyError, TypeError) as error:
-            summary(f"### {name} · failed · {time.monotonic() - start:.1f} s")
+            summary(f"### {name} / failed / {time.monotonic() - start:.1f} s")
             if log.is_file():
                 log_tail(log)
             summary(f"<pre>{html.escape(str(error))}</pre>")
@@ -299,11 +299,11 @@ def compare():
     for name in json.loads(os.environ["PACKAGES"]):
         primary, repeat = (result.get(name, {}) for result in results)
         if primary and primary == repeat:
-            summary(f"- **{name}** · matched · {html.escape(str(primary))}")
+            summary(f"- **{name}** / matched / {html.escape(str(primary))}")
         else:
             failed = True
-            summary(f"- **{name}** · {'different' if primary and repeat else 'missing result'}"
-                    f" · primary {html.escape(str(primary))} · repeat {html.escape(str(repeat))}")
+            summary(f"- **{name}** / {'different' if primary and repeat else 'missing result'}"
+                    f" / primary {html.escape(str(primary))} / repeat {html.escape(str(repeat))}")
     return int(failed)
 
 
