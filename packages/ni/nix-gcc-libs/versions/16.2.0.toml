@@ -1,0 +1,20 @@
+version = "16.2.0"
+
+[build]
+kind = "nix-output"
+system = "x86_64-linux"
+nixpkgs-rev = "93a9ed0a866099a230ed5146a5bb7d16fd5c9b14"
+attribute = "stdenv.cc.cc.lib"
+
+[build.nix-outputs.out]
+store-path = "/nix/store/myhwfdgqm39yms5clinafii9i1nmq43h-gcc-16.2.0-lib"
+nar-hash = "sha256:0wyy2fm2njs8qbf25rz4qkmd9sph9wlx7nk0glh6z6vs87x9qa0r"
+expose = []
+
+[dependencies]
+build = []
+run = []
+
+[check]
+enabled = false
+skip = []
