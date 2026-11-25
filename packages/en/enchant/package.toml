@@ -1,0 +1,8 @@
+name = "enchant"
+license = "LGPL-2.1-or-later"
+
+[upstream]
+homepage = "https://rrthomas.github.io/enchant/"
+sources = [
+  "https://github.com/rrthomas/enchant/releases/download/",
+]
