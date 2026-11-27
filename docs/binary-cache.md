@@ -43,10 +43,13 @@ to a store tree, and the archive of that tree no longer hashes to its ID.
 
 ## GitHub Actions
 
-The master push workflow builds changed packages before staging and
-signing their outputs in a separate step. It uses `--keep 2` with the
-before and after checkouts. vug 0.2.14 or newer resolves reachable keys
-for each checkout against an overlay of the signed export and existing
+The publish workflow `.github/workflows/deploy.yml` runs only by manual
+dispatch (`workflow_dispatch`) on master, in the `dev` environment, which
+allows deployments from master only. Pushes and pull requests run checks and
+package builds without publishing. The workflow builds changed packages
+before staging and signing their outputs in a separate step. It uses
+`--keep 2` with the `base` and master head checkouts. vug 0.2.14 or newer
+resolves reachable keys for each checkout against an overlay of the signed export and existing
 cache metadata. The publisher includes all named outputs of each
 reachable split manifest. System records use these same package outputs.
 The workflow removes the objects that neither checkout reaches, so the
@@ -64,12 +67,13 @@ Configure the following secrets for the publish workflow:
   `VUG_CACHE_BUCKET` from this value inside the publish step.
 - `VUG_CACHE_S3_ACCESS_KEY_ID` and `VUG_CACHE_S3_SECRET_ACCESS_KEY`: bucket credentials.
 
-Run the workflow manually on master (`workflow_dispatch`) to publish packages
-that an earlier push left out. Set `base` to the last commit whose packages
-are published; the run builds the packages that differ between `base` and the
-master head. List unchanged packages in `rebuild` to build them from source as
-well, and list store IDs in `replace-archives` to overwrite their published
-archives.
+Dispatch it with `gh workflow run deploy.yml --ref master -f base=<SHA>`.
+Set `base` to the last commit whose packages are published: the head commit
+of the last run whose publish step applied its plan. The run builds the
+packages that differ between `base` and the master head, and skips publishing
+when master moves past its commit before the publish step. List unchanged
+packages in `rebuild` to build them from source as well, and list store IDs in
+`replace-archives` to overwrite their published archives.
 
 The publish workflow skips its work when configuration is incomplete. PR
 builds use the public URL and public key for dependencies once the key is
