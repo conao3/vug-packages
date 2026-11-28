@@ -1,0 +1,22 @@
+{
+  "cbindgen": 153,
+  "cmake": 900,
+  "gts": 188,
+  "libcamera": 413,
+  "librist": 178,
+  "libslirp": 60,
+  "lief": 799,
+  "linux-generic": 840,
+  "llama-cpp": 608,
+  "llvm": 3540,
+  "lp-solve": 77,
+  "pixman": 720,
+  "python-awscrt": 129,
+  "spidermonkey": 1226,
+  "swaybg": 600,
+  "tpm2-tss": 153,
+  "v4l-utils": 100,
+  "wayland-protocols": 600,
+  "xorg-server": 93,
+  "zellij": 1436
+}

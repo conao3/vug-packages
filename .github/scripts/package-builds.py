@@ -1,23 +1,30 @@
 from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor
 import html
 import json
 import os
 from pathlib import Path
 import re
+import shutil
 import socket
 import subprocess
 import sys
 import time
 import tomllib
+import urllib.error
+import urllib.request
 
 
 NAME = re.compile(r"[a-z0-9][a-z0-9+._-]{0,63}")
 VERSION = re.compile(r"[A-Za-z0-9][A-Za-z0-9+._~-]{0,63}")
 STORE_ID = re.compile(r"[a-z2-7]{32}")
+ARCHIVE = re.compile(r"[a-z2-7]{32}\.cpio\.zst")
 TEMP = Path(os.environ["RUNNER_TEMP"])
 CANDIDATE = TEMP / "candidate"
-CACHE_PUBLISH_PLAN = TEMP / "cache-publish-plan"
 VUG = TEMP / "vug/bin/vug"
+BUILD_SECONDS = Path(__file__).with_name("build-seconds.json")
+DEFAULT_BUILD_SECONDS = 30
+MAX_CACHE_SHARDS = 8
 
 
 def git(*args, **kwargs):
@@ -74,8 +81,8 @@ def is_package(shard, name):
     return bool(NAME.fullmatch(name)) and not name.endswith(".toml") and shard == expected_shard
 
 
-def reverse_dependencies(tree, changed):
-    reverse = defaultdict(set)
+def dependency_names(tree):
+    graph = {}
     for package_file in (tree / "packages").glob("*/*/package.toml"):
         package = package_file.parent
         if not is_package(package.parent.name, package.name):
@@ -88,10 +95,17 @@ def reverse_dependencies(tree, changed):
         )
         for output in record.get("outputs", {}).values():
             selectors.extend(output.get("run", []))
-        for selector in selectors:
-            name = selector.partition(":")[0]
-            if name:
-                reverse[name].add(package.name)
+        graph[package.name] = {
+            selector.partition(":")[0] for selector in selectors if selector.partition(":")[0]
+        }
+    return graph
+
+
+def reverse_dependencies(tree, changed):
+    reverse = defaultdict(set)
+    for package, names in dependency_names(tree).items():
+        for name in names:
+            reverse[name].add(package)
 
     affected = set(changed)
     pending = list(changed)
@@ -226,8 +240,6 @@ def build():
     preview_budget = 160_000
     names = json.loads(os.environ["PACKAGES"])
     from_source = json.loads(os.environ.get("CHANGED_PACKAGES", "[]"))
-    if CACHE_PUBLISH_PLAN.is_file() and "vug" not in names:
-        names.append("vug")
     for name in names:
         start = time.monotonic()
         log = reports / f"{name}.log"
@@ -266,12 +278,50 @@ def build():
     return int(len(ids) != len(names))
 
 
+def cache_shards(tree, targets):
+    graph = dependency_names(tree)
+    parent = {name: name for name in targets}
+
+    def root(name):
+        while parent[name] != name:
+            name = parent[name]
+        return name
+
+    for name in sorted(targets):
+        seen, pending = set(), [name]
+        while pending:
+            for dependency in graph.get(pending.pop(), set()) - seen:
+                seen.add(dependency)
+                pending.append(dependency)
+        for dependency in seen & targets:
+            parent[root(dependency)] = root(name)
+    groups = defaultdict(list)
+    for name in sorted(targets):
+        groups[root(name)].append(name)
+
+    seconds = json.loads(BUILD_SECONDS.read_text(encoding="utf-8"))
+
+    def weight(names):
+        return sum(seconds.get(name, DEFAULT_BUILD_SECONDS) for name in names)
+
+    shards = [[] for _ in range(min(MAX_CACHE_SHARDS, len(groups)))]
+    for group in sorted(groups.values(), key=lambda names: (-weight(names), names)):
+        min(shards, key=weight).extend(group)
+    shards.sort(key=lambda names: -weight(names))
+    plans = []
+    for number, names in enumerate(shards, 1):
+        heaviest = max(names, key=lambda name: (seconds.get(name, DEFAULT_BUILD_SECONDS), name))
+        label = heaviest if len(names) == 1 else f"{heaviest} and {len(names) - 1} more"
+        plans.append({"shard": number, "label": label, "packages": sorted(names)})
+        summary(f"Shard {number} (about {weight(names)} s): {', '.join(sorted(names))}")
+    return plans
+
+
 def cache_plan():
     base, head = (os.environ[key] for key in ("BASE_SHA", "HEAD_SHA"))
     ensure_commit(base)
     ensure_commit(head)
     checkout(head, CANDIDATE)
-    checkout(base, TEMP / "previous")
     step_output("tag", vug_tag())
     files = git("diff", "--name-only", "--no-renames", "-z", base, head, "--", "packages/",
                 capture_output=True).stdout
@@ -285,8 +335,137 @@ def cache_plan():
         if not is_package(shard, name) or not (CANDIDATE / "packages" / shard / name / "package.toml").is_file():
             raise ValueError(f"Unknown package to rebuild: {name!r}")
         packages.add(name)
-    CACHE_PUBLISH_PLAN.touch()
+    summary(f"Base `{base}` / candidate `{head}`")
+    summary(f"Packages built from source ({len(packages)}): {', '.join(sorted(packages)) or 'none'}")
     step_output("changed", json.dumps(sorted(packages)))
+    step_output("shards", json.dumps(cache_shards(CANDIDATE, packages | {"vug"})))
+    return 0
+
+
+def gh_api(path, query):
+    return subprocess.run(
+        ["gh", "api", path, "--jq", query], check=True, capture_output=True, text=True,
+    ).stdout.strip()
+
+
+def cache_current():
+    head = os.environ["HEAD_SHA"]
+    ensure_commit(head)
+    repository = os.environ["GITHUB_REPOSITORY"]
+    status = gh_api(f"repos/{repository}/compare/{head}...master", ".status")
+    if status not in ("identical", "ahead"):
+        raise ValueError(f"master does not contain {head} (compare status {status!r})")
+    workflow = Path(os.environ["GITHUB_WORKFLOW_REF"].partition("@")[0]).name
+    run = int(os.environ["GITHUB_RUN_ID"])
+    newer = gh_api(
+        f"repos/{repository}/actions/workflows/{workflow}/runs?status=success&per_page=100",
+        f"[.workflow_runs[] | select(.id > {run}) | .id] | length",
+    )
+    if newer != "0":
+        raise ValueError(f"A later run of {workflow} has already succeeded")
+    summary(f"master contains `{head}` (compare status `{status}`)")
+    return 0
+
+
+def published(name):
+    request = urllib.request.Request(
+        f"{os.environ['VUG_BINARY_CACHE_URL'].rstrip('/')}/{name}",
+        method="HEAD", headers={"User-Agent": "vug-packages-cache/1"},
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=30) as response:
+            return response.status == 200
+    except (urllib.error.URLError, OSError):
+        return False
+
+
+def index_entry(index, path):
+    contents = path.read_text(encoding="utf-8")
+    if index == "index":
+        key, output_id = contents.split()
+        return f"keys/{key}", {output_id}
+    manifest = json.loads(contents)
+    return f"output-keys/{manifest['key']}", {output["id"] for output in manifest["outputs"].values()}
+
+
+def cache_shard():
+    staged = TEMP / "cache-export-index"
+    subprocess.run(
+        [sys.executable, Path(__file__).with_name("cache-export-index.py"),
+         "--root", CANDIDATE, "--data-dir", TEMP / "vug-data", "--directory", staged],
+        check=True,
+    )
+    entries = {
+        path: index_entry(index, path)
+        for index in ("index", "index-outputs")
+        for path in sorted((staged / index).glob("*/*"))
+    }
+    replaced = set(os.environ.get("REPLACE_ARCHIVES", "").split())
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        present = dict(zip(entries, pool.map(published, (key for key, _ in entries.values()))))
+    for path, (_, ids) in entries.items():
+        if present[path] and not ids & replaced:
+            path.unlink()
+
+    export = TEMP / "shard-export"
+    subprocess.run(
+        [VUG, "store", "export-cache", "--data-dir", staged, "--directory", export], check=True,
+    )
+    shard = TEMP / "cache-shard"
+    (shard / "paths").mkdir(parents=True)
+    kept = 0
+    for path, (_, ids) in entries.items():
+        archives = [export / "paths" / f"{output_id}.cpio.zst" for output_id in sorted(ids)]
+        if not path.is_file() or not all(archive.is_file() for archive in archives):
+            continue
+        target = shard / path.relative_to(staged)
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(path, target)
+        for archive in archives:
+            if not (shard / "paths" / archive.name).is_file():
+                shutil.copyfile(archive, shard / "paths" / archive.name)
+        kept += 1
+    (shard / "packages.json").write_text(os.environ["PACKAGES"] + "\n", encoding="utf-8")
+    sizes = [archive.stat().st_size for archive in (shard / "paths").iterdir()]
+    summary(f"Unpublished index entries: {kept} of {len(entries)} / "
+            f"{len(sizes)} archives / {sum(sizes)} bytes")
+    return 0
+
+
+def cache_merge():
+    staged = TEMP / "cache-export-index"
+    generated = TEMP / "generated-cache"
+    (staged / "store").mkdir(parents=True)
+    (generated / "paths").mkdir(parents=True)
+    entries = 0
+    shards = sorted((TEMP / "cache-shards").iterdir())
+    for shard in shards:
+        for path in sorted(shard.rglob("*")):
+            if path.is_dir() and not path.is_symlink():
+                continue
+            parts = path.relative_to(shard).parts
+            if path.is_symlink() or not path.is_file():
+                raise ValueError(f"Unexpected file type in {shard.name}: {'/'.join(parts)!r}")
+            if parts == ("packages.json",):
+                continue
+            if len(parts) == 2 and parts[0] == "paths" and ARCHIVE.fullmatch(parts[1]):
+                target = generated.joinpath(*parts)
+            elif (len(parts) == 3 and parts[0] in ("index", "index-outputs")
+                  and NAME.fullmatch(parts[1]) and VERSION.fullmatch(parts[2])):
+                target = staged.joinpath(*parts)
+            else:
+                raise ValueError(f"Unexpected file in {shard.name}: {'/'.join(parts)!r}")
+            if target.exists():
+                if target.read_bytes() != path.read_bytes():
+                    if parts[0] == "paths":
+                        raise ValueError(f"Conflicting archive {'/'.join(parts)}")
+                    summary(f"Kept the first of conflicting index entries {'/'.join(parts)}")
+                continue
+            target.parent.mkdir(parents=True, exist_ok=True)
+            path.replace(target)
+            entries += parts[0] != "paths"
+    summary(f"Merged {entries} index entries from {len(shards)} shards")
+    step_output("entries", entries)
     return 0
 
 
@@ -364,10 +543,17 @@ install:
 
 
 if __name__ == "__main__":
-    handlers = {"plan": plan, "build": build, "compare": compare, "probe": probe, "cache-plan": cache_plan}
+    handlers = {
+        "plan": plan, "build": build, "compare": compare, "probe": probe,
+        "cache-plan": cache_plan, "cache-current": cache_current,
+        "cache-shard": cache_shard, "cache-merge": cache_merge,
+    }
     command = sys.argv[1]
     if command == "checkout":
         checkout(os.environ["HEAD_SHA"], CANDIDATE)
+    elif command == "cache-checkout":
+        checkout(os.environ["HEAD_SHA"], CANDIDATE)
+        checkout(os.environ["BASE_SHA"], TEMP / "previous")
     else:
         try:
             sys.exit(handlers[command]())

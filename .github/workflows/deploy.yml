@@ -21,6 +21,7 @@ on:
         default: false
 permissions:
   contents: read
+  actions: read
 concurrency:
   group: publish-binary-cache
   cancel-in-progress: false
@@ -28,70 +29,146 @@ env:
   VUG_BINARY_CACHE_URL: https://pub-da78c0bd9fc84d998fefca158806f160.r2.dev
   VUG_CACHE_PUBLIC_KEY: ${{ vars.VUG_CACHE_PUBLIC_KEY }}
 jobs:
-  publish:
+  plan:
     runs-on: ubuntu-26.04
     environment: dev
-    timeout-minutes: 300
+    timeout-minutes: 10
+    outputs:
+      tag: ${{ steps.plan.outputs.tag }}
+      changed: ${{ steps.plan.outputs.changed }}
+      shards: ${{ steps.plan.outputs.shards }}
     steps:
       - name: Check publisher configuration
-        id: config
         env:
           HAS_SIGNING_KEY: ${{ secrets.VUG_CACHE_SIGNING_KEY != '' }}
           HAS_ENDPOINT: ${{ secrets.VUG_CACHE_S3_ENDPOINT != '' }}
           HAS_ACCESS_KEY: ${{ secrets.VUG_CACHE_S3_ACCESS_KEY_ID != '' }}
           HAS_SECRET_KEY: ${{ secrets.VUG_CACHE_S3_SECRET_ACCESS_KEY != '' }}
         run: |
-          ready=false
-          if [[ "$HAS_SIGNING_KEY" == true && "$HAS_ENDPOINT" == true &&
-                "$HAS_ACCESS_KEY" == true && "$HAS_SECRET_KEY" == true &&
-                -n "$VUG_CACHE_PUBLIC_KEY" ]]; then
-            ready=true
+          if [[ "$HAS_SIGNING_KEY" != true || "$HAS_ENDPOINT" != true ||
+                "$HAS_ACCESS_KEY" != true || "$HAS_SECRET_KEY" != true ||
+                -z "$VUG_CACHE_PUBLIC_KEY" ]]; then
+            echo "Configure the VUG_CACHE_* secrets of the dev environment and the VUG_CACHE_PUBLIC_KEY variable" >&2
+            exit 1
           fi
-          echo "ready=$ready" >> "$GITHUB_OUTPUT"
       - uses: actions/checkout@v7.0.1
-        if: steps.config.outputs.ready == 'true'
         with:
           persist-credentials: false
-      - name: Select the fixed tree and changed packages
+      - name: Check that master contains the commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+          HEAD_SHA: ${{ github.sha }}
+        run: python3 .github/scripts/package-builds.py cache-current
+      - name: Select changed packages and shards
         id: plan
-        if: steps.config.outputs.ready == 'true'
         env:
           BASE_SHA: ${{ inputs.base }}
           HEAD_SHA: ${{ github.sha }}
           REBUILD_PACKAGES: ${{ inputs.rebuild }}
         run: python3 .github/scripts/package-builds.py cache-plan
-      - uses: cachix/install-nix-action@v32.0.0
-        if: steps.config.outputs.ready == 'true'
-      - name: Build changed packages
-        if: steps.config.outputs.ready == 'true'
+
+  build:
+    name: Build (${{ matrix.label }})
+    needs: plan
+    runs-on: ubuntu-26.04
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJSON(needs.plan.outputs.shards) }}
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - name: Check out candidate records
         env:
-          VUG_TAG: ${{ steps.plan.outputs.tag }}
-          PACKAGES: ${{ steps.plan.outputs.changed }}
-          CHANGED_PACKAGES: ${{ steps.plan.outputs.changed }}
-          VUG_BUILD_JOBS: "3"
+          HEAD_SHA: ${{ github.sha }}
+        run: python3 .github/scripts/package-builds.py checkout
+      - uses: cachix/install-nix-action@v32.0.0
+      - name: Set up vug
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VUG_TAG: ${{ needs.plan.outputs.tag }}
         run: |
           sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
-          nix build "github:conao3/rust-vug/$VUG_TAG" -o "$RUNNER_TEMP/vug"
-          python3 .github/scripts/package-builds.py build
-      - name: Sign the staged output index
-        if: steps.config.outputs.ready == 'true'
+          mkdir -p "$RUNNER_TEMP/vug/bin"
+          gh release download "$VUG_TAG" --repo conao3/rust-vug \
+            --pattern "vug-${VUG_TAG#v}-x86_64-linux-musl.tar.gz" --output - |
+            tar -xz -C "$RUNNER_TEMP/vug/bin" vug
+          [[ "$("$RUNNER_TEMP/vug/bin/vug" --version)" == "vug ${VUG_TAG#v}" ]]
+      - name: Build packages
+        env:
+          PACKAGES: ${{ toJSON(matrix.packages) }}
+          CHANGED_PACKAGES: ${{ needs.plan.outputs.changed }}
+          VUG_BUILD_JOBS: "3"
+        run: python3 .github/scripts/package-builds.py build
+      - name: Export unpublished outputs without signatures
+        env:
+          PACKAGES: ${{ toJSON(matrix.packages) }}
+          REPLACE_ARCHIVES: ${{ inputs.replace-archives }}
+        run: python3 .github/scripts/package-builds.py cache-shard
+      - uses: actions/upload-artifact@v7.0.2
+        with:
+          name: cache-shard-${{ matrix.shard }}
+          path: ${{ runner.temp }}/cache-shard/
+          if-no-files-found: error
+          retention-days: 1
+          compression-level: 0
+
+  publish:
+    needs: [plan, build]
+    runs-on: ubuntu-26.04
+    environment: dev
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - name: Check that master contains the commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+          HEAD_SHA: ${{ github.sha }}
+        run: python3 .github/scripts/package-builds.py cache-current
+      - name: Check out the retained trees
+        env:
+          BASE_SHA: ${{ inputs.base }}
+          HEAD_SHA: ${{ github.sha }}
+        run: python3 .github/scripts/package-builds.py cache-checkout
+      - uses: actions/download-artifact@v8.0.1
+        with:
+          pattern: cache-shard-*
+          path: ${{ runner.temp }}/cache-shards
+      - uses: cachix/install-nix-action@v32.0.0
+      - name: Set up vug
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VUG_TAG: ${{ needs.plan.outputs.tag }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/vug/bin"
+          gh release download "$VUG_TAG" --repo conao3/rust-vug \
+            --pattern "vug-${VUG_TAG#v}-x86_64-linux-musl.tar.gz" --output - |
+            tar -xz -C "$RUNNER_TEMP/vug/bin" vug
+          [[ "$("$RUNNER_TEMP/vug/bin/vug" --version)" == "vug ${VUG_TAG#v}" ]]
+      - name: Merge the shard exports
+        id: merge
+        run: python3 .github/scripts/package-builds.py cache-merge
+      - name: Sign the merged output index
         env:
           VUG_CACHE_SIGNING_KEY: ${{ secrets.VUG_CACHE_SIGNING_KEY }}
+          ENTRIES: ${{ steps.merge.outputs.entries }}
         run: |
           umask 077
           keyfile=$(mktemp "$RUNNER_TEMP/vug-signing.XXXXXX")
           trap 'rm -f "$keyfile"' EXIT
           printf '%s\n' "$VUG_CACHE_SIGNING_KEY" > "$keyfile"
           unset VUG_CACHE_SIGNING_KEY
-          python3 .github/scripts/cache-export-index.py \
-            --root "$RUNNER_TEMP/candidate" --data-dir "$RUNNER_TEMP/vug-data" \
-            --directory "$RUNNER_TEMP/cache-export-index"
-          "$RUNNER_TEMP/vug/bin/vug" store export-cache \
+          keys=$("$RUNNER_TEMP/vug/bin/vug" --output json store export-cache \
             --directory "$RUNNER_TEMP/generated-cache" --data-dir "$RUNNER_TEMP/cache-export-index" \
-            --secret-key-file "$keyfile"
+            --secret-key-file "$keyfile" | jq .Keys)
+          echo "Signed $keys keys for $ENTRIES index entries"
+          [[ "$keys" == "$ENTRIES" ]]
       - name: Publish within the byte limit
         shell: bash
-        if: steps.config.outputs.ready == 'true'
         env:
           VUG_CACHE_S3_ENDPOINT: ${{ secrets.VUG_CACHE_S3_ENDPOINT }}
           AWS_ACCESS_KEY_ID: ${{ secrets.VUG_CACHE_S3_ACCESS_KEY_ID }}
@@ -101,11 +178,6 @@ jobs:
           NO_PRUNE: ${{ inputs.no-prune }}
           DRY_RUN: ${{ inputs.dry-run }}
         run: |
-          current=$(git ls-remote origin refs/heads/master | cut -f1)
-          if [[ "$current" != "$GITHUB_SHA" ]]; then
-            echo "Publication skipped for a superseded commit"
-            exit 0
-          fi
           if [[ "${VUG_CACHE_S3_ENDPOINT%/}" =~ ^(https://[^/]+)/([a-z0-9][a-z0-9.-]*)$ ]]; then
             export VUG_CACHE_S3_ENDPOINT="${BASH_REMATCH[1]}"
             export VUG_CACHE_BUCKET="${BASH_REMATCH[2]}"

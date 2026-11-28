@@ -44,22 +44,49 @@ to a store tree, and the archive of that tree no longer hashes to its ID.
 ## GitHub Actions
 
 The publish workflow `.github/workflows/deploy.yml` runs only by manual
-dispatch (`workflow_dispatch`) on master, in the `dev` environment, which
-allows deployments from master only. Pushes and pull requests run checks and
-package builds without publishing. The workflow builds changed packages
-before staging and signing their outputs in a separate step. It uses
-`--keep 2` with the `base` and master head checkouts. vug 0.2.14 or newer
-resolves reachable keys for each checkout against an overlay of the signed export and existing
-cache metadata. The publisher includes all named outputs of each
-reachable split manifest. System records use these same package outputs.
-The workflow removes the objects that neither checkout reaches, so the
-destination stays within the byte limit. Dispatch it with `dry-run` to print
-the deletion list and the projected total without writing, and with `no-prune`
-to keep every object.
+dispatch (`workflow_dispatch`) on master. Pushes and pull requests run checks
+and package builds without publishing. The workflow has three jobs:
+
+- `plan` runs in the `dev` environment, which allows deployments from master
+  only. It fails unless the publisher configuration is complete and master
+  contains the dispatched commit. It selects the packages that differ between
+  `base` and the dispatched commit, adds `vug`, and puts packages that depend
+  on one another, directly or through other packages, into the same group.
+  It packs the groups into at most eight shards by the expected seconds in
+  `.github/scripts/build-seconds.json` (30 seconds for an unlisted package),
+  heaviest group first.
+- `build` runs one job per shard without secrets. Each job takes the vug
+  release archive of the version in `packages/vu/vug`, builds its packages
+  with the public cache for dependencies, stages the index with
+  `cache-export-index.py`, and drops the entries whose key the public cache
+  already serves. It exports the remaining entries without signatures and
+  uploads their index files and compressed archives as an artifact kept for
+  one day.
+- `publish` runs in the `dev` environment after every shard succeeds. It
+  checks again that master contains the dispatched commit, merges the shard
+  artifacts, signs the merged index with `vug store export-cache`, and stops
+  unless the number of signed keys equals the number of merged entries. The
+  publisher then uses `--keep 2` with the `base` and dispatched checkouts.
+
+vug 0.2.14 or newer resolves reachable keys for each checkout against an
+overlay of the signed export and existing cache metadata. The publisher
+includes all named outputs of each reachable split manifest. System records
+use these same package outputs. The workflow removes the objects that neither
+checkout reaches, so the destination stays within the byte limit. Dispatch it
+with `dry-run` to print the deletion list and the projected total without
+writing, and with `no-prune` to keep every object.
+
+The concurrency group runs one dispatch at a time, and each dispatch builds
+the master head at its dispatch time, so publications reach the bucket in
+commit order. A run publishes its commit when master contains it, also after
+master has moved on: the next dispatch with that commit as `base` keeps both
+trees. The `plan` and `publish` jobs fail when master no longer contains the
+commit or a later run of the workflow has already succeeded, so a re-run of
+an old run cannot prune objects that a newer publication reaches.
 
 The read-only cache URL is `https://pub-da78c0bd9fc84d998fefca158806f160.r2.dev`.
 Set the repository variable `VUG_CACHE_PUBLIC_KEY`.
-Configure the following secrets for the publish workflow:
+Configure the following secrets in the `dev` environment:
 
 - `VUG_CACHE_SIGNING_KEY`: Ed25519 secret key matching the public key.
 - `VUG_CACHE_S3_ENDPOINT`: S3-compatible HTTPS write endpoint followed by the
@@ -68,15 +95,17 @@ Configure the following secrets for the publish workflow:
 - `VUG_CACHE_S3_ACCESS_KEY_ID` and `VUG_CACHE_S3_SECRET_ACCESS_KEY`: bucket credentials.
 
 Dispatch it with `gh workflow run deploy.yml --ref master -f base=<SHA>`.
-Set `base` to the last commit whose packages are published: the head commit
-of the last run whose publish step applied its plan. The run builds the
-packages that differ between `base` and the master head, and skips publishing
-when master moves past its commit before the publish step. List unchanged
-packages in `rebuild` to build them from source as well, and list store IDs in
-`replace-archives` to overwrite their published archives.
+Set `base` to the last commit whose packages are published: the commit of the
+last successful run without `dry-run`. List unchanged packages in `rebuild` to
+build them from source as well. A rebuilt package is published only when the
+public cache lacks its key. List store IDs in `replace-archives` to overwrite
+their published archives; the shards keep the entries of those IDs.
 
-The publish workflow skips its work when configuration is incomplete. PR
-builds use the public URL and public key for dependencies once the key is
+Update `.github/scripts/build-seconds.json` from the per-package seconds in
+the job summaries when a package takes a minute or more on the standard
+runner.
+
+PR builds use the public URL and public key for dependencies once the key is
 configured and the selected vug release supports it. They build changed
 packages locally, including changed packages used as dependencies. The
 comparison lane uses its own store and builds those packages independently.
