@@ -56,7 +56,9 @@ and package builds without publishing. The workflow has three jobs:
   `.github/scripts/build-seconds.json` (30 seconds for an unlisted package),
   heaviest group first.
 - `build` runs one job per shard without secrets. Each job takes the vug
-  release archive of the version in `packages/vu/vug`, builds its packages
+  release archive of the version in `packages/vu/vug` and puts bubblewrap
+  from the nixpkgs of that rust-vug tag first on `PATH`, the bubblewrap that
+  the Nix build of vug wraps. It builds its packages
   with the public cache for dependencies, stages the index with
   `cache-export-index.py`, and drops the entries whose key the public cache
   already serves. It exports the remaining entries without signatures and
