@@ -91,13 +91,10 @@ jobs:
           VUG_TAG: ${{ needs.plan.outputs.tag }}
         run: |
           sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
-          nix build --option flake-registry "" --inputs-from "github:conao3/rust-vug/$VUG_TAG" \
-            nixpkgs#bubblewrap -o "$RUNNER_TEMP/bubblewrap"
-          echo "$RUNNER_TEMP/bubblewrap/bin" >> "$GITHUB_PATH"
           mkdir -p "$RUNNER_TEMP/vug/bin"
           gh release download "$VUG_TAG" --repo conao3/rust-vug \
             --pattern "vug-${VUG_TAG#v}-x86_64-linux-musl.tar.gz" --output - |
-            tar -xz -C "$RUNNER_TEMP/vug/bin" vug
+            tar -xz -C "$RUNNER_TEMP/vug/bin" vug vug-bwrap
           [[ "$("$RUNNER_TEMP/vug/bin/vug" --version)" == "vug ${VUG_TAG#v}" ]]
       - name: Build packages
         env:
