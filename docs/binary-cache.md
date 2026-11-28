@@ -59,10 +59,10 @@ and package builds without publishing. The workflow has three jobs:
   `vug-bwrap` from the vug release archive of the version in
   `packages/vu/vug`; that `vug` runs its sandboxes with the `vug-bwrap` next
   to it. It builds its packages with the public cache for dependencies,
-  stages the index with `cache-export-index.py`, and drops the entries whose key the public cache
-  already serves. It exports the remaining entries without signatures and
-  uploads their index files and compressed archives as an artifact kept for
-  one day.
+  stages the index with `cache-export-index.py`, and drops the entries whose
+  key the public cache already serves. It exports the remaining entries
+  without signatures and uploads their index files and compressed archives as
+  an artifact kept for one day.
 - `publish` runs in the `dev` environment after every shard succeeds. It
   checks again that master contains the dispatched commit, merges the shard
   artifacts, signs the merged index with `vug store export-cache`, and stops
