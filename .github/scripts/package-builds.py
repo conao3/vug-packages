@@ -438,7 +438,11 @@ def cache_merge():
     (staged / "store").mkdir(parents=True)
     (generated / "paths").mkdir(parents=True)
     entries = 0
-    shards = sorted((TEMP / "cache-shards").iterdir())
+    downloaded = TEMP / "cache-shards"
+    if (downloaded / "packages.json").is_file():
+        shards = [downloaded]
+    else:
+        shards = sorted(downloaded.iterdir())
     for shard in shards:
         for path in sorted(shard.rglob("*")):
             if path.is_dir() and not path.is_symlink():
